@@ -1,0 +1,38 @@
+\hypertarget{rte__branch__prediction_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+branch\+\_\+prediction.h File Reference}
+\label{rte__branch__prediction_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+branch\+\_\+prediction.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+branch\+\_\+prediction.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__branch__prediction_8h_a217a0bd562b98ae8c2ffce44935351e1}{likely}(x)~\+\_\+\+\_\+builtin\+\_\+expect((x),1)
+\item 
+\#define \hyperlink{rte__branch__prediction_8h_ac6c45889010c1bd68631771b64f18101}{unlikely}(x)~\+\_\+\+\_\+builtin\+\_\+expect((x),0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Branch Prediction Helpers in R\+T\+E 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__branch__prediction_8h_a217a0bd562b98ae8c2ffce44935351e1}{}\index{rte\+\_\+branch\+\_\+prediction.\+h@{rte\+\_\+branch\+\_\+prediction.\+h}!likely@{likely}}
+\index{likely@{likely}!rte\+\_\+branch\+\_\+prediction.\+h@{rte\+\_\+branch\+\_\+prediction.\+h}}
+\subsubsection[{likely}]{\setlength{\rightskip}{0pt plus 5cm}\#define likely(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+builtin\+\_\+expect((x),1)}\label{rte__branch__prediction_8h_a217a0bd562b98ae8c2ffce44935351e1}
+Check if a branch is likely to be taken.
+
+This compiler builtin allows the developer to indicate if a branch is likely to be taken. Example\+:
+
+if (likely(x $>$ 1)) do\+\_\+stuff(); \hypertarget{rte__branch__prediction_8h_ac6c45889010c1bd68631771b64f18101}{}\index{rte\+\_\+branch\+\_\+prediction.\+h@{rte\+\_\+branch\+\_\+prediction.\+h}!unlikely@{unlikely}}
+\index{unlikely@{unlikely}!rte\+\_\+branch\+\_\+prediction.\+h@{rte\+\_\+branch\+\_\+prediction.\+h}}
+\subsubsection[{unlikely}]{\setlength{\rightskip}{0pt plus 5cm}\#define unlikely(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+builtin\+\_\+expect((x),0)}\label{rte__branch__prediction_8h_ac6c45889010c1bd68631771b64f18101}
+Check if a branch is unlikely to be taken.
+
+This compiler builtin allows the developer to indicate if a branch is unlikely to be taken. Example\+:
+
+if (\hyperlink{rte__branch__prediction_8h_ac6c45889010c1bd68631771b64f18101}{unlikely(x $<$ 1)}) do\+\_\+stuff(); 

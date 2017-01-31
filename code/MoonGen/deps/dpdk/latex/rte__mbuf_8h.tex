@@ -1,0 +1,951 @@
+\hypertarget{rte__mbuf_8h}{}\section{lib/librte\+\_\+mbuf/rte\+\_\+mbuf.h File Reference}
+\label{rte__mbuf_8h}\index{lib/librte\+\_\+mbuf/rte\+\_\+mbuf.\+h@{lib/librte\+\_\+mbuf/rte\+\_\+mbuf.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mempool.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+atomic.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+prefetch.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__ctrlmbuf}{rte\+\_\+ctrlmbuf}
+\item 
+union \hyperlink{unionrte__vlan__macip}{rte\+\_\+vlan\+\_\+macip}
+\item 
+struct \hyperlink{structrte__pktmbuf}{rte\+\_\+pktmbuf}
+\item 
+struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf}
+\item 
+struct \hyperlink{structrte__pktmbuf__pool__private}{rte\+\_\+pktmbuf\+\_\+pool\+\_\+private}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__mbuf_8h_a0c6d1e9b9fc2c31f5476133e4370be3c}{P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}~0x0001
+\item 
+\#define \hyperlink{rte__mbuf_8h_a5ded7bd60d9874f2c6011d0c269d4492}{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H}~0x0002
+\item 
+\#define \hyperlink{rte__mbuf_8h_a4521f83d79ebbfe8a6a1b76205c21699}{P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R}~0x0004
+\item 
+\#define \hyperlink{rte__mbuf_8h_a185cd397ccf014163c7d0d1a76d65eb9}{P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}~0x0008
+\item 
+\#define \hyperlink{rte__mbuf_8h_ad63578554776ee75a77d98241031ab7a}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}~0x0010
+\item 
+\#define \hyperlink{rte__mbuf_8h_a026eafe8df454a59c4dba976eb93d0b3}{P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_aefa6cf42277d24fcabb456438a0ff9b0}{P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a36729827842abdc60cdad0f71583c63d}{P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a97c16b3af321c6ff34a2970b6662699a}{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_aeaa513865bab4deb086e4c9ce2fc6afa}{P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_af31861612cb27c2a27827b5745dacb8c}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}~0x0020
+\item 
+\#define \hyperlink{rte__mbuf_8h_a38993c5da2be5c9fe74b182b075032fe}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}~0x0040
+\item 
+\#define \hyperlink{rte__mbuf_8h_a3d40fdb34222fa47b9627803f1da88a0}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}~0x0080
+\item 
+\#define \hyperlink{rte__mbuf_8h_a967eba228c4a5e21f599f801cca767de}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}~0x0100
+\item 
+\#define \hyperlink{rte__mbuf_8h_a4c7ca1953f60e88311695f3036b46dc1}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P}~0x0200
+\item 
+\#define \hyperlink{rte__mbuf_8h_acac53e94ad2b242eb7afe5c07f9b2ff2}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}~0x0400
+\item 
+\#define \hyperlink{rte__mbuf_8h_aab0d1c6738680ac92bcf0f9a7ec16215}{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}~0x0800
+\item 
+\#define \hyperlink{rte__mbuf_8h_a51280725dafdf282a80b2d964418798c}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M}~0x1000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a3eebc4f47a8981d2cdad917b032b81b9}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M}~0x1000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a372bd340bd66cc3b906e8dff3a797ec9}{P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M}~0x0001
+\item 
+\#define \hyperlink{rte__mbuf_8h_a9d2d4eca2fab4ef35c8f8a7f3bbe9fe2}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4}~\hyperlink{rte__mbuf_8h_af31861612cb27c2a27827b5745dacb8c}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}
+\item 
+\#define \hyperlink{rte__mbuf_8h_a8478d650a7d2c49b1e1a173e52d52d35}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6}~\hyperlink{rte__mbuf_8h_a3d40fdb34222fa47b9627803f1da88a0}{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}
+\item 
+\#define \hyperlink{rte__mbuf_8h_a84461fc0150a47737cb765e5db96d868}{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K}~0x6000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a555401418f43fe357a838856b1e49726}{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M}~0x0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a1f4f9c739ef914bcd6c5fae63a4e2b9c}{P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M}~0x2000
+\item 
+\#define \hyperlink{rte__mbuf_8h_af3d1aa5cec10f00975ae4cd71c4c961e}{P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M}~0x4000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a25b82ba8fa86ddfdbf9237f67a37c366}{P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M}~0x6000
+\item 
+\#define \hyperlink{rte__mbuf_8h_abc825dad2d8379b581b597e8ea6c42bc}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}~0x8000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a5714537b48936d64c0c7360de4801e7f}{P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K}~(\hyperlink{rte__mbuf_8h_aab0d1c6738680ac92bcf0f9a7ec16215}{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T} $\vert$ \hyperlink{rte__mbuf_8h_a51280725dafdf282a80b2d964418798c}{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M} $\vert$ \hyperlink{rte__mbuf_8h_a84461fc0150a47737cb765e5db96d868}{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K})
+\item 
+\#define \hyperlink{rte__mbuf_8h_a5ca9398d26670ec47e302fd526e73356}{T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}~0x\+F\+F\+F\+F0000
+\item 
+\#define \hyperlink{rte__mbuf_8h_a530008ce4092f29e8d51da5e76546401}{T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}~0x0000\+F\+E00
+\item 
+\#define \hyperlink{rte__mbuf_8h_add1c489d86d8d74cf9b4d4c0a811f417}{T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}~0x000001\+F\+F
+\item 
+\#define \hyperlink{rte__mbuf_8h_a3a886875abd1e760662791bfd4b030f1}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}(ba)~(((struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$)(ba)) -\/ 1)
+\item 
+\#define \hyperlink{rte__mbuf_8h_ab56a047fab76317517a34b9bae091ad4}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R}(mb)~(((struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$)(mb)) + 1)
+\item 
+\#define \hyperlink{rte__mbuf_8h_abb691ea9090822fd6bd382a9f654598b}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T}(mb)~(\hyperlink{rte__mbuf_8h_a3a886875abd1e760662791bfd4b030f1}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}((mb)-\/$>$buf\+\_\+addr) != (mb))
+\item 
+\#define \hyperlink{rte__mbuf_8h_ac63d569db3cfb4a27bc4af31d7b8d5e4}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T}(mb)~(\hyperlink{rte__mbuf_8h_a3a886875abd1e760662791bfd4b030f1}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}((mb)-\/$>$buf\+\_\+addr) == (mb))
+\item 
+\#define \hyperlink{rte__mbuf_8h_a4156d215249bc6856807632dda761192}{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check}(m,  t,  is\+\_\+h)~do \{ \} while(0)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a387287b946b9fde269b5d34e08c28e67}{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw}(m,  t,  is\+\_\+h)~do \{ \} while(0)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a78543ac3e988c070b96fee445b66e646}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T}(exp)~do \{ \} while(0)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a01c79f6cb6bdeae531469d0a648d7771}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E}(m)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a49120430b211b2b6aab5dacfaaaf3aa1}{rte\+\_\+ctrlmbuf\+\_\+data}(m)~((m)-\/$>$ctrl.\+data)
+\item 
+\#define \hyperlink{rte__mbuf_8h_ab3d5990c3ca14784ed3e0135844282a3}{rte\+\_\+ctrlmbuf\+\_\+len}(m)~((m)-\/$>$ctrl.\+data\+\_\+len)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a2a8b10263496c7b580e9d0c7f2a1f073}{rte\+\_\+pktmbuf\+\_\+mtod}(m,  t)~((t)((m)-\/$>$pkt.\+data))
+\item 
+\#define \hyperlink{rte__mbuf_8h_a7a7ea614c79d5b9ed790a56c1c79189d}{rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len}(m)~((m)-\/$>$pkt.\+pkt\+\_\+len)
+\item 
+\#define \hyperlink{rte__mbuf_8h_a2a1e1b30162161ed11d3ba2faf7bbf13}{rte\+\_\+pktmbuf\+\_\+data\+\_\+len}(m)~((m)-\/$>$pkt.\+data\+\_\+len)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680}{rte\+\_\+mbuf\+\_\+type} \{ \hyperlink{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a5c79adab7a87be7703465f4ba4c70c3f}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L}, 
+\hyperlink{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a21c7a9d99631f89d88fa217e5bc5a2e9}{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \hyperlink{rte__mbuf_8h_abb7eb5fa1599b7f6237040b95d8893de}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, int16\+\_\+t value)
+\item 
+static uint16\+\_\+t \hyperlink{rte__mbuf_8h_a9cad099c1aedd46af38588ad97dabd65}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read} (const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static void \hyperlink{rte__mbuf_8h_a86233fc739e93e6d0136034ea7066e69}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, uint16\+\_\+t new\+\_\+value)
+\item 
+void \hyperlink{rte__mbuf_8h_aa34ecb67be4e095c2ea5b36206e57643}{rte\+\_\+mbuf\+\_\+sanity\+\_\+check} (const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, enum \hyperlink{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680}{rte\+\_\+mbuf\+\_\+type} t, int is\+\_\+header)
+\item 
+void \hyperlink{rte__mbuf_8h_adaf3671821022dc9e7d84e6dded876ed}{rte\+\_\+ctrlmbuf\+\_\+init} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$opaque\+\_\+arg, void $\ast$m, unsigned i)
+\item 
+static struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__mbuf_8h_aa7c6c691387cc0a783fb431c84153ba2}{rte\+\_\+ctrlmbuf\+\_\+alloc} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static void \hyperlink{rte__mbuf_8h_a1a518f56925c23048ef724d945a62abd}{rte\+\_\+ctrlmbuf\+\_\+free} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+void \hyperlink{rte__mbuf_8h_a7c0d0b427cb071856f2ff0805d608e35}{rte\+\_\+pktmbuf\+\_\+init} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$opaque\+\_\+arg, void $\ast$m, unsigned i)
+\item 
+void \hyperlink{rte__mbuf_8h_af714a7341cb37bc2530ac07c84c829b6}{rte\+\_\+pktmbuf\+\_\+pool\+\_\+init} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$opaque\+\_\+arg)
+\item 
+static void \hyperlink{rte__mbuf_8h_afc84d82d50361f568dd1d3a0e95d4aa4}{rte\+\_\+pktmbuf\+\_\+reset} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__mbuf_8h_ad4d1c289d8cffc831dfb77c64f52447b}{rte\+\_\+pktmbuf\+\_\+alloc} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static void \hyperlink{rte__mbuf_8h_aa6dde16d0e43efd2d029d5ef6234ad0d}{rte\+\_\+pktmbuf\+\_\+attach} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$mi, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$md)
+\item 
+static void \hyperlink{rte__mbuf_8h_a6c4a685c7386d442b658db0a6edacb43}{rte\+\_\+pktmbuf\+\_\+detach} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static void \hyperlink{rte__mbuf_8h_a69d0817dfeb1385ae5056d67ea4eb245}{rte\+\_\+pktmbuf\+\_\+free\+\_\+seg} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static void \hyperlink{rte__mbuf_8h_a1215458932900b7cd5192326fa4a6902}{rte\+\_\+pktmbuf\+\_\+free} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__mbuf_8h_a1d26cc982f6363cd7492dd70cc5c287c}{rte\+\_\+pktmbuf\+\_\+clone} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$md, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static void \hyperlink{rte__mbuf_8h_a7ac5629940550649a2ef40029f5ad21a}{rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, int16\+\_\+t v)
+\item 
+static uint16\+\_\+t \hyperlink{rte__mbuf_8h_a2a67c1b6a6b7c07e488d5fed7b03502d}{rte\+\_\+pktmbuf\+\_\+headroom} (const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static uint16\+\_\+t \hyperlink{rte__mbuf_8h_a257bc8af3e8fde7eb6603bdf4ae0528e}{rte\+\_\+pktmbuf\+\_\+tailroom} (const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__mbuf_8h_a0c2d001cd113362dd123d663210afcbb}{rte\+\_\+pktmbuf\+\_\+lastseg} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+static char $\ast$ \hyperlink{rte__mbuf_8h_aadf5bef4ceb0b76dfafff0895f285ab0}{rte\+\_\+pktmbuf\+\_\+prepend} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, uint16\+\_\+t len)
+\item 
+static char $\ast$ \hyperlink{rte__mbuf_8h_ad5b0cd686ad3bcbb83416ca8395a080b}{rte\+\_\+pktmbuf\+\_\+append} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, uint16\+\_\+t len)
+\item 
+static char $\ast$ \hyperlink{rte__mbuf_8h_a1bbd752194759ce7b419c4998f2e8651}{rte\+\_\+pktmbuf\+\_\+adj} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, uint16\+\_\+t len)
+\item 
+static int \hyperlink{rte__mbuf_8h_abe1bed439015acec170d1342e8dabb3b}{rte\+\_\+pktmbuf\+\_\+trim} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, uint16\+\_\+t len)
+\item 
+static int \hyperlink{rte__mbuf_8h_a511a116ae4822037d4f1fb561aa4ffcf}{rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous} (const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m)
+\item 
+void \hyperlink{rte__mbuf_8h_a92788c9769a5561814c77ae2e6f65e7e}{rte\+\_\+pktmbuf\+\_\+dump} (F\+I\+L\+E $\ast$f, const struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$m, unsigned dump\+\_\+len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Mbuf
+
+The mbuf library provides the ability to create and destroy buffers that may be used by the R\+T\+E application to store message buffers. The message buffers are stored in a mempool, using the R\+T\+E mempool library.
+
+This library provide an A\+P\+I to allocate/free mbufs, manipulate control message buffer (ctrlmbuf), which are generic message buffers, and packet buffers (pktmbuf), which are used to carry network packets.
+
+To understand the concepts of packet buffers or mbufs, you should read \char`\"{}\+T\+C\+P/\+I\+P Illustrated, Volume 2\+: The Implementation,
+\+Addison-\/\+Wesley, 1995, I\+S\+B\+N 0-\/201-\/63354-\/\+X from Richard Stevens\char`\"{} \href{http://www.kohala.com/start/tcpipiv2.html}{\tt http\+://www.\+kohala.\+com/start/tcpipiv2.\+html}
+
+The main modification of this implementation is the use of mbuf for transports other than packets. mbufs can have other types. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__mbuf_8h_a4156d215249bc6856807632dda761192}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check@{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check}}
+\index{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check@{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check(
+\begin{DoxyParamCaption}
+\item[{}]{m, }
+\item[{}]{t, }
+\item[{}]{is\+\_\+h}
+\end{DoxyParamCaption}
+)~do \{ \} while(0)}\label{rte__mbuf_8h_a4156d215249bc6856807632dda761192}
+check mbuf type in debug mode \hypertarget{rte__mbuf_8h_a387287b946b9fde269b5d34e08c28e67}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw@{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw}}
+\index{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw@{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+rte\+\_\+mbuf\+\_\+sanity\+\_\+check\+\_\+raw(
+\begin{DoxyParamCaption}
+\item[{}]{m, }
+\item[{}]{t, }
+\item[{}]{is\+\_\+h}
+\end{DoxyParamCaption}
+)~do \{ \} while(0)}\label{rte__mbuf_8h_a387287b946b9fde269b5d34e08c28e67}
+check mbuf type in debug mode if mbuf pointer is not null \hypertarget{rte__mbuf_8h_a026eafe8df454a59c4dba976eb93d0b3}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+E\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D~0x0000}\label{rte__mbuf_8h_a026eafe8df454a59c4dba976eb93d0b3}
+External I\+P header checksum error. \hypertarget{rte__mbuf_8h_a4521f83d79ebbfe8a6a1b76205c21699}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+F\+D\+I\+R~0x0004}\label{rte__mbuf_8h_a4521f83d79ebbfe8a6a1b76205c21699}
+R\+X packet with F\+D\+I\+R infos. \hypertarget{rte__mbuf_8h_a36729827842abdc60cdad0f71583c63d}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+H\+B\+U\+F\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W~0x0000}\label{rte__mbuf_8h_a36729827842abdc60cdad0f71583c63d}
+Header buffer overflow. \hypertarget{rte__mbuf_8h_a4c7ca1953f60e88311695f3036b46dc1}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+P\+T\+P~0x0200}\label{rte__mbuf_8h_a4c7ca1953f60e88311695f3036b46dc1}
+R\+X I\+E\+E\+E1588 L2 Ethernet P\+T Packet. \hypertarget{rte__mbuf_8h_acac53e94ad2b242eb7afe5c07f9b2ff2}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T~0x0400}\label{rte__mbuf_8h_acac53e94ad2b242eb7afe5c07f9b2ff2}
+R\+X I\+E\+E\+E1588 L2/\+L4 timestamped packet. \hypertarget{rte__mbuf_8h_ad63578554776ee75a77d98241031ab7a}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D~0x0010}\label{rte__mbuf_8h_ad63578554776ee75a77d98241031ab7a}
+I\+P cksum of R\+X pkt. is not O\+K. \hypertarget{rte__mbuf_8h_af31861612cb27c2a27827b5745dacb8c}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R~0x0020}\label{rte__mbuf_8h_af31861612cb27c2a27827b5745dacb8c}
+R\+X packet with I\+Pv4 header. \hypertarget{rte__mbuf_8h_a38993c5da2be5c9fe74b182b075032fe}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T~0x0040}\label{rte__mbuf_8h_a38993c5da2be5c9fe74b182b075032fe}
+R\+X packet with extended I\+Pv4 header. \hypertarget{rte__mbuf_8h_a3d40fdb34222fa47b9627803f1da88a0}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R~0x0080}\label{rte__mbuf_8h_a3d40fdb34222fa47b9627803f1da88a0}
+R\+X packet with I\+Pv6 header. \hypertarget{rte__mbuf_8h_a967eba228c4a5e21f599f801cca767de}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R\+\_\+\+E\+X\+T~0x0100}\label{rte__mbuf_8h_a967eba228c4a5e21f599f801cca767de}
+R\+X packet with extended I\+Pv6 header. \hypertarget{rte__mbuf_8h_a185cd397ccf014163c7d0d1a76d65eb9}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D@{P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+L4\+\_\+\+C\+K\+S\+U\+M\+\_\+\+B\+A\+D~0x0008}\label{rte__mbuf_8h_a185cd397ccf014163c7d0d1a76d65eb9}
+L4 cksum of R\+X pkt. is not O\+K. \hypertarget{rte__mbuf_8h_aeaa513865bab4deb086e4c9ce2fc6afa}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R~0x0000}\label{rte__mbuf_8h_aeaa513865bab4deb086e4c9ce2fc6afa}
+M\+A\+C error. \hypertarget{rte__mbuf_8h_aefa6cf42277d24fcabb456438a0ff9b0}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E@{P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E@{P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+O\+V\+E\+R\+S\+I\+Z\+E~0x0000}\label{rte__mbuf_8h_aefa6cf42277d24fcabb456438a0ff9b0}
+Num of desc of an R\+X pkt oversize. \hypertarget{rte__mbuf_8h_a97c16b3af321c6ff34a2970b6662699a}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R@{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+E\+C\+I\+P\+\_\+\+E\+R\+R~0x0000}\label{rte__mbuf_8h_a97c16b3af321c6ff34a2970b6662699a}
+Hardware processing error. \hypertarget{rte__mbuf_8h_a5ded7bd60d9874f2c6011d0c269d4492}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H@{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H@{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+R\+S\+S\+\_\+\+H\+A\+S\+H~0x0002}\label{rte__mbuf_8h_a5ded7bd60d9874f2c6011d0c269d4492}
+R\+X packet with R\+S\+S hash result. \hypertarget{rte__mbuf_8h_a0c6d1e9b9fc2c31f5476133e4370be3c}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}}
+\index{P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T@{P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T~0x0001}\label{rte__mbuf_8h_a0c6d1e9b9fc2c31f5476133e4370be3c}
+R\+X packet is a 802.\+1q V\+L\+A\+N packet. \hypertarget{rte__mbuf_8h_abc825dad2d8379b581b597e8ea6c42bc}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+E\+E\+E1588\+\_\+\+T\+M\+S\+T~0x8000}\label{rte__mbuf_8h_abc825dad2d8379b581b597e8ea6c42bc}
+T\+X I\+E\+E\+E1588 packet to timestamp. \hypertarget{rte__mbuf_8h_a51280725dafdf282a80b2d964418798c}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M~0x1000}\label{rte__mbuf_8h_a51280725dafdf282a80b2d964418798c}
+I\+P cksum of T\+X pkt. computed by N\+I\+C. \hypertarget{rte__mbuf_8h_a9d2d4eca2fab4ef35c8f8a7f3bbe9fe2}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4~{\bf P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V4\+\_\+\+H\+D\+R}}\label{rte__mbuf_8h_a9d2d4eca2fab4ef35c8f8a7f3bbe9fe2}
+I\+Pv4 with no I\+P checksum offload. \hypertarget{rte__mbuf_8h_a3eebc4f47a8981d2cdad917b032b81b9}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V4\+\_\+\+C\+S\+U\+M~0x1000}\label{rte__mbuf_8h_a3eebc4f47a8981d2cdad917b032b81b9}
+Alias of P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M. \hypertarget{rte__mbuf_8h_a8478d650a7d2c49b1e1a173e52d52d35}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6@{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+V6~{\bf P\+K\+T\+\_\+\+R\+X\+\_\+\+I\+P\+V6\+\_\+\+H\+D\+R}}\label{rte__mbuf_8h_a8478d650a7d2c49b1e1a173e52d52d35}
+I\+Pv6 packet \hypertarget{rte__mbuf_8h_a84461fc0150a47737cb765e5db96d868}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K@{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K@{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K~0x6000}\label{rte__mbuf_8h_a84461fc0150a47737cb765e5db96d868}
+Mask bits for L4 checksum offload request. \hypertarget{rte__mbuf_8h_a555401418f43fe357a838856b1e49726}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+N\+O\+\_\+\+C\+K\+S\+U\+M~0x0000}\label{rte__mbuf_8h_a555401418f43fe357a838856b1e49726}
+Disable L4 cksum of T\+X pkt. \hypertarget{rte__mbuf_8h_a372bd340bd66cc3b906e8dff3a797ec9}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+N\+O\+\_\+\+C\+R\+C\+\_\+\+C\+S\+U\+M~0x0001}\label{rte__mbuf_8h_a372bd340bd66cc3b906e8dff3a797ec9}
+Disable C\+R\+C calculation. Note\+: overlaps with R\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T. \hypertarget{rte__mbuf_8h_a5714537b48936d64c0c7360de4801e7f}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K@{P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K@{P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+O\+F\+F\+L\+O\+A\+D\+\_\+\+M\+A\+S\+K~({\bf P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T} $\vert$ {\bf P\+K\+T\+\_\+\+T\+X\+\_\+\+I\+P\+\_\+\+C\+K\+S\+U\+M} $\vert$ {\bf P\+K\+T\+\_\+\+T\+X\+\_\+\+L4\+\_\+\+M\+A\+S\+K})}\label{rte__mbuf_8h_a5714537b48936d64c0c7360de4801e7f}
+Bit Mask to indicate what bits required for building T\+X context \hypertarget{rte__mbuf_8h_af3d1aa5cec10f00975ae4cd71c4c961e}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+S\+C\+T\+P\+\_\+\+C\+K\+S\+U\+M~0x4000}\label{rte__mbuf_8h_af3d1aa5cec10f00975ae4cd71c4c961e}
+S\+C\+T\+P cksum of T\+X pkt. computed by N\+I\+C. \hypertarget{rte__mbuf_8h_a1f4f9c739ef914bcd6c5fae63a4e2b9c}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+T\+C\+P\+\_\+\+C\+K\+S\+U\+M~0x2000}\label{rte__mbuf_8h_a1f4f9c739ef914bcd6c5fae63a4e2b9c}
+T\+C\+P cksum of T\+X pkt. computed by N\+I\+C. \hypertarget{rte__mbuf_8h_a25b82ba8fa86ddfdbf9237f67a37c366}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M@{P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+U\+D\+P\+\_\+\+C\+K\+S\+U\+M~0x6000}\label{rte__mbuf_8h_a25b82ba8fa86ddfdbf9237f67a37c366}
+U\+D\+P cksum of T\+X pkt. computed by N\+I\+C. \hypertarget{rte__mbuf_8h_aab0d1c6738680ac92bcf0f9a7ec16215}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T@{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}}
+\index{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T@{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+K\+T\+\_\+\+T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+P\+K\+T~0x0800}\label{rte__mbuf_8h_aab0d1c6738680ac92bcf0f9a7ec16215}
+T\+X packet is a 802.\+1q V\+L\+A\+N packet. \hypertarget{rte__mbuf_8h_a49120430b211b2b6aab5dacfaaaf3aa1}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+ctrlmbuf\+\_\+data@{rte\+\_\+ctrlmbuf\+\_\+data}}
+\index{rte\+\_\+ctrlmbuf\+\_\+data@{rte\+\_\+ctrlmbuf\+\_\+data}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+ctrlmbuf\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+ctrlmbuf\+\_\+data(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~((m)-\/$>$ctrl.\+data)}\label{rte__mbuf_8h_a49120430b211b2b6aab5dacfaaaf3aa1}
+A macro that returns the pointer to the carried data.
+
+The value that can be read or assigned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The control mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_ab3d5990c3ca14784ed3e0135844282a3}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+ctrlmbuf\+\_\+len@{rte\+\_\+ctrlmbuf\+\_\+len}}
+\index{rte\+\_\+ctrlmbuf\+\_\+len@{rte\+\_\+ctrlmbuf\+\_\+len}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+ctrlmbuf\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+ctrlmbuf\+\_\+len(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~((m)-\/$>$ctrl.\+data\+\_\+len)}\label{rte__mbuf_8h_ab3d5990c3ca14784ed3e0135844282a3}
+A macro that returns the length of the carried data.
+
+The value that can be read or assigned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The control mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a78543ac3e988c070b96fee445b66e646}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+A\+S\+S\+E\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{exp}
+\end{DoxyParamCaption}
+)~do \{ \} while(0)}\label{rte__mbuf_8h_a78543ac3e988c070b96fee445b66e646}
+M\+B\+U\+F asserts in debug mode \hypertarget{rte__mbuf_8h_ac63d569db3cfb4a27bc4af31d7b8d5e4}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+D\+I\+R\+E\+C\+T(
+\begin{DoxyParamCaption}
+\item[{}]{mb}
+\end{DoxyParamCaption}
+)~({\bf R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}((mb)-\/$>$buf\+\_\+addr) == (mb))}\label{rte__mbuf_8h_ac63d569db3cfb4a27bc4af31d7b8d5e4}
+Returns T\+R\+U\+E if given mbuf is direct, or F\+A\+L\+S\+E otherwise. \hypertarget{rte__mbuf_8h_a3a886875abd1e760662791bfd4b030f1}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R(
+\begin{DoxyParamCaption}
+\item[{}]{ba}
+\end{DoxyParamCaption}
+)~(((struct {\bf rte\+\_\+mbuf} $\ast$)(ba)) -\/ 1)}\label{rte__mbuf_8h_a3a886875abd1e760662791bfd4b030f1}
+Given the buf\+\_\+addr returns the pointer to corresponding mbuf. \hypertarget{rte__mbuf_8h_abb691ea9090822fd6bd382a9f654598b}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+I\+N\+D\+I\+R\+E\+C\+T(
+\begin{DoxyParamCaption}
+\item[{}]{mb}
+\end{DoxyParamCaption}
+)~({\bf R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+F\+R\+O\+M\+\_\+\+B\+A\+D\+D\+R}((mb)-\/$>$buf\+\_\+addr) != (mb))}\label{rte__mbuf_8h_abb691ea9090822fd6bd382a9f654598b}
+Returns T\+R\+U\+E if given mbuf is indirect, or F\+A\+L\+S\+E otherwise. \hypertarget{rte__mbuf_8h_a01c79f6cb6bdeae531469d0a648d7771}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+R\+E\+F\+E\+T\+C\+H\+\_\+\+T\+O\+\_\+\+F\+R\+E\+E(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_a01c79f6cb6bdeae531469d0a648d7771}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{       \(\backslash\)
+    if ((m) != NULL)                        \hyperlink{rte__prefetch_8h_a37f0dd7d81e95c2d3139ddf50090b6e3}{\(\backslash\)}
+\hyperlink{rte__prefetch_8h_a37f0dd7d81e95c2d3139ddf50090b6e3}{        rte\_prefetch0}(m);               \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+Mbuf prefetch \hypertarget{rte__mbuf_8h_ab56a047fab76317517a34b9bae091ad4}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R}}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+T\+O\+\_\+\+B\+A\+D\+D\+R(
+\begin{DoxyParamCaption}
+\item[{}]{mb}
+\end{DoxyParamCaption}
+)~(((struct {\bf rte\+\_\+mbuf} $\ast$)(mb)) + 1)}\label{rte__mbuf_8h_ab56a047fab76317517a34b9bae091ad4}
+Given the pointer to mbuf returns an address where it\textquotesingle{}s buf\+\_\+addr should point to. \hypertarget{rte__mbuf_8h_a2a1e1b30162161ed11d3ba2faf7bbf13}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+data\+\_\+len@{rte\+\_\+pktmbuf\+\_\+data\+\_\+len}}
+\index{rte\+\_\+pktmbuf\+\_\+data\+\_\+len@{rte\+\_\+pktmbuf\+\_\+data\+\_\+len}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+data\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+pktmbuf\+\_\+data\+\_\+len(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~((m)-\/$>$pkt.\+data\+\_\+len)}\label{rte__mbuf_8h_a2a1e1b30162161ed11d3ba2faf7bbf13}
+A macro that returns the length of the segment.
+
+The value can be read or assigned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a2a8b10263496c7b580e9d0c7f2a1f073}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+mtod@{rte\+\_\+pktmbuf\+\_\+mtod}}
+\index{rte\+\_\+pktmbuf\+\_\+mtod@{rte\+\_\+pktmbuf\+\_\+mtod}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+mtod}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+pktmbuf\+\_\+mtod(
+\begin{DoxyParamCaption}
+\item[{}]{m, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~((t)((m)-\/$>$pkt.\+data))}\label{rte__mbuf_8h_a2a8b10263496c7b580e9d0c7f2a1f073}
+A macro that points to the start of the data in the mbuf.
+
+The returned pointer is cast to type t. Before using this function, the user must ensure that m\+\_\+headlen(m) is large enough to read its data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+{\em t} & The type to cast the result into. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a7a7ea614c79d5b9ed790a56c1c79189d}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len@{rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len}}
+\index{rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len@{rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+pktmbuf\+\_\+pkt\+\_\+len(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~((m)-\/$>$pkt.\+pkt\+\_\+len)}\label{rte__mbuf_8h_a7a7ea614c79d5b9ed790a56c1c79189d}
+A macro that returns the length of the packet.
+
+The value can be read or assigned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_add1c489d86d8d74cf9b4d4c0a811f417}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}}
+\index{T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+X\+\_\+\+I\+P\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K~0x000001\+F\+F}\label{rte__mbuf_8h_add1c489d86d8d74cf9b4d4c0a811f417}
+I\+P length -\/ 9-\/bits. M\+A\+C+\+I\+P length. \hypertarget{rte__mbuf_8h_a530008ce4092f29e8d51da5e76546401}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}}
+\index{T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+X\+\_\+\+M\+A\+C\+\_\+\+L\+E\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K~0x0000\+F\+E00}\label{rte__mbuf_8h_a530008ce4092f29e8d51da5e76546401}
+M\+A\+C length -\/ 7-\/bits. \hypertarget{rte__mbuf_8h_a5ca9398d26670ec47e302fd526e73356}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}}
+\index{T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K@{T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+X\+\_\+\+V\+L\+A\+N\+\_\+\+C\+M\+P\+\_\+\+M\+A\+S\+K~0x\+F\+F\+F\+F0000}\label{rte__mbuf_8h_a5ca9398d26670ec47e302fd526e73356}
+V\+L\+A\+N length -\/ 16-\/bits. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+mbuf\+\_\+type@{rte\+\_\+mbuf\+\_\+type}}
+\index{rte\+\_\+mbuf\+\_\+type@{rte\+\_\+mbuf\+\_\+type}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+mbuf\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+mbuf\+\_\+type}}\label{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680}
+This enum indicates the mbuf type. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L}}\item[{\em 
+\hypertarget{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a5c79adab7a87be7703465f4ba4c70c3f}{}R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+C\+T\+R\+L\label{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a5c79adab7a87be7703465f4ba4c70c3f}
+}]Control mbuf. \index{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T@{R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T}}\item[{\em 
+\hypertarget{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a21c7a9d99631f89d88fa217e5bc5a2e9}{}R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+P\+K\+T\label{rte__mbuf_8h_ae899f6317cff890582d86170b44d6680a21c7a9d99631f89d88fa217e5bc5a2e9}
+}]Packet mbuf. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__mbuf_8h_aa7c6c691387cc0a783fb431c84153ba2}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+ctrlmbuf\+\_\+alloc@{rte\+\_\+ctrlmbuf\+\_\+alloc}}
+\index{rte\+\_\+ctrlmbuf\+\_\+alloc@{rte\+\_\+ctrlmbuf\+\_\+alloc}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+ctrlmbuf\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+ctrlmbuf\+\_\+alloc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__mbuf_8h_aa7c6c691387cc0a783fb431c84153ba2}
+Allocate a new mbuf (type is ctrl) from mempool {\itshape mp}.
+
+This new mbuf is initialized with data pointing to the beginning of buffer, and with a length of zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & The mempool from which the mbuf is allocated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The pointer to the new mbuf on success.
+\item N\+U\+L\+L if allocation failed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_a1a518f56925c23048ef724d945a62abd}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+ctrlmbuf\+\_\+free@{rte\+\_\+ctrlmbuf\+\_\+free}}
+\index{rte\+\_\+ctrlmbuf\+\_\+free@{rte\+\_\+ctrlmbuf\+\_\+free}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+ctrlmbuf\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+ctrlmbuf\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a1a518f56925c23048ef724d945a62abd}
+Free a control mbuf back into its original mempool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The control mbuf to be freed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_adaf3671821022dc9e7d84e6dded876ed}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+ctrlmbuf\+\_\+init@{rte\+\_\+ctrlmbuf\+\_\+init}}
+\index{rte\+\_\+ctrlmbuf\+\_\+init@{rte\+\_\+ctrlmbuf\+\_\+init}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+ctrlmbuf\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+ctrlmbuf\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{opaque\+\_\+arg, }
+\item[{void $\ast$}]{m, }
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_adaf3671821022dc9e7d84e6dded876ed}
+The control mbuf constructor.
+
+This function initializes some fields in an mbuf structure that are not modified by the user once created (mbuf type, origin pool, buffer start address, and so on). This function is given as a callback function to \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()} at pool creation time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & The mempool from which the mbuf is allocated. \\
+\hline
+{\em opaque\+\_\+arg} & A pointer that can be used by the user to retrieve useful information for mbuf initialization. This pointer comes from the {\ttfamily init\+\_\+arg} parameter of \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()}. \\
+\hline
+{\em m} & The mbuf to initialize. \\
+\hline
+{\em i} & The index of the mbuf in the pool table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a9cad099c1aedd46af38588ad97dabd65}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+mbuf\+\_\+refcnt\+\_\+read@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read}}
+\index{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\+\_\+t rte\+\_\+mbuf\+\_\+refcnt\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a9cad099c1aedd46af38588ad97dabd65}
+Reads the value of an mbuf\textquotesingle{}s refcnt. \hypertarget{rte__mbuf_8h_a86233fc739e93e6d0136034ea7066e69}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+mbuf\+\_\+refcnt\+\_\+set@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set}}
+\index{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mbuf\+\_\+refcnt\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{new\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a86233fc739e93e6d0136034ea7066e69}
+Sets an mbuf\textquotesingle{}s refcnt to the defined value. \hypertarget{rte__mbuf_8h_abb7eb5fa1599b7f6237040b95d8893de}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+mbuf\+\_\+refcnt\+\_\+update@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update}}
+\index{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update@{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\+\_\+t rte\+\_\+mbuf\+\_\+refcnt\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{int16\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_abb7eb5fa1599b7f6237040b95d8893de}
+Adds given value to an mbuf\textquotesingle{}s refcnt and returns its new value. \hypertarget{rte__mbuf_8h_aa34ecb67be4e095c2ea5b36206e57643}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+mbuf\+\_\+sanity\+\_\+check@{rte\+\_\+mbuf\+\_\+sanity\+\_\+check}}
+\index{rte\+\_\+mbuf\+\_\+sanity\+\_\+check@{rte\+\_\+mbuf\+\_\+sanity\+\_\+check}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+mbuf\+\_\+sanity\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+mbuf\+\_\+sanity\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{enum {\bf rte\+\_\+mbuf\+\_\+type}}]{t, }
+\item[{int}]{is\+\_\+header}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_aa34ecb67be4e095c2ea5b36206e57643}
+Sanity checks on an mbuf.
+
+Check the consistency of the given mbuf. The function will cause a panic if corruption is detected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The mbuf to be checked. \\
+\hline
+{\em t} & The expected type of the mbuf. \\
+\hline
+{\em is\+\_\+header} & True if the mbuf is a packet header, false if it is a sub-\/segment of a packet (in this case, some fields like nb\+\_\+segs are not checked) \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a1bbd752194759ce7b419c4998f2e8651}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+adj@{rte\+\_\+pktmbuf\+\_\+adj}}
+\index{rte\+\_\+pktmbuf\+\_\+adj@{rte\+\_\+pktmbuf\+\_\+adj}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+adj}]{\setlength{\rightskip}{0pt plus 5cm}static char$\ast$ rte\+\_\+pktmbuf\+\_\+adj (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a1bbd752194759ce7b419c4998f2e8651}
+Remove len bytes at the beginning of an mbuf.
+
+Returns a pointer to the start address of the new data area. If the length is greater than the length of the first segment, then the function will fail and return N\+U\+L\+L, without modifying the mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+{\em len} & The amount of data to remove (in bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new start of the data. 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_ad4d1c289d8cffc831dfb77c64f52447b}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+alloc@{rte\+\_\+pktmbuf\+\_\+alloc}}
+\index{rte\+\_\+pktmbuf\+\_\+alloc@{rte\+\_\+pktmbuf\+\_\+alloc}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+pktmbuf\+\_\+alloc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__mbuf_8h_ad4d1c289d8cffc831dfb77c64f52447b}
+Allocate a new mbuf (type is pkt) from a mempool.
+
+This new mbuf contains one segment, which has a length of 0. The pointer to data is initialized to have some bytes of headroom in the buffer (if buffer size allows).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & The mempool from which the mbuf is allocated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The pointer to the new mbuf on success.
+\item N\+U\+L\+L if allocation failed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_ad5b0cd686ad3bcbb83416ca8395a080b}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+append@{rte\+\_\+pktmbuf\+\_\+append}}
+\index{rte\+\_\+pktmbuf\+\_\+append@{rte\+\_\+pktmbuf\+\_\+append}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+append}]{\setlength{\rightskip}{0pt plus 5cm}static char$\ast$ rte\+\_\+pktmbuf\+\_\+append (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_ad5b0cd686ad3bcbb83416ca8395a080b}
+Append len bytes to an mbuf.
+
+Append len bytes to an mbuf and return a pointer to the start address of the added data. If there is not enough tailroom in the last segment, the function will return N\+U\+L\+L, without modifying the mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+{\em len} & The amount of data to append (in bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the start of the newly appended data, or N\+U\+L\+L if there is not enough tailroom space in the last segment 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_aa6dde16d0e43efd2d029d5ef6234ad0d}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+attach@{rte\+\_\+pktmbuf\+\_\+attach}}
+\index{rte\+\_\+pktmbuf\+\_\+attach@{rte\+\_\+pktmbuf\+\_\+attach}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+attach}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+attach (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{mi, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{md}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_aa6dde16d0e43efd2d029d5ef6234ad0d}
+Attach packet mbuf to another packet mbuf. After attachment we refer the mbuf we attached as \textquotesingle{}indirect\textquotesingle{}, while mbuf we attached to as \textquotesingle{}direct\textquotesingle{}. Right now, not supported\+:
+\begin{DoxyItemize}
+\item attachment to indirect mbuf (e.\+g. -\/ md has to be direct).
+\item attachment for already indirect mbuf (e.\+g. -\/ mi has to be direct).
+\item mbuf we trying to attach (mi) is used by someone else e.\+g. it\textquotesingle{}s reference counter is greater then 1.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mi} & The indirect packet mbuf. \\
+\hline
+{\em md} & The direct packet mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a1d26cc982f6363cd7492dd70cc5c287c}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+clone@{rte\+\_\+pktmbuf\+\_\+clone}}
+\index{rte\+\_\+pktmbuf\+\_\+clone@{rte\+\_\+pktmbuf\+\_\+clone}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+clone}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+pktmbuf\+\_\+clone (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{md, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__mbuf_8h_a1d26cc982f6363cd7492dd70cc5c287c}
+Creates a \char`\"{}clone\char`\"{} of the given packet mbuf.
+
+Walks through all segments of the given packet mbuf, and for each of them\+:
+\begin{DoxyItemize}
+\item Creates a new packet mbuf from the given pool.
+\item Attaches newly created mbuf to the segment. Then updates pkt\+\_\+len and nb\+\_\+segs of the \char`\"{}clone\char`\"{} packet mbuf to match values from the original packet mbuf.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em md} & The packet mbuf to be cloned. \\
+\hline
+{\em mp} & The mempool from which the \char`\"{}clone\char`\"{} mbufs are allocated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The pointer to the new \char`\"{}clone\char`\"{} mbuf on success.
+\item N\+U\+L\+L if allocation fails. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_a6c4a685c7386d442b658db0a6edacb43}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+detach@{rte\+\_\+pktmbuf\+\_\+detach}}
+\index{rte\+\_\+pktmbuf\+\_\+detach@{rte\+\_\+pktmbuf\+\_\+detach}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+detach}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+detach (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a6c4a685c7386d442b658db0a6edacb43}
+Detach an indirect packet mbuf -\/
+\begin{DoxyItemize}
+\item restore original mbuf address and length values.
+\item reset pktmbuf data and data\+\_\+len to their default values. All other fields of the given packet mbuf will be left intact.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The indirect attached packet mbuf. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a92788c9769a5561814c77ae2e6f65e7e}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+dump@{rte\+\_\+pktmbuf\+\_\+dump}}
+\index{rte\+\_\+pktmbuf\+\_\+dump@{rte\+\_\+pktmbuf\+\_\+dump}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+pktmbuf\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{unsigned}]{dump\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_a92788c9769a5561814c77ae2e6f65e7e}
+Dump an mbuf structure to the console.
+
+Dump all fields for the given packet mbuf and all its associated segments (in the case of a chained buffer).
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em m} & The packet mbuf. \\
+\hline
+{\em dump\+\_\+len} & If dump\+\_\+len != 0, also dump the \char`\"{}dump\+\_\+len\char`\"{} first data bytes of the packet. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a1215458932900b7cd5192326fa4a6902}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+free@{rte\+\_\+pktmbuf\+\_\+free}}
+\index{rte\+\_\+pktmbuf\+\_\+free@{rte\+\_\+pktmbuf\+\_\+free}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a1215458932900b7cd5192326fa4a6902}
+Free a packet mbuf back into its original mempool.
+
+Free an mbuf, and all its segments in case of chained buffers. Each segment is added back into its original mempool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf to be freed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a69d0817dfeb1385ae5056d67ea4eb245}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+free\+\_\+seg@{rte\+\_\+pktmbuf\+\_\+free\+\_\+seg}}
+\index{rte\+\_\+pktmbuf\+\_\+free\+\_\+seg@{rte\+\_\+pktmbuf\+\_\+free\+\_\+seg}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+free\+\_\+seg}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+free\+\_\+seg (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a69d0817dfeb1385ae5056d67ea4eb245}
+Free a segment of a packet mbuf into its original mempool.
+
+Free an mbuf, without parsing other segments in case of chained buffers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf segment to be freed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a2a67c1b6a6b7c07e488d5fed7b03502d}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+headroom@{rte\+\_\+pktmbuf\+\_\+headroom}}
+\index{rte\+\_\+pktmbuf\+\_\+headroom@{rte\+\_\+pktmbuf\+\_\+headroom}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+headroom}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\+\_\+t rte\+\_\+pktmbuf\+\_\+headroom (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a2a67c1b6a6b7c07e488d5fed7b03502d}
+Get the headroom in a packet mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the headroom. 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_a7c0d0b427cb071856f2ff0805d608e35}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+init@{rte\+\_\+pktmbuf\+\_\+init}}
+\index{rte\+\_\+pktmbuf\+\_\+init@{rte\+\_\+pktmbuf\+\_\+init}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+pktmbuf\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{opaque\+\_\+arg, }
+\item[{void $\ast$}]{m, }
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_a7c0d0b427cb071856f2ff0805d608e35}
+The packet mbuf constructor.
+
+This function initializes some fields in the mbuf structure that are not modified by the user once created (mbuf type, origin pool, buffer start address, and so on). This function is given as a callback function to \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()} at pool creation time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & The mempool from which mbufs originate. \\
+\hline
+{\em opaque\+\_\+arg} & A pointer that can be used by the user to retrieve useful information for mbuf initialization. This pointer comes from the {\ttfamily init\+\_\+arg} parameter of \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()}. \\
+\hline
+{\em m} & The mbuf to initialize. \\
+\hline
+{\em i} & The index of the mbuf in the pool table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a511a116ae4822037d4f1fb561aa4ffcf}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous@{rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous}}
+\index{rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous@{rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+pktmbuf\+\_\+is\+\_\+contiguous (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a511a116ae4822037d4f1fb561aa4ffcf}
+Test if mbuf data is contiguous.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1, if all data is contiguous (one segment).
+\item 0, if there is several segments. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_a0c2d001cd113362dd123d663210afcbb}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+lastseg@{rte\+\_\+pktmbuf\+\_\+lastseg}}
+\index{rte\+\_\+pktmbuf\+\_\+lastseg@{rte\+\_\+pktmbuf\+\_\+lastseg}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+lastseg}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+pktmbuf\+\_\+lastseg (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__mbuf_8h_a0c2d001cd113362dd123d663210afcbb}
+Get the last segment of the packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The last segment of the given mbuf. 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_af714a7341cb37bc2530ac07c84c829b6}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+pool\+\_\+init@{rte\+\_\+pktmbuf\+\_\+pool\+\_\+init}}
+\index{rte\+\_\+pktmbuf\+\_\+pool\+\_\+init@{rte\+\_\+pktmbuf\+\_\+pool\+\_\+init}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+pool\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+pktmbuf\+\_\+pool\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{opaque\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__mbuf_8h_af714a7341cb37bc2530ac07c84c829b6}
+A packet mbuf pool constructor.
+
+This function initializes the mempool private data in the case of a pktmbuf pool. This private data is needed by the driver. The function is given as a callback function to \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()} at pool creation. It can be extended by the user, for example, to provide another packet size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & The mempool from which mbufs originate. \\
+\hline
+{\em opaque\+\_\+arg} & A pointer that can be used by the user to retrieve useful information for mbuf initialization. This pointer comes from the {\ttfamily init\+\_\+arg} parameter of \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_aadf5bef4ceb0b76dfafff0895f285ab0}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+prepend@{rte\+\_\+pktmbuf\+\_\+prepend}}
+\index{rte\+\_\+pktmbuf\+\_\+prepend@{rte\+\_\+pktmbuf\+\_\+prepend}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+prepend}]{\setlength{\rightskip}{0pt plus 5cm}static char$\ast$ rte\+\_\+pktmbuf\+\_\+prepend (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_aadf5bef4ceb0b76dfafff0895f285ab0}
+Prepend len bytes to an mbuf data area.
+
+Returns a pointer to the new data start address. If there is not enough headroom in the first segment, the function will return N\+U\+L\+L, without modifying the mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The pkt mbuf. \\
+\hline
+{\em len} & The amount of data to prepend (in bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the start of the newly prepended data, or N\+U\+L\+L if there is not enough headroom space in the first segment 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_a7ac5629940550649a2ef40029f5ad21a}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update@{rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update}}
+\index{rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update@{rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+refcnt\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{int16\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a7ac5629940550649a2ef40029f5ad21a}
+Adds given value to the refcnt of all packet mbuf segments.
+
+Walks through all segments of given packet mbuf and for each of them invokes \hyperlink{rte__mbuf_8h_abb7eb5fa1599b7f6237040b95d8893de}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf whose refcnt to be updated. \\
+\hline
+{\em v} & The value to add to the mbuf\textquotesingle{}s segments refcnt. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_afc84d82d50361f568dd1d3a0e95d4aa4}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+reset@{rte\+\_\+pktmbuf\+\_\+reset}}
+\index{rte\+\_\+pktmbuf\+\_\+reset@{rte\+\_\+pktmbuf\+\_\+reset}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+pktmbuf\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_afc84d82d50361f568dd1d3a0e95d4aa4}
+Reset the fields of a packet mbuf to their default values.
+
+The given mbuf must have only one segment.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf to be resetted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mbuf_8h_a257bc8af3e8fde7eb6603bdf4ae0528e}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+tailroom@{rte\+\_\+pktmbuf\+\_\+tailroom}}
+\index{rte\+\_\+pktmbuf\+\_\+tailroom@{rte\+\_\+pktmbuf\+\_\+tailroom}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+tailroom}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\+\_\+t rte\+\_\+pktmbuf\+\_\+tailroom (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mbuf} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_a257bc8af3e8fde7eb6603bdf4ae0528e}
+Get the tailroom of a packet mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the tailroom. 
+\end{DoxyReturn}
+\hypertarget{rte__mbuf_8h_abe1bed439015acec170d1342e8dabb3b}{}\index{rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}!rte\+\_\+pktmbuf\+\_\+trim@{rte\+\_\+pktmbuf\+\_\+trim}}
+\index{rte\+\_\+pktmbuf\+\_\+trim@{rte\+\_\+pktmbuf\+\_\+trim}!rte\+\_\+mbuf.\+h@{rte\+\_\+mbuf.\+h}}
+\subsubsection[{rte\+\_\+pktmbuf\+\_\+trim}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+pktmbuf\+\_\+trim (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{m, }
+\item[{uint16\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mbuf_8h_abe1bed439015acec170d1342e8dabb3b}
+Remove len bytes of data at the end of the mbuf.
+
+If the length is greater than the length of the last segment, the function will fail and return -\/1 without modifying the mbuf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The packet mbuf. \\
+\hline
+{\em len} & The amount of data to remove (in bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: On success.
+\item -\/1\+: On error. 
+\end{DoxyItemize}
+\end{DoxyReturn}

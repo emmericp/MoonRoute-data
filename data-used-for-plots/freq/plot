@@ -1,0 +1,65 @@
+#!/usr/bin/gnuplot
+
+set terminal epslatex color blacktext
+set output "plot.tex"
+#set terminal epslatex color blacktext
+#set output "plot.tex"
+#set title "Single core performance"
+set xlabel "CPU frequency [GHz]"
+set ylabel "Throughput [Mp/s]"
+set grid mxtics x
+set grid mytics y
+set key above vertical maxrows 2
+#set key at 119,9.5
+#set logscale y
+#set logscale x
+
+
+#set yrange [0.08:1]
+set xrange [1.4:3.6]
+set yrange [0:15.8]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+data = 'result_fine'
+data_no_random = 'data_no_random'
+data_random = 'data_random'
+data_28_addr = 'data_28_addr'
+data_29_addr = 'data_29_addr'
+
+m = 1
+t = 1
+g(x) = m*x + t
+fit [0:3.2] g(x) data using 1:2:3 via m, t
+m2 = 1
+t2 = 1
+g2(x) = m2*x + t2
+fit [0:3.2] g2(x) data_no_random using ($1/1000):2:3 via m2, t2
+
+bw = 0.04
+bw2 = bw/2
+set boxwidth bw
+set style fill solid 0.2
+set xtics (1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, 3.0, 3.2, "Turbo" 3.4)
+
+
+#set style fill   pattern 2 border
+set label '10 GbE' at 1.9,13.5 right
+set style arrow 7 nohead ls 2 lc 7 lw 2.2
+set style arrow 4 head filled size screen 0.01,30 ls 2 lc 7
+set arrow front from 1.92,13.5 to 2.1, 14.88 as 4
+set arrow from 1.4,14.88 to 3.6,14.88 nohead as 7 front
+
+plot\
+  '+' using 1:(g($1-bw2*3)/84/8):(g2($1+bw2*3)/84/8) with filledcurves closed notitle fs pattern lc rgb "#FFFFFFAA",\
+  data_no_random using (($1/1000)-bw2*3):($2/84/8):($3/84/8) with boxerrorbars title "Single dst. IP" lc 7,\
+  data_28_addr using (($1/1000)-bw2):($2/84/8):($3/84/8) with boxerrorbars title "20 bit rnd. dst. IPs" lc 2 fill solid 0.1,\
+  data_29_addr using (($1/1000)+bw2):($2/84/8):($3/84/8) with boxerrorbars title "21 bit rnd. dst. IPs" lc 8,\
+  data using ($1+bw2*3):($2/84/8):($3/84/8) with boxerrorbars title "24 bit rnd. dst. IPs" lt rgb "#5050ff",\
+  g(x-bw2*3)/84/8 notitle lt rgb "#5050ff",\
+  g2(x+bw2*3)/84/8 notitle lc 7
+  #data_random using (($1/1000)-0.05):2:3 with boxerrorbars title "Random dst IP",\
+
+#eich using ( $0/10 ):($1*10*3.6/80) title "front" with linespoints, eich using ($0/10):($2*10*3.6/80) title "rear" with linespoints, eich using ($0/10):($3*10*3.6/80) title "desired" with linespoints,eich using  ($0/10):(-($4-4000)/4000*10) title "engine power" with linespoints
+

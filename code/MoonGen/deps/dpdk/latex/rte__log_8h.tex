@@ -1,0 +1,480 @@
+\hypertarget{rte__log_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+log.h File Reference}
+\label{rte__log_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+log.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+log.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__logs}{rte\+\_\+logs}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__log_8h_ad3083e3666d0c45642adad156b676cb2}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L}~0x00000001
+\item 
+\#define \hyperlink{rte__log_8h_a8b25084442a03550318124cf0464b729}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C}~0x00000002
+\item 
+\#define \hyperlink{rte__log_8h_a551ae94699380d9e63f76188c1dfc209}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G}~0x00000004
+\item 
+\#define \hyperlink{rte__log_8h_a6fc2be334a83bd686c9d0dd6a07bbdac}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L}~0x00000008
+\item 
+\#define \hyperlink{rte__log_8h_a31402d5eaf8c3c4fa05eb8b257a15308}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R}~0x00000010
+\item 
+\#define \hyperlink{rte__log_8h_ac5be0e3cb530ffa277d2fb461f862c05}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D}~0x00000020
+\item 
+\#define \hyperlink{rte__log_8h_a6d407a31763bd7619e035cf3884bf4cb}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H}~0x00000040
+\item 
+\#define \hyperlink{rte__log_8h_a1481470eef580554055dd9d32d992298}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M}~0x00000080
+\item 
+\#define \hyperlink{rte__log_8h_ac7aa323cfc9066d35ddef6412c17bb2a}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I}~0x00000100
+\item 
+\#define \hyperlink{rte__log_8h_ac2eebcf4f26341616904ca642e43371e}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L}~0x00000200
+\item 
+\#define \hyperlink{rte__log_8h_af3e5a27c5ee3736da902ffe92dd26fc5}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R}~0x00000400
+\item 
+\#define \hyperlink{rte__log_8h_aee07e1154e6689da15671fce9050ed1c}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R}~0x00000800
+\item 
+\#define \hyperlink{rte__log_8h_a96bc2ecaea2e7f9f83ab2ef405eca216}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D}~0x00001000
+\item 
+\#define \hyperlink{rte__log_8h_a4d6431e01d03678500425c565a5e84ab}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T}~0x00002000
+\item 
+\#define \hyperlink{rte__log_8h_a6bfe07b16dadb212c368d1c656e644cf}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}~0x00004000
+\item 
+\#define \hyperlink{rte__log_8h_a0581827a1637315e6defd7ab7fb9e935}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E}~0x00008000
+\item 
+\#define \hyperlink{rte__log_8h_adc357f65ec8faf6cfb95672f00cc54cf}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1}~0x01000000
+\item 
+\#define \hyperlink{rte__log_8h_a878ada2ab7171316d598eef024a4a682}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2}~0x02000000
+\item 
+\#define \hyperlink{rte__log_8h_abe40fde56d656c424f0dc9c21656dd7d}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3}~0x04000000
+\item 
+\#define \hyperlink{rte__log_8h_a441276142f5f5db6c564ecd5b84c7c5a}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4}~0x08000000
+\item 
+\#define \hyperlink{rte__log_8h_a0a44fb775ab4d38f7a8131e079643537}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5}~0x10000000
+\item 
+\#define \hyperlink{rte__log_8h_afcf2fadd18222a81509f0649f4c0cd91}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6}~0x20000000
+\item 
+\#define \hyperlink{rte__log_8h_aebad9ed98dff5bd1d75bc82c78e530cc}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7}~0x40000000
+\item 
+\#define \hyperlink{rte__log_8h_a05d9d2e3aef15720f2c605571e4b42e0}{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8}~0x80000000
+\item 
+\#define \hyperlink{rte__log_8h_a082bb4201b96e6a6be57c4c2f55c5627}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}~1\+U
+\item 
+\#define \hyperlink{rte__log_8h_a57b328ddd0acb19536eec7191c716f25}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T}~2\+U
+\item 
+\#define \hyperlink{rte__log_8h_a3c609256fd7482731b96f806d9c3e250}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}~3\+U
+\item 
+\#define \hyperlink{rte__log_8h_a264a679e8a6da940a233efe7e82512c3}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}~4\+U
+\item 
+\#define \hyperlink{rte__log_8h_ae2e7d3d4466ad5372e497d8738f04a4b}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G}~5\+U
+\item 
+\#define \hyperlink{rte__log_8h_a33d6da5e4c8559ecf5888d6311456470}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E}~6\+U
+\item 
+\#define \hyperlink{rte__log_8h_a9ca71ed43a9c531303ae322dcfe8d97c}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}~7\+U
+\item 
+\#define \hyperlink{rte__log_8h_a24635f231a99a99f86ed7c78b136fa8c}{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}~8\+U
+\item 
+\#define \hyperlink{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{R\+T\+E\+\_\+\+L\+O\+G}(l,  t, ...)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__log_8h_ae4182308524475ae9eac6fd1cdbc43c0}{rte\+\_\+openlog\+\_\+stream} (F\+I\+L\+E $\ast$f)
+\item 
+void \hyperlink{rte__log_8h_a621efed26cc11c49517acfdd19f0a82f}{rte\+\_\+set\+\_\+log\+\_\+level} (uint32\+\_\+t level)
+\item 
+void \hyperlink{rte__log_8h_ab28105a39914beac0632cc0ea2eeeb1b}{rte\+\_\+set\+\_\+log\+\_\+type} (uint32\+\_\+t type, int enable)
+\item 
+int \hyperlink{rte__log_8h_a725e8b51d67b753076af9f84afc5b9ec}{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel} (void)
+\item 
+int \hyperlink{rte__log_8h_a9f93942260686fbb6f4c07c331f988dc}{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype} (void)
+\item 
+void \hyperlink{rte__log_8h_a20c60680aad471e3c5ff9567f5600d40}{rte\+\_\+log\+\_\+set\+\_\+history} (int enable)
+\item 
+void \hyperlink{rte__log_8h_a91425be925bbd7ab27da03c2855a5902}{rte\+\_\+log\+\_\+dump\+\_\+history} (F\+I\+L\+E $\ast$f)
+\item 
+int \hyperlink{rte__log_8h_adae362cd6719fb1c1bc63113f1df84e2}{rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history} (const char $\ast$buf, size\+\_\+t size)
+\item 
+int \hyperlink{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}{rte\+\_\+log} (uint32\+\_\+t level, uint32\+\_\+t logtype, const char $\ast$format,...)
+\item 
+int \hyperlink{rte__log_8h_a36cc5d2197c564b0e30f2b56063304ad}{rte\+\_\+vlog} (uint32\+\_\+t level, uint32\+\_\+t logtype, const char $\ast$format, va\+\_\+list ap)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__logs}{rte\+\_\+logs} \hyperlink{rte__log_8h_a5f54463ec4b851d86162bf0470082864}{rte\+\_\+logs}
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{rte__log_8h_a49ee0b6bd4867f291f5e57c390a16290}{eal\+\_\+default\+\_\+log\+\_\+stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Logs A\+P\+I
+
+This file provides a log A\+P\+I to R\+T\+E applications. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G@{R\+T\+E\+\_\+\+L\+O\+G}}
+\index{R\+T\+E\+\_\+\+L\+O\+G@{R\+T\+E\+\_\+\+L\+O\+G}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G(
+\begin{DoxyParamCaption}
+\item[{}]{l, }
+\item[{}]{t, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(void)(((RTE\_LOG\_ ## l <= RTE\_LOG\_LEVEL) &&         \(\backslash\)
+      (RTE\_LOG\_ ## l <= \hyperlink{structrte__logs}{rte\_logs}.\hyperlink{structrte__logs_a6a330c3b2adf87bfa27e9a9450d8bc40}{level}) &&         \(\backslash\)
+      (RTE\_LOGTYPE\_ ## t & \hyperlink{structrte__logs}{rte\_logs}.\hyperlink{structrte__logs_ad44b615021ed3ccb734fcaf583ef4a03}{type})) ?        \hyperlink{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}{\(\backslash\)}
+\hyperlink{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}{     rte\_log}(RTE\_LOG\_ ## l,                    \(\backslash\)
+         RTE\_LOGTYPE\_ ## t, # t \textcolor{stringliteral}{": "} \_\_VA\_ARGS\_\_) : \(\backslash\)
+     0)
+\end{DoxyCode}
+Generates a log message.
+
+The \hyperlink{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{R\+T\+E\+\_\+\+L\+O\+G()} is equivalent to \hyperlink{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}{rte\+\_\+log()} with two differences\+:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{R\+T\+E\+\_\+\+L\+O\+G()} can be used to remove debug logs at compilation time, depending on R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L configuration option, and compilation optimization level. If optimization is enabled, the tests involving constants only are pre-\/computed. If compilation is done with -\/\+O0, these tests will be done at run time.
+\item The log level and log type names are smaller, for example\+: R\+T\+E\+\_\+\+L\+O\+G(I\+N\+F\+O, E\+A\+L, \char`\"{}this is a \%s\char`\"{}, \char`\"{}log\char`\"{});
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Log level. A value between E\+M\+E\+R\+G (1) and D\+E\+B\+U\+G (8). The short name is expanded by the macro, so it cannot be an integer value. \\
+\hline
+{\em t} & The log type, for example, E\+A\+L. The short name is expanded by the macro, so it cannot be an integer value. \\
+\hline
+{\em fmt} & The fmt string, as in printf(3), followed by the variable arguments required by the format. \\
+\hline
+{\em args} & The variable list of arguments according to the format string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_a57b328ddd0acb19536eec7191c716f25}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+A\+L\+E\+R\+T~2\+U}\label{rte__log_8h_a57b328ddd0acb19536eec7191c716f25}
+Action must be taken immediately. \hypertarget{rte__log_8h_a3c609256fd7482731b96f806d9c3e250}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T~3\+U}\label{rte__log_8h_a3c609256fd7482731b96f806d9c3e250}
+Critical conditions. \hypertarget{rte__log_8h_a24635f231a99a99f86ed7c78b136fa8c}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G~8\+U}\label{rte__log_8h_a24635f231a99a99f86ed7c78b136fa8c}
+Debug-\/level messages. \hypertarget{rte__log_8h_a082bb4201b96e6a6be57c4c2f55c5627}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G~1\+U}\label{rte__log_8h_a082bb4201b96e6a6be57c4c2f55c5627}
+System is unusable. \hypertarget{rte__log_8h_a264a679e8a6da940a233efe7e82512c3}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R~4\+U}\label{rte__log_8h_a264a679e8a6da940a233efe7e82512c3}
+Error conditions. \hypertarget{rte__log_8h_a9ca71ed43a9c531303ae322dcfe8d97c}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O~7\+U}\label{rte__log_8h_a9ca71ed43a9c531303ae322dcfe8d97c}
+Informational. \hypertarget{rte__log_8h_a33d6da5e4c8559ecf5888d6311456470}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+N\+O\+T\+I\+C\+E~6\+U}\label{rte__log_8h_a33d6da5e4c8559ecf5888d6311456470}
+Normal but significant condition. \hypertarget{rte__log_8h_ae2e7d3d4466ad5372e497d8738f04a4b}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G@{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+N\+G~5\+U}\label{rte__log_8h_ae2e7d3d4466ad5372e497d8738f04a4b}
+Warning conditions. \hypertarget{rte__log_8h_ac2eebcf4f26341616904ca642e43371e}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+A\+C\+L~0x00000200}\label{rte__log_8h_ac2eebcf4f26341616904ca642e43371e}
+Log related to A\+C\+L. \hypertarget{rte__log_8h_ad3083e3666d0c45642adad156b676cb2}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L~0x00000001}\label{rte__log_8h_ad3083e3666d0c45642adad156b676cb2}
+Log related to eal. \hypertarget{rte__log_8h_a6d407a31763bd7619e035cf3884bf4cb}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+H\+A\+S\+H~0x00000040}\label{rte__log_8h_a6d407a31763bd7619e035cf3884bf4cb}
+Log related to hash table. \hypertarget{rte__log_8h_ac7aa323cfc9066d35ddef6412c17bb2a}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+K\+N\+I~0x00000100}\label{rte__log_8h_ac7aa323cfc9066d35ddef6412c17bb2a}
+Log related to K\+N\+I. \hypertarget{rte__log_8h_a1481470eef580554055dd9d32d992298}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+L\+P\+M~0x00000080}\label{rte__log_8h_a1481470eef580554055dd9d32d992298}
+Log related to L\+P\+M. \hypertarget{rte__log_8h_a8b25084442a03550318124cf0464b729}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+A\+L\+L\+O\+C~0x00000002}\label{rte__log_8h_a8b25084442a03550318124cf0464b729}
+Log related to malloc. \hypertarget{rte__log_8h_a6fc2be334a83bd686c9d0dd6a07bbdac}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L~0x00000008}\label{rte__log_8h_a6fc2be334a83bd686c9d0dd6a07bbdac}
+Log related to mempool. \hypertarget{rte__log_8h_aee07e1154e6689da15671fce9050ed1c}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+E\+R~0x00000800}\label{rte__log_8h_aee07e1154e6689da15671fce9050ed1c}
+Log related to Qo\+S meter. \hypertarget{rte__log_8h_a0581827a1637315e6defd7ab7fb9e935}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E~0x00008000}\label{rte__log_8h_a0581827a1637315e6defd7ab7fb9e935}
+Log related to pipeline. \hypertarget{rte__log_8h_ac5be0e3cb530ffa277d2fb461f862c05}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+M\+D~0x00000020}\label{rte__log_8h_ac5be0e3cb530ffa277d2fb461f862c05}
+Log related to poll mode driver. \hypertarget{rte__log_8h_a4d6431e01d03678500425c565a5e84ab}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+R\+T~0x00002000}\label{rte__log_8h_a4d6431e01d03678500425c565a5e84ab}
+Log related to port. \hypertarget{rte__log_8h_af3e5a27c5ee3736da902ffe92dd26fc5}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+P\+O\+W\+E\+R~0x00000400}\label{rte__log_8h_af3e5a27c5ee3736da902ffe92dd26fc5}
+Log related to power. \hypertarget{rte__log_8h_a551ae94699380d9e63f76188c1dfc209}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+R\+I\+N\+G~0x00000004}\label{rte__log_8h_a551ae94699380d9e63f76188c1dfc209}
+Log related to ring. \hypertarget{rte__log_8h_a96bc2ecaea2e7f9f83ab2ef405eca216}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+S\+C\+H\+E\+D~0x00001000}\label{rte__log_8h_a96bc2ecaea2e7f9f83ab2ef405eca216}
+Log related to Qo\+S port scheduler. \hypertarget{rte__log_8h_a6bfe07b16dadb212c368d1c656e644cf}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E~0x00004000}\label{rte__log_8h_a6bfe07b16dadb212c368d1c656e644cf}
+Log related to table. \hypertarget{rte__log_8h_a31402d5eaf8c3c4fa05eb8b257a15308}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+T\+I\+M\+E\+R~0x00000010}\label{rte__log_8h_a31402d5eaf8c3c4fa05eb8b257a15308}
+Log related to timers. \hypertarget{rte__log_8h_adc357f65ec8faf6cfb95672f00cc54cf}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R1~0x01000000}\label{rte__log_8h_adc357f65ec8faf6cfb95672f00cc54cf}
+User-\/defined log type 1. \hypertarget{rte__log_8h_a878ada2ab7171316d598eef024a4a682}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R2~0x02000000}\label{rte__log_8h_a878ada2ab7171316d598eef024a4a682}
+User-\/defined log type 2. \hypertarget{rte__log_8h_abe40fde56d656c424f0dc9c21656dd7d}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R3~0x04000000}\label{rte__log_8h_abe40fde56d656c424f0dc9c21656dd7d}
+User-\/defined log type 3. \hypertarget{rte__log_8h_a441276142f5f5db6c564ecd5b84c7c5a}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R4~0x08000000}\label{rte__log_8h_a441276142f5f5db6c564ecd5b84c7c5a}
+User-\/defined log type 4. \hypertarget{rte__log_8h_a0a44fb775ab4d38f7a8131e079643537}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R5~0x10000000}\label{rte__log_8h_a0a44fb775ab4d38f7a8131e079643537}
+User-\/defined log type 5. \hypertarget{rte__log_8h_afcf2fadd18222a81509f0649f4c0cd91}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R6~0x20000000}\label{rte__log_8h_afcf2fadd18222a81509f0649f4c0cd91}
+User-\/defined log type 6. \hypertarget{rte__log_8h_aebad9ed98dff5bd1d75bc82c78e530cc}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R7~0x40000000}\label{rte__log_8h_aebad9ed98dff5bd1d75bc82c78e530cc}
+User-\/defined log type 7. \hypertarget{rte__log_8h_a05d9d2e3aef15720f2c605571e4b42e0}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8}}
+\index{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8@{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+U\+S\+E\+R8~0x80000000}\label{rte__log_8h_a05d9d2e3aef15720f2c605571e4b42e0}
+User-\/defined log type 8. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log@{rte\+\_\+log}}
+\index{rte\+\_\+log@{rte\+\_\+log}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+log (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{level, }
+\item[{uint32\+\_\+t}]{logtype, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_afb4ac2facad31e65ff45ebdfdfb40c89}
+Generates a log message.
+
+The message will be sent in the stream defined by the previous call to \hyperlink{rte__log_8h_ae4182308524475ae9eac6fd1cdbc43c0}{rte\+\_\+openlog\+\_\+stream()}.
+
+The level argument determines if the log should be displayed or not, depending on the global \hyperlink{structrte__logs}{rte\+\_\+logs} variable.
+
+The preferred alternative is the \hyperlink{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{R\+T\+E\+\_\+\+L\+O\+G()} function because debug logs may be removed at compilation time if optimization is enabled. Moreover, logs are automatically prefixed by type when using the macro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Log level. A value between R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G (1) and R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G (8). \\
+\hline
+{\em logtype} & The log type, for example, R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L. \\
+\hline
+{\em format} & The format string, as in printf(3), followed by the variable arguments required by the format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_adae362cd6719fb1c1bc63113f1df84e2}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history@{rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history}}
+\index{rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history@{rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+log\+\_\+add\+\_\+in\+\_\+history (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buf, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_adae362cd6719fb1c1bc63113f1df84e2}
+Add a log message to the history.
+
+This function can be called from a user-\/defined log stream. It adds the given message in the history that can be dumped using \hyperlink{rte__log_8h_a91425be925bbd7ab27da03c2855a5902}{rte\+\_\+log\+\_\+dump\+\_\+history()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & A data buffer containing the message to be saved in the history. \\
+\hline
+{\em size} & The length of the data buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item (-\/\+E\+N\+O\+B\+U\+F\+S) if there is no room to store the message. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_a725e8b51d67b753076af9f84afc5b9ec}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel@{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel}}
+\index{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel@{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+loglevel (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a725e8b51d67b753076af9f84afc5b9ec}
+Get the current loglevel for the message being processed.
+
+Before calling the user-\/defined stream for logging, the log subsystem sets a per-\/lcore variable containing the loglevel and the logtype of the message being processed. This information can be accessed by the user-\/defined log output function through this function.
+
+\begin{DoxyReturn}{Returns}
+The loglevel of the message being processed. 
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_a9f93942260686fbb6f4c07c331f988dc}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype@{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype}}
+\index{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype@{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+log\+\_\+cur\+\_\+msg\+\_\+logtype (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a9f93942260686fbb6f4c07c331f988dc}
+Get the current logtype for the message being processed.
+
+Before calling the user-\/defined stream for logging, the log subsystem sets a per-\/lcore variable containing the loglevel and the logtype of the message being processed. This information can be accessed by the user-\/defined log output function through this function.
+
+\begin{DoxyReturn}{Returns}
+The logtype of the message being processed. 
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_a91425be925bbd7ab27da03c2855a5902}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log\+\_\+dump\+\_\+history@{rte\+\_\+log\+\_\+dump\+\_\+history}}
+\index{rte\+\_\+log\+\_\+dump\+\_\+history@{rte\+\_\+log\+\_\+dump\+\_\+history}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log\+\_\+dump\+\_\+history}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+log\+\_\+dump\+\_\+history (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a91425be925bbd7ab27da03c2855a5902}
+Dump the log history to a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__log_8h_a20c60680aad471e3c5ff9567f5600d40}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+log\+\_\+set\+\_\+history@{rte\+\_\+log\+\_\+set\+\_\+history}}
+\index{rte\+\_\+log\+\_\+set\+\_\+history@{rte\+\_\+log\+\_\+set\+\_\+history}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+log\+\_\+set\+\_\+history}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+log\+\_\+set\+\_\+history (
+\begin{DoxyParamCaption}
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a20c60680aad471e3c5ff9567f5600d40}
+Enable or disable the history (enabled by default)
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & true to enable, or 0 to disable history. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__log_8h_ae4182308524475ae9eac6fd1cdbc43c0}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+openlog\+\_\+stream@{rte\+\_\+openlog\+\_\+stream}}
+\index{rte\+\_\+openlog\+\_\+stream@{rte\+\_\+openlog\+\_\+stream}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+openlog\+\_\+stream}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+openlog\+\_\+stream (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_ae4182308524475ae9eac6fd1cdbc43c0}
+Change the stream that will be used by the logging system.
+
+This can be done at any time. The f argument represents the stream to be used to send the logs. If f is N\+U\+L\+L, the default output is used, which is the serial line in case of bare metal, or directly sent to syslog in case of linux application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__log_8h_a621efed26cc11c49517acfdd19f0a82f}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+set\+\_\+log\+\_\+level@{rte\+\_\+set\+\_\+log\+\_\+level}}
+\index{rte\+\_\+set\+\_\+log\+\_\+level@{rte\+\_\+set\+\_\+log\+\_\+level}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+set\+\_\+log\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+set\+\_\+log\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{level}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a621efed26cc11c49517acfdd19f0a82f}
+Set the global log level.
+
+After this call, all logs that are lower or equal than level and lower or equal than the R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L configuration option will be displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Log level. A value between R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G (1) and R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G (8). \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__log_8h_ab28105a39914beac0632cc0ea2eeeb1b}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+set\+\_\+log\+\_\+type@{rte\+\_\+set\+\_\+log\+\_\+type}}
+\index{rte\+\_\+set\+\_\+log\+\_\+type@{rte\+\_\+set\+\_\+log\+\_\+type}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+set\+\_\+log\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+set\+\_\+log\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{type, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_ab28105a39914beac0632cc0ea2eeeb1b}
+Enable or disable the log type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Log type, for example, R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L. \\
+\hline
+{\em enable} & True for enable; false for disable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__log_8h_a36cc5d2197c564b0e30f2b56063304ad}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+vlog@{rte\+\_\+vlog}}
+\index{rte\+\_\+vlog@{rte\+\_\+vlog}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+vlog}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+vlog (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{level, }
+\item[{uint32\+\_\+t}]{logtype, }
+\item[{const char $\ast$}]{format, }
+\item[{va\+\_\+list}]{ap}
+\end{DoxyParamCaption}
+)}\label{rte__log_8h_a36cc5d2197c564b0e30f2b56063304ad}
+Generates a log message.
+
+The message will be sent in the stream defined by the previous call to \hyperlink{rte__log_8h_ae4182308524475ae9eac6fd1cdbc43c0}{rte\+\_\+openlog\+\_\+stream()}.
+
+The level argument determines if the log should be displayed or not, depending on the global \hyperlink{structrte__logs}{rte\+\_\+logs} variable. A trailing newline may be added if needed.
+
+The preferred alternative is the \hyperlink{rte__log_8h_ac23caeb9833fd0fd0665c6c05ec806fe}{R\+T\+E\+\_\+\+L\+O\+G()} because debug logs may be removed at compilation time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Log level. A value between R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G (1) and R\+T\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G (8). \\
+\hline
+{\em logtype} & The log type, for example, R\+T\+E\+\_\+\+L\+O\+G\+T\+Y\+P\+E\+\_\+\+E\+A\+L. \\
+\hline
+{\em format} & The format string, as in printf(3), followed by the variable arguments required by the format. \\
+\hline
+{\em ap} & The va\+\_\+list of the variable arguments required by the format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{rte__log_8h_a49ee0b6bd4867f291f5e57c390a16290}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!eal\+\_\+default\+\_\+log\+\_\+stream@{eal\+\_\+default\+\_\+log\+\_\+stream}}
+\index{eal\+\_\+default\+\_\+log\+\_\+stream@{eal\+\_\+default\+\_\+log\+\_\+stream}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{eal\+\_\+default\+\_\+log\+\_\+stream}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ eal\+\_\+default\+\_\+log\+\_\+stream}\label{rte__log_8h_a49ee0b6bd4867f291f5e57c390a16290}
+The default log stream. \hypertarget{rte__log_8h_a5f54463ec4b851d86162bf0470082864}{}\index{rte\+\_\+log.\+h@{rte\+\_\+log.\+h}!rte\+\_\+logs@{rte\+\_\+logs}}
+\index{rte\+\_\+logs@{rte\+\_\+logs}!rte\+\_\+log.\+h@{rte\+\_\+log.\+h}}
+\subsubsection[{rte\+\_\+logs}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+logs} {\bf rte\+\_\+logs}}\label{rte__log_8h_a5f54463ec4b851d86162bf0470082864}
+Global log informations 

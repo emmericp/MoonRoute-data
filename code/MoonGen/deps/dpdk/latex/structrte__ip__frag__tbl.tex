@@ -1,0 +1,75 @@
+\hypertarget{structrte__ip__frag__tbl}{}\section{rte\+\_\+ip\+\_\+frag\+\_\+tbl Struct Reference}
+\label{structrte__ip__frag__tbl}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ip\+\_\+frag.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{structrte__ip__frag__tbl_ac2135a7a3ddad5d48d84af46c455ad1d}{max\+\_\+cycles}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_ad93ad237346ba2b07f814ee5616f80e3}{entry\+\_\+mask}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_a9c1c1d6f14dcb125c541f9a3db991f6c}{max\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_a4df078fc42bb1b234bd10b40546071ed}{use\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_ad1c0b79e09e6b654bc7c268a9ec0084f}{bucket\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_a1004e9477898d1077030789cf8fcefd9}{nb\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ip__frag__tbl_a1d3c086e47ef6c0c0ca7542843a49c43}{nb\+\_\+buckets}
+\item 
+struct ip\+\_\+frag\+\_\+pkt $\ast$ \hyperlink{structrte__ip__frag__tbl_a77c4edf93b96c214ad2b1e3f2ffa0489}{last}
+\item 
+struct ip\+\_\+pkt\+\_\+list \hyperlink{structrte__ip__frag__tbl_a851486c7f4964bdb209fba9a9c118332}{lru}
+\item 
+struct \hyperlink{structip__frag__tbl__stat}{ip\+\_\+frag\+\_\+tbl\+\_\+stat} \hyperlink{structrte__ip__frag__tbl_a92286e54c27d08e716c496680e412cb5}{stat}
+\item 
+struct ip\+\_\+frag\+\_\+pkt \hyperlink{structrte__ip__frag__tbl_a3336add7f24f2bdac02b837b6e74f468}{pkt} \mbox{[}0\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+fragmentation table 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__ip__frag__tbl_ad1c0b79e09e6b654bc7c268a9ec0084f}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!bucket\+\_\+entries@{bucket\+\_\+entries}}
+\index{bucket\+\_\+entries@{bucket\+\_\+entries}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{bucket\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+entries}\label{structrte__ip__frag__tbl_ad1c0b79e09e6b654bc7c268a9ec0084f}
+hash assocaitivity. \hypertarget{structrte__ip__frag__tbl_ad93ad237346ba2b07f814ee5616f80e3}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!entry\+\_\+mask@{entry\+\_\+mask}}
+\index{entry\+\_\+mask@{entry\+\_\+mask}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{entry\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entry\+\_\+mask}\label{structrte__ip__frag__tbl_ad93ad237346ba2b07f814ee5616f80e3}
+hash value mask. \hypertarget{structrte__ip__frag__tbl_a77c4edf93b96c214ad2b1e3f2ffa0489}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!last@{last}}
+\index{last@{last}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}struct ip\+\_\+frag\+\_\+pkt$\ast$ last}\label{structrte__ip__frag__tbl_a77c4edf93b96c214ad2b1e3f2ffa0489}
+last used entry. \hypertarget{structrte__ip__frag__tbl_a851486c7f4964bdb209fba9a9c118332}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!lru@{lru}}
+\index{lru@{lru}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{lru}]{\setlength{\rightskip}{0pt plus 5cm}struct ip\+\_\+pkt\+\_\+list lru}\label{structrte__ip__frag__tbl_a851486c7f4964bdb209fba9a9c118332}
+L\+R\+U list for table entries. \hypertarget{structrte__ip__frag__tbl_ac2135a7a3ddad5d48d84af46c455ad1d}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!max\+\_\+cycles@{max\+\_\+cycles}}
+\index{max\+\_\+cycles@{max\+\_\+cycles}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{max\+\_\+cycles}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t max\+\_\+cycles}\label{structrte__ip__frag__tbl_ac2135a7a3ddad5d48d84af46c455ad1d}
+ttl for table entries. \hypertarget{structrte__ip__frag__tbl_a9c1c1d6f14dcb125c541f9a3db991f6c}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!max\+\_\+entries@{max\+\_\+entries}}
+\index{max\+\_\+entries@{max\+\_\+entries}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{max\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t max\+\_\+entries}\label{structrte__ip__frag__tbl_a9c1c1d6f14dcb125c541f9a3db991f6c}
+max entries allowed. \hypertarget{structrte__ip__frag__tbl_a1d3c086e47ef6c0c0ca7542843a49c43}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!nb\+\_\+buckets@{nb\+\_\+buckets}}
+\index{nb\+\_\+buckets@{nb\+\_\+buckets}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{nb\+\_\+buckets}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nb\+\_\+buckets}\label{structrte__ip__frag__tbl_a1d3c086e47ef6c0c0ca7542843a49c43}
+num of associativity lines. \hypertarget{structrte__ip__frag__tbl_a1004e9477898d1077030789cf8fcefd9}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!nb\+\_\+entries@{nb\+\_\+entries}}
+\index{nb\+\_\+entries@{nb\+\_\+entries}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{nb\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nb\+\_\+entries}\label{structrte__ip__frag__tbl_a1004e9477898d1077030789cf8fcefd9}
+total size of the table. \hypertarget{structrte__ip__frag__tbl_a3336add7f24f2bdac02b837b6e74f468}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!pkt@{pkt}}
+\index{pkt@{pkt}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{pkt}]{\setlength{\rightskip}{0pt plus 5cm}struct ip\+\_\+frag\+\_\+pkt pkt\mbox{[}0\mbox{]}}\label{structrte__ip__frag__tbl_a3336add7f24f2bdac02b837b6e74f468}
+hash table. \hypertarget{structrte__ip__frag__tbl_a92286e54c27d08e716c496680e412cb5}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!stat@{stat}}
+\index{stat@{stat}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{stat}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ip\+\_\+frag\+\_\+tbl\+\_\+stat} stat}\label{structrte__ip__frag__tbl_a92286e54c27d08e716c496680e412cb5}
+statistics counters. \hypertarget{structrte__ip__frag__tbl_a4df078fc42bb1b234bd10b40546071ed}{}\index{rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}!use\+\_\+entries@{use\+\_\+entries}}
+\index{use\+\_\+entries@{use\+\_\+entries}!rte\+\_\+ip\+\_\+frag\+\_\+tbl@{rte\+\_\+ip\+\_\+frag\+\_\+tbl}}
+\subsubsection[{use\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t use\+\_\+entries}\label{structrte__ip__frag__tbl_a4df078fc42bb1b234bd10b40546071ed}
+entries in use. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ip\+\_\+frag/\hyperlink{rte__ip__frag_8h}{rte\+\_\+ip\+\_\+frag.\+h}\end{DoxyCompactItemize}

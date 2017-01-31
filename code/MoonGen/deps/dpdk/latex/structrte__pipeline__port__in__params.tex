@@ -1,0 +1,45 @@
+\hypertarget{structrte__pipeline__port__in__params}{}\section{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params Struct Reference}
+\label{structrte__pipeline__port__in__params}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+pipeline.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__in__ops}{rte\+\_\+port\+\_\+in\+\_\+ops} $\ast$ \hyperlink{structrte__pipeline__port__in__params_ad8c92480b58ad5e6b7917c16b5ea7b3d}{ops}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__port__in__params_ab34a217f23d1f5a27ae00e3fbbba445c}{arg\+\_\+create}
+\item 
+\hyperlink{rte__pipeline_8h_a90d56777317f0919ad4130f8ad2099be}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler} \hyperlink{structrte__pipeline__port__in__params_a2022419304fcae7f13851d3cb0f99a96}{f\+\_\+action}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__port__in__params_adfcedab79c75f0129bd5382cf3d48b13}{arg\+\_\+ah}
+\item 
+uint32\+\_\+t \hyperlink{structrte__pipeline__port__in__params_a39c7ba8da6420cf650de391a0ccb43b1}{burst\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters for pipeline input port creation 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__pipeline__port__in__params_adfcedab79c75f0129bd5382cf3d48b13}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}!arg\+\_\+ah@{arg\+\_\+ah}}
+\index{arg\+\_\+ah@{arg\+\_\+ah}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+\subsubsection[{arg\+\_\+ah}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+ah}\label{structrte__pipeline__port__in__params_adfcedab79c75f0129bd5382cf3d48b13}
+Opaque parameter to be passed to the action handler when invoked \hypertarget{structrte__pipeline__port__in__params_ab34a217f23d1f5a27ae00e3fbbba445c}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}!arg\+\_\+create@{arg\+\_\+create}}
+\index{arg\+\_\+create@{arg\+\_\+create}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+\subsubsection[{arg\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+create}\label{structrte__pipeline__port__in__params_ab34a217f23d1f5a27ae00e3fbbba445c}
+Opaque parameter to be passed to create operation when invoked \hypertarget{structrte__pipeline__port__in__params_a39c7ba8da6420cf650de391a0ccb43b1}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}!burst\+\_\+size@{burst\+\_\+size}}
+\index{burst\+\_\+size@{burst\+\_\+size}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+\subsubsection[{burst\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t burst\+\_\+size}\label{structrte__pipeline__port__in__params_a39c7ba8da6420cf650de391a0ccb43b1}
+Recommended burst size for the R\+X operation(in number of pkts) \hypertarget{structrte__pipeline__port__in__params_a2022419304fcae7f13851d3cb0f99a96}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}!f\+\_\+action@{f\+\_\+action}}
+\index{f\+\_\+action@{f\+\_\+action}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+\subsubsection[{f\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler} f\+\_\+action}\label{structrte__pipeline__port__in__params_a2022419304fcae7f13851d3cb0f99a96}
+Callback function to execute the user actions on input packets. Disabled if set to N\+U\+L\+L. \hypertarget{structrte__pipeline__port__in__params_ad8c92480b58ad5e6b7917c16b5ea7b3d}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}!ops@{ops}}
+\index{ops@{ops}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}}
+\subsubsection[{ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+in\+\_\+ops}$\ast$ ops}\label{structrte__pipeline__port__in__params_ad8c92480b58ad5e6b7917c16b5ea7b3d}
+Input port operations (specific to each table type) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pipeline/\hyperlink{rte__pipeline_8h}{rte\+\_\+pipeline.\+h}\end{DoxyCompactItemize}

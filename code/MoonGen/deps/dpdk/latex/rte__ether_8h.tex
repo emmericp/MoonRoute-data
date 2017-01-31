@@ -1,0 +1,312 @@
+\hypertarget{rte__ether_8h}{}\section{lib/librte\+\_\+ether/rte\+\_\+ether.h File Reference}
+\label{rte__ether_8h}\index{lib/librte\+\_\+ether/rte\+\_\+ether.\+h@{lib/librte\+\_\+ether/rte\+\_\+ether.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memcpy.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+random.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structether__addr}{ether\+\_\+addr}
+\item 
+struct \hyperlink{structether__hdr}{ether\+\_\+hdr}
+\item 
+struct \hyperlink{structvlan__hdr}{vlan\+\_\+hdr}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__ether_8h_abf4fcaacb1ad2010711b7c880ec2ed20}{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N}~6
+\item 
+\#define \hyperlink{rte__ether_8h_a6bced6e28d100419b71b35671da0551d}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N}~2
+\item 
+\#define \hyperlink{rte__ether_8h_a05b33d6afd13562a40e1a00188351cff}{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N}~4
+\item 
+\#define \hyperlink{rte__ether_8h_a4e7484afbe095e65767c43feb3a106cf}{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N}~(\hyperlink{rte__ether_8h_abf4fcaacb1ad2010711b7c880ec2ed20}{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N} $\ast$ 2 + \hyperlink{rte__ether_8h_a6bced6e28d100419b71b35671da0551d}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N})
+\item 
+\#define \hyperlink{rte__ether_8h_a0b09f14d44f1b37e96c75b02ca7b58a7}{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N}~64
+\item 
+\#define \hyperlink{rte__ether_8h_aaebedff0cce73327398dd3139ba50e43}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}~1518
+\item 
+\#define \hyperlink{rte__ether_8h_a8f856225d5b9969ba42cffce2eb12256}{E\+T\+H\+E\+R\+\_\+\+M\+T\+U}~(\hyperlink{rte__ether_8h_aaebedff0cce73327398dd3139ba50e43}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N} -\/ \hyperlink{rte__ether_8h_a4e7484afbe095e65767c43feb3a106cf}{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N} -\/ \hyperlink{rte__ether_8h_a05b33d6afd13562a40e1a00188351cff}{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N})
+\item 
+\#define \hyperlink{rte__ether_8h_a28f0674aa55b7500491d08c541c5c53b}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}~(\hyperlink{rte__ether_8h_aaebedff0cce73327398dd3139ba50e43}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N} + 4)
+\item 
+\#define \hyperlink{rte__ether_8h_af0ddc37d50d201f80a0c8d433cace675}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}~0x3\+F00
+\item 
+\#define \hyperlink{rte__ether_8h_a60e5cf41cb108abfeed8387923a641b9}{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D}~4095
+\item 
+\#define \hyperlink{rte__ether_8h_af245921a8e199c83853d7976db4c3902}{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U}~68
+\item 
+\#define \hyperlink{rte__ether_8h_aa88ef1c2e21ad83afe35974c4cd2f4ff}{E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R}~0x02
+\item 
+\#define \hyperlink{rte__ether_8h_a464bd9f48ae58f2199a703414362d14d}{E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R}~0x01
+\item 
+\#define \hyperlink{rte__ether_8h_a08cc3337f1584270c6f9de9bffd14b2b}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4}~0x0800
+\item 
+\#define \hyperlink{rte__ether_8h_ac42bfbd5e6076e6aefffe141c22796a7}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6}~0x86\+D\+D
+\item 
+\#define \hyperlink{rte__ether_8h_a3f5d778e8eb1a7ad731921a460e6c1dd}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P}~0x0806
+\item 
+\#define \hyperlink{rte__ether_8h_a74e41a940b9c245f2bc8eaba01d4cee2}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P}~0x8035
+\item 
+\#define \hyperlink{rte__ether_8h_aaaa516211cec2b61e3717c5fec36952f}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N}~0x8100
+\item 
+\#define \hyperlink{rte__ether_8h_af2a356c8159ecd053b9be2a6c2c78c86}{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588}~0x88\+F7
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{rte__ether_8h_ab962929f8a778e1d675fe86361954bc3}{is\+\_\+same\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea1, const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea2)
+\item 
+static int \hyperlink{rte__ether_8h_af682fa081e83af6cfaab70997e1236bc}{is\+\_\+zero\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_ae45a2eb532a5105263773ed22ff8bc47}{is\+\_\+unicast\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_aa3ae4bc41128f38e054fde94103a6421}{is\+\_\+multicast\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_adefe2fe9d8321b819be5b8927e82d5ef}{is\+\_\+broadcast\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_afe3842533ff71a763ae058b264ed91e5}{is\+\_\+universal\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_a1088051770b57efe71f49c5fddce63e5}{is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static int \hyperlink{rte__ether_8h_a1a4a0e6943ca18614b0d828a7c015bcd}{is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea)
+\item 
+static void \hyperlink{rte__ether_8h_a8f4ded504e71f57ac99b156175752577}{eth\+\_\+random\+\_\+addr} (uint8\+\_\+t $\ast$addr)
+\item 
+static void \hyperlink{rte__ether_8h_a38a0c494f25e8d352ba382a9e3e806b7}{ether\+\_\+addr\+\_\+copy} (const struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea\+\_\+from, struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$ea\+\_\+to)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ethernet Helpers in R\+T\+E 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__ether_8h_abf4fcaacb1ad2010711b7c880ec2ed20}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N~6}\label{rte__ether_8h_abf4fcaacb1ad2010711b7c880ec2ed20}
+Length of Ethernet address. \hypertarget{rte__ether_8h_a05b33d6afd13562a40e1a00188351cff}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N~4}\label{rte__ether_8h_a05b33d6afd13562a40e1a00188351cff}
+Length of Ethernet C\+R\+C. \hypertarget{rte__ether_8h_a464bd9f48ae58f2199a703414362d14d}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R@{E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R}}
+\index{E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R@{E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+G\+R\+O\+U\+P\+\_\+\+A\+D\+D\+R~0x01}\label{rte__ether_8h_a464bd9f48ae58f2199a703414362d14d}
+Multicast or broadcast Eth. address. \hypertarget{rte__ether_8h_a4e7484afbe095e65767c43feb3a106cf}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N~({\bf E\+T\+H\+E\+R\+\_\+\+A\+D\+D\+R\+\_\+\+L\+E\+N} $\ast$ 2 + {\bf E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N})}\label{rte__ether_8h_a4e7484afbe095e65767c43feb3a106cf}
+Length of Ethernet header. \hypertarget{rte__ether_8h_aa88ef1c2e21ad83afe35974c4cd2f4ff}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R@{E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R}}
+\index{E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R@{E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+L\+O\+C\+A\+L\+\_\+\+A\+D\+M\+I\+N\+\_\+\+A\+D\+D\+R~0x02}\label{rte__ether_8h_aa88ef1c2e21ad83afe35974c4cd2f4ff}
+Locally assigned Eth. address. \hypertarget{rte__ether_8h_af0ddc37d50d201f80a0c8d433cace675}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+J\+U\+M\+B\+O\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N~0x3\+F00}\label{rte__ether_8h_af0ddc37d50d201f80a0c8d433cace675}
+Maximum Jumbo frame length, including C\+R\+C. \hypertarget{rte__ether_8h_aaebedff0cce73327398dd3139ba50e43}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N~1518}\label{rte__ether_8h_aaebedff0cce73327398dd3139ba50e43}
+Maximum frame len, including C\+R\+C. \hypertarget{rte__ether_8h_a28f0674aa55b7500491d08c541c5c53b}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+R\+A\+M\+E\+\_\+\+L\+E\+N~({\bf E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N} + 4)}\label{rte__ether_8h_a28f0674aa55b7500491d08c541c5c53b}
+Maximum V\+L\+A\+N frame length, including C\+R\+C. \hypertarget{rte__ether_8h_a60e5cf41cb108abfeed8387923a641b9}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D@{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+I\+D~4095}\label{rte__ether_8h_a60e5cf41cb108abfeed8387923a641b9}
+Maximum V\+L\+A\+N I\+D. \hypertarget{rte__ether_8h_a0b09f14d44f1b37e96c75b02ca7b58a7}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+L\+E\+N~64}\label{rte__ether_8h_a0b09f14d44f1b37e96c75b02ca7b58a7}
+Minimum frame len, including C\+R\+C. \hypertarget{rte__ether_8h_af245921a8e199c83853d7976db4c3902}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U@{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U@{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+I\+N\+\_\+\+M\+T\+U~68}\label{rte__ether_8h_af245921a8e199c83853d7976db4c3902}
+Minimum M\+T\+U for I\+Pv4 packets, see R\+F\+C 791. \hypertarget{rte__ether_8h_a8f856225d5b9969ba42cffce2eb12256}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+M\+T\+U@{E\+T\+H\+E\+R\+\_\+\+M\+T\+U}}
+\index{E\+T\+H\+E\+R\+\_\+\+M\+T\+U@{E\+T\+H\+E\+R\+\_\+\+M\+T\+U}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+M\+T\+U}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+M\+T\+U~({\bf E\+T\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N} -\/ {\bf E\+T\+H\+E\+R\+\_\+\+H\+D\+R\+\_\+\+L\+E\+N} -\/ {\bf E\+T\+H\+E\+R\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N})}\label{rte__ether_8h_a8f856225d5b9969ba42cffce2eb12256}
+Ethernet M\+T\+U. \hypertarget{rte__ether_8h_af2a356c8159ecd053b9be2a6c2c78c86}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+1588~0x88\+F7}\label{rte__ether_8h_af2a356c8159ecd053b9be2a6c2c78c86}
+I\+E\+E\+E 802.\+1\+A\+S 1588 Precise Time Protocol. \hypertarget{rte__ether_8h_a3f5d778e8eb1a7ad731921a460e6c1dd}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+R\+P~0x0806}\label{rte__ether_8h_a3f5d778e8eb1a7ad731921a460e6c1dd}
+Arp Protocol. \hypertarget{rte__ether_8h_a08cc3337f1584270c6f9de9bffd14b2b}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv4~0x0800}\label{rte__ether_8h_a08cc3337f1584270c6f9de9bffd14b2b}
+I\+Pv4 Protocol. \hypertarget{rte__ether_8h_ac42bfbd5e6076e6aefffe141c22796a7}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+Pv6~0x86\+D\+D}\label{rte__ether_8h_ac42bfbd5e6076e6aefffe141c22796a7}
+I\+Pv6 Protocol. \hypertarget{rte__ether_8h_a6bced6e28d100419b71b35671da0551d}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+E\+N~2}\label{rte__ether_8h_a6bced6e28d100419b71b35671da0551d}
+Length of Ethernet type field. \hypertarget{rte__ether_8h_a74e41a940b9c245f2bc8eaba01d4cee2}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+A\+R\+P~0x8035}\label{rte__ether_8h_a74e41a940b9c245f2bc8eaba01d4cee2}
+Reverse Arp Protocol. \hypertarget{rte__ether_8h_aaaa516211cec2b61e3717c5fec36952f}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N}}
+\index{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N@{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+L\+A\+N~0x8100}\label{rte__ether_8h_aaaa516211cec2b61e3717c5fec36952f}
+I\+E\+E\+E 802.\+1\+Q V\+L\+A\+N tagging. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__ether_8h_a8f4ded504e71f57ac99b156175752577}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!eth\+\_\+random\+\_\+addr@{eth\+\_\+random\+\_\+addr}}
+\index{eth\+\_\+random\+\_\+addr@{eth\+\_\+random\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{eth\+\_\+random\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static void eth\+\_\+random\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_a8f4ded504e71f57ac99b156175752577}
+Generate a random Ethernet address that is locally administered and not multicast. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & A pointer to Ethernet address. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__ether_8h_a38a0c494f25e8d352ba382a9e3e806b7}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!ether\+\_\+addr\+\_\+copy@{ether\+\_\+addr\+\_\+copy}}
+\index{ether\+\_\+addr\+\_\+copy@{ether\+\_\+addr\+\_\+copy}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{ether\+\_\+addr\+\_\+copy}]{\setlength{\rightskip}{0pt plus 5cm}static void ether\+\_\+addr\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea\+\_\+from, }
+\item[{struct {\bf ether\+\_\+addr} $\ast$}]{ea\+\_\+to}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_a38a0c494f25e8d352ba382a9e3e806b7}
+Fast copy an Ethernet address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea\+\_\+from} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure holding the Ethernet address to copy. \\
+\hline
+{\em ea\+\_\+to} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure where to copy the Ethernet address. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__ether_8h_adefe2fe9d8321b819be5b8927e82d5ef}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+broadcast\+\_\+ether\+\_\+addr@{is\+\_\+broadcast\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+broadcast\+\_\+ether\+\_\+addr@{is\+\_\+broadcast\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+broadcast\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+broadcast\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_adefe2fe9d8321b819be5b8927e82d5ef}
+Check if an Ethernet address is a broadcast address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is a broadcast address; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_a1088051770b57efe71f49c5fddce63e5}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr@{is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr@{is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+local\+\_\+admin\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_a1088051770b57efe71f49c5fddce63e5}
+Check if an Ethernet address is a locally assigned address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is a locally assigned address; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_aa3ae4bc41128f38e054fde94103a6421}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+multicast\+\_\+ether\+\_\+addr@{is\+\_\+multicast\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+multicast\+\_\+ether\+\_\+addr@{is\+\_\+multicast\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+multicast\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+multicast\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_aa3ae4bc41128f38e054fde94103a6421}
+Check if an Ethernet address is a multicast address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is a multicast address; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_ab962929f8a778e1d675fe86361954bc3}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+same\+\_\+ether\+\_\+addr@{is\+\_\+same\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+same\+\_\+ether\+\_\+addr@{is\+\_\+same\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+same\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+same\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea1, }
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_ab962929f8a778e1d675fe86361954bc3}
+Check if two Ethernet addresses are the same.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea1} & A pointer to the first \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address. \\
+\hline
+{\em ea2} & A pointer to the second \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given two ethernet address are the same; False (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_ae45a2eb532a5105263773ed22ff8bc47}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+unicast\+\_\+ether\+\_\+addr@{is\+\_\+unicast\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+unicast\+\_\+ether\+\_\+addr@{is\+\_\+unicast\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+unicast\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+unicast\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_ae45a2eb532a5105263773ed22ff8bc47}
+Check if an Ethernet address is a unicast address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is a unicast address; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_afe3842533ff71a763ae058b264ed91e5}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+universal\+\_\+ether\+\_\+addr@{is\+\_\+universal\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+universal\+\_\+ether\+\_\+addr@{is\+\_\+universal\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+universal\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+universal\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_afe3842533ff71a763ae058b264ed91e5}
+Check if an Ethernet address is a universally assigned address.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is a universally assigned address; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_a1a4a0e6943ca18614b0d828a7c015bcd}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr@{is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr@{is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+valid\+\_\+assigned\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_a1a4a0e6943ca18614b0d828a7c015bcd}
+Check if an Ethernet address is a valid address. Checks that the address is a unicast address and is not filled with zeros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is valid; false (0) otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__ether_8h_af682fa081e83af6cfaab70997e1236bc}{}\index{rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}!is\+\_\+zero\+\_\+ether\+\_\+addr@{is\+\_\+zero\+\_\+ether\+\_\+addr}}
+\index{is\+\_\+zero\+\_\+ether\+\_\+addr@{is\+\_\+zero\+\_\+ether\+\_\+addr}!rte\+\_\+ether.\+h@{rte\+\_\+ether.\+h}}
+\subsubsection[{is\+\_\+zero\+\_\+ether\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}static int is\+\_\+zero\+\_\+ether\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf ether\+\_\+addr} $\ast$}]{ea}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ether_8h_af682fa081e83af6cfaab70997e1236bc}
+Check if an Ethernet address is filled with zeros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ea} & A pointer to a \hyperlink{structether__addr}{ether\+\_\+addr} structure containing the ethernet address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True (1) if the given ethernet address is filled with zeros; false (0) otherwise. 
+\end{DoxyReturn}

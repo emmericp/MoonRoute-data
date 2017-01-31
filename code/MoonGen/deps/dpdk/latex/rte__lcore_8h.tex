@@ -1,0 +1,181 @@
+\hypertarget{rte__lcore_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+lcore.h File Reference}
+\label{rte__lcore_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+lcore.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+lcore.\+h}}
+{\ttfamily \#include $<$rte\+\_\+per\+\_\+lcore.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+eal.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+launch.\+h$>$}\\*
+{\ttfamily \#include $<$exec-\/env/rte\+\_\+lcore.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__lcore_8h_ac180aecb7e5a1207bf18ff9a4b6ad493}{L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y}~-\/1
+\item 
+\#define \hyperlink{rte__lcore_8h_a034c95b6412f09e8de11d430267dc1ba}{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H}(i)
+\item 
+\#define \hyperlink{rte__lcore_8h_a7c9e9927c695ee953c15d64026511919}{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E}(i)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__lcore_8h_a1338d95b499baef364e98f79d6d25a18}{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E} (unsigned, \+\_\+lcore\+\_\+id)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_adfb2b334e7e73f534f25e8888a8a775f}{rte\+\_\+lcore\+\_\+id} (void)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_ab99d72ae5d1c5f533625422934283700}{rte\+\_\+get\+\_\+master\+\_\+lcore} (void)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_af19d0d832c209c0c1962ea3e3f714861}{rte\+\_\+lcore\+\_\+count} (void)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_af1bab178cedb30175f3072b6c5a2ba9b}{rte\+\_\+socket\+\_\+id} (void)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_afef423c8171c6800dc6583979fe85856}{rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id} (unsigned lcore\+\_\+id)
+\item 
+static int \hyperlink{rte__lcore_8h_a076d17802fafc1fb54e168cc37c94c60}{rte\+\_\+lcore\+\_\+is\+\_\+enabled} (unsigned lcore\+\_\+id)
+\item 
+static unsigned \hyperlink{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{rte\+\_\+get\+\_\+next\+\_\+lcore} (unsigned i, int skip\+\_\+master, int wrap)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+P\+I for lcore and Socket Manipulation. Parts of this are execution environment specific. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__lcore_8h_ac180aecb7e5a1207bf18ff9a4b6ad493}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y}}
+\index{L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y~-\/1}\label{rte__lcore_8h_ac180aecb7e5a1207bf18ff9a4b6ad493}
+Any lcore. \hypertarget{rte__lcore_8h_a034c95b6412f09e8de11d430267dc1ba}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H@{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H}}
+\index{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H@{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)}\label{rte__lcore_8h_a034c95b6412f09e8de11d430267dc1ba}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} (i = \hyperlink{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{rte\_get\_next\_lcore}(-1, 0, 0);                \(\backslash\)
+         i<RTE\_MAX\_LCORE;                       \(\backslash\)
+         i = \hyperlink{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{rte\_get\_next\_lcore}(i, 0, 0))
+\end{DoxyCode}
+Macro to browse all running lcores. \hypertarget{rte__lcore_8h_a7c9e9927c695ee953c15d64026511919}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E@{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E}}
+\index{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E@{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+C\+O\+R\+E\+\_\+\+F\+O\+R\+E\+A\+C\+H\+\_\+\+S\+L\+A\+V\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)}\label{rte__lcore_8h_a7c9e9927c695ee953c15d64026511919}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for} (i = \hyperlink{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{rte\_get\_next\_lcore}(-1, 1, 0);                \(\backslash\)
+         i<RTE\_MAX\_LCORE;                       \(\backslash\)
+         i = \hyperlink{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{rte\_get\_next\_lcore}(i, 1, 0))
+\end{DoxyCode}
+Macro to browse all running lcores except the master lcore. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__lcore_8h_a1338d95b499baef364e98f79d6d25a18}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}}
+\index{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{, }
+\item[{\+\_\+lcore\+\_\+id}]{}
+\end{DoxyParamCaption}
+)}\label{rte__lcore_8h_a1338d95b499baef364e98f79d6d25a18}
+Per core \char`\"{}core id\char`\"{}. \hypertarget{rte__lcore_8h_ab99d72ae5d1c5f533625422934283700}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+get\+\_\+master\+\_\+lcore@{rte\+\_\+get\+\_\+master\+\_\+lcore}}
+\index{rte\+\_\+get\+\_\+master\+\_\+lcore@{rte\+\_\+get\+\_\+master\+\_\+lcore}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+master\+\_\+lcore}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+get\+\_\+master\+\_\+lcore (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_ab99d72ae5d1c5f533625422934283700}
+Get the id of the master lcore
+
+\begin{DoxyReturn}{Returns}
+the id of the master lcore 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+get\+\_\+next\+\_\+lcore@{rte\+\_\+get\+\_\+next\+\_\+lcore}}
+\index{rte\+\_\+get\+\_\+next\+\_\+lcore@{rte\+\_\+get\+\_\+next\+\_\+lcore}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+next\+\_\+lcore}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+get\+\_\+next\+\_\+lcore (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i, }
+\item[{int}]{skip\+\_\+master, }
+\item[{int}]{wrap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_ad5b4c6a10d16e210a4d0161b2c779702}
+Get the next enabled lcore I\+D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The current lcore (reference). \\
+\hline
+{\em skip\+\_\+master} & If true, do not return the I\+D of the master lcore. \\
+\hline
+{\em wrap} & If true, go back to 0 when R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E is reached; otherwise, return R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next lcore\+\_\+id or R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E if not found. 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_af19d0d832c209c0c1962ea3e3f714861}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+lcore\+\_\+count@{rte\+\_\+lcore\+\_\+count}}
+\index{rte\+\_\+lcore\+\_\+count@{rte\+\_\+lcore\+\_\+count}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+lcore\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_af19d0d832c209c0c1962ea3e3f714861}
+Return the number of execution units (lcores) on the system.
+
+\begin{DoxyReturn}{Returns}
+the number of execution units (lcores) on the system. 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_adfb2b334e7e73f534f25e8888a8a775f}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+lcore\+\_\+id@{rte\+\_\+lcore\+\_\+id}}
+\index{rte\+\_\+lcore\+\_\+id@{rte\+\_\+lcore\+\_\+id}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+lcore\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_adfb2b334e7e73f534f25e8888a8a775f}
+Return the I\+D of the execution unit we are running on. \begin{DoxyReturn}{Returns}
+Logical core I\+D 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_a076d17802fafc1fb54e168cc37c94c60}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+lcore\+\_\+is\+\_\+enabled@{rte\+\_\+lcore\+\_\+is\+\_\+enabled}}
+\index{rte\+\_\+lcore\+\_\+is\+\_\+enabled@{rte\+\_\+lcore\+\_\+is\+\_\+enabled}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+is\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+lcore\+\_\+is\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_a076d17802fafc1fb54e168cc37c94c60}
+Test if an lcore is enabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & The identifier of the lcore, which M\+U\+S\+T be between 0 and R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the given lcore is enabled; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_afef423c8171c6800dc6583979fe85856}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id@{rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id}}
+\index{rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id@{rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+lcore\+\_\+to\+\_\+socket\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_afef423c8171c6800dc6583979fe85856}
+Get the I\+D of the physical socket of the specified lcore
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & the targeted lcore, which M\+U\+S\+T be between 0 and R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the I\+D of lcoreid\textquotesingle{}s physical socket 
+\end{DoxyReturn}
+\hypertarget{rte__lcore_8h_af1bab178cedb30175f3072b6c5a2ba9b}{}\index{rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}!rte\+\_\+socket\+\_\+id@{rte\+\_\+socket\+\_\+id}}
+\index{rte\+\_\+socket\+\_\+id@{rte\+\_\+socket\+\_\+id}!rte\+\_\+lcore.\+h@{rte\+\_\+lcore.\+h}}
+\subsubsection[{rte\+\_\+socket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+socket\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lcore_8h_af1bab178cedb30175f3072b6c5a2ba9b}
+Return the I\+D of the physical socket of the logical core we are running on. \begin{DoxyReturn}{Returns}
+the I\+D of current lcoreid\textquotesingle{}s physical socket 
+\end{DoxyReturn}

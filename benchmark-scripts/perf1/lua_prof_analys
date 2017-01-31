@@ -1,0 +1,30 @@
+1668 + 20 + 26 + 8 tryRecv
+20 arbiter
+1939 + 402 lookup
+2688 + 313 + 484  distribute
+330  decrementTTL
+113 + 10 free
+173 + 37 + 72 15 + 41 + 9 offload checksum
+201 + 16 + 27 checkvalidipv4
+379 + 10 + 484 applyRoute
+48 handle timeouts
+10+21+21+23+28+4+7+9+bitmasks
+17 pipe tryrecv
+
+OTHER:+30+4+4+40+4+6+7+7+8+83+9+1+1+10+11+2+
+
+Distribute 3485     0.3520
+LPM     2341        0.2365
+Receive 1722        0.1739
+ApplyRoute 873      0.0882
+ChksumOffload 347   0.0351
+TTL     330         0.0333
+IPv4Valid 244       0.0246
+Free    123         0.0124
+bitmasks 123        0.0124
+Timeouts 48         0.0048
+Arbiter 20          0.0020
+Pipes 17            0.0017
+Other 227           0.0229
+
+TOTAL: 

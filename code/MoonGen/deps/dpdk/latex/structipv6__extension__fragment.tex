@@ -1,0 +1,55 @@
+\hypertarget{structipv6__extension__fragment}{}\section{ipv6\+\_\+extension\+\_\+fragment Struct Reference}
+\label{structipv6__extension__fragment}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ip\+\_\+frag.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__extension__fragment_a045daeeb2d6d7b5c4706eb5ca627e84c}{next\+\_\+header}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__extension__fragment_a2a2556147677ece60b8aadf4a0d608ed}{reserved1}
+\item 
+uint32\+\_\+t \hyperlink{structipv6__extension__fragment_abaabdc509cdaba7df9f56c6c76f3ae19}{id}
+\item 
+uint16\+\_\+t \hyperlink{structipv6__extension__fragment_a9c7421f074a7d377459e48d7b7f33c5a}{frag\+\_\+offset}\+:13
+\item 
+uint16\+\_\+t \hyperlink{structipv6__extension__fragment_a0fc429b055e74830a4583ec37f5c3846}{reserved2}\+:2
+\item 
+uint16\+\_\+t \hyperlink{structipv6__extension__fragment_aae811d6ca09a461ef6b1555d6fc9fe00}{more\+\_\+frags}\+:1
+\item 
+uint16\+\_\+t \hyperlink{structipv6__extension__fragment_a229687a8da9d22dcb913d9112e819fd9}{frag\+\_\+data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I\+Pv6 fragment extension header 
+
+\subsection{Field Documentation}
+\hypertarget{structipv6__extension__fragment_a229687a8da9d22dcb913d9112e819fd9}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!frag\+\_\+data@{frag\+\_\+data}}
+\index{frag\+\_\+data@{frag\+\_\+data}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{frag\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t frag\+\_\+data}\label{structipv6__extension__fragment_a229687a8da9d22dcb913d9112e819fd9}
+union of all fragmentation data \hypertarget{structipv6__extension__fragment_a9c7421f074a7d377459e48d7b7f33c5a}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!frag\+\_\+offset@{frag\+\_\+offset}}
+\index{frag\+\_\+offset@{frag\+\_\+offset}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{frag\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t frag\+\_\+offset}\label{structipv6__extension__fragment_a9c7421f074a7d377459e48d7b7f33c5a}
+Offset from the start of the packet \hypertarget{structipv6__extension__fragment_abaabdc509cdaba7df9f56c6c76f3ae19}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!id@{id}}
+\index{id@{id}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t id}\label{structipv6__extension__fragment_abaabdc509cdaba7df9f56c6c76f3ae19}
+Packet I\+D \hypertarget{structipv6__extension__fragment_aae811d6ca09a461ef6b1555d6fc9fe00}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!more\+\_\+frags@{more\+\_\+frags}}
+\index{more\+\_\+frags@{more\+\_\+frags}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{more\+\_\+frags}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t more\+\_\+frags}\label{structipv6__extension__fragment_aae811d6ca09a461ef6b1555d6fc9fe00}
+1 if more fragments left, 0 if last fragment \hypertarget{structipv6__extension__fragment_a045daeeb2d6d7b5c4706eb5ca627e84c}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!next\+\_\+header@{next\+\_\+header}}
+\index{next\+\_\+header@{next\+\_\+header}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{next\+\_\+header}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t next\+\_\+header}\label{structipv6__extension__fragment_a045daeeb2d6d7b5c4706eb5ca627e84c}
+Next header type \hypertarget{structipv6__extension__fragment_a2a2556147677ece60b8aadf4a0d608ed}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!reserved1@{reserved1}}
+\index{reserved1@{reserved1}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{reserved1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t reserved1}\label{structipv6__extension__fragment_a2a2556147677ece60b8aadf4a0d608ed}
+Reserved \hypertarget{structipv6__extension__fragment_a0fc429b055e74830a4583ec37f5c3846}{}\index{ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}!reserved2@{reserved2}}
+\index{reserved2@{reserved2}!ipv6\+\_\+extension\+\_\+fragment@{ipv6\+\_\+extension\+\_\+fragment}}
+\subsubsection[{reserved2}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t reserved2}\label{structipv6__extension__fragment_a0fc429b055e74830a4583ec37f5c3846}
+Reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ip\+\_\+frag/\hyperlink{rte__ip__frag_8h}{rte\+\_\+ip\+\_\+frag.\+h}\end{DoxyCompactItemize}

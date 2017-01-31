@@ -1,0 +1,160 @@
+\hypertarget{rte__kvargs_8h}{}\section{lib/librte\+\_\+kvargs/rte\+\_\+kvargs.h File Reference}
+\label{rte__kvargs_8h}\index{lib/librte\+\_\+kvargs/rte\+\_\+kvargs.\+h@{lib/librte\+\_\+kvargs/rte\+\_\+kvargs.\+h}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__kvargs__pair}{rte\+\_\+kvargs\+\_\+pair}
+\item 
+struct \hyperlink{structrte__kvargs}{rte\+\_\+kvargs}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__kvargs_8h_a9124881bdfe920f08f642a3c1f230530}{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X}~32
+\item 
+\#define \hyperlink{rte__kvargs_8h_a227e69bd3a182a54248aaf1dae535e4f}{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M}~\char`\"{},\char`\"{}
+\item 
+\#define \hyperlink{rte__kvargs_8h_ade2de02e4df72b469ad9588d8769e1de}{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M}~\char`\"{}=\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{rte__kvargs_8h_adfa5111c9d2ae5f8e63a4f78991fcab9}{arg\+\_\+handler\+\_\+t}) (const char $\ast$key, const char $\ast$value, void $\ast$opaque)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} $\ast$ \hyperlink{rte__kvargs_8h_aa5c9957ff05097c66fe7e6adbaca597d}{rte\+\_\+kvargs\+\_\+parse} (const char $\ast$args, const char $\ast$valid\+\_\+keys\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{rte__kvargs_8h_a2808d14204dd03c09fb874bba5c9176c}{rte\+\_\+kvargs\+\_\+free} (struct \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} $\ast$kvlist)
+\item 
+int \hyperlink{rte__kvargs_8h_a73a9ea052766f328c758234ec35f83f8}{rte\+\_\+kvargs\+\_\+process} (const struct \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} $\ast$kvlist, const char $\ast$key\+\_\+match, \hyperlink{rte__kvargs_8h_adfa5111c9d2ae5f8e63a4f78991fcab9}{arg\+\_\+handler\+\_\+t} handler, void $\ast$opaque\+\_\+arg)
+\item 
+unsigned \hyperlink{rte__kvargs_8h_a6b47b7f1f4afb05082a61d0515a3d74f}{rte\+\_\+kvargs\+\_\+count} (const struct \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} $\ast$kvlist, const char $\ast$key\+\_\+match)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Argument parsing
+
+This module can be used to parse arguments whose format is key1=value1,key2=value2,key3=value3,...
+
+The same key can appear several times with the same or a different value. Indeed, the arguments are stored as a list of key/values associations and not as a dictionary.
+
+This file provides some helpers that are especially used by virtual ethernet devices at initialization for arguments parsing. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__kvargs_8h_ade2de02e4df72b469ad9588d8769e1de}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M}}
+\index{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+K\+V\+\_\+\+D\+E\+L\+I\+M~\char`\"{}=\char`\"{}}\label{rte__kvargs_8h_ade2de02e4df72b469ad9588d8769e1de}
+separator character used between key and value \hypertarget{rte__kvargs_8h_a9124881bdfe920f08f642a3c1f230530}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+M\+A\+X~32}\label{rte__kvargs_8h_a9124881bdfe920f08f642a3c1f230530}
+Maximum number of key/value associations \hypertarget{rte__kvargs_8h_a227e69bd3a182a54248aaf1dae535e4f}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M}}
+\index{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M@{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+K\+V\+A\+R\+G\+S\+\_\+\+P\+A\+I\+R\+S\+\_\+\+D\+E\+L\+I\+M~\char`\"{},\char`\"{}}\label{rte__kvargs_8h_a227e69bd3a182a54248aaf1dae535e4f}
+separator character used between each pair 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__kvargs_8h_adfa5111c9d2ae5f8e63a4f78991fcab9}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!arg\+\_\+handler\+\_\+t@{arg\+\_\+handler\+\_\+t}}
+\index{arg\+\_\+handler\+\_\+t@{arg\+\_\+handler\+\_\+t}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{arg\+\_\+handler\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ arg\+\_\+handler\+\_\+t) (const char $\ast$key, const char $\ast$value, void $\ast$opaque)}\label{rte__kvargs_8h_adfa5111c9d2ae5f8e63a4f78991fcab9}
+Type of callback function used by \hyperlink{rte__kvargs_8h_a73a9ea052766f328c758234ec35f83f8}{rte\+\_\+kvargs\+\_\+process()} 
+
+\subsection{Function Documentation}
+\hypertarget{rte__kvargs_8h_a6b47b7f1f4afb05082a61d0515a3d74f}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!rte\+\_\+kvargs\+\_\+count@{rte\+\_\+kvargs\+\_\+count}}
+\index{rte\+\_\+kvargs\+\_\+count@{rte\+\_\+kvargs\+\_\+count}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{rte\+\_\+kvargs\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+kvargs\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+kvargs} $\ast$}]{kvlist, }
+\item[{const char $\ast$}]{key\+\_\+match}
+\end{DoxyParamCaption}
+)}\label{rte__kvargs_8h_a6b47b7f1f4afb05082a61d0515a3d74f}
+Count the number of associations matching the given key
+
+
+\begin{DoxyParams}{Parameters}
+{\em kvlist} & The \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure \\
+\hline
+{\em key\+\_\+match} & The key that should match, or N\+U\+L\+L to count all associations\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of entries 
+\end{DoxyReturn}
+\hypertarget{rte__kvargs_8h_a2808d14204dd03c09fb874bba5c9176c}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!rte\+\_\+kvargs\+\_\+free@{rte\+\_\+kvargs\+\_\+free}}
+\index{rte\+\_\+kvargs\+\_\+free@{rte\+\_\+kvargs\+\_\+free}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{rte\+\_\+kvargs\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+kvargs\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+kvargs} $\ast$}]{kvlist}
+\end{DoxyParamCaption}
+)}\label{rte__kvargs_8h_a2808d14204dd03c09fb874bba5c9176c}
+Free a \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure
+
+Free a \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure previously allocated with \hyperlink{rte__kvargs_8h_aa5c9957ff05097c66fe7e6adbaca597d}{rte\+\_\+kvargs\+\_\+parse()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kvlist} & The \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__kvargs_8h_aa5c9957ff05097c66fe7e6adbaca597d}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!rte\+\_\+kvargs\+\_\+parse@{rte\+\_\+kvargs\+\_\+parse}}
+\index{rte\+\_\+kvargs\+\_\+parse@{rte\+\_\+kvargs\+\_\+parse}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{rte\+\_\+kvargs\+\_\+parse}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+kvargs}$\ast$ rte\+\_\+kvargs\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{args, }
+\item[{const char $\ast$}]{valid\+\_\+keys\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{rte__kvargs_8h_aa5c9957ff05097c66fe7e6adbaca597d}
+Allocate a \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} and store key/value associations from a string
+
+The function allocates and fills a \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure from a given string whose format is key1=value1,key2=value2,...
+
+The structure can be freed with \hyperlink{rte__kvargs_8h_a2808d14204dd03c09fb874bba5c9176c}{rte\+\_\+kvargs\+\_\+free()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The input string containing the key/value associations \\
+\hline
+{\em valid\+\_\+keys} & A list of valid keys (table of const char $\ast$, the last must be N\+U\+L\+L). This argument is ignored if N\+U\+L\+L\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item A pointer to an allocated \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure on success
+\item N\+U\+L\+L on error 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__kvargs_8h_a73a9ea052766f328c758234ec35f83f8}{}\index{rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}!rte\+\_\+kvargs\+\_\+process@{rte\+\_\+kvargs\+\_\+process}}
+\index{rte\+\_\+kvargs\+\_\+process@{rte\+\_\+kvargs\+\_\+process}!rte\+\_\+kvargs.\+h@{rte\+\_\+kvargs.\+h}}
+\subsubsection[{rte\+\_\+kvargs\+\_\+process}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+kvargs\+\_\+process (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+kvargs} $\ast$}]{kvlist, }
+\item[{const char $\ast$}]{key\+\_\+match, }
+\item[{{\bf arg\+\_\+handler\+\_\+t}}]{handler, }
+\item[{void $\ast$}]{opaque\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__kvargs_8h_a73a9ea052766f328c758234ec35f83f8}
+Call a handler function for each key/value matching the key
+
+For each key/value association that matches the given key, calls the handler function with the for a given arg\+\_\+name passing the value on the dictionary for that key and a given extra argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kvlist} & The \hyperlink{structrte__kvargs}{rte\+\_\+kvargs} structure \\
+\hline
+{\em key\+\_\+match} & The key on which the handler should be called, or N\+U\+L\+L to process handler on all associations \\
+\hline
+{\em handler} & The function to call for each matching key \\
+\hline
+{\em opaque\+\_\+arg} & A pointer passed unchanged to the handler\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success
+\item Negative on error 
+\end{DoxyItemize}
+\end{DoxyReturn}

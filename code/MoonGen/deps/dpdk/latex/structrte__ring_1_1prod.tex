@@ -1,0 +1,50 @@
+\hypertarget{structrte__ring_1_1prod}{}\section{rte\+\_\+ring\+:\+:prod Struct Reference}
+\label{structrte__ring_1_1prod}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_aa45ec262d621c95d7c893c9862774cb7}{watermark}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_a9215b840f399e8cab705caa55ed47222}{sp\+\_\+enqueue}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_ab2c6b258f02add8fdf4cfc7c371dd772}{size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_ad3bee21df6875eeccd25d3c577e0600a}{mask}
+\item 
+volatile uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_a5f4413ef4a8b1d82ffcfce4265fde558}{head}
+\item 
+volatile uint32\+\_\+t \hyperlink{structrte__ring_1_1prod_ac053cdb6967e8901ed4c87327d649bf7}{tail}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ring producer status. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__ring_1_1prod_a5f4413ef4a8b1d82ffcfce4265fde558}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!head@{head}}
+\index{head@{head}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t head}\label{structrte__ring_1_1prod_a5f4413ef4a8b1d82ffcfce4265fde558}
+Producer head. \hypertarget{structrte__ring_1_1prod_ad3bee21df6875eeccd25d3c577e0600a}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!mask@{mask}}
+\index{mask@{mask}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t mask}\label{structrte__ring_1_1prod_ad3bee21df6875eeccd25d3c577e0600a}
+Mask (size-\/1) of ring. \hypertarget{structrte__ring_1_1prod_ab2c6b258f02add8fdf4cfc7c371dd772}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!size@{size}}
+\index{size@{size}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t size}\label{structrte__ring_1_1prod_ab2c6b258f02add8fdf4cfc7c371dd772}
+Size of ring. \hypertarget{structrte__ring_1_1prod_a9215b840f399e8cab705caa55ed47222}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!sp\+\_\+enqueue@{sp\+\_\+enqueue}}
+\index{sp\+\_\+enqueue@{sp\+\_\+enqueue}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{sp\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t sp\+\_\+enqueue}\label{structrte__ring_1_1prod_a9215b840f399e8cab705caa55ed47222}
+True, if single producer. \hypertarget{structrte__ring_1_1prod_ac053cdb6967e8901ed4c87327d649bf7}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!tail@{tail}}
+\index{tail@{tail}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{tail}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t tail}\label{structrte__ring_1_1prod_ac053cdb6967e8901ed4c87327d649bf7}
+Producer tail. \hypertarget{structrte__ring_1_1prod_aa45ec262d621c95d7c893c9862774cb7}{}\index{rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}!watermark@{watermark}}
+\index{watermark@{watermark}!rte\+\_\+ring\+::prod@{rte\+\_\+ring\+::prod}}
+\subsubsection[{watermark}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t watermark}\label{structrte__ring_1_1prod_aa45ec262d621c95d7c893c9862774cb7}
+Maximum items before E\+D\+Q\+U\+O\+T. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ring/\hyperlink{rte__ring_8h}{rte\+\_\+ring.\+h}\end{DoxyCompactItemize}

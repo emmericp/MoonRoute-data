@@ -1,0 +1,68 @@
+\hypertarget{rte__hexdump_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+hexdump.h File Reference}
+\label{rte__hexdump_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+hexdump.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+hexdump.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rte__hexdump_8h_ad29a838fbd4c22051204e8055c6593ed}{rte\+\_\+hexdump} (F\+I\+L\+E $\ast$f, const char $\ast$title, const void $\ast$buf, unsigned int len)
+\item 
+void \hyperlink{rte__hexdump_8h_a02982016346c4500c08fd480c4c80f6a}{rte\+\_\+memdump} (F\+I\+L\+E $\ast$f, const char $\ast$title, const void $\ast$buf, unsigned int len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple A\+P\+I to dump out memory in a special hex format. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__hexdump_8h_ad29a838fbd4c22051204e8055c6593ed}{}\index{rte\+\_\+hexdump.\+h@{rte\+\_\+hexdump.\+h}!rte\+\_\+hexdump@{rte\+\_\+hexdump}}
+\index{rte\+\_\+hexdump@{rte\+\_\+hexdump}!rte\+\_\+hexdump.\+h@{rte\+\_\+hexdump.\+h}}
+\subsubsection[{rte\+\_\+hexdump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+hexdump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const char $\ast$}]{title, }
+\item[{const void $\ast$}]{buf, }
+\item[{unsigned int}]{len}
+\end{DoxyParamCaption}
+)}\label{rte__hexdump_8h_ad29a838fbd4c22051204e8055c6593ed}
+Dump out memory in a special hex dump format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em title} & If not N\+U\+L\+L this string is printed as a header to the output. \\
+\hline
+{\em buf} & This is the buffer address to print out. \\
+\hline
+{\em len} & The number of bytes to dump out \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{rte__hexdump_8h_a02982016346c4500c08fd480c4c80f6a}{}\index{rte\+\_\+hexdump.\+h@{rte\+\_\+hexdump.\+h}!rte\+\_\+memdump@{rte\+\_\+memdump}}
+\index{rte\+\_\+memdump@{rte\+\_\+memdump}!rte\+\_\+hexdump.\+h@{rte\+\_\+hexdump.\+h}}
+\subsubsection[{rte\+\_\+memdump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+memdump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const char $\ast$}]{title, }
+\item[{const void $\ast$}]{buf, }
+\item[{unsigned int}]{len}
+\end{DoxyParamCaption}
+)}\label{rte__hexdump_8h_a02982016346c4500c08fd480c4c80f6a}
+Dump out memory in a hex format with colons between bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em title} & If not N\+U\+L\+L this string is printed as a header to the output. \\
+\hline
+{\em buf} & This is the buffer address to print out. \\
+\hline
+{\em len} & The number of bytes to dump out \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}

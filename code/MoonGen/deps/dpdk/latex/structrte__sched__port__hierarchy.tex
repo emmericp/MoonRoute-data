@@ -1,0 +1,45 @@
+\hypertarget{structrte__sched__port__hierarchy}{}\section{rte\+\_\+sched\+\_\+port\+\_\+hierarchy Struct Reference}
+\label{structrte__sched__port__hierarchy}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+
+
+{\ttfamily \#include $<$rte\+\_\+sched.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__hierarchy_a2b1b322d05920512d14aa65fc6055207}{queue}\+:2
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__hierarchy_a3a5f512c3cff981dd7ded965bd3a7530}{traffic\+\_\+class}\+:2
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__hierarchy_aab9d6c721df5d1e7f16a62775d4b8a27}{pipe}\+:20
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__hierarchy_a33315241553c200d0c73b47c82a84313}{subport}\+:6
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__hierarchy_a66b2ef8398a8bbb0f5816f22a7b138da}{color}\+:2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Path through the scheduler hierarchy used by the scheduler enqueue operation to identify the destination queue for the current packet. Stored in the field pkt.\+hash.\+sched of struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} of each packet, typically written by the classification stage and read by scheduler enqueue. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__sched__port__hierarchy_a66b2ef8398a8bbb0f5816f22a7b138da}{}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}!color@{color}}
+\index{color@{color}!rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t color}\label{structrte__sched__port__hierarchy_a66b2ef8398a8bbb0f5816f22a7b138da}
+Color \hypertarget{structrte__sched__port__hierarchy_aab9d6c721df5d1e7f16a62775d4b8a27}{}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}!pipe@{pipe}}
+\index{pipe@{pipe}!rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+\subsubsection[{pipe}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t pipe}\label{structrte__sched__port__hierarchy_aab9d6c721df5d1e7f16a62775d4b8a27}
+Pipe I\+D \hypertarget{structrte__sched__port__hierarchy_a2b1b322d05920512d14aa65fc6055207}{}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}!queue@{queue}}
+\index{queue@{queue}!rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t queue}\label{structrte__sched__port__hierarchy_a2b1b322d05920512d14aa65fc6055207}
+Queue I\+D (0 .. 3) \hypertarget{structrte__sched__port__hierarchy_a33315241553c200d0c73b47c82a84313}{}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}!subport@{subport}}
+\index{subport@{subport}!rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+\subsubsection[{subport}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t subport}\label{structrte__sched__port__hierarchy_a33315241553c200d0c73b47c82a84313}
+Subport I\+D \hypertarget{structrte__sched__port__hierarchy_a3a5f512c3cff981dd7ded965bd3a7530}{}\index{rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}!traffic\+\_\+class@{traffic\+\_\+class}}
+\index{traffic\+\_\+class@{traffic\+\_\+class}!rte\+\_\+sched\+\_\+port\+\_\+hierarchy@{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}}
+\subsubsection[{traffic\+\_\+class}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t traffic\+\_\+class}\label{structrte__sched__port__hierarchy_a3a5f512c3cff981dd7ded965bd3a7530}
+Traffic class I\+D (0 .. 3) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+sched/\hyperlink{rte__sched_8h}{rte\+\_\+sched.\+h}\end{DoxyCompactItemize}

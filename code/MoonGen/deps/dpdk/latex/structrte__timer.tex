@@ -1,0 +1,45 @@
+\hypertarget{structrte__timer}{}\section{rte\+\_\+timer Struct Reference}
+\label{structrte__timer}\index{rte\+\_\+timer@{rte\+\_\+timer}}
+
+
+{\ttfamily \#include $<$rte\+\_\+timer.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{structrte__timer_ac9ce2fcaa610ae415e9e65d1d7b48ba2}{expire}
+\item 
+volatile union \hyperlink{unionrte__timer__status}{rte\+\_\+timer\+\_\+status} \hyperlink{structrte__timer_a3be7bdbca383565f03e859db2f37a0a2}{status}
+\item 
+uint64\+\_\+t \hyperlink{structrte__timer_a473ee3fcea196f6207eeda1e747746e8}{period}
+\item 
+\hyperlink{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}{rte\+\_\+timer\+\_\+cb\+\_\+t} $\ast$ \hyperlink{structrte__timer_a58ec0649f525a9e30a03e7559a111538}{f}
+\item 
+void $\ast$ \hyperlink{structrte__timer_a9ce2ec4812a92cb6ab39f6e81e9173a9}{arg}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure describing a timer in R\+T\+E. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__timer_a9ce2ec4812a92cb6ab39f6e81e9173a9}{}\index{rte\+\_\+timer@{rte\+\_\+timer}!arg@{arg}}
+\index{arg@{arg}!rte\+\_\+timer@{rte\+\_\+timer}}
+\subsubsection[{arg}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg}\label{structrte__timer_a9ce2ec4812a92cb6ab39f6e81e9173a9}
+Argument to callback function. \hypertarget{structrte__timer_ac9ce2fcaa610ae415e9e65d1d7b48ba2}{}\index{rte\+\_\+timer@{rte\+\_\+timer}!expire@{expire}}
+\index{expire@{expire}!rte\+\_\+timer@{rte\+\_\+timer}}
+\subsubsection[{expire}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t expire}\label{structrte__timer_ac9ce2fcaa610ae415e9e65d1d7b48ba2}
+Time when timer expire. \hypertarget{structrte__timer_a58ec0649f525a9e30a03e7559a111538}{}\index{rte\+\_\+timer@{rte\+\_\+timer}!f@{f}}
+\index{f@{f}!rte\+\_\+timer@{rte\+\_\+timer}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+timer\+\_\+cb\+\_\+t}$\ast$ f}\label{structrte__timer_a58ec0649f525a9e30a03e7559a111538}
+Callback function. \hypertarget{structrte__timer_a473ee3fcea196f6207eeda1e747746e8}{}\index{rte\+\_\+timer@{rte\+\_\+timer}!period@{period}}
+\index{period@{period}!rte\+\_\+timer@{rte\+\_\+timer}}
+\subsubsection[{period}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t period}\label{structrte__timer_a473ee3fcea196f6207eeda1e747746e8}
+Period of timer (0 if not periodic). \hypertarget{structrte__timer_a3be7bdbca383565f03e859db2f37a0a2}{}\index{rte\+\_\+timer@{rte\+\_\+timer}!status@{status}}
+\index{status@{status}!rte\+\_\+timer@{rte\+\_\+timer}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}volatile union {\bf rte\+\_\+timer\+\_\+status} status}\label{structrte__timer_a3be7bdbca383565f03e859db2f37a0a2}
+Status of timer. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+timer/\hyperlink{rte__timer_8h}{rte\+\_\+timer.\+h}\end{DoxyCompactItemize}

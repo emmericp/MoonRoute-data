@@ -1,0 +1,121 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{tumcolors}
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+
+
+\begin{document}
+\tikzset{every mark/.append style={scale=0.75}}
+\begin{tikzpicture}
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=0.43\textwidth,
+height=6cm,
+xlabel=Rx batch size {[}packets{]},
+ymin=0,
+ymax=110,
+xmin=0.5,
+xmax=2048,
+xtick={1,2,4,8,16,32,64,128,256,512,1024},
+xticklabels={$2^0$, $2^1$, $2^2$, $2^3$, $2^4$, $2^5$, $2^6$, $2^7$, $2^8$, $2^9$, $2^{10}$},
+%ytick={0,5,...,15},
+ylabel=Latency {[}$\mu$s{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+legend entries={TxB 128 (median), TxB 128 (min/max), TxB 8 (median), TxB 8 (min/max)},
+%legend style={font=\small,at={(0.97,0.96)},anchor=north east},
+legend style={at={(.5,1.05)},anchor=south},
+%legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+legend columns= 2,
+transpose legend,
+]
+\addplot[mark=none,color=TUMDarkerBlue,dashed, thick,forget plot] coordinates {
+(1, 20.211200)
+(2, 20.364800)
+(4, 20.787200)
+(8, 20.966400)
+(16, 20.710400)
+(32, 21.062400)
+(64, 21.952000)
+(128, 20.787200)
+(256, 26.297600)
+(512, 37.740800)
+(1024, 56.396800)
+};
+\addplot[mark=*,color=TUMDarkerBlue] coordinates {
+(1, 45.388800)
+(2, 33.484800)
+(4, 35.763200)
+(8, 29.811200)
+(16, 24.902400)
+(32, 24.883200)
+(64, 26.182400)
+(128, 35.763200)
+(256, 31.942400)
+(512, 44.972800)
+(1024, 69.452800)
+};
+\addplot[mark=none,color=TUMDarkerBlue,dashed,thick] coordinates {
+(1, 71.654400)
+(2, 49.651200)
+(4, 57.875200)
+(8, 54.931200)
+(16, 60.704000)
+(32, 56.499200)
+(64, 53.164800)
+(128, 57.875200)
+(256, 60.736000)
+(512, 98.220800)
+(1024, 104.288000)
+};
+\addplot[mark=none,color=TUMGreen,dashed, thick,forget plot] coordinates {
+(1, 8.908800)
+(2, 9.017600)
+(4, 9.497600)
+(8, 9.689600)
+(16, 10.092800)
+(32, 11.225600)
+(64, 13.158400)
+(128, 16.076800)
+(256, 20.320000)
+(512, 29.785600)
+(1024, 40.108800)
+};
+\addplot[mark=triangle*,color=TUMGreen] coordinates {
+(1, 10.764800)
+(2, 10.214400)
+(4, 10.905600)
+(8, 10.867200)
+(16, 11.027200)
+(32, 12.620800)
+(64, 15.116800)
+(128, 18.848000)
+(256, 23.865600)
+(512, 36.352000)
+(1024, 49.036800)
+};
+\addplot[mark=none,color=TUMGreen,dashed, thick] coordinates {
+(1, 15.756800)
+(2, 15.782400)
+(4, 17.068800)
+(8, 22.310400)
+(16, 36.377600)
+(32, 34.579200)
+(64, 31.084800)
+(128, 33.478400)
+(256, 44.844800)
+(512, 69.452800)
+(1024, 86.137600)
+};
+
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

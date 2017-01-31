@@ -1,0 +1,82 @@
+\hypertarget{structrte__fdir__filter}{}\section{rte\+\_\+fdir\+\_\+filter Struct Reference}
+\label{structrte__fdir__filter}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__filter_a7eec7b6909117bd1391bf812aa0658af}{flex\+\_\+bytes}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__filter_ad9a532da576820f8630b96c16692aa5a}{vlan\+\_\+id}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__filter_ab1b9c69e1aa78a6c57cacf6afd7c3bc9}{port\+\_\+src}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__filter_aca5475783723cc06d0fb058080502033}{port\+\_\+dst}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint32\_t \hyperlink{structrte__fdir__filter_a132e9dc13134d538f27e0d7fd09a7bc9}{ipv4\_addr}\\
+\>uint32\_t \hyperlink{structrte__fdir__filter_a666af2f44468c2718d64b3e32bef3af6}{ipv6\_addr} \mbox{[}4\mbox{]}\\
+\} \hyperlink{structrte__fdir__filter_ad00d8229fa71d4430e00fad6377b4f56}{ip\_src}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint32\_t \hyperlink{structrte__fdir__filter_a132e9dc13134d538f27e0d7fd09a7bc9}{ipv4\_addr}\\
+\>uint32\_t \hyperlink{structrte__fdir__filter_a666af2f44468c2718d64b3e32bef3af6}{ipv6\_addr} \mbox{[}4\mbox{]}\\
+\} \hyperlink{structrte__fdir__filter_af50d026067facc14e9f59daabf3374d9}{ip\_dst}\\
+
+\end{tabbing}\item 
+enum \hyperlink{rte__ethdev_8h_a438bfb53a537ee87e81104affb6a0712}{rte\+\_\+l4type} \hyperlink{structrte__fdir__filter_a0d468c4d8e2f26e76d6a3b382714b111}{l4type}
+\item 
+enum \hyperlink{rte__ethdev_8h_ab3327734f777895234ece5ea5de0c780}{rte\+\_\+iptype} \hyperlink{structrte__fdir__filter_ac40152ee74c401e0f29eaa930ee7ea50}{iptype}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to define a F\+D\+I\+R packet filter. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__fdir__filter_a7eec7b6909117bd1391bf812aa0658af}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!flex\+\_\+bytes@{flex\+\_\+bytes}}
+\index{flex\+\_\+bytes@{flex\+\_\+bytes}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{flex\+\_\+bytes}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t flex\+\_\+bytes}\label{structrte__fdir__filter_a7eec7b6909117bd1391bf812aa0658af}
+Flex bytes value to match. \hypertarget{structrte__fdir__filter_af50d026067facc14e9f59daabf3374d9}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!ip\+\_\+dst@{ip\+\_\+dst}}
+\index{ip\+\_\+dst@{ip\+\_\+dst}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{ip\+\_\+dst}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   ip\+\_\+dst}\label{structrte__fdir__filter_af50d026067facc14e9f59daabf3374d9}
+I\+Pv4/\+I\+Pv6 destination address to match (union of above). \hypertarget{structrte__fdir__filter_ad00d8229fa71d4430e00fad6377b4f56}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!ip\+\_\+src@{ip\+\_\+src}}
+\index{ip\+\_\+src@{ip\+\_\+src}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{ip\+\_\+src}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   ip\+\_\+src}\label{structrte__fdir__filter_ad00d8229fa71d4430e00fad6377b4f56}
+I\+Pv4/\+I\+Pv6 source address to match (union of above). \hypertarget{structrte__fdir__filter_ac40152ee74c401e0f29eaa930ee7ea50}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!iptype@{iptype}}
+\index{iptype@{iptype}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{iptype}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+iptype} iptype}\label{structrte__fdir__filter_ac40152ee74c401e0f29eaa930ee7ea50}
+I\+P packet type to match\+: I\+Pv4 or I\+Pv6. \hypertarget{structrte__fdir__filter_a132e9dc13134d538f27e0d7fd09a7bc9}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!ipv4\+\_\+addr@{ipv4\+\_\+addr}}
+\index{ipv4\+\_\+addr@{ipv4\+\_\+addr}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{ipv4\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t ipv4\+\_\+addr}\label{structrte__fdir__filter_a132e9dc13134d538f27e0d7fd09a7bc9}
+I\+Pv4 source address to match.
+
+I\+Pv4 destination address to match. \hypertarget{structrte__fdir__filter_a666af2f44468c2718d64b3e32bef3af6}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!ipv6\+\_\+addr@{ipv6\+\_\+addr}}
+\index{ipv6\+\_\+addr@{ipv6\+\_\+addr}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{ipv6\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t ipv6\+\_\+addr\mbox{[}4\mbox{]}}\label{structrte__fdir__filter_a666af2f44468c2718d64b3e32bef3af6}
+I\+Pv6 source address to match.
+
+I\+Pv6 destination address to match \hypertarget{structrte__fdir__filter_a0d468c4d8e2f26e76d6a3b382714b111}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!l4type@{l4type}}
+\index{l4type@{l4type}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{l4type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+l4type} l4type}\label{structrte__fdir__filter_a0d468c4d8e2f26e76d6a3b382714b111}
+l4type to match\+: N\+O\+N\+E/\+U\+D\+P/\+T\+C\+P/\+S\+C\+T\+P. \hypertarget{structrte__fdir__filter_aca5475783723cc06d0fb058080502033}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!port\+\_\+dst@{port\+\_\+dst}}
+\index{port\+\_\+dst@{port\+\_\+dst}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{port\+\_\+dst}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t port\+\_\+dst}\label{structrte__fdir__filter_aca5475783723cc06d0fb058080502033}
+Destination port to match, 0 otherwise. \hypertarget{structrte__fdir__filter_ab1b9c69e1aa78a6c57cacf6afd7c3bc9}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!port\+\_\+src@{port\+\_\+src}}
+\index{port\+\_\+src@{port\+\_\+src}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{port\+\_\+src}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t port\+\_\+src}\label{structrte__fdir__filter_ab1b9c69e1aa78a6c57cacf6afd7c3bc9}
+Source port to match, 0 otherwise. \hypertarget{structrte__fdir__filter_ad9a532da576820f8630b96c16692aa5a}{}\index{rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}!vlan\+\_\+id@{vlan\+\_\+id}}
+\index{vlan\+\_\+id@{vlan\+\_\+id}!rte\+\_\+fdir\+\_\+filter@{rte\+\_\+fdir\+\_\+filter}}
+\subsubsection[{vlan\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t vlan\+\_\+id}\label{structrte__fdir__filter_ad9a532da576820f8630b96c16692aa5a}
+V\+L\+A\+N I\+D value to match, 0 otherwise. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

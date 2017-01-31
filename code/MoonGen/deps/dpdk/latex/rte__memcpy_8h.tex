@@ -1,0 +1,168 @@
+\hypertarget{rte__memcpy_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+memcpy.h File Reference}
+\label{rte__memcpy_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+memcpy.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+memcpy.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$emmintrin.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__memcpy_8h_a6bc3a67b5e981f440b389da09e8af08d}{rte\+\_\+memcpy}(dst,  src,  n)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{rte__memcpy_8h_ac214d71e0bd5f760e87a5a9bf4da7377}{rte\+\_\+mov16} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\item 
+static void \hyperlink{rte__memcpy_8h_a9836018e25aad5c4c4ec376d02c3c9c3}{rte\+\_\+mov32} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\item 
+static void \hyperlink{rte__memcpy_8h_a402068322a50337322e08c4ce15fd25f}{rte\+\_\+mov48} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\item 
+static void \hyperlink{rte__memcpy_8h_aeb851ffe55d2fdc76634992606d3ef6b}{rte\+\_\+mov64} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\item 
+static void \hyperlink{rte__memcpy_8h_a1d2cb6cdea68971ea3ebaaba146ce014}{rte\+\_\+mov128} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\item 
+static void \hyperlink{rte__memcpy_8h_a9a73d31e9fc9797130d450aaac4da3ae}{rte\+\_\+mov256} (uint8\+\_\+t $\ast$dst, const uint8\+\_\+t $\ast$src)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for S\+S\+E implementation of memcpy(). 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__memcpy_8h_a6bc3a67b5e981f440b389da09e8af08d}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+memcpy@{rte\+\_\+memcpy}}
+\index{rte\+\_\+memcpy@{rte\+\_\+memcpy}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+memcpy}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+memcpy(
+\begin{DoxyParamCaption}
+\item[{}]{dst, }
+\item[{}]{src, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{rte__memcpy_8h_a6bc3a67b5e981f440b389da09e8af08d}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((\_\_builtin\_constant\_p(n)) ?          \(\backslash\)
+    memcpy((dst), (src), (n)) :          \(\backslash\)
+    rte\_memcpy\_func((dst), (src), (n)))
+\end{DoxyCode}
+Copy bytes from one location to another. The locations must not overlap.
+
+\begin{DoxyNote}{Note}
+This is implemented as a macro, so it\textquotesingle{}s address should not be taken and care is needed as parameter expressions may be evaluated multiple times.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+{\em n} & Number of bytes to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the destination data. 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__memcpy_8h_a1d2cb6cdea68971ea3ebaaba146ce014}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov128@{rte\+\_\+mov128}}
+\index{rte\+\_\+mov128@{rte\+\_\+mov128}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov128}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov128 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_a1d2cb6cdea68971ea3ebaaba146ce014}
+Copy 128 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memcpy_8h_ac214d71e0bd5f760e87a5a9bf4da7377}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov16@{rte\+\_\+mov16}}
+\index{rte\+\_\+mov16@{rte\+\_\+mov16}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov16}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov16 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_ac214d71e0bd5f760e87a5a9bf4da7377}
+Copy 16 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memcpy_8h_a9a73d31e9fc9797130d450aaac4da3ae}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov256@{rte\+\_\+mov256}}
+\index{rte\+\_\+mov256@{rte\+\_\+mov256}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov256}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov256 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_a9a73d31e9fc9797130d450aaac4da3ae}
+Copy 256 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memcpy_8h_a9836018e25aad5c4c4ec376d02c3c9c3}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov32@{rte\+\_\+mov32}}
+\index{rte\+\_\+mov32@{rte\+\_\+mov32}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov32}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov32 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_a9836018e25aad5c4c4ec376d02c3c9c3}
+Copy 32 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memcpy_8h_a402068322a50337322e08c4ce15fd25f}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov48@{rte\+\_\+mov48}}
+\index{rte\+\_\+mov48@{rte\+\_\+mov48}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov48}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov48 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_a402068322a50337322e08c4ce15fd25f}
+Copy 48 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memcpy_8h_aeb851ffe55d2fdc76634992606d3ef6b}{}\index{rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}!rte\+\_\+mov64@{rte\+\_\+mov64}}
+\index{rte\+\_\+mov64@{rte\+\_\+mov64}!rte\+\_\+memcpy.\+h@{rte\+\_\+memcpy.\+h}}
+\subsubsection[{rte\+\_\+mov64}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mov64 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{dst, }
+\item[{const uint8\+\_\+t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__memcpy_8h_aeb851ffe55d2fdc76634992606d3ef6b}
+Copy 64 bytes from one location to another using optimised S\+S\+E instructions. The locations should not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Pointer to the destination of the data. \\
+\hline
+{\em src} & Pointer to the source data. \\
+\hline
+\end{DoxyParams}

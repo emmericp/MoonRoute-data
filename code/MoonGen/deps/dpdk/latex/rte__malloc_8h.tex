@@ -1,0 +1,373 @@
+\hypertarget{rte__malloc_8h}{}\section{lib/librte\+\_\+malloc/rte\+\_\+malloc.h File Reference}
+\label{rte__malloc_8h}\index{lib/librte\+\_\+malloc/rte\+\_\+malloc.\+h@{lib/librte\+\_\+malloc/rte\+\_\+malloc.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__malloc__socket__stats}{rte\+\_\+malloc\+\_\+socket\+\_\+stats}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc} (const char $\ast$type, size\+\_\+t size, unsigned align)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}{rte\+\_\+zmalloc} (const char $\ast$type, size\+\_\+t size, unsigned align)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}{rte\+\_\+calloc} (const char $\ast$type, size\+\_\+t num, size\+\_\+t size, unsigned align)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_a0cd74246478ae93276e8820b98b9bf76}{rte\+\_\+realloc} (void $\ast$ptr, size\+\_\+t size, unsigned align)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_a748608cbeef996aafb7816a2716644d5}{rte\+\_\+malloc\+\_\+socket} (const char $\ast$type, size\+\_\+t size, unsigned align, int socket)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_aabfa4bb0c1430eb7be96bf847f61113a}{rte\+\_\+zmalloc\+\_\+socket} (const char $\ast$type, size\+\_\+t size, unsigned align, int socket)
+\item 
+void $\ast$ \hyperlink{rte__malloc_8h_a9d5985e77227148b098c8729365fac14}{rte\+\_\+calloc\+\_\+socket} (const char $\ast$type, size\+\_\+t num, size\+\_\+t size, unsigned align, int socket)
+\item 
+void \hyperlink{rte__malloc_8h_a0bc2d94a40f12074f57ecfd83e07bb7c}{rte\+\_\+free} (void $\ast$ptr)
+\item 
+int \hyperlink{rte__malloc_8h_a3832aff1fba641033cf97f33703edeab}{rte\+\_\+malloc\+\_\+validate} (const void $\ast$ptr, size\+\_\+t $\ast$size)
+\item 
+int \hyperlink{rte__malloc_8h_acc497a98875388b3de85560c76c31f01}{rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats} (int socket, struct \hyperlink{structrte__malloc__socket__stats}{rte\+\_\+malloc\+\_\+socket\+\_\+stats} $\ast$socket\+\_\+stats)
+\item 
+void \hyperlink{rte__malloc_8h_a645a88942c36969d1649e72b13faa0e5}{rte\+\_\+malloc\+\_\+dump\+\_\+stats} (F\+I\+L\+E $\ast$f, const char $\ast$type)
+\item 
+int \hyperlink{rte__malloc_8h_ac3802610239bcdd6aeaa63986846b577}{rte\+\_\+malloc\+\_\+set\+\_\+limit} (const char $\ast$type, size\+\_\+t max)
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{rte__malloc_8h_abbcef27bc69ed523fa5e46061ebaf656}{rte\+\_\+malloc\+\_\+virt2phy} (const void $\ast$addr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Malloc. This library provides methods for dynamically allocating memory from hugepages. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+calloc@{rte\+\_\+calloc}}
+\index{rte\+\_\+calloc@{rte\+\_\+calloc}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+calloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+calloc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{num, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}
+Replacement function for calloc(), using huge-\/page memory. Memory area is initialised with zeros. In N\+U\+M\+A systems, the memory allocated resides on the same N\+U\+M\+A socket as the core that calls this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em num} & Number of elements to be allocated. \\
+\hline
+{\em size} & Size (in bytes) of a single element. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must obviously be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a9d5985e77227148b098c8729365fac14}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+calloc\+\_\+socket@{rte\+\_\+calloc\+\_\+socket}}
+\index{rte\+\_\+calloc\+\_\+socket@{rte\+\_\+calloc\+\_\+socket}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+calloc\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+calloc\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{num, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align, }
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a9d5985e77227148b098c8729365fac14}
+Replacement function for calloc(), using huge-\/page memory. Memory area is initialised with zeros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em num} & Number of elements to be allocated. \\
+\hline
+{\em size} & Size (in bytes) of a single element. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must obviously be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+{\em socket} & N\+U\+M\+A socket to allocate memory on. If S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y is used, this function will behave the same as \hyperlink{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}{rte\+\_\+calloc()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a0bc2d94a40f12074f57ecfd83e07bb7c}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+free@{rte\+\_\+free}}
+\index{rte\+\_\+free@{rte\+\_\+free}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a0bc2d94a40f12074f57ecfd83e07bb7c}
+Frees the memory space pointed to by the provided pointer.
+
+This pointer must have been returned by a previous call to \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc()}, \hyperlink{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}{rte\+\_\+zmalloc()}, \hyperlink{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}{rte\+\_\+calloc()} or \hyperlink{rte__malloc_8h_a0cd74246478ae93276e8820b98b9bf76}{rte\+\_\+realloc()}. The behaviour of \hyperlink{rte__malloc_8h_a0bc2d94a40f12074f57ecfd83e07bb7c}{rte\+\_\+free()} is undefined if the pointer does not match this requirement.
+
+If the pointer is N\+U\+L\+L, the function does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer to memory to be freed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc@{rte\+\_\+malloc}}
+\index{rte\+\_\+malloc@{rte\+\_\+malloc}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+malloc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}
+This function allocates memory from the huge-\/page area of memory. The memory is not cleared. In N\+U\+M\+A systems, the memory allocated resides on the same N\+U\+M\+A socket as the core that calls this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em size} & Size (in bytes) to be allocated. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a645a88942c36969d1649e72b13faa0e5}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+dump\+\_\+stats@{rte\+\_\+malloc\+\_\+dump\+\_\+stats}}
+\index{rte\+\_\+malloc\+\_\+dump\+\_\+stats@{rte\+\_\+malloc\+\_\+dump\+\_\+stats}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+dump\+\_\+stats}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+malloc\+\_\+dump\+\_\+stats (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const char $\ast$}]{type}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a645a88942c36969d1649e72b13faa0e5}
+Dump statistics.
+
+Dump for the specified type to the console. If the type argument is N\+U\+L\+L, all memory types will be dumped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em type} & A string identifying the type of objects to dump, or N\+U\+L\+L to dump all objects. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__malloc_8h_acc497a98875388b3de85560c76c31f01}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats@{rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats}}
+\index{rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats@{rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+malloc\+\_\+get\+\_\+socket\+\_\+stats (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct {\bf rte\+\_\+malloc\+\_\+socket\+\_\+stats} $\ast$}]{socket\+\_\+stats}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_acc497a98875388b3de85560c76c31f01}
+Get heap statistics for the specified heap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & An unsigned integer specifying the socket to get heap statistics for \\
+\hline
+{\em socket\+\_\+stats} & A structure which provides memory to store statistics \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null on error Pointer to structure storing statistics on success 
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_ac3802610239bcdd6aeaa63986846b577}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+set\+\_\+limit@{rte\+\_\+malloc\+\_\+set\+\_\+limit}}
+\index{rte\+\_\+malloc\+\_\+set\+\_\+limit@{rte\+\_\+malloc\+\_\+set\+\_\+limit}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+set\+\_\+limit}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+malloc\+\_\+set\+\_\+limit (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{max}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_ac3802610239bcdd6aeaa63986846b577}
+Set the maximum amount of allocated memory for this type.
+
+This is not yet implemented
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects. \\
+\hline
+{\em max} & The maximum amount of allocated bytes for this type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success.
+\item (-\/1)\+: Error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a748608cbeef996aafb7816a2716644d5}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+socket@{rte\+\_\+malloc\+\_\+socket}}
+\index{rte\+\_\+malloc\+\_\+socket@{rte\+\_\+malloc\+\_\+socket}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+malloc\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align, }
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a748608cbeef996aafb7816a2716644d5}
+This function allocates memory from the huge-\/page area of memory. The memory is not cleared.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em size} & Size (in bytes) to be allocated. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+{\em socket} & N\+U\+M\+A socket to allocate memory on. If S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y is used, this function will behave the same as \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a3832aff1fba641033cf97f33703edeab}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+validate@{rte\+\_\+malloc\+\_\+validate}}
+\index{rte\+\_\+malloc\+\_\+validate@{rte\+\_\+malloc\+\_\+validate}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+validate}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+malloc\+\_\+validate (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ptr, }
+\item[{size\+\_\+t $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a3832aff1fba641033cf97f33703edeab}
+If malloc debug is enabled, check a memory block for header and trailer markers to indicate that all is well with the block. If size is non-\/null, also return the size of the block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to the start of a data block, must have been returned by a previous call to \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc()}, \hyperlink{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}{rte\+\_\+zmalloc()}, \hyperlink{rte__malloc_8h_a6fb3bee5aa4b21efab0c9c5d5cf2a251}{rte\+\_\+calloc()} or \hyperlink{rte__malloc_8h_a0cd74246478ae93276e8820b98b9bf76}{rte\+\_\+realloc()} \\
+\hline
+{\em size} & if non-\/null, and memory block pointer is valid, returns the size of the memory block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 on error, invalid pointer passed or header and trailer markers are missing or corrupted 0 on success 
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_abbcef27bc69ed523fa5e46061ebaf656}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+malloc\+\_\+virt2phy@{rte\+\_\+malloc\+\_\+virt2phy}}
+\index{rte\+\_\+malloc\+\_\+virt2phy@{rte\+\_\+malloc\+\_\+virt2phy}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+malloc\+\_\+virt2phy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} rte\+\_\+malloc\+\_\+virt2phy (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{addr}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_abbcef27bc69ed523fa5e46061ebaf656}
+Return the physical address of a virtual address obtained through rte\+\_\+malloc
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Adress obtained from a previous rte\+\_\+malloc call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L on error otherwise return physical address of the buffer 
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a0cd74246478ae93276e8820b98b9bf76}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+realloc@{rte\+\_\+realloc}}
+\index{rte\+\_\+realloc@{rte\+\_\+realloc}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+realloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+realloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a0cd74246478ae93276e8820b98b9bf76}
+Replacement function for realloc(), using huge-\/page memory. Reserved area memory is resized, preserving contents. In N\+U\+M\+A systems, the new area resides on the same N\+U\+M\+A socket as the old area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to already allocated memory \\
+\hline
+{\em size} & Size (in bytes) of new area. If this is 0, memory is freed. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must obviously be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the reallocated memory. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+zmalloc@{rte\+\_\+zmalloc}}
+\index{rte\+\_\+zmalloc@{rte\+\_\+zmalloc}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+zmalloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+zmalloc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}
+Allocate zero\textquotesingle{}ed memory from the heap.
+
+Equivalent to \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc()} except that the memory zone is initialised with zeros. In N\+U\+M\+A systems, the memory allocated resides on the same N\+U\+M\+A socket as the core that calls this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em size} & Size (in bytes) to be allocated. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must obviously be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__malloc_8h_aabfa4bb0c1430eb7be96bf847f61113a}{}\index{rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}!rte\+\_\+zmalloc\+\_\+socket@{rte\+\_\+zmalloc\+\_\+socket}}
+\index{rte\+\_\+zmalloc\+\_\+socket@{rte\+\_\+zmalloc\+\_\+socket}!rte\+\_\+malloc.\+h@{rte\+\_\+malloc.\+h}}
+\subsubsection[{rte\+\_\+zmalloc\+\_\+socket}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ rte\+\_\+zmalloc\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{type, }
+\item[{size\+\_\+t}]{size, }
+\item[{unsigned}]{align, }
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}\label{rte__malloc_8h_aabfa4bb0c1430eb7be96bf847f61113a}
+Allocate zero\textquotesingle{}ed memory from the heap.
+
+Equivalent to \hyperlink{rte__malloc_8h_afb7316a4ec228ed9b8ffc1864b03d85b}{rte\+\_\+malloc()} except that the memory zone is initialised with zeros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A string identifying the type of allocated objects (useful for debug purposes, such as identifying the cause of a memory leak). Can be N\+U\+L\+L. \\
+\hline
+{\em size} & Size (in bytes) to be allocated. \\
+\hline
+{\em align} & If 0, the return is a pointer that is suitably aligned for any kind of variable (in the same manner as malloc()). Otherwise, the return is a pointer that is a multiple of {\itshape align}. In this case, it must obviously be a power of two. (Minimum alignment is the cacheline size, i.\+e. 64-\/bytes) \\
+\hline
+{\em socket} & N\+U\+M\+A socket to allocate memory on. If S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y is used, this function will behave the same as \hyperlink{rte__malloc_8h_a58042061ad622f028aa2b97e8cb73a41}{rte\+\_\+zmalloc()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L on error. Not enough memory, or invalid arguments (size is 0, align is not a power of two).
+\item Otherwise, the pointer to the allocated object. 
+\end{DoxyItemize}
+\end{DoxyReturn}

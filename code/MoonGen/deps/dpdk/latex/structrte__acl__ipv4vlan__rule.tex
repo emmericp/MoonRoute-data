@@ -1,0 +1,95 @@
+\hypertarget{structrte__acl__ipv4vlan__rule}{}\section{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule Struct Reference}
+\label{structrte__acl__ipv4vlan__rule}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+
+
+{\ttfamily \#include $<$rte\+\_\+acl.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__acl__rule__data}{rte\+\_\+acl\+\_\+rule\+\_\+data} \hyperlink{structrte__acl__ipv4vlan__rule_a99051b6359c64a7d62ba690eb050c203}{data}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_adaae928b69788f774db092e75f1c4fb7}{proto}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a891d8676f4217b7c83d29bca71789d42}{proto\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a92937e69e9229d22ff399ab3dc050fd2}{vlan}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a98c97ee3f299909e11bafad60ea53215}{vlan\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a71f5a95cafc58280f7afe1de6dfd98a2}{domain}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a6c8cf15b815bc8e583473ff09b25e02f}{domain\+\_\+mask}
+\item 
+uint32\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a6a462ff6ecd832025b4f8934f226d5b5}{src\+\_\+addr}
+\item 
+uint32\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a1e19471126b4f8bee1b90efc236c62fb}{src\+\_\+mask\+\_\+len}
+\item 
+uint32\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_ad3367f6b5057b9c73b012338e5a437ae}{dst\+\_\+addr}
+\item 
+uint32\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a3b273e3c0e991e866341a9e8d095488a}{dst\+\_\+mask\+\_\+len}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a0331a6c2640bae85f6cc6d5871159fb7}{src\+\_\+port\+\_\+low}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_aa63ab325626a166191911278c308b65a}{src\+\_\+port\+\_\+high}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_a7a477205a3b788d9300aefa5e09db9a2}{dst\+\_\+port\+\_\+low}
+\item 
+uint16\+\_\+t \hyperlink{structrte__acl__ipv4vlan__rule_ae8e95d2218ccc7afdc833346e14f5dc6}{dst\+\_\+port\+\_\+high}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legacy support for 7-\/tuple I\+Pv4 and V\+L\+A\+N rule. This structure and corresponding A\+P\+I is deprecated. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__acl__ipv4vlan__rule_a99051b6359c64a7d62ba690eb050c203}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!data@{data}}
+\index{data@{data}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+acl\+\_\+rule\+\_\+data} data}\label{structrte__acl__ipv4vlan__rule_a99051b6359c64a7d62ba690eb050c203}
+Miscellaneous data for the rule. \hypertarget{structrte__acl__ipv4vlan__rule_a71f5a95cafc58280f7afe1de6dfd98a2}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!domain@{domain}}
+\index{domain@{domain}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t domain}\label{structrte__acl__ipv4vlan__rule_a71f5a95cafc58280f7afe1de6dfd98a2}
+V\+L\+A\+N domain. \hypertarget{structrte__acl__ipv4vlan__rule_a6c8cf15b815bc8e583473ff09b25e02f}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!domain\+\_\+mask@{domain\+\_\+mask}}
+\index{domain\+\_\+mask@{domain\+\_\+mask}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{domain\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t domain\+\_\+mask}\label{structrte__acl__ipv4vlan__rule_a6c8cf15b815bc8e583473ff09b25e02f}
+V\+L\+A\+N domain mask. \hypertarget{structrte__acl__ipv4vlan__rule_ad3367f6b5057b9c73b012338e5a437ae}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!dst\+\_\+addr@{dst\+\_\+addr}}
+\index{dst\+\_\+addr@{dst\+\_\+addr}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{dst\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dst\+\_\+addr}\label{structrte__acl__ipv4vlan__rule_ad3367f6b5057b9c73b012338e5a437ae}
+I\+Pv4 destination address. \hypertarget{structrte__acl__ipv4vlan__rule_a3b273e3c0e991e866341a9e8d095488a}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!dst\+\_\+mask\+\_\+len@{dst\+\_\+mask\+\_\+len}}
+\index{dst\+\_\+mask\+\_\+len@{dst\+\_\+mask\+\_\+len}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{dst\+\_\+mask\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dst\+\_\+mask\+\_\+len}\label{structrte__acl__ipv4vlan__rule_a3b273e3c0e991e866341a9e8d095488a}
+I\+Pv4 destination address mask. \hypertarget{structrte__acl__ipv4vlan__rule_ae8e95d2218ccc7afdc833346e14f5dc6}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!dst\+\_\+port\+\_\+high@{dst\+\_\+port\+\_\+high}}
+\index{dst\+\_\+port\+\_\+high@{dst\+\_\+port\+\_\+high}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{dst\+\_\+port\+\_\+high}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+port\+\_\+high}\label{structrte__acl__ipv4vlan__rule_ae8e95d2218ccc7afdc833346e14f5dc6}
+L4 destination port high. \hypertarget{structrte__acl__ipv4vlan__rule_a7a477205a3b788d9300aefa5e09db9a2}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!dst\+\_\+port\+\_\+low@{dst\+\_\+port\+\_\+low}}
+\index{dst\+\_\+port\+\_\+low@{dst\+\_\+port\+\_\+low}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{dst\+\_\+port\+\_\+low}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+port\+\_\+low}\label{structrte__acl__ipv4vlan__rule_a7a477205a3b788d9300aefa5e09db9a2}
+L4 destination port low. \hypertarget{structrte__acl__ipv4vlan__rule_adaae928b69788f774db092e75f1c4fb7}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!proto@{proto}}
+\index{proto@{proto}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{proto}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t proto}\label{structrte__acl__ipv4vlan__rule_adaae928b69788f774db092e75f1c4fb7}
+I\+Pv4 protocol I\+D. \hypertarget{structrte__acl__ipv4vlan__rule_a891d8676f4217b7c83d29bca71789d42}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!proto\+\_\+mask@{proto\+\_\+mask}}
+\index{proto\+\_\+mask@{proto\+\_\+mask}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{proto\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t proto\+\_\+mask}\label{structrte__acl__ipv4vlan__rule_a891d8676f4217b7c83d29bca71789d42}
+I\+Pv4 protocol I\+D mask. \hypertarget{structrte__acl__ipv4vlan__rule_a6a462ff6ecd832025b4f8934f226d5b5}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!src\+\_\+addr@{src\+\_\+addr}}
+\index{src\+\_\+addr@{src\+\_\+addr}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{src\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t src\+\_\+addr}\label{structrte__acl__ipv4vlan__rule_a6a462ff6ecd832025b4f8934f226d5b5}
+I\+Pv4 source address. \hypertarget{structrte__acl__ipv4vlan__rule_a1e19471126b4f8bee1b90efc236c62fb}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!src\+\_\+mask\+\_\+len@{src\+\_\+mask\+\_\+len}}
+\index{src\+\_\+mask\+\_\+len@{src\+\_\+mask\+\_\+len}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{src\+\_\+mask\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t src\+\_\+mask\+\_\+len}\label{structrte__acl__ipv4vlan__rule_a1e19471126b4f8bee1b90efc236c62fb}
+I\+Pv4 source address mask. \hypertarget{structrte__acl__ipv4vlan__rule_aa63ab325626a166191911278c308b65a}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!src\+\_\+port\+\_\+high@{src\+\_\+port\+\_\+high}}
+\index{src\+\_\+port\+\_\+high@{src\+\_\+port\+\_\+high}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{src\+\_\+port\+\_\+high}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+port\+\_\+high}\label{structrte__acl__ipv4vlan__rule_aa63ab325626a166191911278c308b65a}
+L4 source port high. \hypertarget{structrte__acl__ipv4vlan__rule_a0331a6c2640bae85f6cc6d5871159fb7}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!src\+\_\+port\+\_\+low@{src\+\_\+port\+\_\+low}}
+\index{src\+\_\+port\+\_\+low@{src\+\_\+port\+\_\+low}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{src\+\_\+port\+\_\+low}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+port\+\_\+low}\label{structrte__acl__ipv4vlan__rule_a0331a6c2640bae85f6cc6d5871159fb7}
+L4 source port low. \hypertarget{structrte__acl__ipv4vlan__rule_a92937e69e9229d22ff399ab3dc050fd2}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!vlan@{vlan}}
+\index{vlan@{vlan}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{vlan}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t vlan}\label{structrte__acl__ipv4vlan__rule_a92937e69e9229d22ff399ab3dc050fd2}
+V\+L\+A\+N I\+D. \hypertarget{structrte__acl__ipv4vlan__rule_a98c97ee3f299909e11bafad60ea53215}{}\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}!vlan\+\_\+mask@{vlan\+\_\+mask}}
+\index{vlan\+\_\+mask@{vlan\+\_\+mask}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}}
+\subsubsection[{vlan\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t vlan\+\_\+mask}\label{structrte__acl__ipv4vlan__rule_a98c97ee3f299909e11bafad60ea53215}
+V\+L\+A\+N I\+D mask. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+acl/\hyperlink{rte__acl_8h}{rte\+\_\+acl.\+h}\end{DoxyCompactItemize}

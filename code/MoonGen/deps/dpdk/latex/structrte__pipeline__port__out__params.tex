@@ -1,0 +1,45 @@
+\hypertarget{structrte__pipeline__port__out__params}{}\section{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params Struct Reference}
+\label{structrte__pipeline__port__out__params}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+pipeline.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__out__ops}{rte\+\_\+port\+\_\+out\+\_\+ops} $\ast$ \hyperlink{structrte__pipeline__port__out__params_acbbf5f18df1ca93f322f75ad3dae5e52}{ops}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__port__out__params_ab34a217f23d1f5a27ae00e3fbbba445c}{arg\+\_\+create}
+\item 
+\hyperlink{rte__pipeline_8h_aac89dd501bfc87996c1b6e4172f20ef8}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler} \hyperlink{structrte__pipeline__port__out__params_aa55f9c3325a2f2a5e9539de6e63235e2}{f\+\_\+action}
+\item 
+\hyperlink{rte__pipeline_8h_ac50fe92c97ab5095d48a36bd7e869723}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk} \hyperlink{structrte__pipeline__port__out__params_ab7cce8b3a5b983a8dcedc32acb8d97be}{f\+\_\+action\+\_\+bulk}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__port__out__params_adfcedab79c75f0129bd5382cf3d48b13}{arg\+\_\+ah}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters for pipeline output port creation. The action handlers have to be either both enabled or both disabled (by setting them to N\+U\+L\+L). When enabled, the pipeline selects between them at different moments, based on the number of packets that have to be sent to the same output port. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__pipeline__port__out__params_adfcedab79c75f0129bd5382cf3d48b13}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}!arg\+\_\+ah@{arg\+\_\+ah}}
+\index{arg\+\_\+ah@{arg\+\_\+ah}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+\subsubsection[{arg\+\_\+ah}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+ah}\label{structrte__pipeline__port__out__params_adfcedab79c75f0129bd5382cf3d48b13}
+Opaque parameter to be passed to the action handler when invoked \hypertarget{structrte__pipeline__port__out__params_ab34a217f23d1f5a27ae00e3fbbba445c}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}!arg\+\_\+create@{arg\+\_\+create}}
+\index{arg\+\_\+create@{arg\+\_\+create}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+\subsubsection[{arg\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+create}\label{structrte__pipeline__port__out__params_ab34a217f23d1f5a27ae00e3fbbba445c}
+Opaque parameter to be passed to create operation when invoked \hypertarget{structrte__pipeline__port__out__params_aa55f9c3325a2f2a5e9539de6e63235e2}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}!f\+\_\+action@{f\+\_\+action}}
+\index{f\+\_\+action@{f\+\_\+action}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+\subsubsection[{f\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler} f\+\_\+action}\label{structrte__pipeline__port__out__params_aa55f9c3325a2f2a5e9539de6e63235e2}
+Callback function executing the user actions on single input packet \hypertarget{structrte__pipeline__port__out__params_ab7cce8b3a5b983a8dcedc32acb8d97be}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}!f\+\_\+action\+\_\+bulk@{f\+\_\+action\+\_\+bulk}}
+\index{f\+\_\+action\+\_\+bulk@{f\+\_\+action\+\_\+bulk}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+\subsubsection[{f\+\_\+action\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk} f\+\_\+action\+\_\+bulk}\label{structrte__pipeline__port__out__params_ab7cce8b3a5b983a8dcedc32acb8d97be}
+Callback function executing the user actions on bust of input packets \hypertarget{structrte__pipeline__port__out__params_acbbf5f18df1ca93f322f75ad3dae5e52}{}\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}!ops@{ops}}
+\index{ops@{ops}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}}
+\subsubsection[{ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+out\+\_\+ops}$\ast$ ops}\label{structrte__pipeline__port__out__params_acbbf5f18df1ca93f322f75ad3dae5e52}
+Output port operations (specific to each table type) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pipeline/\hyperlink{rte__pipeline_8h}{rte\+\_\+pipeline.\+h}\end{DoxyCompactItemize}

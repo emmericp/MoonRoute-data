@@ -1,0 +1,29 @@
+\hypertarget{rte__port__frag_8h}{}\section{lib/librte\+\_\+port/rte\+\_\+port\+\_\+frag.h File Reference}
+\label{rte__port__frag_8h}\index{lib/librte\+\_\+port/rte\+\_\+port\+\_\+frag.\+h@{lib/librte\+\_\+port/rte\+\_\+port\+\_\+frag.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rte\+\_\+port.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__ring__reader__ipv4__frag__params}{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__in__ops}{rte\+\_\+port\+\_\+in\+\_\+ops} \hyperlink{rte__port__frag_8h_a876580db4af10fbc4e52f66141d0069d}{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Port for I\+Pv4 Fragmentation
+
+This port is built on top of pre-\/initialized single consumer \hyperlink{structrte__ring}{rte\+\_\+ring}. In order to minimize the amount of packets stored in the ring at any given time, the I\+P fragmentation functionality is executed on ring read operation, hence this port is implemented as an input port. A regular ring\+\_\+writer port can be created to write to the same ring.
+
+The packets written to the ring are either complete I\+P datagrams or jumbo frames (i.\+e. I\+P packets with length bigger than provided M\+T\+U value). The packets read from the ring are all non-\/jumbo frames. The complete I\+P datagrams written to the ring are not changed. The jumbo frames are fragmented into several I\+P packets with length less or equal to M\+T\+U. 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__port__frag_8h_a876580db4af10fbc4e52f66141d0069d}{}\index{rte\+\_\+port\+\_\+frag.\+h@{rte\+\_\+port\+\_\+frag.\+h}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops}}
+\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops}!rte\+\_\+port\+\_\+frag.\+h@{rte\+\_\+port\+\_\+frag.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+in\+\_\+ops} rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+ops}\label{rte__port__frag_8h_a876580db4af10fbc4e52f66141d0069d}
+ring\+\_\+reader\+\_\+ipv4\+\_\+frag port operations 

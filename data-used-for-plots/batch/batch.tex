@@ -1,0 +1,146 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tumcolors}
+
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+\tikzset{every mark/.append style={scale=0.75}}
+
+\begin{document}%
+\pgfplotstableread[col sep=space]{plots/batch/data}{\tbl}%
+\pgfplotstableread[col sep=space]{plots/batch/clickbatch.dat}{\tbltworandom}%
+\begin{tikzpicture}
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=0.43\textwidth,
+height=6cm,
+xlabel=Rx batch size {[}packets{]},
+ymin=0,
+ymax=17,
+%xmin=1,
+%xmax=2048,
+xticklabels={$$, $$,  $2^0$, $2^1$, $2^2$, $2^3$, $2^4$, $2^5$, $2^6$, $2^7$, $2^8$, $2^9$, $2^{10}$},
+ytick={0,5,...,15},
+ylabel=Throughput {[}Mpps{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+legend entries={ Click~\cite{clickBatch}, TxB 2, TxB 4, TxB 8, TxB 128, TxB 256},
+%legend style={font=\small,at={(0.97,0.96)},anchor=north east},
+legend style={at={(.5,1.05)},anchor=south},
+%legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+legend columns= 3
+]
+
+%Click
+\addplot[
+color=TUMDarkerBlue,
+every mark/.append style={solid,color=TUMGreen},mark=square,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{2}*1000/84/8/8*1.128,
+]
+{\tbltworandom};
+
+%TxB 2
+\addplot[
+color=TUMBeamerYellow,
+mark=star,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbl};
+
+%TxB 4
+\addplot[
+color=TUMGreen,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{3} / (84 * 8),
+y error expr = \thisrowno{4} / (84 * 8)
+]
+{\tbl};
+
+%TxB 8
+\addplot[
+color=TUMMediumGray,
+mark=triangle,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{5} / (84 * 8),
+y error expr = \thisrowno{6} / (84 * 8)
+]
+{\tbl};
+
+%TxB 128
+\addplot[
+color=TUMDarkerBlue,
+thick,
+every mark/.append style={solid,color=TUMDarkerBlue},mark=square,densely dotted,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{7} / (84 * 8),
+y error expr = \thisrowno{8} / (84 * 8)
+]
+{\tbl};
+
+%TxB 256
+\addplot[
+color=TUMGreen,
+thick,
+every mark/.append style={solid,color=TUMGreen},mark=,densely dotted,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{9} / (84 * 8),
+y error expr = \thisrowno{10} / (84 * 8)
+]
+{\tbl};
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

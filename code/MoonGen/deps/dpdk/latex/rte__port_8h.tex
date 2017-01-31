@@ -1,0 +1,167 @@
+\hypertarget{rte__port_8h}{}\section{lib/librte\+\_\+port/rte\+\_\+port.h File Reference}
+\label{rte__port_8h}\index{lib/librte\+\_\+port/rte\+\_\+port.\+h@{lib/librte\+\_\+port/rte\+\_\+port.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__in__ops}{rte\+\_\+port\+\_\+in\+\_\+ops}
+\item 
+struct \hyperlink{structrte__port__out__ops}{rte\+\_\+port\+\_\+out\+\_\+ops}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__port_8h_ad0b862300dcd7ddddee0871a90f1b310}{R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X}~64
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$($\ast$ \hyperlink{rte__port_8h_abfeb87bc582287f9f52e77da510f8c79}{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create}) (void $\ast$params, int socket\+\_\+id)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_a250d65d64b4d6481033edca16d630ead}{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free}) (void $\ast$port)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_aff8e1a526e24daae389c64d0b89dfcd5}{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx}) (void $\ast$port, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n\+\_\+pkts)
+\item 
+typedef void $\ast$($\ast$ \hyperlink{rte__port_8h_ac2325b5913b9297988160266923ac01f}{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create}) (void $\ast$params, int socket\+\_\+id)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_a261cc1510c49cd9d596a0935c785bff1}{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free}) (void $\ast$port)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_a01964e0cb9d8b9cdf57e65e953bfa9b8}{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx}) (void $\ast$port, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_a7170a9d42ba676e13db5fcd231dca173}{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk}) (void $\ast$port, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkt, uint64\+\_\+t pkts\+\_\+mask)
+\item 
+typedef int($\ast$ \hyperlink{rte__port_8h_a646459275b4b4d5a039d089414799eb0}{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush}) (void $\ast$port)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Port
+
+This tool is part of the Intel D\+P\+D\+K Packet Framework tool suite and provides a standard interface to implement different types of packet ports. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__port_8h_ad0b862300dcd7ddddee0871a90f1b310}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+B\+U\+R\+S\+T\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+A\+X~64}\label{rte__port_8h_ad0b862300dcd7ddddee0871a90f1b310}
+Maximum number of packets read from any input port in a single burst. Cannot be changed. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__port_8h_abfeb87bc582287f9f52e77da510f8c79}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create}}
+\index{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$ rte\+\_\+port\+\_\+in\+\_\+op\+\_\+create) (void $\ast$params, int socket\+\_\+id)}\label{rte__port_8h_abfeb87bc582287f9f52e77da510f8c79}
+Input port create
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters for input port creation \\
+\hline
+{\em socket\+\_\+id} & C\+P\+U socket I\+D (e.\+g. for memory allocation purpose) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to input port instance 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_a250d65d64b4d6481033edca16d630ead}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free}}
+\index{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+in\+\_\+op\+\_\+free) (void $\ast$port)}\label{rte__port_8h_a250d65d64b4d6481033edca16d630ead}
+Input port free
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to input port instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_aff8e1a526e24daae389c64d0b89dfcd5}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx}}
+\index{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx@{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+in\+\_\+op\+\_\+rx) (void $\ast$port, struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n\+\_\+pkts)}\label{rte__port_8h_aff8e1a526e24daae389c64d0b89dfcd5}
+Input port packet burst R\+X
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to input port instance \\
+\hline
+{\em pkts} & Burst of input packets \\
+\hline
+{\em n\+\_\+pkts} & Number of packets in the input burst \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_ac2325b5913b9297988160266923ac01f}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create}}
+\index{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$ rte\+\_\+port\+\_\+out\+\_\+op\+\_\+create) (void $\ast$params, int socket\+\_\+id)}\label{rte__port_8h_ac2325b5913b9297988160266923ac01f}
+Output port create
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters for output port creation \\
+\hline
+{\em socket\+\_\+id} & C\+P\+U socket I\+D (e.\+g. for memory allocation purpose) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to output port instance 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_a646459275b4b4d5a039d089414799eb0}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush}}
+\index{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+out\+\_\+op\+\_\+flush) (void $\ast$port)}\label{rte__port_8h_a646459275b4b4d5a039d089414799eb0}
+Output port flush
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to output port instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_a261cc1510c49cd9d596a0935c785bff1}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free}}
+\index{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+out\+\_\+op\+\_\+free) (void $\ast$port)}\label{rte__port_8h_a261cc1510c49cd9d596a0935c785bff1}
+Output port free
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to output port instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_a01964e0cb9d8b9cdf57e65e953bfa9b8}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx}}
+\index{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx) (void $\ast$port, struct {\bf rte\+\_\+mbuf} $\ast$pkt)}\label{rte__port_8h_a01964e0cb9d8b9cdf57e65e953bfa9b8}
+Output port single packet T\+X
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to output port instance \\
+\hline
+{\em pkt} & Input packet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__port_8h_a7170a9d42ba676e13db5fcd231dca173}{}\index{rte\+\_\+port.\+h@{rte\+\_\+port.\+h}!rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk}}
+\index{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk@{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk}!rte\+\_\+port.\+h@{rte\+\_\+port.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+port\+\_\+out\+\_\+op\+\_\+tx\+\_\+bulk) (void $\ast$port, struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkt, uint64\+\_\+t pkts\+\_\+mask)}\label{rte__port_8h_a7170a9d42ba676e13db5fcd231dca173}
+Output port packet burst T\+X
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to output port instance \\
+\hline
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are valid. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet. Otherwise, element n of pkts array will not be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}

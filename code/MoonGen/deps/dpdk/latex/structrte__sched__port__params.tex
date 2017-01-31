@@ -1,0 +1,70 @@
+\hypertarget{structrte__sched__port__params}{}\section{rte\+\_\+sched\+\_\+port\+\_\+params Struct Reference}
+\label{structrte__sched__port__params}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+sched.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structrte__sched__port__params_a8f8f80d37794cde9472343e4487ba3eb}{name}
+\item 
+int \hyperlink{structrte__sched__port__params_a3666576f6b88007cc7b8f26c7da596c8}{socket}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_a82e0b1311e54c51fa587134c4f9bad50}{rate}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_a3c8ee4e9dd2a5354e83fb30c95598f30}{mtu}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_a0f2c854b2c7f05f1e31a929b9c070438}{frame\+\_\+overhead}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_a5fc7f8b94ee9fb392269ab69deb56a67}{n\+\_\+subports\+\_\+per\+\_\+port}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_ab560ed2b4d276da9403539787fd2ecad}{n\+\_\+pipes\+\_\+per\+\_\+subport}
+\item 
+uint16\+\_\+t \hyperlink{structrte__sched__port__params_a98277794202bfdf78db8bca71abaa98c}{qsize} \mbox{[}\hyperlink{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}
+\item 
+struct \hyperlink{structrte__sched__pipe__params}{rte\+\_\+sched\+\_\+pipe\+\_\+params} $\ast$ \hyperlink{structrte__sched__port__params_a516d68d24b2f41e9737502fbf2097db5}{pipe\+\_\+profiles}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__port__params_a2b738077966491798fdf273913b2f4b2}{n\+\_\+pipe\+\_\+profiles}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Port configuration parameters. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__sched__port__params_a0f2c854b2c7f05f1e31a929b9c070438}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!frame\+\_\+overhead@{frame\+\_\+overhead}}
+\index{frame\+\_\+overhead@{frame\+\_\+overhead}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{frame\+\_\+overhead}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t frame\+\_\+overhead}\label{structrte__sched__port__params_a0f2c854b2c7f05f1e31a929b9c070438}
+Framing overhead per packet (measured in bytes) \hypertarget{structrte__sched__port__params_a3c8ee4e9dd2a5354e83fb30c95598f30}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!mtu@{mtu}}
+\index{mtu@{mtu}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{mtu}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t mtu}\label{structrte__sched__port__params_a3c8ee4e9dd2a5354e83fb30c95598f30}
+Maximum Ethernet frame size (measured in bytes). Should not include the framing overhead. \hypertarget{structrte__sched__port__params_a2b738077966491798fdf273913b2f4b2}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!n\+\_\+pipe\+\_\+profiles@{n\+\_\+pipe\+\_\+profiles}}
+\index{n\+\_\+pipe\+\_\+profiles@{n\+\_\+pipe\+\_\+profiles}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{n\+\_\+pipe\+\_\+profiles}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+pipe\+\_\+profiles}\label{structrte__sched__port__params_a2b738077966491798fdf273913b2f4b2}
+Number of profiles in the pipe profile table \hypertarget{structrte__sched__port__params_ab560ed2b4d276da9403539787fd2ecad}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!n\+\_\+pipes\+\_\+per\+\_\+subport@{n\+\_\+pipes\+\_\+per\+\_\+subport}}
+\index{n\+\_\+pipes\+\_\+per\+\_\+subport@{n\+\_\+pipes\+\_\+per\+\_\+subport}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{n\+\_\+pipes\+\_\+per\+\_\+subport}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+pipes\+\_\+per\+\_\+subport}\label{structrte__sched__port__params_ab560ed2b4d276da9403539787fd2ecad}
+Number of pipes for each port scheduler subport \hypertarget{structrte__sched__port__params_a5fc7f8b94ee9fb392269ab69deb56a67}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!n\+\_\+subports\+\_\+per\+\_\+port@{n\+\_\+subports\+\_\+per\+\_\+port}}
+\index{n\+\_\+subports\+\_\+per\+\_\+port@{n\+\_\+subports\+\_\+per\+\_\+port}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{n\+\_\+subports\+\_\+per\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+subports\+\_\+per\+\_\+port}\label{structrte__sched__port__params_a5fc7f8b94ee9fb392269ab69deb56a67}
+Number of subports for the current port scheduler instance \hypertarget{structrte__sched__port__params_a8f8f80d37794cde9472343e4487ba3eb}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!name@{name}}
+\index{name@{name}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ name}\label{structrte__sched__port__params_a8f8f80d37794cde9472343e4487ba3eb}
+Literal string to be associated to the current port scheduler instance \hypertarget{structrte__sched__port__params_a516d68d24b2f41e9737502fbf2097db5}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!pipe\+\_\+profiles@{pipe\+\_\+profiles}}
+\index{pipe\+\_\+profiles@{pipe\+\_\+profiles}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{pipe\+\_\+profiles}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+sched\+\_\+pipe\+\_\+params}$\ast$ pipe\+\_\+profiles}\label{structrte__sched__port__params_a516d68d24b2f41e9737502fbf2097db5}
+Pipe profile table defined for current port scheduler instance. Every pipe of the current port scheduler is configured using one of the profiles from this table. \hypertarget{structrte__sched__port__params_a98277794202bfdf78db8bca71abaa98c}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!qsize@{qsize}}
+\index{qsize@{qsize}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{qsize}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t qsize\mbox{[}{\bf R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}}\label{structrte__sched__port__params_a98277794202bfdf78db8bca71abaa98c}
+Packet queue size for each traffic class. All queues within the same pipe traffic class have the same size. Queues from different pipes serving the same traffic class have the same size. \hypertarget{structrte__sched__port__params_a82e0b1311e54c51fa587134c4f9bad50}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!rate@{rate}}
+\index{rate@{rate}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{rate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rate}\label{structrte__sched__port__params_a82e0b1311e54c51fa587134c4f9bad50}
+Output port rate (measured in bytes per second) \hypertarget{structrte__sched__port__params_a3666576f6b88007cc7b8f26c7da596c8}{}\index{rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}!socket@{socket}}
+\index{socket@{socket}!rte\+\_\+sched\+\_\+port\+\_\+params@{rte\+\_\+sched\+\_\+port\+\_\+params}}
+\subsubsection[{socket}]{\setlength{\rightskip}{0pt plus 5cm}int socket}\label{structrte__sched__port__params_a3666576f6b88007cc7b8f26c7da596c8}
+C\+P\+U socket I\+D where the memory for port scheduler should be allocated 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+sched/\hyperlink{rte__sched_8h}{rte\+\_\+sched.\+h}\end{DoxyCompactItemize}

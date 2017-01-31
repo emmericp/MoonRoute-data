@@ -1,0 +1,181 @@
+\hypertarget{rte__memory_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+memory.h File Reference}
+\label{rte__memory_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+memory.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+memory.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__memseg}{rte\+\_\+memseg}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__memory_8h_a0307f4470d3f391102b0f489fc7d91b5}{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}~-\/1
+\item 
+\#define \hyperlink{rte__memory_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}~64
+\item 
+\#define \hyperlink{rte__memory_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}~(\hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}-\/1)
+\item 
+\#define \hyperlink{rte__memory_8h_a752c57122f0ec1fcbaa2ba040f0aab53}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P}(size)~(\hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E} $\ast$ ((size + \hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E} -\/ 1) / \hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}))
+\item 
+\#define \hyperlink{rte__memory_8h_a08065e89f650caf47782c764f9939c32}{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+aligned\+\_\+\+\_\+(\hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E})))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint64\+\_\+t \hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__memory_8h_ab795c4d01556e640d7916bec332a8c0c}{rte\+\_\+mem\+\_\+lock\+\_\+page} (const void $\ast$virt)
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{rte__memory_8h_a15c786260d675cb7af1299dd4b7a28ee}{rte\+\_\+mem\+\_\+virt2phy} (const void $\ast$virt)
+\item 
+const struct \hyperlink{structrte__memseg}{rte\+\_\+memseg} $\ast$ \hyperlink{rte__memory_8h_a1883cc6fb52ae24291227ed010efa1bf}{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout} (void)
+\item 
+void \hyperlink{rte__memory_8h_a9d2cac2edfd31adc306923902bd692cf}{rte\+\_\+dump\+\_\+physmem\+\_\+layout} (F\+I\+L\+E $\ast$f)
+\item 
+uint64\+\_\+t \hyperlink{rte__memory_8h_ada583c8586309d8b7c82b4d5ef45585b}{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size} (void)
+\item 
+unsigned \hyperlink{rte__memory_8h_a108b63a95946b4a1a857bb6d6410de49}{rte\+\_\+memory\+\_\+get\+\_\+nchannel} (void)
+\item 
+unsigned \hyperlink{rte__memory_8h_af59fa0306f5fe231dd4617b3f06a40c4}{rte\+\_\+memory\+\_\+get\+\_\+nrank} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Memory-\/related R\+T\+E A\+P\+I. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__memory_8h_a08065e89f650caf47782c764f9939c32}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}}
+\index{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ip\+\_\+frag\+\_\+tbl\+\_\+stat} \+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+aligned\+\_\+\+\_\+({\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E})))}\label{rte__memory_8h_a08065e89f650caf47782c764f9939c32}
+Force alignment to cache line. \hypertarget{rte__memory_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}}
+\index{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K~({\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}-\/1)}\label{rte__memory_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}
+Cache line mask. \hypertarget{rte__memory_8h_a752c57122f0ec1fcbaa2ba040f0aab53}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P}}
+\index{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+R\+O\+U\+N\+D\+U\+P(
+\begin{DoxyParamCaption}
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~({\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E} $\ast$ ((size + {\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E} -\/ 1) / {\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}))}\label{rte__memory_8h_a752c57122f0ec1fcbaa2ba040f0aab53}
+Return the first cache-\/aligned value greater or equal to size. \hypertarget{rte__memory_8h_af89f60b07247176687889ade776c8e10}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}}
+\index{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E~64}\label{rte__memory_8h_af89f60b07247176687889ade776c8e10}
+Cache line size. \hypertarget{rte__memory_8h_a0307f4470d3f391102b0f489fc7d91b5}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y~-\/1}\label{rte__memory_8h_a0307f4470d3f391102b0f489fc7d91b5}
+Any N\+U\+M\+A socket. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!phys\+\_\+addr\+\_\+t@{phys\+\_\+addr\+\_\+t}}
+\index{phys\+\_\+addr\+\_\+t@{phys\+\_\+addr\+\_\+t}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{phys\+\_\+addr\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\+\_\+t {\bf phys\+\_\+addr\+\_\+t}}\label{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}
+Physical address definition. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__memory_8h_a9d2cac2edfd31adc306923902bd692cf}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+dump\+\_\+physmem\+\_\+layout@{rte\+\_\+dump\+\_\+physmem\+\_\+layout}}
+\index{rte\+\_\+dump\+\_\+physmem\+\_\+layout@{rte\+\_\+dump\+\_\+physmem\+\_\+layout}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+dump\+\_\+physmem\+\_\+layout}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+dump\+\_\+physmem\+\_\+layout (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_a9d2cac2edfd31adc306923902bd692cf}
+Dump the physical memory layout to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memory_8h_a1883cc6fb52ae24291227ed010efa1bf}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout@{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout}}
+\index{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout@{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+memseg}$\ast$ rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+layout (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_a1883cc6fb52ae24291227ed010efa1bf}
+Get the layout of the available physical memory.
+
+It can be useful for an application to have the full physical memory layout to decide the size of a memory zone to reserve. This table is stored in \hyperlink{structrte__config}{rte\+\_\+config} (see \hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration()}).
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, return a pointer to a read-\/only table of struct rte\+\_\+physmem\+\_\+desc elements, containing the layout of all addressable physical memory. The last element of the table contains a N\+U\+L\+L address.
+\item On error, return N\+U\+L\+L. This should not happen since it is a fatal error that will probably cause the entire system to panic. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__memory_8h_ada583c8586309d8b7c82b4d5ef45585b}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size@{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size}}
+\index{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size@{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t rte\+\_\+eal\+\_\+get\+\_\+physmem\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_ada583c8586309d8b7c82b4d5ef45585b}
+Get the total amount of available physical memory.
+
+\begin{DoxyReturn}{Returns}
+The total amount of available physical memory in bytes. 
+\end{DoxyReturn}
+\hypertarget{rte__memory_8h_ab795c4d01556e640d7916bec332a8c0c}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+mem\+\_\+lock\+\_\+page@{rte\+\_\+mem\+\_\+lock\+\_\+page}}
+\index{rte\+\_\+mem\+\_\+lock\+\_\+page@{rte\+\_\+mem\+\_\+lock\+\_\+page}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+mem\+\_\+lock\+\_\+page}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+mem\+\_\+lock\+\_\+page (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{virt}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_ab795c4d01556e640d7916bec332a8c0c}
+Lock page in physical memory and prevent from swapping.
+
+
+\begin{DoxyParams}{Parameters}
+{\em virt} & The virtual address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative on error. 
+\end{DoxyReturn}
+\hypertarget{rte__memory_8h_a15c786260d675cb7af1299dd4b7a28ee}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+mem\+\_\+virt2phy@{rte\+\_\+mem\+\_\+virt2phy}}
+\index{rte\+\_\+mem\+\_\+virt2phy@{rte\+\_\+mem\+\_\+virt2phy}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+mem\+\_\+virt2phy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} rte\+\_\+mem\+\_\+virt2phy (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{virt}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_a15c786260d675cb7af1299dd4b7a28ee}
+Get physical address of any mapped virtual address in the current process. It is found by browsing the /proc/self/pagemap special file. The page must be locked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em virt} & The virtual address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The physical address or R\+T\+E\+\_\+\+B\+A\+D\+\_\+\+P\+H\+Y\+S\+\_\+\+A\+D\+D\+R on error. 
+\end{DoxyReturn}
+\hypertarget{rte__memory_8h_a108b63a95946b4a1a857bb6d6410de49}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+memory\+\_\+get\+\_\+nchannel@{rte\+\_\+memory\+\_\+get\+\_\+nchannel}}
+\index{rte\+\_\+memory\+\_\+get\+\_\+nchannel@{rte\+\_\+memory\+\_\+get\+\_\+nchannel}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+memory\+\_\+get\+\_\+nchannel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+memory\+\_\+get\+\_\+nchannel (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_a108b63a95946b4a1a857bb6d6410de49}
+Get the number of memory channels.
+
+\begin{DoxyReturn}{Returns}
+The number of memory channels on the system. The value is 0 if unknown or not the same on all devices. 
+\end{DoxyReturn}
+\hypertarget{rte__memory_8h_af59fa0306f5fe231dd4617b3f06a40c4}{}\index{rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}!rte\+\_\+memory\+\_\+get\+\_\+nrank@{rte\+\_\+memory\+\_\+get\+\_\+nrank}}
+\index{rte\+\_\+memory\+\_\+get\+\_\+nrank@{rte\+\_\+memory\+\_\+get\+\_\+nrank}!rte\+\_\+memory.\+h@{rte\+\_\+memory.\+h}}
+\subsubsection[{rte\+\_\+memory\+\_\+get\+\_\+nrank}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+memory\+\_\+get\+\_\+nrank (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__memory_8h_af59fa0306f5fe231dd4617b3f06a40c4}
+Get the number of memory ranks.
+
+\begin{DoxyReturn}{Returns}
+The number of memory ranks on the system. The value is 0 if unknown or not the same on all devices. 
+\end{DoxyReturn}

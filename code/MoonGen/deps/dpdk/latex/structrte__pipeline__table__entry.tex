@@ -1,0 +1,40 @@
+\hypertarget{structrte__pipeline__table__entry}{}\section{rte\+\_\+pipeline\+\_\+table\+\_\+entry Struct Reference}
+\label{structrte__pipeline__table__entry}\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}}
+
+
+{\ttfamily \#include $<$rte\+\_\+pipeline.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572}{rte\+\_\+pipeline\+\_\+action} \hyperlink{structrte__pipeline__table__entry_ab65480a4c6171d9ea813e0b1be3afef2}{action}
+\item 
+uint8\+\_\+t \hyperlink{structrte__pipeline__table__entry_aa5ad05f37ac81926ffee6f7168606712}{action\+\_\+data} \mbox{[}0\mbox{]}
+\item 
+uint32\+\_\+t \hyperlink{structrte__pipeline__table__entry_a6f54b893342775cdf092c6646e57c83b}{port\+\_\+id}
+\item 
+uint32\+\_\+t \hyperlink{structrte__pipeline__table__entry_a4783596f73bb7e535d78875dbf3397b0}{table\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Head format for the table entry of any pipeline table. For any given pipeline table, all table entries should have the same size and format. For any given pipeline table, the table entry has to start with a head of this structure, which contains the reserved actions and their associated meta-\/data, and then optionally continues with user actions and their associated meta-\/data. As all the currently defined reserved actions are mutually exclusive, only one reserved action can be set per table entry. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__pipeline__table__entry_ab65480a4c6171d9ea813e0b1be3afef2}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}!action@{action}}
+\index{action@{action}!rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+pipeline\+\_\+action} action}\label{structrte__pipeline__table__entry_ab65480a4c6171d9ea813e0b1be3afef2}
+Reserved action \hypertarget{structrte__pipeline__table__entry_aa5ad05f37ac81926ffee6f7168606712}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}!action\+\_\+data@{action\+\_\+data}}
+\index{action\+\_\+data@{action\+\_\+data}!rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}}
+\subsubsection[{action\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t action\+\_\+data\mbox{[}0\mbox{]}}\label{structrte__pipeline__table__entry_aa5ad05f37ac81926ffee6f7168606712}
+Start of table entry area for user defined actions and meta-\/data \hypertarget{structrte__pipeline__table__entry_a6f54b893342775cdf092c6646e57c83b}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}!port\+\_\+id@{port\+\_\+id}}
+\index{port\+\_\+id@{port\+\_\+id}!rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}}
+\subsubsection[{port\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t port\+\_\+id}\label{structrte__pipeline__table__entry_a6f54b893342775cdf092c6646e57c83b}
+Output port I\+D (meta-\/data for \char`\"{}\+Send packet to output port\char`\"{} action) \hypertarget{structrte__pipeline__table__entry_a4783596f73bb7e535d78875dbf3397b0}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}!table\+\_\+id@{table\+\_\+id}}
+\index{table\+\_\+id@{table\+\_\+id}!rte\+\_\+pipeline\+\_\+table\+\_\+entry@{rte\+\_\+pipeline\+\_\+table\+\_\+entry}}
+\subsubsection[{table\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t table\+\_\+id}\label{structrte__pipeline__table__entry_a4783596f73bb7e535d78875dbf3397b0}
+Table I\+D (meta-\/data for \char`\"{}\+Send packet to table\char`\"{} action) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pipeline/\hyperlink{rte__pipeline_8h}{rte\+\_\+pipeline.\+h}\end{DoxyCompactItemize}

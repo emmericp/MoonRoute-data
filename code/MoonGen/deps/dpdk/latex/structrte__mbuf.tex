@@ -1,0 +1,70 @@
+\hypertarget{structrte__mbuf}{}\section{rte\+\_\+mbuf Struct Reference}
+\label{structrte__mbuf}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{structrte__mbuf_aa501505ef15ed551bf0a2ffacfc29bb5}{pool}
+\item 
+void $\ast$ \hyperlink{structrte__mbuf_a9db3d388a1381e68e509017a6e7d0f12}{buf\+\_\+addr}
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{structrte__mbuf_a6f9e031fb601226363d0106789df32f7}{buf\+\_\+physaddr}
+\item 
+uint16\+\_\+t \hyperlink{structrte__mbuf_a7ae671bb1805f6f7313b9301aca17eb6}{buf\+\_\+len}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{structrte__atomic16__t}{rte\_atomic16\_t} \hyperlink{structrte__mbuf_a70ad642791f0943928abe0b6270d095c}{refcnt\_atomic}\\
+\>uint16\_t \hyperlink{structrte__mbuf_aeabb0685e90361917a58870b588e2e6f}{refcnt}\\
+\}; \\
+
+\end{tabbing}\item 
+uint8\+\_\+t \hyperlink{structrte__mbuf_a1d127017fb298b889f4ba24752d08b8e}{type}
+\item 
+uint8\+\_\+t \hyperlink{structrte__mbuf_acb7bc06bed6f6408d719334fc41698c7}{reserved}
+\item 
+uint16\+\_\+t \hyperlink{structrte__mbuf_ad00f52c8ce94438b6190a0e501a79fab}{ol\+\_\+flags}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The generic \hyperlink{structrte__mbuf}{rte\+\_\+mbuf}, containing a packet mbuf or a control mbuf. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__mbuf_ac3bf5b22ac7aac6be64acefd4557e109}{}\subsubsection[{"@31}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }\label{structrte__mbuf_ac3bf5b22ac7aac6be64acefd4557e109}
+16-\/bit Reference counter. It should only be accessed using the following functions\+: \hyperlink{rte__mbuf_8h_abb7eb5fa1599b7f6237040b95d8893de}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+update()}, \hyperlink{rte__mbuf_8h_a9cad099c1aedd46af38588ad97dabd65}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+read()}, and \hyperlink{rte__mbuf_8h_a86233fc739e93e6d0136034ea7066e69}{rte\+\_\+mbuf\+\_\+refcnt\+\_\+set()}. The functionality of these functions (atomic, or non-\/atomic) is controlled by the C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+M\+B\+U\+F\+\_\+\+R\+E\+F\+C\+N\+T\+\_\+\+A\+T\+O\+M\+I\+C config option. \hypertarget{structrte__mbuf_a9db3d388a1381e68e509017a6e7d0f12}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!buf\+\_\+addr@{buf\+\_\+addr}}
+\index{buf\+\_\+addr@{buf\+\_\+addr}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{buf\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ buf\+\_\+addr}\label{structrte__mbuf_a9db3d388a1381e68e509017a6e7d0f12}
+Virtual address of segment buffer. \hypertarget{structrte__mbuf_a7ae671bb1805f6f7313b9301aca17eb6}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!buf\+\_\+len@{buf\+\_\+len}}
+\index{buf\+\_\+len@{buf\+\_\+len}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{buf\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t buf\+\_\+len}\label{structrte__mbuf_a7ae671bb1805f6f7313b9301aca17eb6}
+Length of segment buffer. \hypertarget{structrte__mbuf_a6f9e031fb601226363d0106789df32f7}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!buf\+\_\+physaddr@{buf\+\_\+physaddr}}
+\index{buf\+\_\+physaddr@{buf\+\_\+physaddr}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{buf\+\_\+physaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} buf\+\_\+physaddr}\label{structrte__mbuf_a6f9e031fb601226363d0106789df32f7}
+Physical address of segment buffer. \hypertarget{structrte__mbuf_ad00f52c8ce94438b6190a0e501a79fab}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!ol\+\_\+flags@{ol\+\_\+flags}}
+\index{ol\+\_\+flags@{ol\+\_\+flags}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{ol\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t ol\+\_\+flags}\label{structrte__mbuf_ad00f52c8ce94438b6190a0e501a79fab}
+Offload features. \hypertarget{structrte__mbuf_aa501505ef15ed551bf0a2ffacfc29bb5}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!pool@{pool}}
+\index{pool@{pool}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{pool}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ pool}\label{structrte__mbuf_aa501505ef15ed551bf0a2ffacfc29bb5}
+Pool from which mbuf was allocated. \hypertarget{structrte__mbuf_aeabb0685e90361917a58870b588e2e6f}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!refcnt@{refcnt}}
+\index{refcnt@{refcnt}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{refcnt}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t refcnt}\label{structrte__mbuf_aeabb0685e90361917a58870b588e2e6f}
+Non-\/atomically accessed refcnt \hypertarget{structrte__mbuf_a70ad642791f0943928abe0b6270d095c}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!refcnt\+\_\+atomic@{refcnt\+\_\+atomic}}
+\index{refcnt\+\_\+atomic@{refcnt\+\_\+atomic}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{refcnt\+\_\+atomic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+atomic16\+\_\+t} refcnt\+\_\+atomic}\label{structrte__mbuf_a70ad642791f0943928abe0b6270d095c}
+Atomically accessed refcnt \hypertarget{structrte__mbuf_acb7bc06bed6f6408d719334fc41698c7}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!reserved@{reserved}}
+\index{reserved@{reserved}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{reserved}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t reserved}\label{structrte__mbuf_acb7bc06bed6f6408d719334fc41698c7}
+Unused field. Required for padding. \hypertarget{structrte__mbuf_a1d127017fb298b889f4ba24752d08b8e}{}\index{rte\+\_\+mbuf@{rte\+\_\+mbuf}!type@{type}}
+\index{type@{type}!rte\+\_\+mbuf@{rte\+\_\+mbuf}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t type}\label{structrte__mbuf_a1d127017fb298b889f4ba24752d08b8e}
+Type of mbuf. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+mbuf/\hyperlink{rte__mbuf_8h}{rte\+\_\+mbuf.\+h}\end{DoxyCompactItemize}

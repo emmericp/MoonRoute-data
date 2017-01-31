@@ -1,0 +1,121 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tumcolors}
+
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+\tikzset{every mark/.append style={scale=0.75}}
+
+\begin{document}%
+\pgfplotstableread[col sep=space]{plots/lpm/data}{\tbltwo}%
+\pgfplotstableread[col sep=space]{plots/lpm/data2.6GHz}{\tbltworandom}%
+\pgfplotstableread[col sep=space]{plots/lpm/data3.2GHz}{\tblone}%
+\pgfplotstableread[col sep=space]{plots/lpm/data2x1.6GHz_no_random_src}{\tblonerandom}%	
+\begin{tikzpicture}
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=0.43\textwidth,
+height=6cm,
+xlabel=Number of /24 networks used,
+ymin=0,
+ymax=17,
+xmin=32768,
+xmax=33554432,
+%xtick={65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216},
+xticklabels={$$, $2^{16}$, $2^{17}$, $2^{18}$, $2^{19}$, $2^{20}$, $2^{21}$, $2^{22}$, $2^{23}$, $2^{24}$},
+ytick={0,5,...,15},
+%ybar=0.66pt,
+%bar width=\barwidth,
+ylabel=Throughput {[}Mpps{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+%legend style={font=\footnotesize, at={(.5,1.05)}, anchor=south},
+legend entries={2$\times$\,1.6\,GHz, 3.2\,GHz, 2.6\,GHz, 2.2\,GHz},
+%legend style={font=\small,at={(0.97,0.96)},anchor=north east},
+%legend style={at={(0.98,0.94)},anchor=north west},
+legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+]
+
+%2x 1.6GHz
+\addplot[
+color=TUMBeamerYellow,
+mark=star,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tblonerandom};
+
+%3.2GHz
+\addplot[
+color=TUMMediumGray,
+mark=triangle,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tblone};
+
+
+%2.6GHz
+\addplot[
+color=TUMGreen,
+mark=circle,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+	x expr = 2^(\thisrowno{0}-8),
+	y expr = \thisrowno{1} / (84 * 8),
+	y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbltworandom};
+
+%2.2ghz
+\addplot[
+color=TUMDarkerBlue!60,
+mark=square,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbltwo};
+
+\addplot[thick,densely dashed, domain=32768:33554432,color=TUMOrange]{14.88};
+\node at (axis cs:35000, 14.7) [anchor=south west, color=TUMOrange,inner sep = 4pt] {10\,Gbit};
+\addplot [mark=none,thick,solid,color=TUMBeamerRed] coordinates {(4194304, 0) (4194304, 18)};
+\node at (axis cs:4200000, 3) [anchor=south west, color=TUMBeamerRed,inner sep = 4pt] {\scriptsize L3 cache size};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

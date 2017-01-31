@@ -1,0 +1,45 @@
+\hypertarget{structbond__rx__queue}{}\section{bond\+\_\+rx\+\_\+queue Struct Reference}
+\label{structbond__rx__queue}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+
+
+{\ttfamily \#include $<$rte\+\_\+eth\+\_\+bond\+\_\+private.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structbond__rx__queue_a9069963fa1ce9797b853db16f9845d58}{queue\+\_\+id}
+\item 
+struct \hyperlink{structbond__dev__private}{bond\+\_\+dev\+\_\+private} $\ast$ \hyperlink{structbond__rx__queue_ac596ec953b07433616f515de68124a43}{dev\+\_\+private}
+\item 
+uint16\+\_\+t \hyperlink{structbond__rx__queue_aaa1aa505a27c4744f950365aafb99484}{nb\+\_\+rx\+\_\+desc}
+\item 
+struct \hyperlink{structrte__eth__rxconf}{rte\+\_\+eth\+\_\+rxconf} \hyperlink{structbond__rx__queue_a88fc26d5b1d1399c0a401f211a5b766f}{rx\+\_\+conf}
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{structbond__rx__queue_a25fec2758cbb0c178303a91f9b947de2}{mb\+\_\+pool}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Port Queue Mapping Structure 
+
+\subsection{Field Documentation}
+\hypertarget{structbond__rx__queue_ac596ec953b07433616f515de68124a43}{}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}!dev\+\_\+private@{dev\+\_\+private}}
+\index{dev\+\_\+private@{dev\+\_\+private}!bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+\subsubsection[{dev\+\_\+private}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf bond\+\_\+dev\+\_\+private}$\ast$ dev\+\_\+private}\label{structbond__rx__queue_ac596ec953b07433616f515de68124a43}
+Reference to eth\+\_\+dev private structure \hypertarget{structbond__rx__queue_a25fec2758cbb0c178303a91f9b947de2}{}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}!mb\+\_\+pool@{mb\+\_\+pool}}
+\index{mb\+\_\+pool@{mb\+\_\+pool}!bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+\subsubsection[{mb\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ mb\+\_\+pool}\label{structbond__rx__queue_a25fec2758cbb0c178303a91f9b947de2}
+Reference to mbuf pool to use for R\+X queue \hypertarget{structbond__rx__queue_aaa1aa505a27c4744f950365aafb99484}{}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}!nb\+\_\+rx\+\_\+desc@{nb\+\_\+rx\+\_\+desc}}
+\index{nb\+\_\+rx\+\_\+desc@{nb\+\_\+rx\+\_\+desc}!bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+\subsubsection[{nb\+\_\+rx\+\_\+desc}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t nb\+\_\+rx\+\_\+desc}\label{structbond__rx__queue_aaa1aa505a27c4744f950365aafb99484}
+Number of R\+X descriptors available for the queue \hypertarget{structbond__rx__queue_a9069963fa1ce9797b853db16f9845d58}{}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}!queue\+\_\+id@{queue\+\_\+id}}
+\index{queue\+\_\+id@{queue\+\_\+id}!bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+\subsubsection[{queue\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int queue\+\_\+id}\label{structbond__rx__queue_a9069963fa1ce9797b853db16f9845d58}
+Queue Id \hypertarget{structbond__rx__queue_a88fc26d5b1d1399c0a401f211a5b766f}{}\index{bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}!rx\+\_\+conf@{rx\+\_\+conf}}
+\index{rx\+\_\+conf@{rx\+\_\+conf}!bond\+\_\+rx\+\_\+queue@{bond\+\_\+rx\+\_\+queue}}
+\subsubsection[{rx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+eth\+\_\+rxconf} rx\+\_\+conf}\label{structbond__rx__queue_a88fc26d5b1d1399c0a401f211a5b766f}
+Copy of R\+X configuration structure for queue 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pmd\+\_\+bond/rte\+\_\+eth\+\_\+bond\+\_\+private.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\hypertarget{rte__debug_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+debug.h File Reference}
+\label{rte__debug_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+debug.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+debug.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__debug_8h_a9fcab5683ce1c1164c52c17579cc2b5f}{rte\+\_\+panic}(...)~rte\+\_\+panic\+\_\+(\+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}dummy\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rte__debug_8h_aa61c973342fc9435059f1c5b42aad2e7}{rte\+\_\+dump\+\_\+stack} (void)
+\item 
+void \hyperlink{rte__debug_8h_a4dfb5c987994997a06db8bdc9b9a6d10}{rte\+\_\+dump\+\_\+registers} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug Functions in R\+T\+E
+
+This file defines a generic A\+P\+I for debug operations. Part of the implementation is architecture-\/specific. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__debug_8h_a9fcab5683ce1c1164c52c17579cc2b5f}{}\index{rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}!rte\+\_\+panic@{rte\+\_\+panic}}
+\index{rte\+\_\+panic@{rte\+\_\+panic}!rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}}
+\subsubsection[{rte\+\_\+panic}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+panic(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~rte\+\_\+panic\+\_\+(\+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}dummy\char`\"{})}\label{rte__debug_8h_a9fcab5683ce1c1164c52c17579cc2b5f}
+Provide notification of a critical non-\/recoverable error and terminate execution abnormally.
+
+Display the format string and its expanded arguments (printf-\/like).
+
+In a linuxapp environment, this function dumps the stack and calls abort() resulting in a core dump if enabled.
+
+The function never returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & The format string \\
+\hline
+{\em args} & The variable list of arguments. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__debug_8h_a4dfb5c987994997a06db8bdc9b9a6d10}{}\index{rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}!rte\+\_\+dump\+\_\+registers@{rte\+\_\+dump\+\_\+registers}}
+\index{rte\+\_\+dump\+\_\+registers@{rte\+\_\+dump\+\_\+registers}!rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}}
+\subsubsection[{rte\+\_\+dump\+\_\+registers}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+dump\+\_\+registers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__debug_8h_a4dfb5c987994997a06db8bdc9b9a6d10}
+Dump the registers of the calling core to the console.
+
+Note\+: Not implemented in a userapp environment; use gdb instead. \hypertarget{rte__debug_8h_aa61c973342fc9435059f1c5b42aad2e7}{}\index{rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}!rte\+\_\+dump\+\_\+stack@{rte\+\_\+dump\+\_\+stack}}
+\index{rte\+\_\+dump\+\_\+stack@{rte\+\_\+dump\+\_\+stack}!rte\+\_\+debug.\+h@{rte\+\_\+debug.\+h}}
+\subsubsection[{rte\+\_\+dump\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+dump\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__debug_8h_aa61c973342fc9435059f1c5b42aad2e7}
+Dump the stack of the calling core to the console. 

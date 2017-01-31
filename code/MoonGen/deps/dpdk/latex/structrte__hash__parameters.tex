@@ -1,0 +1,55 @@
+\hypertarget{structrte__hash__parameters}{}\section{rte\+\_\+hash\+\_\+parameters Struct Reference}
+\label{structrte__hash__parameters}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+
+
+{\ttfamily \#include $<$rte\+\_\+hash.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structrte__hash__parameters_a8f8f80d37794cde9472343e4487ba3eb}{name}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash__parameters_a38bad35c844ffd72b0c1132715d5f3a1}{entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash__parameters_ad1c0b79e09e6b654bc7c268a9ec0084f}{bucket\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash__parameters_a7250588fe859c80e349c79c2b15ee421}{key\+\_\+len}
+\item 
+\hyperlink{rte__hash_8h_a1b12fdd40a9aa9aa254d45b052e57350}{rte\+\_\+hash\+\_\+function} \hyperlink{structrte__hash__parameters_aca908537bdd20d4ca4d4c7fd6c392903}{hash\+\_\+func}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash__parameters_a01ac433d404852455c8fb211a4d43b2a}{hash\+\_\+func\+\_\+init\+\_\+val}
+\item 
+int \hyperlink{structrte__hash__parameters_a229cb0bd24215f0cb940e0724dbd4d55}{socket\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters used when creating the hash table. The total table entries and bucket entries must be a power of 2. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__hash__parameters_ad1c0b79e09e6b654bc7c268a9ec0084f}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!bucket\+\_\+entries@{bucket\+\_\+entries}}
+\index{bucket\+\_\+entries@{bucket\+\_\+entries}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{bucket\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+entries}\label{structrte__hash__parameters_ad1c0b79e09e6b654bc7c268a9ec0084f}
+Bucket entries. \hypertarget{structrte__hash__parameters_a38bad35c844ffd72b0c1132715d5f3a1}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!entries@{entries}}
+\index{entries@{entries}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entries}\label{structrte__hash__parameters_a38bad35c844ffd72b0c1132715d5f3a1}
+Total hash table entries. \hypertarget{structrte__hash__parameters_aca908537bdd20d4ca4d4c7fd6c392903}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!hash\+\_\+func@{hash\+\_\+func}}
+\index{hash\+\_\+func@{hash\+\_\+func}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{hash\+\_\+func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+hash\+\_\+function} hash\+\_\+func}\label{structrte__hash__parameters_aca908537bdd20d4ca4d4c7fd6c392903}
+Function used to calculate hash. \hypertarget{structrte__hash__parameters_a01ac433d404852455c8fb211a4d43b2a}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!hash\+\_\+func\+\_\+init\+\_\+val@{hash\+\_\+func\+\_\+init\+\_\+val}}
+\index{hash\+\_\+func\+\_\+init\+\_\+val@{hash\+\_\+func\+\_\+init\+\_\+val}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{hash\+\_\+func\+\_\+init\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t hash\+\_\+func\+\_\+init\+\_\+val}\label{structrte__hash__parameters_a01ac433d404852455c8fb211a4d43b2a}
+Init value used by hash\+\_\+func. \hypertarget{structrte__hash__parameters_a7250588fe859c80e349c79c2b15ee421}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!key\+\_\+len@{key\+\_\+len}}
+\index{key\+\_\+len@{key\+\_\+len}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{key\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t key\+\_\+len}\label{structrte__hash__parameters_a7250588fe859c80e349c79c2b15ee421}
+Length of hash key. \hypertarget{structrte__hash__parameters_a8f8f80d37794cde9472343e4487ba3eb}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!name@{name}}
+\index{name@{name}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ name}\label{structrte__hash__parameters_a8f8f80d37794cde9472343e4487ba3eb}
+Name of the hash. \hypertarget{structrte__hash__parameters_a229cb0bd24215f0cb940e0724dbd4d55}{}\index{rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}!socket\+\_\+id@{socket\+\_\+id}}
+\index{socket\+\_\+id@{socket\+\_\+id}!rte\+\_\+hash\+\_\+parameters@{rte\+\_\+hash\+\_\+parameters}}
+\subsubsection[{socket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int socket\+\_\+id}\label{structrte__hash__parameters_a229cb0bd24215f0cb940e0724dbd4d55}
+N\+U\+M\+A Socket I\+D for memory. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+hash/\hyperlink{rte__hash_8h}{rte\+\_\+hash.\+h}\end{DoxyCompactItemize}

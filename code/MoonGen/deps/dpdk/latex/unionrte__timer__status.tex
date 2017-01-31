@@ -1,0 +1,35 @@
+\hypertarget{unionrte__timer__status}{}\section{rte\+\_\+timer\+\_\+status Union Reference}
+\label{unionrte__timer__status}\index{rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}}
+
+
+{\ttfamily \#include $<$rte\+\_\+timer.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{unionrte__timer__status_ae65af0c4a8ee050043fe4b575f0a26a0}{u32}
+\item 
+uint16\+\_\+t \hyperlink{unionrte__timer__status_af4ea525e6f15623e4e9c6c6aa75f2077}{state}
+\item 
+int16\+\_\+t \hyperlink{unionrte__timer__status_a511dc0fbddf046e2f2b2b5480188fcfb}{owner}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer status\+: A union of the state (stopped, pending, running, config) and an owner (the id of the lcore that owns the timer). 
+
+\subsection{Field Documentation}
+\hypertarget{unionrte__timer__status_a511dc0fbddf046e2f2b2b5480188fcfb}{}\index{rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}!owner@{owner}}
+\index{owner@{owner}!rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}}
+\subsubsection[{owner}]{\setlength{\rightskip}{0pt plus 5cm}int16\+\_\+t owner}\label{unionrte__timer__status_a511dc0fbddf046e2f2b2b5480188fcfb}
+The lcore that owns the timer. \hypertarget{unionrte__timer__status_af4ea525e6f15623e4e9c6c6aa75f2077}{}\index{rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}!state@{state}}
+\index{state@{state}!rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t state}\label{unionrte__timer__status_af4ea525e6f15623e4e9c6c6aa75f2077}
+Stop, pending, running, config. \hypertarget{unionrte__timer__status_ae65af0c4a8ee050043fe4b575f0a26a0}{}\index{rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}!u32@{u32}}
+\index{u32@{u32}!rte\+\_\+timer\+\_\+status@{rte\+\_\+timer\+\_\+status}}
+\subsubsection[{u32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t u32}\label{unionrte__timer__status_ae65af0c4a8ee050043fe4b575f0a26a0}
+To atomic-\/set status + owner. 
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+timer/\hyperlink{rte__timer_8h}{rte\+\_\+timer.\+h}\end{DoxyCompactItemize}

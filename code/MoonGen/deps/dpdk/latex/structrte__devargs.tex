@@ -1,0 +1,79 @@
+\hypertarget{structrte__devargs}{}\section{rte\+\_\+devargs Struct Reference}
+\label{structrte__devargs}\index{rte\+\_\+devargs@{rte\+\_\+devargs}}
+
+
+{\ttfamily \#include $<$rte\+\_\+devargs.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structrte__devargs_a3d9ccd9f22f3488e05364ebc35fa78df}{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y} (\hyperlink{structrte__devargs}{rte\+\_\+devargs}) next
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}{rte\+\_\+devtype} \hyperlink{structrte__devargs_ad24886fe74539d51dfc8be0cb7a06cfc}{type}
+\item 
+char \hyperlink{structrte__devargs_ac8d946f012675cf93396b453c96d07da}{args} \mbox{[}R\+T\+E\+\_\+\+D\+E\+V\+A\+R\+G\+S\+\_\+\+L\+E\+N\mbox{]}
+\item 
+struct \hyperlink{structrte__pci__addr}{rte\+\_\+pci\+\_\+addr} \hyperlink{structrte__devargs_ac06e27d1cf6546e487214cc7a4cbd523}{addr}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \hyperlink{structrte__pci__addr}{rte\_pci\_addr} \hyperlink{structrte__devargs_ac06e27d1cf6546e487214cc7a4cbd523}{addr}\\
+\} \hyperlink{structrte__devargs_ae26812bc74640366c15cde4f2d4b4926}{pci}\\
+
+\end{tabbing}\item 
+char \hyperlink{structrte__devargs_a1764942a3f4ef98f96b56f34528c8896}{drv\+\_\+name} \mbox{[}32\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>char \hyperlink{structrte__devargs_a1764942a3f4ef98f96b56f34528c8896}{drv\_name} \mbox{[}32\mbox{]}\\
+\} \hyperlink{structrte__devargs_acf02e25b6dc010c2369b80615055b5b4}{virtual}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure that stores a device given by the user with its arguments
+
+A user device is a physical or a virtual device given by the user to the D\+P\+D\+K application at startup through command line arguments.
+
+The structure stores the configuration of the device, its P\+C\+I identifier if it\textquotesingle{}s a P\+C\+I device or the driver name if it\textquotesingle{}s a virtual device. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structrte__devargs_a3d9ccd9f22f3488e05364ebc35fa78df}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y@{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}}
+\index{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y@{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+devargs}}]{}
+\end{DoxyParamCaption}
+)}\label{structrte__devargs_a3d9ccd9f22f3488e05364ebc35fa78df}
+Next in list. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__devargs_ac06e27d1cf6546e487214cc7a4cbd523}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!addr@{addr}}
+\index{addr@{addr}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+pci\+\_\+addr} addr}\label{structrte__devargs_ac06e27d1cf6546e487214cc7a4cbd523}
+P\+C\+I location. \hypertarget{structrte__devargs_ac8d946f012675cf93396b453c96d07da}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!args@{args}}
+\index{args@{args}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{args}]{\setlength{\rightskip}{0pt plus 5cm}char args\mbox{[}R\+T\+E\+\_\+\+D\+E\+V\+A\+R\+G\+S\+\_\+\+L\+E\+N\mbox{]}}\label{structrte__devargs_ac8d946f012675cf93396b453c96d07da}
+Arguments string as given by user. \hypertarget{structrte__devargs_a1764942a3f4ef98f96b56f34528c8896}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!drv\+\_\+name@{drv\+\_\+name}}
+\index{drv\+\_\+name@{drv\+\_\+name}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{drv\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}char drv\+\_\+name\mbox{[}32\mbox{]}}\label{structrte__devargs_a1764942a3f4ef98f96b56f34528c8896}
+Driver name. \hypertarget{structrte__devargs_ae26812bc74640366c15cde4f2d4b4926}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!pci@{pci}}
+\index{pci@{pci}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{pci}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   pci}\label{structrte__devargs_ae26812bc74640366c15cde4f2d4b4926}
+Used if type is R\+T\+E\+\_\+\+D\+E\+V\+T\+Y\+P\+E\+\_\+$\ast$\+\_\+\+P\+C\+I. \hypertarget{structrte__devargs_ad24886fe74539d51dfc8be0cb7a06cfc}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!type@{type}}
+\index{type@{type}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+devtype} type}\label{structrte__devargs_ad24886fe74539d51dfc8be0cb7a06cfc}
+Type of device. \hypertarget{structrte__devargs_acf02e25b6dc010c2369b80615055b5b4}{}\index{rte\+\_\+devargs@{rte\+\_\+devargs}!virtual@{virtual}}
+\index{virtual@{virtual}!rte\+\_\+devargs@{rte\+\_\+devargs}}
+\subsubsection[{virtual}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   virtual}\label{structrte__devargs_acf02e25b6dc010c2369b80615055b5b4}
+Used if type is R\+T\+E\+\_\+\+D\+E\+V\+T\+Y\+P\+E\+\_\+\+V\+I\+R\+T\+U\+A\+L. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__devargs_8h}{rte\+\_\+devargs.\+h}\end{DoxyCompactItemize}

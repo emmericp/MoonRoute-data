@@ -1,0 +1,55 @@
+\hypertarget{structrte__eth__fc__conf}{}\section{rte\+\_\+eth\+\_\+fc\+\_\+conf Struct Reference}
+\label{structrte__eth__fc__conf}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__eth__fc__conf_a77e5980d56f7b1356a45426503ecbe9c}{high\+\_\+water}
+\item 
+uint32\+\_\+t \hyperlink{structrte__eth__fc__conf_a2465d5c755557f2dbfe4aeed3f14a05c}{low\+\_\+water}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__fc__conf_a9c5843ca5d190bd3dd3ae334bc7387e7}{pause\+\_\+time}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__fc__conf_a2a3dce6291881ac9be7fb969ee0b67a7}{send\+\_\+xon}
+\item 
+enum \hyperlink{rte__ethdev_8h_a9caad71a6958aaf72dfce61bac897ad3}{rte\+\_\+eth\+\_\+fc\+\_\+mode} \hyperlink{structrte__eth__fc__conf_a442a0de0c0746fb498cb5b46772e2707}{mode}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__fc__conf_aaf79da978712211b44adcddc8876d818}{mac\+\_\+ctrl\+\_\+frame\+\_\+fwd}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__fc__conf_a60eea7c64537879a9107354b1c2e75a0}{autoneg}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure Ethernet flow control parameter. These parameters will be configured into the register of the N\+I\+C. Please refer to the corresponding data sheet for proper value. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__fc__conf_a60eea7c64537879a9107354b1c2e75a0}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!autoneg@{autoneg}}
+\index{autoneg@{autoneg}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{autoneg}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t autoneg}\label{structrte__eth__fc__conf_a60eea7c64537879a9107354b1c2e75a0}
+Use Pause autoneg \hypertarget{structrte__eth__fc__conf_a77e5980d56f7b1356a45426503ecbe9c}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!high\+\_\+water@{high\+\_\+water}}
+\index{high\+\_\+water@{high\+\_\+water}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{high\+\_\+water}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t high\+\_\+water}\label{structrte__eth__fc__conf_a77e5980d56f7b1356a45426503ecbe9c}
+High threshold value to trigger X\+O\+F\+F \hypertarget{structrte__eth__fc__conf_a2465d5c755557f2dbfe4aeed3f14a05c}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!low\+\_\+water@{low\+\_\+water}}
+\index{low\+\_\+water@{low\+\_\+water}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{low\+\_\+water}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t low\+\_\+water}\label{structrte__eth__fc__conf_a2465d5c755557f2dbfe4aeed3f14a05c}
+Low threshold value to trigger X\+O\+N \hypertarget{structrte__eth__fc__conf_aaf79da978712211b44adcddc8876d818}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!mac\+\_\+ctrl\+\_\+frame\+\_\+fwd@{mac\+\_\+ctrl\+\_\+frame\+\_\+fwd}}
+\index{mac\+\_\+ctrl\+\_\+frame\+\_\+fwd@{mac\+\_\+ctrl\+\_\+frame\+\_\+fwd}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{mac\+\_\+ctrl\+\_\+frame\+\_\+fwd}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t mac\+\_\+ctrl\+\_\+frame\+\_\+fwd}\label{structrte__eth__fc__conf_aaf79da978712211b44adcddc8876d818}
+Forward M\+A\+C control frames \hypertarget{structrte__eth__fc__conf_a442a0de0c0746fb498cb5b46772e2707}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!mode@{mode}}
+\index{mode@{mode}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+eth\+\_\+fc\+\_\+mode} mode}\label{structrte__eth__fc__conf_a442a0de0c0746fb498cb5b46772e2707}
+Link flow control mode \hypertarget{structrte__eth__fc__conf_a9c5843ca5d190bd3dd3ae334bc7387e7}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!pause\+\_\+time@{pause\+\_\+time}}
+\index{pause\+\_\+time@{pause\+\_\+time}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{pause\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t pause\+\_\+time}\label{structrte__eth__fc__conf_a9c5843ca5d190bd3dd3ae334bc7387e7}
+Pause quota in the Pause frame \hypertarget{structrte__eth__fc__conf_a2a3dce6291881ac9be7fb969ee0b67a7}{}\index{rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}!send\+\_\+xon@{send\+\_\+xon}}
+\index{send\+\_\+xon@{send\+\_\+xon}!rte\+\_\+eth\+\_\+fc\+\_\+conf@{rte\+\_\+eth\+\_\+fc\+\_\+conf}}
+\subsubsection[{send\+\_\+xon}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t send\+\_\+xon}\label{structrte__eth__fc__conf_a2a3dce6291881ac9be7fb969ee0b67a7}
+Is X\+O\+N frame need be sent 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

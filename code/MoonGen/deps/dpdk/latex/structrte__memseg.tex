@@ -1,0 +1,60 @@
+\hypertarget{structrte__memseg}{}\section{rte\+\_\+memseg Struct Reference}
+\label{structrte__memseg}\index{rte\+\_\+memseg@{rte\+\_\+memseg}}
+
+
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{structrte__memseg_a3901f538726d14b9ad14e0bd7578c959}{phys\+\_\+addr}
+\item 
+size\+\_\+t \hyperlink{structrte__memseg_a7360b55975153b822efc5217b7734e6a}{len}
+\item 
+size\+\_\+t \hyperlink{structrte__memseg_a0e9113d25bb493add104f3b95844aaf5}{hugepage\+\_\+sz}
+\item 
+int32\+\_\+t \hyperlink{structrte__memseg_ac24d1064025151de66984ed53d5d9373}{socket\+\_\+id}
+\item 
+uint32\+\_\+t \hyperlink{structrte__memseg_a5874f4bcabbfe0fd765d5129d629eabf}{nchannel}
+\item 
+uint32\+\_\+t \hyperlink{structrte__memseg_a59a112650302067fe308c24133e44d7e}{nrank}
+\item 
+void $\ast$ \hyperlink{structrte__memseg_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}{addr}
+\item 
+uint64\+\_\+t \hyperlink{structrte__memseg_a684abacaaf679b13b2ccec687a763b17}{addr\+\_\+64}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Physical memory segment descriptor. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__memseg_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!addr@{addr}}
+\index{addr@{addr}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ addr}\label{structrte__memseg_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}
+Start virtual address. \hypertarget{structrte__memseg_a684abacaaf679b13b2ccec687a763b17}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!addr\+\_\+64@{addr\+\_\+64}}
+\index{addr\+\_\+64@{addr\+\_\+64}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{addr\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t addr\+\_\+64}\label{structrte__memseg_a684abacaaf679b13b2ccec687a763b17}
+Makes sure addr is always 64 bits \hypertarget{structrte__memseg_a0e9113d25bb493add104f3b95844aaf5}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!hugepage\+\_\+sz@{hugepage\+\_\+sz}}
+\index{hugepage\+\_\+sz@{hugepage\+\_\+sz}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{hugepage\+\_\+sz}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t hugepage\+\_\+sz}\label{structrte__memseg_a0e9113d25bb493add104f3b95844aaf5}
+The pagesize of underlying memory \hypertarget{structrte__memseg_a7360b55975153b822efc5217b7734e6a}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!len@{len}}
+\index{len@{len}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t len}\label{structrte__memseg_a7360b55975153b822efc5217b7734e6a}
+Length of the segment. \hypertarget{structrte__memseg_a5874f4bcabbfe0fd765d5129d629eabf}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!nchannel@{nchannel}}
+\index{nchannel@{nchannel}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{nchannel}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nchannel}\label{structrte__memseg_a5874f4bcabbfe0fd765d5129d629eabf}
+Number of channels. \hypertarget{structrte__memseg_a59a112650302067fe308c24133e44d7e}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!nrank@{nrank}}
+\index{nrank@{nrank}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{nrank}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nrank}\label{structrte__memseg_a59a112650302067fe308c24133e44d7e}
+Number of ranks. \hypertarget{structrte__memseg_a3901f538726d14b9ad14e0bd7578c959}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!phys\+\_\+addr@{phys\+\_\+addr}}
+\index{phys\+\_\+addr@{phys\+\_\+addr}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{phys\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} phys\+\_\+addr}\label{structrte__memseg_a3901f538726d14b9ad14e0bd7578c959}
+Start physical address. \hypertarget{structrte__memseg_ac24d1064025151de66984ed53d5d9373}{}\index{rte\+\_\+memseg@{rte\+\_\+memseg}!socket\+\_\+id@{socket\+\_\+id}}
+\index{socket\+\_\+id@{socket\+\_\+id}!rte\+\_\+memseg@{rte\+\_\+memseg}}
+\subsubsection[{socket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t socket\+\_\+id}\label{structrte__memseg_ac24d1064025151de66984ed53d5d9373}
+N\+U\+M\+A socket I\+D. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__memory_8h}{rte\+\_\+memory.\+h}\end{DoxyCompactItemize}

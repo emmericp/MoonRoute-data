@@ -1,0 +1,336 @@
+\hypertarget{rte__eth__bond_8h}{}\section{lib/librte\+\_\+pmd\+\_\+bond/rte\+\_\+eth\+\_\+bond.h File Reference}
+\label{rte__eth__bond_8h}\index{lib/librte\+\_\+pmd\+\_\+bond/rte\+\_\+eth\+\_\+bond.\+h@{lib/librte\+\_\+pmd\+\_\+bond/rte\+\_\+eth\+\_\+bond.\+h}}
+{\ttfamily \#include $<$rte\+\_\+ether.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__eth__bond_8h_aad34f918b8877dc6a27322d03dc4184f}{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}~(0)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_a2047ace6f03fbce65b418fb7fda25f68}{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P}~(1)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_a6a70bf21c5b4ad3a1368615349cb9771}{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E}~(2)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_a3f02c7344df0a3652fe2a21905f196d1}{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}~(3)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_ac3cea446184e5f1fe5d164e77d95d210}{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2}~(0)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_a79c66f498055ec7d93e6c75912b9a4b9}{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23}~(1)
+\item 
+\#define \hyperlink{rte__eth__bond_8h_a9bf2873400419f0151c4a2cd0cb88660}{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34}~(2)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__eth__bond_8h_a72ca2cd68ec5d0bcdfd519e6b84600b5}{rte\+\_\+eth\+\_\+bond\+\_\+create} (const char $\ast$name, uint8\+\_\+t mode, uint8\+\_\+t socket\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_a7dce1cd638dea4fedc754b34468f8ea9}{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t slave\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_af4f43397c5ee58c585098598d9781f1d}{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t slave\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_acc5c8d2c7e3b9fc97cd5c92e65c62bb1}{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t mode)
+\item 
+int \hyperlink{rte__eth__bond_8h_a672bd42473da0d37634c90dc27b48948}{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get} (uint8\+\_\+t bonded\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_aba71e847729d65ff128df2481b2567c6}{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t slave\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_a254746d1d69dc6a02e385bc02f82c4fe}{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get} (uint8\+\_\+t bonded\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_a46b0508f7d9badd4d584ce9f0711884e}{rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t slaves\mbox{[}$\,$\mbox{]}, uint8\+\_\+t len)
+\item 
+int \hyperlink{rte__eth__bond_8h_a0c62fbd70c9b356a2a5cb37246973be9}{rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t slaves\mbox{[}$\,$\mbox{]}, uint8\+\_\+t len)
+\item 
+int \hyperlink{rte__eth__bond_8h_ae2cf1d19cf5827b54c8287bf8cab7590}{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, struct \hyperlink{structether__addr}{ether\+\_\+addr} $\ast$mac\+\_\+addr)
+\item 
+int \hyperlink{rte__eth__bond_8h_a15c19003d97f1061892b997179d73938}{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset} (uint8\+\_\+t bonded\+\_\+port\+\_\+id)
+\item 
+int \hyperlink{rte__eth__bond_8h_a70770ad2cdec8316be6e3124a7ee4271}{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set} (uint8\+\_\+t bonded\+\_\+port\+\_\+id, uint8\+\_\+t policy)
+\item 
+int \hyperlink{rte__eth__bond_8h_a027f746f502649adf4223e3614010931}{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get} (uint8\+\_\+t bonded\+\_\+port\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Link Bonding Ethernet Device Link Bonding for 1\+Gb\+E and 10\+Gb\+E ports to allow the aggregation of multiple (slave) N\+I\+Cs into a single logical interface. The bonded device processes these interfaces based on the mode of operation specified and supported. This implementation supports 4 modes of operation round robin, active backup balance and broadcast. Providing redundant links, fault tolerance and/or load balancing of network ports 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__eth__bond_8h_ac3cea446184e5f1fe5d164e77d95d210}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2}}
+\index{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R2~(0)}\label{rte__eth__bond_8h_ac3cea446184e5f1fe5d164e77d95d210}
+Layer 2 (Ethernet M\+A\+C) \hypertarget{rte__eth__bond_8h_a79c66f498055ec7d93e6c75912b9a4b9}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23}}
+\index{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R23~(1)}\label{rte__eth__bond_8h_a79c66f498055ec7d93e6c75912b9a4b9}
+Layer 2+3 (Ethernet M\+A\+C + I\+P Addresses) transmit load balancing \hypertarget{rte__eth__bond_8h_a9bf2873400419f0151c4a2cd0cb88660}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34}}
+\index{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34@{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+L\+A\+Y\+E\+R34~(2)}\label{rte__eth__bond_8h_a9bf2873400419f0151c4a2cd0cb88660}
+Layer 3+4 (I\+P Addresses + U\+D\+P Ports) transmit load balancing \hypertarget{rte__eth__bond_8h_a2047ace6f03fbce65b418fb7fda25f68}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P}}
+\index{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+B\+A\+C\+K\+U\+P~(1)}\label{rte__eth__bond_8h_a2047ace6f03fbce65b418fb7fda25f68}
+Active Backup (Mode 1). In this mode all packets transmitted will be transmitted on the primary slave until such point as the primary slave is no longer available and then transmitted packets will be sent on the next available slaves. The primary slave can be defined by the user but defaults to the first active slave available if not specified. \hypertarget{rte__eth__bond_8h_a6a70bf21c5b4ad3a1368615349cb9771}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E}}
+\index{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+A\+L\+A\+N\+C\+E~(2)}\label{rte__eth__bond_8h_a6a70bf21c5b4ad3a1368615349cb9771}
+Balance (Mode 2). In this mode all packets transmitted will be balanced across the available slaves using one of three available transmit policies -\/ l2, l2+3 or l3+4. See B\+A\+L\+A\+N\+C\+E\+\_\+\+X\+M\+I\+T\+\_\+\+P\+O\+L\+I\+C\+Y macros definitions for further details on transmit policies. \hypertarget{rte__eth__bond_8h_a3f02c7344df0a3652fe2a21905f196d1}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}}
+\index{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T~(3)}\label{rte__eth__bond_8h_a3f02c7344df0a3652fe2a21905f196d1}
+Broadcast (Mode 3). In this mode all transmitted packets will be transmitted on all available active slaves of the bonded. \hypertarget{rte__eth__bond_8h_aad34f918b8877dc6a27322d03dc4184f}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}}
+\index{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N@{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+O\+N\+D\+I\+N\+G\+\_\+\+M\+O\+D\+E\+\_\+\+R\+O\+U\+N\+D\+\_\+\+R\+O\+B\+I\+N~(0)}\label{rte__eth__bond_8h_aad34f918b8877dc6a27322d03dc4184f}
+Round Robin (Mode 0). In this mode all transmitted packets will be balanced equally across all active slaves of the bonded in a round robin fashion. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__eth__bond_8h_a0c62fbd70c9b356a2a5cb37246973be9}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+active\+\_\+slaves\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{slaves\mbox{[}$\,$\mbox{]}, }
+\item[{uint8\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a0c62fbd70c9b356a2a5cb37246973be9}
+Populate an array with list of the active slaves port id\textquotesingle{}s of the bonded device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded eth\+\_\+dev to interrogate \\
+\hline
+{\em slaves} & Array to be populated with the current active slaves \\
+\hline
+{\em len} & Length of slaves array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of active slaves associated with bonded device on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a72ca2cd68ec5d0bcdfd519e6b84600b5}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+create@{rte\+\_\+eth\+\_\+bond\+\_\+create}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+create@{rte\+\_\+eth\+\_\+bond\+\_\+create}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{uint8\+\_\+t}]{mode, }
+\item[{uint8\+\_\+t}]{socket\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a72ca2cd68ec5d0bcdfd519e6b84600b5}
+Create a bonded rte\+\_\+eth\+\_\+dev device
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of new link bonding device. \\
+\hline
+{\em mode} & Mode to initialize bonding device in. \\
+\hline
+{\em socket\+\_\+id} & Socket Id on which to allocate eth\+\_\+dev resources.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Port Id of created rte\+\_\+eth\+\_\+dev on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a15c19003d97f1061892b997179d73938}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset@{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset@{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a15c19003d97f1061892b997179d73938}
+Reset bonded device to use M\+A\+C from primary slave on bonded device and it\textquotesingle{}s slaves.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_ae2cf1d19cf5827b54c8287bf8cab7590}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+mac\+\_\+address\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{struct {\bf ether\+\_\+addr} $\ast$}]{mac\+\_\+addr}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_ae2cf1d19cf5827b54c8287bf8cab7590}
+Set explicit M\+A\+C address to use on bonded device and it\textquotesingle{}s slaves.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em mac\+\_\+addr} & M\+A\+C Address to use on bonded device overriding slaves M\+A\+C addresses\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a672bd42473da0d37634c90dc27b48948}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a672bd42473da0d37634c90dc27b48948}
+Get link bonding mode of bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+link bonding mode on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_acc5c8d2c7e3b9fc97cd5c92e65c62bb1}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+mode\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{mode}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_acc5c8d2c7e3b9fc97cd5c92e65c62bb1}
+Set link bonding mode of bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em mode} & Bonding mode to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a254746d1d69dc6a02e385bc02f82c4fe}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a254746d1d69dc6a02e385bc02f82c4fe}
+Get primary slave of bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Port Id of primary slave on success, -\/1 on failure 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_aba71e847729d65ff128df2481b2567c6}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+primary\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{slave\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_aba71e847729d65ff128df2481b2567c6}
+Set slave rte\+\_\+eth\+\_\+dev as primary slave of bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em slave\+\_\+port\+\_\+id} & Port I\+D of slave device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a7dce1cd638dea4fedc754b34468f8ea9}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add@{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add@{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{slave\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a7dce1cd638dea4fedc754b34468f8ea9}
+Add a rte\+\_\+eth\+\_\+dev device as a slave to the bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em slave\+\_\+port\+\_\+id} & Port I\+D of slave device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_af4f43397c5ee58c585098598d9781f1d}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove@{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove@{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+slave\+\_\+remove (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{slave\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_af4f43397c5ee58c585098598d9781f1d}
+Remove a slave rte\+\_\+eth\+\_\+dev device from the bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em slave\+\_\+port\+\_\+id} & Port I\+D of slave device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a46b0508f7d9badd4d584ce9f0711884e}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+slaves\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{slaves\mbox{[}$\,$\mbox{]}, }
+\item[{uint8\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a46b0508f7d9badd4d584ce9f0711884e}
+Populate an array with list of the slaves port id\textquotesingle{}s of the bonded device
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded eth\+\_\+dev to interrogate \\
+\hline
+{\em slaves} & Array to be populated with the current active slaves \\
+\hline
+{\em len} & Length of slaves array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of slaves associated with bonded device on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a027f746f502649adf4223e3614010931}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get@{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a027f746f502649adf4223e3614010931}
+Get the transmit policy set on bonded device for balance mode operation
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Balance transmit policy on success, negative value otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__eth__bond_8h_a70770ad2cdec8316be6e3124a7ee4271}{}\index{rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}!rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set}}
+\index{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set@{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set}!rte\+\_\+eth\+\_\+bond.\+h@{rte\+\_\+eth\+\_\+bond.\+h}}
+\subsubsection[{rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eth\+\_\+bond\+\_\+xmit\+\_\+policy\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{bonded\+\_\+port\+\_\+id, }
+\item[{uint8\+\_\+t}]{policy}
+\end{DoxyParamCaption}
+)}\label{rte__eth__bond_8h_a70770ad2cdec8316be6e3124a7ee4271}
+Set the transmit policy for bonded device to use when it is operating in balance mode, this parameter is otherwise ignored in other modes of operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bonded\+\_\+port\+\_\+id} & Port I\+D of bonded device. \\
+\hline
+{\em policy} & Balance mode transmission policy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise. 
+\end{DoxyReturn}

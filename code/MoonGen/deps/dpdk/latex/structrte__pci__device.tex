@@ -1,0 +1,75 @@
+\hypertarget{structrte__pci__device}{}\section{rte\+\_\+pci\+\_\+device Struct Reference}
+\label{structrte__pci__device}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+
+
+{\ttfamily \#include $<$rte\+\_\+pci.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structrte__pci__device_a280d0e7f4b6eb553363b97cdbf52c451}{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y} (\hyperlink{structrte__pci__device}{rte\+\_\+pci\+\_\+device}) next
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__pci__addr}{rte\+\_\+pci\+\_\+addr} \hyperlink{structrte__pci__device_ac06e27d1cf6546e487214cc7a4cbd523}{addr}
+\item 
+struct \hyperlink{structrte__pci__id}{rte\+\_\+pci\+\_\+id} \hyperlink{structrte__pci__device_ac7befc4a21c72cd25fbf280ccbc0c74a}{id}
+\item 
+struct \hyperlink{structrte__pci__resource}{rte\+\_\+pci\+\_\+resource} \hyperlink{structrte__pci__device_ae2869fca37eeec1d4c9054a857563394}{mem\+\_\+resource} \mbox{[}\hyperlink{rte__pci_8h_a8a86d34e4f13c7aa7883dc9379b1eeb3}{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}\mbox{]}
+\item 
+struct rte\+\_\+intr\+\_\+handle \hyperlink{structrte__pci__device_a84420c24119bbab092b9bb715278c0a2}{intr\+\_\+handle}
+\item 
+const struct \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} $\ast$ \hyperlink{structrte__pci__device_a97c6c643faa744455604a9d0bd40ae4d}{driver}
+\item 
+uint16\+\_\+t \hyperlink{structrte__pci__device_a9e1ee240ce273f933ba2639bd751509b}{max\+\_\+vfs}
+\item 
+int \hyperlink{structrte__pci__device_ad090419c0eee32bef787f0b111ee679c}{numa\+\_\+node}
+\item 
+struct \hyperlink{structrte__devargs}{rte\+\_\+devargs} $\ast$ \hyperlink{structrte__pci__device_abf98358c8fdfd7de9fe96db6fdc4bd84}{devargs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure describing a P\+C\+I device. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structrte__pci__device_a280d0e7f4b6eb553363b97cdbf52c451}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y@{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}}
+\index{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y@{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+E\+N\+T\+R\+Y (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+pci\+\_\+device}}]{}
+\end{DoxyParamCaption}
+)}\label{structrte__pci__device_a280d0e7f4b6eb553363b97cdbf52c451}
+Next probed P\+C\+I device. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__pci__device_ac06e27d1cf6546e487214cc7a4cbd523}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!addr@{addr}}
+\index{addr@{addr}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+pci\+\_\+addr} addr}\label{structrte__pci__device_ac06e27d1cf6546e487214cc7a4cbd523}
+P\+C\+I location. \hypertarget{structrte__pci__device_abf98358c8fdfd7de9fe96db6fdc4bd84}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!devargs@{devargs}}
+\index{devargs@{devargs}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{devargs}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+devargs}$\ast$ devargs}\label{structrte__pci__device_abf98358c8fdfd7de9fe96db6fdc4bd84}
+Device user arguments \hypertarget{structrte__pci__device_a97c6c643faa744455604a9d0bd40ae4d}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!driver@{driver}}
+\index{driver@{driver}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{driver}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+pci\+\_\+driver}$\ast$ driver}\label{structrte__pci__device_a97c6c643faa744455604a9d0bd40ae4d}
+Associated driver \hypertarget{structrte__pci__device_ac7befc4a21c72cd25fbf280ccbc0c74a}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!id@{id}}
+\index{id@{id}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+pci\+\_\+id} id}\label{structrte__pci__device_ac7befc4a21c72cd25fbf280ccbc0c74a}
+P\+C\+I I\+D. \hypertarget{structrte__pci__device_a84420c24119bbab092b9bb715278c0a2}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!intr\+\_\+handle@{intr\+\_\+handle}}
+\index{intr\+\_\+handle@{intr\+\_\+handle}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{intr\+\_\+handle}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+intr\+\_\+handle intr\+\_\+handle}\label{structrte__pci__device_a84420c24119bbab092b9bb715278c0a2}
+Interrupt handle \hypertarget{structrte__pci__device_a9e1ee240ce273f933ba2639bd751509b}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!max\+\_\+vfs@{max\+\_\+vfs}}
+\index{max\+\_\+vfs@{max\+\_\+vfs}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{max\+\_\+vfs}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t max\+\_\+vfs}\label{structrte__pci__device_a9e1ee240ce273f933ba2639bd751509b}
+sriov enable if not zero \hypertarget{structrte__pci__device_ae2869fca37eeec1d4c9054a857563394}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!mem\+\_\+resource@{mem\+\_\+resource}}
+\index{mem\+\_\+resource@{mem\+\_\+resource}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{mem\+\_\+resource}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+pci\+\_\+resource} mem\+\_\+resource\mbox{[}{\bf P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}\mbox{]}}\label{structrte__pci__device_ae2869fca37eeec1d4c9054a857563394}
+P\+C\+I Memory Resource \hypertarget{structrte__pci__device_ad090419c0eee32bef787f0b111ee679c}{}\index{rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}!numa\+\_\+node@{numa\+\_\+node}}
+\index{numa\+\_\+node@{numa\+\_\+node}!rte\+\_\+pci\+\_\+device@{rte\+\_\+pci\+\_\+device}}
+\subsubsection[{numa\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}int numa\+\_\+node}\label{structrte__pci__device_ad090419c0eee32bef787f0b111ee679c}
+N\+U\+M\+A node connection 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__pci_8h}{rte\+\_\+pci.\+h}\end{DoxyCompactItemize}

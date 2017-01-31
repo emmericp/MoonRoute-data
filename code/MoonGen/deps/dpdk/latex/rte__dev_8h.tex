@@ -1,0 +1,106 @@
+\hypertarget{rte__dev_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+dev.h File Reference}
+\label{rte__dev_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+dev.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+dev.\+h}}
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__driver}{rte\+\_\+driver}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int( \hyperlink{rte__dev_8h_a96a605c375e891ef4f216d5268e1d1bb}{rte\+\_\+dev\+\_\+init\+\_\+t}) (const char $\ast$name, const char $\ast$args)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6f}{pmd\+\_\+type} \{ , \hyperlink{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6fa905525d132989ee81b8cca591728b482}{P\+M\+D\+\_\+\+B\+D\+E\+V} = 2
+ \}
+\item 
+enum \hyperlink{rte__dev_8h_a559caa85f4825516a063d6fa8c3f0fe3}{pmd\+\_\+init\+\_\+priority} 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__dev_8h_a6ded4e1869262353a8700cdc4d453b82}{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D} (rte\+\_\+driver\+\_\+list, \hyperlink{structrte__driver}{rte\+\_\+driver})
+\item 
+void \hyperlink{rte__dev_8h_a2ab0fb7558df8bb1ee54e1528e330d48}{rte\+\_\+eal\+\_\+driver\+\_\+register} (struct \hyperlink{structrte__driver}{rte\+\_\+driver} $\ast$driver)
+\item 
+void \hyperlink{rte__dev_8h_a2bee6b1a34127f1922e9d26349892e04}{rte\+\_\+eal\+\_\+driver\+\_\+unregister} (struct \hyperlink{structrte__driver}{rte\+\_\+driver} $\ast$driver)
+\item 
+int \hyperlink{rte__dev_8h_a81568cb228aa2ea66484d51370368ab0}{rte\+\_\+eal\+\_\+dev\+\_\+init} (uint8\+\_\+t init\+\_\+priority)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E P\+M\+D Driver Registration Interface
+
+This file manages the list of device drivers. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__dev_8h_a96a605c375e891ef4f216d5268e1d1bb}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!rte\+\_\+dev\+\_\+init\+\_\+t@{rte\+\_\+dev\+\_\+init\+\_\+t}}
+\index{rte\+\_\+dev\+\_\+init\+\_\+t@{rte\+\_\+dev\+\_\+init\+\_\+t}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{rte\+\_\+dev\+\_\+init\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int( rte\+\_\+dev\+\_\+init\+\_\+t) (const char $\ast$name, const char $\ast$args)}\label{rte__dev_8h_a96a605c375e891ef4f216d5268e1d1bb}
+Initialization function called for each device driver once. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__dev_8h_a559caa85f4825516a063d6fa8c3f0fe3}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!pmd\+\_\+init\+\_\+priority@{pmd\+\_\+init\+\_\+priority}}
+\index{pmd\+\_\+init\+\_\+priority@{pmd\+\_\+init\+\_\+priority}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{pmd\+\_\+init\+\_\+priority}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pmd\+\_\+init\+\_\+priority}}\label{rte__dev_8h_a559caa85f4825516a063d6fa8c3f0fe3}
+Driver initialization \hypertarget{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6f}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!pmd\+\_\+type@{pmd\+\_\+type}}
+\index{pmd\+\_\+type@{pmd\+\_\+type}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{pmd\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pmd\+\_\+type}}\label{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6f}
+Driver type enumeration \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+M\+D\+\_\+\+B\+D\+E\+V@{P\+M\+D\+\_\+\+B\+D\+E\+V}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!P\+M\+D\+\_\+\+B\+D\+E\+V@{P\+M\+D\+\_\+\+B\+D\+E\+V}}\item[{\em 
+\hypertarget{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6fa905525d132989ee81b8cca591728b482}{}P\+M\+D\+\_\+\+B\+D\+E\+V\label{rte__dev_8h_abe101efbd29b695f0bd43e97b3ef1d6fa905525d132989ee81b8cca591728b482}
+}]Poll Mode Driver Bonded Device \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__dev_8h_a81568cb228aa2ea66484d51370368ab0}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!rte\+\_\+eal\+\_\+dev\+\_\+init@{rte\+\_\+eal\+\_\+dev\+\_\+init}}
+\index{rte\+\_\+eal\+\_\+dev\+\_\+init@{rte\+\_\+eal\+\_\+dev\+\_\+init}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+dev\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+dev\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{init\+\_\+priority}
+\end{DoxyParamCaption}
+)}\label{rte__dev_8h_a81568cb228aa2ea66484d51370368ab0}
+Initialize all the registered drivers in this process \hypertarget{rte__dev_8h_a2ab0fb7558df8bb1ee54e1528e330d48}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!rte\+\_\+eal\+\_\+driver\+\_\+register@{rte\+\_\+eal\+\_\+driver\+\_\+register}}
+\index{rte\+\_\+eal\+\_\+driver\+\_\+register@{rte\+\_\+eal\+\_\+driver\+\_\+register}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+driver\+\_\+register}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+driver\+\_\+register (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+driver} $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}\label{rte__dev_8h_a2ab0fb7558df8bb1ee54e1528e330d48}
+Register a device driver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver} & A pointer to a rte\+\_\+dev structure describing the driver to be registered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__dev_8h_a2bee6b1a34127f1922e9d26349892e04}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!rte\+\_\+eal\+\_\+driver\+\_\+unregister@{rte\+\_\+eal\+\_\+driver\+\_\+unregister}}
+\index{rte\+\_\+eal\+\_\+driver\+\_\+unregister@{rte\+\_\+eal\+\_\+driver\+\_\+unregister}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+driver\+\_\+unregister}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+driver\+\_\+unregister (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+driver} $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}\label{rte__dev_8h_a2bee6b1a34127f1922e9d26349892e04}
+Unregister a device driver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver} & A pointer to a rte\+\_\+dev structure describing the driver to be unregistered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__dev_8h_a6ded4e1869262353a8700cdc4d453b82}{}\index{rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}!T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}}
+\index{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}!rte\+\_\+dev.\+h@{rte\+\_\+dev.\+h}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D (
+\begin{DoxyParamCaption}
+\item[{rte\+\_\+driver\+\_\+list}]{, }
+\item[{{\bf rte\+\_\+driver}}]{}
+\end{DoxyParamCaption}
+)}\label{rte__dev_8h_a6ded4e1869262353a8700cdc4d453b82}
+Double linked list of device drivers. 

@@ -1,0 +1,884 @@
+\hypertarget{rte__ring_8h}{}\section{lib/librte\+\_\+ring/rte\+\_\+ring.h File Reference}
+\label{rte__ring_8h}\index{lib/librte\+\_\+ring/rte\+\_\+ring.\+h@{lib/librte\+\_\+ring/rte\+\_\+ring.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+lcore.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+atomic.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__ring}{rte\+\_\+ring}
+\item 
+struct \hyperlink{structrte__ring_1_1prod}{rte\+\_\+ring\+::prod}
+\item 
+struct \hyperlink{structrte__ring_1_1cons}{rte\+\_\+ring\+::cons}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__ring_8h_a2e508ee16359c5851fed8ff7a24cca01}{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{rte__ring_8h_a127c66adbeab4653a47649993b94f35b}{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q}~0x0001
+\item 
+\#define \hyperlink{rte__ring_8h_a421a61b2f94cdf65b3a6ac146c492fb9}{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q}~0x0002
+\item 
+\#define \hyperlink{rte__ring_8h_a90991a1bc346f7e71066578e4b1efc71}{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D}~(1 $<$$<$ 31)
+\item 
+\#define \hyperlink{rte__ring_8h_aeecc92053129fb9aff3e9ced08f3a834}{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K}~(unsigned)(0x0fffffff)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ssize\+\_\+t \hyperlink{rte__ring_8h_ac29f8523d355c107377858bdeb468486}{rte\+\_\+ring\+\_\+get\+\_\+memsize} (unsigned count)
+\item 
+int \hyperlink{rte__ring_8h_a7a44f25853c926ac1b29562857244366}{rte\+\_\+ring\+\_\+init} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, const char $\ast$name, unsigned count, unsigned flags)
+\item 
+struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$ \hyperlink{rte__ring_8h_a5556487d8ec76cacfc059b66d8b77c98}{rte\+\_\+ring\+\_\+create} (const char $\ast$name, unsigned count, int socket\+\_\+id, unsigned flags)
+\item 
+int \hyperlink{rte__ring_8h_a9429aef41021ea93aded578b548b2e49}{rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, unsigned count)
+\item 
+void \hyperlink{rte__ring_8h_a09c464281266543ebc0766902467c69b}{rte\+\_\+ring\+\_\+dump} (F\+I\+L\+E $\ast$f, const struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r)
+\item 
+static int \hyperlink{rte__ring_8h_a243d2eee25d957fd846f30981d675151}{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a3edf3304fd8532a9a645a37aa8c124ce}{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a9c5b9e5f047ff9f55c7b7b12203f3dd7}{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a2d0e1418101d97ba9c318e44fae64cbf}{rte\+\_\+ring\+\_\+mp\+\_\+enqueue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$obj)
+\item 
+static int \hyperlink{rte__ring_8h_a644b1d6866fed20f0a5711e63ecefc38}{rte\+\_\+ring\+\_\+sp\+\_\+enqueue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$obj)
+\item 
+static int \hyperlink{rte__ring_8h_a5649c0f53bac7c3a47bd8b75f0774815}{rte\+\_\+ring\+\_\+enqueue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$obj)
+\item 
+static int \hyperlink{rte__ring_8h_aeb59ee9b3e543686b6d2ed4eb540800e}{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a7ac8ee1c24db28362b48358cce8e5005}{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_aa783f1ffa07e03ed6a9e29d9bb03c52a}{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a2d68780bade7c7ba3762d4ad5f5d5d3e}{rte\+\_\+ring\+\_\+mc\+\_\+dequeue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+p)
+\item 
+static int \hyperlink{rte__ring_8h_a242877d9dc94b252277d6336c31b53ae}{rte\+\_\+ring\+\_\+sc\+\_\+dequeue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+p)
+\item 
+static int \hyperlink{rte__ring_8h_a946f183cd036dc4687e58cde0f8e4a14}{rte\+\_\+ring\+\_\+dequeue} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+p)
+\item 
+static int \hyperlink{rte__ring_8h_a06554a79e893291d4734507b3c599a21}{rte\+\_\+ring\+\_\+full} (const struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r)
+\item 
+static int \hyperlink{rte__ring_8h_abf9a7cda8ef5a62ee0a286c11d45d1bf}{rte\+\_\+ring\+\_\+empty} (const struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r)
+\item 
+static unsigned \hyperlink{rte__ring_8h_abc8376d2c6e609707d52032860880b34}{rte\+\_\+ring\+\_\+count} (const struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r)
+\item 
+static unsigned \hyperlink{rte__ring_8h_aa6fe2e810cf4015bb95023c54e18b73a}{rte\+\_\+ring\+\_\+free\+\_\+count} (const struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r)
+\item 
+void \hyperlink{rte__ring_8h_a7bfcef0ad324fcc4c03bcb59cd7e867f}{rte\+\_\+ring\+\_\+list\+\_\+dump} (F\+I\+L\+E $\ast$f)
+\item 
+struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$ \hyperlink{rte__ring_8h_ad26dd65732f16f720eca5e1aa94e2a8a}{rte\+\_\+ring\+\_\+lookup} (const char $\ast$name)
+\item 
+static int \hyperlink{rte__ring_8h_ac97d71bb69c1c2d22e3adcd9d53a754b}{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a74c9548abfe5ebed0bf14de1af7e0589}{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a576e4c33125981052eb17bfaf84d6b96}{rte\+\_\+ring\+\_\+enqueue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_aacbec1a7c18a9853596e70a3630d2d11}{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_a8dd2466f323989bf45fce942fd0e86aa}{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__ring_8h_aed17b4a73fe1f9a9dc960fcaf19c22c0}{rte\+\_\+ring\+\_\+dequeue\+\_\+burst} (struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$r, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Ring
+
+The Ring Manager is a fixed-\/size queue, implemented as a table of pointers. Head and tail pointers are modified atomically, allowing concurrent access to it. It has the following features\+:
+
+
+\begin{DoxyItemize}
+\item F\+I\+F\+O (First In First Out)
+\item Maximum size is fixed; the pointers are stored in a table.
+\item Lockless implementation.
+\item Multi-\/ or single-\/consumer dequeue.
+\item Multi-\/ or single-\/producer enqueue.
+\item Bulk dequeue.
+\item Bulk enqueue.
+\end{DoxyItemize}
+
+Note\+: the ring implementation is not preemptable. A lcore must not be interrupted by another task that uses the same ring. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__ring_8h_a421a61b2f94cdf65b3a6ac146c492fb9}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q@{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q}}
+\index{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q@{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q~0x0002}\label{rte__ring_8h_a421a61b2f94cdf65b3a6ac146c492fb9}
+The default dequeue is \char`\"{}single-\/consumer\char`\"{}. \hypertarget{rte__ring_8h_a127c66adbeab4653a47649993b94f35b}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q@{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q}}
+\index{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q@{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q~0x0001}\label{rte__ring_8h_a127c66adbeab4653a47649993b94f35b}
+The default enqueue is \char`\"{}single-\/producer\char`\"{}. \hypertarget{rte__ring_8h_a2e508ee16359c5851fed8ff7a24cca01}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__ring_8h_a2e508ee16359c5851fed8ff7a24cca01}
+The maximum length of a ring name. \hypertarget{rte__ring_8h_a90991a1bc346f7e71066578e4b1efc71}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D}}
+\index{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+Q\+U\+O\+T\+\_\+\+E\+X\+C\+E\+E\+D~(1 $<$$<$ 31)}\label{rte__ring_8h_a90991a1bc346f7e71066578e4b1efc71}
+Quota exceed for burst ops \hypertarget{rte__ring_8h_aeecc92053129fb9aff3e9ced08f3a834}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K}}
+\index{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K@{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+S\+Z\+\_\+\+M\+A\+S\+K~(unsigned)(0x0fffffff)}\label{rte__ring_8h_aeecc92053129fb9aff3e9ced08f3a834}
+Ring size mask 
+
+\subsection{Function Documentation}
+\hypertarget{rte__ring_8h_abc8376d2c6e609707d52032860880b34}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+count@{rte\+\_\+ring\+\_\+count}}
+\index{rte\+\_\+ring\+\_\+count@{rte\+\_\+ring\+\_\+count}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+ring\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+ring} $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_abc8376d2c6e609707d52032860880b34}
+Return the number of entries in a ring.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of entries in the ring. 
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a5556487d8ec76cacfc059b66d8b77c98}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+create@{rte\+\_\+ring\+\_\+create}}
+\index{rte\+\_\+ring\+\_\+create@{rte\+\_\+ring\+\_\+create}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+ring}$\ast$ rte\+\_\+ring\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{unsigned}]{count, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_a5556487d8ec76cacfc059b66d8b77c98}
+Create a new ring named {\itshape name} in memory.
+
+This function uses {\ttfamily memzone\+\_\+reserve()} to allocate memory. Then it calls \hyperlink{rte__ring_8h_a7a44f25853c926ac1b29562857244366}{rte\+\_\+ring\+\_\+init()} to initialize an empty ring.
+
+The new ring size is set to {\itshape count}, which must be a power of two. Water marking is disabled by default. The real usable ring size is {\itshape count-\/1} instead of {\itshape count} to differentiate a free ring from an empty ring.
+
+The ring is added in R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+I\+N\+G list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the ring. \\
+\hline
+{\em count} & The size of the ring (must be a power of 2). \\
+\hline
+{\em socket\+\_\+id} & The {\itshape socket\+\_\+id} argument is the socket identifier in case of N\+U\+M\+A. The value can be {\itshape S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y} if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & An O\+R of the following\+:
+\begin{DoxyItemize}
+\item R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q\+: If this flag is set, the default behavior when using {\ttfamily \hyperlink{rte__ring_8h_a5649c0f53bac7c3a47bd8b75f0774815}{rte\+\_\+ring\+\_\+enqueue()}} or {\ttfamily \hyperlink{rte__ring_8h_a9c5b9e5f047ff9f55c7b7b12203f3dd7}{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk()}} is \char`\"{}single-\/producer\char`\"{}. Otherwise, it is \char`\"{}multi-\/producers\char`\"{}.
+\item R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q\+: If this flag is set, the default behavior when using {\ttfamily \hyperlink{rte__ring_8h_a946f183cd036dc4687e58cde0f8e4a14}{rte\+\_\+ring\+\_\+dequeue()}} or {\ttfamily \hyperlink{rte__ring_8h_aa783f1ffa07e03ed6a9e29d9bb03c52a}{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk()}} is \char`\"{}single-\/consumer\char`\"{}. Otherwise, it is \char`\"{}multi-\/consumers\char`\"{}. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the pointer to the new allocated ring. N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible errno values include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the ring list
+\item E\+I\+N\+V\+A\+L -\/ count provided is not a power of 2
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a946f183cd036dc4687e58cde0f8e4a14}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+dequeue@{rte\+\_\+ring\+\_\+dequeue}}
+\index{rte\+\_\+ring\+\_\+dequeue@{rte\+\_\+ring\+\_\+dequeue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+dequeue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+dequeue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a946f183cd036dc4687e58cde0f8e4a14}
+Dequeue one object from a ring.
+
+This function calls the multi-\/consumers or the single-\/consumer version depending on the default behaviour that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success, objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue, no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_aa783f1ffa07e03ed6a9e29d9bb03c52a}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+dequeue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_aa783f1ffa07e03ed6a9e29d9bb03c52a}
+Dequeue several objects from a ring.
+
+This function calls the multi-\/consumers or the single-\/consumer version, depending on the default behaviour that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue, no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_aed17b4a73fe1f9a9dc960fcaf19c22c0}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+dequeue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+dequeue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+dequeue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+dequeue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_aed17b4a73fe1f9a9dc960fcaf19c22c0}
+Dequeue multiple objects from a ring up to a maximum number.
+
+This function calls the multi-\/consumers or the single-\/consumer version, depending on the default behaviour that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Number of objects dequeued, or a negative error code on error 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a09c464281266543ebc0766902467c69b}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+dump@{rte\+\_\+ring\+\_\+dump}}
+\index{rte\+\_\+ring\+\_\+dump@{rte\+\_\+ring\+\_\+dump}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+ring\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const struct {\bf rte\+\_\+ring} $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_a09c464281266543ebc0766902467c69b}
+Dump the status of the ring to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em r} & A pointer to the ring structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__ring_8h_abf9a7cda8ef5a62ee0a286c11d45d1bf}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+empty@{rte\+\_\+ring\+\_\+empty}}
+\index{rte\+\_\+ring\+\_\+empty@{rte\+\_\+ring\+\_\+empty}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+empty}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+ring} $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_abf9a7cda8ef5a62ee0a286c11d45d1bf}
+Test if a ring is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1\+: The ring is empty.
+\item 0\+: The ring is not empty. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a5649c0f53bac7c3a47bd8b75f0774815}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+enqueue@{rte\+\_\+ring\+\_\+enqueue}}
+\index{rte\+\_\+ring\+\_\+enqueue@{rte\+\_\+ring\+\_\+enqueue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+enqueue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a5649c0f53bac7c3a47bd8b75f0774815}
+Enqueue one object on a ring.
+
+This function calls the multi-\/producer or the single-\/producer version, depending on the default behaviour that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueued.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue; no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a9c5b9e5f047ff9f55c7b7b12203f3dd7}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+enqueue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a9c5b9e5f047ff9f55c7b7b12203f3dd7}
+Enqueue several objects on a ring.
+
+This function calls the multi-\/producer or the single-\/producer version depending on the default behavior that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueued.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue; no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a576e4c33125981052eb17bfaf84d6b96}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+enqueue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+enqueue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+enqueue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+enqueue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a576e4c33125981052eb17bfaf84d6b96}
+Enqueue several objects on a ring.
+
+This function calls the multi-\/producer or the single-\/producer version depending on the default behavior that was specified at ring creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item n\+: Actual number of objects enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_aa6fe2e810cf4015bb95023c54e18b73a}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+free\+\_\+count@{rte\+\_\+ring\+\_\+free\+\_\+count}}
+\index{rte\+\_\+ring\+\_\+free\+\_\+count@{rte\+\_\+ring\+\_\+free\+\_\+count}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+free\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+ring\+\_\+free\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+ring} $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_aa6fe2e810cf4015bb95023c54e18b73a}
+Return the number of free entries in a ring.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of free entries in the ring. 
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a06554a79e893291d4734507b3c599a21}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+full@{rte\+\_\+ring\+\_\+full}}
+\index{rte\+\_\+ring\+\_\+full@{rte\+\_\+ring\+\_\+full}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+full}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+full (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+ring} $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a06554a79e893291d4734507b3c599a21}
+Test if a ring is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1\+: The ring is full.
+\item 0\+: The ring is not full. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_ac29f8523d355c107377858bdeb468486}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+get\+\_\+memsize@{rte\+\_\+ring\+\_\+get\+\_\+memsize}}
+\index{rte\+\_\+ring\+\_\+get\+\_\+memsize@{rte\+\_\+ring\+\_\+get\+\_\+memsize}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+get\+\_\+memsize}]{\setlength{\rightskip}{0pt plus 5cm}ssize\+\_\+t rte\+\_\+ring\+\_\+get\+\_\+memsize (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{count}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_ac29f8523d355c107377858bdeb468486}
+Calculate the memory size needed for a ring
+
+This function returns the number of bytes needed for a ring, given the number of elements in it. This value is the sum of the size of the structure \hyperlink{structrte__ring}{rte\+\_\+ring} and the size of the memory needed by the objects pointers. The value is aligned to a cache line size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The number of elements in the ring (must be a power of 2). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The memory size needed for the ring on success.
+\item -\/\+E\+I\+N\+V\+A\+L if count is not a power of 2. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a7a44f25853c926ac1b29562857244366}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+init@{rte\+\_\+ring\+\_\+init}}
+\index{rte\+\_\+ring\+\_\+init@{rte\+\_\+ring\+\_\+init}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+ring\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{const char $\ast$}]{name, }
+\item[{unsigned}]{count, }
+\item[{unsigned}]{flags}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_a7a44f25853c926ac1b29562857244366}
+Initialize a ring structure.
+
+Initialize a ring structure in memory pointed by \char`\"{}r\char`\"{}. The size of the memory area must be large enough to store the ring structure and the object table. It is advised to use \hyperlink{rte__ring_8h_ac29f8523d355c107377858bdeb468486}{rte\+\_\+ring\+\_\+get\+\_\+memsize()} to get the appropriate size.
+
+The ring size is set to {\itshape count}, which must be a power of two. Water marking is disabled by default. The real usable ring size is {\itshape count-\/1} instead of {\itshape count} to differentiate a free ring from an empty ring.
+
+The ring is not added in R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+I\+N\+G global list. Indeed, the memory given by the caller may not be shareable among dpdk processes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The pointer to the ring structure followed by the objects table. \\
+\hline
+{\em name} & The name of the ring. \\
+\hline
+{\em count} & The number of elements in the ring (must be a power of 2). \\
+\hline
+{\em flags} & An O\+R of the following\+:
+\begin{DoxyItemize}
+\item R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+P\+\_\+\+E\+N\+Q\+: If this flag is set, the default behavior when using {\ttfamily \hyperlink{rte__ring_8h_a5649c0f53bac7c3a47bd8b75f0774815}{rte\+\_\+ring\+\_\+enqueue()}} or {\ttfamily \hyperlink{rte__ring_8h_a9c5b9e5f047ff9f55c7b7b12203f3dd7}{rte\+\_\+ring\+\_\+enqueue\+\_\+bulk()}} is \char`\"{}single-\/producer\char`\"{}. Otherwise, it is \char`\"{}multi-\/producers\char`\"{}.
+\item R\+I\+N\+G\+\_\+\+F\+\_\+\+S\+C\+\_\+\+D\+E\+Q\+: If this flag is set, the default behavior when using {\ttfamily \hyperlink{rte__ring_8h_a946f183cd036dc4687e58cde0f8e4a14}{rte\+\_\+ring\+\_\+dequeue()}} or {\ttfamily \hyperlink{rte__ring_8h_aa783f1ffa07e03ed6a9e29d9bb03c52a}{rte\+\_\+ring\+\_\+dequeue\+\_\+bulk()}} is \char`\"{}single-\/consumer\char`\"{}. Otherwise, it is \char`\"{}multi-\/consumers\char`\"{}. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a7bfcef0ad324fcc4c03bcb59cd7e867f}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+list\+\_\+dump@{rte\+\_\+ring\+\_\+list\+\_\+dump}}
+\index{rte\+\_\+ring\+\_\+list\+\_\+dump@{rte\+\_\+ring\+\_\+list\+\_\+dump}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+list\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+ring\+\_\+list\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_a7bfcef0ad324fcc4c03bcb59cd7e867f}
+Dump the status of all rings on the console
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__ring_8h_ad26dd65732f16f720eca5e1aa94e2a8a}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+lookup@{rte\+\_\+ring\+\_\+lookup}}
+\index{rte\+\_\+ring\+\_\+lookup@{rte\+\_\+ring\+\_\+lookup}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+ring}$\ast$ rte\+\_\+ring\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_ad26dd65732f16f720eca5e1aa94e2a8a}
+Search a ring from its name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the ring. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the ring matching the name, or N\+U\+L\+L if not found, with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ required entry not available to return. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a2d68780bade7c7ba3762d4ad5f5d5d3e}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mc\+\_\+dequeue@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue}}
+\index{rte\+\_\+ring\+\_\+mc\+\_\+dequeue@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mc\+\_\+dequeue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mc\+\_\+dequeue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a2d68780bade7c7ba3762d4ad5f5d5d3e}
+Dequeue one object from a ring (multi-\/consumers safe).
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the consumer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue; no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_aeb59ee9b3e543686b6d2ed4eb540800e}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_aeb59ee9b3e543686b6d2ed4eb540800e}
+Dequeue several objects from a ring (multi-\/consumers safe).
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the consumer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue; no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_aacbec1a7c18a9853596e70a3630d2d11}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mc\+\_\+dequeue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_aacbec1a7c18a9853596e70a3630d2d11}
+Dequeue several objects from a ring (multi-\/consumers safe). When the request objects are more than the available objects, only dequeue the actual number of objects
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the consumer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item n\+: Actual number of objects dequeued, 0 if ring is empty 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a2d0e1418101d97ba9c318e44fae64cbf}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mp\+\_\+enqueue@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue}}
+\index{rte\+\_\+ring\+\_\+mp\+\_\+enqueue@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mp\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mp\+\_\+enqueue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a2d0e1418101d97ba9c318e44fae64cbf}
+Enqueue one object on a ring (multi-\/producers safe).
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the producer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueued.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue; no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a243d2eee25d957fd846f30981d675151}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a243d2eee25d957fd846f30981d675151}
+Enqueue several objects on the ring (multi-\/producers safe).
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the producer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueue.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue, no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_ac97d71bb69c1c2d22e3adcd9d53a754b}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+mp\+\_\+enqueue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_ac97d71bb69c1c2d22e3adcd9d53a754b}
+Enqueue several objects on the ring (multi-\/producers safe).
+
+This function uses a \char`\"{}compare and set\char`\"{} instruction to move the producer index atomically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item n\+: Actual number of objects enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a242877d9dc94b252277d6336c31b53ae}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sc\+\_\+dequeue@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue}}
+\index{rte\+\_\+ring\+\_\+sc\+\_\+dequeue@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sc\+\_\+dequeue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sc\+\_\+dequeue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a242877d9dc94b252277d6336c31b53ae}
+Dequeue one object from a ring (N\+O\+T multi-\/consumers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue, no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a7ac8ee1c24db28362b48358cce8e5005}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a7ac8ee1c24db28362b48358cce8e5005}
+Dequeue several objects from a ring (N\+O\+T multi-\/consumers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table, must be strictly positive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects dequeued.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the ring to dequeue; no object is dequeued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a8dd2466f323989bf45fce942fd0e86aa}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst@{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sc\+\_\+dequeue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a8dd2466f323989bf45fce942fd0e86aa}
+Dequeue several objects from a ring (N\+O\+T multi-\/consumers safe).When the request objects are more than the available objects, only dequeue the actual number of objects
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to dequeue from the ring to the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item n\+: Actual number of objects dequeued, 0 if ring is empty 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a9429aef41021ea93aded578b548b2e49}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark@{rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark}}
+\index{rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark@{rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+ring\+\_\+set\+\_\+water\+\_\+mark (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{unsigned}]{count}
+\end{DoxyParamCaption}
+)}\label{rte__ring_8h_a9429aef41021ea93aded578b548b2e49}
+Change the high water mark.
+
+If {\itshape count} is 0, water marking is disabled. Otherwise, it is set to the {\itshape count} value. The {\itshape count} value must be greater than 0 and less than the ring size.
+
+This function can be called at any time (not necessarily at initialization).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em count} & The new water mark value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; water mark changed.
+\item -\/\+E\+I\+N\+V\+A\+L\+: Invalid water mark value. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a644b1d6866fed20f0a5711e63ecefc38}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sp\+\_\+enqueue@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue}}
+\index{rte\+\_\+ring\+\_\+sp\+\_\+enqueue@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sp\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sp\+\_\+enqueue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a644b1d6866fed20f0a5711e63ecefc38}
+Enqueue one object on a ring (N\+O\+T multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueued.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue; no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a3edf3304fd8532a9a645a37aa8c124ce}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk}}
+\index{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a3edf3304fd8532a9a645a37aa8c124ce}
+Enqueue several objects on a ring (N\+O\+T multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects enqueued.
+\item -\/\+E\+D\+Q\+U\+O\+T\+: Quota exceeded. The objects have been enqueued, but the high water mark is exceeded.
+\item -\/\+E\+N\+O\+B\+U\+F\+S\+: Not enough room in the ring to enqueue; no object is enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__ring_8h_a74c9548abfe5ebed0bf14de1af7e0589}{}\index{rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}!rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst}}
+\index{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst@{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst}!rte\+\_\+ring.\+h@{rte\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+ring\+\_\+sp\+\_\+enqueue\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+ring} $\ast$}]{r, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__ring_8h_a74c9548abfe5ebed0bf14de1af7e0589}
+Enqueue several objects on a ring (N\+O\+T multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A pointer to the ring structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the ring from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item n\+: Actual number of objects enqueued. 
+\end{DoxyItemize}
+\end{DoxyReturn}

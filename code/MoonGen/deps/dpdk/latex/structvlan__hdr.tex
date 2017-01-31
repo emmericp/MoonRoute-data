@@ -1,0 +1,30 @@
+\hypertarget{structvlan__hdr}{}\section{vlan\+\_\+hdr Struct Reference}
+\label{structvlan__hdr}\index{vlan\+\_\+hdr@{vlan\+\_\+hdr}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ether.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structvlan__hdr_a466610c1a1f26aace575dc4dc60d81b3}{vlan\+\_\+tci}
+\item 
+uint16\+\_\+t \hyperlink{structvlan__hdr_a5f6e76ca3fcc9927ee0ff351b452b89b}{eth\+\_\+proto}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ethernet V\+L\+A\+N Header. Contains the 16-\/bit V\+L\+A\+N Tag Control Identifier and the Ethernet type of the encapsulated frame. 
+
+\subsection{Field Documentation}
+\hypertarget{structvlan__hdr_a5f6e76ca3fcc9927ee0ff351b452b89b}{}\index{vlan\+\_\+hdr@{vlan\+\_\+hdr}!eth\+\_\+proto@{eth\+\_\+proto}}
+\index{eth\+\_\+proto@{eth\+\_\+proto}!vlan\+\_\+hdr@{vlan\+\_\+hdr}}
+\subsubsection[{eth\+\_\+proto}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t eth\+\_\+proto}\label{structvlan__hdr_a5f6e76ca3fcc9927ee0ff351b452b89b}
+Ethernet type of encapsulated frame. \hypertarget{structvlan__hdr_a466610c1a1f26aace575dc4dc60d81b3}{}\index{vlan\+\_\+hdr@{vlan\+\_\+hdr}!vlan\+\_\+tci@{vlan\+\_\+tci}}
+\index{vlan\+\_\+tci@{vlan\+\_\+tci}!vlan\+\_\+hdr@{vlan\+\_\+hdr}}
+\subsubsection[{vlan\+\_\+tci}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t vlan\+\_\+tci}\label{structvlan__hdr_a466610c1a1f26aace575dc4dc60d81b3}
+Priority (3) + C\+F\+I (1) + Identifier Code (12) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ether_8h}{rte\+\_\+ether.\+h}\end{DoxyCompactItemize}

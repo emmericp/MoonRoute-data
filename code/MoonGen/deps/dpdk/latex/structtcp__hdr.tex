@@ -1,0 +1,65 @@
+\hypertarget{structtcp__hdr}{}\section{tcp\+\_\+hdr Struct Reference}
+\label{structtcp__hdr}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+
+
+{\ttfamily \#include $<$rte\+\_\+tcp.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structtcp__hdr_ab98974981cf4c143fcee028643f313e6}{src\+\_\+port}
+\item 
+uint16\+\_\+t \hyperlink{structtcp__hdr_ae18defed4756b8c15e34718f51e86e55}{dst\+\_\+port}
+\item 
+uint32\+\_\+t \hyperlink{structtcp__hdr_abd310b02bdd70401a746bd58b2a2ba66}{sent\+\_\+seq}
+\item 
+uint32\+\_\+t \hyperlink{structtcp__hdr_ae801c1265636329c0552f28cee603098}{recv\+\_\+ack}
+\item 
+uint8\+\_\+t \hyperlink{structtcp__hdr_abbef1ad55c650013d2e0034b6e51cf83}{data\+\_\+off}
+\item 
+uint8\+\_\+t \hyperlink{structtcp__hdr_ab393c6d5f386ec83c49c7e1496fbb0e1}{tcp\+\_\+flags}
+\item 
+uint16\+\_\+t \hyperlink{structtcp__hdr_ac137de069426e30b2277dc58b664c6fb}{rx\+\_\+win}
+\item 
+uint16\+\_\+t \hyperlink{structtcp__hdr_a749687f86afcc33e9d390500910ef60d}{cksum}
+\item 
+uint16\+\_\+t \hyperlink{structtcp__hdr_a1296ff9f24d461b188d953f1b56f6d1f}{tcp\+\_\+urp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+T\+C\+P Header 
+
+\subsection{Field Documentation}
+\hypertarget{structtcp__hdr_a749687f86afcc33e9d390500910ef60d}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!cksum@{cksum}}
+\index{cksum@{cksum}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{cksum}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t cksum}\label{structtcp__hdr_a749687f86afcc33e9d390500910ef60d}
+T\+C\+P checksum. \hypertarget{structtcp__hdr_abbef1ad55c650013d2e0034b6e51cf83}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!data\+\_\+off@{data\+\_\+off}}
+\index{data\+\_\+off@{data\+\_\+off}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{data\+\_\+off}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t data\+\_\+off}\label{structtcp__hdr_abbef1ad55c650013d2e0034b6e51cf83}
+Data offset. \hypertarget{structtcp__hdr_ae18defed4756b8c15e34718f51e86e55}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!dst\+\_\+port@{dst\+\_\+port}}
+\index{dst\+\_\+port@{dst\+\_\+port}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{dst\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+port}\label{structtcp__hdr_ae18defed4756b8c15e34718f51e86e55}
+T\+C\+P destination port. \hypertarget{structtcp__hdr_ae801c1265636329c0552f28cee603098}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!recv\+\_\+ack@{recv\+\_\+ack}}
+\index{recv\+\_\+ack@{recv\+\_\+ack}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{recv\+\_\+ack}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t recv\+\_\+ack}\label{structtcp__hdr_ae801c1265636329c0552f28cee603098}
+R\+X data acknowledgement sequence number. \hypertarget{structtcp__hdr_ac137de069426e30b2277dc58b664c6fb}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!rx\+\_\+win@{rx\+\_\+win}}
+\index{rx\+\_\+win@{rx\+\_\+win}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{rx\+\_\+win}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t rx\+\_\+win}\label{structtcp__hdr_ac137de069426e30b2277dc58b664c6fb}
+R\+X flow control window. \hypertarget{structtcp__hdr_abd310b02bdd70401a746bd58b2a2ba66}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!sent\+\_\+seq@{sent\+\_\+seq}}
+\index{sent\+\_\+seq@{sent\+\_\+seq}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{sent\+\_\+seq}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t sent\+\_\+seq}\label{structtcp__hdr_abd310b02bdd70401a746bd58b2a2ba66}
+T\+X data sequence number. \hypertarget{structtcp__hdr_ab98974981cf4c143fcee028643f313e6}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!src\+\_\+port@{src\+\_\+port}}
+\index{src\+\_\+port@{src\+\_\+port}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{src\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+port}\label{structtcp__hdr_ab98974981cf4c143fcee028643f313e6}
+T\+C\+P source port. \hypertarget{structtcp__hdr_ab393c6d5f386ec83c49c7e1496fbb0e1}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!tcp\+\_\+flags@{tcp\+\_\+flags}}
+\index{tcp\+\_\+flags@{tcp\+\_\+flags}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{tcp\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t tcp\+\_\+flags}\label{structtcp__hdr_ab393c6d5f386ec83c49c7e1496fbb0e1}
+T\+C\+P flags \hypertarget{structtcp__hdr_a1296ff9f24d461b188d953f1b56f6d1f}{}\index{tcp\+\_\+hdr@{tcp\+\_\+hdr}!tcp\+\_\+urp@{tcp\+\_\+urp}}
+\index{tcp\+\_\+urp@{tcp\+\_\+urp}!tcp\+\_\+hdr@{tcp\+\_\+hdr}}
+\subsubsection[{tcp\+\_\+urp}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t tcp\+\_\+urp}\label{structtcp__hdr_a1296ff9f24d461b188d953f1b56f6d1f}
+T\+C\+P urgent pointer, if any. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+net/\hyperlink{rte__tcp_8h}{rte\+\_\+tcp.\+h}\end{DoxyCompactItemize}

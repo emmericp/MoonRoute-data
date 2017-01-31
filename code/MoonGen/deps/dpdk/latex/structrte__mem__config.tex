@@ -1,0 +1,74 @@
+\hypertarget{structrte__mem__config}{}\section{rte\+\_\+mem\+\_\+config Struct Reference}
+\label{structrte__mem__config}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+
+
+{\ttfamily \#include $<$rte\+\_\+eal\+\_\+memconfig.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \hyperlink{structrte__mem__config_a199149e6c37b30c03fa42cf555ce8265}{magic}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mem__config_a5874f4bcabbfe0fd765d5129d629eabf}{nchannel}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mem__config_a59a112650302067fe308c24133e44d7e}{nrank}
+\item 
+\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} \hyperlink{structrte__mem__config_abe00da43deb96cb01a845ec14091a9c8}{mlock}
+\item 
+\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} \hyperlink{structrte__mem__config_a7467e2dc92b59ca2fdfc24a43615c6ee}{qlock}
+\item 
+\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} \hyperlink{structrte__mem__config_a73b054303f54aa1245ac1fe315c930ec}{mplock}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mem__config_a678943999c92d21217de78b08a6e9932}{memzone\+\_\+idx}
+\item 
+struct \hyperlink{structrte__memseg}{rte\+\_\+memseg} \hyperlink{structrte__mem__config_a37677c0bd56a3232877182f1a1b64a37}{memseg} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+M\+E\+M\+S\+E\+G\mbox{]}
+\item 
+struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} \hyperlink{structrte__mem__config_abec5328c0274d906b74bb04c5143021d}{memzone} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+M\+E\+M\+Z\+O\+N\+E\mbox{]}
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} \hyperlink{structrte__mem__config_a63f874fec11e96c59fefda7e24b7c681}{tailq\+\_\+head} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+T\+A\+I\+L\+Q\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the structure for the memory configuration for the R\+T\+E. Used by the \hyperlink{structrte__config}{rte\+\_\+config} structure. It is separated out, as for multi-\/process support, the memory details should be shared across instances 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__mem__config_a199149e6c37b30c03fa42cf555ce8265}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!magic@{magic}}
+\index{magic@{magic}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{magic}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t magic}\label{structrte__mem__config_a199149e6c37b30c03fa42cf555ce8265}
+Magic number -\/ Sanity check. \hypertarget{structrte__mem__config_a37677c0bd56a3232877182f1a1b64a37}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!memseg@{memseg}}
+\index{memseg@{memseg}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{memseg}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+memseg} memseg\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+M\+E\+M\+S\+E\+G\mbox{]}}\label{structrte__mem__config_a37677c0bd56a3232877182f1a1b64a37}
+Physmem descriptors. \hypertarget{structrte__mem__config_abec5328c0274d906b74bb04c5143021d}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!memzone@{memzone}}
+\index{memzone@{memzone}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{memzone}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+memzone} memzone\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+M\+E\+M\+Z\+O\+N\+E\mbox{]}}\label{structrte__mem__config_abec5328c0274d906b74bb04c5143021d}
+Memzone descriptors. \hypertarget{structrte__mem__config_a678943999c92d21217de78b08a6e9932}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!memzone\+\_\+idx@{memzone\+\_\+idx}}
+\index{memzone\+\_\+idx@{memzone\+\_\+idx}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{memzone\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t memzone\+\_\+idx}\label{structrte__mem__config_a678943999c92d21217de78b08a6e9932}
+Index of memzone \hypertarget{structrte__mem__config_abe00da43deb96cb01a845ec14091a9c8}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!mlock@{mlock}}
+\index{mlock@{mlock}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{mlock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+rwlock\+\_\+t} mlock}\label{structrte__mem__config_abe00da43deb96cb01a845ec14091a9c8}
+current lock nest order
+\begin{DoxyItemize}
+\item qlock-\/$>$mlock (ring/hash/lpm)
+\item mplock-\/$>$qlock-\/$>$mlock (mempool) Notice\+: {\itshape A\+L\+W\+A\+Y\+S} obtain qlock first if having to obtain both qlock and mlockonly used by memzone L\+I\+B for thread-\/safe. 
+\end{DoxyItemize}\hypertarget{structrte__mem__config_a73b054303f54aa1245ac1fe315c930ec}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!mplock@{mplock}}
+\index{mplock@{mplock}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{mplock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+rwlock\+\_\+t} mplock}\label{structrte__mem__config_a73b054303f54aa1245ac1fe315c930ec}
+only used by mempool L\+I\+B for thread-\/safe. \hypertarget{structrte__mem__config_a5874f4bcabbfe0fd765d5129d629eabf}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!nchannel@{nchannel}}
+\index{nchannel@{nchannel}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{nchannel}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nchannel}\label{structrte__mem__config_a5874f4bcabbfe0fd765d5129d629eabf}
+Number of channels (0 if unknown). \hypertarget{structrte__mem__config_a59a112650302067fe308c24133e44d7e}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!nrank@{nrank}}
+\index{nrank@{nrank}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{nrank}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t nrank}\label{structrte__mem__config_a59a112650302067fe308c24133e44d7e}
+Number of ranks (0 if unknown). \hypertarget{structrte__mem__config_a7467e2dc92b59ca2fdfc24a43615c6ee}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!qlock@{qlock}}
+\index{qlock@{qlock}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{qlock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+rwlock\+\_\+t} qlock}\label{structrte__mem__config_a7467e2dc92b59ca2fdfc24a43615c6ee}
+used for tailq operation for thread safe. \hypertarget{structrte__mem__config_a63f874fec11e96c59fefda7e24b7c681}{}\index{rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}!tailq\+\_\+head@{tailq\+\_\+head}}
+\index{tailq\+\_\+head@{tailq\+\_\+head}!rte\+\_\+mem\+\_\+config@{rte\+\_\+mem\+\_\+config}}
+\subsubsection[{tailq\+\_\+head}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+tailq\+\_\+head} tailq\+\_\+head\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+T\+A\+I\+L\+Q\mbox{]}}\label{structrte__mem__config_a63f874fec11e96c59fefda7e24b7c681}
+Tailqs for objects 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/rte\+\_\+eal\+\_\+memconfig.\+h\end{DoxyCompactItemize}

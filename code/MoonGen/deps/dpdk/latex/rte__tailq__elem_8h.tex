@@ -1,0 +1,25 @@
+\hypertarget{rte__tailq__elem_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq\+\_\+elem.h File Reference}
+\label{rte__tailq__elem_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq\+\_\+elem.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq\+\_\+elem.\+h}}
+
+
+\subsection{Detailed Description}
+This file contains the type of the tailq elem recognised by D\+P\+D\+K, which can be used to fill out an array of structures describing the tailq.
+
+In order to populate an array, the user of this file must define this macro\+: rte\+\_\+tailq\+\_\+elem(idx, name). For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{enum} rte\_tailq\_t \{
+\textcolor{preprocessor}{#define rte\_tailq\_elem(idx, name)     idx,}
+\textcolor{preprocessor}{#define rte\_tailq\_end(idx)            idx}
+\textcolor{preprocessor}{#include <\hyperlink{rte__tailq__elem_8h}{rte\_tailq\_elem.h}>}
+\};
+
+\textcolor{keyword}{const} \textcolor{keywordtype}{char}* rte\_tailq\_names[RTE\_MAX\_TAILQ] = \{
+\textcolor{preprocessor}{#define rte\_tailq\_elem(idx, name)     name,}
+\textcolor{preprocessor}{#include <\hyperlink{rte__tailq__elem_8h}{rte\_tailq\_elem.h}>}
+\};
+\end{DoxyCode}
+
+
+Note that this file can be included multiple times within the same file. 

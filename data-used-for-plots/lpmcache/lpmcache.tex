@@ -1,0 +1,124 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tumcolors}
+
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+\tikzset{every mark/.append style={scale=0.75}}
+
+\begin{document}%
+\pgfplotstableread[col sep=space]{plots/lpmcache/data}{\tbltwo}%
+\begin{tikzpicture}
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=0.4\textwidth,
+height=6cm,
+xlabel=Number of /24 networks used,
+ymin=0,
+ymax=17,
+xmin=32768,
+xmax=33554432,
+xticklabels={$$, $2^{16}$, $2^{17}$, $2^{18}$, $2^{19}$, $2^{20}$, $2^{21}$, $2^{22}$, $2^{23}$, $2^{24}$},
+ytick={0,5,...,15},
+ylabel=Throughput {[}Mpps{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+%legend entries={Throughput},
+%legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+]
+\addplot[
+color=TUMDarkerBlue,
+mark=square,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbltwo};
+\label{plot_one}
+
+
+\addplot[thick,densely dashed, domain=32768:33554432,color=TUMOrange]{14.88};
+\node at (axis cs:35000, 14.7) [anchor=south west, color=TUMOrange,inner sep = 4pt] {10\,Gbit};
+\addplot [mark=none,thick,solid,color=TUMBeamerRed] coordinates {(4194304, 0) (4194304, 18)};
+\node at (axis cs:4200000, 3) [anchor=west, color=TUMBeamerRed,inner sep = 4pt,text width=1.5cm] {\scriptsize L3 cache size};
+\end{axis}
+
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=.4*\textwidth,
+height=6cm,
+ymin=0,
+ymax=1.13333333,
+xmin=32768,
+xmax=33554432,
+xticklabels={$$, $$, $$, $$, $$, $$, $$, $$, $$, $$},
+ytick={0,0.333333,...,0.999999},
+yticklabels={$0$, $0.33$, $0.66$, $1.00$},
+ylabel={\footnotesize Miss rate {[}1/pkt{]}},
+every axis legend/.append style={nodes={right}},
+%legend style={font=\footnotesize, at={(.5,1.05)}, anchor=south},
+legend entries={L2 misses},
+legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+axis y line*=right,
+ylabel near ticks
+]
+
+\addlegendimage{/pgfplots/refstyle=plot_one}
+\addlegendentry{Throughput}
+
+\addplot[
+color=TUMGreen,
+mark=,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = (\thisrowno{7}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{7}+\thisrowno{8})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{7}-\thisrowno{8})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbltwo};
+\addlegendentry{L2 misses}
+
+
+
+\addplot[
+color=TUMMediumGray,
+mark=triangle,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = 2^(\thisrowno{0}-8),
+y expr = (\thisrowno{9}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{9}+\thisrowno{10})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{9}-\thisrowno{10})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbltwo};
+\addlegendentry{L3 misses}
+
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}

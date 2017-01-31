@@ -1,0 +1,35 @@
+\hypertarget{structrte__meter__srtcm__params}{}\section{rte\+\_\+meter\+\_\+srtcm\+\_\+params Struct Reference}
+\label{structrte__meter__srtcm__params}\index{rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+meter.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__srtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}{cir}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__srtcm__params_ad914d97dc6b389901af9ddee395827de}{cbs}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__srtcm__params_aacbec96ca1e25912af9a0d5f72058f92}{ebs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+sr\+T\+C\+M parameters per metered traffic flow. The C\+I\+R, C\+B\+S and E\+B\+S parameters only count bytes of I\+P packets and do not include link specific headers. At least one of the C\+B\+S or E\+B\+S parameters has to be greater than zero. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__meter__srtcm__params_ad914d97dc6b389901af9ddee395827de}{}\index{rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}!cbs@{cbs}}
+\index{cbs@{cbs}!rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}}
+\subsubsection[{cbs}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t cbs}\label{structrte__meter__srtcm__params_ad914d97dc6b389901af9ddee395827de}
+Committed Burst Size (C\+B\+S). Measured in bytes. \hypertarget{structrte__meter__srtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}{}\index{rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}!cir@{cir}}
+\index{cir@{cir}!rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}}
+\subsubsection[{cir}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t cir}\label{structrte__meter__srtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}
+Committed Information Rate (C\+I\+R). Measured in bytes per second. \hypertarget{structrte__meter__srtcm__params_aacbec96ca1e25912af9a0d5f72058f92}{}\index{rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}!ebs@{ebs}}
+\index{ebs@{ebs}!rte\+\_\+meter\+\_\+srtcm\+\_\+params@{rte\+\_\+meter\+\_\+srtcm\+\_\+params}}
+\subsubsection[{ebs}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t ebs}\label{structrte__meter__srtcm__params_aacbec96ca1e25912af9a0d5f72058f92}
+Excess Burst Size (E\+B\+S). Measured in bytes. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+meter/\hyperlink{rte__meter_8h}{rte\+\_\+meter.\+h}\end{DoxyCompactItemize}

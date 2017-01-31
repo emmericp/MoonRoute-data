@@ -1,0 +1,72 @@
+#!/usr/bin/gnuplot
+
+set terminal epslatex color blacktext
+set output "plot.tex"
+#set title "Influence of the packet size. 1.2GHz"
+set xlabel "Size of packets [Bytes]"
+set ylabel "Throughput [Gbit/s]"
+set grid mxtics x
+set grid mytics y
+set key above vertical maxrows 3
+#set key at 119,9.5
+#set logscale y
+#set logscale x
+
+
+#set yrange [0.08:1]
+set xrange [0:640]
+set yrange [0:22]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+data = 'data'
+
+#m = 1
+#t = 1
+#g(x) = m*x + t
+#fit [1:2] g(x) 'data_2.0GHz' using 1:2:3 via m, t
+#m2 = 1
+#t2 = 1
+#g2(x) = m2*x + t2
+#fit [1:3] g2(x) 'data_2.0_randomGHz' using 1:2:3 via m2, t2
+#m3 = 1
+#t3 = 1
+#g3(x) = m3*x + t3
+#fit [1:4] g3(x) 'data_1.2GHz' using 1:2:3 via m3, t3
+#m4 = 1
+#t4 = 1
+#g4(x) = m4*x + t4
+#fit [1:5] g4(x) 'data_1.2_randomGHz' using 1:2:3 via m4, t4
+
+bw=10
+bw2=bw/2+0.55
+set boxwidth bw
+set style fill solid 0.2
+set xtics (64, 128, 192, 256, 320, 384, 448, 512)
+
+set y2label "Throughput [Mp/s]"
+set ytics nomirror
+set y2tics
+
+set y2range [0:8.8]
+set xrange [0:544+64]
+
+set label '2x10 GbE' at 145,19 right
+set style arrow 7 nohead ls 2 lc 7 lw 2.2
+set style arrow 4 head filled size screen 0.01,30 ls 2 lc 7
+set arrow front from 150,19 to 200, 20 as 4
+set arrow from 0,20 to 608,20 nohead as 7 front
+plot \
+  'data_2bitrnd'         using ($1-bw2):($2/1000):($3/1000) with boxerrorbars  title "Single Gbit/s" lc 4,\
+  'data'         using ($1+bw2):($2/1000):($3/1000) with boxerrorbars title "Random Gbit/s" lc 3,\
+  'routebricks.dat'         using ($1):($3*0.4285/8) with boxes title "RouteBricks Gbit/s" lc 8,\
+  'data_2bitrnd'         using ($1):($2/($1+20)/8) axes x1y2 with linespoints  title "Single Mp/s" lc 4,\
+  'data'         using ($1):($2/($1+20)/8) axes x1y2 with linespoints title "Random Mp/s" lc 3,\
+  'routebricks.dat'         using ($1):($3*1000*0.4285/8/($1+20)/8) axes x1y2 with linespoints lc 8 title "RouteBricks Mp/s"
+  #'data_2bitrnd'         using ($1-bw2):($2/1000):($3/1000) with boxerrorbars  title "Single Gbit/s" lt rgb "#7060d0",\
+  #'data'         using ($1+bw2):($2/1000):($3/1000) with boxerrorbars title "Random Gbit/s" lt rgb "#ff9000",\
+  #'routebricks.dat'         using ($1):($3*0.4285/8) with boxes title "RouteBricks Gbit/s" lc 8,\
+  #'data_2bitrnd'         using ($1):($2/($1+20)/8) axes x1y2 with linespoints  title "Single Mp/s" lt rgb "#7060d0",\
+  #'data'         using ($1):($2/($1+20)/8) axes x1y2 with linespoints title "Random Mp/s" lt rgb "#ff7000",\
+  #'routebricks.dat'         using ($1):($3*1000*0.4285/8/($1+20)/8) axes x1y2 with linespoints lc 8 title "RouteBricks Mp/s"

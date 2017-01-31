@@ -1,0 +1,40 @@
+\hypertarget{structrte__meter__trtcm__params}{}\section{rte\+\_\+meter\+\_\+trtcm\+\_\+params Struct Reference}
+\label{structrte__meter__trtcm__params}\index{rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+meter.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__trtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}{cir}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__trtcm__params_a2acc9a04d3a8ffeeb3b95f142ee15be7}{pir}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__trtcm__params_ad914d97dc6b389901af9ddee395827de}{cbs}
+\item 
+uint64\+\_\+t \hyperlink{structrte__meter__trtcm__params_aac8f0f5688bed97bc62949c37308b13d}{pbs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+tr\+T\+C\+M parameters per metered traffic flow. The C\+I\+R, P\+I\+R, C\+B\+S and P\+B\+S parameters only count bytes of I\+P packets and do not include link specific headers. P\+I\+R has to be greater than or equal to C\+I\+R. Both C\+B\+S or E\+B\+S have to be greater than zero. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__meter__trtcm__params_ad914d97dc6b389901af9ddee395827de}{}\index{rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}!cbs@{cbs}}
+\index{cbs@{cbs}!rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}}
+\subsubsection[{cbs}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t cbs}\label{structrte__meter__trtcm__params_ad914d97dc6b389901af9ddee395827de}
+Committed Burst Size (C\+B\+S). Measured in byes. \hypertarget{structrte__meter__trtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}{}\index{rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}!cir@{cir}}
+\index{cir@{cir}!rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}}
+\subsubsection[{cir}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t cir}\label{structrte__meter__trtcm__params_a882cbe4a787376c3a4d55bbf0b6e1f13}
+Committed Information Rate (C\+I\+R). Measured in bytes per second. \hypertarget{structrte__meter__trtcm__params_aac8f0f5688bed97bc62949c37308b13d}{}\index{rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}!pbs@{pbs}}
+\index{pbs@{pbs}!rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}}
+\subsubsection[{pbs}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t pbs}\label{structrte__meter__trtcm__params_aac8f0f5688bed97bc62949c37308b13d}
+Peak Burst Size (P\+B\+S). Measured in bytes. \hypertarget{structrte__meter__trtcm__params_a2acc9a04d3a8ffeeb3b95f142ee15be7}{}\index{rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}!pir@{pir}}
+\index{pir@{pir}!rte\+\_\+meter\+\_\+trtcm\+\_\+params@{rte\+\_\+meter\+\_\+trtcm\+\_\+params}}
+\subsubsection[{pir}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t pir}\label{structrte__meter__trtcm__params_a2acc9a04d3a8ffeeb3b95f142ee15be7}
+Peak Information Rate (P\+I\+R). Measured in bytes per second. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+meter/\hyperlink{rte__meter_8h}{rte\+\_\+meter.\+h}\end{DoxyCompactItemize}

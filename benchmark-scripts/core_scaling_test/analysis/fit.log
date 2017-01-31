@@ -1,0 +1,2831 @@
+
+
+*******************************************************************************
+Fri Aug 14 09:57:37 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 8.6908650549e+11   0.00e+00  7.52e+01    1.000000e+00   1.000000e+00
+   6 6.0189320088e+02  -1.69e-01  7.52e-05    3.821667e+03   8.921552e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 601.893
+rel. change during last iteration : -1.6889e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 14.1644
+variance of residuals (reduced chisquare) = WSSR/ndf   : 200.631
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 3821.67          +/- 31.05        (0.8125%)
+t               = 892.155          +/- 155.2        (17.4%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Aug 14 09:57:53 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Fri Aug 14 09:58:18 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Fri Aug 14 10:00:01 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 14:10:16 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 14:10:28 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 15:17:34 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 15:17:41 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 15:17:50 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 15:41:57 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 15:42:11 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 17:42:14 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:10:22 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:20:06 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:23:55 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:41:44 2015
+
+
+FIT:    data read from data using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 3.5256928098e+05   0.00e+00  6.07e-02    1.000000e+00   1.000000e+00
+   4 7.1256138985e-01  -5.93e-01  6.07e-06    4.490020e+03   2.025617e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.712561
+rel. change during last iteration : -5.93399e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.596893
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.356281
+p-value of the Chisq distribution (FIT_P)              : 0.700276
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4490.02          +/- 16.32        (0.3635%)
+t               = 202.562          +/- 18.02        (8.895%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -0.958  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:46:19 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 2.4204569659e+10   0.00e+00  1.13e+01    1.000000e+00   1.000000e+00
+   6 7.5483365271e+03  -1.89e-06  1.13e-05    4.243646e+03   3.025826e+03
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 7548.34
+rel. change during last iteration : -1.89065e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 61.4343
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3774.17
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4243.65          +/- 183.2        (4.318%)
+t               = 3025.83          +/- 732.8        (24.22%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -1.000  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:46:19 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.5588145553e+08   0.00e+00  1.17e+00    1.000000e+00   1.000000e+00
+   5 1.2013393422e+03  -1.01e-06  1.17e-05    4.718067e+03   1.119561e+03
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1201.34
+rel. change during last iteration : -1.00879e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 24.5086
+variance of residuals (reduced chisquare) = WSSR/ndf   : 600.67
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 4718.07          +/- 136.6        (2.895%)
+t2              = 1119.56          +/- 544.8        (48.67%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.998  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:46:19 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:46:19 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:47:52 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 2.4204569659e+10   0.00e+00  1.13e+01    1.000000e+00   1.000000e+00
+   6 7.5483365271e+03  -1.89e-06  1.13e-05    4.243646e+03   3.025826e+03
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 7548.34
+rel. change during last iteration : -1.89065e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 61.4343
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3774.17
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4243.65          +/- 183.2        (4.318%)
+t               = 3025.83          +/- 732.8        (24.22%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -1.000  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:47:52 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.5588145553e+08   0.00e+00  1.17e+00    1.000000e+00   1.000000e+00
+   5 1.2013393422e+03  -1.01e-06  1.17e-05    4.718067e+03   1.119561e+03
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1201.34
+rel. change during last iteration : -1.00879e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 24.5086
+variance of residuals (reduced chisquare) = WSSR/ndf   : 600.67
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 4718.07          +/- 136.6        (2.895%)
+t2              = 1119.56          +/- 544.8        (48.67%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.998  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:47:52 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:47:52 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:48:29 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 2.4204569659e+10   0.00e+00  1.13e+01    1.000000e+00   1.000000e+00
+   6 7.5483365271e+03  -1.89e-06  1.13e-05    4.243646e+03   3.025826e+03
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 7548.34
+rel. change during last iteration : -1.89065e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 61.4343
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3774.17
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 4243.65          +/- 183.2        (4.318%)
+t               = 3025.83          +/- 732.8        (24.22%)
+
+correlation matrix of the fit parameters:
+                m      t      
+m               1.000 
+t              -1.000  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:48:29 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.5588145553e+08   0.00e+00  1.17e+00    1.000000e+00   1.000000e+00
+   5 1.2013393422e+03  -1.01e-06  1.17e-05    4.718067e+03   1.119561e+03
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1201.34
+rel. change during last iteration : -1.00879e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 24.5086
+variance of residuals (reduced chisquare) = WSSR/ndf   : 600.67
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 4718.07          +/- 136.6        (2.895%)
+t2              = 1119.56          +/- 544.8        (48.67%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.998  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:48:29 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:48:29 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:49:24 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:49:24 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:49:24 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:49:24 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:02 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:50:02 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:02 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:02 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:15 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:50:15 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:15 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:15 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:37 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:50:37 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:37 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:50:37 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1059340769e+06   0.00e+00  3.90e-01    1.000000e+00   1.000000e+00
+   5 1.3523442660e+00  -2.34e-06  3.90e-06    3.677961e+03  -6.321792e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.35234
+rel. change during last iteration : -2.3357e-11
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.822297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.676172
+p-value of the Chisq distribution (FIT_P)              : 0.50856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3677.96          +/- 8.853        (0.2407%)
+t4              = -63.2179         +/- 9.01         (14.25%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.993  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:51:32 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:51:32 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:51:32 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:51:32 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:08 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:52:08 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:08 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:08 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:24 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:52:24 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:24 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:24 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:37 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:52:37 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:37 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:37 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:52:51 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 't' is zero.
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5957862413e+05   0.00e+00  5.63e-02    1.000000e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Sat Aug 15 18:53:00 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m            
+   0 6.5957862413e+05   0.00e+00  7.96e-02    1.000000e+00
+   4 7.6467388488e+00  -5.93e-05  7.96e-06    7.211656e+03
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 7.64674
+rel. change during last iteration : -5.9299e-10
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.76527
+variance of residuals (reduced chisquare) = WSSR/ndf   : 7.64674
+p-value of the Chisq distribution (FIT_P)              : 0.0056875
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7211.66          +/- 24.55        (0.3404%)
+
+
+*******************************************************************************
+Sat Aug 15 18:53:00 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:00 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:00 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:10 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:53:10 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:10 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:10 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:35 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5956051738e+05   0.00e+00  5.66e-02    1.000000e+00   1.000000e-01
+   7 0.0000000000e+00  -inf       5.66e-09    6.872650e+03   3.426000e+02
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -7.92636e-27
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:53:35 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:35 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:53:35 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:54:13 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Sat Aug 15 18:54:13 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:54:13 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Sat Aug 15 18:54:13 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 
+
+
+*******************************************************************************
+Tue Oct  6 11:12:40 2015
+
+
+FIT:    data read from 'data_2.0GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 2
+function used for fitting: g(x)
+	g(x) = m*x + t
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             t            
+   0 6.5939756787e+05   0.00e+00  7.93e-02    1.000000e+00   1.000000e+00
+   6 0.0000000000e+00  -inf       7.93e-08    6.872650e+03   3.426000e+02
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0
+abs. change during last iteration : -1.40421e-20
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 6872.65        
+t               = 342.6          
+
+
+*******************************************************************************
+Tue Oct  6 11:12:40 2015
+
+
+FIT:    data read from 'data_2.0_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 3.00000]
+        #datapoints = 3
+function used for fitting: g2(x)
+	g2(x) = m2*x + t2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m2            t2           
+   0 2.0399572388e+05   0.00e+00  4.08e-02    1.000000e+00   1.000000e+00
+   4 3.8578521361e-01  -2.29e-01  4.08e-06    5.796005e+03  -2.184099e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.385785
+rel. change during last iteration : -2.28562e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.621116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.385785
+p-value of the Chisq distribution (FIT_P)              : 0.534523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m2              = 5796             +/- 19.63        (0.3386%)
+t2              = -21.841          +/- 24.68        (113%)
+
+correlation matrix of the fit parameters:
+                m2     t2     
+m2              1.000 
+t2             -0.914  1.000 
+
+
+*******************************************************************************
+Tue Oct  6 11:12:40 2015
+
+
+FIT:    data read from 'data_1.2GHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 4.00000]
+        #datapoints = 4
+function used for fitting: g3(x)
+	g3(x) = m3*x + t3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m3            t3           
+   0 7.2236225985e+05   0.00e+00  7.83e-02    1.000000e+00   1.000000e+00
+   4 1.0363282511e+00  -1.31e-02  7.83e-06    4.168436e+03   1.570060e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.03633
+rel. change during last iteration : -1.31361e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.719836
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.518164
+p-value of the Chisq distribution (FIT_P)              : 0.595613
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m3              = 4168.44          +/- 6.561        (0.1574%)
+t3              = 157.006          +/- 14.21        (9.048%)
+
+correlation matrix of the fit parameters:
+                m3     t3     
+m3              1.000 
+t3             -0.838  1.000 
+
+
+*******************************************************************************
+Tue Oct  6 11:12:40 2015
+
+
+FIT:    data read from 'data_1.2_randomGHz' using 1:2:3
+        format = x:z:s
+        x range restricted to [1.00000 : 5.00000]
+        #datapoints = 5
+function used for fitting: g4(x)
+	g4(x) = m4*x + t4
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m4            t4           
+   0 8.1712338210e+06   0.00e+00  3.50e-01    1.000000e+00   1.000000e+00
+   5 8.4076060141e+00  -2.88e-08  3.50e-06    3.663136e+03  -4.828880e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 8.40761
+rel. change during last iteration : -2.88397e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.67408
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.80254
+p-value of the Chisq distribution (FIT_P)              : 0.0382977
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m4              = 3663.14          +/- 15.41        (0.4207%)
+t4              = -48.2888         +/- 15.75        (32.61%)
+
+correlation matrix of the fit parameters:
+                m4     t4     
+m4              1.000 
+t4             -0.991  1.000 

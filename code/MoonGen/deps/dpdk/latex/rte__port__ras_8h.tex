@@ -1,0 +1,29 @@
+\hypertarget{rte__port__ras_8h}{}\section{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ras.h File Reference}
+\label{rte__port__ras_8h}\index{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ras.\+h@{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ras.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rte\+\_\+port.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__ring__writer__ipv4__ras__params}{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__out__ops}{rte\+\_\+port\+\_\+out\+\_\+ops} \hyperlink{rte__port__ras_8h_ae51d856cbd8be983c25904641805a9fa}{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Port for I\+Pv4 Reassembly
+
+This port is built on top of pre-\/initialized single producer \hyperlink{structrte__ring}{rte\+\_\+ring}. In order to minimize the amount of packets stored in the ring at any given time, the I\+P reassembly functionality is executed on ring write operation, hence this port is implemented as an output port. A regular ring\+\_\+reader port can be created to read from the same ring.
+
+The packets written to the ring are either complete I\+P datagrams or I\+P fragments. The packets read from the ring are all complete I\+P datagrams, either jumbo frames (i.\+e. I\+P packets with length bigger than M\+T\+U) or not. The complete I\+P datagrams written to the ring are not changed. The I\+P fragments written to the ring are first reassembled and into complete I\+P datagrams or dropped on error or I\+P reassembly time-\/out. 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__port__ras_8h_ae51d856cbd8be983c25904641805a9fa}{}\index{rte\+\_\+port\+\_\+ras.\+h@{rte\+\_\+port\+\_\+ras.\+h}!rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops}}
+\index{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops}!rte\+\_\+port\+\_\+ras.\+h@{rte\+\_\+port\+\_\+ras.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+out\+\_\+ops} rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ipv4\+\_\+ras\+\_\+ops}\label{rte__port__ras_8h_ae51d856cbd8be983c25904641805a9fa}
+ring\+\_\+writer\+\_\+ipv4\+\_\+ras port operations 

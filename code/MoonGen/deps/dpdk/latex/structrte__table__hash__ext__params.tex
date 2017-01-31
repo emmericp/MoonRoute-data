@@ -1,0 +1,60 @@
+\hypertarget{structrte__table__hash__ext__params}{}\section{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params Struct Reference}
+\label{structrte__table__hash__ext__params}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+table\+\_\+hash.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_a83844a351f4b92ad62ba71b38733aa04}{key\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_a4c48340399424293c79db3dc411e8231}{n\+\_\+keys}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_a241ccfe90f415a07cad8a881fc0f83ac}{n\+\_\+buckets}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_a132da62c2f644cd61a43655ed0c887d7}{n\+\_\+buckets\+\_\+ext}
+\item 
+\hyperlink{rte__table__hash_8h_a6633f20f58e850abc3d1650af5d900da}{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash} \hyperlink{structrte__table__hash__ext__params_a5a7373267cebe4384507b331c883624a}{f\+\_\+hash}
+\item 
+uint64\+\_\+t \hyperlink{structrte__table__hash__ext__params_a13dfa5fcb8e1184f1f7756e717fd2807}{seed}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_a255e199334632db5019afe0eb166a05a}{signature\+\_\+offset}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__hash__ext__params_aa09132fc271bc1be2e4032587665bcf7}{key\+\_\+offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hash tables with configurable key size\+Extendible bucket hash table parameters 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__table__hash__ext__params_a5a7373267cebe4384507b331c883624a}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!f\+\_\+hash@{f\+\_\+hash}}
+\index{f\+\_\+hash@{f\+\_\+hash}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{f\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash} f\+\_\+hash}\label{structrte__table__hash__ext__params_a5a7373267cebe4384507b331c883624a}
+Hash function \hypertarget{structrte__table__hash__ext__params_aa09132fc271bc1be2e4032587665bcf7}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!key\+\_\+offset@{key\+\_\+offset}}
+\index{key\+\_\+offset@{key\+\_\+offset}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{key\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t key\+\_\+offset}\label{structrte__table__hash__ext__params_aa09132fc271bc1be2e4032587665bcf7}
+Byte offset within packet meta-\/data where the key is located \hypertarget{structrte__table__hash__ext__params_a83844a351f4b92ad62ba71b38733aa04}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!key\+\_\+size@{key\+\_\+size}}
+\index{key\+\_\+size@{key\+\_\+size}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{key\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t key\+\_\+size}\label{structrte__table__hash__ext__params_a83844a351f4b92ad62ba71b38733aa04}
+Key size (number of bytes) \hypertarget{structrte__table__hash__ext__params_a241ccfe90f415a07cad8a881fc0f83ac}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!n\+\_\+buckets@{n\+\_\+buckets}}
+\index{n\+\_\+buckets@{n\+\_\+buckets}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{n\+\_\+buckets}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+buckets}\label{structrte__table__hash__ext__params_a241ccfe90f415a07cad8a881fc0f83ac}
+Number of hash table buckets. Each bucket stores up to 4 keys. \hypertarget{structrte__table__hash__ext__params_a132da62c2f644cd61a43655ed0c887d7}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!n\+\_\+buckets\+\_\+ext@{n\+\_\+buckets\+\_\+ext}}
+\index{n\+\_\+buckets\+\_\+ext@{n\+\_\+buckets\+\_\+ext}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{n\+\_\+buckets\+\_\+ext}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+buckets\+\_\+ext}\label{structrte__table__hash__ext__params_a132da62c2f644cd61a43655ed0c887d7}
+Number of hash table bucket extensions. Each bucket extension has space for 4 keys and each bucket can have 0, 1 or more extensions. \hypertarget{structrte__table__hash__ext__params_a4c48340399424293c79db3dc411e8231}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!n\+\_\+keys@{n\+\_\+keys}}
+\index{n\+\_\+keys@{n\+\_\+keys}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{n\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+keys}\label{structrte__table__hash__ext__params_a4c48340399424293c79db3dc411e8231}
+Maximum number of keys \hypertarget{structrte__table__hash__ext__params_a13dfa5fcb8e1184f1f7756e717fd2807}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!seed@{seed}}
+\index{seed@{seed}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{seed}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t seed}\label{structrte__table__hash__ext__params_a13dfa5fcb8e1184f1f7756e717fd2807}
+Seed value for the hash function \hypertarget{structrte__table__hash__ext__params_a255e199334632db5019afe0eb166a05a}{}\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}!signature\+\_\+offset@{signature\+\_\+offset}}
+\index{signature\+\_\+offset@{signature\+\_\+offset}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}}
+\subsubsection[{signature\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t signature\+\_\+offset}\label{structrte__table__hash__ext__params_a255e199334632db5019afe0eb166a05a}
+Byte offset within packet meta-\/data where the 4-\/byte key signature is located. Valid for pre-\/computed key signature tables, ignored for do-\/sig tables. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+table/\hyperlink{rte__table__hash_8h}{rte\+\_\+table\+\_\+hash.\+h}\end{DoxyCompactItemize}

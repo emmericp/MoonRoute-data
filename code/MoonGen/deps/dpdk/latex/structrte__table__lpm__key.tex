@@ -1,0 +1,30 @@
+\hypertarget{structrte__table__lpm__key}{}\section{rte\+\_\+table\+\_\+lpm\+\_\+key Struct Reference}
+\label{structrte__table__lpm__key}\index{rte\+\_\+table\+\_\+lpm\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+key}}
+
+
+{\ttfamily \#include $<$rte\+\_\+table\+\_\+lpm.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__lpm__key_a69ddb9c845da426f636d9dd0dbed4e7e}{ip}
+\item 
+uint8\+\_\+t \hyperlink{structrte__table__lpm__key_ab6f276082172be43a6041212071e377b}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+L\+P\+M table rule (i.\+e. route), specified as I\+P prefix. While the key used by the lookup operation is the destination I\+P address (read from the input packet meta-\/data), the entry add and entry delete operations work with L\+P\+M rules, with each rule covering for a multitude of lookup keys (destination I\+P addresses) that share the same data (next hop). 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__table__lpm__key_ab6f276082172be43a6041212071e377b}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+key}!depth@{depth}}
+\index{depth@{depth}!rte\+\_\+table\+\_\+lpm\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+key}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t depth}\label{structrte__table__lpm__key_ab6f276082172be43a6041212071e377b}
+I\+P address depth. The most significant \char`\"{}depth\char`\"{} bits of the I\+P address specify the network part of the I\+P address, while the rest of the bits specify the host part of the address and are ignored for the purpose of route specification. \hypertarget{structrte__table__lpm__key_a69ddb9c845da426f636d9dd0dbed4e7e}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+key}!ip@{ip}}
+\index{ip@{ip}!rte\+\_\+table\+\_\+lpm\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+key}}
+\subsubsection[{ip}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t ip}\label{structrte__table__lpm__key_a69ddb9c845da426f636d9dd0dbed4e7e}
+I\+P address 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+table/\hyperlink{rte__table__lpm_8h}{rte\+\_\+table\+\_\+lpm.\+h}\end{DoxyCompactItemize}

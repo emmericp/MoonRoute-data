@@ -1,0 +1,47 @@
+\hypertarget{structrte__fdir__conf}{}\section{rte\+\_\+fdir\+\_\+conf Struct Reference}
+\label{structrte__fdir__conf}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__ethdev_8h_ac1f701a3e5754496d2dff0063717bd88}{rte\+\_\+fdir\+\_\+mode} \hyperlink{structrte__fdir__conf_ac232664a75e2d52a9bec4235b0896046}{mode}
+\item 
+enum \hyperlink{rte__ethdev_8h_a9eda431989b68c708c7a875d71592a70}{rte\+\_\+fdir\+\_\+pballoc\+\_\+type} \hyperlink{structrte__fdir__conf_a7fb17234fd998f8a09757542754e3ec7}{pballoc}
+\item 
+enum \hyperlink{rte__ethdev_8h_acf7335105af297398262762ce692765b}{rte\+\_\+fdir\+\_\+status\+\_\+mode} \hyperlink{structrte__fdir__conf_a6d21f48c75d50917d0b737473df8b067}{status}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__conf_ad44e0922f241056e54de2b94d1f5d9b3}{flexbytes\+\_\+offset}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__conf_a23a38b9406dcbda7a8c54adb0cb29b77}{drop\+\_\+queue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure the Flow Director (F\+D\+I\+R) feature of an Ethernet port.
+
+If mode is R\+T\+E\+\_\+\+F\+D\+I\+R\+\_\+\+D\+I\+S\+A\+B\+L\+E, the pballoc value is ignored. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__fdir__conf_a23a38b9406dcbda7a8c54adb0cb29b77}{}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}!drop\+\_\+queue@{drop\+\_\+queue}}
+\index{drop\+\_\+queue@{drop\+\_\+queue}!rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+\subsubsection[{drop\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t drop\+\_\+queue}\label{structrte__fdir__conf_a23a38b9406dcbda7a8c54adb0cb29b77}
+R\+X queue of packets matching a \char`\"{}drop\char`\"{} filter in perfect mode. \hypertarget{structrte__fdir__conf_ad44e0922f241056e54de2b94d1f5d9b3}{}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}!flexbytes\+\_\+offset@{flexbytes\+\_\+offset}}
+\index{flexbytes\+\_\+offset@{flexbytes\+\_\+offset}!rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+\subsubsection[{flexbytes\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t flexbytes\+\_\+offset}\label{structrte__fdir__conf_ad44e0922f241056e54de2b94d1f5d9b3}
+Offset of flexbytes field in R\+X packets (in 16-\/bit word units). \hypertarget{structrte__fdir__conf_ac232664a75e2d52a9bec4235b0896046}{}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}!mode@{mode}}
+\index{mode@{mode}!rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+fdir\+\_\+mode} mode}\label{structrte__fdir__conf_ac232664a75e2d52a9bec4235b0896046}
+Flow Director mode. \hypertarget{structrte__fdir__conf_a7fb17234fd998f8a09757542754e3ec7}{}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}!pballoc@{pballoc}}
+\index{pballoc@{pballoc}!rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+\subsubsection[{pballoc}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+fdir\+\_\+pballoc\+\_\+type} pballoc}\label{structrte__fdir__conf_a7fb17234fd998f8a09757542754e3ec7}
+Space for F\+D\+I\+R filters. \hypertarget{structrte__fdir__conf_a6d21f48c75d50917d0b737473df8b067}{}\index{rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}!status@{status}}
+\index{status@{status}!rte\+\_\+fdir\+\_\+conf@{rte\+\_\+fdir\+\_\+conf}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+fdir\+\_\+status\+\_\+mode} status}\label{structrte__fdir__conf_a6d21f48c75d50917d0b737473df8b067}
+How to report F\+D\+I\+R hash. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

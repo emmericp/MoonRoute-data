@@ -1,0 +1,60 @@
+\hypertarget{structrte__eth__fdir}{}\section{rte\+\_\+eth\+\_\+fdir Struct Reference}
+\label{structrte__eth__fdir}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__fdir_a25acdd048286f86d35913474e7f0f41a}{collision}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__fdir_a726dbe40127a1f14bf8e72ab94453698}{free}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__fdir_a4831f0a60028910696c19abb4cd2c93c}{maxhash}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__fdir_a3e3c2f17b215a23942df0e2bb527e84b}{maxlen}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__fdir_ac36885456d6bcecbaa4c398f13f40608}{add}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__fdir_ae76c413e5f774d65cf4c01b1dc587202}{remove}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__fdir_ac31d973a80c54b421052347487624a9d}{f\+\_\+add}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__fdir_ad6019034f869934701c2518978e7be0c}{f\+\_\+remove}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to report the status of the flow director filters in use. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__fdir_ac36885456d6bcecbaa4c398f13f40608}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!add@{add}}
+\index{add@{add}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t add}\label{structrte__eth__fdir_ac36885456d6bcecbaa4c398f13f40608}
+Number of added filters. \hypertarget{structrte__eth__fdir_a25acdd048286f86d35913474e7f0f41a}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!collision@{collision}}
+\index{collision@{collision}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{collision}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t collision}\label{structrte__eth__fdir_a25acdd048286f86d35913474e7f0f41a}
+Number of filters with collision indication. \hypertarget{structrte__eth__fdir_ac31d973a80c54b421052347487624a9d}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!f\+\_\+add@{f\+\_\+add}}
+\index{f\+\_\+add@{f\+\_\+add}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{f\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t f\+\_\+add}\label{structrte__eth__fdir_ac31d973a80c54b421052347487624a9d}
+Number of failed added filters (no more space in device). \hypertarget{structrte__eth__fdir_ad6019034f869934701c2518978e7be0c}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!f\+\_\+remove@{f\+\_\+remove}}
+\index{f\+\_\+remove@{f\+\_\+remove}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{f\+\_\+remove}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t f\+\_\+remove}\label{structrte__eth__fdir_ad6019034f869934701c2518978e7be0c}
+Number of failed removed filters. \hypertarget{structrte__eth__fdir_a726dbe40127a1f14bf8e72ab94453698}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!free@{free}}
+\index{free@{free}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{free}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t free}\label{structrte__eth__fdir_a726dbe40127a1f14bf8e72ab94453698}
+Number of free (non programmed) filters. \hypertarget{structrte__eth__fdir_a4831f0a60028910696c19abb4cd2c93c}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!maxhash@{maxhash}}
+\index{maxhash@{maxhash}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{maxhash}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t maxhash}\label{structrte__eth__fdir_a4831f0a60028910696c19abb4cd2c93c}
+The Lookup hash value of the added filter that updated the value of the M\+A\+X\+L\+E\+N field \hypertarget{structrte__eth__fdir_a3e3c2f17b215a23942df0e2bb527e84b}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!maxlen@{maxlen}}
+\index{maxlen@{maxlen}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{maxlen}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t maxlen}\label{structrte__eth__fdir_a3e3c2f17b215a23942df0e2bb527e84b}
+Longest linked list of filters in the table. \hypertarget{structrte__eth__fdir_ae76c413e5f774d65cf4c01b1dc587202}{}\index{rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}!remove@{remove}}
+\index{remove@{remove}!rte\+\_\+eth\+\_\+fdir@{rte\+\_\+eth\+\_\+fdir}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t remove}\label{structrte__eth__fdir_ae76c413e5f774d65cf4c01b1dc587202}
+Number of removed filters. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

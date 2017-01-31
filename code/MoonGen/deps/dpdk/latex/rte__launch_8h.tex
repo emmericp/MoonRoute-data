@@ -1,0 +1,194 @@
+\hypertarget{rte__launch_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+launch.h File Reference}
+\label{rte__launch_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+launch.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+launch.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int( \hyperlink{rte__launch_8h_aede5403af212078c73ff27006d70630a}{lcore\+\_\+function\+\_\+t}) (void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9}{rte\+\_\+lcore\+\_\+state\+\_\+t} \{ \hyperlink{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a79a322ccb4b29b85b3cab52dbccefd17}{W\+A\+I\+T}, 
+\hyperlink{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a1061be6c3fb88d32829cba6f6b2be304}{R\+U\+N\+N\+I\+N\+G}, 
+\hyperlink{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9adbd1812bee789fbf3548cf79d3f2b400}{F\+I\+N\+I\+S\+H\+E\+D}
+ \}
+\item 
+enum \hyperlink{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ad}{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t} \{ \hyperlink{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2adace253c3a0d90f0e324943d18631a1ef4}{S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R} = 0, 
+\hyperlink{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ada39ec34f33f669f99bd28ab7c58a952ac}{C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__launch_8h_a7456c48bfd011b04cc1c17baac5aa058}{rte\+\_\+eal\+\_\+remote\+\_\+launch} (\hyperlink{rte__launch_8h_aede5403af212078c73ff27006d70630a}{lcore\+\_\+function\+\_\+t} $\ast$f, void $\ast$arg, unsigned slave\+\_\+id)
+\item 
+int \hyperlink{rte__launch_8h_a2f78fc845135fe22c1ba1c870954b60a}{rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch} (\hyperlink{rte__launch_8h_aede5403af212078c73ff27006d70630a}{lcore\+\_\+function\+\_\+t} $\ast$f, void $\ast$arg, enum \hyperlink{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ad}{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t} call\+\_\+master)
+\item 
+enum \hyperlink{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9}{rte\+\_\+lcore\+\_\+state\+\_\+t} \hyperlink{rte__launch_8h_a581a5419a974cd48364ff1a0e6ceda11}{rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state} (unsigned slave\+\_\+id)
+\item 
+int \hyperlink{rte__launch_8h_a1282dc7cd7e6793afab3ef29239ddf54}{rte\+\_\+eal\+\_\+wait\+\_\+lcore} (unsigned slave\+\_\+id)
+\item 
+void \hyperlink{rte__launch_8h_a7760d6e89a309af9b80767be641bfa18}{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Launch tasks on other lcores 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__launch_8h_aede5403af212078c73ff27006d70630a}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!lcore\+\_\+function\+\_\+t@{lcore\+\_\+function\+\_\+t}}
+\index{lcore\+\_\+function\+\_\+t@{lcore\+\_\+function\+\_\+t}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{lcore\+\_\+function\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int( lcore\+\_\+function\+\_\+t) (void $\ast$)}\label{rte__launch_8h_aede5403af212078c73ff27006d70630a}
+Definition of a remote launch function. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+lcore\+\_\+state\+\_\+t@{rte\+\_\+lcore\+\_\+state\+\_\+t}}
+\index{rte\+\_\+lcore\+\_\+state\+\_\+t@{rte\+\_\+lcore\+\_\+state\+\_\+t}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+state\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+lcore\+\_\+state\+\_\+t}}\label{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9}
+State of an lcore. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\+A\+I\+T@{W\+A\+I\+T}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!W\+A\+I\+T@{W\+A\+I\+T}}\item[{\em 
+\hypertarget{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a79a322ccb4b29b85b3cab52dbccefd17}{}W\+A\+I\+T\label{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a79a322ccb4b29b85b3cab52dbccefd17}
+}]waiting a new command \index{R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!R\+U\+N\+N\+I\+N\+G@{R\+U\+N\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a1061be6c3fb88d32829cba6f6b2be304}{}R\+U\+N\+N\+I\+N\+G\label{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9a1061be6c3fb88d32829cba6f6b2be304}
+}]executing command \index{F\+I\+N\+I\+S\+H\+E\+D@{F\+I\+N\+I\+S\+H\+E\+D}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!F\+I\+N\+I\+S\+H\+E\+D@{F\+I\+N\+I\+S\+H\+E\+D}}\item[{\em 
+\hypertarget{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9adbd1812bee789fbf3548cf79d3f2b400}{}F\+I\+N\+I\+S\+H\+E\+D\label{rte__launch_8h_aac7785c53560a19ce4108c510e5024c9adbd1812bee789fbf3548cf79d3f2b400}
+}]command executed \end{description}
+\end{Desc}
+\hypertarget{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ad}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t@{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t}}
+\index{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t@{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t}}\label{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ad}
+This enum indicates whether the master core must execute the handler launched on all logical cores. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R@{S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R@{S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R}}\item[{\em 
+\hypertarget{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2adace253c3a0d90f0e324943d18631a1ef4}{}S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R\label{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2adace253c3a0d90f0e324943d18631a1ef4}
+}]lcore handler not executed by master core. \index{C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R@{C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R@{C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R}}\item[{\em 
+\hypertarget{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ada39ec34f33f669f99bd28ab7c58a952ac}{}C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R\label{rte__launch_8h_a83b0efa9e30a74217e7a95956845e2ada39ec34f33f669f99bd28ab7c58a952ac}
+}]lcore handler executed by master core. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__launch_8h_a581a5419a974cd48364ff1a0e6ceda11}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state@{rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state}}
+\index{rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state@{rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+lcore\+\_\+state\+\_\+t} rte\+\_\+eal\+\_\+get\+\_\+lcore\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{slave\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__launch_8h_a581a5419a974cd48364ff1a0e6ceda11}
+Get the state of the lcore identified by slave\+\_\+id.
+
+To be executed on the M\+A\+S\+T\+E\+R lcore only.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+id} & The identifier of the lcore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the lcore. 
+\end{DoxyReturn}
+\hypertarget{rte__launch_8h_a2f78fc845135fe22c1ba1c870954b60a}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch@{rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch}}
+\index{rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch@{rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+mp\+\_\+remote\+\_\+launch (
+\begin{DoxyParamCaption}
+\item[{{\bf lcore\+\_\+function\+\_\+t} $\ast$}]{f, }
+\item[{void $\ast$}]{arg, }
+\item[{enum {\bf rte\+\_\+rmt\+\_\+call\+\_\+master\+\_\+t}}]{call\+\_\+master}
+\end{DoxyParamCaption}
+)}\label{rte__launch_8h_a2f78fc845135fe22c1ba1c870954b60a}
+Launch a function on all lcores.
+
+Check that each S\+L\+A\+V\+E lcore is in a W\+A\+I\+T state, then call \hyperlink{rte__launch_8h_a7456c48bfd011b04cc1c17baac5aa058}{rte\+\_\+eal\+\_\+remote\+\_\+launch()} for each lcore.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The function to be called. \\
+\hline
+{\em arg} & The argument for the function. \\
+\hline
+{\em call\+\_\+master} & If call\+\_\+master set to S\+K\+I\+P\+\_\+\+M\+A\+S\+T\+E\+R, the M\+A\+S\+T\+E\+R lcore does not call the function. If call\+\_\+master is set to C\+A\+L\+L\+\_\+\+M\+A\+S\+T\+E\+R, the function is also called on master before returning. In any case, the master lcore returns as soon as it finished its job and knows nothing about the completion of f on the other lcores. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success. Execution of function f started on all remote lcores.
+\item (-\/\+E\+B\+U\+S\+Y)\+: At least one remote lcore is not in a W\+A\+I\+T state. In this case, no message is sent to any of the lcores. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__launch_8h_a7760d6e89a309af9b80767be641bfa18}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore@{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore}}
+\index{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore@{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__launch_8h_a7760d6e89a309af9b80767be641bfa18}
+Wait until all lcores finish their jobs.
+
+To be executed on the M\+A\+S\+T\+E\+R lcore only. Issue an \hyperlink{rte__launch_8h_a1282dc7cd7e6793afab3ef29239ddf54}{rte\+\_\+eal\+\_\+wait\+\_\+lcore()} for every lcore. The return values are ignored.
+
+After a call to \hyperlink{rte__launch_8h_a7760d6e89a309af9b80767be641bfa18}{rte\+\_\+eal\+\_\+mp\+\_\+wait\+\_\+lcore()}, the caller can assume that all slave lcores are in a W\+A\+I\+T state. \hypertarget{rte__launch_8h_a7456c48bfd011b04cc1c17baac5aa058}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+eal\+\_\+remote\+\_\+launch@{rte\+\_\+eal\+\_\+remote\+\_\+launch}}
+\index{rte\+\_\+eal\+\_\+remote\+\_\+launch@{rte\+\_\+eal\+\_\+remote\+\_\+launch}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+remote\+\_\+launch}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+remote\+\_\+launch (
+\begin{DoxyParamCaption}
+\item[{{\bf lcore\+\_\+function\+\_\+t} $\ast$}]{f, }
+\item[{void $\ast$}]{arg, }
+\item[{unsigned}]{slave\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__launch_8h_a7456c48bfd011b04cc1c17baac5aa058}
+Launch a function on another lcore.
+
+To be executed on the M\+A\+S\+T\+E\+R lcore only.
+
+Sends a message to a slave lcore (identified by the slave\+\_\+id) that is in the W\+A\+I\+T state (this is true after the first call to \hyperlink{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}{rte\+\_\+eal\+\_\+init()}). This can be checked by first calling rte\+\_\+eal\+\_\+wait\+\_\+lcore(slave\+\_\+id).
+
+When the remote lcore receives the message, it switches to the R\+U\+N\+N\+I\+N\+G state, then calls the function f with argument arg. Once the execution is done, the remote lcore switches to a F\+I\+N\+I\+S\+H\+E\+D state and the return value of f is stored in a local variable to be read using \hyperlink{rte__launch_8h_a1282dc7cd7e6793afab3ef29239ddf54}{rte\+\_\+eal\+\_\+wait\+\_\+lcore()}.
+
+The M\+A\+S\+T\+E\+R lcore returns as soon as the message is sent and knows nothing about the completion of f.
+
+Note\+: This function is not designed to offer optimum performance. It is just a practical way to launch a function on another lcore at initialization time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The function to be called. \\
+\hline
+{\em arg} & The argument for the function. \\
+\hline
+{\em slave\+\_\+id} & The identifier of the lcore on which the function should be executed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success. Execution of function f started on the remote lcore.
+\item (-\/\+E\+B\+U\+S\+Y)\+: The remote lcore is not in a W\+A\+I\+T state. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__launch_8h_a1282dc7cd7e6793afab3ef29239ddf54}{}\index{rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}!rte\+\_\+eal\+\_\+wait\+\_\+lcore@{rte\+\_\+eal\+\_\+wait\+\_\+lcore}}
+\index{rte\+\_\+eal\+\_\+wait\+\_\+lcore@{rte\+\_\+eal\+\_\+wait\+\_\+lcore}!rte\+\_\+launch.\+h@{rte\+\_\+launch.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+wait\+\_\+lcore}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+wait\+\_\+lcore (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{slave\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__launch_8h_a1282dc7cd7e6793afab3ef29239ddf54}
+Wait until an lcore finishes its job.
+
+To be executed on the M\+A\+S\+T\+E\+R lcore only.
+
+If the slave lcore identified by the slave\+\_\+id is in a F\+I\+N\+I\+S\+H\+E\+D state, switch to the W\+A\+I\+T state. If the lcore is in R\+U\+N\+N\+I\+N\+G state, wait until the lcore finishes its job and moves to the F\+I\+N\+I\+S\+H\+E\+D state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+id} & The identifier of the lcore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: If the lcore identified by the slave\+\_\+id is in a W\+A\+I\+T state.
+\item The value that was returned by the previous remote launch function call if the lcore identified by the slave\+\_\+id was in a F\+I\+N\+I\+S\+H\+E\+D or R\+U\+N\+N\+I\+N\+G state. In this case, it changes the state of the lcore to W\+A\+I\+T. 
+\end{DoxyItemize}
+\end{DoxyReturn}

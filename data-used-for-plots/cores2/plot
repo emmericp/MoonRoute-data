@@ -1,0 +1,55 @@
+#!/usr/bin/gnuplot
+
+set terminal epslatex color blacktext
+set output "plot.tex"
+#set title "Performance using multiple cores"
+set xlabel "Number of cores"
+set ylabel "Throughput per core [Mp/s]"
+set grid mxtics x
+set grid mytics y
+set key above vertical maxrows 2
+#set key at 119,9.5
+#set logscale y
+#set logscale x
+
+
+#set yrange [0.08:1]
+set xrange [0:8]
+set yrange [0:10000/84/8]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+data = 'data'
+
+m = 1
+t = 1
+g(x) = m*x + t
+fit [1:2] g(x) 'data_2.0GHz' using 1:2:3 via m, t
+m2 = 1
+t2 = 1
+g2(x) = m2*x + t2
+fit [1:3] g2(x) 'data_2.0_randomGHz' using 1:2:3 via m2, t2
+m3 = 1
+t3 = 1
+g3(x) = m3*x + t3
+fit [1:4] g3(x) 'data_1.2GHz' using 1:2:3 via m3, t3
+m4 = 1
+t4 = 1
+g4(x) = m4*x + t4
+fit [1:5] g4(x) 'data_1.2_randomGHz' using 1:2:3 via m4, t4
+
+bw=0.2
+bw2=bw/2
+set boxwidth bw
+set style fill solid 0.2
+set xtics (1, 2, 3, 4, 5, 6, 7)
+
+plot \
+  'data_2.0GHz'         using ($1-3*bw2):($2/84/8/$1):($3/84/8/$1) with boxerrorbars title "2.0GHz single" lc 7,\
+  'data_2.0_randomGHz'  using ($1-bw2):($2/84/8/$1):($3/84/8/$1) with boxerrorbars title "2.0GHz random" lc 2 fill solid 0.1,\
+  'data_1.2GHz'         using ($1+bw2):($2/84/8/$1):($3/84/8/$1) with boxerrorbars title "1.2GHz single" lc 8,\
+  'data_1.2_randomGHz'  using ($1+3*bw2):($2/84/8/$1):($3/84/8/$1) with boxerrorbars title "1.2GHz random" lt rgb "#5050ff",\
+
+#eich using ( $0/10 ):($1*10*3.6/80) title "front" with linespoints, eich using ($0/10):($2*10*3.6/80) title "rear" with linespoints, eich using ($0/10):($3*10*3.6/80) title "desired" with linespoints,eich using  ($0/10):(-($4-4000)/4000*10) title "engine power" with linespoints
+

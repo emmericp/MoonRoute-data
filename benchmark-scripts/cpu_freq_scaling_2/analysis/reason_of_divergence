@@ -1,0 +1,1 @@
+with higher cpu frequency cache misses get more costy, as Lmemory access is constant time

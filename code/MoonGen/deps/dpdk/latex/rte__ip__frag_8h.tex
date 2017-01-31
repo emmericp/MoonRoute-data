@@ -1,0 +1,137 @@
+\hypertarget{rte__ip__frag_8h}{}\section{lib/librte\+\_\+ip\+\_\+frag/rte\+\_\+ip\+\_\+frag.h File Reference}
+\label{rte__ip__frag_8h}\index{lib/librte\+\_\+ip\+\_\+frag/rte\+\_\+ip\+\_\+frag.\+h@{lib/librte\+\_\+ip\+\_\+frag/rte\+\_\+ip\+\_\+frag.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+malloc.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+ip.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+byteorder.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__ip__frag__death__row}{rte\+\_\+ip\+\_\+frag\+\_\+death\+\_\+row}
+\item 
+struct \hyperlink{structip__frag__tbl__stat}{ip\+\_\+frag\+\_\+tbl\+\_\+stat}
+\item 
+struct \hyperlink{structrte__ip__frag__tbl}{rte\+\_\+ip\+\_\+frag\+\_\+tbl}
+\item 
+struct \hyperlink{structipv6__extension__fragment}{ipv6\+\_\+extension\+\_\+fragment}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__ip__frag_8h_a42258c62091fdfe18263215c9682964c}{I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N}~32
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a0f846ec86005d86bd9d696bbde76f120}{I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}, 
+\hyperlink{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a4f87105682877810dd4e36afef937f5a}{I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}, 
+\hyperlink{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409af617418f5d898ea68b626b0f736fff66}{I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M}, 
+\hyperlink{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409afe920c928a60243e882269a26376c418}{I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M} = R\+T\+E\+\_\+\+L\+I\+B\+R\+T\+E\+\_\+\+I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{rte__ip__frag_8h_ae3e47fcd41f6ee74b920eabc0bc86565}{rte\+\_\+ipv6\+\_\+fragment\+\_\+packet} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt\+\_\+in, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts\+\_\+out, uint16\+\_\+t nb\+\_\+pkts\+\_\+out, uint16\+\_\+t mtu\+\_\+size, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pool\+\_\+direct, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pool\+\_\+indirect)
+\item 
+int32\+\_\+t \hyperlink{rte__ip__frag_8h_a0ec59118790a4babb24bd5636b1e60d9}{rte\+\_\+ipv4\+\_\+fragment\+\_\+packet} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt\+\_\+in, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts\+\_\+out, uint16\+\_\+t nb\+\_\+pkts\+\_\+out, uint16\+\_\+t mtu\+\_\+size, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pool\+\_\+direct, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pool\+\_\+indirect)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E I\+P Fragmentation and Reassembly
+
+Implementation of I\+P packet fragmentation and reassembly. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__ip__frag_8h_a42258c62091fdfe18263215c9682964c}{}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N@{I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N}}
+\index{I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N@{I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}
+\subsubsection[{I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+\_\+\+F\+R\+A\+G\+\_\+\+D\+E\+A\+T\+H\+\_\+\+R\+O\+W\+\_\+\+L\+E\+N~32}\label{rte__ip__frag_8h_a42258c62091fdfe18263215c9682964c}
+death row size (in packets) 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X@{I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X@{I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}}\item[{\em 
+\hypertarget{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a0f846ec86005d86bd9d696bbde76f120}{}I\+P\+\_\+\+L\+A\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X\label{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a0f846ec86005d86bd9d696bbde76f120}
+}]index of last fragment \index{I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X@{I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X@{I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X}}\item[{\em 
+\hypertarget{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a4f87105682877810dd4e36afef937f5a}{}I\+P\+\_\+\+F\+I\+R\+S\+T\+\_\+\+F\+R\+A\+G\+\_\+\+I\+D\+X\label{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409a4f87105682877810dd4e36afef937f5a}
+}]index of first fragment \index{I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M@{I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M@{I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M}}\item[{\em 
+\hypertarget{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409af617418f5d898ea68b626b0f736fff66}{}I\+P\+\_\+\+M\+I\+N\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M\label{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409af617418f5d898ea68b626b0f736fff66}
+}]minimum number of fragments \index{I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M@{I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M@{I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M}}\item[{\em 
+\hypertarget{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409afe920c928a60243e882269a26376c418}{}I\+P\+\_\+\+M\+A\+X\+\_\+\+F\+R\+A\+G\+\_\+\+N\+U\+M\label{rte__ip__frag_8h_adb49720dc49f7d4e4cf9adbf2948e409afe920c928a60243e882269a26376c418}
+}]maximum number of fragments per packet \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__ip__frag_8h_a0ec59118790a4babb24bd5636b1e60d9}{}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!rte\+\_\+ipv4\+\_\+fragment\+\_\+packet@{rte\+\_\+ipv4\+\_\+fragment\+\_\+packet}}
+\index{rte\+\_\+ipv4\+\_\+fragment\+\_\+packet@{rte\+\_\+ipv4\+\_\+fragment\+\_\+packet}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}
+\subsubsection[{rte\+\_\+ipv4\+\_\+fragment\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+ipv4\+\_\+fragment\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{pkt\+\_\+in, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{pkts\+\_\+out, }
+\item[{uint16\+\_\+t}]{nb\+\_\+pkts\+\_\+out, }
+\item[{uint16\+\_\+t}]{mtu\+\_\+size, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pool\+\_\+direct, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pool\+\_\+indirect}
+\end{DoxyParamCaption}
+)}\label{rte__ip__frag_8h_a0ec59118790a4babb24bd5636b1e60d9}
+I\+Pv4 fragmentation.
+
+This function implements the fragmentation of I\+Pv4 packets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt\+\_\+in} & The input packet. \\
+\hline
+{\em pkts\+\_\+out} & Array storing the output fragments. \\
+\hline
+{\em nb\+\_\+pkts\+\_\+out} & Number of fragments. \\
+\hline
+{\em mtu\+\_\+size} & Size in bytes of the Maximum Transfer Unit (M\+T\+U) for the outgoing I\+Pv4 datagrams. This value includes the size of the I\+Pv4 header. \\
+\hline
+{\em pool\+\_\+direct} & M\+B\+U\+F pool used for allocating direct buffers for the output fragments. \\
+\hline
+{\em pool\+\_\+indirect} & M\+B\+U\+F pool used for allocating indirect buffers for the output fragments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon successful completion -\/ number of output fragments placed in the pkts\+\_\+out array. Otherwise -\/ (-\/1) $\ast$ errno. 
+\end{DoxyReturn}
+\hypertarget{rte__ip__frag_8h_ae3e47fcd41f6ee74b920eabc0bc86565}{}\index{rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}!rte\+\_\+ipv6\+\_\+fragment\+\_\+packet@{rte\+\_\+ipv6\+\_\+fragment\+\_\+packet}}
+\index{rte\+\_\+ipv6\+\_\+fragment\+\_\+packet@{rte\+\_\+ipv6\+\_\+fragment\+\_\+packet}!rte\+\_\+ip\+\_\+frag.\+h@{rte\+\_\+ip\+\_\+frag.\+h}}
+\subsubsection[{rte\+\_\+ipv6\+\_\+fragment\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+ipv6\+\_\+fragment\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{pkt\+\_\+in, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{pkts\+\_\+out, }
+\item[{uint16\+\_\+t}]{nb\+\_\+pkts\+\_\+out, }
+\item[{uint16\+\_\+t}]{mtu\+\_\+size, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pool\+\_\+direct, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pool\+\_\+indirect}
+\end{DoxyParamCaption}
+)}\label{rte__ip__frag_8h_ae3e47fcd41f6ee74b920eabc0bc86565}
+This function implements the fragmentation of I\+Pv6 packets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt\+\_\+in} & The input packet. \\
+\hline
+{\em pkts\+\_\+out} & Array storing the output fragments. \\
+\hline
+{\em nb\+\_\+pkts\+\_\+out} & Number of fragments. \\
+\hline
+{\em mtu\+\_\+size} & Size in bytes of the Maximum Transfer Unit (M\+T\+U) for the outgoing I\+Pv6 datagrams. This value includes the size of the I\+Pv6 header. \\
+\hline
+{\em pool\+\_\+direct} & M\+B\+U\+F pool used for allocating direct buffers for the output fragments. \\
+\hline
+{\em pool\+\_\+indirect} & M\+B\+U\+F pool used for allocating indirect buffers for the output fragments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon successful completion -\/ number of output fragments placed in the pkts\+\_\+out array. Otherwise -\/ (-\/1) $\ast$ errno. 
+\end{DoxyReturn}

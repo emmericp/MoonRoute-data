@@ -1,0 +1,5 @@
+perf stat -C 1 -x , -e cpu/event=0xd1,umask=0x20,name=mem_load_uops_retired_llc_miss/,cpu/event=0xd1,umask=0x10,name=mem_load_uops_retired_l2_miss/,cpu/event=0xd1,umask=0x8,name=mem_load_uops_retired_l1_miss/ sleep 1
+95,mem_load_uops_retired_llc_miss
+1601,mem_load_uops_retired_l2_miss
+1568,mem_load_uops_retired_l1_miss
+

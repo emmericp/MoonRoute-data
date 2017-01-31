@@ -1,0 +1,35 @@
+\hypertarget{structrte__table__lpm__ipv6__params}{}\section{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params Struct Reference}
+\label{structrte__table__lpm__ipv6__params}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+table\+\_\+lpm\+\_\+ipv6.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__lpm__ipv6__params_a36f832c0360005ce685ffab87c3e188a}{n\+\_\+rules}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__lpm__ipv6__params_ada28744213d85f24111422f3a8b70725}{entry\+\_\+unique\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__table__lpm__ipv6__params_a894bdfa2d603d8343f8ef01dda6fcd23}{offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+L\+P\+M table parameters 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__table__lpm__ipv6__params_ada28744213d85f24111422f3a8b70725}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}!entry\+\_\+unique\+\_\+size@{entry\+\_\+unique\+\_\+size}}
+\index{entry\+\_\+unique\+\_\+size@{entry\+\_\+unique\+\_\+size}!rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}}
+\subsubsection[{entry\+\_\+unique\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entry\+\_\+unique\+\_\+size}\label{structrte__table__lpm__ipv6__params_ada28744213d85f24111422f3a8b70725}
+Number of bytes at the start of the table entry that uniquely identify the entry. Cannot be bigger than table entry size. \hypertarget{structrte__table__lpm__ipv6__params_a36f832c0360005ce685ffab87c3e188a}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}!n\+\_\+rules@{n\+\_\+rules}}
+\index{n\+\_\+rules@{n\+\_\+rules}!rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}}
+\subsubsection[{n\+\_\+rules}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t n\+\_\+rules}\label{structrte__table__lpm__ipv6__params_a36f832c0360005ce685ffab87c3e188a}
+Maximum number of L\+P\+M rules (i.\+e. I\+P routes) \hypertarget{structrte__table__lpm__ipv6__params_a894bdfa2d603d8343f8ef01dda6fcd23}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}!offset@{offset}}
+\index{offset@{offset}!rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+params}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t offset}\label{structrte__table__lpm__ipv6__params_a894bdfa2d603d8343f8ef01dda6fcd23}
+Byte offset within input packet meta-\/data where lookup key (i.\+e. the destination I\+P address) is located. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+table/\hyperlink{rte__table__lpm__ipv6_8h}{rte\+\_\+table\+\_\+lpm\+\_\+ipv6.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,203 @@
+\hypertarget{rte__meter_8h}{}\section{lib/librte\+\_\+meter/rte\+\_\+meter.h File Reference}
+\label{rte__meter_8h}\index{lib/librte\+\_\+meter/rte\+\_\+meter.\+h@{lib/librte\+\_\+meter/rte\+\_\+meter.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__meter__srtcm__params}{rte\+\_\+meter\+\_\+srtcm\+\_\+params}
+\item 
+struct \hyperlink{structrte__meter__trtcm__params}{rte\+\_\+meter\+\_\+trtcm\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} \{ \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aa635687a12163cdd741edb786ba5419ec}{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N} = 0, 
+\hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aaebaa52dbbb6d8b9c60df0093dce62c47}{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W}, 
+\hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aae65749b902d61cafb58aa85c0e0849fb}{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D}, 
+\hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aabc1b9f1c718a0bf520cd06be98c4843f}{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__meter_8h_a01a283703dabcbac272b7e41050f8b9b}{rte\+\_\+meter\+\_\+srtcm\+\_\+config} (struct rte\+\_\+meter\+\_\+srtcm $\ast$m, struct \hyperlink{structrte__meter__srtcm__params}{rte\+\_\+meter\+\_\+srtcm\+\_\+params} $\ast$params)
+\item 
+int \hyperlink{rte__meter_8h_aaaa33ed2bcea0c512d9b798911b96081}{rte\+\_\+meter\+\_\+trtcm\+\_\+config} (struct rte\+\_\+meter\+\_\+trtcm $\ast$m, struct \hyperlink{structrte__meter__trtcm__params}{rte\+\_\+meter\+\_\+trtcm\+\_\+params} $\ast$params)
+\item 
+static enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} \hyperlink{rte__meter_8h_a6abc845a7ef0efa0f4a3f479b5510da7}{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check} (struct rte\+\_\+meter\+\_\+srtcm $\ast$m, uint64\+\_\+t time, uint32\+\_\+t pkt\+\_\+len)
+\item 
+static enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} \hyperlink{rte__meter_8h_abe2bf683a4d0ba68ac88d562ccd9bfd5}{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check} (struct rte\+\_\+meter\+\_\+srtcm $\ast$m, uint64\+\_\+t time, uint32\+\_\+t pkt\+\_\+len, enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} pkt\+\_\+color)
+\item 
+static enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} \hyperlink{rte__meter_8h_a685735c00a11b66cc923ad0b100eb688}{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check} (struct rte\+\_\+meter\+\_\+trtcm $\ast$m, uint64\+\_\+t time, uint32\+\_\+t pkt\+\_\+len)
+\item 
+static enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} \hyperlink{rte__meter_8h_a4ffda8418d9d6fec25368a3e0dc32b70}{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check} (struct rte\+\_\+meter\+\_\+trtcm $\ast$m, uint64\+\_\+t time, uint32\+\_\+t pkt\+\_\+len, enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} pkt\+\_\+color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Traffic Metering
+
+Traffic metering algorithms\+:
+\begin{DoxyEnumerate}
+\item Single Rate Three Color Marker (sr\+T\+C\+M)\+: defined by I\+E\+T\+F R\+F\+C 2697
+\item Two Rate Three Color Marker (tr\+T\+C\+M)\+: defined by I\+E\+T\+F R\+F\+C 2698 
+\end{DoxyEnumerate}
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+color@{rte\+\_\+meter\+\_\+color}}
+\index{rte\+\_\+meter\+\_\+color@{rte\+\_\+meter\+\_\+color}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+color}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+meter\+\_\+color}}\label{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}
+Packet Color Set \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N}}\item[{\em 
+\hypertarget{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aa635687a12163cdd741edb786ba5419ec}{}e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+G\+R\+E\+E\+N\label{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aa635687a12163cdd741edb786ba5419ec}
+}]Green \index{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W}}\item[{\em 
+\hypertarget{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aaebaa52dbbb6d8b9c60df0093dce62c47}{}e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+Y\+E\+L\+L\+O\+W\label{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aaebaa52dbbb6d8b9c60df0093dce62c47}
+}]Yellow \index{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D}}\item[{\em 
+\hypertarget{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aae65749b902d61cafb58aa85c0e0849fb}{}e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+R\+E\+D\label{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aae65749b902d61cafb58aa85c0e0849fb}
+}]Red \index{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S@{e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S}}\item[{\em 
+\hypertarget{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aabc1b9f1c718a0bf520cd06be98c4843f}{}e\+\_\+\+R\+T\+E\+\_\+\+M\+E\+T\+E\+R\+\_\+\+C\+O\+L\+O\+R\+S\label{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3aabc1b9f1c718a0bf520cd06be98c4843f}
+}]Number of available colors \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__meter_8h_abe2bf683a4d0ba68ac88d562ccd9bfd5}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check@{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check}}
+\index{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check@{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}static enum {\bf rte\+\_\+meter\+\_\+color} rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+aware\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+srtcm $\ast$}]{m, }
+\item[{uint64\+\_\+t}]{time, }
+\item[{uint32\+\_\+t}]{pkt\+\_\+len, }
+\item[{enum {\bf rte\+\_\+meter\+\_\+color}}]{pkt\+\_\+color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__meter_8h_abe2bf683a4d0ba68ac88d562ccd9bfd5}
+sr\+T\+C\+M color aware traffic metering
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Handle to sr\+T\+C\+M instance \\
+\hline
+{\em time} & Current C\+P\+U time stamp (measured in C\+P\+U cycles) \\
+\hline
+{\em pkt\+\_\+length} & Length of the current I\+P packet (measured in bytes) \\
+\hline
+{\em pkt\+\_\+color} & Input color of the current I\+P packet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Color assigned to the current I\+P packet 
+\end{DoxyReturn}
+\hypertarget{rte__meter_8h_a6abc845a7ef0efa0f4a3f479b5510da7}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check@{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check}}
+\index{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check@{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}static enum {\bf rte\+\_\+meter\+\_\+color} rte\+\_\+meter\+\_\+srtcm\+\_\+color\+\_\+blind\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+srtcm $\ast$}]{m, }
+\item[{uint64\+\_\+t}]{time, }
+\item[{uint32\+\_\+t}]{pkt\+\_\+len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__meter_8h_a6abc845a7ef0efa0f4a3f479b5510da7}
+sr\+T\+C\+M color blind traffic metering
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Handle to sr\+T\+C\+M instance \\
+\hline
+{\em time} & Current C\+P\+U time stamp (measured in C\+P\+U cycles) \\
+\hline
+{\em pkt\+\_\+length} & Length of the current I\+P packet (measured in bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Color assigned to the current I\+P packet 
+\end{DoxyReturn}
+\hypertarget{rte__meter_8h_a01a283703dabcbac272b7e41050f8b9b}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+srtcm\+\_\+config@{rte\+\_\+meter\+\_\+srtcm\+\_\+config}}
+\index{rte\+\_\+meter\+\_\+srtcm\+\_\+config@{rte\+\_\+meter\+\_\+srtcm\+\_\+config}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+srtcm\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+meter\+\_\+srtcm\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+srtcm $\ast$}]{m, }
+\item[{struct {\bf rte\+\_\+meter\+\_\+srtcm\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__meter_8h_a01a283703dabcbac272b7e41050f8b9b}
+sr\+T\+C\+M configuration per metered traffic flow
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Pointer to pre-\/allocated sr\+T\+C\+M data structure \\
+\hline
+{\em params} & User parameters per sr\+T\+C\+M metered traffic flow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__meter_8h_a4ffda8418d9d6fec25368a3e0dc32b70}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check@{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check}}
+\index{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check@{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}static enum {\bf rte\+\_\+meter\+\_\+color} rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+aware\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+trtcm $\ast$}]{m, }
+\item[{uint64\+\_\+t}]{time, }
+\item[{uint32\+\_\+t}]{pkt\+\_\+len, }
+\item[{enum {\bf rte\+\_\+meter\+\_\+color}}]{pkt\+\_\+color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__meter_8h_a4ffda8418d9d6fec25368a3e0dc32b70}
+tr\+T\+C\+M color aware traffic metering
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Handle to tr\+T\+C\+M instance \\
+\hline
+{\em time} & Current C\+P\+U time stamp (measured in C\+P\+U cycles) \\
+\hline
+{\em pkt\+\_\+length} & Length of the current I\+P packet (measured in bytes) \\
+\hline
+{\em pkt\+\_\+color} & Input color of the current I\+P packet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Color assigned to the current I\+P packet 
+\end{DoxyReturn}
+\hypertarget{rte__meter_8h_a685735c00a11b66cc923ad0b100eb688}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check@{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check}}
+\index{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check@{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}static enum {\bf rte\+\_\+meter\+\_\+color} rte\+\_\+meter\+\_\+trtcm\+\_\+color\+\_\+blind\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+trtcm $\ast$}]{m, }
+\item[{uint64\+\_\+t}]{time, }
+\item[{uint32\+\_\+t}]{pkt\+\_\+len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__meter_8h_a685735c00a11b66cc923ad0b100eb688}
+tr\+T\+C\+M color blind traffic metering
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Handle to tr\+T\+C\+M instance \\
+\hline
+{\em time} & Current C\+P\+U time stamp (measured in C\+P\+U cycles) \\
+\hline
+{\em pkt\+\_\+length} & Length of the current I\+P packet (measured in bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Color assigned to the current I\+P packet 
+\end{DoxyReturn}
+\hypertarget{rte__meter_8h_aaaa33ed2bcea0c512d9b798911b96081}{}\index{rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}!rte\+\_\+meter\+\_\+trtcm\+\_\+config@{rte\+\_\+meter\+\_\+trtcm\+\_\+config}}
+\index{rte\+\_\+meter\+\_\+trtcm\+\_\+config@{rte\+\_\+meter\+\_\+trtcm\+\_\+config}!rte\+\_\+meter.\+h@{rte\+\_\+meter.\+h}}
+\subsubsection[{rte\+\_\+meter\+\_\+trtcm\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+meter\+\_\+trtcm\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+meter\+\_\+trtcm $\ast$}]{m, }
+\item[{struct {\bf rte\+\_\+meter\+\_\+trtcm\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__meter_8h_aaaa33ed2bcea0c512d9b798911b96081}
+tr\+T\+C\+M configuration per metered traffic flow
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Pointer to pre-\/allocated tr\+T\+C\+M data structure \\
+\hline
+{\em params} & User parameters per tr\+T\+C\+M metered traffic flow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}

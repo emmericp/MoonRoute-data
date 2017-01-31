@@ -1,0 +1,236 @@
+\hypertarget{rte__bitmap_8h}{}\section{lib/librte\+\_\+sched/rte\+\_\+bitmap.h File Reference}
+\label{rte__bitmap_8h}\index{lib/librte\+\_\+sched/rte\+\_\+bitmap.\+h@{lib/librte\+\_\+sched/rte\+\_\+bitmap.\+h}}
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+debug.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+prefetch.\+h$>$}\\*
+{\ttfamily \#include $<$tmmintrin.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{rte__bitmap_8h_a62cb3ed982d94c948669352dbe50545f}{rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint} (uint32\+\_\+t n\+\_\+bits)
+\item 
+static struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$ \hyperlink{rte__bitmap_8h_ad8be0de2db024794045b9fe74adb4678}{rte\+\_\+bitmap\+\_\+init} (uint32\+\_\+t n\+\_\+bits, uint8\+\_\+t $\ast$mem, uint32\+\_\+t mem\+\_\+size)
+\item 
+static int \hyperlink{rte__bitmap_8h_a490198760eaaf9a9d564a2a7a84f25cb}{rte\+\_\+bitmap\+\_\+free} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp)
+\item 
+static void \hyperlink{rte__bitmap_8h_acb51f3acdb709b19c9ca94a08bfdec50}{rte\+\_\+bitmap\+\_\+reset} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp)
+\item 
+static void \hyperlink{rte__bitmap_8h_a245818abde2b1832e706864274c11e94}{rte\+\_\+bitmap\+\_\+prefetch0} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t pos)
+\item 
+static uint64\+\_\+t \hyperlink{rte__bitmap_8h_a5b89bc7e8cfb31e59604936095ba8086}{rte\+\_\+bitmap\+\_\+get} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t pos)
+\item 
+static void \hyperlink{rte__bitmap_8h_afee8d22bec7a960a4a4870cbb5ea2086}{rte\+\_\+bitmap\+\_\+set} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t pos)
+\item 
+static void \hyperlink{rte__bitmap_8h_a68171b32a40a4087aaef7414f75811b5}{rte\+\_\+bitmap\+\_\+set\+\_\+slab} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t pos, uint64\+\_\+t slab)
+\item 
+static void \hyperlink{rte__bitmap_8h_a4bcf251ecdfe4b2a8648ad1a47348222}{rte\+\_\+bitmap\+\_\+clear} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t pos)
+\item 
+static int \hyperlink{rte__bitmap_8h_a8efcc6ef4112314724082124308ad711}{rte\+\_\+bitmap\+\_\+scan} (struct \hyperlink{structrte__bitmap}{rte\+\_\+bitmap} $\ast$bmp, uint32\+\_\+t $\ast$pos, uint64\+\_\+t $\ast$slab)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Bitmap
+
+The bitmap component provides a mechanism to manage large arrays of bits through bit get/set/clear and bit array scan operations.
+
+The bitmap scan operation is optimized for 64-\/bit C\+P\+Us using 64-\/byte cache lines. The bitmap is hierarchically organized using two arrays (array1 and array2), with each bit in array1 being associated with a full cache line (512 bits) of bitmap bits, which are stored in array2\+: the bit in array1 is set only when there is at least one bit set within its associated array2 bits, otherwise the bit in array1 is cleared. The read and write operations for array1 and array2 are always done in slabs of 64 bits.
+
+This bitmap is not thread safe. For lock free operation on a specific bitmap instance, a single writer thread performing bit set/clear operations is allowed, only the writer thread can do bitmap scan operations, while there can be several reader threads performing bit get operations in parallel with the writer thread. When the use of locking primitives is acceptable, the serialization of the bit set/clear and bitmap scan operations needs to be enforced by the caller, while the bit get operation does not require locking the bitmap. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__bitmap_8h_a4bcf251ecdfe4b2a8648ad1a47348222}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+clear@{rte\+\_\+bitmap\+\_\+clear}}
+\index{rte\+\_\+bitmap\+\_\+clear@{rte\+\_\+bitmap\+\_\+clear}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+bitmap\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a4bcf251ecdfe4b2a8648ad1a47348222}
+Bitmap bit clear
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & Bit position \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__bitmap_8h_a490198760eaaf9a9d564a2a7a84f25cb}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+free@{rte\+\_\+bitmap\+\_\+free}}
+\index{rte\+\_\+bitmap\+\_\+free@{rte\+\_\+bitmap\+\_\+free}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+bitmap\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a490198760eaaf9a9d564a2a7a84f25cb}
+Bitmap free
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_a5b89bc7e8cfb31e59604936095ba8086}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+get@{rte\+\_\+bitmap\+\_\+get}}
+\index{rte\+\_\+bitmap\+\_\+get@{rte\+\_\+bitmap\+\_\+get}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+bitmap\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a5b89bc7e8cfb31e59604936095ba8086}
+Bitmap bit get
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & Bit position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 when bit is cleared, non-\/zero when bit is set 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_a62cb3ed982d94c948669352dbe50545f}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint@{rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint}}
+\index{rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint@{rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+bitmap\+\_\+get\+\_\+memory\+\_\+footprint (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{n\+\_\+bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a62cb3ed982d94c948669352dbe50545f}
+Bitmap memory footprint calculation
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+bits} & Number of bits in the bitmap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap memory footprint measured in bytes on success, 0 on error 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_ad8be0de2db024794045b9fe74adb4678}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+init@{rte\+\_\+bitmap\+\_\+init}}
+\index{rte\+\_\+bitmap\+\_\+init@{rte\+\_\+bitmap\+\_\+init}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static struct {\bf rte\+\_\+bitmap}$\ast$ rte\+\_\+bitmap\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{n\+\_\+bits, }
+\item[{uint8\+\_\+t $\ast$}]{mem, }
+\item[{uint32\+\_\+t}]{mem\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__bitmap_8h_ad8be0de2db024794045b9fe74adb4678}
+Bitmap initialization
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em array2} & Base address of pre-\/allocated array2 \\
+\hline
+{\em n\+\_\+bits} & Number of pre-\/allocated bits in array2. Must be non-\/zero and multiple of 512. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_a245818abde2b1832e706864274c11e94}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+prefetch0@{rte\+\_\+bitmap\+\_\+prefetch0}}
+\index{rte\+\_\+bitmap\+\_\+prefetch0@{rte\+\_\+bitmap\+\_\+prefetch0}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+prefetch0}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+bitmap\+\_\+prefetch0 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a245818abde2b1832e706864274c11e94}
+Bitmap location prefetch into C\+P\+U L1 cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & Bit position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_acb51f3acdb709b19c9ca94a08bfdec50}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+reset@{rte\+\_\+bitmap\+\_\+reset}}
+\index{rte\+\_\+bitmap\+\_\+reset@{rte\+\_\+bitmap\+\_\+reset}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+bitmap\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_acb51f3acdb709b19c9ca94a08bfdec50}
+Bitmap reset
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__bitmap_8h_a8efcc6ef4112314724082124308ad711}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+scan@{rte\+\_\+bitmap\+\_\+scan}}
+\index{rte\+\_\+bitmap\+\_\+scan@{rte\+\_\+bitmap\+\_\+scan}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+scan}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+bitmap\+\_\+scan (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t $\ast$}]{pos, }
+\item[{uint64\+\_\+t $\ast$}]{slab}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a8efcc6ef4112314724082124308ad711}
+Bitmap scan (with automatic wrap-\/around)
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & When function call returns 1, pos contains the position of the next set bit, otherwise not modified \\
+\hline
+{\em slab} & When function call returns 1, slab contains the value of the entire 64-\/bit slab where the bit indicated by pos is located. Slabs are always 64-\/bit aligned, so the position of the first bit of the slab (this bit is not necessarily set) is pos / 64. Once a slab has been returned by the bitmap scan operation, the internal pointers of the bitmap are updated to point after this slab, so the same slab will not be returned again if it contains more than one bit which is set. When function call returns 0, slab is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if there is no bit set in the bitmap, 1 otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__bitmap_8h_afee8d22bec7a960a4a4870cbb5ea2086}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+set@{rte\+\_\+bitmap\+\_\+set}}
+\index{rte\+\_\+bitmap\+\_\+set@{rte\+\_\+bitmap\+\_\+set}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+bitmap\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_afee8d22bec7a960a4a4870cbb5ea2086}
+Bitmap bit set
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & Bit position \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__bitmap_8h_a68171b32a40a4087aaef7414f75811b5}{}\index{rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}!rte\+\_\+bitmap\+\_\+set\+\_\+slab@{rte\+\_\+bitmap\+\_\+set\+\_\+slab}}
+\index{rte\+\_\+bitmap\+\_\+set\+\_\+slab@{rte\+\_\+bitmap\+\_\+set\+\_\+slab}!rte\+\_\+bitmap.\+h@{rte\+\_\+bitmap.\+h}}
+\subsubsection[{rte\+\_\+bitmap\+\_\+set\+\_\+slab}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+bitmap\+\_\+set\+\_\+slab (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+bitmap} $\ast$}]{bmp, }
+\item[{uint32\+\_\+t}]{pos, }
+\item[{uint64\+\_\+t}]{slab}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__bitmap_8h_a68171b32a40a4087aaef7414f75811b5}
+Bitmap slab set
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & Handle to bitmap instance \\
+\hline
+{\em pos} & Bit position identifying the array2 slab \\
+\hline
+{\em slab} & Value to be assigned to the 64-\/bit slab in array2 \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,303 @@
+\hypertarget{rte__lpm_8h}{}\section{lib/librte\+\_\+lpm/rte\+\_\+lpm.h File Reference}
+\label{rte__lpm_8h}\index{lib/librte\+\_\+lpm/rte\+\_\+lpm.\+h@{lib/librte\+\_\+lpm/rte\+\_\+lpm.\+h}}
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+common\+\_\+vect.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__lpm_8h_a89212b12cc0712bf0464399e654c9f25}{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{rte__lpm_8h_acf0e506aba75100fcc22c35362fd2ed4}{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P}~0
+\item 
+\#define \hyperlink{rte__lpm_8h_afc87a0a0cad13bf88e3a65649f4d6beb}{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E}~1
+\item 
+\#define \hyperlink{rte__lpm_8h_a00207b4fecdb9058c4072a59abac1d52}{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H}~32
+\item 
+\#define \hyperlink{rte__lpm_8h_a8ae31c18e8e385d52aa68cd2787d7e2a}{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S}~0x0100
+\item 
+\#define \hyperlink{rte__lpm_8h_a50015c45c3fde72568c8ba303ded2288}{rte\+\_\+lpm\+\_\+lookup\+\_\+bulk}(lpm,  ips,  next\+\_\+hops,  n)~rte\+\_\+lpm\+\_\+lookup\+\_\+bulk\+\_\+func(lpm, ips, next\+\_\+hops, n)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+lpm $\ast$ \hyperlink{rte__lpm_8h_a4efdaed45193082d0ad6ca23b9b33d87}{rte\+\_\+lpm\+\_\+create} (const char $\ast$name, int socket\+\_\+id, int max\+\_\+rules, int flags)
+\item 
+struct rte\+\_\+lpm $\ast$ \hyperlink{rte__lpm_8h_a31022533b1dadc320b8e4dad049d5213}{rte\+\_\+lpm\+\_\+find\+\_\+existing} (const char $\ast$name)
+\item 
+void \hyperlink{rte__lpm_8h_a79ddd328a0546c49cdc7ab10ea8d2765}{rte\+\_\+lpm\+\_\+free} (struct rte\+\_\+lpm $\ast$lpm)
+\item 
+int \hyperlink{rte__lpm_8h_aefdf3e8c17afd27e4389222f97f637b6}{rte\+\_\+lpm\+\_\+add} (struct rte\+\_\+lpm $\ast$lpm, uint32\+\_\+t ip, uint8\+\_\+t depth, uint8\+\_\+t next\+\_\+hop)
+\item 
+int \hyperlink{rte__lpm_8h_a5f813f7871d3850619f94f588dbef3a1}{rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present} (struct rte\+\_\+lpm $\ast$lpm, uint32\+\_\+t ip, uint8\+\_\+t depth, uint8\+\_\+t $\ast$next\+\_\+hop)
+\item 
+int \hyperlink{rte__lpm_8h_a16edbff0196beb69b413827c7ef5bfa4}{rte\+\_\+lpm\+\_\+delete} (struct rte\+\_\+lpm $\ast$lpm, uint32\+\_\+t ip, uint8\+\_\+t depth)
+\item 
+void \hyperlink{rte__lpm_8h_ab285af0847c33a5a6f1c7aedc6b00ba1}{rte\+\_\+lpm\+\_\+delete\+\_\+all} (struct rte\+\_\+lpm $\ast$lpm)
+\item 
+static int \hyperlink{rte__lpm_8h_a1a10aea83bb2088887ef170a9fca9c9f}{rte\+\_\+lpm\+\_\+lookup} (struct rte\+\_\+lpm $\ast$lpm, uint32\+\_\+t ip, uint8\+\_\+t $\ast$next\+\_\+hop)
+\item 
+static void \hyperlink{rte__lpm_8h_ab589b06a6805dc8db509e4b0bfff3443}{rte\+\_\+lpm\+\_\+lookupx4} (const struct rte\+\_\+lpm $\ast$lpm, \+\_\+\+\_\+m128i ip, uint16\+\_\+t hop\mbox{[}4\mbox{]}, uint16\+\_\+t defv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Longest Prefix Match (L\+P\+M) 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__lpm_8h_acf0e506aba75100fcc22c35362fd2ed4}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P}}
+\index{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+H\+E\+A\+P~0}\label{rte__lpm_8h_acf0e506aba75100fcc22c35362fd2ed4}
+\hypertarget{rte__lpm_8h_a50015c45c3fde72568c8ba303ded2288}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+lookup\+\_\+bulk@{rte\+\_\+lpm\+\_\+lookup\+\_\+bulk}}
+\index{rte\+\_\+lpm\+\_\+lookup\+\_\+bulk@{rte\+\_\+lpm\+\_\+lookup\+\_\+bulk}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+lookup\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+lpm\+\_\+lookup\+\_\+bulk(
+\begin{DoxyParamCaption}
+\item[{}]{lpm, }
+\item[{}]{ips, }
+\item[{}]{next\+\_\+hops, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~rte\+\_\+lpm\+\_\+lookup\+\_\+bulk\+\_\+func(lpm, ips, next\+\_\+hops, n)}\label{rte__lpm_8h_a50015c45c3fde72568c8ba303ded2288}
+Lookup multiple I\+P addresses in an L\+P\+M table. This may be implemented as a macro, so the address of the function should not be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ips} & Array of I\+Ps to be looked up in the L\+P\+M table \\
+\hline
+{\em next\+\_\+hops} & Next hop of the most specific rule found for I\+P (valid on lookup hit only). This is an array of two byte values. The most significant byte in each value says whether the lookup was successful (bitmask R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S is set). The least significant byte is the actual next hop. \\
+\hline
+{\em n} & Number of elements in ips (and next\+\_\+hops) array to lookup. This should be a compile time constant, and divisible by 8 for best performance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/\+E\+I\+N\+V\+A\+L for incorrect arguments, otherwise 0 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a8ae31c18e8e385d52aa68cd2787d7e2a}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S}}
+\index{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+S\+U\+C\+C\+E\+S\+S~0x0100}\label{rte__lpm_8h_a8ae31c18e8e385d52aa68cd2787d7e2a}
+Bitmask used to indicate successful lookup \hypertarget{rte__lpm_8h_a00207b4fecdb9058c4072a59abac1d52}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H}}
+\index{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+A\+X\+\_\+\+D\+E\+P\+T\+H~32}\label{rte__lpm_8h_a00207b4fecdb9058c4072a59abac1d52}
+Maximum depth value possible for I\+Pv4 L\+P\+M. \hypertarget{rte__lpm_8h_afc87a0a0cad13bf88e3a65649f4d6beb}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E}}
+\index{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+M\+E\+M\+Z\+O\+N\+E~1}\label{rte__lpm_8h_afc87a0a0cad13bf88e3a65649f4d6beb}
+\hypertarget{rte__lpm_8h_a89212b12cc0712bf0464399e654c9f25}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__lpm_8h_a89212b12cc0712bf0464399e654c9f25}
+Max number of characters in L\+P\+M name. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__lpm_8h_aefdf3e8c17afd27e4389222f97f637b6}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+add@{rte\+\_\+lpm\+\_\+add}}
+\index{rte\+\_\+lpm\+\_\+add@{rte\+\_\+lpm\+\_\+add}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+lpm\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm, }
+\item[{uint32\+\_\+t}]{ip, }
+\item[{uint8\+\_\+t}]{depth, }
+\item[{uint8\+\_\+t}]{next\+\_\+hop}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_aefdf3e8c17afd27e4389222f97f637b6}
+Add a rule to the L\+P\+M table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ip} & I\+P of the rule to be added to the L\+P\+M table \\
+\hline
+{\em depth} & Depth of the rule to be added to the L\+P\+M table \\
+\hline
+{\em next\+\_\+hop} & Next hop of the rule to be added to the L\+P\+M table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a4efdaed45193082d0ad6ca23b9b33d87}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+create@{rte\+\_\+lpm\+\_\+create}}
+\index{rte\+\_\+lpm\+\_\+create@{rte\+\_\+lpm\+\_\+create}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+lpm$\ast$ rte\+\_\+lpm\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int}]{socket\+\_\+id, }
+\item[{int}]{max\+\_\+rules, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_a4efdaed45193082d0ad6ca23b9b33d87}
+Create an L\+P\+M object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & L\+P\+M object name \\
+\hline
+{\em socket\+\_\+id} & N\+U\+M\+A socket I\+D for L\+P\+M table memory allocation \\
+\hline
+{\em max\+\_\+rules} & Maximum number of L\+P\+M rules that can be added \\
+\hline
+{\em flags} & This parameter is currently unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to L\+P\+M object on success, N\+U\+L\+L otherwise with rte\+\_\+errno set to an appropriate values. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the lpm object list
+\item E\+I\+N\+V\+A\+L -\/ invalid parameter passed to function
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a16edbff0196beb69b413827c7ef5bfa4}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+delete@{rte\+\_\+lpm\+\_\+delete}}
+\index{rte\+\_\+lpm\+\_\+delete@{rte\+\_\+lpm\+\_\+delete}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+lpm\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm, }
+\item[{uint32\+\_\+t}]{ip, }
+\item[{uint8\+\_\+t}]{depth}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_a16edbff0196beb69b413827c7ef5bfa4}
+Delete a rule from the L\+P\+M table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ip} & I\+P of the rule to be deleted from the L\+P\+M table \\
+\hline
+{\em depth} & Depth of the rule to be deleted from the L\+P\+M table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative value otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_ab285af0847c33a5a6f1c7aedc6b00ba1}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+delete\+\_\+all@{rte\+\_\+lpm\+\_\+delete\+\_\+all}}
+\index{rte\+\_\+lpm\+\_\+delete\+\_\+all@{rte\+\_\+lpm\+\_\+delete\+\_\+all}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+delete\+\_\+all}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+lpm\+\_\+delete\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_ab285af0847c33a5a6f1c7aedc6b00ba1}
+Delete all rules from the L\+P\+M table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__lpm_8h_a31022533b1dadc320b8e4dad049d5213}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+find\+\_\+existing@{rte\+\_\+lpm\+\_\+find\+\_\+existing}}
+\index{rte\+\_\+lpm\+\_\+find\+\_\+existing@{rte\+\_\+lpm\+\_\+find\+\_\+existing}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+find\+\_\+existing}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+lpm$\ast$ rte\+\_\+lpm\+\_\+find\+\_\+existing (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_a31022533b1dadc320b8e4dad049d5213}
+Find an existing L\+P\+M object and return a pointer to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the lpm object as passed to \hyperlink{rte__lpm_8h_a4efdaed45193082d0ad6ca23b9b33d87}{rte\+\_\+lpm\+\_\+create()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to lpm object or N\+U\+L\+L if object not found with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ required entry not available to return. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a79ddd328a0546c49cdc7ab10ea8d2765}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+free@{rte\+\_\+lpm\+\_\+free}}
+\index{rte\+\_\+lpm\+\_\+free@{rte\+\_\+lpm\+\_\+free}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+lpm\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_a79ddd328a0546c49cdc7ab10ea8d2765}
+Free an L\+P\+M object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a5f813f7871d3850619f94f588dbef3a1}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present@{rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present}}
+\index{rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present@{rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+lpm\+\_\+is\+\_\+rule\+\_\+present (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm, }
+\item[{uint32\+\_\+t}]{ip, }
+\item[{uint8\+\_\+t}]{depth, }
+\item[{uint8\+\_\+t $\ast$}]{next\+\_\+hop}
+\end{DoxyParamCaption}
+)}\label{rte__lpm_8h_a5f813f7871d3850619f94f588dbef3a1}
+Check if a rule is present in the L\+P\+M table, and provide its next hop if it is.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ip} & I\+P of the rule to be searched \\
+\hline
+{\em depth} & Depth of the rule to searched \\
+\hline
+{\em next\+\_\+hop} & Next hop of the rule (valid only if it is found) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the rule exists, 0 if it does not, a negative value on failure 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_a1a10aea83bb2088887ef170a9fca9c9f}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+lookup@{rte\+\_\+lpm\+\_\+lookup}}
+\index{rte\+\_\+lpm\+\_\+lookup@{rte\+\_\+lpm\+\_\+lookup}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+lpm\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+lpm $\ast$}]{lpm, }
+\item[{uint32\+\_\+t}]{ip, }
+\item[{uint8\+\_\+t $\ast$}]{next\+\_\+hop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lpm_8h_a1a10aea83bb2088887ef170a9fca9c9f}
+Lookup an I\+P into the L\+P\+M table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ip} & I\+P to be looked up in the L\+P\+M table \\
+\hline
+{\em next\+\_\+hop} & Next hop of the most specific rule found for I\+P (valid on lookup hit only) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/\+E\+I\+N\+V\+A\+L for incorrect arguments, -\/\+E\+N\+O\+E\+N\+T on lookup miss, 0 on lookup hit 
+\end{DoxyReturn}
+\hypertarget{rte__lpm_8h_ab589b06a6805dc8db509e4b0bfff3443}{}\index{rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}!rte\+\_\+lpm\+\_\+lookupx4@{rte\+\_\+lpm\+\_\+lookupx4}}
+\index{rte\+\_\+lpm\+\_\+lookupx4@{rte\+\_\+lpm\+\_\+lookupx4}!rte\+\_\+lpm.\+h@{rte\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+lpm\+\_\+lookupx4}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+lpm\+\_\+lookupx4 (
+\begin{DoxyParamCaption}
+\item[{const struct rte\+\_\+lpm $\ast$}]{lpm, }
+\item[{\+\_\+\+\_\+m128i}]{ip, }
+\item[{uint16\+\_\+t}]{hop\mbox{[}4\mbox{]}, }
+\item[{uint16\+\_\+t}]{defv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__lpm_8h_ab589b06a6805dc8db509e4b0bfff3443}
+Lookup four I\+P addresses in an L\+P\+M table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lpm} & L\+P\+M object handle \\
+\hline
+{\em ip} & Four I\+Ps to be looked up in the L\+P\+M table \\
+\hline
+{\em hop} & Next hop of the most specific rule found for I\+P (valid on lookup hit only). This is an 4 elements array of two byte values. If the lookup was succesfull for the given I\+P, then least significant byte of the corresponding element is the actual next hop and the most significant byte is zero. If the lookup for the given I\+P failed, then corresponding element would contain default value, see description of then next parameter. \\
+\hline
+{\em defv} & Default value to populate into corresponding element of hop\mbox{[}\mbox{]} array, if lookup would fail. \\
+\hline
+\end{DoxyParams}

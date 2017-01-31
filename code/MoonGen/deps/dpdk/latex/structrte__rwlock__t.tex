@@ -1,0 +1,27 @@
+\hypertarget{structrte__rwlock__t}{}\section{rte\+\_\+rwlock\+\_\+t Struct Reference}
+\label{structrte__rwlock__t}\index{rte\+\_\+rwlock\+\_\+t@{rte\+\_\+rwlock\+\_\+t}}
+
+
+{\ttfamily \#include $<$rte\+\_\+rwlock.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+volatile int32\+\_\+t \hyperlink{structrte__rwlock__t_aa6a259db31091b35fd46d2eba71a1112}{cnt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} type.
+
+cnt is -\/1 when write lock is held, and $>$ 0 when read locks are held. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__rwlock__t_aa6a259db31091b35fd46d2eba71a1112}{}\index{rte\+\_\+rwlock\+\_\+t@{rte\+\_\+rwlock\+\_\+t}!cnt@{cnt}}
+\index{cnt@{cnt}!rte\+\_\+rwlock\+\_\+t@{rte\+\_\+rwlock\+\_\+t}}
+\subsubsection[{cnt}]{\setlength{\rightskip}{0pt plus 5cm}volatile int32\+\_\+t cnt}\label{structrte__rwlock__t_aa6a259db31091b35fd46d2eba71a1112}
+-\/1 when W lock held, $>$ 0 when R locks held. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__rwlock_8h}{rte\+\_\+rwlock.\+h}\end{DoxyCompactItemize}

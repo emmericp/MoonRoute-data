@@ -1,0 +1,613 @@
+\hypertarget{rte__ip_8h}{}\section{lib/librte\+\_\+net/rte\+\_\+ip.h File Reference}
+\label{rte__ip_8h}\index{lib/librte\+\_\+net/rte\+\_\+ip.\+h@{lib/librte\+\_\+net/rte\+\_\+ip.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structipv4__hdr}{ipv4\+\_\+hdr}
+\item 
+struct \hyperlink{structipv6__hdr}{ipv6\+\_\+hdr}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__ip_8h_a052e2a96de0562a034776fa758255650}{I\+Pv4}(a,  b,  c,  d)
+\item 
+\#define \hyperlink{rte__ip_8h_abf96615d54d7d81630efc2e8f1770223}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P}~0
+\item 
+\#define \hyperlink{rte__ip_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S}~0
+\item 
+\#define \hyperlink{rte__ip_8h_a98edd0af28e1b5f97c806c9cae442339}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P}~1
+\item 
+\#define \hyperlink{rte__ip_8h_a27694062feaa6fa3bd01d6df67f36762}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}~2
+\item 
+\#define \hyperlink{rte__ip_8h_aaa167811bca5c964e9b051a10d962b1d}{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P}~3
+\item 
+\#define \hyperlink{rte__ip_8h_a560a5b023930d466359b6e243762f353}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4}~4
+\item 
+\#define \hyperlink{rte__ip_8h_a94f83c72c1e5e6ef453e47cf59885fb5}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}~6
+\item 
+\#define \hyperlink{rte__ip_8h_abcb20912686ddf2c5ec21c16d6b8f915}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T}~7
+\item 
+\#define \hyperlink{rte__ip_8h_a0dbdb7414bafce144ad9276f35715115}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P}~8
+\item 
+\#define \hyperlink{rte__ip_8h_ac3ff1bc61af8f7f53444e900323cbb0a}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P}~9
+\item 
+\#define \hyperlink{rte__ip_8h_a3c75debf99c3b197b38a0d3b68f8b45a}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N}~10
+\item 
+\#define \hyperlink{rte__ip_8h_a235e56744748c7c28712a573c73cf64c}{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I}~11
+\item 
+\#define \hyperlink{rte__ip_8h_aa05667a919736823cc5e264f7376b84a}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P}~12
+\item 
+\#define \hyperlink{rte__ip_8h_ace66899d9e234b2394fdc02776f551bf}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S}~13
+\item 
+\#define \hyperlink{rte__ip_8h_a11ea077a6edef15bee668148167620ad}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N}~14
+\item 
+\#define \hyperlink{rte__ip_8h_a6f86c5a1551606a27de541dff74333b5}{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T}~15
+\item 
+\#define \hyperlink{rte__ip_8h_a965d2a4d4c9c515a8fc41f8396049136}{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S}~16
+\item 
+\#define \hyperlink{rte__ip_8h_ab332d40b15142f33a88d4fcb1d6a5920}{I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}~17
+\item 
+\#define \hyperlink{rte__ip_8h_afc1bff8c2cd4d23e8eca9eeeabb6d269}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X}~18
+\item 
+\#define \hyperlink{rte__ip_8h_a5d0c71819732b647ab3c17495743246b}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S}~19
+\item 
+\#define \hyperlink{rte__ip_8h_a80102e98dd1a4adc3b0f3e9efc90cf71}{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P}~20
+\item 
+\#define \hyperlink{rte__ip_8h_a3bd16305df6ac25e0bf91c2c9bb0d276}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M}~21
+\item 
+\#define \hyperlink{rte__ip_8h_abfda09909326d0d4c6fe906fae58a960}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P}~22
+\item 
+\#define \hyperlink{rte__ip_8h_a740c840d0e8e6dc2a9452b0c2462ddc8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1}~23
+\item 
+\#define \hyperlink{rte__ip_8h_a8fe3466a29ae45820b2f3c26c8739a58}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2}~24
+\item 
+\#define \hyperlink{rte__ip_8h_a216f89af4ee042a00a6305c5e82255b6}{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1}~25
+\item 
+\#define \hyperlink{rte__ip_8h_a258f9494cec0c920ddf833d6f10596ac}{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2}~26
+\item 
+\#define \hyperlink{rte__ip_8h_a5093c88ce046862400281415ea29e725}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P}~27
+\item 
+\#define \hyperlink{rte__ip_8h_a06c93e09533c2d76783c0ed33b6687f8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P}~28
+\item 
+\#define \hyperlink{rte__ip_8h_abd12f7cd49e31aa1151bd96ac90cefcf}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P}~29
+\item 
+\#define \hyperlink{rte__ip_8h_afd9c6f628cd582d3f97bff0fa79bfc5d}{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T}~30
+\item 
+\#define \hyperlink{rte__ip_8h_aaac1f437a4be672c62d76ebdeabdb4fe}{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P}~31
+\item 
+\#define \hyperlink{rte__ip_8h_a9cc161659dba39234297ff5a1ac74ba4}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P}~32
+\item 
+\#define \hyperlink{rte__ip_8h_a579c26887e406691afd14e3f95d77ce0}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P}~33
+\item 
+\#define \hyperlink{rte__ip_8h_aca643191af5c34f375b94b4ab144de93}{I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C}~34
+\item 
+\#define \hyperlink{rte__ip_8h_a18a9db1d2bca19be0e092e868dfdfce4}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R}~35
+\item 
+\#define \hyperlink{rte__ip_8h_a6f720c09ecebad31ddbd8e7ef8461eb3}{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P}~36
+\item 
+\#define \hyperlink{rte__ip_8h_a9fcc8ae0ffc6a688cddca16c68a7cd66}{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P}~37
+\item 
+\#define \hyperlink{rte__ip_8h_a592ffd1cbe26ce5c797e5445189259c1}{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P}~38
+\item 
+\#define \hyperlink{rte__ip_8h_a0c496607210eda76ab3a258bcdb45271}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X}~39
+\item 
+\#define \hyperlink{rte__ip_8h_a219487deb0417533290242842c10f3ef}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L}~40
+\item 
+\#define \hyperlink{rte__ip_8h_a029fc3b9526146e54addf53ca297e629}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6}~41
+\item 
+\#define \hyperlink{rte__ip_8h_a42817806bfffa69c3b2400c2bc8995bc}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P}~42
+\item 
+\#define \hyperlink{rte__ip_8h_aedc955d9fee17d8992ad39fbc9feb7c7}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G}~43
+\item 
+\#define \hyperlink{rte__ip_8h_ab31ae8fef94a70e83dca388d8eb1e874}{I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T}~44
+\item 
+\#define \hyperlink{rte__ip_8h_a62597b602611ffd704a660085b927ffa}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P}~45
+\item 
+\#define \hyperlink{rte__ip_8h_ac4a89a21c39af8dba4cafa8c6973fe68}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P}~46
+\item 
+\#define \hyperlink{rte__ip_8h_a62b96b4d881982b3a6d911ddc0294f09}{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E}~47
+\item 
+\#define \hyperlink{rte__ip_8h_a6c762cf043c40f87db0f2854d2150b92}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P}~48
+\item 
+\#define \hyperlink{rte__ip_8h_ab508dabc468947025e3d2d56131e04e3}{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A}~49
+\item 
+\#define \hyperlink{rte__ip_8h_a4b9d5e2fbcca9ae84db04807a6693c31}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P}~50
+\item 
+\#define \hyperlink{rte__ip_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H}~51
+\item 
+\#define \hyperlink{rte__ip_8h_a49fc475ae836d9b8567a8d2bd1192c31}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P}~52
+\item 
+\#define \hyperlink{rte__ip_8h_ab4cac9b5e7e8cb08dfd45dc61feb6559}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E}~53
+\item 
+\#define \hyperlink{rte__ip_8h_a45ac38182d9438e5e93109233ae579e3}{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P}~54
+\item 
+\#define \hyperlink{rte__ip_8h_a3a52cdbaf5f9fc647399ef2481c8204d}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6}~58
+\item 
+\#define \hyperlink{rte__ip_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}~59
+\item 
+\#define \hyperlink{rte__ip_8h_a95d72ab52f56094df17a63accfe8f5e1}{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S}~60
+\item 
+\#define \hyperlink{rte__ip_8h_a635c9260f057d1bb50d6244faaecbfe0}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P}~61
+\item 
+\#define \hyperlink{rte__ip_8h_a68d0eaa5fe966be96bb9cc25a22cbce8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P}~62
+\item 
+\#define \hyperlink{rte__ip_8h_a60ddc95db60093a410528c1c85db07f6}{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O}~63
+\item 
+\#define \hyperlink{rte__ip_8h_ab3458c407b76949f0e2eb8b482730125}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K}~64
+\item 
+\#define \hyperlink{rte__ip_8h_a8c5a22c63fde45f14389d31293d8f594}{I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N}~65
+\item 
+\#define \hyperlink{rte__ip_8h_a2c8cbbaeffbadee4582a7e9fa7645c9e}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D}~66
+\item 
+\#define \hyperlink{rte__ip_8h_abea9bfc766cc319a9fdbea36d810c57f}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C}~67
+\item 
+\#define \hyperlink{rte__ip_8h_a9c9799031fcf937a810edf85f132c4ef}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S}~68
+\item 
+\#define \hyperlink{rte__ip_8h_ad3018efff0bef92a2f3c1c65211fc65f}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N}~69
+\item 
+\#define \hyperlink{rte__ip_8h_a083059234f730a11d727073b7caae05f}{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A}~70
+\item 
+\#define \hyperlink{rte__ip_8h_a0c6d47bf4973394d52b344a32fccf087}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V}~71
+\item 
+\#define \hyperlink{rte__ip_8h_a4f4711d125cf4bd146935ee1baf7aa6c}{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X}~72
+\item 
+\#define \hyperlink{rte__ip_8h_a8e54ba71dd059ac6fb50543abbde3e41}{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B}~73
+\item 
+\#define \hyperlink{rte__ip_8h_ac76e70d666af6221e2aec418db23f61c}{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N}~74
+\item 
+\#define \hyperlink{rte__ip_8h_a16deecd6a6d05de2dfdc8559dd7970c9}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P}~75
+\item 
+\#define \hyperlink{rte__ip_8h_a7152b9c8ed9f2bdc42497f05283f66ab}{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N}~76
+\item 
+\#define \hyperlink{rte__ip_8h_aa863498e1c23af0986b3932c23251e77}{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D}~77
+\item 
+\#define \hyperlink{rte__ip_8h_a730e6cd57501943046bdb1e666acd9ac}{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N}~78
+\item 
+\#define \hyperlink{rte__ip_8h_ae68a5df9e5e55b8e22bb5618d2d7315b}{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K}~79
+\item 
+\#define \hyperlink{rte__ip_8h_a31f7f5519f2a869b47c8619355a6d958}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N}~80
+\item 
+\#define \hyperlink{rte__ip_8h_af2c98021a6ab84af255e4571751d8b40}{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P}~81
+\item 
+\#define \hyperlink{rte__ip_8h_ae2029d5dbde7119baa6fb5d51df57acf}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P}~82
+\item 
+\#define \hyperlink{rte__ip_8h_aca069e442a582ffad35c2be5300b6688}{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S}~83
+\item 
+\#define \hyperlink{rte__ip_8h_a8334cd24c35a35fdcd501cb54d4d5583}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P}~84
+\item 
+\#define \hyperlink{rte__ip_8h_a65fac102fcdd9e9e599a4b5f55d4d988}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P}~85
+\item 
+\#define \hyperlink{rte__ip_8h_a3edfc021f85cc8d31d98abdf9a3c26da}{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P}~86
+\item 
+\#define \hyperlink{rte__ip_8h_aa8fca36809fbb2f80a88d8d9f2b05a00}{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F}~87
+\item 
+\#define \hyperlink{rte__ip_8h_a7289a849375e4ebe1d2712173ae75c64}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P}~88
+\item 
+\#define \hyperlink{rte__ip_8h_ade45b7018bfdffd626877565c14318e2}{I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P}~89
+\item 
+\#define \hyperlink{rte__ip_8h_acb21ea5dccfbec21b8ecd52fc625338b}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C}~90
+\item 
+\#define \hyperlink{rte__ip_8h_a1be7ddf5811f34d373ef4a6d0d0366c5}{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P}~91
+\item 
+\#define \hyperlink{rte__ip_8h_ae6f6f248eebc5197eb18bceb752476c2}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P}~92
+\item 
+\#define \hyperlink{rte__ip_8h_a411cfaa02de098daf977c51d0177f099}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25}~93
+\item 
+\#define \hyperlink{rte__ip_8h_a033a6c31f123fa489a42cd3894b948c8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P}~94
+\item 
+\#define \hyperlink{rte__ip_8h_a59911240de15b933927f8cbb0ced5878}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P}~95
+\item 
+\#define \hyperlink{rte__ip_8h_ab8cc615f7eb387bc74de435265c13603}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P}~96
+\item 
+\#define \hyperlink{rte__ip_8h_a7b88af3251020270b04bfd9852d00b14}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P}~97
+\item 
+\#define \hyperlink{rte__ip_8h_aa838dca5d7e5313c0bc67247d4f15fcb}{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P}~98
+\item 
+\#define \hyperlink{rte__ip_8h_acaa121ba819facd8302317c4867ee90e}{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S}~99
+\item 
+\#define \hyperlink{rte__ip_8h_aab689e8e081411b2aabafe88b66948aa}{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P}~100
+\item 
+\#define \hyperlink{rte__ip_8h_a111d38b8eb00759b4caa71bb5f7df6e9}{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P}~108
+\item 
+\#define \hyperlink{rte__ip_8h_ae06997f73d0cb6365963400e23d2c0e5}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M}~103
+\item 
+\#define \hyperlink{rte__ip_8h_ad2b6210fa23bc7982fa1559b95f1ab68}{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M}~113
+\item 
+\#define \hyperlink{rte__ip_8h_afce983cef8c9dfb0595ee46f7a955aa8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P}~132
+\item 
+\#define \hyperlink{rte__ip_8h_a8df3b49f617d4ef70fa702e97ffd62c8}{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T}~254
+\item 
+\#define \hyperlink{rte__ip_8h_a0154c93d7a162b8576ee47e10be53239}{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W}~255
+\item 
+\#define \hyperlink{rte__ip_8h_aa217fbfd31b8065d048ec6f499cc8e36}{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X}~256
+\item 
+\#define \hyperlink{rte__ip_8h_a6c44b342a1219c458aabb2a51f4b00f1}{I\+P\+V4\+\_\+\+A\+N\+Y}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \hyperlink{rte__ip_8h_a3c339e1134245657daf8d26652a23088}{I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K}~((uint32\+\_\+t)0x7f000001)
+\item 
+\#define \hyperlink{rte__ip_8h_abc44c53fbedd420bd1624b8aba4b1e40}{I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}~((uint32\+\_\+t)0xe0000000)
+\item 
+\#define \hyperlink{rte__ip_8h_aaa7c2617a2e3e34b73a4c23151aa8185}{I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P}~((uint32\+\_\+t)0xe0000001)
+\item 
+\#define \hyperlink{rte__ip_8h_a1578503cade550a6b5eee71e7186d052}{I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P}~((uint32\+\_\+t)0xe0000002)
+\item 
+\#define \hyperlink{rte__ip_8h_aa146aecffef5fbc3baba2c3c281c380c}{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P}~((uint32\+\_\+t)0xe00000ff)
+\item 
+\#define \hyperlink{rte__ip_8h_a83df4444608f01667a68dc8d91996c05}{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T}~\hyperlink{rte__ip_8h_a052e2a96de0562a034776fa758255650}{I\+Pv4}(224, 0, 0, 0)
+\item 
+\#define \hyperlink{rte__ip_8h_a0c600dcc34747e52f8a0880b968c8185}{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T}~\hyperlink{rte__ip_8h_a052e2a96de0562a034776fa758255650}{I\+Pv4}(239, 255, 255, 255)
+\item 
+\#define \hyperlink{rte__ip_8h_a66a8cf988bfe235ed22c9645147d230a}{I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T}(x)~((x) $>$= \hyperlink{rte__ip_8h_a83df4444608f01667a68dc8d91996c05}{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T} \&\& (x) $<$= \hyperlink{rte__ip_8h_a0c600dcc34747e52f8a0880b968c8185}{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I\+P-\/related defines 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__ip_8h_aca643191af5c34f375b94b4ab144de93}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+3\+P\+C~34}\label{rte__ip_8h_aca643191af5c34f375b94b4ab144de93}
+Third Party Connect \hypertarget{rte__ip_8h_a9c9799031fcf937a810edf85f132c4ef}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+D\+F\+S~68}\label{rte__ip_8h_a9c9799031fcf937a810edf85f132c4ef}
+Any distributed F\+S \hypertarget{rte__ip_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H~51}\label{rte__ip_8h_a517be4ff177b5a3d70c10cb2ca7ea31e}
+I\+P6 Auth Header \hypertarget{rte__ip_8h_a635c9260f057d1bb50d6244faaecbfe0}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+H\+I\+P~61}\label{rte__ip_8h_a635c9260f057d1bb50d6244faaecbfe0}
+any host internal protocol \hypertarget{rte__ip_8h_acaa121ba819facd8302317c4867ee90e}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+P\+E\+S~99}\label{rte__ip_8h_acaa121ba819facd8302317c4867ee90e}
+any private encr. scheme \hypertarget{rte__ip_8h_ace66899d9e234b2394fdc02776f551bf}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+R\+G\+U\+S~13}\label{rte__ip_8h_ace66899d9e234b2394fdc02776f551bf}
+Argus \hypertarget{rte__ip_8h_a411cfaa02de098daf977c51d0177f099}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25@{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+A\+X25~93}\label{rte__ip_8h_a411cfaa02de098daf977c51d0177f099}
+A\+X.\+25 Frames \hypertarget{rte__ip_8h_ab508dabc468947025e3d2d56131e04e3}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+H\+A~49}\label{rte__ip_8h_ab508dabc468947025e3d2d56131e04e3}
+B\+H\+A \hypertarget{rte__ip_8h_afd9c6f628cd582d3f97bff0fa79bfc5d}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+L\+T~30}\label{rte__ip_8h_afd9c6f628cd582d3f97bff0fa79bfc5d}
+Bulk Data Transfer \hypertarget{rte__ip_8h_a7152b9c8ed9f2bdc42497f05283f66ab}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+B\+R\+S\+A\+T\+M\+O\+N~76}\label{rte__ip_8h_a7152b9c8ed9f2bdc42497f05283f66ab}
+Back\+Room S\+A\+T\+N\+E\+T Monitoring \hypertarget{rte__ip_8h_a68d0eaa5fe966be96bb9cc25a22cbce8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+F\+T\+P~62}\label{rte__ip_8h_a68d0eaa5fe966be96bb9cc25a22cbce8}
+C\+F\+T\+P \hypertarget{rte__ip_8h_a965d2a4d4c9c515a8fc41f8396049136}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+H\+A\+O\+S~16}\label{rte__ip_8h_a965d2a4d4c9c515a8fc41f8396049136}
+Chaos \hypertarget{rte__ip_8h_a592ffd1cbe26ce5c797e5445189259c1}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+M\+T\+P~38}\label{rte__ip_8h_a592ffd1cbe26ce5c797e5445189259c1}
+Control Message Transport \hypertarget{rte__ip_8h_a8e54ba71dd059ac6fb50543abbde3e41}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+H\+B~73}\label{rte__ip_8h_a8e54ba71dd059ac6fb50543abbde3e41}
+Comp. Prot. Heart\+Beat \hypertarget{rte__ip_8h_a4f4711d125cf4bd146935ee1baf7aa6c}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+C\+P\+N\+X~72}\label{rte__ip_8h_a4f4711d125cf4bd146935ee1baf7aa6c}
+Comp. Prot. Net. Executive \hypertarget{rte__ip_8h_a9fcc8ae0ffc6a688cddca16c68a7cd66}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+D\+P~37}\label{rte__ip_8h_a9fcc8ae0ffc6a688cddca16c68a7cd66}
+Datagram Delivery \hypertarget{rte__ip_8h_a3edfc021f85cc8d31d98abdf9a3c26da}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+G\+P~86}\label{rte__ip_8h_a3edfc021f85cc8d31d98abdf9a3c26da}
+dissimilar gateway prot. \hypertarget{rte__ip_8h_a8df3b49f617d4ef70fa702e97ffd62c8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+I\+V\+E\+R\+T~254}\label{rte__ip_8h_a8df3b49f617d4ef70fa702e97ffd62c8}
+divert pseudo-\/protocol \hypertarget{rte__ip_8h_a95d72ab52f56094df17a63accfe8f5e1}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+D\+S\+T\+O\+P\+T\+S~60}\label{rte__ip_8h_a95d72ab52f56094df17a63accfe8f5e1}
+I\+P6 destination option \hypertarget{rte__ip_8h_a0dbdb7414bafce144ad9276f35715115}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+G\+P~8}\label{rte__ip_8h_a0dbdb7414bafce144ad9276f35715115}
+exterior gateway protocol \hypertarget{rte__ip_8h_a11ea077a6edef15bee668148167620ad}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+M\+C\+O\+N~14}\label{rte__ip_8h_a11ea077a6edef15bee668148167620ad}
+E\+M\+C\+O\+N \hypertarget{rte__ip_8h_aa838dca5d7e5313c0bc67247d4f15fcb}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+N\+C\+A\+P~98}\label{rte__ip_8h_aa838dca5d7e5313c0bc67247d4f15fcb}
+encapsulation header \hypertarget{rte__ip_8h_a31f7f5519f2a869b47c8619355a6d958}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+O\+N~80}\label{rte__ip_8h_a31f7f5519f2a869b47c8619355a6d958}
+I\+S\+O cnlp \hypertarget{rte__ip_8h_a4b9d5e2fbcca9ae84db04807a6693c31}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+S\+P~50}\label{rte__ip_8h_a4b9d5e2fbcca9ae84db04807a6693c31}
+I\+P6 Encap Sec. Payload \hypertarget{rte__ip_8h_a7b88af3251020270b04bfd9852d00b14}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+E\+T\+H\+E\+R\+I\+P~97}\label{rte__ip_8h_a7b88af3251020270b04bfd9852d00b14}
+Ethernet I\+P encapsulation \hypertarget{rte__ip_8h_ab31ae8fef94a70e83dca388d8eb1e874}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T~44}\label{rte__ip_8h_ab31ae8fef94a70e83dca388d8eb1e874}
+I\+P6 fragmentation header \hypertarget{rte__ip_8h_aaa167811bca5c964e9b051a10d962b1d}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+G\+P~3}\label{rte__ip_8h_aaa167811bca5c964e9b051a10d962b1d}
+gateway$^\wedge$2 (deprecated) \hypertarget{rte__ip_8h_aab689e8e081411b2aabafe88b66948aa}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+M\+T\+P~100}\label{rte__ip_8h_aab689e8e081411b2aabafe88b66948aa}
+G\+M\+T\+P \hypertarget{rte__ip_8h_a62b96b4d881982b3a6d911ddc0294f09}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+G\+R\+E~47}\label{rte__ip_8h_a62b96b4d881982b3a6d911ddc0294f09}
+General Routing Encap. \hypertarget{rte__ip_8h_a60ddc95db60093a410528c1c85db07f6}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+E\+L\+L\+O~63}\label{rte__ip_8h_a60ddc95db60093a410528c1c85db07f6}
+\char`\"{}hello\char`\"{} routing protocol \hypertarget{rte__ip_8h_a80102e98dd1a4adc3b0f3e9efc90cf71}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+M\+P~20}\label{rte__ip_8h_a80102e98dd1a4adc3b0f3e9efc90cf71}
+Host Monitoring \hypertarget{rte__ip_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+H\+O\+P\+O\+P\+T\+S~0}\label{rte__ip_8h_aff1ff353f3899a7f5d45b79be5d5ddd7}
+I\+P6 hop-\/by-\/hop options \hypertarget{rte__ip_8h_a98edd0af28e1b5f97c806c9cae442339}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P~1}\label{rte__ip_8h_a98edd0af28e1b5f97c806c9cae442339}
+control message protocol \hypertarget{rte__ip_8h_a3a52cdbaf5f9fc647399ef2481c8204d}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+C\+M\+P\+V6~58}\label{rte__ip_8h_a3a52cdbaf5f9fc647399ef2481c8204d}
+I\+C\+M\+P6 \hypertarget{rte__ip_8h_abfda09909326d0d4c6fe906fae58a960}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P~22}\label{rte__ip_8h_abfda09909326d0d4c6fe906fae58a960}
+xns idp \hypertarget{rte__ip_8h_a18a9db1d2bca19be0e092e868dfdfce4}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+P\+R~35}\label{rte__ip_8h_a18a9db1d2bca19be0e092e868dfdfce4}
+Inter\+Domain Policy Routing \hypertarget{rte__ip_8h_a62597b602611ffd704a660085b927ffa}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+D\+R\+P~45}\label{rte__ip_8h_a62597b602611ffd704a660085b927ffa}
+Inter\+Domain Routing \hypertarget{rte__ip_8h_a27694062feaa6fa3bd01d6df67f36762}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+M\+P~2}\label{rte__ip_8h_a27694062feaa6fa3bd01d6df67f36762}
+group mgmt protocol \hypertarget{rte__ip_8h_a65fac102fcdd9e9e599a4b5f55d4d988}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+P~85}\label{rte__ip_8h_a65fac102fcdd9e9e599a4b5f55d4d988}
+N\+S\+F\+N\+E\+T-\/\+I\+G\+P \hypertarget{rte__ip_8h_a7289a849375e4ebe1d2712173ae75c64}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+G\+R\+P~88}\label{rte__ip_8h_a7289a849375e4ebe1d2712173ae75c64}
+Cisco/\+G\+X\+S I\+G\+R\+P \hypertarget{rte__ip_8h_a219487deb0417533290242842c10f3ef}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+L~40}\label{rte__ip_8h_a219487deb0417533290242842c10f3ef}
+I\+L transport protocol \hypertarget{rte__ip_8h_a49fc475ae836d9b8567a8d2bd1192c31}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+L\+S\+P~52}\label{rte__ip_8h_a49fc475ae836d9b8567a8d2bd1192c31}
+Integ. Net Layer Security \hypertarget{rte__ip_8h_a9cc161659dba39234297ff5a1ac74ba4}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+N\+P~32}\label{rte__ip_8h_a9cc161659dba39234297ff5a1ac74ba4}
+Merit Internodal \hypertarget{rte__ip_8h_abf96615d54d7d81630efc2e8f1770223}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P~0}\label{rte__ip_8h_abf96615d54d7d81630efc2e8f1770223}
+dummy for I\+P \hypertarget{rte__ip_8h_a111d38b8eb00759b4caa71bb5f7df6e9}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+O\+M\+P~108}\label{rte__ip_8h_a111d38b8eb00759b4caa71bb5f7df6e9}
+payload compression (I\+P\+Comp) \hypertarget{rte__ip_8h_a0c6d47bf4973394d52b344a32fccf087}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+C\+V~71}\label{rte__ip_8h_a0c6d47bf4973394d52b344a32fccf087}
+Packet Core Utility \hypertarget{rte__ip_8h_a033a6c31f123fa489a42cd3894b948c8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+E\+I\+P~94}\label{rte__ip_8h_a033a6c31f123fa489a42cd3894b948c8}
+I\+P encapsulated in I\+P \hypertarget{rte__ip_8h_abea9bfc766cc319a9fdbea36d810c57f}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+P\+C~67}\label{rte__ip_8h_abea9bfc766cc319a9fdbea36d810c57f}
+Pluribus Packet Core \hypertarget{rte__ip_8h_a560a5b023930d466359b6e243762f353}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V4~4}\label{rte__ip_8h_a560a5b023930d466359b6e243762f353}
+I\+Pv4 encapsulation \hypertarget{rte__ip_8h_a029fc3b9526146e54addf53ca297e629}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+P\+V6~41}\label{rte__ip_8h_a029fc3b9526146e54addf53ca297e629}
+I\+P6 header \hypertarget{rte__ip_8h_a06c93e09533c2d76783c0ed33b6687f8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+I\+R\+T\+P~28}\label{rte__ip_8h_a06c93e09533c2d76783c0ed33b6687f8}
+Reliable Transaction \hypertarget{rte__ip_8h_a8c5a22c63fde45f14389d31293d8f594}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+K\+R\+Y\+P\+T\+O\+L\+A\+N~65}\label{rte__ip_8h_a8c5a22c63fde45f14389d31293d8f594}
+Kryptolan \hypertarget{rte__ip_8h_a1be7ddf5811f34d373ef4a6d0d0366c5}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+A\+R\+P~91}\label{rte__ip_8h_a1be7ddf5811f34d373ef4a6d0d0366c5}
+Locus Address Resoloution \hypertarget{rte__ip_8h_a216f89af4ee042a00a6305c5e82255b6}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F1~25}\label{rte__ip_8h_a216f89af4ee042a00a6305c5e82255b6}
+Leaf-\/1 \hypertarget{rte__ip_8h_a258f9494cec0c920ddf833d6f10596ac}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2@{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+L\+E\+A\+F2~26}\label{rte__ip_8h_a258f9494cec0c920ddf833d6f10596ac}
+Leaf-\/2 \hypertarget{rte__ip_8h_aa217fbfd31b8065d048ec6f499cc8e36}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+A\+X~256}\label{rte__ip_8h_aa217fbfd31b8065d048ec6f499cc8e36}
+maximum protocol number \hypertarget{rte__ip_8h_a5d0c71819732b647ab3c17495743246b}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+E\+A\+S~19}\label{rte__ip_8h_a5d0c71819732b647ab3c17495743246b}
+D\+C\+N Measurement Subsystems \hypertarget{rte__ip_8h_a6c762cf043c40f87db0f2854d2150b92}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+H\+R\+P~48}\label{rte__ip_8h_a6c762cf043c40f87db0f2854d2150b92}
+Mobile Host Routing \hypertarget{rte__ip_8h_a59911240de15b933927f8cbb0ced5878}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+I\+C\+P~95}\label{rte__ip_8h_a59911240de15b933927f8cbb0ced5878}
+Mobile Int.\+ing control \hypertarget{rte__ip_8h_ae6f6f248eebc5197eb18bceb752476c2}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+T\+P~92}\label{rte__ip_8h_ae6f6f248eebc5197eb18bceb752476c2}
+Multicast Transport \hypertarget{rte__ip_8h_afc1bff8c2cd4d23e8eca9eeeabb6d269}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+M\+U\+X~18}\label{rte__ip_8h_afc1bff8c2cd4d23e8eca9eeeabb6d269}
+Multiplexing \hypertarget{rte__ip_8h_aa863498e1c23af0986b3932c23251e77}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+D~77}\label{rte__ip_8h_aa863498e1c23af0986b3932c23251e77}
+Sun net disk proto (temp.) \hypertarget{rte__ip_8h_a45ac38182d9438e5e93109233ae579e3}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+H\+R\+P~54}\label{rte__ip_8h_a45ac38182d9438e5e93109233ae579e3}
+Next Hop Resolution \hypertarget{rte__ip_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+O\+N\+E~59}\label{rte__ip_8h_ae5c5c3c1082bd465a79cba2d1f05d66b}
+I\+P6 no next header \hypertarget{rte__ip_8h_aaac1f437a4be672c62d76ebdeabdb4fe}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+S\+P~31}\label{rte__ip_8h_aaac1f437a4be672c62d76ebdeabdb4fe}
+Network Services \hypertarget{rte__ip_8h_a235e56744748c7c28712a573c73cf64c}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I@{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+N\+V\+P\+I\+I~11}\label{rte__ip_8h_a235e56744748c7c28712a573c73cf64c}
+network voice protocol \hypertarget{rte__ip_8h_ade45b7018bfdffd626877565c14318e2}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+O\+S\+P\+F\+I\+G\+P~89}\label{rte__ip_8h_ade45b7018bfdffd626877565c14318e2}
+O\+S\+P\+F\+I\+G\+P \hypertarget{rte__ip_8h_ad2b6210fa23bc7982fa1559b95f1ab68}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+G\+M~113}\label{rte__ip_8h_ad2b6210fa23bc7982fa1559b95f1ab68}
+P\+G\+M \hypertarget{rte__ip_8h_ac3ff1bc61af8f7f53444e900323cbb0a}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+G\+P~9}\label{rte__ip_8h_ac3ff1bc61af8f7f53444e900323cbb0a}
+private interior gateway \hypertarget{rte__ip_8h_ae06997f73d0cb6365963400e23d2c0e5}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+I\+M~103}\label{rte__ip_8h_ae06997f73d0cb6365963400e23d2c0e5}
+Protocol Independent Mcast \hypertarget{rte__ip_8h_a3bd16305df6ac25e0bf91c2c9bb0d276}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+R\+M~21}\label{rte__ip_8h_a3bd16305df6ac25e0bf91c2c9bb0d276}
+Packet Radio Measurement \hypertarget{rte__ip_8h_aa05667a919736823cc5e264f7376b84a}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+U\+P~12}\label{rte__ip_8h_aa05667a919736823cc5e264f7376b84a}
+pup \hypertarget{rte__ip_8h_a16deecd6a6d05de2dfdc8559dd7970c9}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+P\+V\+P~75}\label{rte__ip_8h_a16deecd6a6d05de2dfdc8559dd7970c9}
+Packet Video Protocol \hypertarget{rte__ip_8h_a0154c93d7a162b8576ee47e10be53239}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+A\+W~255}\label{rte__ip_8h_a0154c93d7a162b8576ee47e10be53239}
+raw I\+P packet \hypertarget{rte__ip_8h_a3c75debf99c3b197b38a0d3b68f8b45a}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+C\+C\+M\+O\+N~10}\label{rte__ip_8h_a3c75debf99c3b197b38a0d3b68f8b45a}
+B\+B\+N R\+C\+C Monitoring \hypertarget{rte__ip_8h_a5093c88ce046862400281415ea29e725}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+D\+P~27}\label{rte__ip_8h_a5093c88ce046862400281415ea29e725}
+Reliable Data \hypertarget{rte__ip_8h_aedc955d9fee17d8992ad39fbc9feb7c7}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+O\+U\+T\+I\+N\+G~43}\label{rte__ip_8h_aedc955d9fee17d8992ad39fbc9feb7c7}
+I\+P6 routing header \hypertarget{rte__ip_8h_ac4a89a21c39af8dba4cafa8c6973fe68}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+S\+V\+P~46}\label{rte__ip_8h_ac4a89a21c39af8dba4cafa8c6973fe68}
+resource reservation \hypertarget{rte__ip_8h_a2c8cbbaeffbadee4582a7e9fa7645c9e}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D@{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+R\+V\+D~66}\label{rte__ip_8h_a2c8cbbaeffbadee4582a7e9fa7645c9e}
+Remote Virtual Disk \hypertarget{rte__ip_8h_ab3458c407b76949f0e2eb8b482730125}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+E\+X\+P\+A\+K~64}\label{rte__ip_8h_ab3458c407b76949f0e2eb8b482730125}
+S\+A\+T\+N\+E\+T/\+Backroom E\+X\+P\+A\+K \hypertarget{rte__ip_8h_ad3018efff0bef92a2f3c1c65211fc65f}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+A\+T\+M\+O\+N~69}\label{rte__ip_8h_ad3018efff0bef92a2f3c1c65211fc65f}
+Satnet Monitoring \hypertarget{rte__ip_8h_ab8cc615f7eb387bc74de435265c13603}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+C\+S\+P~96}\label{rte__ip_8h_ab8cc615f7eb387bc74de435265c13603}
+Semaphore Comm. security \hypertarget{rte__ip_8h_afce983cef8c9dfb0595ee46f7a955aa8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+C\+T\+P~132}\label{rte__ip_8h_afce983cef8c9dfb0595ee46f7a955aa8}
+Stream Control Transport Protocol \hypertarget{rte__ip_8h_a42817806bfffa69c3b2400c2bc8995bc}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+D\+R\+P~42}\label{rte__ip_8h_a42817806bfffa69c3b2400c2bc8995bc}
+Source Demand Routing \hypertarget{rte__ip_8h_a579c26887e406691afd14e3f95d77ce0}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+E\+P~33}\label{rte__ip_8h_a579c26887e406691afd14e3f95d77ce0}
+Sequential Exchange \hypertarget{rte__ip_8h_acb21ea5dccfbec21b8ecd52fc625338b}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+R\+P\+C~90}\label{rte__ip_8h_acb21ea5dccfbec21b8ecd52fc625338b}
+Strite R\+P\+C protocol \hypertarget{rte__ip_8h_abcb20912686ddf2c5ec21c16d6b8f915}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+T~7}\label{rte__ip_8h_abcb20912686ddf2c5ec21c16d6b8f915}
+Stream protocol I\+I \hypertarget{rte__ip_8h_ae2029d5dbde7119baa6fb5d51df57acf}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+V\+M\+T\+P~82}\label{rte__ip_8h_ae2029d5dbde7119baa6fb5d51df57acf}
+Secure V\+M\+T\+P \hypertarget{rte__ip_8h_ab4cac9b5e7e8cb08dfd45dc61feb6559}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E@{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+S\+W\+I\+P\+E~53}\label{rte__ip_8h_ab4cac9b5e7e8cb08dfd45dc61feb6559}
+I\+P with encryption \hypertarget{rte__ip_8h_aa8fca36809fbb2f80a88d8d9f2b05a00}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+F~87}\label{rte__ip_8h_aa8fca36809fbb2f80a88d8d9f2b05a00}
+T\+C\+F \hypertarget{rte__ip_8h_a94f83c72c1e5e6ef453e47cf59885fb5}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+C\+P~6}\label{rte__ip_8h_a94f83c72c1e5e6ef453e47cf59885fb5}
+tcp \hypertarget{rte__ip_8h_abd12f7cd49e31aa1151bd96ac90cefcf}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P~29}\label{rte__ip_8h_abd12f7cd49e31aa1151bd96ac90cefcf}
+tp-\/4 w/ class negotiation \hypertarget{rte__ip_8h_a0c496607210eda76ab3a258bcdb45271}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+P\+X\+X~39}\label{rte__ip_8h_a0c496607210eda76ab3a258bcdb45271}
+T\+P++ Transport \hypertarget{rte__ip_8h_a740c840d0e8e6dc2a9452b0c2462ddc8}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K1~23}\label{rte__ip_8h_a740c840d0e8e6dc2a9452b0c2462ddc8}
+Trunk-\/1 \hypertarget{rte__ip_8h_a8fe3466a29ae45820b2f3c26c8739a58}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+R\+U\+N\+K2~24}\label{rte__ip_8h_a8fe3466a29ae45820b2f3c26c8739a58}
+Trunk-\/2 \hypertarget{rte__ip_8h_a8334cd24c35a35fdcd501cb54d4d5583}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+T\+T\+P~84}\label{rte__ip_8h_a8334cd24c35a35fdcd501cb54d4d5583}
+T\+T\+P \hypertarget{rte__ip_8h_ab332d40b15142f33a88d4fcb1d6a5920}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+D\+P~17}\label{rte__ip_8h_ab332d40b15142f33a88d4fcb1d6a5920}
+user datagram protocol \hypertarget{rte__ip_8h_aca069e442a582ffad35c2be5300b6688}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+N\+E\+S~83}\label{rte__ip_8h_aca069e442a582ffad35c2be5300b6688}
+Banyon V\+I\+N\+E\+S \hypertarget{rte__ip_8h_a083059234f730a11d727073b7caae05f}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+I\+S\+A~70}\label{rte__ip_8h_a083059234f730a11d727073b7caae05f}
+V\+I\+S\+A Protocol \hypertarget{rte__ip_8h_af2c98021a6ab84af255e4571751d8b40}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+V\+M\+T\+P~81}\label{rte__ip_8h_af2c98021a6ab84af255e4571751d8b40}
+V\+M\+T\+P \hypertarget{rte__ip_8h_ae68a5df9e5e55b8e22bb5618d2d7315b}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+E\+X\+P\+A\+K~79}\label{rte__ip_8h_ae68a5df9e5e55b8e22bb5618d2d7315b}
+W\+I\+D\+E\+B\+A\+N\+D E\+X\+P\+A\+K \hypertarget{rte__ip_8h_a730e6cd57501943046bdb1e666acd9ac}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+B\+M\+O\+N~78}\label{rte__ip_8h_a730e6cd57501943046bdb1e666acd9ac}
+W\+I\+D\+E\+B\+A\+N\+D Monitoring \hypertarget{rte__ip_8h_ac76e70d666af6221e2aec418db23f61c}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N@{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+W\+S\+N~74}\label{rte__ip_8h_ac76e70d666af6221e2aec418db23f61c}
+Wang Span Network \hypertarget{rte__ip_8h_a6f86c5a1551606a27de541dff74333b5}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T@{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+N\+E\+T~15}\label{rte__ip_8h_a6f86c5a1551606a27de541dff74333b5}
+Cross Net Debugger \hypertarget{rte__ip_8h_a6f720c09ecebad31ddbd8e7ef8461eb3}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P}}
+\index{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P@{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+P\+R\+O\+T\+O\+\_\+\+X\+T\+P~36}\label{rte__ip_8h_a6f720c09ecebad31ddbd8e7ef8461eb3}
+X\+T\+P \hypertarget{rte__ip_8h_a052e2a96de0562a034776fa758255650}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+Pv4@{I\+Pv4}}
+\index{I\+Pv4@{I\+Pv4}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+Pv4}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+Pv4(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{rte__ip_8h_a052e2a96de0562a034776fa758255650}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((uint32\_t)(((a) & 0xff) << 24) | \(\backslash\)
+                       (((b) & 0xff) << 16) | \(\backslash\)
+                       (((c) & 0xff) << 8)  | \(\backslash\)
+                       ((d) & 0xff))
+\end{DoxyCode}
+Create I\+Pv4 address \hypertarget{rte__ip_8h_aaa7c2617a2e3e34b73a4c23151aa8185}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P}}
+\index{I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+A\+L\+L\+H\+O\+S\+T\+S\+\_\+\+G\+R\+O\+U\+P~((uint32\+\_\+t)0xe0000001)}\label{rte__ip_8h_aaa7c2617a2e3e34b73a4c23151aa8185}
+224.\+0.\+0.\+1 \hypertarget{rte__ip_8h_a1578503cade550a6b5eee71e7186d052}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P}}
+\index{I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+A\+L\+L\+R\+T\+R\+S\+\_\+\+G\+R\+O\+U\+P~((uint32\+\_\+t)0xe0000002)}\label{rte__ip_8h_a1578503cade550a6b5eee71e7186d052}
+224.\+0.\+0.\+2 \hypertarget{rte__ip_8h_a6c44b342a1219c458aabb2a51f4b00f1}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+A\+N\+Y@{I\+P\+V4\+\_\+\+A\+N\+Y}}
+\index{I\+P\+V4\+\_\+\+A\+N\+Y@{I\+P\+V4\+\_\+\+A\+N\+Y}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+A\+N\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+A\+N\+Y~((uint32\+\_\+t)0x00000000)}\label{rte__ip_8h_a6c44b342a1219c458aabb2a51f4b00f1}
+0.\+0.\+0.\+0 \hypertarget{rte__ip_8h_abc44c53fbedd420bd1624b8aba4b1e40}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}}
+\index{I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+B\+R\+O\+A\+D\+C\+A\+S\+T~((uint32\+\_\+t)0xe0000000)}\label{rte__ip_8h_abc44c53fbedd420bd1624b8aba4b1e40}
+224.\+0.\+0.\+0 \hypertarget{rte__ip_8h_a3c339e1134245657daf8d26652a23088}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K@{I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K}}
+\index{I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K@{I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+L\+O\+O\+P\+B\+A\+C\+K~((uint32\+\_\+t)0x7f000001)}\label{rte__ip_8h_a3c339e1134245657daf8d26652a23088}
+127.\+0.\+0.\+1 \hypertarget{rte__ip_8h_aa146aecffef5fbc3baba2c3c281c380c}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P}}
+\index{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P@{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+L\+O\+C\+A\+L\+\_\+\+G\+R\+O\+U\+P~((uint32\+\_\+t)0xe00000ff)}\label{rte__ip_8h_aa146aecffef5fbc3baba2c3c281c380c}
+224.\+0.\+0.\+255 \hypertarget{rte__ip_8h_a0c600dcc34747e52f8a0880b968c8185}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T}}
+\index{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T~{\bf I\+Pv4}(239, 255, 255, 255)}\label{rte__ip_8h_a0c600dcc34747e52f8a0880b968c8185}
+Maximum I\+Pv4 multicast address \hypertarget{rte__ip_8h_a83df4444608f01667a68dc8d91996c05}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T}}
+\index{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T@{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T~{\bf I\+Pv4}(224, 0, 0, 0)}\label{rte__ip_8h_a83df4444608f01667a68dc8d91996c05}
+Minimal I\+Pv4-\/multicast address \hypertarget{rte__ip_8h_a66a8cf988bfe235ed22c9645147d230a}{}\index{rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}!I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T@{I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T}}
+\index{I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T@{I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T}!rte\+\_\+ip.\+h@{rte\+\_\+ip.\+h}}
+\subsubsection[{I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+I\+P\+V4\+\_\+\+M\+C\+A\+S\+T(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((x) $>$= {\bf I\+P\+V4\+\_\+\+M\+I\+N\+\_\+\+M\+C\+A\+S\+T} \&\& (x) $<$= {\bf I\+P\+V4\+\_\+\+M\+A\+X\+\_\+\+M\+C\+A\+S\+T})}\label{rte__ip_8h_a66a8cf988bfe235ed22c9645147d230a}
+check if I\+Pv4 address is multicast 

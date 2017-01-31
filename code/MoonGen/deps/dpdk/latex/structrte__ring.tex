@@ -1,0 +1,44 @@
+\hypertarget{structrte__ring}{}\section{rte\+\_\+ring Struct Reference}
+\label{structrte__ring}\index{rte\+\_\+ring@{rte\+\_\+ring}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__ring_1_1cons}{cons}
+\item 
+struct \hyperlink{structrte__ring_1_1prod}{prod}
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structrte__ring_a25143ba33a51e2c04774a1ca0a75af59}{name} \mbox{[}\hyperlink{rte__ring_8h_a2e508ee16359c5851fed8ff7a24cca01}{R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}
+\item 
+int \hyperlink{structrte__ring_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags}
+\item 
+void $\ast$ring\mbox{[}0\mbox{]} \hyperlink{structrte__ring_ab3cabbb2d7c187c328e92a1293086010}{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An R\+T\+E ring structure.
+
+The producer and the consumer have a head and a tail index. The particularity of these index is that they are not between 0 and size(ring). These indexes are between 0 and 2$^\wedge$32, and we mask their value when we access the ring\mbox{[}\mbox{]} field. Thanks to this assumption, we can do subtractions between 2 index values in a modulo-\/32bit base\+: that\textquotesingle{}s why the overflow of the indexes is not a problem. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__ring_ab3cabbb2d7c187c328e92a1293086010}{}\index{rte\+\_\+ring@{rte\+\_\+ring}!\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}}
+\index{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}!rte\+\_\+ring@{rte\+\_\+ring}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ring \mbox{[}0\mbox{]} \+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}\label{structrte__ring_ab3cabbb2d7c187c328e92a1293086010}
+Memory space of ring starts here. not volatile so need to be careful about compiler re-\/ordering \hypertarget{structrte__ring_ac8bf36fe0577cba66bccda3a6f7e80a4}{}\index{rte\+\_\+ring@{rte\+\_\+ring}!flags@{flags}}
+\index{flags@{flags}!rte\+\_\+ring@{rte\+\_\+ring}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int flags}\label{structrte__ring_ac8bf36fe0577cba66bccda3a6f7e80a4}
+Flags supplied at creation. \hypertarget{structrte__ring_a25143ba33a51e2c04774a1ca0a75af59}{}\index{rte\+\_\+ring@{rte\+\_\+ring}!name@{name}}
+\index{name@{name}!rte\+\_\+ring@{rte\+\_\+ring}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char name\mbox{[}{\bf R\+T\+E\+\_\+\+R\+I\+N\+G\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}}\label{structrte__ring_a25143ba33a51e2c04774a1ca0a75af59}
+Name of the ring. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ring/\hyperlink{rte__ring_8h}{rte\+\_\+ring.\+h}\end{DoxyCompactItemize}

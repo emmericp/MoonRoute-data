@@ -1,0 +1,50 @@
+\hypertarget{structipv6__hdr}{}\section{ipv6\+\_\+hdr Struct Reference}
+\label{structipv6__hdr}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ip.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structipv6__hdr_acdbd04b4952ce247bad761255dab2ff5}{vtc\+\_\+flow}
+\item 
+uint16\+\_\+t \hyperlink{structipv6__hdr_a275f869dbba91f4716540a49b6c22532}{payload\+\_\+len}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__hdr_adaae928b69788f774db092e75f1c4fb7}{proto}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__hdr_a00877d99c569e5b16e1d7141e7354536}{hop\+\_\+limits}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__hdr_a6986cf27ec82df0bdd16f9d574a9a009}{src\+\_\+addr} \mbox{[}16\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structipv6__hdr_a25c3a64d5cf7e63211898df5ed65cd22}{dst\+\_\+addr} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I\+Pv6 Header 
+
+\subsection{Field Documentation}
+\hypertarget{structipv6__hdr_a25c3a64d5cf7e63211898df5ed65cd22}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!dst\+\_\+addr@{dst\+\_\+addr}}
+\index{dst\+\_\+addr@{dst\+\_\+addr}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{dst\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dst\+\_\+addr\mbox{[}16\mbox{]}}\label{structipv6__hdr_a25c3a64d5cf7e63211898df5ed65cd22}
+I\+P address of destination host(s). \hypertarget{structipv6__hdr_a00877d99c569e5b16e1d7141e7354536}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!hop\+\_\+limits@{hop\+\_\+limits}}
+\index{hop\+\_\+limits@{hop\+\_\+limits}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{hop\+\_\+limits}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hop\+\_\+limits}\label{structipv6__hdr_a00877d99c569e5b16e1d7141e7354536}
+Hop limits. \hypertarget{structipv6__hdr_a275f869dbba91f4716540a49b6c22532}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!payload\+\_\+len@{payload\+\_\+len}}
+\index{payload\+\_\+len@{payload\+\_\+len}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{payload\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t payload\+\_\+len}\label{structipv6__hdr_a275f869dbba91f4716540a49b6c22532}
+I\+P packet length -\/ includes sizeof(ip\+\_\+header). \hypertarget{structipv6__hdr_adaae928b69788f774db092e75f1c4fb7}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!proto@{proto}}
+\index{proto@{proto}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{proto}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t proto}\label{structipv6__hdr_adaae928b69788f774db092e75f1c4fb7}
+Protocol, next header. \hypertarget{structipv6__hdr_a6986cf27ec82df0bdd16f9d574a9a009}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!src\+\_\+addr@{src\+\_\+addr}}
+\index{src\+\_\+addr@{src\+\_\+addr}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{src\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t src\+\_\+addr\mbox{[}16\mbox{]}}\label{structipv6__hdr_a6986cf27ec82df0bdd16f9d574a9a009}
+I\+P address of source host. \hypertarget{structipv6__hdr_acdbd04b4952ce247bad761255dab2ff5}{}\index{ipv6\+\_\+hdr@{ipv6\+\_\+hdr}!vtc\+\_\+flow@{vtc\+\_\+flow}}
+\index{vtc\+\_\+flow@{vtc\+\_\+flow}!ipv6\+\_\+hdr@{ipv6\+\_\+hdr}}
+\subsubsection[{vtc\+\_\+flow}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t vtc\+\_\+flow}\label{structipv6__hdr_acdbd04b4952ce247bad761255dab2ff5}
+I\+P version, traffic class \& flow label. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+net/\hyperlink{rte__ip_8h}{rte\+\_\+ip.\+h}\end{DoxyCompactItemize}

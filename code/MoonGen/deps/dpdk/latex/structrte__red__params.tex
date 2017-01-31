@@ -1,0 +1,40 @@
+\hypertarget{structrte__red__params}{}\section{rte\+\_\+red\+\_\+params Struct Reference}
+\label{structrte__red__params}\index{rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+red.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structrte__red__params_a8e992dc2fb3e3d3891b69a86bfb1aef3}{min\+\_\+th}
+\item 
+uint16\+\_\+t \hyperlink{structrte__red__params_af32dc574ecda752ca24e1cd20d89ae1e}{max\+\_\+th}
+\item 
+uint16\+\_\+t \hyperlink{structrte__red__params_aed8a08ae7a4987eb9ab79cbc9571b3d1}{maxp\+\_\+inv}
+\item 
+uint16\+\_\+t \hyperlink{structrte__red__params_ab18d7bfce2a3bb2753c647e58da944eb}{wq\+\_\+log2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+E\+D configuration parameters passed by user 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__red__params_af32dc574ecda752ca24e1cd20d89ae1e}{}\index{rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}!max\+\_\+th@{max\+\_\+th}}
+\index{max\+\_\+th@{max\+\_\+th}!rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}}
+\subsubsection[{max\+\_\+th}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t max\+\_\+th}\label{structrte__red__params_af32dc574ecda752ca24e1cd20d89ae1e}
+Maximum threshold for queue (max\+\_\+th) \hypertarget{structrte__red__params_aed8a08ae7a4987eb9ab79cbc9571b3d1}{}\index{rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}!maxp\+\_\+inv@{maxp\+\_\+inv}}
+\index{maxp\+\_\+inv@{maxp\+\_\+inv}!rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}}
+\subsubsection[{maxp\+\_\+inv}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t maxp\+\_\+inv}\label{structrte__red__params_aed8a08ae7a4987eb9ab79cbc9571b3d1}
+Inverse of packet marking probability maximum value (maxp = 1 / maxp\+\_\+inv) \hypertarget{structrte__red__params_a8e992dc2fb3e3d3891b69a86bfb1aef3}{}\index{rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}!min\+\_\+th@{min\+\_\+th}}
+\index{min\+\_\+th@{min\+\_\+th}!rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}}
+\subsubsection[{min\+\_\+th}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t min\+\_\+th}\label{structrte__red__params_a8e992dc2fb3e3d3891b69a86bfb1aef3}
+Minimum threshold for queue (max\+\_\+th) \hypertarget{structrte__red__params_ab18d7bfce2a3bb2753c647e58da944eb}{}\index{rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}!wq\+\_\+log2@{wq\+\_\+log2}}
+\index{wq\+\_\+log2@{wq\+\_\+log2}!rte\+\_\+red\+\_\+params@{rte\+\_\+red\+\_\+params}}
+\subsubsection[{wq\+\_\+log2}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t wq\+\_\+log2}\label{structrte__red__params_ab18d7bfce2a3bb2753c647e58da944eb}
+Negated log2 of queue weight (wq = 1 / (2 $^\wedge$ wq\+\_\+log2)) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+sched/\hyperlink{rte__red_8h}{rte\+\_\+red.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\hypertarget{rte__random_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+random.h File Reference}
+\label{rte__random_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+random.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+random.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{rte__random_8h_ac8677a42fb3f8f21056c7bb3e1674968}{rte\+\_\+srand} (uint64\+\_\+t seedval)
+\item 
+static uint64\+\_\+t \hyperlink{rte__random_8h_a4e438c3de41a3b13f6ed4d89eaeb268a}{rte\+\_\+rand} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pseudo-\/random Generators in R\+T\+E 
+
+\subsection{Function Documentation}
+\hypertarget{rte__random_8h_a4e438c3de41a3b13f6ed4d89eaeb268a}{}\index{rte\+\_\+random.\+h@{rte\+\_\+random.\+h}!rte\+\_\+rand@{rte\+\_\+rand}}
+\index{rte\+\_\+rand@{rte\+\_\+rand}!rte\+\_\+random.\+h@{rte\+\_\+random.\+h}}
+\subsubsection[{rte\+\_\+rand}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__random_8h_a4e438c3de41a3b13f6ed4d89eaeb268a}
+Get a pseudo-\/random value.
+
+This function generates pseudo-\/random numbers using the linear congruential algorithm and 48-\/bit integer arithmetic, called twice to generate a 64-\/bit value.
+
+\begin{DoxyReturn}{Returns}
+A pseudo-\/random value between 0 and (1$<$$<$64)-\/1. 
+\end{DoxyReturn}
+\hypertarget{rte__random_8h_ac8677a42fb3f8f21056c7bb3e1674968}{}\index{rte\+\_\+random.\+h@{rte\+\_\+random.\+h}!rte\+\_\+srand@{rte\+\_\+srand}}
+\index{rte\+\_\+srand@{rte\+\_\+srand}!rte\+\_\+random.\+h@{rte\+\_\+random.\+h}}
+\subsubsection[{rte\+\_\+srand}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+srand (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{seedval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__random_8h_ac8677a42fb3f8f21056c7bb3e1674968}
+Seed the pseudo-\/random generator.
+
+The generator is automatically seeded by the E\+A\+L init with a timer value. It may need to be re-\/seeded by the user with a real random value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seedval} & The value of the seed. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,85 @@
+\hypertarget{structrte__hash}{}\section{rte\+\_\+hash Struct Reference}
+\label{structrte__hash}\index{rte\+\_\+hash@{rte\+\_\+hash}}
+
+
+{\ttfamily \#include $<$rte\+\_\+hash.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structrte__hash_a43ab7746b9b72f04b2e6dadf8365f41b}{name} \mbox{[}\hyperlink{rte__hash_8h_a6f2eca61b3180fccd47b5170fa115d48}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_a38bad35c844ffd72b0c1132715d5f3a1}{entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_ad1c0b79e09e6b654bc7c268a9ec0084f}{bucket\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_a7250588fe859c80e349c79c2b15ee421}{key\+\_\+len}
+\item 
+\hyperlink{rte__hash_8h_a1b12fdd40a9aa9aa254d45b052e57350}{rte\+\_\+hash\+\_\+function} \hyperlink{structrte__hash_aca908537bdd20d4ca4d4c7fd6c392903}{hash\+\_\+func}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_a01ac433d404852455c8fb211a4d43b2a}{hash\+\_\+func\+\_\+init\+\_\+val}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_aa457ee935be1ba725024ac93fd2b2896}{num\+\_\+buckets}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_ace627da91a44de34422973f54013cb33}{bucket\+\_\+bitmask}
+\item 
+\hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t} \hyperlink{structrte__hash_a17ac80472532608bad56604064f4ed77}{sig\+\_\+msb}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structrte__hash_aa92b2a3ccd0e79ebaafdf2073ea5eaa5}{sig\+\_\+tbl}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_a7f46f8e3d54c9e6a98604123e9dbce11}{sig\+\_\+tbl\+\_\+bucket\+\_\+size}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structrte__hash_ae8f0ffce9df01bf76b73b1e40656598f}{key\+\_\+tbl}
+\item 
+uint32\+\_\+t \hyperlink{structrte__hash_a349faae39ef20968ac3cdc835c18ba00}{key\+\_\+tbl\+\_\+key\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A hash table structure. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__hash_ace627da91a44de34422973f54013cb33}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!bucket\+\_\+bitmask@{bucket\+\_\+bitmask}}
+\index{bucket\+\_\+bitmask@{bucket\+\_\+bitmask}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{bucket\+\_\+bitmask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+bitmask}\label{structrte__hash_ace627da91a44de34422973f54013cb33}
+Bitmask for getting bucket index from hash signature. \hypertarget{structrte__hash_ad1c0b79e09e6b654bc7c268a9ec0084f}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!bucket\+\_\+entries@{bucket\+\_\+entries}}
+\index{bucket\+\_\+entries@{bucket\+\_\+entries}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{bucket\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+entries}\label{structrte__hash_ad1c0b79e09e6b654bc7c268a9ec0084f}
+Bucket entries. \hypertarget{structrte__hash_a38bad35c844ffd72b0c1132715d5f3a1}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!entries@{entries}}
+\index{entries@{entries}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entries}\label{structrte__hash_a38bad35c844ffd72b0c1132715d5f3a1}
+Total table entries. \hypertarget{structrte__hash_aca908537bdd20d4ca4d4c7fd6c392903}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!hash\+\_\+func@{hash\+\_\+func}}
+\index{hash\+\_\+func@{hash\+\_\+func}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{hash\+\_\+func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+hash\+\_\+function} hash\+\_\+func}\label{structrte__hash_aca908537bdd20d4ca4d4c7fd6c392903}
+Function used to calculate hash. \hypertarget{structrte__hash_a01ac433d404852455c8fb211a4d43b2a}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!hash\+\_\+func\+\_\+init\+\_\+val@{hash\+\_\+func\+\_\+init\+\_\+val}}
+\index{hash\+\_\+func\+\_\+init\+\_\+val@{hash\+\_\+func\+\_\+init\+\_\+val}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{hash\+\_\+func\+\_\+init\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t hash\+\_\+func\+\_\+init\+\_\+val}\label{structrte__hash_a01ac433d404852455c8fb211a4d43b2a}
+Init value used by hash\+\_\+func. \hypertarget{structrte__hash_a7250588fe859c80e349c79c2b15ee421}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!key\+\_\+len@{key\+\_\+len}}
+\index{key\+\_\+len@{key\+\_\+len}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{key\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t key\+\_\+len}\label{structrte__hash_a7250588fe859c80e349c79c2b15ee421}
+Length of hash key. \hypertarget{structrte__hash_ae8f0ffce9df01bf76b73b1e40656598f}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!key\+\_\+tbl@{key\+\_\+tbl}}
+\index{key\+\_\+tbl@{key\+\_\+tbl}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{key\+\_\+tbl}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ key\+\_\+tbl}\label{structrte__hash_ae8f0ffce9df01bf76b73b1e40656598f}
+Flat array of key value buckets. \hypertarget{structrte__hash_a349faae39ef20968ac3cdc835c18ba00}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!key\+\_\+tbl\+\_\+key\+\_\+size@{key\+\_\+tbl\+\_\+key\+\_\+size}}
+\index{key\+\_\+tbl\+\_\+key\+\_\+size@{key\+\_\+tbl\+\_\+key\+\_\+size}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{key\+\_\+tbl\+\_\+key\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t key\+\_\+tbl\+\_\+key\+\_\+size}\label{structrte__hash_a349faae39ef20968ac3cdc835c18ba00}
+Keys may be padded for alignment reasons, and this is the key size used by key\+\_\+tbl. \hypertarget{structrte__hash_a43ab7746b9b72f04b2e6dadf8365f41b}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!name@{name}}
+\index{name@{name}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char name\mbox{[}{\bf R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}}\label{structrte__hash_a43ab7746b9b72f04b2e6dadf8365f41b}
+Name of the hash. \hypertarget{structrte__hash_aa457ee935be1ba725024ac93fd2b2896}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!num\+\_\+buckets@{num\+\_\+buckets}}
+\index{num\+\_\+buckets@{num\+\_\+buckets}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{num\+\_\+buckets}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t num\+\_\+buckets}\label{structrte__hash_aa457ee935be1ba725024ac93fd2b2896}
+Number of buckets in table. \hypertarget{structrte__hash_a17ac80472532608bad56604064f4ed77}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!sig\+\_\+msb@{sig\+\_\+msb}}
+\index{sig\+\_\+msb@{sig\+\_\+msb}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{sig\+\_\+msb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hash\+\_\+sig\+\_\+t} sig\+\_\+msb}\label{structrte__hash_a17ac80472532608bad56604064f4ed77}
+M\+S\+B is always set in valid signatures. \hypertarget{structrte__hash_aa92b2a3ccd0e79ebaafdf2073ea5eaa5}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!sig\+\_\+tbl@{sig\+\_\+tbl}}
+\index{sig\+\_\+tbl@{sig\+\_\+tbl}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{sig\+\_\+tbl}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ sig\+\_\+tbl}\label{structrte__hash_aa92b2a3ccd0e79ebaafdf2073ea5eaa5}
+Flat array of hash signature buckets. \hypertarget{structrte__hash_a7f46f8e3d54c9e6a98604123e9dbce11}{}\index{rte\+\_\+hash@{rte\+\_\+hash}!sig\+\_\+tbl\+\_\+bucket\+\_\+size@{sig\+\_\+tbl\+\_\+bucket\+\_\+size}}
+\index{sig\+\_\+tbl\+\_\+bucket\+\_\+size@{sig\+\_\+tbl\+\_\+bucket\+\_\+size}!rte\+\_\+hash@{rte\+\_\+hash}}
+\subsubsection[{sig\+\_\+tbl\+\_\+bucket\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t sig\+\_\+tbl\+\_\+bucket\+\_\+size}\label{structrte__hash_a7f46f8e3d54c9e6a98604123e9dbce11}
+Signature buckets may be padded for alignment reasons, and this is the bucket size used by sig\+\_\+tbl. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+hash/\hyperlink{rte__hash_8h}{rte\+\_\+hash.\+h}\end{DoxyCompactItemize}

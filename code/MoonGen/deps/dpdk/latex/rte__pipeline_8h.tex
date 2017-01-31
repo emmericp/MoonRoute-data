@@ -1,0 +1,598 @@
+\hypertarget{rte__pipeline_8h}{}\section{lib/librte\+\_\+pipeline/rte\+\_\+pipeline.h File Reference}
+\label{rte__pipeline_8h}\index{lib/librte\+\_\+pipeline/rte\+\_\+pipeline.\+h@{lib/librte\+\_\+pipeline/rte\+\_\+pipeline.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+port.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+table.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__pipeline__params}{rte\+\_\+pipeline\+\_\+params}
+\item 
+struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry}
+\item 
+struct \hyperlink{structrte__pipeline__table__params}{rte\+\_\+pipeline\+\_\+table\+\_\+params}
+\item 
+struct \hyperlink{structrte__pipeline__port__in__params}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params}
+\item 
+struct \hyperlink{structrte__pipeline__port__out__params}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__pipeline_8h_ae53c3736fb2a1edc8e4b9b185d9d8fc3}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X}~64
+\item 
+\#define \hyperlink{rte__pipeline_8h_aa107216ecaebb628afdf1f3861cb8d9c}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X}~64
+\item 
+\#define \hyperlink{rte__pipeline_8h_af8ae017901472b93f0d727f7663d788a}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X}~64
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{rte__pipeline_8h_a9289c02fd9164dc323fc1a614cd7ef3d}{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit}) (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$entries, void $\ast$arg)
+\item 
+typedef int($\ast$ \hyperlink{rte__pipeline_8h_a19b2c0ec82ebd96c52e15d9c3ca6cdff}{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss}) (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$entry, void $\ast$arg)
+\item 
+typedef int($\ast$ \hyperlink{rte__pipeline_8h_a90d56777317f0919ad4130f8ad2099be}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler}) (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n, uint64\+\_\+t $\ast$pkts\+\_\+mask, void $\ast$arg)
+\item 
+typedef int($\ast$ \hyperlink{rte__pipeline_8h_aac89dd501bfc87996c1b6e4172f20ef8}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler}) (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt, uint64\+\_\+t $\ast$pkt\+\_\+mask, void $\ast$arg)
+\item 
+typedef int($\ast$ \hyperlink{rte__pipeline_8h_ac50fe92c97ab5095d48a36bd7e869723}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk}) (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, void $\ast$arg)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572}{rte\+\_\+pipeline\+\_\+action} \{ \\*
+\hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572af41296546f2a86d1f8f1848010c7c111}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P} = 0, 
+\hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572ac8c58609785d844989b7d9eb1e6db8aa}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T}, 
+\hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572a5dc23d641b483615ea475152ac7ab7f4}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A}, 
+\hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572abafaf6276afcfcb170a2f7aa44c21048}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E}, 
+\\*
+\hyperlink{rte__pipeline_8h_a6376b240935404d998f003d113651572a34f0fbbbdce5f615d27dc0105b1640c3}{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+pipeline $\ast$ \hyperlink{rte__pipeline_8h_ad650149ed178057bfb54bda0b6e39e05}{rte\+\_\+pipeline\+\_\+create} (struct \hyperlink{structrte__pipeline__params}{rte\+\_\+pipeline\+\_\+params} $\ast$params)
+\item 
+int \hyperlink{rte__pipeline_8h_a85ce2e4661092748a84409a1d6eae14c}{rte\+\_\+pipeline\+\_\+free} (struct rte\+\_\+pipeline $\ast$p)
+\item 
+int \hyperlink{rte__pipeline_8h_ada72ecd95a1a181d1d555dd699f95475}{rte\+\_\+pipeline\+\_\+check} (struct rte\+\_\+pipeline $\ast$p)
+\item 
+int \hyperlink{rte__pipeline_8h_a4570eddec506f947c5c91cb2334a2eda}{rte\+\_\+pipeline\+\_\+run} (struct rte\+\_\+pipeline $\ast$p)
+\item 
+int \hyperlink{rte__pipeline_8h_ac26447a6b0c4b1ec218a9133d790fef1}{rte\+\_\+pipeline\+\_\+flush} (struct rte\+\_\+pipeline $\ast$p)
+\item 
+int \hyperlink{rte__pipeline_8h_af1cb4d7ac4516443e6f9d82a4beebed6}{rte\+\_\+pipeline\+\_\+table\+\_\+create} (struct rte\+\_\+pipeline $\ast$p, struct \hyperlink{structrte__pipeline__table__params}{rte\+\_\+pipeline\+\_\+table\+\_\+params} $\ast$params, uint32\+\_\+t $\ast$table\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_a8980fbc2a51d6dc8041b798ea5172318}{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t table\+\_\+id, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$default\+\_\+entry, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$default\+\_\+entry\+\_\+ptr)
+\item 
+int \hyperlink{rte__pipeline_8h_ac83e9cacb91301a7425694f32249e050}{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t table\+\_\+id, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$entry)
+\item 
+int \hyperlink{rte__pipeline_8h_a0e90e4a54b6467deb9b449bf8bd5cab4}{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t table\+\_\+id, void $\ast$key, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$entry, int $\ast$key\+\_\+found, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$entry\+\_\+ptr)
+\item 
+int \hyperlink{rte__pipeline_8h_a946f0d5610d152c1e6f641928c4f0743}{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t table\+\_\+id, void $\ast$key, int $\ast$key\+\_\+found, struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$entry)
+\item 
+int \hyperlink{rte__pipeline_8h_ab0c0f093519ccc9fbb76e7c5696fd266}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create} (struct rte\+\_\+pipeline $\ast$p, struct \hyperlink{structrte__pipeline__port__in__params}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params} $\ast$params, uint32\+\_\+t $\ast$port\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_adc4634b81c75f146f3afac17dbbe727c}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t port\+\_\+id, uint32\+\_\+t table\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_af8a48f99a99731883005dfe93c5406e6}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t port\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_a6b3750798dfd9a03093790d52dd94aca}{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t port\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_a247f58fe13cba38922ccf5c60a2f86bb}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create} (struct rte\+\_\+pipeline $\ast$p, struct \hyperlink{structrte__pipeline__port__out__params}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params} $\ast$params, uint32\+\_\+t $\ast$port\+\_\+id)
+\item 
+int \hyperlink{rte__pipeline_8h_a2abe46f84e0842eec2f0f52083706fc4}{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert} (struct rte\+\_\+pipeline $\ast$p, uint32\+\_\+t port\+\_\+id, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Pipeline
+
+This tool is part of the Intel D\+P\+D\+K Packet Framework tool suite and provides a standard methodology (logically similar to Open\+Flow) for rapid development of complex packet processing pipelines out of ports, tables and actions.
+
+{\bfseries Basic operation.} A pipeline is constructed by connecting its input ports to its output ports through a chain of lookup tables. As result of lookup operation into the current table, one of the table entries (or the default table entry, in case of lookup miss) is identified to provide the actions to be executed on the current packet and the associated action meta-\/data. The behavior of user actions is defined through the configurable table action handler, while the reserved actions define the next hop for the current packet (either another table, an output port or packet drop) and are handled transparently by the framework.
+
+{\bfseries Initialization and run-\/time flows.} Once all the pipeline elements (input ports, tables, output ports) have been created, input ports connected to tables, table action handlers configured, tables populated with the initial set of entries (actions and action meta-\/data) and input ports enabled, the pipeline runs automatically, pushing packets from input ports to tables and output ports. At each table, the identified user actions are being executed, resulting in action meta-\/data (stored in the table entry) and packet meta-\/data (stored with the packet descriptor) being updated. The pipeline tables can have further updates and input ports can be disabled or enabled later on as required.
+
+{\bfseries Multi-\/core scaling.} Typically, each C\+P\+U core will run its own pipeline instance. Complex application-\/level pipelines can be implemented by interconnecting multiple C\+P\+U core-\/level pipelines in tree-\/like topologies, as the same port devices (e.\+g. S\+W rings) can serve as output ports for the pipeline running on C\+P\+U core A, as well as input ports for the pipeline running on C\+P\+U core B. This approach enables the application development using the pipeline (C\+P\+U cores connected serially), cluster/run-\/to-\/completion (C\+P\+U cores connected in parallel) or mixed (pipeline of C\+P\+U core clusters) programming models.
+
+{\bfseries Thread safety.} It is possible to have multiple pipelines running on the same C\+P\+U core, but it is not allowed (for thread safety reasons) to have multiple C\+P\+U cores running the same pipeline instance. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__pipeline_8h_aa107216ecaebb628afdf1f3861cb8d9c}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+I\+N\+\_\+\+M\+A\+X~64}\label{rte__pipeline_8h_aa107216ecaebb628afdf1f3861cb8d9c}
+Maximum number of input ports allowed for any given pipeline instance. The value of this parameter cannot be changed. \hypertarget{rte__pipeline_8h_af8ae017901472b93f0d727f7663d788a}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+P\+O\+R\+T\+\_\+\+O\+U\+T\+\_\+\+M\+A\+X~64}\label{rte__pipeline_8h_af8ae017901472b93f0d727f7663d788a}
+Maximum number of output ports allowed for any given pipeline instance. The value of this parameter cannot be changed. \hypertarget{rte__pipeline_8h_ae53c3736fb2a1edc8e4b9b185d9d8fc3}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+M\+A\+X~64}\label{rte__pipeline_8h_ae53c3736fb2a1edc8e4b9b185d9d8fc3}
+Maximum number of tables allowed for any given pipeline instance. The value of this parameter cannot be changed. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__pipeline_8h_a90d56777317f0919ad4130f8ad2099be}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+action\+\_\+handler) (struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n, uint64\+\_\+t $\ast$pkts\+\_\+mask, void $\ast$arg)}\label{rte__pipeline_8h_a90d56777317f0919ad4130f8ad2099be}
+Pipeline input port action handler
+
+The action handler can decide to drop packets by resetting the associated packet bit in the pkts\+\_\+mask parameter. In this case, the action handler is required not to free the packet buffer, which will be freed eventually by the pipeline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em n} & Number of packets in the input burst. This parameter specifies that elements 0 to (n-\/1) of pkts array are valid. \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are still valid after the action handler is executed. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet. \\
+\hline
+{\em arg} & Opaque parameter registered by the user at the pipeline table creation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_aac89dd501bfc87996c1b6e4172f20ef8}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler) (struct {\bf rte\+\_\+mbuf} $\ast$pkt, uint64\+\_\+t $\ast$pkt\+\_\+mask, void $\ast$arg)}\label{rte__pipeline_8h_aac89dd501bfc87996c1b6e4172f20ef8}
+Pipeline output port action handler for single packet
+
+The action handler can decide to drop packets by resetting the pkt\+\_\+mask argument. In this case, the action handler is required not to free the packet buffer, which will be freed eventually by the pipeline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt} & Input packet \\
+\hline
+{\em pkt\+\_\+mask} & Output argument set to 0 when the action handler decides to drop the input packet and to 1\+L\+L\+U otherwise \\
+\hline
+{\em arg} & Opaque parameter registered by the user at the pipeline table creation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_ac50fe92c97ab5095d48a36bd7e869723}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+action\+\_\+handler\+\_\+bulk) (struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, void $\ast$arg)}\label{rte__pipeline_8h_ac50fe92c97ab5095d48a36bd7e869723}
+Pipeline output port action handler bulk
+
+The action handler can decide to drop packets by resetting the associated packet bit in the pkts\+\_\+mask parameter. In this case, the action handler is required not to free the packet buffer, which will be freed eventually by the pipeline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are valid. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet. Otherwise, element n of pkts array will not be accessed. \\
+\hline
+{\em arg} & Opaque parameter registered by the user at the pipeline table creation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a9289c02fd9164dc323fc1a614cd7ef3d}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit@{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit@{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit) (struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$entries, void $\ast$arg)}\label{rte__pipeline_8h_a9289c02fd9164dc323fc1a614cd7ef3d}
+Pipeline table action handler on lookup hit
+
+The action handler can decide to drop packets by resetting the associated packet bit in the pkts\+\_\+mask parameter. In this case, the action handler is required not to free the packet buffer, which will be freed eventually by the pipeline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are valid. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet and element n of entries array is pointing to a valid table entry associated with the packet, with the association typically done by the table lookup operation. Otherwise, element n of pkts array and element n of entries array will not be accessed. \\
+\hline
+{\em entries} & Set of table entries specified as array of up to 64 pointers to struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry} \\
+\hline
+{\em arg} & Opaque parameter registered by the user at the pipeline table creation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a19b2c0ec82ebd96c52e15d9c3ca6cdff}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss@{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss@{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss) (struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t $\ast$pkts\+\_\+mask, struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$entry, void $\ast$arg)}\label{rte__pipeline_8h_a19b2c0ec82ebd96c52e15d9c3ca6cdff}
+Pipeline table action handler on lookup miss
+
+The action handler can decide to drop packets by resetting the associated packet bit in the pkts\+\_\+mask parameter. In this case, the action handler is required not to free the packet buffer, which will be freed eventually by the pipeline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are valid. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet. Otherwise, element n of pkts array will not be accessed. \\
+\hline
+{\em entry} & Single table entry associated with all the valid packets from the input burst, specified as pointer to struct \hyperlink{structrte__pipeline__table__entry}{rte\+\_\+pipeline\+\_\+table\+\_\+entry}. This entry is the pipeline table default entry that is associated by the table lookup operation with the input packets that have resulted in lookup miss. \\
+\hline
+{\em arg} & Opaque parameter registered by the user at the pipeline table creation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+action@{rte\+\_\+pipeline\+\_\+action}}
+\index{rte\+\_\+pipeline\+\_\+action@{rte\+\_\+pipeline\+\_\+action}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+action}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+pipeline\+\_\+action}}\label{rte__pipeline_8h_a6376b240935404d998f003d113651572}
+Reserved actions \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P}}\item[{\em 
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572af41296546f2a86d1f8f1848010c7c111}{}R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+D\+R\+O\+P\label{rte__pipeline_8h_a6376b240935404d998f003d113651572af41296546f2a86d1f8f1848010c7c111}
+}]Drop the packet \index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T}}\item[{\em 
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572ac8c58609785d844989b7d9eb1e6db8aa}{}R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\label{rte__pipeline_8h_a6376b240935404d998f003d113651572ac8c58609785d844989b7d9eb1e6db8aa}
+}]Send packet to output port \index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A}}\item[{\em 
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572a5dc23d641b483615ea475152ac7ab7f4}{}R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+P\+O\+R\+T\+\_\+\+M\+E\+T\+A\label{rte__pipeline_8h_a6376b240935404d998f003d113651572a5dc23d641b483615ea475152ac7ab7f4}
+}]Send packet to output port read from packet meta-\/data \index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572abafaf6276afcfcb170a2f7aa44c21048}{}R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+T\+A\+B\+L\+E\label{rte__pipeline_8h_a6376b240935404d998f003d113651572abafaf6276afcfcb170a2f7aa44c21048}
+}]Send packet to table \index{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S@{R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S}}\item[{\em 
+\hypertarget{rte__pipeline_8h_a6376b240935404d998f003d113651572a34f0fbbbdce5f615d27dc0105b1640c3}{}R\+T\+E\+\_\+\+P\+I\+P\+E\+L\+I\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+S\label{rte__pipeline_8h_a6376b240935404d998f003d113651572a34f0fbbbdce5f615d27dc0105b1640c3}
+}]Number of reserved actions \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__pipeline_8h_ada72ecd95a1a181d1d555dd699f95475}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+check@{rte\+\_\+pipeline\+\_\+check}}
+\index{rte\+\_\+pipeline\+\_\+check@{rte\+\_\+pipeline\+\_\+check}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_ada72ecd95a1a181d1d555dd699f95475}
+Pipeline consistency check
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_ad650149ed178057bfb54bda0b6e39e05}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+create@{rte\+\_\+pipeline\+\_\+create}}
+\index{rte\+\_\+pipeline\+\_\+create@{rte\+\_\+pipeline\+\_\+create}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+pipeline$\ast$ rte\+\_\+pipeline\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_ad650149ed178057bfb54bda0b6e39e05}
+Pipeline create
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters for pipeline creation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to pipeline instance on success or N\+U\+L\+L otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_ac26447a6b0c4b1ec218a9133d790fef1}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+flush@{rte\+\_\+pipeline\+\_\+flush}}
+\index{rte\+\_\+pipeline\+\_\+flush@{rte\+\_\+pipeline\+\_\+flush}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+flush}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+flush (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_ac26447a6b0c4b1ec218a9133d790fef1}
+Pipeline flush
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a85ce2e4661092748a84409a1d6eae14c}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+free@{rte\+\_\+pipeline\+\_\+free}}
+\index{rte\+\_\+pipeline\+\_\+free@{rte\+\_\+pipeline\+\_\+free}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a85ce2e4661092748a84409a1d6eae14c}
+Pipeline free
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_adc4634b81c75f146f3afac17dbbe727c}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+connect\+\_\+to\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{port\+\_\+id, }
+\item[{uint32\+\_\+t}]{table\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_adc4634b81c75f146f3afac17dbbe727c}
+Pipeline input port connect to table
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em port\+\_\+id} & Port I\+D (returned by previous invocation of pipeline input port create) \\
+\hline
+{\em table\+\_\+id} & Table I\+D (returned by previous invocation of pipeline table create) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_ab0c0f093519ccc9fbb76e7c5696fd266}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+params} $\ast$}]{params, }
+\item[{uint32\+\_\+t $\ast$}]{port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_ab0c0f093519ccc9fbb76e7c5696fd266}
+Pipeline input port create
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em params} & Parameters for pipeline input port creation \\
+\hline
+{\em port\+\_\+id} & Input port I\+D. Valid only within the scope of input port I\+Ds of the current pipeline. Only returned after a successful invocation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a6b3750798dfd9a03093790d52dd94aca}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+disable (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a6b3750798dfd9a03093790d52dd94aca}
+Pipeline input port disable
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em port\+\_\+id} & Port I\+D (returned by previous invocation of pipeline input port create) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_af8a48f99a99731883005dfe93c5406e6}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable@{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+in\+\_\+enable (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_af8a48f99a99731883005dfe93c5406e6}
+Pipeline input port enable
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em port\+\_\+id} & Port I\+D (returned by previous invocation of pipeline input port create) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a247f58fe13cba38922ccf5c60a2f86bb}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+params} $\ast$}]{params, }
+\item[{uint32\+\_\+t $\ast$}]{port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a247f58fe13cba38922ccf5c60a2f86bb}
+Pipeline output port create
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em params} & Parameters for pipeline output port creation \\
+\hline
+{\em port\+\_\+id} & Output port I\+D. Valid only within the scope of output port I\+Ds of the current pipeline. Only returned after a successful invocation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a2abe46f84e0842eec2f0f52083706fc4}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert}}
+\index{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert@{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+port\+\_\+out\+\_\+packet\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{port\+\_\+id, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{pkt}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a2abe46f84e0842eec2f0f52083706fc4}
+Pipeline output port packet insert
+
+This function is called by the table action handler whenever it generates a new packet to be sent out though one of the pipeline output ports. This packet is not part of the burst of input packets read from any of the pipeline input ports, so it is not an element of the pkts array input parameter of the table action handler. This packet can be dropped by the output port action handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em port\+\_\+id} & Output port I\+D (returned by previous invocation of pipeline output port create) to send the packet specified by pkt \\
+\hline
+{\em pkt} & New packet generated by the table action handler \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a4570eddec506f947c5c91cb2334a2eda}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+run@{rte\+\_\+pipeline\+\_\+run}}
+\index{rte\+\_\+pipeline\+\_\+run@{rte\+\_\+pipeline\+\_\+run}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+run}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+run (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a4570eddec506f947c5c91cb2334a2eda}
+Pipeline run
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_af1cb4d7ac4516443e6f9d82a4beebed6}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+create@{rte\+\_\+pipeline\+\_\+table\+\_\+create}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+create@{rte\+\_\+pipeline\+\_\+table\+\_\+create}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+table\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+params} $\ast$}]{params, }
+\item[{uint32\+\_\+t $\ast$}]{table\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_af1cb4d7ac4516443e6f9d82a4beebed6}
+Pipeline table create
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em params} & Parameters for pipeline table creation \\
+\hline
+{\em table\+\_\+id} & Table I\+D. Valid only within the scope of table I\+Ds of the current pipeline. Only returned after a successful invocation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a8980fbc2a51d6dc8041b798ea5172318}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add@{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add@{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{table\+\_\+id, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$}]{default\+\_\+entry, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$}]{default\+\_\+entry\+\_\+ptr}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a8980fbc2a51d6dc8041b798ea5172318}
+Pipeline table default entry add
+
+The contents of the table default entry is updated with the provided actions and meta-\/data. When the default entry is not configured (by using this function), the built-\/in default entry has the action \char`\"{}\+Drop\char`\"{} and meta-\/data set to all-\/zeros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em table\+\_\+id} & Table I\+D (returned by previous invocation of pipeline table create) \\
+\hline
+{\em default\+\_\+entry} & New contents for the table default entry \\
+\hline
+{\em default\+\_\+entry\+\_\+ptr} & On successful invocation, pointer to the default table entry which can be used for further read-\/write accesses to this table entry. This pointer is valid until the default entry is deleted or re-\/added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_ac83e9cacb91301a7425694f32249e050}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete@{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete@{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+table\+\_\+default\+\_\+entry\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{table\+\_\+id, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_ac83e9cacb91301a7425694f32249e050}
+Pipeline table default entry delete
+
+The new contents of the table default entry is set to reserved action \char`\"{}\+Drop
+the packet\char`\"{} with meta-\/data cleared (i.\+e. set to all-\/zeros).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em table\+\_\+id} & Table I\+D (returned by previous invocation of pipeline table create) \\
+\hline
+{\em entry} & On successful invocation, when entry points to a valid buffer, the previous contents of the table default entry (as it was just before the delete operation) is copied to this buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a0e90e4a54b6467deb9b449bf8bd5cab4}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add@{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add@{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{table\+\_\+id, }
+\item[{void $\ast$}]{key, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$}]{entry, }
+\item[{int $\ast$}]{key\+\_\+found, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$$\ast$}]{entry\+\_\+ptr}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a0e90e4a54b6467deb9b449bf8bd5cab4}
+Pipeline table entry add
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em table\+\_\+id} & Table I\+D (returned by previous invocation of pipeline table create) \\
+\hline
+{\em key} & Table entry key \\
+\hline
+{\em entry} & New contents for the table entry identified by key \\
+\hline
+{\em key\+\_\+found} & On successful invocation, set to T\+R\+U\+E (value different than 0) if key was already present in the table before the add operation and to F\+A\+L\+S\+E (value 0) if not \\
+\hline
+{\em entry\+\_\+ptr} & On successful invocation, pointer to the table entry associated with key. This can be used for further read-\/write accesses to this table entry and is valid until the key is deleted from the table or re-\/added (usually for associating different actions and/or action meta-\/data to the current key) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__pipeline_8h_a946f0d5610d152c1e6f641928c4f0743}{}\index{rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}!rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete@{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete}}
+\index{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete@{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete}!rte\+\_\+pipeline.\+h@{rte\+\_\+pipeline.\+h}}
+\subsubsection[{rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+pipeline\+\_\+table\+\_\+entry\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+pipeline $\ast$}]{p, }
+\item[{uint32\+\_\+t}]{table\+\_\+id, }
+\item[{void $\ast$}]{key, }
+\item[{int $\ast$}]{key\+\_\+found, }
+\item[{struct {\bf rte\+\_\+pipeline\+\_\+table\+\_\+entry} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)}\label{rte__pipeline_8h_a946f0d5610d152c1e6f641928c4f0743}
+Pipeline table entry delete
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Handle to pipeline instance \\
+\hline
+{\em table\+\_\+id} & Table I\+D (returned by previous invocation of pipeline table create) \\
+\hline
+{\em key} & Table entry key \\
+\hline
+{\em key\+\_\+found} & On successful invocation, set to T\+R\+U\+E (value different than 0) if key was found in the table before the delete operation and to F\+A\+L\+S\+E (value 0) if not \\
+\hline
+{\em entry} & On successful invocation, when key is found in the table and entry points to a valid buffer, the table entry contents (as it was before the delete was performed) is copied to this buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}

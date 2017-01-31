@@ -1,0 +1,83 @@
+\hypertarget{structrte__fdir__masks}{}\section{rte\+\_\+fdir\+\_\+masks Struct Reference}
+\label{structrte__fdir__masks}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_a610a3904e79a424b5b4d95b6e955ff75}{only\+\_\+ip\+\_\+flow}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_a755be91194d1d3bbabb65aa290b91990}{vlan\+\_\+id}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_ad610cf166351ae7e837556d09a88a15c}{vlan\+\_\+prio}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_a5484aba2cc7d3656f356317814cbb560}{flexbytes}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_a4ad06096e04ef1ca4c5b99fcf264915d}{set\+\_\+ipv6\+\_\+mask}
+\item 
+uint8\+\_\+t \hyperlink{structrte__fdir__masks_a51fb645df14ad44fb4b3c2d22f0e88a9}{comp\+\_\+ipv6\+\_\+dst}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fdir__masks_af1fa0f87400810fabb92bebe0d27ffba}{dst\+\_\+ipv4\+\_\+mask}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fdir__masks_a4f7a60f12d283181289c003d2028b117}{src\+\_\+ipv4\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__masks_ab85d32df5f720c359b18cca10aa7cda2}{dst\+\_\+ipv6\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__masks_a2f84dc137b936998fa0e00e2ffd565f5}{src\+\_\+ipv6\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__masks_a3451bcc47740527fa1e2d84a14786bb3}{src\+\_\+port\+\_\+mask}
+\item 
+uint16\+\_\+t \hyperlink{structrte__fdir__masks_a8c191b0996b359fb0012f86e0233abbc}{dst\+\_\+port\+\_\+mask}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure F\+D\+I\+R masks that are used by the device to match the various fields of R\+X packet headers. \begin{DoxyNote}{Note}
+The only\+\_\+ip\+\_\+flow field has the opposite meaning compared to other masks! 
+\end{DoxyNote}
+
+
+\subsection{Field Documentation}
+\hypertarget{structrte__fdir__masks_a51fb645df14ad44fb4b3c2d22f0e88a9}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!comp\+\_\+ipv6\+\_\+dst@{comp\+\_\+ipv6\+\_\+dst}}
+\index{comp\+\_\+ipv6\+\_\+dst@{comp\+\_\+ipv6\+\_\+dst}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{comp\+\_\+ipv6\+\_\+dst}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t comp\+\_\+ipv6\+\_\+dst}\label{structrte__fdir__masks_a51fb645df14ad44fb4b3c2d22f0e88a9}
+When set to 1, comparison of destination I\+Pv6 address with I\+P6\+A\+T registers is meaningful. \hypertarget{structrte__fdir__masks_af1fa0f87400810fabb92bebe0d27ffba}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!dst\+\_\+ipv4\+\_\+mask@{dst\+\_\+ipv4\+\_\+mask}}
+\index{dst\+\_\+ipv4\+\_\+mask@{dst\+\_\+ipv4\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{dst\+\_\+ipv4\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dst\+\_\+ipv4\+\_\+mask}\label{structrte__fdir__masks_af1fa0f87400810fabb92bebe0d27ffba}
+Mask of Destination I\+Pv4 Address. All bits set to 1 define the relevant bits to use in the destination address of an I\+Pv4 packet when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_ab85d32df5f720c359b18cca10aa7cda2}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!dst\+\_\+ipv6\+\_\+mask@{dst\+\_\+ipv6\+\_\+mask}}
+\index{dst\+\_\+ipv6\+\_\+mask@{dst\+\_\+ipv6\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{dst\+\_\+ipv6\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+ipv6\+\_\+mask}\label{structrte__fdir__masks_ab85d32df5f720c359b18cca10aa7cda2}
+Mask of Source I\+Pv6 Address. All bits set to 1 define the relevant B\+Y\+T\+E\+S to use in the source address of an I\+Pv6 packet when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_a8c191b0996b359fb0012f86e0233abbc}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!dst\+\_\+port\+\_\+mask@{dst\+\_\+port\+\_\+mask}}
+\index{dst\+\_\+port\+\_\+mask@{dst\+\_\+port\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{dst\+\_\+port\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+port\+\_\+mask}\label{structrte__fdir__masks_a8c191b0996b359fb0012f86e0233abbc}
+Mask of Destination Port. All bits set to 1 define the relevant bits to use in the destination port of an I\+P packet when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_a5484aba2cc7d3656f356317814cbb560}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!flexbytes@{flexbytes}}
+\index{flexbytes@{flexbytes}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{flexbytes}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t flexbytes}\label{structrte__fdir__masks_a5484aba2cc7d3656f356317814cbb560}
+If set to 1, flexbytes is relevant in filters. \hypertarget{structrte__fdir__masks_a610a3904e79a424b5b4d95b6e955ff75}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!only\+\_\+ip\+\_\+flow@{only\+\_\+ip\+\_\+flow}}
+\index{only\+\_\+ip\+\_\+flow@{only\+\_\+ip\+\_\+flow}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{only\+\_\+ip\+\_\+flow}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t only\+\_\+ip\+\_\+flow}\label{structrte__fdir__masks_a610a3904e79a424b5b4d95b6e955ff75}
+When set to 1, packet l4type is {\bfseries N\+O\+T} relevant in filters, and source and destination port masks must be set to zero. \hypertarget{structrte__fdir__masks_a4ad06096e04ef1ca4c5b99fcf264915d}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!set\+\_\+ipv6\+\_\+mask@{set\+\_\+ipv6\+\_\+mask}}
+\index{set\+\_\+ipv6\+\_\+mask@{set\+\_\+ipv6\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{set\+\_\+ipv6\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t set\+\_\+ipv6\+\_\+mask}\label{structrte__fdir__masks_a4ad06096e04ef1ca4c5b99fcf264915d}
+If set to 1, set the I\+Pv6 masks. Otherwise set the I\+Pv4 masks. \hypertarget{structrte__fdir__masks_a4f7a60f12d283181289c003d2028b117}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!src\+\_\+ipv4\+\_\+mask@{src\+\_\+ipv4\+\_\+mask}}
+\index{src\+\_\+ipv4\+\_\+mask@{src\+\_\+ipv4\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{src\+\_\+ipv4\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t src\+\_\+ipv4\+\_\+mask}\label{structrte__fdir__masks_a4f7a60f12d283181289c003d2028b117}
+Mask of Source I\+Pv4 Address. All bits set to 1 define the relevant bits to use in the source address of an I\+Pv4 packet when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_a2f84dc137b936998fa0e00e2ffd565f5}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!src\+\_\+ipv6\+\_\+mask@{src\+\_\+ipv6\+\_\+mask}}
+\index{src\+\_\+ipv6\+\_\+mask@{src\+\_\+ipv6\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{src\+\_\+ipv6\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+ipv6\+\_\+mask}\label{structrte__fdir__masks_a2f84dc137b936998fa0e00e2ffd565f5}
+Mask of Destination I\+Pv6 Address. All bits set to 1 define the relevant B\+Y\+T\+E\+S to use in the destination address of an I\+Pv6 packet when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_a3451bcc47740527fa1e2d84a14786bb3}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!src\+\_\+port\+\_\+mask@{src\+\_\+port\+\_\+mask}}
+\index{src\+\_\+port\+\_\+mask@{src\+\_\+port\+\_\+mask}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{src\+\_\+port\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+port\+\_\+mask}\label{structrte__fdir__masks_a3451bcc47740527fa1e2d84a14786bb3}
+Mask of Source Port. All bits set to 1 define the relevant bits to use in the source port of an I\+P packets when matching it against F\+D\+I\+R filters. \hypertarget{structrte__fdir__masks_a755be91194d1d3bbabb65aa290b91990}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!vlan\+\_\+id@{vlan\+\_\+id}}
+\index{vlan\+\_\+id@{vlan\+\_\+id}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{vlan\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t vlan\+\_\+id}\label{structrte__fdir__masks_a755be91194d1d3bbabb65aa290b91990}
+If set to 1, vlan\+\_\+id is relevant in filters. \hypertarget{structrte__fdir__masks_ad610cf166351ae7e837556d09a88a15c}{}\index{rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}!vlan\+\_\+prio@{vlan\+\_\+prio}}
+\index{vlan\+\_\+prio@{vlan\+\_\+prio}!rte\+\_\+fdir\+\_\+masks@{rte\+\_\+fdir\+\_\+masks}}
+\subsubsection[{vlan\+\_\+prio}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t vlan\+\_\+prio}\label{structrte__fdir__masks_ad610cf166351ae7e837556d09a88a15c}
+If set to 1, vlan\+\_\+prio is relevant in filters. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

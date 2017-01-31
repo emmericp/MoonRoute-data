@@ -1,0 +1,50 @@
+\hypertarget{structrte__config}{}\section{rte\+\_\+config Struct Reference}
+\label{structrte__config}\index{rte\+\_\+config@{rte\+\_\+config}}
+
+
+{\ttfamily \#include $<$rte\+\_\+eal.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__config_abe59d1b8baa4c39f023b18bd28bfd555}{master\+\_\+lcore}
+\item 
+uint32\+\_\+t \hyperlink{structrte__config_a17ac87c5aeee30c5651a0eb3cfa9e0df}{lcore\+\_\+count}
+\item 
+enum \hyperlink{rte__eal_8h_a4b3d3708f5bd9a9634d494b64cafc0b8}{rte\+\_\+lcore\+\_\+role\+\_\+t} \hyperlink{structrte__config_a79a713f1c76515dd44c9ba8b55d090b5}{lcore\+\_\+role} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E\mbox{]}
+\item 
+enum \hyperlink{rte__eal_8h_a1c1b5d8e30606d1b95f36413c2294d49}{rte\+\_\+proc\+\_\+type\+\_\+t} \hyperlink{structrte__config_a711b13dd2d53c31332977fb4247ecd98}{process\+\_\+type}
+\item 
+unsigned \hyperlink{structrte__config_a8b08a4d2ec878257d64c55f64a62242c}{flags}
+\item 
+struct \hyperlink{structrte__mem__config}{rte\+\_\+mem\+\_\+config} $\ast$ \hyperlink{structrte__config_acffed27cbdbce4d200a1b4d37b9a9ce6}{mem\+\_\+config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The global R\+T\+E configuration structure. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__config_a8b08a4d2ec878257d64c55f64a62242c}{}\index{rte\+\_\+config@{rte\+\_\+config}!flags@{flags}}
+\index{flags@{flags}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned flags}\label{structrte__config_a8b08a4d2ec878257d64c55f64a62242c}
+A set of general status flags \hypertarget{structrte__config_a17ac87c5aeee30c5651a0eb3cfa9e0df}{}\index{rte\+\_\+config@{rte\+\_\+config}!lcore\+\_\+count@{lcore\+\_\+count}}
+\index{lcore\+\_\+count@{lcore\+\_\+count}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{lcore\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t lcore\+\_\+count}\label{structrte__config_a17ac87c5aeee30c5651a0eb3cfa9e0df}
+Number of available logical cores. \hypertarget{structrte__config_a79a713f1c76515dd44c9ba8b55d090b5}{}\index{rte\+\_\+config@{rte\+\_\+config}!lcore\+\_\+role@{lcore\+\_\+role}}
+\index{lcore\+\_\+role@{lcore\+\_\+role}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{lcore\+\_\+role}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+lcore\+\_\+role\+\_\+t} lcore\+\_\+role\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+L\+C\+O\+R\+E\mbox{]}}\label{structrte__config_a79a713f1c76515dd44c9ba8b55d090b5}
+State of cores. \hypertarget{structrte__config_abe59d1b8baa4c39f023b18bd28bfd555}{}\index{rte\+\_\+config@{rte\+\_\+config}!master\+\_\+lcore@{master\+\_\+lcore}}
+\index{master\+\_\+lcore@{master\+\_\+lcore}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{master\+\_\+lcore}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t master\+\_\+lcore}\label{structrte__config_abe59d1b8baa4c39f023b18bd28bfd555}
+Id of the master lcore \hypertarget{structrte__config_acffed27cbdbce4d200a1b4d37b9a9ce6}{}\index{rte\+\_\+config@{rte\+\_\+config}!mem\+\_\+config@{mem\+\_\+config}}
+\index{mem\+\_\+config@{mem\+\_\+config}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{mem\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mem\+\_\+config}$\ast$ mem\+\_\+config}\label{structrte__config_acffed27cbdbce4d200a1b4d37b9a9ce6}
+Pointer to memory configuration, which may be shared across multiple Intel D\+P\+D\+K instances \hypertarget{structrte__config_a711b13dd2d53c31332977fb4247ecd98}{}\index{rte\+\_\+config@{rte\+\_\+config}!process\+\_\+type@{process\+\_\+type}}
+\index{process\+\_\+type@{process\+\_\+type}!rte\+\_\+config@{rte\+\_\+config}}
+\subsubsection[{process\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+proc\+\_\+type\+\_\+t} process\+\_\+type}\label{structrte__config_a711b13dd2d53c31332977fb4247ecd98}
+Primary or secondary configuration 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__eal_8h}{rte\+\_\+eal.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,376 @@
+\hypertarget{rte__sched_8h}{}\section{lib/librte\+\_\+sched/rte\+\_\+sched.h File Reference}
+\label{rte__sched_8h}\index{lib/librte\+\_\+sched/rte\+\_\+sched.\+h@{lib/librte\+\_\+sched/rte\+\_\+sched.\+h}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+meter.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__sched__subport__params}{rte\+\_\+sched\+\_\+subport\+\_\+params}
+\item 
+struct \hyperlink{structrte__sched__subport__stats}{rte\+\_\+sched\+\_\+subport\+\_\+stats}
+\item 
+struct \hyperlink{structrte__sched__pipe__params}{rte\+\_\+sched\+\_\+pipe\+\_\+params}
+\item 
+struct \hyperlink{structrte__sched__queue__stats}{rte\+\_\+sched\+\_\+queue\+\_\+stats}
+\item 
+struct \hyperlink{structrte__sched__port__params}{rte\+\_\+sched\+\_\+port\+\_\+params}
+\item 
+struct \hyperlink{structrte__sched__port__hierarchy}{rte\+\_\+sched\+\_\+port\+\_\+hierarchy}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}~4
+\item 
+\#define \hyperlink{rte__sched_8h_a18bd6271b9e6f5beecb651a84b3d328e}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S}~4
+\item 
+\#define \hyperlink{rte__sched_8h_a21bfcaf525e24b9b562a80a894e33245}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}
+\item 
+\#define \hyperlink{rte__sched_8h_a9ee01a1e4f782390e5350aaa894b0a54}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T}~256
+\item 
+\#define \hyperlink{rte__sched_8h_a223009f8ebd0b9f2d7b56d11201cab8e}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}~24
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+sched\+\_\+port $\ast$ \hyperlink{rte__sched_8h_a496f8da1e648ee8600897f8c748bf56e}{rte\+\_\+sched\+\_\+port\+\_\+config} (struct \hyperlink{structrte__sched__port__params}{rte\+\_\+sched\+\_\+port\+\_\+params} $\ast$params)
+\item 
+void \hyperlink{rte__sched_8h_ab38bf252e231fdf006978ddc5eeb2540}{rte\+\_\+sched\+\_\+port\+\_\+free} (struct rte\+\_\+sched\+\_\+port $\ast$port)
+\item 
+int \hyperlink{rte__sched_8h_a4e51de951a33f798bf28c3437b441b31}{rte\+\_\+sched\+\_\+subport\+\_\+config} (struct rte\+\_\+sched\+\_\+port $\ast$port, uint32\+\_\+t subport\+\_\+id, struct \hyperlink{structrte__sched__subport__params}{rte\+\_\+sched\+\_\+subport\+\_\+params} $\ast$params)
+\item 
+int \hyperlink{rte__sched_8h_a21f6f073d054faab7e6a9683b8e0fe0f}{rte\+\_\+sched\+\_\+pipe\+\_\+config} (struct rte\+\_\+sched\+\_\+port $\ast$port, uint32\+\_\+t subport\+\_\+id, uint32\+\_\+t pipe\+\_\+id, int32\+\_\+t pipe\+\_\+profile)
+\item 
+uint32\+\_\+t \hyperlink{rte__sched_8h_aa63323938e29256623c574e41af02cc6}{rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint} (struct \hyperlink{structrte__sched__port__params}{rte\+\_\+sched\+\_\+port\+\_\+params} $\ast$params)
+\item 
+int \hyperlink{rte__sched_8h_a9df7d9f13f9945d315733ed0939508ea}{rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats} (struct rte\+\_\+sched\+\_\+port $\ast$port, uint32\+\_\+t subport\+\_\+id, struct \hyperlink{structrte__sched__subport__stats}{rte\+\_\+sched\+\_\+subport\+\_\+stats} $\ast$stats, uint32\+\_\+t $\ast$tc\+\_\+ov)
+\item 
+int \hyperlink{rte__sched_8h_ac732e88980d2146219696389fb210c93}{rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats} (struct rte\+\_\+sched\+\_\+port $\ast$port, uint32\+\_\+t queue\+\_\+id, struct \hyperlink{structrte__sched__queue__stats}{rte\+\_\+sched\+\_\+queue\+\_\+stats} $\ast$stats, uint16\+\_\+t $\ast$qlen)
+\item 
+static void \hyperlink{rte__sched_8h_a9ca2b391a678552fdbf4098039e07666}{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt, uint32\+\_\+t subport, uint32\+\_\+t pipe, uint32\+\_\+t traffic\+\_\+class, uint32\+\_\+t queue, enum \hyperlink{rte__meter_8h_a9fdad5fa95e62568e827ab7d0c792f3a}{rte\+\_\+meter\+\_\+color} color)
+\item 
+static void \hyperlink{rte__sched_8h_aed361b2789fd74b27bc6065e3a5d0f94}{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path} (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$pkt, uint32\+\_\+t $\ast$subport, uint32\+\_\+t $\ast$pipe, uint32\+\_\+t $\ast$traffic\+\_\+class, uint32\+\_\+t $\ast$queue)
+\item 
+int \hyperlink{rte__sched_8h_a326fddd15331c0fd66c7a181a6b43e29}{rte\+\_\+sched\+\_\+port\+\_\+enqueue} (struct rte\+\_\+sched\+\_\+port $\ast$port, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n\+\_\+pkts)
+\item 
+int \hyperlink{rte__sched_8h_afbc84940f2df8eb87e2f80ebb4269ddd}{rte\+\_\+sched\+\_\+port\+\_\+dequeue} (struct rte\+\_\+sched\+\_\+port $\ast$port, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint32\+\_\+t n\+\_\+pkts)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Hierarchical Scheduler
+
+The hierarchical scheduler prioritizes the transmission of packets from different users and traffic classes according to the Service Level Agreements (S\+L\+As) defined for the current network node.
+
+The scheduler supports thousands of packet queues grouped under a 5-\/level hierarchy\+:
+\begin{DoxyEnumerate}
+\item Port\+:
+\begin{DoxyItemize}
+\item Typical usage\+: output Ethernet port;
+\item Multiple ports are scheduled in round robin order with equal priority;
+\end{DoxyItemize}
+\item Subport\+:
+\begin{DoxyItemize}
+\item Typical usage\+: group of users;
+\item Traffic shaping using the token bucket algorithm (one bucket per subport);
+\item Upper limit enforced per traffic class at subport level;
+\item Lower priority traffic classes able to reuse subport bandwidth currently unused by higher priority traffic classes of the same subport;
+\item When any subport traffic class is oversubscribed (configuration time event), the usage of subport member pipes with high demand for that traffic class pipes is truncated to a dynamically adjusted value with no impact to low demand pipes;
+\end{DoxyItemize}
+\item Pipe\+:
+\begin{DoxyItemize}
+\item Typical usage\+: individual user/subscriber;
+\item Traffic shaping using the token bucket algorithm (one bucket per pipe);
+\end{DoxyItemize}
+\item Traffic class\+:
+\begin{DoxyItemize}
+\item Traffic classes of the same pipe handled in strict priority order;
+\item Upper limit enforced per traffic class at the pipe level;
+\item Lower priority traffic classes able to reuse pipe bandwidth currently unused by higher priority traffic classes of the same pipe;
+\end{DoxyItemize}
+\item Queue\+:
+\begin{DoxyItemize}
+\item Typical usage\+: queue hosting packets from one or multiple connections of same traffic class belonging to the same user;
+\item Weighted Round Robin (W\+R\+R) is used to service the queues within same pipe traffic class. 
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__sched_8h_a223009f8ebd0b9f2d7b56d11201cab8e}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+O\+V\+E\+R\+H\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+L\+T~24}\label{rte__sched_8h_a223009f8ebd0b9f2d7b56d11201cab8e}
+Ethernet framing overhead. Overhead fields per Ethernet frame\+:
+\begin{DoxyEnumerate}
+\item Preamble\+: 7 bytes;
+\item Start of Frame Delimiter (S\+F\+D)\+: 1 byte;
+\item Frame Check Sequence (F\+C\+S)\+: 4 bytes;
+\item Inter Frame Gap (I\+F\+G)\+: 12 bytes. The F\+C\+S is considered overhead only if not included in the packet length (field pkt.\+pkt\+\_\+len of struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf}). 
+\end{DoxyEnumerate}\hypertarget{rte__sched_8h_a9ee01a1e4f782390e5350aaa894b0a54}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T}}
+\index{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+P\+I\+P\+E\+\_\+\+P\+R\+O\+F\+I\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+O\+R\+T~256}\label{rte__sched_8h_a9ee01a1e4f782390e5350aaa894b0a54}
+Maximum number of pipe profiles that can be defined per port. Compile-\/time configurable. \hypertarget{rte__sched_8h_a21bfcaf525e24b9b562a80a894e33245}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}}
+\index{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\label{rte__sched_8h_a21bfcaf525e24b9b562a80a894e33245}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\hyperlink{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}{RTE\_SCHED\_TRAFFIC\_CLASSES\_PER\_PIPE} *     \hyperlink{rte__sched_8h_a18bd6271b9e6f5beecb651a84b3d328e}{\(\backslash\)}
+\hyperlink{rte__sched_8h_a18bd6271b9e6f5beecb651a84b3d328e}{    RTE\_SCHED\_QUEUES\_PER\_TRAFFIC\_CLASS})
+\end{DoxyCode}
+Number of queues per pipe. \hypertarget{rte__sched_8h_a18bd6271b9e6f5beecb651a84b3d328e}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S}}
+\index{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S~4}\label{rte__sched_8h_a18bd6271b9e6f5beecb651a84b3d328e}
+Number of queues per pipe traffic class. Cannot be changed. \hypertarget{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}}
+\index{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E@{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E~4}\label{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}
+Random Early Detection (R\+E\+D) Number of traffic classes per pipe (as well as subport). Cannot be changed. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__sched_8h_a21f6f073d054faab7e6a9683b8e0fe0f}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+pipe\+\_\+config@{rte\+\_\+sched\+\_\+pipe\+\_\+config}}
+\index{rte\+\_\+sched\+\_\+pipe\+\_\+config@{rte\+\_\+sched\+\_\+pipe\+\_\+config}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+pipe\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+pipe\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{uint32\+\_\+t}]{subport\+\_\+id, }
+\item[{uint32\+\_\+t}]{pipe\+\_\+id, }
+\item[{int32\+\_\+t}]{pipe\+\_\+profile}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_a21f6f073d054faab7e6a9683b8e0fe0f}
+Hierarchical scheduler pipe configuration
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em subport\+\_\+id} & Subport I\+D \\
+\hline
+{\em pipe\+\_\+id} & Pipe I\+D within subport \\
+\hline
+{\em pipe\+\_\+profile} & I\+D of port-\/level pre-\/configured pipe profile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_a496f8da1e648ee8600897f8c748bf56e}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+config@{rte\+\_\+sched\+\_\+port\+\_\+config}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+config@{rte\+\_\+sched\+\_\+port\+\_\+config}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+sched\+\_\+port$\ast$ rte\+\_\+sched\+\_\+port\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+sched\+\_\+port\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_a496f8da1e648ee8600897f8c748bf56e}
+Hierarchical scheduler port configuration
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Port scheduler configuration parameter structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to port scheduler instance upon success or N\+U\+L\+L otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_afbc84940f2df8eb87e2f80ebb4269ddd}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+dequeue@{rte\+\_\+sched\+\_\+port\+\_\+dequeue}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+dequeue@{rte\+\_\+sched\+\_\+port\+\_\+dequeue}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+dequeue}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+port\+\_\+dequeue (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{pkts, }
+\item[{uint32\+\_\+t}]{n\+\_\+pkts}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_afbc84940f2df8eb87e2f80ebb4269ddd}
+Hierarchical scheduler port dequeue. Reads up to n\+\_\+pkts from the port scheduler and stores them in the pkts array and returns the number of packets actually read. The pkts array needs to be pre-\/allocated by the caller with at least n\+\_\+pkts entries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em pkts} & Pre-\/allocated packet descriptor array where the packets dequeued from the port scheduler should be stored \\
+\hline
+{\em n\+\_\+pkts} & Number of packets to dequeue from the port scheduler \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of packets successfully dequeued and placed in the pkts array 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_a326fddd15331c0fd66c7a181a6b43e29}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+enqueue@{rte\+\_\+sched\+\_\+port\+\_\+enqueue}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+enqueue@{rte\+\_\+sched\+\_\+port\+\_\+enqueue}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+port\+\_\+enqueue (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{pkts, }
+\item[{uint32\+\_\+t}]{n\+\_\+pkts}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_a326fddd15331c0fd66c7a181a6b43e29}
+Hierarchical scheduler port enqueue. Writes up to n\+\_\+pkts to port scheduler and returns the number of packets actually written. For each packet, the port scheduler queue to write the packet to is identified by reading the hierarchy path from the packet descriptor; if the queue is full or congested and the packet is not written to the queue, then the packet is automatically dropped without any action required from the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em pkts} & Array storing the packet descriptor handles \\
+\hline
+{\em n\+\_\+pkts} & Number of packets to enqueue from the pkts array into the port scheduler \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of packets successfully enqueued 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_ab38bf252e231fdf006978ddc5eeb2540}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+free@{rte\+\_\+sched\+\_\+port\+\_\+free}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+free@{rte\+\_\+sched\+\_\+port\+\_\+free}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+sched\+\_\+port\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_ab38bf252e231fdf006978ddc5eeb2540}
+Hierarchical scheduler port free
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__sched_8h_aa63323938e29256623c574e41af02cc6}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint@{rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint@{rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rte\+\_\+sched\+\_\+port\+\_\+get\+\_\+memory\+\_\+footprint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+sched\+\_\+port\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_aa63323938e29256623c574e41af02cc6}
+Hierarchical scheduler memory footprint size per port
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Port scheduler configuration parameter structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memory footprint size in bytes upon success, 0 otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_aed361b2789fd74b27bc6065e3a5d0f94}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path@{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path@{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+read\+\_\+tree\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{pkt, }
+\item[{uint32\+\_\+t $\ast$}]{subport, }
+\item[{uint32\+\_\+t $\ast$}]{pipe, }
+\item[{uint32\+\_\+t $\ast$}]{traffic\+\_\+class, }
+\item[{uint32\+\_\+t $\ast$}]{queue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__sched_8h_aed361b2789fd74b27bc6065e3a5d0f94}
+Scheduler hierarchy path read from packet descriptor (struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf}). Typically called as part of the hierarchical scheduler enqueue operation. The subport, pipe, traffic class and queue parameters need to be pre-\/allocated by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt} & Packet descriptor handle \\
+\hline
+{\em subport} & Subport I\+D \\
+\hline
+{\em pipe} & Pipe I\+D within subport \\
+\hline
+{\em traffic\+\_\+class} & Traffic class I\+D within pipe (0 .. 3) \\
+\hline
+{\em queue} & Queue I\+D within pipe traffic class (0 .. 3) \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__sched_8h_a9ca2b391a678552fdbf4098039e07666}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write@{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write}}
+\index{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write@{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+sched\+\_\+port\+\_\+pkt\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{pkt, }
+\item[{uint32\+\_\+t}]{subport, }
+\item[{uint32\+\_\+t}]{pipe, }
+\item[{uint32\+\_\+t}]{traffic\+\_\+class, }
+\item[{uint32\+\_\+t}]{queue, }
+\item[{enum {\bf rte\+\_\+meter\+\_\+color}}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__sched_8h_a9ca2b391a678552fdbf4098039e07666}
+Scheduler hierarchy path write to packet descriptor. Typically called by the packet classification stage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkt} & Packet descriptor handle \\
+\hline
+{\em subport} & Subport I\+D \\
+\hline
+{\em pipe} & Pipe I\+D within subport \\
+\hline
+{\em traffic\+\_\+class} & Traffic class I\+D within pipe (0 .. 3) \\
+\hline
+{\em queue} & Queue I\+D within pipe traffic class (0 .. 3) \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__sched_8h_ac732e88980d2146219696389fb210c93}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats@{rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats}}
+\index{rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats@{rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+queue\+\_\+read\+\_\+stats (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{uint32\+\_\+t}]{queue\+\_\+id, }
+\item[{struct {\bf rte\+\_\+sched\+\_\+queue\+\_\+stats} $\ast$}]{stats, }
+\item[{uint16\+\_\+t $\ast$}]{qlen}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_ac732e88980d2146219696389fb210c93}
+Hierarchical scheduler queue statistics read
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em queue\+\_\+id} & Queue I\+D within port scheduler \\
+\hline
+{\em stats} & Pointer to pre-\/allocated subport statistics structure where the statistics counters should be stored \\
+\hline
+{\em qlen} & Pointer to pre-\/allocated variable where the current queue length should be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_a4e51de951a33f798bf28c3437b441b31}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+subport\+\_\+config@{rte\+\_\+sched\+\_\+subport\+\_\+config}}
+\index{rte\+\_\+sched\+\_\+subport\+\_\+config@{rte\+\_\+sched\+\_\+subport\+\_\+config}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+subport\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+subport\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{uint32\+\_\+t}]{subport\+\_\+id, }
+\item[{struct {\bf rte\+\_\+sched\+\_\+subport\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_a4e51de951a33f798bf28c3437b441b31}
+Hierarchical scheduler subport configuration
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em subport\+\_\+id} & Subport I\+D \\
+\hline
+{\em params} & Subport configuration parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__sched_8h_a9df7d9f13f9945d315733ed0939508ea}{}\index{rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}!rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats@{rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats}}
+\index{rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats@{rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats}!rte\+\_\+sched.\+h@{rte\+\_\+sched.\+h}}
+\subsubsection[{rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+sched\+\_\+subport\+\_\+read\+\_\+stats (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+sched\+\_\+port $\ast$}]{port, }
+\item[{uint32\+\_\+t}]{subport\+\_\+id, }
+\item[{struct {\bf rte\+\_\+sched\+\_\+subport\+\_\+stats} $\ast$}]{stats, }
+\item[{uint32\+\_\+t $\ast$}]{tc\+\_\+ov}
+\end{DoxyParamCaption}
+)}\label{rte__sched_8h_a9df7d9f13f9945d315733ed0939508ea}
+Hierarchical scheduler subport statistics read
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Handle to port scheduler instance \\
+\hline
+{\em subport\+\_\+id} & Subport I\+D \\
+\hline
+{\em stats} & Pointer to pre-\/allocated subport statistics structure where the statistics counters should be stored \\
+\hline
+{\em tc\+\_\+ov} & Pointer to pre-\/allocated 4-\/entry array where the oversubscription status for each of the 4 subport traffic classes should be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, error code otherwise 
+\end{DoxyReturn}

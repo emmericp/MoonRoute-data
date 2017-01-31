@@ -1,0 +1,34 @@
+\hypertarget{rte__table__lpm_8h}{}\section{lib/librte\+\_\+table/rte\+\_\+table\+\_\+lpm.h File Reference}
+\label{rte__table__lpm_8h}\index{lib/librte\+\_\+table/rte\+\_\+table\+\_\+lpm.\+h@{lib/librte\+\_\+table/rte\+\_\+table\+\_\+lpm.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rte\+\_\+table.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__lpm__params}{rte\+\_\+table\+\_\+lpm\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__lpm__key}{rte\+\_\+table\+\_\+lpm\+\_\+key}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__lpm_8h_ad8ce9bc1c0f2a5b25ea367b4b3d52c0c}{rte\+\_\+table\+\_\+lpm\+\_\+ops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Table L\+P\+M for I\+Pv4
+
+This table uses the Longest Prefix Match (L\+P\+M) algorithm to uniquely associate data to lookup keys.
+
+Use-\/case\+: I\+P routing table. Routes that are added to the table associate a next hop to an I\+P prefix. The I\+P prefix is specified as I\+P address and depth and cover for a multitude of lookup keys (i.\+e. destination I\+P addresses) that all share the same data (i.\+e. next hop). The next hop information typically contains the output interface I\+D, the I\+P address of the next hop station (which is part of the same I\+P network the output interface is connected to) and other flags and counters.
+
+The L\+P\+M primitive only allows associating an 8-\/bit number (next hop I\+D) to an I\+P prefix, while a routing table can potentially contain thousands of routes or even more. This means that the same next hop I\+D (and next hop information) has to be shared by multiple routes, which makes sense, as multiple remote networks could be reached through the same next hop. Therefore, when a route is added or updated, the L\+P\+M table has to check whether the same next hop is already in use before using a new next hop I\+D for this route.
+
+The comparison between different next hops is done for the first “entry\+\_\+unique\+\_\+size” bytes of the next hop information (configurable parameter), which have to uniquely identify the next hop, therefore the user has to carefully manage the format of the L\+P\+M table entry (i.\+e. the next hop information) so that any next hop data that changes value during run-\/time (e.\+g. counters) is placed outside of this area. 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__table__lpm_8h_ad8ce9bc1c0f2a5b25ea367b4b3d52c0c}{}\index{rte\+\_\+table\+\_\+lpm.\+h@{rte\+\_\+table\+\_\+lpm.\+h}!rte\+\_\+table\+\_\+lpm\+\_\+ops@{rte\+\_\+table\+\_\+lpm\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+lpm\+\_\+ops@{rte\+\_\+table\+\_\+lpm\+\_\+ops}!rte\+\_\+table\+\_\+lpm.\+h@{rte\+\_\+table\+\_\+lpm.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+lpm\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+lpm\+\_\+ops}\label{rte__table__lpm_8h_ad8ce9bc1c0f2a5b25ea367b4b3d52c0c}
+L\+P\+M table operations 

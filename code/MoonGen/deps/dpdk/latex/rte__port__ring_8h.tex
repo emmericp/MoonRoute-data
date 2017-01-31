@@ -1,0 +1,34 @@
+\hypertarget{rte__port__ring_8h}{}\section{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ring.h File Reference}
+\label{rte__port__ring_8h}\index{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ring.\+h@{lib/librte\+\_\+port/rte\+\_\+port\+\_\+ring.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rte\+\_\+port.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__ring__reader__params}{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+params}
+\item 
+struct \hyperlink{structrte__port__ring__writer__params}{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__port__in__ops}{rte\+\_\+port\+\_\+in\+\_\+ops} \hyperlink{rte__port__ring_8h_a21140815d53c059aaadb55f28a24497e}{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops}
+\item 
+struct \hyperlink{structrte__port__out__ops}{rte\+\_\+port\+\_\+out\+\_\+ops} \hyperlink{rte__port__ring_8h_a59fd9348c9a8ae494c504f265ad20b23}{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Port Ring
+
+ring\+\_\+reader\+: input port built on top of pre-\/initialized single consumer ring ring\+\_\+writer\+: output port built on top of pre-\/initialized single producer ring 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__port__ring_8h_a21140815d53c059aaadb55f28a24497e}{}\index{rte\+\_\+port\+\_\+ring.\+h@{rte\+\_\+port\+\_\+ring.\+h}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops}}
+\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops}!rte\+\_\+port\+\_\+ring.\+h@{rte\+\_\+port\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+in\+\_\+ops} rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ops}\label{rte__port__ring_8h_a21140815d53c059aaadb55f28a24497e}
+ring\+\_\+reader port operations \hypertarget{rte__port__ring_8h_a59fd9348c9a8ae494c504f265ad20b23}{}\index{rte\+\_\+port\+\_\+ring.\+h@{rte\+\_\+port\+\_\+ring.\+h}!rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops}}
+\index{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops@{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops}!rte\+\_\+port\+\_\+ring.\+h@{rte\+\_\+port\+\_\+ring.\+h}}
+\subsubsection[{rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+port\+\_\+out\+\_\+ops} rte\+\_\+port\+\_\+ring\+\_\+writer\+\_\+ops}\label{rte__port__ring_8h_a59fd9348c9a8ae494c504f265ad20b23}
+ring\+\_\+writer port operations 

@@ -1,0 +1,55 @@
+\hypertarget{rte__prefetch_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+prefetch.h File Reference}
+\label{rte__prefetch_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+prefetch.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+prefetch.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{rte__prefetch_8h_a37f0dd7d81e95c2d3139ddf50090b6e3}{rte\+\_\+prefetch0} (volatile void $\ast$p)
+\item 
+static void \hyperlink{rte__prefetch_8h_a7f8c132899ae59a4310d8c0016a5867f}{rte\+\_\+prefetch1} (volatile void $\ast$p)
+\item 
+static void \hyperlink{rte__prefetch_8h_ad8634b7d5628ce60786f37630b493f94}{rte\+\_\+prefetch2} (volatile void $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prefetch operations.
+
+This file defines an A\+P\+I for prefetch macros / inline-\/functions, which are architecture-\/dependent. Prefetching occurs when a processor requests an instruction or data from memory to cache before it is actually needed, potentially speeding up the execution of the program. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__prefetch_8h_a37f0dd7d81e95c2d3139ddf50090b6e3}{}\index{rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}!rte\+\_\+prefetch0@{rte\+\_\+prefetch0}}
+\index{rte\+\_\+prefetch0@{rte\+\_\+prefetch0}!rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}}
+\subsubsection[{rte\+\_\+prefetch0}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+prefetch0 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__prefetch_8h_a37f0dd7d81e95c2d3139ddf50090b6e3}
+Prefetch a cache line into all cache levels. 
+\begin{DoxyParams}{Parameters}
+{\em p} & Address to prefetch \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__prefetch_8h_a7f8c132899ae59a4310d8c0016a5867f}{}\index{rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}!rte\+\_\+prefetch1@{rte\+\_\+prefetch1}}
+\index{rte\+\_\+prefetch1@{rte\+\_\+prefetch1}!rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}}
+\subsubsection[{rte\+\_\+prefetch1}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+prefetch1 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__prefetch_8h_a7f8c132899ae59a4310d8c0016a5867f}
+Prefetch a cache line into all cache levels except the 0th cache level. 
+\begin{DoxyParams}{Parameters}
+{\em p} & Address to prefetch \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__prefetch_8h_ad8634b7d5628ce60786f37630b493f94}{}\index{rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}!rte\+\_\+prefetch2@{rte\+\_\+prefetch2}}
+\index{rte\+\_\+prefetch2@{rte\+\_\+prefetch2}!rte\+\_\+prefetch.\+h@{rte\+\_\+prefetch.\+h}}
+\subsubsection[{rte\+\_\+prefetch2}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+prefetch2 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__prefetch_8h_ad8634b7d5628ce60786f37630b493f94}
+Prefetch a cache line into all cache levels except the 0th and 1th cache levels. 
+\begin{DoxyParams}{Parameters}
+{\em p} & Address to prefetch \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,130 @@
+\hypertarget{rte__cycles_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+cycles.h File Reference}
+\label{rte__cycles_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+cycles.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+cycles.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+debug.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+atomic.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t \hyperlink{rte__cycles_8h_a16fa7ef140377a37bc66b336dd54ff70}{rte\+\_\+rdtsc} (void)
+\item 
+static uint64\+\_\+t \hyperlink{rte__cycles_8h_a59cb32b6ba0648372928a20f8e0291ee}{rte\+\_\+rdtsc\+\_\+precise} (void)
+\item 
+uint64\+\_\+t \hyperlink{rte__cycles_8h_ae016e608f344823e677819d8f04264c5}{rte\+\_\+get\+\_\+tsc\+\_\+hz} (void)
+\item 
+static uint64\+\_\+t \hyperlink{rte__cycles_8h_a34aaedfb8b9fa4f83d4cb3108cda2041}{rte\+\_\+get\+\_\+tsc\+\_\+cycles} (void)
+\item 
+static uint64\+\_\+t \hyperlink{rte__cycles_8h_a23bc38401d57203554dc5b47e72701f9}{rte\+\_\+get\+\_\+timer\+\_\+cycles} (void)
+\item 
+static uint64\+\_\+t \hyperlink{rte__cycles_8h_a18f8d53cce1fcc6c1d35000752017151}{rte\+\_\+get\+\_\+timer\+\_\+hz} (void)
+\item 
+void \hyperlink{rte__cycles_8h_a62a6204f524c4781cae7e9e4a0b01b7f}{rte\+\_\+delay\+\_\+us} (unsigned us)
+\item 
+static void \hyperlink{rte__cycles_8h_af73b844d50b98de74b1a0e1730262f85}{rte\+\_\+delay\+\_\+ms} (unsigned ms)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple Time Reference Functions (Cycles and H\+P\+E\+T). 
+
+\subsection{Function Documentation}
+\hypertarget{rte__cycles_8h_af73b844d50b98de74b1a0e1730262f85}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+delay\+\_\+ms@{rte\+\_\+delay\+\_\+ms}}
+\index{rte\+\_\+delay\+\_\+ms@{rte\+\_\+delay\+\_\+ms}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+delay\+\_\+ms}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+delay\+\_\+ms (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_af73b844d50b98de74b1a0e1730262f85}
+Wait at least ms milliseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & The number of milliseconds to wait. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__cycles_8h_a62a6204f524c4781cae7e9e4a0b01b7f}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+delay\+\_\+us@{rte\+\_\+delay\+\_\+us}}
+\index{rte\+\_\+delay\+\_\+us@{rte\+\_\+delay\+\_\+us}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+delay\+\_\+us}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+delay\+\_\+us (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{us}
+\end{DoxyParamCaption}
+)}\label{rte__cycles_8h_a62a6204f524c4781cae7e9e4a0b01b7f}
+Wait at least us microseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em us} & The number of microseconds to wait. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__cycles_8h_a23bc38401d57203554dc5b47e72701f9}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+get\+\_\+timer\+\_\+cycles@{rte\+\_\+get\+\_\+timer\+\_\+cycles}}
+\index{rte\+\_\+get\+\_\+timer\+\_\+cycles@{rte\+\_\+get\+\_\+timer\+\_\+cycles}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+timer\+\_\+cycles}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+get\+\_\+timer\+\_\+cycles (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_a23bc38401d57203554dc5b47e72701f9}
+Get the number of cycles since boot from the default timer.
+
+\begin{DoxyReturn}{Returns}
+The number of cycles 
+\end{DoxyReturn}
+\hypertarget{rte__cycles_8h_a18f8d53cce1fcc6c1d35000752017151}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+get\+\_\+timer\+\_\+hz@{rte\+\_\+get\+\_\+timer\+\_\+hz}}
+\index{rte\+\_\+get\+\_\+timer\+\_\+hz@{rte\+\_\+get\+\_\+timer\+\_\+hz}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+timer\+\_\+hz}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+get\+\_\+timer\+\_\+hz (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_a18f8d53cce1fcc6c1d35000752017151}
+Get the number of cycles in one second for the default timer.
+
+\begin{DoxyReturn}{Returns}
+The number of cycles in one second. 
+\end{DoxyReturn}
+\hypertarget{rte__cycles_8h_a34aaedfb8b9fa4f83d4cb3108cda2041}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+get\+\_\+tsc\+\_\+cycles@{rte\+\_\+get\+\_\+tsc\+\_\+cycles}}
+\index{rte\+\_\+get\+\_\+tsc\+\_\+cycles@{rte\+\_\+get\+\_\+tsc\+\_\+cycles}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+tsc\+\_\+cycles}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+get\+\_\+tsc\+\_\+cycles (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_a34aaedfb8b9fa4f83d4cb3108cda2041}
+Return the number of T\+S\+C cycles since boot
+
+\begin{DoxyReturn}{Returns}
+the number of cycles 
+\end{DoxyReturn}
+\hypertarget{rte__cycles_8h_ae016e608f344823e677819d8f04264c5}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+get\+\_\+tsc\+\_\+hz@{rte\+\_\+get\+\_\+tsc\+\_\+hz}}
+\index{rte\+\_\+get\+\_\+tsc\+\_\+hz@{rte\+\_\+get\+\_\+tsc\+\_\+hz}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+get\+\_\+tsc\+\_\+hz}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t rte\+\_\+get\+\_\+tsc\+\_\+hz (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__cycles_8h_ae016e608f344823e677819d8f04264c5}
+Get the measured frequency of the R\+D\+T\+S\+C counter
+
+\begin{DoxyReturn}{Returns}
+The T\+S\+C frequency for this lcore 
+\end{DoxyReturn}
+\hypertarget{rte__cycles_8h_a16fa7ef140377a37bc66b336dd54ff70}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+rdtsc@{rte\+\_\+rdtsc}}
+\index{rte\+\_\+rdtsc@{rte\+\_\+rdtsc}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+rdtsc}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+rdtsc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_a16fa7ef140377a37bc66b336dd54ff70}
+Read the T\+S\+C register.
+
+\begin{DoxyReturn}{Returns}
+The T\+S\+C for this lcore. 
+\end{DoxyReturn}
+\hypertarget{rte__cycles_8h_a59cb32b6ba0648372928a20f8e0291ee}{}\index{rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}!rte\+\_\+rdtsc\+\_\+precise@{rte\+\_\+rdtsc\+\_\+precise}}
+\index{rte\+\_\+rdtsc\+\_\+precise@{rte\+\_\+rdtsc\+\_\+precise}!rte\+\_\+cycles.\+h@{rte\+\_\+cycles.\+h}}
+\subsubsection[{rte\+\_\+rdtsc\+\_\+precise}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+rdtsc\+\_\+precise (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__cycles_8h_a59cb32b6ba0648372928a20f8e0291ee}
+Read the T\+S\+C register precisely where function is called.
+
+\begin{DoxyReturn}{Returns}
+The T\+S\+C for this lcore. 
+\end{DoxyReturn}

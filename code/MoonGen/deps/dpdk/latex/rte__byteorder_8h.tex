@@ -1,0 +1,168 @@
+\hypertarget{rte__byteorder_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+byteorder.h File Reference}
+\label{rte__byteorder_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+byteorder.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+byteorder.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__byteorder_8h_adac659329ecdd2b990bcdff0633431dd}{rte\+\_\+bswap16}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a7596d1682702861f4d8e4426519c6120}{rte\+\_\+bswap32}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a722008103143a6c2577d89f403ed6e3a}{rte\+\_\+bswap64}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_aa8440b169af57cdd4b45203e98b0107c}{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a82e21a5359c40319982088d4f87ab806}{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a883613121a94dce44388c20d79e4078c}{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_ae27ed8c7c81486471820431bd931cdad}{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16}(x)~\hyperlink{rte__byteorder_8h_adac659329ecdd2b990bcdff0633431dd}{rte\+\_\+bswap16}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a074703817ee5fa8619c4623c823e8cb3}{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32}(x)~\hyperlink{rte__byteorder_8h_a7596d1682702861f4d8e4426519c6120}{rte\+\_\+bswap32}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a680c1f14fceb190c1b8680efce9b8536}{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64}(x)~\hyperlink{rte__byteorder_8h_a722008103143a6c2577d89f403ed6e3a}{rte\+\_\+bswap64}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_ad2877084baa7f155b0d8b526d2d22145}{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a9773939c4b3c45828522ee87c6a9735d}{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a7ba841604531ad343e64e7798a149348}{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64}(x)~(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a1adf860afbcf0f94e68455380e571429}{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16}(x)~\hyperlink{rte__byteorder_8h_adac659329ecdd2b990bcdff0633431dd}{rte\+\_\+bswap16}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a9db11d68ca9d23c2d3aeccae7a372dbf}{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32}(x)~\hyperlink{rte__byteorder_8h_a7596d1682702861f4d8e4426519c6120}{rte\+\_\+bswap32}(x)
+\item 
+\#define \hyperlink{rte__byteorder_8h_a2dcdc972990548c4d421fa8fbdfca3e1}{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64}(x)~\hyperlink{rte__byteorder_8h_a722008103143a6c2577d89f403ed6e3a}{rte\+\_\+bswap64}(x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Byte Swap Operations
+
+This file defines a generic A\+P\+I for byte swap operations. Part of the implementation is architecture-\/specific. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__byteorder_8h_a1adf860afbcf0f94e68455380e571429}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16}}
+\index{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+16(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap16}(x)}\label{rte__byteorder_8h_a1adf860afbcf0f94e68455380e571429}
+Convert a 16-\/bit value from big endian to C\+P\+U order. \hypertarget{rte__byteorder_8h_a9db11d68ca9d23c2d3aeccae7a372dbf}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32}}
+\index{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap32}(x)}\label{rte__byteorder_8h_a9db11d68ca9d23c2d3aeccae7a372dbf}
+Convert a 32-\/bit value from big endian to C\+P\+U order. \hypertarget{rte__byteorder_8h_a2dcdc972990548c4d421fa8fbdfca3e1}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64}}
+\index{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64@{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+be\+\_\+to\+\_\+cpu\+\_\+64(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap64}(x)}\label{rte__byteorder_8h_a2dcdc972990548c4d421fa8fbdfca3e1}
+Convert a 64-\/bit value from big endian to C\+P\+U order. \hypertarget{rte__byteorder_8h_adac659329ecdd2b990bcdff0633431dd}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+bswap16@{rte\+\_\+bswap16}}
+\index{rte\+\_\+bswap16@{rte\+\_\+bswap16}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+bswap16}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+bswap16(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}\label{rte__byteorder_8h_adac659329ecdd2b990bcdff0633431dd}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((uint16\_t)(\_\_builtin\_constant\_p(x) ?       \(\backslash\)
+                   rte\_constant\_bswap16(x) :        \(\backslash\)
+                   rte\_arch\_bswap16(x)))
+\end{DoxyCode}
+Swap bytes in a 16-\/bit value. \hypertarget{rte__byteorder_8h_a7596d1682702861f4d8e4426519c6120}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+bswap32@{rte\+\_\+bswap32}}
+\index{rte\+\_\+bswap32@{rte\+\_\+bswap32}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+bswap32}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+bswap32(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}\label{rte__byteorder_8h_a7596d1682702861f4d8e4426519c6120}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((uint32\_t)(\_\_builtin\_constant\_p(x) ?       \(\backslash\)
+                   rte\_constant\_bswap32(x) :        \(\backslash\)
+                   rte\_arch\_bswap32(x)))
+\end{DoxyCode}
+Swap bytes in a 32-\/bit value. \hypertarget{rte__byteorder_8h_a722008103143a6c2577d89f403ed6e3a}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+bswap64@{rte\+\_\+bswap64}}
+\index{rte\+\_\+bswap64@{rte\+\_\+bswap64}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+bswap64}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+bswap64(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}\label{rte__byteorder_8h_a722008103143a6c2577d89f403ed6e3a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((uint64\_t)(\_\_builtin\_constant\_p(x) ?       \(\backslash\)
+                   rte\_constant\_bswap64(x) :        \(\backslash\)
+                   rte\_arch\_bswap64(x)))
+\end{DoxyCode}
+Swap bytes in a 64-\/bit value. \hypertarget{rte__byteorder_8h_ae27ed8c7c81486471820431bd931cdad}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+16(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap16}(x)}\label{rte__byteorder_8h_ae27ed8c7c81486471820431bd931cdad}
+Convert a 16-\/bit value from C\+P\+U order to big endian. \hypertarget{rte__byteorder_8h_a074703817ee5fa8619c4623c823e8cb3}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap32}(x)}\label{rte__byteorder_8h_a074703817ee5fa8619c4623c823e8cb3}
+Convert a 32-\/bit value from C\+P\+U order to big endian. \hypertarget{rte__byteorder_8h_a680c1f14fceb190c1b8680efce9b8536}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64@{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+be\+\_\+64(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf rte\+\_\+bswap64}(x)}\label{rte__byteorder_8h_a680c1f14fceb190c1b8680efce9b8536}
+Convert a 64-\/bit value from C\+P\+U order to big endian. \hypertarget{rte__byteorder_8h_aa8440b169af57cdd4b45203e98b0107c}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+16(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_aa8440b169af57cdd4b45203e98b0107c}
+Convert a 16-\/bit value from C\+P\+U order to little endian. \hypertarget{rte__byteorder_8h_a82e21a5359c40319982088d4f87ab806}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_a82e21a5359c40319982088d4f87ab806}
+Convert a 32-\/bit value from C\+P\+U order to little endian. \hypertarget{rte__byteorder_8h_a883613121a94dce44388c20d79e4078c}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64}}
+\index{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64@{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+cpu\+\_\+to\+\_\+le\+\_\+64(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_a883613121a94dce44388c20d79e4078c}
+Convert a 64-\/bit value from C\+P\+U order to little endian. \hypertarget{rte__byteorder_8h_ad2877084baa7f155b0d8b526d2d22145}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16}}
+\index{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+16(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_ad2877084baa7f155b0d8b526d2d22145}
+Convert a 16-\/bit value from little endian to C\+P\+U order. \hypertarget{rte__byteorder_8h_a9773939c4b3c45828522ee87c6a9735d}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32}}
+\index{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+32(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_a9773939c4b3c45828522ee87c6a9735d}
+Convert a 32-\/bit value from little endian to C\+P\+U order. \hypertarget{rte__byteorder_8h_a7ba841604531ad343e64e7798a149348}{}\index{rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}!rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64}}
+\index{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64@{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64}!rte\+\_\+byteorder.\+h@{rte\+\_\+byteorder.\+h}}
+\subsubsection[{rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+le\+\_\+to\+\_\+cpu\+\_\+64(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}\label{rte__byteorder_8h_a7ba841604531ad343e64e7798a149348}
+Convert a 64-\/bit value from little endian to C\+P\+U order. 

@@ -1,0 +1,38 @@
+#!/usr/bin/gnuplot
+
+set terminal push
+set terminal postscript eps enhanced color blacktext
+set output "plot.eps"
+set title "Single core performance"
+set xlabel "CPU frequency [GHz]"
+set ylabel "Throughput [Mbit/s]"
+set grid mxtics x
+set grid mytics y
+#set key center right
+#set key at 119,9.5
+#set logscale y
+#set logscale x
+
+
+#set yrange [0.08:1]
+set xrange [1.4:3.6]
+set yrange [0:9000]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+data = 'result_fine'
+
+m = 1
+t = 1
+g(x) = m*x + t
+fit g(x) data using 1:2:3 via m, t
+
+set boxwidth 0.1
+set style fill solid 0.1
+set xtics (1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, 3.0, 3.2, 3.4)
+
+plot data using 1:2:3 with boxerrorbars title "Performance", g(x) title "Linear fit"
+
+#eich using ( $0/10 ):($1*10*3.6/80) title "front" with linespoints, eich using ($0/10):($2*10*3.6/80) title "rear" with linespoints, eich using ($0/10):($3*10*3.6/80) title "desired" with linespoints,eich using  ($0/10):(-($4-4000)/4000*10) title "engine power" with linespoints
+

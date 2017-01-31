@@ -1,0 +1,45 @@
+\hypertarget{structrte__acl__field__def}{}\section{rte\+\_\+acl\+\_\+field\+\_\+def Struct Reference}
+\label{structrte__acl__field__def}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+
+
+{\ttfamily \#include $<$rte\+\_\+acl.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__field__def_a1d127017fb298b889f4ba24752d08b8e}{type}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__field__def_ae5dc6ffcd9b7605c7787791e40cc6bb0}{size}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__field__def_aa63bd1fe49046f2c9ef0478a050b7c3a}{field\+\_\+index}
+\item 
+uint8\+\_\+t \hyperlink{structrte__acl__field__def_a92f339699e74f468bf5355e4d76f6a79}{input\+\_\+index}
+\item 
+uint32\+\_\+t \hyperlink{structrte__acl__field__def_a894bdfa2d603d8343f8ef01dda6fcd23}{offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+C\+L Field defintion. Each field in the A\+C\+L rule has an associate definition. It defines the type of field, its size, its offset in the input buffer, the field index, and the input index. For performance reasons, the inner loop of the search function is unrolled to process four input bytes at a time. This requires the input to be grouped into sets of 4 consecutive bytes. The loop processes the first input byte as part of the setup and then subsequent bytes must be in groups of 4 consecutive bytes. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__acl__field__def_aa63bd1fe49046f2c9ef0478a050b7c3a}{}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}!field\+\_\+index@{field\+\_\+index}}
+\index{field\+\_\+index@{field\+\_\+index}!rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+\subsubsection[{field\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t field\+\_\+index}\label{structrte__acl__field__def_aa63bd1fe49046f2c9ef0478a050b7c3a}
+index of field inside the rule. \hypertarget{structrte__acl__field__def_a92f339699e74f468bf5355e4d76f6a79}{}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}!input\+\_\+index@{input\+\_\+index}}
+\index{input\+\_\+index@{input\+\_\+index}!rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+\subsubsection[{input\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t input\+\_\+index}\label{structrte__acl__field__def_a92f339699e74f468bf5355e4d76f6a79}
+0-\/\+N input index. \hypertarget{structrte__acl__field__def_a894bdfa2d603d8343f8ef01dda6fcd23}{}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}!offset@{offset}}
+\index{offset@{offset}!rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t offset}\label{structrte__acl__field__def_a894bdfa2d603d8343f8ef01dda6fcd23}
+offset to start of field. \hypertarget{structrte__acl__field__def_ae5dc6ffcd9b7605c7787791e40cc6bb0}{}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}!size@{size}}
+\index{size@{size}!rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t size}\label{structrte__acl__field__def_ae5dc6ffcd9b7605c7787791e40cc6bb0}
+size of field 1,2,4, or 8. \hypertarget{structrte__acl__field__def_a1d127017fb298b889f4ba24752d08b8e}{}\index{rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}!type@{type}}
+\index{type@{type}!rte\+\_\+acl\+\_\+field\+\_\+def@{rte\+\_\+acl\+\_\+field\+\_\+def}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t type}\label{structrte__acl__field__def_a1d127017fb298b889f4ba24752d08b8e}
+type -\/ R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+P\+E\+\_\+$\ast$. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+acl/\hyperlink{rte__acl_8h}{rte\+\_\+acl.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\hypertarget{rte__table_8h}{}\section{lib/librte\+\_\+table/rte\+\_\+table.h File Reference}
+\label{rte__table_8h}\index{lib/librte\+\_\+table/rte\+\_\+table.\+h@{lib/librte\+\_\+table/rte\+\_\+table.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+port.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$($\ast$ \hyperlink{rte__table_8h_a4e1615bdd61e29e63f8ecbf7110813b0}{rte\+\_\+table\+\_\+op\+\_\+create}) (void $\ast$params, int socket\+\_\+id, uint32\+\_\+t entry\+\_\+size)
+\item 
+typedef int($\ast$ \hyperlink{rte__table_8h_a65b68c2ba76ffda7825de88ff1627d2b}{rte\+\_\+table\+\_\+op\+\_\+free}) (void $\ast$table)
+\item 
+typedef int($\ast$ \hyperlink{rte__table_8h_aaab350845daf6098fe049d1868d078ea}{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add}) (void $\ast$table, void $\ast$key, void $\ast$entry, int $\ast$key\+\_\+found, void $\ast$$\ast$entry\+\_\+ptr)
+\item 
+typedef int($\ast$ \hyperlink{rte__table_8h_a70a2ede171286c456a1e8a7fce90a62b}{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete}) (void $\ast$table, void $\ast$key, int $\ast$key\+\_\+found, void $\ast$entry)
+\item 
+typedef int($\ast$ \hyperlink{rte__table_8h_a9e058e310bef6b604ef665e070c88b41}{rte\+\_\+table\+\_\+op\+\_\+lookup}) (void $\ast$table, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t pkts\+\_\+mask, uint64\+\_\+t $\ast$lookup\+\_\+hit\+\_\+mask, void $\ast$$\ast$entries)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Table
+
+This tool is part of the Intel D\+P\+D\+K Packet Framework tool suite and provides a standard interface to implement different types of lookup tables for data plane processing.
+
+Virtually any search algorithm that can uniquely associate data to a lookup key can be fitted under this lookup table abstraction. For the flow table use-\/case, the lookup key is an n-\/tuple of packet fields that uniquely identifies a traffic flow, while data represents actions and action meta-\/data associated with the same traffic flow. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__table_8h_a4e1615bdd61e29e63f8ecbf7110813b0}{}\index{rte\+\_\+table.\+h@{rte\+\_\+table.\+h}!rte\+\_\+table\+\_\+op\+\_\+create@{rte\+\_\+table\+\_\+op\+\_\+create}}
+\index{rte\+\_\+table\+\_\+op\+\_\+create@{rte\+\_\+table\+\_\+op\+\_\+create}!rte\+\_\+table.\+h@{rte\+\_\+table.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+op\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$ rte\+\_\+table\+\_\+op\+\_\+create) (void $\ast$params, int socket\+\_\+id, uint32\+\_\+t entry\+\_\+size)}\label{rte__table_8h_a4e1615bdd61e29e63f8ecbf7110813b0}
+Lookup table create
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters for lookup table creation. The underlying data structure is different for each lookup table type. \\
+\hline
+{\em socket\+\_\+id} & C\+P\+U socket I\+D (e.\+g. for memory allocation purpose) \\
+\hline
+{\em entry\+\_\+size} & Data size of each lookup table entry (measured in bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to lookup table instance 
+\end{DoxyReturn}
+\hypertarget{rte__table_8h_aaab350845daf6098fe049d1868d078ea}{}\index{rte\+\_\+table.\+h@{rte\+\_\+table.\+h}!rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add@{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add}}
+\index{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add@{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add}!rte\+\_\+table.\+h@{rte\+\_\+table.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+add) (void $\ast$table, void $\ast$key, void $\ast$entry, int $\ast$key\+\_\+found, void $\ast$$\ast$entry\+\_\+ptr)}\label{rte__table_8h_aaab350845daf6098fe049d1868d078ea}
+Lookup table entry add
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Handle to lookup table instance \\
+\hline
+{\em key} & Lookup key \\
+\hline
+{\em entry} & Data to be associated with the current key. This parameter has to point to a valid memory buffer where the first entry\+\_\+size bytes (table create parameter) are populated with the data. \\
+\hline
+{\em key\+\_\+found} & After successful invocation, $\ast$key\+\_\+found is set to a value different than 0 if the current key is already present in the table and to 0 if not. This pointer has to be set to a valid memory location before the table entry add function is called. \\
+\hline
+{\em entry\+\_\+ptr} & After successful invocation, $\ast$entry\+\_\+ptr stores the handle to the table entry containing the data associated with the current key. This handle can be used to perform further read-\/write accesses to this entry. This handle is valid until the key is deleted from the table or the same key is re-\/added to the table, typically to associate it with different data. This pointer has to be set to a valid memory location before the function is called. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__table_8h_a70a2ede171286c456a1e8a7fce90a62b}{}\index{rte\+\_\+table.\+h@{rte\+\_\+table.\+h}!rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete@{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete}}
+\index{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete@{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete}!rte\+\_\+table.\+h@{rte\+\_\+table.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+table\+\_\+op\+\_\+entry\+\_\+delete) (void $\ast$table, void $\ast$key, int $\ast$key\+\_\+found, void $\ast$entry)}\label{rte__table_8h_a70a2ede171286c456a1e8a7fce90a62b}
+Lookup table entry delete
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Handle to lookup table instance \\
+\hline
+{\em key} & Lookup key \\
+\hline
+{\em key\+\_\+found} & After successful invocation, $\ast$key\+\_\+found is set to a value different than 0 if the current key was present in the table before the delete operation was performed and to 0 if not. This pointer has to be set to a valid memory location before the table entry delete function is called. \\
+\hline
+{\em entry} & After successful invocation, if the key is found in the table ($\ast$key found is different than 0 after function call is completed) and entry points to a valid buffer (entry is set to a value different than N\+U\+L\+L before the function is called), then the first entry\+\_\+size bytes (table create parameter) in $\ast$entry store a copy of table entry that contained the data associated with the current key before the key was deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__table_8h_a65b68c2ba76ffda7825de88ff1627d2b}{}\index{rte\+\_\+table.\+h@{rte\+\_\+table.\+h}!rte\+\_\+table\+\_\+op\+\_\+free@{rte\+\_\+table\+\_\+op\+\_\+free}}
+\index{rte\+\_\+table\+\_\+op\+\_\+free@{rte\+\_\+table\+\_\+op\+\_\+free}!rte\+\_\+table.\+h@{rte\+\_\+table.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+op\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+table\+\_\+op\+\_\+free) (void $\ast$table)}\label{rte__table_8h_a65b68c2ba76ffda7825de88ff1627d2b}
+Lookup table free
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Handle to lookup table instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__table_8h_a9e058e310bef6b604ef665e070c88b41}{}\index{rte\+\_\+table.\+h@{rte\+\_\+table.\+h}!rte\+\_\+table\+\_\+op\+\_\+lookup@{rte\+\_\+table\+\_\+op\+\_\+lookup}}
+\index{rte\+\_\+table\+\_\+op\+\_\+lookup@{rte\+\_\+table\+\_\+op\+\_\+lookup}!rte\+\_\+table.\+h@{rte\+\_\+table.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+op\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ rte\+\_\+table\+\_\+op\+\_\+lookup) (void $\ast$table, struct {\bf rte\+\_\+mbuf} $\ast$$\ast$pkts, uint64\+\_\+t pkts\+\_\+mask, uint64\+\_\+t $\ast$lookup\+\_\+hit\+\_\+mask, void $\ast$$\ast$entries)}\label{rte__table_8h_a9e058e310bef6b604ef665e070c88b41}
+Lookup table lookup
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Handle to lookup table instance \\
+\hline
+{\em pkts} & Burst of input packets specified as array of up to 64 pointers to struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} \\
+\hline
+{\em pkts\+\_\+mask} & 64-\/bit bitmask specifying which packets in the input burst are valid. When pkts\+\_\+mask bit n is set, then element n of pkts array is pointing to a valid packet. Otherwise, element n of pkts array does not point to a valid packet, therefore it will not be accessed. \\
+\hline
+{\em lookup\+\_\+hit\+\_\+mask} & Once the table lookup operation is completed, this 64-\/bit bitmask specifies which of the valid packets in the input burst resulted in lookup hit. For each valid input packet (pkts\+\_\+mask bit n is set), the following are true on lookup hit\+: lookup\+\_\+hit\+\_\+mask bit n is set, element n of entries array is valid and it points to the lookup table entry that was hit. For each valid input packet (pkts\+\_\+mask bit n is set), the following are true on lookup miss\+: lookup\+\_\+hit\+\_\+mask bit n is not set and element n of entries array is not valid. \\
+\hline
+{\em entries} & Once the table lookup operation is completed, this array provides the lookup table entries that were hit, as described above. It is required that this array is always pre-\/allocated by the caller of this function with exactly 64 elements. The implementation is allowed to speculatively modify the elements of this array, so elements marked as invalid in lookup\+\_\+hit\+\_\+mask once the table lookup operation is completed might have been modified by this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, error code otherwise 
+\end{DoxyReturn}

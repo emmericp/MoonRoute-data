@@ -1,0 +1,45 @@
+\hypertarget{structrte__sched__pipe__params}{}\section{rte\+\_\+sched\+\_\+pipe\+\_\+params Struct Reference}
+\label{structrte__sched__pipe__params}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+sched.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__pipe__params_aa64063ce773f9f838ade073d6165dfe5}{tb\+\_\+rate}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__pipe__params_a195cebdb412ff2ca5b671188f11efec3}{tb\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__pipe__params_a2cf879b3b3815b594057ba4dfcbb13bb}{tc\+\_\+rate} \mbox{[}\hyperlink{rte__sched_8h_a987eaedb9cd05abdbdb1bf30ed446ac1}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}
+\item 
+uint32\+\_\+t \hyperlink{structrte__sched__pipe__params_a9c10b3eb86bcd8d9db80b934a4340e5d}{tc\+\_\+period}
+\item 
+uint8\+\_\+t \hyperlink{structrte__sched__pipe__params_a099371854d95799a1e24a258510ad5f5}{wrr\+\_\+weights} \mbox{[}\hyperlink{rte__sched_8h_a21bfcaf525e24b9b562a80a894e33245}{R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pipe configuration parameters. The period and credits\+\_\+per\+\_\+period parameters are measured in bytes, with one byte meaning the time duration associated with the transmission of one byte on the physical medium of the output port, with pipe or pipe traffic class rate (measured as percentage of output port rate) determined as credits\+\_\+per\+\_\+period divided by period. One credit represents one byte. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__sched__pipe__params_aa64063ce773f9f838ade073d6165dfe5}{}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}!tb\+\_\+rate@{tb\+\_\+rate}}
+\index{tb\+\_\+rate@{tb\+\_\+rate}!rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+\subsubsection[{tb\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tb\+\_\+rate}\label{structrte__sched__pipe__params_aa64063ce773f9f838ade073d6165dfe5}
+Pipe token bucket rate (measured in bytes per second) \hypertarget{structrte__sched__pipe__params_a195cebdb412ff2ca5b671188f11efec3}{}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}!tb\+\_\+size@{tb\+\_\+size}}
+\index{tb\+\_\+size@{tb\+\_\+size}!rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+\subsubsection[{tb\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tb\+\_\+size}\label{structrte__sched__pipe__params_a195cebdb412ff2ca5b671188f11efec3}
+Pipe token bucket size (measured in credits) \hypertarget{structrte__sched__pipe__params_a9c10b3eb86bcd8d9db80b934a4340e5d}{}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}!tc\+\_\+period@{tc\+\_\+period}}
+\index{tc\+\_\+period@{tc\+\_\+period}!rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+\subsubsection[{tc\+\_\+period}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tc\+\_\+period}\label{structrte__sched__pipe__params_a9c10b3eb86bcd8d9db80b934a4340e5d}
+Enforcement period for pipe traffic class rates (measured in milliseconds) \hypertarget{structrte__sched__pipe__params_a2cf879b3b3815b594057ba4dfcbb13bb}{}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}!tc\+\_\+rate@{tc\+\_\+rate}}
+\index{tc\+\_\+rate@{tc\+\_\+rate}!rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+\subsubsection[{tc\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t tc\+\_\+rate\mbox{[}{\bf R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+R\+A\+F\+F\+I\+C\+\_\+\+C\+L\+A\+S\+S\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}}\label{structrte__sched__pipe__params_a2cf879b3b3815b594057ba4dfcbb13bb}
+Pipe traffic class rates (measured in bytes per second) \hypertarget{structrte__sched__pipe__params_a099371854d95799a1e24a258510ad5f5}{}\index{rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}!wrr\+\_\+weights@{wrr\+\_\+weights}}
+\index{wrr\+\_\+weights@{wrr\+\_\+weights}!rte\+\_\+sched\+\_\+pipe\+\_\+params@{rte\+\_\+sched\+\_\+pipe\+\_\+params}}
+\subsubsection[{wrr\+\_\+weights}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t wrr\+\_\+weights\mbox{[}{\bf R\+T\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+Q\+U\+E\+U\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+I\+P\+E}\mbox{]}}\label{structrte__sched__pipe__params_a099371854d95799a1e24a258510ad5f5}
+W\+R\+R weights for the queues of the current pipe 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+sched/\hyperlink{rte__sched_8h}{rte\+\_\+sched.\+h}\end{DoxyCompactItemize}

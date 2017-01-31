@@ -1,0 +1,35 @@
+\hypertarget{structrte__spinlock__recursive__t}{}\section{rte\+\_\+spinlock\+\_\+recursive\+\_\+t Struct Reference}
+\label{structrte__spinlock__recursive__t}\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}}
+
+
+{\ttfamily \#include $<$rte\+\_\+spinlock.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} \hyperlink{structrte__spinlock__recursive__t_afbea098cf5a01b98d8f3b58939aa4f49}{sl}
+\item 
+volatile int \hyperlink{structrte__spinlock__recursive__t_a6c93cf1369e3cef58d8c4a5162272c76}{user}
+\item 
+volatile int \hyperlink{structrte__spinlock__recursive__t_ab2caed1cbe66b4adb794da880e147fdc}{count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t} type. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__spinlock__recursive__t_ab2caed1cbe66b4adb794da880e147fdc}{}\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}!count@{count}}
+\index{count@{count}!rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}volatile int count}\label{structrte__spinlock__recursive__t_ab2caed1cbe66b4adb794da880e147fdc}
+count of time this lock has been called \hypertarget{structrte__spinlock__recursive__t_afbea098cf5a01b98d8f3b58939aa4f49}{}\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}!sl@{sl}}
+\index{sl@{sl}!rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}}
+\subsubsection[{sl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+spinlock\+\_\+t} sl}\label{structrte__spinlock__recursive__t_afbea098cf5a01b98d8f3b58939aa4f49}
+the actual spinlock \hypertarget{structrte__spinlock__recursive__t_a6c93cf1369e3cef58d8c4a5162272c76}{}\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}!user@{user}}
+\index{user@{user}!rte\+\_\+spinlock\+\_\+recursive\+\_\+t@{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}}
+\subsubsection[{user}]{\setlength{\rightskip}{0pt plus 5cm}volatile int user}\label{structrte__spinlock__recursive__t_a6c93cf1369e3cef58d8c4a5162272c76}
+core id using lock, -\/1 for unused 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__spinlock_8h}{rte\+\_\+spinlock.\+h}\end{DoxyCompactItemize}

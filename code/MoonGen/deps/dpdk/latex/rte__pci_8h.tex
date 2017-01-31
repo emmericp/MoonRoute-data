@@ -1,0 +1,269 @@
+\hypertarget{rte__pci_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+pci.h File Reference}
+\label{rte__pci_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+pci.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+pci.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+interrupts.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__pci__resource}{rte\+\_\+pci\+\_\+resource}
+\item 
+struct \hyperlink{structrte__pci__id}{rte\+\_\+pci\+\_\+id}
+\item 
+struct \hyperlink{structrte__pci__addr}{rte\+\_\+pci\+\_\+addr}
+\item 
+struct \hyperlink{structrte__pci__device}{rte\+\_\+pci\+\_\+device}
+\item 
+struct \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__pci_8h_a61c1744abbe54dbe19cfec27b69ff9d5}{S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S}~\char`\"{}/sys/bus/pci/devices\char`\"{}
+\item 
+\#define \hyperlink{rte__pci_8h_a64e7444d7a5f880859b468e9575a2f93}{P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}~\char`\"{}\%.\+4\char`\"{}P\+R\+Ix16\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}.\%\char`\"{}P\+R\+Ix8
+\item 
+\#define \hyperlink{rte__pci_8h_ab2dcb846f5f200aa46fff8800a406438}{P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}~\char`\"{}\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}.\%\char`\"{}P\+R\+Ix8
+\item 
+\#define \hyperlink{rte__pci_8h_ad52af66f187ca290ca0fe209d0f8c32a}{P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}~4
+\item 
+\#define \hyperlink{rte__pci_8h_a7f4be3524d2cfbb5022a4c9157368439}{P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}~3
+\item 
+\#define \hyperlink{rte__pci_8h_a8a86d34e4f13c7aa7883dc9379b1eeb3}{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}~7
+\item 
+\#define \hyperlink{rte__pci_8h_a13e5db1ce39cc8d13a6747e95e355275}{P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D}~(0xffff)
+\item 
+\#define \hyperlink{rte__pci_8h_afde5264a3e06ff0c1c965cba2efce88e}{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E}(vend,  dev)
+\item 
+\#define \hyperlink{rte__pci_8h_aaeac2f4834eb4eb8ca2c4c96ee570a0f}{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G}~0x0001
+\item 
+\#define \hyperlink{rte__pci_8h_a6e0c1f5da1fb8d8c9f39fe1ab2476638}{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E}~0x0002
+\item 
+\#define \hyperlink{rte__pci_8h_ab855e01a436a52cbc573c3c081cbcf29}{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D}~0x0004
+\item 
+\#define \hyperlink{rte__pci_8h_a79dc21f7f7de5d04b2c5f147011f01a0}{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C}~0x0008
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int( \hyperlink{rte__pci_8h_a4c670512f0269aa83c91d07d69c225a2}{pci\+\_\+devinit\+\_\+t}) (struct \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} $\ast$, struct \hyperlink{structrte__pci__device}{rte\+\_\+pci\+\_\+device} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__pci_8h_ad7bd4814f1fb7843d41fb6584905a515}{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D} (\hyperlink{rte__pci_8h_adac2a6631910503611edfce3e2d561d4}{pci\+\_\+device\+\_\+list}, \hyperlink{structrte__pci__device}{rte\+\_\+pci\+\_\+device})
+\item 
+\hyperlink{rte__pci_8h_af74c37ea217c3c2c1400ebc8dcac9088}{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D} (\hyperlink{rte__pci_8h_a76248e835e1f9d938ac3e948a0fd0e49}{pci\+\_\+driver\+\_\+list}, \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver})
+\item 
+static int \hyperlink{rte__pci_8h_a2df44d29cbb763e342618654b68a606e}{eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F} (const char $\ast$input, struct \hyperlink{structrte__pci__addr}{rte\+\_\+pci\+\_\+addr} $\ast$dev\+\_\+addr)
+\item 
+static int \hyperlink{rte__pci_8h_abdcffcde8b2e90128b70eba7d220c0c8}{eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F} (const char $\ast$input, struct \hyperlink{structrte__pci__addr}{rte\+\_\+pci\+\_\+addr} $\ast$dev\+\_\+addr)
+\item 
+int \hyperlink{rte__pci_8h_a75c199039e1468339d3d1c26a97a1731}{rte\+\_\+eal\+\_\+pci\+\_\+probe} (void)
+\item 
+void \hyperlink{rte__pci_8h_adb9dda0744625ff3cf6d8091705747bd}{rte\+\_\+eal\+\_\+pci\+\_\+dump} (F\+I\+L\+E $\ast$f)
+\item 
+void \hyperlink{rte__pci_8h_a99bb51dae15a5bdb18e59650901c03b6}{rte\+\_\+eal\+\_\+pci\+\_\+register} (struct \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} $\ast$driver)
+\item 
+void \hyperlink{rte__pci_8h_ad4ab224010221aa8de1e6438c9af723d}{rte\+\_\+eal\+\_\+pci\+\_\+unregister} (struct \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} $\ast$driver)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct pci\+\_\+driver\+\_\+list \hyperlink{rte__pci_8h_a76248e835e1f9d938ac3e948a0fd0e49}{pci\+\_\+driver\+\_\+list}
+\item 
+struct pci\+\_\+device\+\_\+list \hyperlink{rte__pci_8h_adac2a6631910503611edfce3e2d561d4}{pci\+\_\+device\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E P\+C\+I Interface 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__pci_8h_a13e5db1ce39cc8d13a6747e95e355275}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D@{P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D}}
+\index{P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D@{P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+A\+N\+Y\+\_\+\+I\+D~(0xffff)}\label{rte__pci_8h_a13e5db1ce39cc8d13a6747e95e355275}
+Any P\+C\+I device identifier (vendor, device, ...) \hypertarget{rte__pci_8h_ad52af66f187ca290ca0fe209d0f8c32a}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L@{P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}}
+\index{P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L@{P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L~4}\label{rte__pci_8h_ad52af66f187ca290ca0fe209d0f8c32a}
+Nb. of values in P\+C\+I device identifier format string. \hypertarget{rte__pci_8h_a8a86d34e4f13c7aa7883dc9379b1eeb3}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E@{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}}
+\index{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E@{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+M\+A\+X\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E~7}\label{rte__pci_8h_a8a86d34e4f13c7aa7883dc9379b1eeb3}
+Maximum number of P\+C\+I resources. \hypertarget{rte__pci_8h_a64e7444d7a5f880859b468e9575a2f93}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T@{P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}}
+\index{P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T@{P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T~\char`\"{}\%.\+4\char`\"{}P\+R\+Ix16\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}.\%\char`\"{}P\+R\+Ix8}\label{rte__pci_8h_a64e7444d7a5f880859b468e9575a2f93}
+Formatting string for P\+C\+I device identifier\+: Ex\+: 0000\+:00\+:01.\+0 \hypertarget{rte__pci_8h_a7f4be3524d2cfbb5022a4c9157368439}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L@{P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}}
+\index{P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L@{P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+F\+M\+T\+\_\+\+N\+V\+A\+L~3}\label{rte__pci_8h_a7f4be3524d2cfbb5022a4c9157368439}
+Nb. of values in P\+C\+I resource format. \hypertarget{rte__pci_8h_ab2dcb846f5f200aa46fff8800a406438}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T@{P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}}
+\index{P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T@{P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+S\+H\+O\+R\+T\+\_\+\+P\+R\+I\+\_\+\+F\+M\+T~\char`\"{}\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}\+:\%.\+2\char`\"{}P\+R\+Ix8\char`\"{}.\%\char`\"{}P\+R\+Ix8}\label{rte__pci_8h_ab2dcb846f5f200aa46fff8800a406438}
+Short formatting string, without domain, for P\+C\+I device\+: Ex\+: 00\+:01.\+0 \hypertarget{rte__pci_8h_afde5264a3e06ff0c1c965cba2efce88e}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E}}
+\index{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E(
+\begin{DoxyParamCaption}
+\item[{}]{vend, }
+\item[{}]{dev}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_afde5264a3e06ff0c1c965cba2efce88e}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+.vendor\_id = (vend),               \(\backslash\)
+    .device\_id = (dev),                \(\backslash\)
+    .subsystem\_vendor\_id = \hyperlink{rte__pci_8h_a13e5db1ce39cc8d13a6747e95e355275}{PCI\_ANY\_ID}, \(\backslash\)
+    .subsystem\_device\_id = \hyperlink{rte__pci_8h_a13e5db1ce39cc8d13a6747e95e355275}{PCI\_ANY\_ID}
+\end{DoxyCode}
+Macro used to help building up tables of device I\+Ds \hypertarget{rte__pci_8h_ab855e01a436a52cbc573c3c081cbcf29}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D}}
+\index{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+F\+O\+R\+C\+E\+\_\+\+U\+N\+B\+I\+N\+D~0x0004}\label{rte__pci_8h_ab855e01a436a52cbc573c3c081cbcf29}
+Device needs to be unbound even if no module is provided \hypertarget{rte__pci_8h_a79dc21f7f7de5d04b2c5f147011f01a0}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C}}
+\index{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+I\+N\+T\+R\+\_\+\+L\+S\+C~0x0008}\label{rte__pci_8h_a79dc21f7f7de5d04b2c5f147011f01a0}
+Device driver supports link state interrupt Internal use only -\/ Macro used by pci addr parsing functions \hypertarget{rte__pci_8h_a6e0c1f5da1fb8d8c9f39fe1ab2476638}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E}}
+\index{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E~0x0002}\label{rte__pci_8h_a6e0c1f5da1fb8d8c9f39fe1ab2476638}
+Device driver must be registered several times until failure \hypertarget{rte__pci_8h_aaeac2f4834eb4eb8ca2c4c96ee570a0f}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G@{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+R\+V\+\_\+\+N\+E\+E\+D\+\_\+\+M\+A\+P\+P\+I\+N\+G~0x0001}\label{rte__pci_8h_aaeac2f4834eb4eb8ca2c4c96ee570a0f}
+Device needs P\+C\+I B\+A\+R mapping (done with either I\+G\+B\+\_\+\+U\+I\+O or V\+F\+I\+O) \hypertarget{rte__pci_8h_a61c1744abbe54dbe19cfec27b69ff9d5}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S@{S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S}}
+\index{S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S@{S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+F\+S\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+I\+C\+E\+S~\char`\"{}/sys/bus/pci/devices\char`\"{}}\label{rte__pci_8h_a61c1744abbe54dbe19cfec27b69ff9d5}
+Pathname of P\+C\+I devices directory. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__pci_8h_a4c670512f0269aa83c91d07d69c225a2}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!pci\+\_\+devinit\+\_\+t@{pci\+\_\+devinit\+\_\+t}}
+\index{pci\+\_\+devinit\+\_\+t@{pci\+\_\+devinit\+\_\+t}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{pci\+\_\+devinit\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int( pci\+\_\+devinit\+\_\+t) (struct {\bf rte\+\_\+pci\+\_\+driver} $\ast$, struct {\bf rte\+\_\+pci\+\_\+device} $\ast$)}\label{rte__pci_8h_a4c670512f0269aa83c91d07d69c225a2}
+Initialisation function for the driver called during P\+C\+I probing. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__pci_8h_a2df44d29cbb763e342618654b68a606e}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F@{eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F}}
+\index{eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F@{eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F}]{\setlength{\rightskip}{0pt plus 5cm}static int eal\+\_\+parse\+\_\+pci\+\_\+\+B\+D\+F (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{struct {\bf rte\+\_\+pci\+\_\+addr} $\ast$}]{dev\+\_\+addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__pci_8h_a2df44d29cbb763e342618654b68a606e}
+Utility function to produce a P\+C\+I Bus-\/\+Device-\/\+Function value given a string representation. Assumes that the B\+D\+F is provided without a domain prefix (i.\+e. domain returned is always 0)
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to be parsed. Should have the format X\+X\+:X\+X.\+X \\
+\hline
+{\em dev\+\_\+addr} & The P\+C\+I Bus-\/\+Device-\/\+Function address to be returned. Domain will always be returned as 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative on error. 
+\end{DoxyReturn}
+\hypertarget{rte__pci_8h_abdcffcde8b2e90128b70eba7d220c0c8}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F@{eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F}}
+\index{eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F@{eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F}]{\setlength{\rightskip}{0pt plus 5cm}static int eal\+\_\+parse\+\_\+pci\+\_\+\+Dom\+B\+D\+F (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{struct {\bf rte\+\_\+pci\+\_\+addr} $\ast$}]{dev\+\_\+addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__pci_8h_abdcffcde8b2e90128b70eba7d220c0c8}
+Utility function to produce a P\+C\+I Bus-\/\+Device-\/\+Function value given a string representation. Assumes that the B\+D\+F is provided including a domain prefix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to be parsed. Should have the format X\+X\+X\+X\+:\+X\+X\+:X\+X.\+X \\
+\hline
+{\em dev\+\_\+addr} & The P\+C\+I Bus-\/\+Device-\/\+Function address to be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, negative on error. 
+\end{DoxyReturn}
+\hypertarget{rte__pci_8h_adb9dda0744625ff3cf6d8091705747bd}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!rte\+\_\+eal\+\_\+pci\+\_\+dump@{rte\+\_\+eal\+\_\+pci\+\_\+dump}}
+\index{rte\+\_\+eal\+\_\+pci\+\_\+dump@{rte\+\_\+eal\+\_\+pci\+\_\+dump}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+pci\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+pci\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_adb9dda0744625ff3cf6d8091705747bd}
+Dump the content of the P\+C\+I bus.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__pci_8h_a75c199039e1468339d3d1c26a97a1731}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!rte\+\_\+eal\+\_\+pci\+\_\+probe@{rte\+\_\+eal\+\_\+pci\+\_\+probe}}
+\index{rte\+\_\+eal\+\_\+pci\+\_\+probe@{rte\+\_\+eal\+\_\+pci\+\_\+probe}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+pci\+\_\+probe}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+pci\+\_\+probe (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_a75c199039e1468339d3d1c26a97a1731}
+Probe the P\+C\+I bus for registered drivers.
+
+Scan the content of the P\+C\+I bus, and call the probe() function for all registered drivers that have a matching entry in its id\+\_\+table for discovered devices.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__pci_8h_a99bb51dae15a5bdb18e59650901c03b6}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!rte\+\_\+eal\+\_\+pci\+\_\+register@{rte\+\_\+eal\+\_\+pci\+\_\+register}}
+\index{rte\+\_\+eal\+\_\+pci\+\_\+register@{rte\+\_\+eal\+\_\+pci\+\_\+register}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+pci\+\_\+register}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+pci\+\_\+register (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+pci\+\_\+driver} $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_a99bb51dae15a5bdb18e59650901c03b6}
+Register a P\+C\+I driver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver} & A pointer to a \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} structure describing the driver to be registered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__pci_8h_ad4ab224010221aa8de1e6438c9af723d}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!rte\+\_\+eal\+\_\+pci\+\_\+unregister@{rte\+\_\+eal\+\_\+pci\+\_\+unregister}}
+\index{rte\+\_\+eal\+\_\+pci\+\_\+unregister@{rte\+\_\+eal\+\_\+pci\+\_\+unregister}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+pci\+\_\+unregister}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+pci\+\_\+unregister (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+pci\+\_\+driver} $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_ad4ab224010221aa8de1e6438c9af723d}
+Unregister a P\+C\+I driver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver} & A pointer to a \hyperlink{structrte__pci__driver}{rte\+\_\+pci\+\_\+driver} structure describing the driver to be unregistered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__pci_8h_ad7bd4814f1fb7843d41fb6584905a515}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}}
+\index{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf pci\+\_\+device\+\_\+list}}]{, }
+\item[{{\bf rte\+\_\+pci\+\_\+device}}]{}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_ad7bd4814f1fb7843d41fb6584905a515}
+P\+C\+I devices in D-\/linked Q. \hypertarget{rte__pci_8h_af74c37ea217c3c2c1400ebc8dcac9088}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}}
+\index{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf pci\+\_\+driver\+\_\+list}}]{, }
+\item[{{\bf rte\+\_\+pci\+\_\+driver}}]{}
+\end{DoxyParamCaption}
+)}\label{rte__pci_8h_af74c37ea217c3c2c1400ebc8dcac9088}
+P\+C\+I drivers in D-\/linked Q. 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__pci_8h_adac2a6631910503611edfce3e2d561d4}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!pci\+\_\+device\+\_\+list@{pci\+\_\+device\+\_\+list}}
+\index{pci\+\_\+device\+\_\+list@{pci\+\_\+device\+\_\+list}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{pci\+\_\+device\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct pci\+\_\+device\+\_\+list pci\+\_\+device\+\_\+list}\label{rte__pci_8h_adac2a6631910503611edfce3e2d561d4}
+Global list of P\+C\+I devices. \hypertarget{rte__pci_8h_a76248e835e1f9d938ac3e948a0fd0e49}{}\index{rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}!pci\+\_\+driver\+\_\+list@{pci\+\_\+driver\+\_\+list}}
+\index{pci\+\_\+driver\+\_\+list@{pci\+\_\+driver\+\_\+list}!rte\+\_\+pci.\+h@{rte\+\_\+pci.\+h}}
+\subsubsection[{pci\+\_\+driver\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct pci\+\_\+driver\+\_\+list pci\+\_\+driver\+\_\+list}\label{rte__pci_8h_a76248e835e1f9d938ac3e948a0fd0e49}
+Global list of P\+C\+I drivers. 

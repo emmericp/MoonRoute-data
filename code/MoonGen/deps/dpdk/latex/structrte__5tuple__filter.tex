@@ -1,0 +1,80 @@
+\hypertarget{structrte__5tuple__filter}{}\section{rte\+\_\+5tuple\+\_\+filter Struct Reference}
+\label{structrte__5tuple__filter}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrte__5tuple__filter_a8fc1e4820a101bd4f2e1f45533e09ca5}{dst\+\_\+ip}
+\item 
+uint32\+\_\+t \hyperlink{structrte__5tuple__filter_aacb87cb8b0e6a2622b48ebe0553cf988}{src\+\_\+ip}
+\item 
+uint16\+\_\+t \hyperlink{structrte__5tuple__filter_ae18defed4756b8c15e34718f51e86e55}{dst\+\_\+port}
+\item 
+uint16\+\_\+t \hyperlink{structrte__5tuple__filter_ab98974981cf4c143fcee028643f313e6}{src\+\_\+port}
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_ad124d3d2e02c729afa303c775295278e}{protocol}
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_ab393c6d5f386ec83c49c7e1496fbb0e1}{tcp\+\_\+flags}
+\item 
+uint16\+\_\+t \hyperlink{structrte__5tuple__filter_a0815784d41b3c13d42ce22367abfba1d}{priority}
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_a56b9fc3d42af37b6179f4cac47e6ac56}{dst\+\_\+ip\+\_\+mask}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_a24ea1adca0aeaee4b61cf17bafc9d156}{src\+\_\+ip\+\_\+mask}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_a3c1c59f1493644594dfc6e6907a97936}{dst\+\_\+port\+\_\+mask}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_ad51b4863fb71d110274060e0f6450b7b}{src\+\_\+port\+\_\+mask}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structrte__5tuple__filter_a0ea646479ef8e5bfe19d3f48130de32a}{protocol\+\_\+mask}\+:1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to define a 5tuple filter. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__5tuple__filter_a8fc1e4820a101bd4f2e1f45533e09ca5}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!dst\+\_\+ip@{dst\+\_\+ip}}
+\index{dst\+\_\+ip@{dst\+\_\+ip}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{dst\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dst\+\_\+ip}\label{structrte__5tuple__filter_a8fc1e4820a101bd4f2e1f45533e09ca5}
+destination I\+P address in big endian. \hypertarget{structrte__5tuple__filter_a56b9fc3d42af37b6179f4cac47e6ac56}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!dst\+\_\+ip\+\_\+mask@{dst\+\_\+ip\+\_\+mask}}
+\index{dst\+\_\+ip\+\_\+mask@{dst\+\_\+ip\+\_\+mask}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{dst\+\_\+ip\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dst\+\_\+ip\+\_\+mask}\label{structrte__5tuple__filter_a56b9fc3d42af37b6179f4cac47e6ac56}
+if mask is 1b, do not compare dst ip. \hypertarget{structrte__5tuple__filter_ae18defed4756b8c15e34718f51e86e55}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!dst\+\_\+port@{dst\+\_\+port}}
+\index{dst\+\_\+port@{dst\+\_\+port}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{dst\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t dst\+\_\+port}\label{structrte__5tuple__filter_ae18defed4756b8c15e34718f51e86e55}
+destination port in big endian. \hypertarget{structrte__5tuple__filter_a3c1c59f1493644594dfc6e6907a97936}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!dst\+\_\+port\+\_\+mask@{dst\+\_\+port\+\_\+mask}}
+\index{dst\+\_\+port\+\_\+mask@{dst\+\_\+port\+\_\+mask}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{dst\+\_\+port\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dst\+\_\+port\+\_\+mask}\label{structrte__5tuple__filter_a3c1c59f1493644594dfc6e6907a97936}
+if mask is 1b, do not compare dst port. \hypertarget{structrte__5tuple__filter_a0815784d41b3c13d42ce22367abfba1d}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!priority@{priority}}
+\index{priority@{priority}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{priority}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t priority}\label{structrte__5tuple__filter_a0815784d41b3c13d42ce22367abfba1d}
+seven evels (001b-\/111b), 111b is highest, used when more than one filter matches. \hypertarget{structrte__5tuple__filter_ad124d3d2e02c729afa303c775295278e}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!protocol@{protocol}}
+\index{protocol@{protocol}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t protocol}\label{structrte__5tuple__filter_ad124d3d2e02c729afa303c775295278e}
+l4 protocol. \hypertarget{structrte__5tuple__filter_a0ea646479ef8e5bfe19d3f48130de32a}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!protocol\+\_\+mask@{protocol\+\_\+mask}}
+\index{protocol\+\_\+mask@{protocol\+\_\+mask}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{protocol\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t protocol\+\_\+mask}\label{structrte__5tuple__filter_a0ea646479ef8e5bfe19d3f48130de32a}
+if mask is 1b, do not compare protocol. \hypertarget{structrte__5tuple__filter_aacb87cb8b0e6a2622b48ebe0553cf988}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!src\+\_\+ip@{src\+\_\+ip}}
+\index{src\+\_\+ip@{src\+\_\+ip}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{src\+\_\+ip}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t src\+\_\+ip}\label{structrte__5tuple__filter_aacb87cb8b0e6a2622b48ebe0553cf988}
+source I\+P address in big endian. \hypertarget{structrte__5tuple__filter_a24ea1adca0aeaee4b61cf17bafc9d156}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!src\+\_\+ip\+\_\+mask@{src\+\_\+ip\+\_\+mask}}
+\index{src\+\_\+ip\+\_\+mask@{src\+\_\+ip\+\_\+mask}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{src\+\_\+ip\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t src\+\_\+ip\+\_\+mask}\label{structrte__5tuple__filter_a24ea1adca0aeaee4b61cf17bafc9d156}
+if mask is 1b, do not compare src ip. \hypertarget{structrte__5tuple__filter_ab98974981cf4c143fcee028643f313e6}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!src\+\_\+port@{src\+\_\+port}}
+\index{src\+\_\+port@{src\+\_\+port}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{src\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t src\+\_\+port}\label{structrte__5tuple__filter_ab98974981cf4c143fcee028643f313e6}
+source Port big endian. \hypertarget{structrte__5tuple__filter_ad51b4863fb71d110274060e0f6450b7b}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!src\+\_\+port\+\_\+mask@{src\+\_\+port\+\_\+mask}}
+\index{src\+\_\+port\+\_\+mask@{src\+\_\+port\+\_\+mask}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{src\+\_\+port\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t src\+\_\+port\+\_\+mask}\label{structrte__5tuple__filter_ad51b4863fb71d110274060e0f6450b7b}
+if mask is 1b, do not compare src port. \hypertarget{structrte__5tuple__filter_ab393c6d5f386ec83c49c7e1496fbb0e1}{}\index{rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}!tcp\+\_\+flags@{tcp\+\_\+flags}}
+\index{tcp\+\_\+flags@{tcp\+\_\+flags}!rte\+\_\+5tuple\+\_\+filter@{rte\+\_\+5tuple\+\_\+filter}}
+\subsubsection[{tcp\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t tcp\+\_\+flags}\label{structrte__5tuple__filter_ab393c6d5f386ec83c49c7e1496fbb0e1}
+tcp flags. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

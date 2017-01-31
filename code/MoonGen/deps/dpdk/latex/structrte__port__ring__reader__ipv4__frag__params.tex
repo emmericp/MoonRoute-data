@@ -1,0 +1,45 @@
+\hypertarget{structrte__port__ring__reader__ipv4__frag__params}{}\section{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params Struct Reference}
+\label{structrte__port__ring__reader__ipv4__frag__params}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+port\+\_\+frag.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$ \hyperlink{structrte__port__ring__reader__ipv4__frag__params_a1dfc25cca5a340eff30700b60fd41339}{ring}
+\item 
+uint32\+\_\+t \hyperlink{structrte__port__ring__reader__ipv4__frag__params_a3c8ee4e9dd2a5354e83fb30c95598f30}{mtu}
+\item 
+uint32\+\_\+t \hyperlink{structrte__port__ring__reader__ipv4__frag__params_a53192c5a67e697e614b21c797286d09f}{metadata\+\_\+size}
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{structrte__port__ring__reader__ipv4__frag__params_a95aad9924ff3562b4315bb978e4d1ae3}{pool\+\_\+direct}
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{structrte__port__ring__reader__ipv4__frag__params_a0f5522304362b53153955b2712d7b392}{pool\+\_\+indirect}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ring\+\_\+reader\+\_\+ipv4\+\_\+frag port parameters 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__port__ring__reader__ipv4__frag__params_a53192c5a67e697e614b21c797286d09f}{}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}!metadata\+\_\+size@{metadata\+\_\+size}}
+\index{metadata\+\_\+size@{metadata\+\_\+size}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+\subsubsection[{metadata\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t metadata\+\_\+size}\label{structrte__port__ring__reader__ipv4__frag__params_a53192c5a67e697e614b21c797286d09f}
+Size of application dependent meta-\/data stored per each input packet that has to be copied to each of the fragments originating from the same input I\+P datagram. \hypertarget{structrte__port__ring__reader__ipv4__frag__params_a3c8ee4e9dd2a5354e83fb30c95598f30}{}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}!mtu@{mtu}}
+\index{mtu@{mtu}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+\subsubsection[{mtu}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t mtu}\label{structrte__port__ring__reader__ipv4__frag__params_a3c8ee4e9dd2a5354e83fb30c95598f30}
+Maximum Transfer Unit (M\+T\+U). Maximum I\+P packet size (in bytes). \hypertarget{structrte__port__ring__reader__ipv4__frag__params_a95aad9924ff3562b4315bb978e4d1ae3}{}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}!pool\+\_\+direct@{pool\+\_\+direct}}
+\index{pool\+\_\+direct@{pool\+\_\+direct}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+\subsubsection[{pool\+\_\+direct}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ pool\+\_\+direct}\label{structrte__port__ring__reader__ipv4__frag__params_a95aad9924ff3562b4315bb978e4d1ae3}
+Pre-\/initialized buffer pool used for allocating direct buffers for the output fragments. \hypertarget{structrte__port__ring__reader__ipv4__frag__params_a0f5522304362b53153955b2712d7b392}{}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}!pool\+\_\+indirect@{pool\+\_\+indirect}}
+\index{pool\+\_\+indirect@{pool\+\_\+indirect}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+\subsubsection[{pool\+\_\+indirect}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ pool\+\_\+indirect}\label{structrte__port__ring__reader__ipv4__frag__params_a0f5522304362b53153955b2712d7b392}
+Pre-\/initialized buffer pool used for allocating indirect buffers for the output fragments. \hypertarget{structrte__port__ring__reader__ipv4__frag__params_a1dfc25cca5a340eff30700b60fd41339}{}\index{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}!ring@{ring}}
+\index{ring@{ring}!rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params@{rte\+\_\+port\+\_\+ring\+\_\+reader\+\_\+ipv4\+\_\+frag\+\_\+params}}
+\subsubsection[{ring}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+ring}$\ast$ ring}\label{structrte__port__ring__reader__ipv4__frag__params_a1dfc25cca5a340eff30700b60fd41339}
+Underlying single consumer ring that has to be pre-\/initialized. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+port/\hyperlink{rte__port__frag_8h}{rte\+\_\+port\+\_\+frag.\+h}\end{DoxyCompactItemize}

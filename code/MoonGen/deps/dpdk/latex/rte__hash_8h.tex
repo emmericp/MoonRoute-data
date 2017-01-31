@@ -1,0 +1,356 @@
+\hypertarget{rte__hash_8h}{}\section{lib/librte\+\_\+hash/rte\+\_\+hash.h File Reference}
+\label{rte__hash_8h}\index{lib/librte\+\_\+hash/rte\+\_\+hash.\+h@{lib/librte\+\_\+hash/rte\+\_\+hash.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__hash__parameters}{rte\+\_\+hash\+\_\+parameters}
+\item 
+struct \hyperlink{structrte__hash}{rte\+\_\+hash}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__hash_8h_a080e28e97cdd08dddfee7fc49084c0f4}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}~(1 $<$$<$ 26)
+\item 
+\#define \hyperlink{rte__hash_8h_af6aad50c1c5af42b9fe1210bb7edb2e7}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}~16
+\item 
+\#define \hyperlink{rte__hash_8h_adc9a7a326415377f904b9e323abd5dbc}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X}~64
+\item 
+\#define \hyperlink{rte__hash_8h_a40d9cbb1b31cf0a18427128378bc94ec}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X}~16
+\item 
+\#define \hyperlink{rte__hash_8h_a6f2eca61b3180fccd47b5170fa115d48}{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t}
+\item 
+typedef uint32\+\_\+t($\ast$ \hyperlink{rte__hash_8h_a1b12fdd40a9aa9aa254d45b052e57350}{rte\+\_\+hash\+\_\+function}) (const void $\ast$key, uint32\+\_\+t key\+\_\+len, uint32\+\_\+t init\+\_\+val)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$ \hyperlink{rte__hash_8h_a5afbd2564f738149a241bc22b2428612}{rte\+\_\+hash\+\_\+create} (const struct \hyperlink{structrte__hash__parameters}{rte\+\_\+hash\+\_\+parameters} $\ast$params)
+\item 
+struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$ \hyperlink{rte__hash_8h_a04c3876597e47c045c945d78e0e1d332}{rte\+\_\+hash\+\_\+find\+\_\+existing} (const char $\ast$name)
+\item 
+void \hyperlink{rte__hash_8h_a2b82800460ad6918b822db30d1c21f77}{rte\+\_\+hash\+\_\+free} (struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_a0247f58baa6cbf614e5b729ff0baf27e}{rte\+\_\+hash\+\_\+add\+\_\+key} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_aaa426cfe49f1b6750cf35e932bb55067}{rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key, \hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t} sig)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_aaa125f9c9f57ea5fdf2752bcb506a058}{rte\+\_\+hash\+\_\+del\+\_\+key} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_a0da9abc1a395e6891d5f5d0f2ac69cf7}{rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key, \hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t} sig)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_a62ff0b837d39bbff00863feabf15e224}{rte\+\_\+hash\+\_\+lookup} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key)
+\item 
+int32\+\_\+t \hyperlink{rte__hash_8h_a8bf0a56da3a957a113ea1bfedd78c7e6}{rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key, \hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t} sig)
+\item 
+static \hyperlink{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{hash\+\_\+sig\+\_\+t} \hyperlink{rte__hash_8h_a42ac52308164e81c1b5cc082c3b59970}{rte\+\_\+hash\+\_\+hash} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$key)
+\item 
+int \hyperlink{rte__hash_8h_a420dedbd249c73bbb94a98e10a87b088}{rte\+\_\+hash\+\_\+lookup\+\_\+bulk} (const struct \hyperlink{structrte__hash}{rte\+\_\+hash} $\ast$h, const void $\ast$$\ast$keys, uint32\+\_\+t num\+\_\+keys, int32\+\_\+t $\ast$positions)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Hash Table 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__hash_8h_af6aad50c1c5af42b9fe1210bb7edb2e7}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X~16}\label{rte__hash_8h_af6aad50c1c5af42b9fe1210bb7edb2e7}
+Maximum bucket size that can be created. \hypertarget{rte__hash_8h_a080e28e97cdd08dddfee7fc49084c0f4}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X~(1 $<$$<$ 26)}\label{rte__hash_8h_a080e28e97cdd08dddfee7fc49084c0f4}
+Maximum size of hash table that can be created. \hypertarget{rte__hash_8h_adc9a7a326415377f904b9e323abd5dbc}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+K\+E\+Y\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+M\+A\+X~64}\label{rte__hash_8h_adc9a7a326415377f904b9e323abd5dbc}
+Maximum length of key that can be used. \hypertarget{rte__hash_8h_a40d9cbb1b31cf0a18427128378bc94ec}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X~16}\label{rte__hash_8h_a40d9cbb1b31cf0a18427128378bc94ec}
+Max number of keys that can be searched for using rte\+\_\+hash\+\_\+lookup\+\_\+multi. \hypertarget{rte__hash_8h_a6f2eca61b3180fccd47b5170fa115d48}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__hash_8h_a6f2eca61b3180fccd47b5170fa115d48}
+Max number of characters in hash name. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!hash\+\_\+sig\+\_\+t@{hash\+\_\+sig\+\_\+t}}
+\index{hash\+\_\+sig\+\_\+t@{hash\+\_\+sig\+\_\+t}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{hash\+\_\+sig\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf hash\+\_\+sig\+\_\+t}}\label{rte__hash_8h_ab9cf833d6d86f042b9ac01ae2e5b998f}
+Signature of key that is stored internally. \hypertarget{rte__hash_8h_a1b12fdd40a9aa9aa254d45b052e57350}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+function@{rte\+\_\+hash\+\_\+function}}
+\index{rte\+\_\+hash\+\_\+function@{rte\+\_\+hash\+\_\+function}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+function}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t($\ast$ rte\+\_\+hash\+\_\+function) (const void $\ast$key, uint32\+\_\+t key\+\_\+len, uint32\+\_\+t init\+\_\+val)}\label{rte__hash_8h_a1b12fdd40a9aa9aa254d45b052e57350}
+Type of function that can be used for calculating the hash value. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__hash_8h_a0247f58baa6cbf614e5b729ff0baf27e}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+add\+\_\+key@{rte\+\_\+hash\+\_\+add\+\_\+key}}
+\index{rte\+\_\+hash\+\_\+add\+\_\+key@{rte\+\_\+hash\+\_\+add\+\_\+key}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+add\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+add\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a0247f58baa6cbf614e5b729ff0baf27e}
+Add a key to an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to add the key to. \\
+\hline
+{\em key} & Key to add to the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+S\+P\+C if there is no space in the hash for this key.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_aaa426cfe49f1b6750cf35e932bb55067}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash}}
+\index{rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key, }
+\item[{{\bf hash\+\_\+sig\+\_\+t}}]{sig}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_aaa426cfe49f1b6750cf35e932bb55067}
+Add a key to an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to add the key to. \\
+\hline
+{\em key} & Key to add to the hash table. \\
+\hline
+{\em sig} & Hash value to add to the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+S\+P\+C if there is no space in the hash for this key.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a5afbd2564f738149a241bc22b2428612}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+create@{rte\+\_\+hash\+\_\+create}}
+\index{rte\+\_\+hash\+\_\+create@{rte\+\_\+hash\+\_\+create}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+hash}$\ast$ rte\+\_\+hash\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash\+\_\+parameters} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a5afbd2564f738149a241bc22b2428612}
+Create a new hash table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters used to create and initialise the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to hash table structure that is used in future hash table operations, or N\+U\+L\+L on error, with error code set in rte\+\_\+errno. Possible rte\+\_\+errno errors include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the hash table list
+\item E\+N\+O\+E\+N\+T -\/ missing entry
+\item E\+I\+N\+V\+A\+L -\/ invalid parameter passed to function
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_aaa125f9c9f57ea5fdf2752bcb506a058}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+del\+\_\+key@{rte\+\_\+hash\+\_\+del\+\_\+key}}
+\index{rte\+\_\+hash\+\_\+del\+\_\+key@{rte\+\_\+hash\+\_\+del\+\_\+key}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+del\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+del\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_aaa125f9c9f57ea5fdf2752bcb506a058}
+Remove a key from an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to remove the key from. \\
+\hline
+{\em key} & Key to remove from the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+E\+N\+T if the key is not found.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key, and is the same value that was returned when the key was added. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a0da9abc1a395e6891d5f5d0f2ac69cf7}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash}}
+\index{rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+del\+\_\+key\+\_\+with\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key, }
+\item[{{\bf hash\+\_\+sig\+\_\+t}}]{sig}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a0da9abc1a395e6891d5f5d0f2ac69cf7}
+Remove a key from an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to remove the key from. \\
+\hline
+{\em key} & Key to remove from the hash table. \\
+\hline
+{\em sig} & Hash value to remove from the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+E\+N\+T if the key is not found.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key, and is the same value that was returned when the key was added. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a04c3876597e47c045c945d78e0e1d332}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+find\+\_\+existing@{rte\+\_\+hash\+\_\+find\+\_\+existing}}
+\index{rte\+\_\+hash\+\_\+find\+\_\+existing@{rte\+\_\+hash\+\_\+find\+\_\+existing}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+find\+\_\+existing}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+hash}$\ast$ rte\+\_\+hash\+\_\+find\+\_\+existing (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a04c3876597e47c045c945d78e0e1d332}
+Find an existing hash table object and return a pointer to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the hash table as passed to \hyperlink{rte__hash_8h_a5afbd2564f738149a241bc22b2428612}{rte\+\_\+hash\+\_\+create()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to hash table or N\+U\+L\+L if object not found with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ value not available for return 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a2b82800460ad6918b822db30d1c21f77}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+free@{rte\+\_\+hash\+\_\+free}}
+\index{rte\+\_\+hash\+\_\+free@{rte\+\_\+hash\+\_\+free}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+hash\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+hash} $\ast$}]{h}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a2b82800460ad6918b822db30d1c21f77}
+De-\/allocate all memory used by hash table. 
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__hash_8h_a42ac52308164e81c1b5cc082c3b59970}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+hash@{rte\+\_\+hash\+\_\+hash}}
+\index{rte\+\_\+hash\+\_\+hash@{rte\+\_\+hash\+\_\+hash}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf hash\+\_\+sig\+\_\+t} rte\+\_\+hash\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__hash_8h_a42ac52308164e81c1b5cc082c3b59970}
+Calc a hash value by key. This operation is not multi-\/process safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to look in. \\
+\hline
+{\em key} & Key to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item hash value 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a62ff0b837d39bbff00863feabf15e224}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+lookup@{rte\+\_\+hash\+\_\+lookup}}
+\index{rte\+\_\+hash\+\_\+lookup@{rte\+\_\+hash\+\_\+lookup}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a62ff0b837d39bbff00863feabf15e224}
+Find a key in the hash table. This operation is multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to look in. \\
+\hline
+{\em key} & Key to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+E\+N\+T if the key is not found.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key, and is the same value that was returned when the key was added. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a420dedbd249c73bbb94a98e10a87b088}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+lookup\+\_\+bulk@{rte\+\_\+hash\+\_\+lookup\+\_\+bulk}}
+\index{rte\+\_\+hash\+\_\+lookup\+\_\+bulk@{rte\+\_\+hash\+\_\+lookup\+\_\+bulk}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+lookup\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+hash\+\_\+lookup\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$$\ast$}]{keys, }
+\item[{uint32\+\_\+t}]{num\+\_\+keys, }
+\item[{int32\+\_\+t $\ast$}]{positions}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a420dedbd249c73bbb94a98e10a87b088}
+Find multiple keys in the hash table. This operation is multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to look in. \\
+\hline
+{\em keys} & A pointer to a list of keys to look for. \\
+\hline
+{\em num\+\_\+keys} & How many keys are in the keys list (less than R\+T\+E\+\_\+\+H\+A\+S\+H\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+U\+L\+K\+\_\+\+M\+A\+X). \\
+\hline
+{\em positions} & Output containing a list of values, corresponding to the list of keys that can be used by the caller as an offset into an array of user data. These values are unique for each key, and are the same values that were returned when each key was added. If a key in the list was not found, then -\/\+E\+N\+O\+E\+N\+T will be the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/\+E\+I\+N\+V\+A\+L if there\textquotesingle{}s an error, otherwise 0. 
+\end{DoxyReturn}
+\hypertarget{rte__hash_8h_a8bf0a56da3a957a113ea1bfedd78c7e6}{}\index{rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}!rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash}}
+\index{rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash@{rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash}!rte\+\_\+hash.\+h@{rte\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t rte\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+hash (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+hash} $\ast$}]{h, }
+\item[{const void $\ast$}]{key, }
+\item[{{\bf hash\+\_\+sig\+\_\+t}}]{sig}
+\end{DoxyParamCaption}
+)}\label{rte__hash_8h_a8bf0a56da3a957a113ea1bfedd78c7e6}
+Find a key in the hash table. This operation is multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Hash table to look in. \\
+\hline
+{\em key} & Key to find. \\
+\hline
+{\em sig} & Hash value to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item -\/\+E\+N\+O\+E\+N\+T if the key is not found.
+\item A positive value that can be used by the caller as an offset into an array of user data. This value is unique for this key, and is the same value that was returned when the key was added. 
+\end{DoxyItemize}
+\end{DoxyReturn}

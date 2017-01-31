@@ -1,0 +1,65 @@
+\hypertarget{structrte__fbk__hash__table}{}\section{rte\+\_\+fbk\+\_\+hash\+\_\+table Struct Reference}
+\label{structrte__fbk__hash__table}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+
+
+{\ttfamily \#include $<$rte\+\_\+fbk\+\_\+hash.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structrte__fbk__hash__table_ac768b4e31109e8a60dc7a326d428f32a}{name} \mbox{[}\hyperlink{rte__fbk__hash_8h_a0a009a5c727b50397611032b08007a16}{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_a38bad35c844ffd72b0c1132715d5f3a1}{entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_af0ce764518ddc03478daa97695cd096e}{entries\+\_\+per\+\_\+bucket}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_aa22453ac46ce8c14513d6bc3f2097f14}{used\+\_\+entries}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_a9b85cb348fede1bed47ae9a0a23af28f}{bucket\+\_\+mask}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_a42f996a6956bb327437519f2d62f17e3}{bucket\+\_\+shift}
+\item 
+\hyperlink{rte__fbk__hash_8h_ac562ee5335703bbd3caaa4a63748f95f}{rte\+\_\+fbk\+\_\+hash\+\_\+fn} \hyperlink{structrte__fbk__hash__table_a69f0a1b6157a850ab077f407294b0669}{hash\+\_\+func}
+\item 
+uint32\+\_\+t \hyperlink{structrte__fbk__hash__table_aa9c51f653df7b8a657a31d12ce9a214b}{init\+\_\+val}
+\item 
+union \hyperlink{unionrte__fbk__hash__entry}{rte\+\_\+fbk\+\_\+hash\+\_\+entry} \hyperlink{structrte__fbk__hash__table_aaa3d527a459f02296bc29530f1c13319}{t} \mbox{[}0\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The four-\/byte key hash table structure. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__fbk__hash__table_a9b85cb348fede1bed47ae9a0a23af28f}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!bucket\+\_\+mask@{bucket\+\_\+mask}}
+\index{bucket\+\_\+mask@{bucket\+\_\+mask}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{bucket\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+mask}\label{structrte__fbk__hash__table_a9b85cb348fede1bed47ae9a0a23af28f}
+To find which bucket the key is in. \hypertarget{structrte__fbk__hash__table_a42f996a6956bb327437519f2d62f17e3}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!bucket\+\_\+shift@{bucket\+\_\+shift}}
+\index{bucket\+\_\+shift@{bucket\+\_\+shift}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{bucket\+\_\+shift}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bucket\+\_\+shift}\label{structrte__fbk__hash__table_a42f996a6956bb327437519f2d62f17e3}
+Convert bucket to table offset. \hypertarget{structrte__fbk__hash__table_a38bad35c844ffd72b0c1132715d5f3a1}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!entries@{entries}}
+\index{entries@{entries}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entries}\label{structrte__fbk__hash__table_a38bad35c844ffd72b0c1132715d5f3a1}
+Total number of entries. \hypertarget{structrte__fbk__hash__table_af0ce764518ddc03478daa97695cd096e}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!entries\+\_\+per\+\_\+bucket@{entries\+\_\+per\+\_\+bucket}}
+\index{entries\+\_\+per\+\_\+bucket@{entries\+\_\+per\+\_\+bucket}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{entries\+\_\+per\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t entries\+\_\+per\+\_\+bucket}\label{structrte__fbk__hash__table_af0ce764518ddc03478daa97695cd096e}
+Number of entries in a bucket. \hypertarget{structrte__fbk__hash__table_a69f0a1b6157a850ab077f407294b0669}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!hash\+\_\+func@{hash\+\_\+func}}
+\index{hash\+\_\+func@{hash\+\_\+func}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{hash\+\_\+func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+fbk\+\_\+hash\+\_\+fn} hash\+\_\+func}\label{structrte__fbk__hash__table_a69f0a1b6157a850ab077f407294b0669}
+The hash function. \hypertarget{structrte__fbk__hash__table_aa9c51f653df7b8a657a31d12ce9a214b}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!init\+\_\+val@{init\+\_\+val}}
+\index{init\+\_\+val@{init\+\_\+val}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{init\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t init\+\_\+val}\label{structrte__fbk__hash__table_aa9c51f653df7b8a657a31d12ce9a214b}
+For initialising hash function. \hypertarget{structrte__fbk__hash__table_ac768b4e31109e8a60dc7a326d428f32a}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!name@{name}}
+\index{name@{name}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char name\mbox{[}{\bf R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}}\label{structrte__fbk__hash__table_ac768b4e31109e8a60dc7a326d428f32a}
+Name of the hash. \hypertarget{structrte__fbk__hash__table_aaa3d527a459f02296bc29530f1c13319}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!t@{t}}
+\index{t@{t}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{t}]{\setlength{\rightskip}{0pt plus 5cm}union {\bf rte\+\_\+fbk\+\_\+hash\+\_\+entry} t\mbox{[}0\mbox{]}}\label{structrte__fbk__hash__table_aaa3d527a459f02296bc29530f1c13319}
+A flat table of all buckets. \hypertarget{structrte__fbk__hash__table_aa22453ac46ce8c14513d6bc3f2097f14}{}\index{rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}!used\+\_\+entries@{used\+\_\+entries}}
+\index{used\+\_\+entries@{used\+\_\+entries}!rte\+\_\+fbk\+\_\+hash\+\_\+table@{rte\+\_\+fbk\+\_\+hash\+\_\+table}}
+\subsubsection[{used\+\_\+entries}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t used\+\_\+entries}\label{structrte__fbk__hash__table_aa22453ac46ce8c14513d6bc3f2097f14}
+How many entries are used. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+hash/\hyperlink{rte__fbk__hash_8h}{rte\+\_\+fbk\+\_\+hash.\+h}\end{DoxyCompactItemize}

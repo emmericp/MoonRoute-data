@@ -1,0 +1,244 @@
+\hypertarget{rte__memzone_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+memzone.h File Reference}
+\label{rte__memzone_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+memzone.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+memzone.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__memzone}{rte\+\_\+memzone}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__memzone_8h_a9890a72ee494d93699bf5426fd4996cf}{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B}~0x00000001
+\item 
+\#define \hyperlink{rte__memzone_8h_a73c30344deda6bbd3db4fc2e55e951e9}{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B}~0x00000002
+\item 
+\#define \hyperlink{rte__memzone_8h_a98544686f161a54ecdf1d4f2d083ed55}{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y}~0x00000004
+\item 
+\#define \hyperlink{rte__memzone_8h_a5621a1253a3875b601cdc533b3180240}{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} $\ast$ \hyperlink{rte__memzone_8h_a3ccbea77ccab608c6e683817a3eb170f}{rte\+\_\+memzone\+\_\+reserve} (const char $\ast$name, size\+\_\+t len, int socket\+\_\+id, unsigned flags)
+\item 
+const struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} $\ast$ \hyperlink{rte__memzone_8h_a56736f23c55bc5814d29ccda97e32063}{rte\+\_\+memzone\+\_\+reserve\+\_\+aligned} (const char $\ast$name, size\+\_\+t len, int socket\+\_\+id, unsigned flags, unsigned align)
+\item 
+const struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} $\ast$ \hyperlink{rte__memzone_8h_a2300b8c522a53c250f1f34c72f223033}{rte\+\_\+memzone\+\_\+reserve\+\_\+bounded} (const char $\ast$name, size\+\_\+t len, int socket\+\_\+id, unsigned flags, unsigned align, unsigned bound)
+\item 
+const struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} $\ast$ \hyperlink{rte__memzone_8h_aa772ef84e73ac173503c16f243766993}{rte\+\_\+memzone\+\_\+lookup} (const char $\ast$name)
+\item 
+void \hyperlink{rte__memzone_8h_a90ff102bec9b2cdbeb4638df50aff4d1}{rte\+\_\+memzone\+\_\+dump} (F\+I\+L\+E $\ast$)
+\item 
+void \hyperlink{rte__memzone_8h_aa36328b34b352183104945e3e8fce14a}{rte\+\_\+memzone\+\_\+walk} (void($\ast$func)(const struct \hyperlink{structrte__memzone}{rte\+\_\+memzone} $\ast$, void $\ast$arg), void $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Memzone
+
+The goal of the memzone allocator is to reserve contiguous portions of physical memory. These zones are identified by a name.
+
+The memzone descriptors are shared by all partitions and are located in a known place of physical memory. This zone is accessed using \hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration()}. The lookup (by name) of a memory zone can be done in any partition and returns the same physical address.
+
+A reserved memory zone cannot be unreserved. The reservation shall be done at initialization time only. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__memzone_8h_a73c30344deda6bbd3db4fc2e55e951e9}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B~0x00000002}\label{rte__memzone_8h_a73c30344deda6bbd3db4fc2e55e951e9}
+Use 1\+G\+B pages. \hypertarget{rte__memzone_8h_a9890a72ee494d93699bf5426fd4996cf}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B~0x00000001}\label{rte__memzone_8h_a9890a72ee494d93699bf5426fd4996cf}
+Use 2\+M\+B pages. \hypertarget{rte__memzone_8h_a5621a1253a3875b601cdc533b3180240}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__memzone_8h_a5621a1253a3875b601cdc533b3180240}
+Maximum length of memory zone name. \hypertarget{rte__memzone_8h_a98544686f161a54ecdf1d4f2d083ed55}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y@{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y~0x00000004}\label{rte__memzone_8h_a98544686f161a54ecdf1d4f2d083ed55}
+Use available page size 
+
+\subsection{Function Documentation}
+\hypertarget{rte__memzone_8h_a90ff102bec9b2cdbeb4638df50aff4d1}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+dump@{rte\+\_\+memzone\+\_\+dump}}
+\index{rte\+\_\+memzone\+\_\+dump@{rte\+\_\+memzone\+\_\+dump}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+memzone\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_a90ff102bec9b2cdbeb4638df50aff4d1}
+Dump all reserved memzones to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__memzone_8h_aa772ef84e73ac173503c16f243766993}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+lookup@{rte\+\_\+memzone\+\_\+lookup}}
+\index{rte\+\_\+memzone\+\_\+lookup@{rte\+\_\+memzone\+\_\+lookup}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+memzone}$\ast$ rte\+\_\+memzone\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_aa772ef84e73ac173503c16f243766993}
+Lookup for a memzone.
+
+Get a pointer to a descriptor of an already reserved memory zone identified by the name given as an argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the memzone. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a read-\/only memzone descriptor. 
+\end{DoxyReturn}
+\hypertarget{rte__memzone_8h_a3ccbea77ccab608c6e683817a3eb170f}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+reserve@{rte\+\_\+memzone\+\_\+reserve}}
+\index{rte\+\_\+memzone\+\_\+reserve@{rte\+\_\+memzone\+\_\+reserve}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+reserve}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+memzone}$\ast$ rte\+\_\+memzone\+\_\+reserve (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{size\+\_\+t}]{len, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_a3ccbea77ccab608c6e683817a3eb170f}
+Reserve a portion of physical memory.
+
+This function reserves some memory and returns a pointer to a correctly filled memzone descriptor. If the allocation cannot be done, return N\+U\+L\+L. Note\+: A reserved zone cannot be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the memzone. If it already exists, the function will fail and return N\+U\+L\+L. \\
+\hline
+{\em len} & The size of the memory to be reserved. If it is 0, the biggest contiguous zone will be reserved. \\
+\hline
+{\em socket\+\_\+id} & The socket identifier in the case of N\+U\+M\+A. The value can be S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & The flags parameter is used to request memzones to be taken from 1\+G\+B or 2\+M\+B hugepages.
+\begin{DoxyItemize}
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B -\/ Reserve from 2\+M\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B -\/ Reserve from 1\+G\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y -\/ Allow alternative page size to be used if the requested page size is unavailable. If this flag is not set, the function will return error on an unavailable size request. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a correctly-\/filled read-\/only memzone descriptor, or N\+U\+L\+L on error. On error case, rte\+\_\+errno will be set appropriately\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone
+\item E\+I\+N\+V\+A\+L -\/ invalid parameters 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__memzone_8h_a56736f23c55bc5814d29ccda97e32063}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+reserve\+\_\+aligned@{rte\+\_\+memzone\+\_\+reserve\+\_\+aligned}}
+\index{rte\+\_\+memzone\+\_\+reserve\+\_\+aligned@{rte\+\_\+memzone\+\_\+reserve\+\_\+aligned}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+reserve\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+memzone}$\ast$ rte\+\_\+memzone\+\_\+reserve\+\_\+aligned (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{size\+\_\+t}]{len, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_a56736f23c55bc5814d29ccda97e32063}
+Reserve a portion of physical memory with alignment on a specified boundary.
+
+This function reserves some memory with alignment on a specified boundary, and returns a pointer to a correctly filled memzone descriptor. If the allocation cannot be done or if the alignment is not a power of 2, returns N\+U\+L\+L. Note\+: A reserved zone cannot be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the memzone. If it already exists, the function will fail and return N\+U\+L\+L. \\
+\hline
+{\em len} & The size of the memory to be reserved. If it is 0, the biggest contiguous zone will be reserved. \\
+\hline
+{\em socket\+\_\+id} & The socket identifier in the case of N\+U\+M\+A. The value can be S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & The flags parameter is used to request memzones to be taken from 1\+G\+B or 2\+M\+B hugepages.
+\begin{DoxyItemize}
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B -\/ Reserve from 2\+M\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B -\/ Reserve from 1\+G\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y -\/ Allow alternative page size to be used if the requested page size is unavailable. If this flag is not set, the function will return error on an unavailable size request. 
+\end{DoxyItemize}\\
+\hline
+{\em align} & Alignment for resulting memzone. Must be a power of 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a correctly-\/filled read-\/only memzone descriptor, or N\+U\+L\+L on error. On error case, rte\+\_\+errno will be set appropriately\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone
+\item E\+I\+N\+V\+A\+L -\/ invalid parameters 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__memzone_8h_a2300b8c522a53c250f1f34c72f223033}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+reserve\+\_\+bounded@{rte\+\_\+memzone\+\_\+reserve\+\_\+bounded}}
+\index{rte\+\_\+memzone\+\_\+reserve\+\_\+bounded@{rte\+\_\+memzone\+\_\+reserve\+\_\+bounded}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+reserve\+\_\+bounded}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf rte\+\_\+memzone}$\ast$ rte\+\_\+memzone\+\_\+reserve\+\_\+bounded (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{size\+\_\+t}]{len, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags, }
+\item[{unsigned}]{align, }
+\item[{unsigned}]{bound}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_a2300b8c522a53c250f1f34c72f223033}
+Reserve a portion of physical memory with specified alignment and boundary.
+
+This function reserves some memory with specified alignment and boundary, and returns a pointer to a correctly filled memzone descriptor. If the allocation cannot be done or if the alignment or boundary are not a power of 2, returns N\+U\+L\+L. Memory buffer is reserved in a way, that it wouldn\textquotesingle{}t cross specified boundary. That implies that requested length should be less or equal then boundary. Note\+: A reserved zone cannot be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the memzone. If it already exists, the function will fail and return N\+U\+L\+L. \\
+\hline
+{\em len} & The size of the memory to be reserved. If it is 0, the biggest contiguous zone will be reserved. \\
+\hline
+{\em socket\+\_\+id} & The socket identifier in the case of N\+U\+M\+A. The value can be S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & The flags parameter is used to request memzones to be taken from 1\+G\+B or 2\+M\+B hugepages.
+\begin{DoxyItemize}
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+2\+M\+B -\/ Reserve from 2\+M\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+1\+G\+B -\/ Reserve from 1\+G\+B pages
+\item R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+H\+I\+N\+T\+\_\+\+O\+N\+L\+Y -\/ Allow alternative page size to be used if the requested page size is unavailable. If this flag is not set, the function will return error on an unavailable size request. 
+\end{DoxyItemize}\\
+\hline
+{\em align} & Alignment for resulting memzone. Must be a power of 2. \\
+\hline
+{\em bound} & Boundary for resulting memzone. Must be a power of 2 or zero. Zero value implies no boundary condition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a correctly-\/filled read-\/only memzone descriptor, or N\+U\+L\+L on error. On error case, rte\+\_\+errno will be set appropriately\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone
+\item E\+I\+N\+V\+A\+L -\/ invalid parameters 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__memzone_8h_aa36328b34b352183104945e3e8fce14a}{}\index{rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}!rte\+\_\+memzone\+\_\+walk@{rte\+\_\+memzone\+\_\+walk}}
+\index{rte\+\_\+memzone\+\_\+walk@{rte\+\_\+memzone\+\_\+walk}!rte\+\_\+memzone.\+h@{rte\+\_\+memzone.\+h}}
+\subsubsection[{rte\+\_\+memzone\+\_\+walk}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+memzone\+\_\+walk (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(const struct {\bf rte\+\_\+memzone} $\ast$, void $\ast$arg)}]{func, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{rte__memzone_8h_aa36328b34b352183104945e3e8fce14a}
+Walk list of all memzones
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Iterator function \\
+\hline
+{\em arg} & Argument passed to iterator \\
+\hline
+\end{DoxyParams}

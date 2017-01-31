@@ -1,0 +1,334 @@
+\hypertarget{rte__fbk__hash_8h}{}\section{lib/librte\+\_\+hash/rte\+\_\+fbk\+\_\+hash.h File Reference}
+\label{rte__fbk__hash_8h}\index{lib/librte\+\_\+hash/rte\+\_\+fbk\+\_\+hash.\+h@{lib/librte\+\_\+hash/rte\+\_\+fbk\+\_\+hash.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+jhash.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__fbk__hash__params}{rte\+\_\+fbk\+\_\+hash\+\_\+params}
+\item 
+union \hyperlink{unionrte__fbk__hash__entry}{rte\+\_\+fbk\+\_\+hash\+\_\+entry}
+\item 
+struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__fbk__hash_8h_a18ae50e5d8d049e96141badc989e6a82}{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T}~0x\+F\+F\+F\+F\+F\+F\+F\+F
+\item 
+\#define \hyperlink{rte__fbk__hash_8h_aab37f2e8aa86ab29d57bb1333280bacf}{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}~(1 $<$$<$ 20)
+\item 
+\#define \hyperlink{rte__fbk__hash_8h_a706a8cd106aef84db61f269a1b4c49a2}{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X}~256
+\item 
+\#define \hyperlink{rte__fbk__hash_8h_a0a009a5c727b50397611032b08007a16}{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t($\ast$ \hyperlink{rte__fbk__hash_8h_ac562ee5335703bbd3caaa4a63748f95f}{rte\+\_\+fbk\+\_\+hash\+\_\+fn}) (uint32\+\_\+t key, uint32\+\_\+t init\+\_\+val)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{rte__fbk__hash_8h_ad22b0d9d93c7dadf594cb988d52fca48}{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket} (const struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_a108aaed778cd69ff73516f78e0d7e02e}{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key, uint16\+\_\+t value, uint32\+\_\+t bucket)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_a12ab7e8ad704511b4aba5c056ce8ed14}{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key, uint16\+\_\+t value)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_a8c37d77370333f271335f00c9e75f068}{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key, uint32\+\_\+t bucket)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_ac034f3bee6a2ea8d01eaf27acb46ade8}{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_a5ed47894cb99fc701281ab846d2723ec}{rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket} (const struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key, uint32\+\_\+t bucket)
+\item 
+static int \hyperlink{rte__fbk__hash_8h_aaee49e0d605ceb70e20fc0dcae844d69}{rte\+\_\+fbk\+\_\+hash\+\_\+lookup} (const struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht, uint32\+\_\+t key)
+\item 
+static void \hyperlink{rte__fbk__hash_8h_ae793c8b19543cb30739387be984c2a10}{rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht)
+\item 
+static double \hyperlink{rte__fbk__hash_8h_af5ad0525df65d11fd4f3560a26667f1c}{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht)
+\item 
+struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ \hyperlink{rte__fbk__hash_8h_a1b9afb986c0c8c27caf47dda077c0a7f}{rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing} (const char $\ast$name)
+\item 
+struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ \hyperlink{rte__fbk__hash_8h_ad60a9273caa9b9dac85e0adf334afd94}{rte\+\_\+fbk\+\_\+hash\+\_\+create} (const struct \hyperlink{structrte__fbk__hash__params}{rte\+\_\+fbk\+\_\+hash\+\_\+params} $\ast$params)
+\item 
+void \hyperlink{rte__fbk__hash_8h_a4973394b5a7ef369cdc4d2fcd1e55794}{rte\+\_\+fbk\+\_\+hash\+\_\+free} (struct \hyperlink{structrte__fbk__hash__table}{rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$ht)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a hash table implementation for four byte keys (fbk).
+
+Note that the return value of the add function should always be checked as, if a bucket is full, the key is not added even if there is space in other buckets. This keeps the lookup function very simple and therefore fast. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__fbk__hash_8h_aab37f2e8aa86ab29d57bb1333280bacf}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+M\+A\+X~(1 $<$$<$ 20)}\label{rte__fbk__hash_8h_aab37f2e8aa86ab29d57bb1333280bacf}
+The maximum number of entries in the hash table that is supported. \hypertarget{rte__fbk__hash_8h_a706a8cd106aef84db61f269a1b4c49a2}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+E\+N\+T\+R\+I\+E\+S\+\_\+\+P\+E\+R\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+M\+A\+X~256}\label{rte__fbk__hash_8h_a706a8cd106aef84db61f269a1b4c49a2}
+The maximum number of entries in each bucket that is supported. \hypertarget{rte__fbk__hash_8h_a18ae50e5d8d049e96141badc989e6a82}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+I\+N\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T~0x\+F\+F\+F\+F\+F\+F\+F\+F}\label{rte__fbk__hash_8h_a18ae50e5d8d049e96141badc989e6a82}
+Initialising value used when calculating hash. \hypertarget{rte__fbk__hash_8h_a0a009a5c727b50397611032b08007a16}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+F\+B\+K\+\_\+\+H\+A\+S\+H\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__fbk__hash_8h_a0a009a5c727b50397611032b08007a16}
+Maximum size of string for naming the hash. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__fbk__hash_8h_ac562ee5335703bbd3caaa4a63748f95f}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+fn@{rte\+\_\+fbk\+\_\+hash\+\_\+fn}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+fn@{rte\+\_\+fbk\+\_\+hash\+\_\+fn}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t($\ast$ rte\+\_\+fbk\+\_\+hash\+\_\+fn) (uint32\+\_\+t key, uint32\+\_\+t init\+\_\+val)}\label{rte__fbk__hash_8h_ac562ee5335703bbd3caaa4a63748f95f}
+Type of function that can be used for calculating the hash value. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__fbk__hash_8h_a12ab7e8ad704511b4aba5c056ce8ed14}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key@{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key@{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint16\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_a12ab7e8ad704511b4aba5c056ce8ed14}
+Add a key to an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to add the key to. \\
+\hline
+{\em key} & Key to add to the hash table. \\
+\hline
+{\em value} & Value to associate with key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if ok, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_a108aaed778cd69ff73516f78e0d7e02e}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+add\+\_\+key\+\_\+with\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint16\+\_\+t}]{value, }
+\item[{uint32\+\_\+t}]{bucket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_a108aaed778cd69ff73516f78e0d7e02e}
+Add a key to an existing hash table with bucket id. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to add the key to. \\
+\hline
+{\em key} & Key to add to the hash table. \\
+\hline
+{\em value} & Value to associate with key. \\
+\hline
+{\em bucket} & Bucket to associate with key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if ok, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_ae793c8b19543cb30739387be984c2a10}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all@{rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all@{rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+fbk\+\_\+hash\+\_\+clear\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_ae793c8b19543cb30739387be984c2a10}
+Delete all entries in a hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to delete entries in. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__fbk__hash_8h_ad60a9273caa9b9dac85e0adf334afd94}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+create@{rte\+\_\+fbk\+\_\+hash\+\_\+create}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+create@{rte\+\_\+fbk\+\_\+hash\+\_\+create}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table}$\ast$ rte\+\_\+fbk\+\_\+hash\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}\label{rte__fbk__hash_8h_ad60a9273caa9b9dac85e0adf334afd94}
+Create a new hash table for use with four byte keys.
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parameters used in creation of hash table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to hash table structure that is used in future hash table operations, or N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno error values include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the fbk hash table list
+\item E\+I\+N\+V\+A\+L -\/ invalid parameter value passed to function
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_ac034f3bee6a2ea8d01eaf27acb46ade8}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key@{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key@{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_ac034f3bee6a2ea8d01eaf27acb46ade8}
+Remove a key from an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to remove the key from. \\
+\hline
+{\em key} & Key to remove from the hash table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if ok, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_a8c37d77370333f271335f00c9e75f068}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+delete\+\_\+key\+\_\+with\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint32\+\_\+t}]{bucket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_a8c37d77370333f271335f00c9e75f068}
+Remove a key with a given bucket id from an existing hash table. This operation is not multi-\/thread safe and should only be called from one thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to remove the key from. \\
+\hline
+{\em key} & Key to remove from the hash table. \\
+\hline
+{\em bucket} & Bucket id associate with key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if ok, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_a1b9afb986c0c8c27caf47dda077c0a7f}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing@{rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing@{rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table}$\ast$ rte\+\_\+fbk\+\_\+hash\+\_\+find\+\_\+existing (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__fbk__hash_8h_a1b9afb986c0c8c27caf47dda077c0a7f}
+Performs a lookup for an existing hash table, and returns a pointer to the table if found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the hash table to find\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to hash table structure or N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ required entry not available to return. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_a4973394b5a7ef369cdc4d2fcd1e55794}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+free@{rte\+\_\+fbk\+\_\+hash\+\_\+free}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+free@{rte\+\_\+fbk\+\_\+hash\+\_\+free}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+fbk\+\_\+hash\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht}
+\end{DoxyParamCaption}
+)}\label{rte__fbk__hash_8h_a4973394b5a7ef369cdc4d2fcd1e55794}
+Free all memory used by a hash table. Has no effect on hash tables allocated in memory zones
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to deallocate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__fbk__hash_8h_ad22b0d9d93c7dadf594cb988d52fca48}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_ad22b0d9d93c7dadf594cb988d52fca48}
+Find the offset into hash table of the bucket containing a particular key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Pointer to hash table. \\
+\hline
+{\em key} & Key to calculate bucket for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Offset into hash table. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_af5ad0525df65d11fd4f3560a26667f1c}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor@{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor@{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor}]{\setlength{\rightskip}{0pt plus 5cm}static double rte\+\_\+fbk\+\_\+hash\+\_\+get\+\_\+load\+\_\+factor (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_af5ad0525df65d11fd4f3560a26667f1c}
+Find what fraction of entries are being used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to find how many entries are being used in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Load factor of the hash table, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_aaee49e0d605ceb70e20fc0dcae844d69}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+lookup@{rte\+\_\+fbk\+\_\+hash\+\_\+lookup}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+lookup@{rte\+\_\+fbk\+\_\+hash\+\_\+lookup}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_aaee49e0d605ceb70e20fc0dcae844d69}
+Find a key in the hash table. This operation is multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to look in. \\
+\hline
+{\em key} & Key to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that was associated with the key, or negative value on error. 
+\end{DoxyReturn}
+\hypertarget{rte__fbk__hash_8h_a5ed47894cb99fc701281ab846d2723ec}{}\index{rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}!rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket}}
+\index{rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket@{rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket}!rte\+\_\+fbk\+\_\+hash.\+h@{rte\+\_\+fbk\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+fbk\+\_\+hash\+\_\+lookup\+\_\+with\+\_\+bucket (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+fbk\+\_\+hash\+\_\+table} $\ast$}]{ht, }
+\item[{uint32\+\_\+t}]{key, }
+\item[{uint32\+\_\+t}]{bucket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__fbk__hash_8h_a5ed47894cb99fc701281ab846d2723ec}
+Find a key in the hash table with a given bucketid. This operation is multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Hash table to look in. \\
+\hline
+{\em key} & Key to find. \\
+\hline
+{\em bucket} & Bucket associate to the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value that was associated with the key, or negative value on error. 
+\end{DoxyReturn}

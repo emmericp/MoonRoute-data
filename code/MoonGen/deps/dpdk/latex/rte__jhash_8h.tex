@@ -1,0 +1,148 @@
+\hypertarget{rte__jhash_8h}{}\section{lib/librte\+\_\+hash/rte\+\_\+jhash.h File Reference}
+\label{rte__jhash_8h}\index{lib/librte\+\_\+hash/rte\+\_\+jhash.\+h@{lib/librte\+\_\+hash/rte\+\_\+jhash.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__jhash_8h_abcc4535eb9343ad057e8a54022a3b225}{R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O}~0x9e3779b9
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{rte__jhash_8h_a5a6d3c6a6da332e3768fa41e879e0e10}{rte\+\_\+jhash} (const void $\ast$key, uint32\+\_\+t length, uint32\+\_\+t initval)
+\item 
+static uint32\+\_\+t \hyperlink{rte__jhash_8h_acc2787b0de868e7a39cca73d5af66bb7}{rte\+\_\+jhash2} (const uint32\+\_\+t $\ast$k, uint32\+\_\+t length, uint32\+\_\+t initval)
+\item 
+static uint32\+\_\+t \hyperlink{rte__jhash_8h_ac6badb0f37af617a9ab0df238411f7a1}{rte\+\_\+jhash\+\_\+3words} (uint32\+\_\+t a, uint32\+\_\+t b, uint32\+\_\+t c, uint32\+\_\+t initval)
+\item 
+static uint32\+\_\+t \hyperlink{rte__jhash_8h_a6f5f68bc1efadfa0a6a7b1797f645a32}{rte\+\_\+jhash\+\_\+2words} (uint32\+\_\+t a, uint32\+\_\+t b, uint32\+\_\+t initval)
+\item 
+static uint32\+\_\+t \hyperlink{rte__jhash_8h_a53a47650245dedc1cb89f56fc9a63a96}{rte\+\_\+jhash\+\_\+1word} (uint32\+\_\+t a, uint32\+\_\+t initval)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+jhash functions. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__jhash_8h_abcc4535eb9343ad057e8a54022a3b225}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O@{R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O}}
+\index{R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O@{R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+J\+H\+A\+S\+H\+\_\+\+G\+O\+L\+D\+E\+N\+\_\+\+R\+A\+T\+I\+O~0x9e3779b9}\label{rte__jhash_8h_abcc4535eb9343ad057e8a54022a3b225}
+The golden ratio\+: an arbitrary value. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__jhash_8h_a5a6d3c6a6da332e3768fa41e879e0e10}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!rte\+\_\+jhash@{rte\+\_\+jhash}}
+\index{rte\+\_\+jhash@{rte\+\_\+jhash}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{rte\+\_\+jhash}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+jhash (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{key, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint32\+\_\+t}]{initval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__jhash_8h_a5a6d3c6a6da332e3768fa41e879e0e10}
+The most generic version, hashes an arbitrary sequence of bytes. No alignment or length assumptions are made about the input key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to calculate hash of. \\
+\hline
+{\em length} & Length of key in bytes. \\
+\hline
+{\em initval} & Initialising value of hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated hash value. 
+\end{DoxyReturn}
+\hypertarget{rte__jhash_8h_acc2787b0de868e7a39cca73d5af66bb7}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!rte\+\_\+jhash2@{rte\+\_\+jhash2}}
+\index{rte\+\_\+jhash2@{rte\+\_\+jhash2}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{rte\+\_\+jhash2}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+jhash2 (
+\begin{DoxyParamCaption}
+\item[{const uint32\+\_\+t $\ast$}]{k, }
+\item[{uint32\+\_\+t}]{length, }
+\item[{uint32\+\_\+t}]{initval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__jhash_8h_acc2787b0de868e7a39cca73d5af66bb7}
+A special optimized version that handles 1 or more of uint32\+\_\+ts. The length parameter here is the number of uint32\+\_\+ts in the key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Key to calculate hash of. \\
+\hline
+{\em length} & Length of key in units of 4 bytes. \\
+\hline
+{\em initval} & Initialising value of hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated hash value. 
+\end{DoxyReturn}
+\hypertarget{rte__jhash_8h_a53a47650245dedc1cb89f56fc9a63a96}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!rte\+\_\+jhash\+\_\+1word@{rte\+\_\+jhash\+\_\+1word}}
+\index{rte\+\_\+jhash\+\_\+1word@{rte\+\_\+jhash\+\_\+1word}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{rte\+\_\+jhash\+\_\+1word}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+jhash\+\_\+1word (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{a, }
+\item[{uint32\+\_\+t}]{initval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__jhash_8h_a53a47650245dedc1cb89f56fc9a63a96}
+A special ultra-\/optimized versions that knows it is hashing exactly 1 word.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Word to calcuate hash of. \\
+\hline
+{\em initval} & Initialising value of hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated hash value. 
+\end{DoxyReturn}
+\hypertarget{rte__jhash_8h_a6f5f68bc1efadfa0a6a7b1797f645a32}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!rte\+\_\+jhash\+\_\+2words@{rte\+\_\+jhash\+\_\+2words}}
+\index{rte\+\_\+jhash\+\_\+2words@{rte\+\_\+jhash\+\_\+2words}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{rte\+\_\+jhash\+\_\+2words}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+jhash\+\_\+2words (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{a, }
+\item[{uint32\+\_\+t}]{b, }
+\item[{uint32\+\_\+t}]{initval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__jhash_8h_a6f5f68bc1efadfa0a6a7b1797f645a32}
+A special ultra-\/optimized versions that knows it is hashing exactly 2 words.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First word to calcuate hash of. \\
+\hline
+{\em b} & Second word to calcuate hash of. \\
+\hline
+{\em initval} & Initialising value of hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated hash value. 
+\end{DoxyReturn}
+\hypertarget{rte__jhash_8h_ac6badb0f37af617a9ab0df238411f7a1}{}\index{rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}!rte\+\_\+jhash\+\_\+3words@{rte\+\_\+jhash\+\_\+3words}}
+\index{rte\+\_\+jhash\+\_\+3words@{rte\+\_\+jhash\+\_\+3words}!rte\+\_\+jhash.\+h@{rte\+\_\+jhash.\+h}}
+\subsubsection[{rte\+\_\+jhash\+\_\+3words}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+jhash\+\_\+3words (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{a, }
+\item[{uint32\+\_\+t}]{b, }
+\item[{uint32\+\_\+t}]{c, }
+\item[{uint32\+\_\+t}]{initval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__jhash_8h_ac6badb0f37af617a9ab0df238411f7a1}
+A special ultra-\/optimized versions that knows it is hashing exactly 3 words.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First word to calcuate hash of. \\
+\hline
+{\em b} & Second word to calcuate hash of. \\
+\hline
+{\em c} & Third word to calcuate hash of. \\
+\hline
+{\em initval} & Initialising value of hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated hash value. 
+\end{DoxyReturn}

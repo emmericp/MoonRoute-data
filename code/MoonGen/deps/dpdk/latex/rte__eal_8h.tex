@@ -1,0 +1,283 @@
+\hypertarget{rte__eal_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+eal.h File Reference}
+\label{rte__eal_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+eal.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+eal.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__config}{rte\+\_\+config}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__eal_8h_abe2896839491e28d44eb8a0df9dc1c08}{R\+T\+E\+\_\+\+M\+A\+G\+I\+C}~19820526
+\item 
+\#define \hyperlink{rte__eal_8h_ab6dece343105e858ba7cb80fc56e9d99}{E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L}~1
+\item 
+\#define \hyperlink{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K}~(\&\hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration}()-\/$>$mem\+\_\+config-\/$>$qlock)
+\item 
+\#define \hyperlink{rte__eal_8h_acc3a75637b3e4cad6ef97858e2921506}{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K}~(\&\hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration}()-\/$>$mem\+\_\+config-\/$>$mplock)
+\item 
+\#define \hyperlink{rte__eal_8h_ab3899856d7a2cd05a4b06ead620b4380}{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L}(idx,  type,  elm)
+\item 
+\#define \hyperlink{rte__eal_8h_a5fae1e247d04fa87a68ccbfded8b9114}{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E}(idx,  type,  elm)
+\item 
+\#define \hyperlink{rte__eal_8h_a638293506c40f83aee40b67da86b78b1}{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K}(idx)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{rte__eal_8h_aa12c86653412b81c9dddd18cb35843dc}{rte\+\_\+usage\+\_\+hook\+\_\+t}) (const char $\ast$prgname)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__eal_8h_a4b3d3708f5bd9a9634d494b64cafc0b8}{rte\+\_\+lcore\+\_\+role\+\_\+t} 
+\item 
+enum \hyperlink{rte__eal_8h_a1c1b5d8e30606d1b95f36413c2294d49}{rte\+\_\+proc\+\_\+type\+\_\+t} 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__config}{rte\+\_\+config} $\ast$ \hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration} (void)
+\item 
+enum \hyperlink{rte__eal_8h_a4b3d3708f5bd9a9634d494b64cafc0b8}{rte\+\_\+lcore\+\_\+role\+\_\+t} \hyperlink{rte__eal_8h_af9074195f17463b22ec136155f3cd0f6}{rte\+\_\+eal\+\_\+lcore\+\_\+role} (unsigned lcore\+\_\+id)
+\item 
+enum \hyperlink{rte__eal_8h_a1c1b5d8e30606d1b95f36413c2294d49}{rte\+\_\+proc\+\_\+type\+\_\+t} \hyperlink{rte__eal_8h_a1280c4f5e0f2082163ecb1f30a968cd9}{rte\+\_\+eal\+\_\+process\+\_\+type} (void)
+\item 
+int \hyperlink{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}{rte\+\_\+eal\+\_\+init} (int argc, char $\ast$$\ast$argv)
+\item 
+\hyperlink{rte__eal_8h_aa12c86653412b81c9dddd18cb35843dc}{rte\+\_\+usage\+\_\+hook\+\_\+t} \hyperlink{rte__eal_8h_a2d22d05e85724b51dd613de4e65f7224}{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook} (\hyperlink{rte__eal_8h_aa12c86653412b81c9dddd18cb35843dc}{rte\+\_\+usage\+\_\+hook\+\_\+t} usage\+\_\+func)
+\item 
+int \hyperlink{rte__eal_8h_adb64f55be76d441d5a74b814c88901ce}{rte\+\_\+eal\+\_\+has\+\_\+hugepages} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+E\+A\+L Configuration A\+P\+I 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__eal_8h_ab6dece343105e858ba7cb80fc56e9d99}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L@{E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L}}
+\index{E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L@{E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+A\+L\+\_\+\+F\+L\+G\+\_\+\+H\+I\+G\+H\+\_\+\+I\+O\+P\+L~1}\label{rte__eal_8h_ab6dece343105e858ba7cb80fc56e9d99}
+indicates high I\+O privilege in a linux env \hypertarget{rte__eal_8h_acc3a75637b3e4cad6ef97858e2921506}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K}}
+\index{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+R\+W\+L\+O\+C\+K~(\&{\bf rte\+\_\+eal\+\_\+get\+\_\+configuration}()-\/$>$mem\+\_\+config-\/$>$mplock)}\label{rte__eal_8h_acc3a75637b3e4cad6ef97858e2921506}
+macro to get the multiple lock of mempool shared by mutiple-\/instance \hypertarget{rte__eal_8h_a638293506c40f83aee40b67da86b78b1}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K}}
+\index{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+E\+X\+I\+S\+T\+\_\+\+C\+H\+E\+C\+K(
+\begin{DoxyParamCaption}
+\item[{}]{idx}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_a638293506c40f83aee40b67da86b78b1}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{   \(\backslash\)
+    if (\hyperlink{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}{RTE\_TAILQ\_LOOKUP\_BY\_IDX}(idx, \hyperlink{structrte__tailq__head}{rte\_tailq\_head}) == NULL)\{      
+      \hyperlink{rte__errno_8h_a66171a00ea02084317df4dc9c2adaccb}{\(\backslash\)}
+\hyperlink{rte__errno_8h_a66171a00ea02084317df4dc9c2adaccb}{        rte\_errno} = \hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cae75c11a72f72e743026664254945fd26}{E\_RTE\_NO\_TAILQ};                \(\backslash\)
+        return NULL;                        \(\backslash\)
+    \}                               \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+macro to check T\+A\+I\+L\+Q exist
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & a kind of tailq define in enum rte\+\_\+tailq\+\_\+t \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__eal_8h_ab3899856d7a2cd05a4b06ead620b4380}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L}}
+\index{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+T\+A\+I\+L(
+\begin{DoxyParamCaption}
+\item[{}]{idx, }
+\item[{}]{type, }
+\item[{}]{elm}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_ab3899856d7a2cd05a4b06ead620b4380}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{    \(\backslash\)
+    struct type *list;                                      \(\backslash\)
+    list = \hyperlink{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}{RTE\_TAILQ\_LOOKUP\_BY\_IDX}(idx, type);              
+      \hyperlink{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{\(\backslash\)}
+\hyperlink{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{    rte\_rwlock\_write\_lock}(\hyperlink{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{RTE\_EAL\_TAILQ\_RWLOCK});            \(\backslash\)
+    TAILQ\_INSERT\_TAIL(list, elm, next);                     \hyperlink{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{\(\backslash\)}
+\hyperlink{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{    rte\_rwlock\_write\_unlock}(\hyperlink{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{RTE\_EAL\_TAILQ\_RWLOCK});          \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+Utility macro to do a thread-\/safe tailq \textquotesingle{}I\+N\+S\+E\+R\+T\textquotesingle{} of \hyperlink{structrte__mem__config}{rte\+\_\+mem\+\_\+config}
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & a kind of tailq define in enum rte\+\_\+tailq\+\_\+t\\
+\hline
+{\em type} & type of list(tailq head)\\
+\hline
+{\em elm} & The element will be added into the list \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__eal_8h_a5fae1e247d04fa87a68ccbfded8b9114}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E}}
+\index{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+M\+O\+V\+E(
+\begin{DoxyParamCaption}
+\item[{}]{idx, }
+\item[{}]{type, }
+\item[{}]{elm}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_a5fae1e247d04fa87a68ccbfded8b9114}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{    \(\backslash\)
+    struct type *list;                                      \(\backslash\)
+    list = \hyperlink{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}{RTE\_TAILQ\_LOOKUP\_BY\_IDX}(idx, type);              
+      \hyperlink{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{\(\backslash\)}
+\hyperlink{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{    rte\_rwlock\_write\_lock}(\hyperlink{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{RTE\_EAL\_TAILQ\_RWLOCK});            \(\backslash\)
+    TAILQ\_REMOVE(list, elm, next);                          \hyperlink{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{\(\backslash\)}
+\hyperlink{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{    rte\_rwlock\_write\_unlock}(\hyperlink{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{RTE\_EAL\_TAILQ\_RWLOCK});          \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)                                                     \(\backslash\)
+\end{DoxyCode}
+Utility macro to do a thread-\/safe tailq \textquotesingle{}R\+E\+M\+O\+V\+E\textquotesingle{} of \hyperlink{structrte__mem__config}{rte\+\_\+mem\+\_\+config}
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & a kind of tailq define in enum rte\+\_\+tailq\+\_\+t\\
+\hline
+{\em type} & type of list(tailq head)\\
+\hline
+{\em elm} & The element will be remove from the list \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K}}
+\index{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K@{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+W\+L\+O\+C\+K~(\&{\bf rte\+\_\+eal\+\_\+get\+\_\+configuration}()-\/$>$mem\+\_\+config-\/$>$qlock)}\label{rte__eal_8h_a737751d2705d29c3f4dcaf8d6f1d0f2f}
+macro to get the lock of tailq in mem\+\_\+config \hypertarget{rte__eal_8h_abe2896839491e28d44eb8a0df9dc1c08}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!R\+T\+E\+\_\+\+M\+A\+G\+I\+C@{R\+T\+E\+\_\+\+M\+A\+G\+I\+C}}
+\index{R\+T\+E\+\_\+\+M\+A\+G\+I\+C@{R\+T\+E\+\_\+\+M\+A\+G\+I\+C}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+A\+G\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+A\+G\+I\+C~19820526}\label{rte__eal_8h_abe2896839491e28d44eb8a0df9dc1c08}
+Magic number written by the main partition when ready. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__eal_8h_aa12c86653412b81c9dddd18cb35843dc}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+usage\+\_\+hook\+\_\+t@{rte\+\_\+usage\+\_\+hook\+\_\+t}}
+\index{rte\+\_\+usage\+\_\+hook\+\_\+t@{rte\+\_\+usage\+\_\+hook\+\_\+t}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+usage\+\_\+hook\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ rte\+\_\+usage\+\_\+hook\+\_\+t) (const char $\ast$prgname)}\label{rte__eal_8h_aa12c86653412b81c9dddd18cb35843dc}
+Usage function typedef used by the application usage function.
+
+Use this function typedef to define and call rte\+\_\+set\+\_\+applcation\+\_\+usage\+\_\+hook() routine. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__eal_8h_a4b3d3708f5bd9a9634d494b64cafc0b8}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+lcore\+\_\+role\+\_\+t@{rte\+\_\+lcore\+\_\+role\+\_\+t}}
+\index{rte\+\_\+lcore\+\_\+role\+\_\+t@{rte\+\_\+lcore\+\_\+role\+\_\+t}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+lcore\+\_\+role\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+lcore\+\_\+role\+\_\+t}}\label{rte__eal_8h_a4b3d3708f5bd9a9634d494b64cafc0b8}
+The lcore role (used in R\+T\+E or not). \hypertarget{rte__eal_8h_a1c1b5d8e30606d1b95f36413c2294d49}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+proc\+\_\+type\+\_\+t@{rte\+\_\+proc\+\_\+type\+\_\+t}}
+\index{rte\+\_\+proc\+\_\+type\+\_\+t@{rte\+\_\+proc\+\_\+type\+\_\+t}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+proc\+\_\+type\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+proc\+\_\+type\+\_\+t}}\label{rte__eal_8h_a1c1b5d8e30606d1b95f36413c2294d49}
+The type of process in a linuxapp, multi-\/process setup 
+
+\subsection{Function Documentation}
+\hypertarget{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+eal\+\_\+get\+\_\+configuration@{rte\+\_\+eal\+\_\+get\+\_\+configuration}}
+\index{rte\+\_\+eal\+\_\+get\+\_\+configuration@{rte\+\_\+eal\+\_\+get\+\_\+configuration}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+get\+\_\+configuration}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+config}$\ast$ rte\+\_\+eal\+\_\+get\+\_\+configuration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_aab31145149c10993848d863b34d3d96f}
+Get the global configuration structure.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the global configuration structure. 
+\end{DoxyReturn}
+\hypertarget{rte__eal_8h_adb64f55be76d441d5a74b814c88901ce}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+eal\+\_\+has\+\_\+hugepages@{rte\+\_\+eal\+\_\+has\+\_\+hugepages}}
+\index{rte\+\_\+eal\+\_\+has\+\_\+hugepages@{rte\+\_\+eal\+\_\+has\+\_\+hugepages}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+has\+\_\+hugepages}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+has\+\_\+hugepages (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_adb64f55be76d441d5a74b814c88901ce}
+Whether E\+A\+L is using huge pages (disabled by --no-\/huge option). The no-\/huge mode cannot be used with U\+I\+O poll-\/mode drivers like igb/ixgbe. It is useful for N\+I\+C drivers (e.\+g. librte\+\_\+pmd\+\_\+mlx4, librte\+\_\+pmd\+\_\+vmxnet3) or crypto drivers (e.\+g. librte\+\_\+crypto\+\_\+nitrox) provided by third-\/parties such as 6\+W\+I\+N\+D.
+
+\begin{DoxyReturn}{Returns}
+Nonzero if hugepages are enabled. 
+\end{DoxyReturn}
+\hypertarget{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+eal\+\_\+init@{rte\+\_\+eal\+\_\+init}}
+\index{rte\+\_\+eal\+\_\+init@{rte\+\_\+eal\+\_\+init}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}
+Initialize the Environment Abstraction Layer (E\+A\+L).
+
+This function is to be executed on the M\+A\+S\+T\+E\+R lcore only, as soon as possible in the application\textquotesingle{}s main() function.
+
+The function finishes the initialization process that was started during boot (in case of baremetal) or before main() is called (in case of linuxapp). It puts the S\+L\+A\+V\+E lcores in the W\+A\+I\+T state.
+
+When the multi-\/partition feature is supported, depending on the configuration (if C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+E\+A\+L\+\_\+\+M\+A\+I\+N\+\_\+\+P\+A\+R\+T\+I\+T\+I\+O\+N is disabled), this function waits to ensure that the magic number is set before returning. See also the \hyperlink{rte__eal_8h_aab31145149c10993848d863b34d3d96f}{rte\+\_\+eal\+\_\+get\+\_\+configuration()} function. Note\+: This behavior may change in the future.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The argc argument that was given to the main() function. \\
+\hline
+{\em argv} & The argv argument that was given to the main() function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, the number of parsed arguments, which is greater or equal to zero. After the call to \hyperlink{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}{rte\+\_\+eal\+\_\+init()}, all arguments argv\mbox{[}x\mbox{]} with x $<$ ret may be modified and should not be accessed by the application.
+\item On failure, a negative error value. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__eal_8h_af9074195f17463b22ec136155f3cd0f6}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+eal\+\_\+lcore\+\_\+role@{rte\+\_\+eal\+\_\+lcore\+\_\+role}}
+\index{rte\+\_\+eal\+\_\+lcore\+\_\+role@{rte\+\_\+eal\+\_\+lcore\+\_\+role}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+lcore\+\_\+role}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+lcore\+\_\+role\+\_\+t} rte\+\_\+eal\+\_\+lcore\+\_\+role (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_af9074195f17463b22ec136155f3cd0f6}
+Get a lcore\textquotesingle{}s role.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & The identifier of the lcore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The role of the lcore. 
+\end{DoxyReturn}
+\hypertarget{rte__eal_8h_a1280c4f5e0f2082163ecb1f30a968cd9}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+eal\+\_\+process\+\_\+type@{rte\+\_\+eal\+\_\+process\+\_\+type}}
+\index{rte\+\_\+eal\+\_\+process\+\_\+type@{rte\+\_\+eal\+\_\+process\+\_\+type}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+process\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+proc\+\_\+type\+\_\+t} rte\+\_\+eal\+\_\+process\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_a1280c4f5e0f2082163ecb1f30a968cd9}
+Get the process type in a multi-\/process setup
+
+\begin{DoxyReturn}{Returns}
+The process type 
+\end{DoxyReturn}
+\hypertarget{rte__eal_8h_a2d22d05e85724b51dd613de4e65f7224}{}\index{rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}!rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook@{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook}}
+\index{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook@{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook}!rte\+\_\+eal.\+h@{rte\+\_\+eal.\+h}}
+\subsubsection[{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+usage\+\_\+hook\+\_\+t} rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+usage\+\_\+hook\+\_\+t}}]{usage\+\_\+func}
+\end{DoxyParamCaption}
+)}\label{rte__eal_8h_a2d22d05e85724b51dd613de4e65f7224}
+Add application usage routine callout from the eal\+\_\+usage() routine.
+
+This function allows the application to include its usage message in the E\+A\+L system usage message. The routine \hyperlink{rte__eal_8h_a2d22d05e85724b51dd613de4e65f7224}{rte\+\_\+set\+\_\+application\+\_\+usage\+\_\+hook()} needs to be called before the \hyperlink{rte__eal_8h_a5c3f4dddc25e38c5a186ecd8a69260e3}{rte\+\_\+eal\+\_\+init()} routine in the application.
+
+This routine is optional for the application and will behave as if the set routine was never called as the default behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The func argument is a function pointer to the application usage routine. Called function is defined using rte\+\_\+usage\+\_\+hook\+\_\+t typedef, which is of the form void rte\+\_\+usage\+\_\+func(const char $\ast$ prgname).\\
+\hline
+\end{DoxyParams}
+Calling this routine with a N\+U\+L\+L value will reset the usage hook routine and return the current value, which could be N\+U\+L\+L. \begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Returns the current value of the rte\+\_\+application\+\_\+usage pointer to allow the caller to daisy chain the usage routines if needing more then one. 
+\end{DoxyItemize}
+\end{DoxyReturn}

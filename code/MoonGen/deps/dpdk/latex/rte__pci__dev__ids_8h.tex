@@ -1,0 +1,47 @@
+\hypertarget{rte__pci__dev__ids_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+pci\+\_\+dev\+\_\+ids.h File Reference}
+\label{rte__pci__dev__ids_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__pci__dev__ids_8h_a0b846c2b83ebb26468566b7f7f353f1a}{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L}~0x8086
+\item 
+\#define \hyperlink{rte__pci__dev__ids_8h_a7e45209da712f9bd08b6df536edcb803}{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T}~0x1\+A\+F4
+\item 
+\#define \hyperlink{rte__pci__dev__ids_8h_a18994fe9a9ffddbcc32e6724ac699526}{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E}~0x15\+A\+D
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains a list of the P\+C\+I device I\+Ds recognised by D\+P\+D\+K, which can be used to fill out an array of structures describing the devices.
+
+Currently four families of devices are recognised\+: those supported by the I\+G\+B driver, by E\+M driver, those supported by the I\+X\+G\+B\+E driver, and by virtio driver which is a para virtualization driver running in guest virtual machine. The inclusion of these in an array built using this file depends on the definition of R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+E\+M R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I\+G\+B R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I\+G\+B\+V\+F R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I\+X\+G\+B\+E R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I\+X\+G\+B\+E\+V\+F R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I40\+E R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I40\+E\+V\+F R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+V\+I\+R\+T\+I\+O at the time when this file is included.
+
+In order to populate an array, the user of this file must define this macro\+: R\+T\+E\+\_\+\+P\+C\+I\+\_\+\+D\+E\+V\+\_\+\+I\+D\+\_\+\+D\+E\+C\+L\+\_\+\+I\+X\+G\+B\+E(vendor\+I\+D, device\+I\+D). For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{struct }device \{
+    \textcolor{keywordtype}{int} vend;
+    \textcolor{keywordtype}{int} dev;
+\};
+
+\textcolor{keyword}{struct }device devices[] = \{
+\textcolor{preprocessor}{#define RTE\_PCI\_DEV\_ID\_DECL\_IXGBE(vendorID, deviceID) \{vend, dev\},}
+\textcolor{preprocessor}{#include <\hyperlink{rte__pci__dev__ids_8h}{rte\_pci\_dev\_ids.h}>}
+\};
+\end{DoxyCode}
+
+
+Note that this file can be included multiple times within the same file. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__pci__dev__ids_8h_a0b846c2b83ebb26468566b7f7f353f1a}{}\index{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}!P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L}}
+\index{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L}!rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+I\+N\+T\+E\+L~0x8086}\label{rte__pci__dev__ids_8h_a0b846c2b83ebb26468566b7f7f353f1a}
+Vendor I\+D used by Intel devices \hypertarget{rte__pci__dev__ids_8h_a7e45209da712f9bd08b6df536edcb803}{}\index{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}!P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T}}
+\index{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T}!rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+Q\+U\+M\+R\+A\+N\+E\+T~0x1\+A\+F4}\label{rte__pci__dev__ids_8h_a7e45209da712f9bd08b6df536edcb803}
+Vendor I\+D used by virtio devices \hypertarget{rte__pci__dev__ids_8h_a18994fe9a9ffddbcc32e6724ac699526}{}\index{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}!P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E}}
+\index{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E@{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E}!rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h@{rte\+\_\+pci\+\_\+dev\+\_\+ids.\+h}}
+\subsubsection[{P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+V\+M\+W\+A\+R\+E~0x15\+A\+D}\label{rte__pci__dev__ids_8h_a18994fe9a9ffddbcc32e6724ac699526}
+Vendor I\+D used by V\+Mware devices 

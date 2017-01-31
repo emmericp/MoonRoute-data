@@ -1,0 +1,60 @@
+\hypertarget{rte__hash__crc_8h}{}\section{lib/librte\+\_\+hash/rte\+\_\+hash\+\_\+crc.h File Reference}
+\label{rte__hash__crc_8h}\index{lib/librte\+\_\+hash/rte\+\_\+hash\+\_\+crc.\+h@{lib/librte\+\_\+hash/rte\+\_\+hash\+\_\+crc.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$nmmintrin.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{rte__hash__crc_8h_a0949738185ca264529df4760e5ac3444}{rte\+\_\+hash\+\_\+crc\+\_\+4byte} (uint32\+\_\+t data, uint32\+\_\+t init\+\_\+val)
+\item 
+static uint32\+\_\+t \hyperlink{rte__hash__crc_8h_aaf1a10c0c1ee2b63d5a545ee6cb84740}{rte\+\_\+hash\+\_\+crc} (const void $\ast$data, uint32\+\_\+t data\+\_\+len, uint32\+\_\+t init\+\_\+val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E C\+R\+C Hash 
+
+\subsection{Function Documentation}
+\hypertarget{rte__hash__crc_8h_aaf1a10c0c1ee2b63d5a545ee6cb84740}{}\index{rte\+\_\+hash\+\_\+crc.\+h@{rte\+\_\+hash\+\_\+crc.\+h}!rte\+\_\+hash\+\_\+crc@{rte\+\_\+hash\+\_\+crc}}
+\index{rte\+\_\+hash\+\_\+crc@{rte\+\_\+hash\+\_\+crc}!rte\+\_\+hash\+\_\+crc.\+h@{rte\+\_\+hash\+\_\+crc.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+crc}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+hash\+\_\+crc (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{data\+\_\+len, }
+\item[{uint32\+\_\+t}]{init\+\_\+val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__hash__crc_8h_aaf1a10c0c1ee2b63d5a545ee6cb84740}
+Use crc32 instruction to perform a hash.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to perform hash on. \\
+\hline
+{\em data\+\_\+len} & How many bytes to use to calculate hash value. \\
+\hline
+{\em init\+\_\+val} & Value to initialise hash generator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+32bit calculated hash value. 
+\end{DoxyReturn}
+\hypertarget{rte__hash__crc_8h_a0949738185ca264529df4760e5ac3444}{}\index{rte\+\_\+hash\+\_\+crc.\+h@{rte\+\_\+hash\+\_\+crc.\+h}!rte\+\_\+hash\+\_\+crc\+\_\+4byte@{rte\+\_\+hash\+\_\+crc\+\_\+4byte}}
+\index{rte\+\_\+hash\+\_\+crc\+\_\+4byte@{rte\+\_\+hash\+\_\+crc\+\_\+4byte}!rte\+\_\+hash\+\_\+crc.\+h@{rte\+\_\+hash\+\_\+crc.\+h}}
+\subsubsection[{rte\+\_\+hash\+\_\+crc\+\_\+4byte}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+hash\+\_\+crc\+\_\+4byte (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{data, }
+\item[{uint32\+\_\+t}]{init\+\_\+val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__hash__crc_8h_a0949738185ca264529df4760e5ac3444}
+Use single crc32 instruction to perform a hash on a 4 byte value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to perform hash on. \\
+\hline
+{\em init\+\_\+val} & Value to initialise hash generator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+32bit calculated hash value. 
+\end{DoxyReturn}

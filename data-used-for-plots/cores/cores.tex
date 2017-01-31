@@ -1,0 +1,144 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tumcolors}
+
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+\tikzset{every mark/.append style={scale=0.75}}
+
+\begin{document}%
+\pgfplotstableread[col sep=space]{plots/cores/data_2.0GHz}{\tbltwo}%
+\pgfplotstableread[col sep=space]{plots/cores/data_2.0_randomGHz}{\tbltworandom}%
+\pgfplotstableread[col sep=space]{plots/cores/data_1.2GHz}{\tblone}%
+\pgfplotstableread[col sep=space]{plots/cores/data_1.2_randomGHz}{\tblonerandom}%	
+\def\barwidth{4pt}%
+\begin{tikzpicture}
+\begin{axis}[
+footnotesize,
+width=0.43\textwidth,
+height=5cm,
+xlabel=Number of cores,
+ymin=0,
+ymax=35,
+xmin=0,
+xmax=8,
+ybar=0.66pt,
+bar width=\barwidth,
+xtick={1, 2, 3, 4, 5, 6, 7},
+ytick={0,5,...,30},
+ylabel=Throughput {[}Mpps{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+legend style={font=\footnotesize, at={(.5,1.05)}, anchor=south},
+legend entries={2.0\,GHz single, 2.0\,GHz random, 1.2\,GHz single, 1.2\,GHz random},
+%legend style={font=\small,at={(0.97,0.96)},anchor=north east},
+%legend style={at={(0.98,0.94)},anchor=north west},
+%legend pos = north west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+legend columns=2
+]
+
+\addplot[
+color=TUMDarkerBlue,
+fill=TUMDarkerBlue!60,
+mark=none,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+	x expr = \thisrowno{0},
+	y expr = \thisrowno{1} / (84 * 8),
+	y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbltwo};
+
+\addplot[
+color=TUMDarkerBlue,
+fill=TUMDarkerBlue!60,
+mark=none,
+opacity=0.5,
+postaction={
+	pattern=north west lines,
+},
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+	x expr = \thisrowno{0},
+	y expr = \thisrowno{1} / (84 * 8),
+	y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbltworandom};
+
+\addplot[
+color=TUMGreen,
+fill=TUMGreen!60,
+mark=none,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+	x expr = \thisrowno{0},
+	y expr = \thisrowno{1} / (84 * 8),
+	y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tblone};
+
+\addplot[
+color=TUMGreen,
+fill=TUMGreen!60,
+mark=none,
+opacity=0.5,
+postaction={
+	pattern=north west lines,
+},
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{1} / (84 * 8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tblonerandom};
+\node at (axis cs:0.15, 29) [anchor=south west, color=TUMOrange,inner sep = 4pt] {2$\times$\,10\,Gbit};
+\end{axis}
+\begin{axis}[
+footnotesize,
+width=0.43\textwidth,
+height=5cm,
+ymin=0,
+ymax=35,	
+xmin=0,
+xmax=8,
+hide x axis,
+hide y axis,
+tick label style={font=\footnotesize},
+ytick={0,5,...,30}]
+%2.0 GHz
+\addplot[domain=0:8,xshift=-1.5*\barwidth,color=TUMDarkerBlue]{(6872.65*x+342.6)/(84*8)}; 
+%2.0 GHz random
+\addplot[domain=0:8,xshift=-.5*\barwidth,color=TUMDarkerBlue,densely dashed,thick]{(5796*x-21.841)/(84*8)}; 
+%1.2 GHz
+\addplot[domain=0:8,xshift=.5*\barwidth,color=TUMGreen]{(4168.44*x+157.006)/(84*8)};  
+%1.2 GHz random
+\addplot[domain=0:8,xshift=1.5*\barwidth,color=TUMGreen,densely dashed,thick]{(3663.14*x-48.2888)/(84*8)};
+% Line Rate
+\addplot[thick,densely dashed, domain=-1:8,xshift=1.5*\barwidth,color=TUMOrange]{14.88*2};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

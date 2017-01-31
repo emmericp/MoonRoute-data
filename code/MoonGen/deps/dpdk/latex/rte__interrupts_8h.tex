@@ -1,0 +1,125 @@
+\hypertarget{rte__interrupts_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+interrupts.h File Reference}
+\label{rte__interrupts_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+interrupts.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+interrupts.\+h}}
+{\ttfamily \#include $<$exec-\/env/rte\+\_\+interrupts.\+h$>$}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{rte__interrupts_8h_acd105b2246a06f02d7717cf2eff00e9d}{rte\+\_\+intr\+\_\+callback\+\_\+fn}) (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle, void $\ast$cb\+\_\+arg)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__interrupts_8h_a8701e18cd7a69a8064b90c962d7e8736}{rte\+\_\+intr\+\_\+callback\+\_\+register} (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle, \hyperlink{rte__interrupts_8h_acd105b2246a06f02d7717cf2eff00e9d}{rte\+\_\+intr\+\_\+callback\+\_\+fn} cb, void $\ast$cb\+\_\+arg)
+\item 
+int \hyperlink{rte__interrupts_8h_aa6e3e9ef1ef51ca9ca37e8c5df58f21e}{rte\+\_\+intr\+\_\+callback\+\_\+unregister} (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle, \hyperlink{rte__interrupts_8h_acd105b2246a06f02d7717cf2eff00e9d}{rte\+\_\+intr\+\_\+callback\+\_\+fn} cb, void $\ast$cb\+\_\+arg)
+\item 
+int \hyperlink{rte__interrupts_8h_ad0d2bfc245f06d84b516321e1df8a0c0}{rte\+\_\+intr\+\_\+enable} (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle)
+\item 
+int \hyperlink{rte__interrupts_8h_ab15e791bf11766e2a9c9956e413681be}{rte\+\_\+intr\+\_\+disable} (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The R\+T\+E interrupt interface provides functions to register/unregister callbacks for a specific interrupt. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__interrupts_8h_acd105b2246a06f02d7717cf2eff00e9d}{}\index{rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}!rte\+\_\+intr\+\_\+callback\+\_\+fn@{rte\+\_\+intr\+\_\+callback\+\_\+fn}}
+\index{rte\+\_\+intr\+\_\+callback\+\_\+fn@{rte\+\_\+intr\+\_\+callback\+\_\+fn}!rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}}
+\subsubsection[{rte\+\_\+intr\+\_\+callback\+\_\+fn}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ rte\+\_\+intr\+\_\+callback\+\_\+fn) (struct rte\+\_\+intr\+\_\+handle $\ast$intr\+\_\+handle, void $\ast$cb\+\_\+arg)}\label{rte__interrupts_8h_acd105b2246a06f02d7717cf2eff00e9d}
+Function to be registered for the specific interrupt 
+
+\subsection{Function Documentation}
+\hypertarget{rte__interrupts_8h_a8701e18cd7a69a8064b90c962d7e8736}{}\index{rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}!rte\+\_\+intr\+\_\+callback\+\_\+register@{rte\+\_\+intr\+\_\+callback\+\_\+register}}
+\index{rte\+\_\+intr\+\_\+callback\+\_\+register@{rte\+\_\+intr\+\_\+callback\+\_\+register}!rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}}
+\subsubsection[{rte\+\_\+intr\+\_\+callback\+\_\+register}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+intr\+\_\+callback\+\_\+register (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+intr\+\_\+handle $\ast$}]{intr\+\_\+handle, }
+\item[{{\bf rte\+\_\+intr\+\_\+callback\+\_\+fn}}]{cb, }
+\item[{void $\ast$}]{cb\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__interrupts_8h_a8701e18cd7a69a8064b90c962d7e8736}
+It registers the callback for the specific interrupt. Multiple callbacks cal be registered at the same time. 
+\begin{DoxyParams}{Parameters}
+{\em intr\+\_\+handle} & Pointer to the interrupt handle. \\
+\hline
+{\em cb} & callback address. \\
+\hline
+{\em cb\+\_\+arg} & address of parameter for callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, zero.
+\item On failure, a negative value. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__interrupts_8h_aa6e3e9ef1ef51ca9ca37e8c5df58f21e}{}\index{rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}!rte\+\_\+intr\+\_\+callback\+\_\+unregister@{rte\+\_\+intr\+\_\+callback\+\_\+unregister}}
+\index{rte\+\_\+intr\+\_\+callback\+\_\+unregister@{rte\+\_\+intr\+\_\+callback\+\_\+unregister}!rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}}
+\subsubsection[{rte\+\_\+intr\+\_\+callback\+\_\+unregister}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+intr\+\_\+callback\+\_\+unregister (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+intr\+\_\+handle $\ast$}]{intr\+\_\+handle, }
+\item[{{\bf rte\+\_\+intr\+\_\+callback\+\_\+fn}}]{cb, }
+\item[{void $\ast$}]{cb\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__interrupts_8h_aa6e3e9ef1ef51ca9ca37e8c5df58f21e}
+It unregisters the callback according to the specified interrupt handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em intr\+\_\+handle} & pointer to the interrupt handle. \\
+\hline
+{\em cb} & callback address. \\
+\hline
+{\em cb\+\_\+arg} & address of parameter for callback, (void $\ast$)-\/1 means to remove all registered which has the same callback address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, return the number of callback entities removed.
+\item On failure, a negative value. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__interrupts_8h_ab15e791bf11766e2a9c9956e413681be}{}\index{rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}!rte\+\_\+intr\+\_\+disable@{rte\+\_\+intr\+\_\+disable}}
+\index{rte\+\_\+intr\+\_\+disable@{rte\+\_\+intr\+\_\+disable}!rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}}
+\subsubsection[{rte\+\_\+intr\+\_\+disable}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+intr\+\_\+disable (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+intr\+\_\+handle $\ast$}]{intr\+\_\+handle}
+\end{DoxyParamCaption}
+)}\label{rte__interrupts_8h_ab15e791bf11766e2a9c9956e413681be}
+It disables the interrupt for the specified handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em intr\+\_\+handle} & pointer to the interrupt handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, zero.
+\item On failure, a negative value. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__interrupts_8h_ad0d2bfc245f06d84b516321e1df8a0c0}{}\index{rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}!rte\+\_\+intr\+\_\+enable@{rte\+\_\+intr\+\_\+enable}}
+\index{rte\+\_\+intr\+\_\+enable@{rte\+\_\+intr\+\_\+enable}!rte\+\_\+interrupts.\+h@{rte\+\_\+interrupts.\+h}}
+\subsubsection[{rte\+\_\+intr\+\_\+enable}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+intr\+\_\+enable (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+intr\+\_\+handle $\ast$}]{intr\+\_\+handle}
+\end{DoxyParamCaption}
+)}\label{rte__interrupts_8h_ad0d2bfc245f06d84b516321e1df8a0c0}
+It enables the interrupt for the specified handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em intr\+\_\+handle} & pointer to the interrupt handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item On success, zero.
+\item On failure, a negative value. 
+\end{DoxyItemize}
+\end{DoxyReturn}

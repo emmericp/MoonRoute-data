@@ -1,0 +1,387 @@
+\hypertarget{rte__acl_8h}{}\section{lib/librte\+\_\+acl/rte\+\_\+acl.h File Reference}
+\label{rte__acl_8h}\index{lib/librte\+\_\+acl/rte\+\_\+acl.\+h@{lib/librte\+\_\+acl/rte\+\_\+acl.\+h}}
+{\ttfamily \#include $<$rte\+\_\+acl\+\_\+osdep.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__acl__field__def}{rte\+\_\+acl\+\_\+field\+\_\+def}
+\item 
+struct \hyperlink{structrte__acl__config}{rte\+\_\+acl\+\_\+config}
+\item 
+struct \hyperlink{structrte__acl__field}{rte\+\_\+acl\+\_\+field}
+\item 
+struct \hyperlink{structrte__acl__rule__data}{rte\+\_\+acl\+\_\+rule\+\_\+data}
+\item 
+struct \hyperlink{structrte__acl__param}{rte\+\_\+acl\+\_\+param}
+\item 
+struct \hyperlink{structrte__acl__ipv4vlan__rule}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__acl_8h_ae5ab707258c6c9fbe28832902cbacf1c}{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F}(name,  fld\+\_\+num)
+\item 
+\#define \hyperlink{rte__acl_8h_aedf1f22817805ac2fda9fee671c66d83}{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{rte__acl_8h_a44228dc215831fbb96f0262759bd9ed9}{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z}~R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z(R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+N\+U\+M\+\_\+\+F\+I\+E\+L\+D\+S)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7b}{rte\+\_\+acl\+\_\+classify\+\_\+alg} \{ , \hyperlink{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba9847e79fbf50793cd926f346c20a2417}{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R} = 1, 
+\hyperlink{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba3a65a7a7012ee0f49d7815e79fa9b39f}{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E} = 2
+ \}
+\item 
+enum 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+acl\+\_\+ctx $\ast$ \hyperlink{rte__acl_8h_af230a8bd56f72b86af5e99375fb75313}{rte\+\_\+acl\+\_\+create} (const struct \hyperlink{structrte__acl__param}{rte\+\_\+acl\+\_\+param} $\ast$param)
+\item 
+struct rte\+\_\+acl\+\_\+ctx $\ast$ \hyperlink{rte__acl_8h_ad9869046e2c9ddb01b8d8ff0d0a39db3}{rte\+\_\+acl\+\_\+find\+\_\+existing} (const char $\ast$name)
+\item 
+void \hyperlink{rte__acl_8h_a97b48b27ddc2bdbda007bb7411a9b217}{rte\+\_\+acl\+\_\+free} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx)
+\item 
+int \hyperlink{rte__acl_8h_a54c0f9c8f982c2c41896e09f435b4f23}{rte\+\_\+acl\+\_\+add\+\_\+rules} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const struct rte\+\_\+acl\+\_\+rule $\ast$rules, uint32\+\_\+t num)
+\item 
+void \hyperlink{rte__acl_8h_a67100817506dc9ae1e1236f464dd034b}{rte\+\_\+acl\+\_\+reset\+\_\+rules} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx)
+\item 
+int \hyperlink{rte__acl_8h_aecb4409451df7950758380aee7c43479}{rte\+\_\+acl\+\_\+build} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const struct \hyperlink{structrte__acl__config}{rte\+\_\+acl\+\_\+config} $\ast$cfg)
+\item 
+void \hyperlink{rte__acl_8h_a5c5754c1340a2f9d08c7f656d6e2714c}{rte\+\_\+acl\+\_\+reset} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx)
+\item 
+int \hyperlink{rte__acl_8h_a97c75dcc2bddb3ce02c171f20d2f5854}{rte\+\_\+acl\+\_\+classify} (const struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$results, uint32\+\_\+t num, uint32\+\_\+t categories)
+\item 
+int \hyperlink{rte__acl_8h_a88da04a8f354cbc13dcadce04ecb6590}{rte\+\_\+acl\+\_\+classify\+\_\+alg} (const struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const uint8\+\_\+t $\ast$$\ast$data, uint32\+\_\+t $\ast$results, uint32\+\_\+t num, uint32\+\_\+t categories, enum \hyperlink{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7b}{rte\+\_\+acl\+\_\+classify\+\_\+alg} alg)
+\item 
+void \hyperlink{rte__acl_8h_a33b5b259f43c5eb3c55e13e548b4998c}{rte\+\_\+acl\+\_\+dump} (const struct rte\+\_\+acl\+\_\+ctx $\ast$ctx)
+\item 
+void \hyperlink{rte__acl_8h_a108a4af075d46a0cd626d6ba154be541}{rte\+\_\+acl\+\_\+list\+\_\+dump} (void)
+\item 
+int \hyperlink{rte__acl_8h_aa6e272a5aec104c31050482f19f1acf7}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const struct \hyperlink{structrte__acl__ipv4vlan__rule}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule} $\ast$rules, uint32\+\_\+t num)
+\item 
+int \hyperlink{rte__acl_8h_a9c55f7fc7066f487bf133a95dde12c24}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build} (struct rte\+\_\+acl\+\_\+ctx $\ast$ctx, const uint32\+\_\+t layout\mbox{[}R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+N\+U\+M\mbox{]}, uint32\+\_\+t num\+\_\+categories)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Classifier. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__acl_8h_a44228dc215831fbb96f0262759bd9ed9}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z}}
+\index{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z~R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+S\+Z(R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+N\+U\+M\+\_\+\+F\+I\+E\+L\+D\+S)}\label{rte__acl_8h_a44228dc215831fbb96f0262759bd9ed9}
+Macro to define rule size for \hyperlink{structrte__acl__ipv4vlan__rule}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}. \hypertarget{rte__acl_8h_aedf1f22817805ac2fda9fee671c66d83}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__acl_8h_aedf1f22817805ac2fda9fee671c66d83}
+Max number of characters in name. \hypertarget{rte__acl_8h_ae5ab707258c6c9fbe28832902cbacf1c}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F}}
+\index{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+U\+L\+E\+\_\+\+D\+E\+F(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{fld\+\_\+num}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_ae5ab707258c6c9fbe28832902cbacf1c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{struct }name \{\(\backslash\)
+    struct \hyperlink{structrte__acl__rule__data}{rte\_acl\_rule\_data} data;               \(\backslash\)
+    struct \hyperlink{structrte__acl__field}{rte\_acl\_field} field[fld\_num];         \(\backslash\)
+\}
+\end{DoxyCode}
+Defines single A\+C\+L rule. data -\/ miscellaneous data for the rule. field\mbox{[}\mbox{]} -\/ value and mask or range for each field. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__acl_8h_abc5c98fcc1211af2b80116dd6e0a035d}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{rte__acl_8h_abc5c98fcc1211af2b80116dd6e0a035d}
+Specifies fields layout inside rte\+\_\+acl\+\_\+rule for \hyperlink{structrte__acl__ipv4vlan__rule}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule}. \hypertarget{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7b}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+classify\+\_\+alg@{rte\+\_\+acl\+\_\+classify\+\_\+alg}}
+\index{rte\+\_\+acl\+\_\+classify\+\_\+alg@{rte\+\_\+acl\+\_\+classify\+\_\+alg}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+classify\+\_\+alg}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+acl\+\_\+classify\+\_\+alg}}\label{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7b}
+Avaialble implementations of A\+C\+L classify. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R}}\item[{\em 
+\hypertarget{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba9847e79fbf50793cd926f346c20a2417}{}R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+C\+A\+L\+A\+R\label{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba9847e79fbf50793cd926f346c20a2417}
+}]generic implementation. \index{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E@{R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E}}\item[{\em 
+\hypertarget{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba3a65a7a7012ee0f49d7815e79fa9b39f}{}R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+C\+L\+A\+S\+S\+I\+F\+Y\+\_\+\+S\+S\+E\label{rte__acl_8h_a86a25ccd8348bf492656f3a10d77ed7ba3a65a7a7012ee0f49d7815e79fa9b39f}
+}]requries S\+S\+E4.\+1 support. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__acl_8h_a54c0f9c8f982c2c41896e09f435b4f23}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+add\+\_\+rules@{rte\+\_\+acl\+\_\+add\+\_\+rules}}
+\index{rte\+\_\+acl\+\_\+add\+\_\+rules@{rte\+\_\+acl\+\_\+add\+\_\+rules}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+add\+\_\+rules}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+acl\+\_\+add\+\_\+rules (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const struct rte\+\_\+acl\+\_\+rule $\ast$}]{rules, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a54c0f9c8f982c2c41896e09f435b4f23}
+Add rules to an existing A\+C\+L context. This function is not multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to add patterns to. \\
+\hline
+{\em rules} & Array of rules to add to the A\+C\+L context. Note that all fields in rte\+\_\+acl\+\_\+rule structures are expected to be in host byte order. Each rule expected to be in the same format and not exceed size specified at A\+C\+L context creation time. \\
+\hline
+{\em num} & Number of elements in the input array of rules. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+N\+O\+M\+E\+M if there is no space in the A\+C\+L context for these rules.
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item Zero if operation completed successfully. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_aecb4409451df7950758380aee7c43479}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+build@{rte\+\_\+acl\+\_\+build}}
+\index{rte\+\_\+acl\+\_\+build@{rte\+\_\+acl\+\_\+build}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+build}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+acl\+\_\+build (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const struct {\bf rte\+\_\+acl\+\_\+config} $\ast$}]{cfg}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_aecb4409451df7950758380aee7c43479}
+Analyze set of rules and build required internal run-\/time structures. This function is not multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to build. \\
+\hline
+{\em cfg} & Pointer to struct \hyperlink{structrte__acl__config}{rte\+\_\+acl\+\_\+config} -\/ defines build parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+N\+O\+M\+E\+M if couldn\textquotesingle{}t allocate enough memory.
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item Negative error code if operation failed.
+\item Zero if operation completed successfully. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a97c75dcc2bddb3ce02c171f20d2f5854}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+classify@{rte\+\_\+acl\+\_\+classify}}
+\index{rte\+\_\+acl\+\_\+classify@{rte\+\_\+acl\+\_\+classify}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+classify}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+acl\+\_\+classify (
+\begin{DoxyParamCaption}
+\item[{const struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$$\ast$}]{data, }
+\item[{uint32\+\_\+t $\ast$}]{results, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t}]{categories}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a97c75dcc2bddb3ce02c171f20d2f5854}
+Perform search for a matching A\+C\+L rule for each input data buffer. Each input data buffer can have up to {\itshape categories} matches. That implies that results array should be big enough to hold (categories $\ast$ num) elements. Also categories parameter should be either one or multiple of R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+E\+S\+U\+L\+T\+S\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R and can\textquotesingle{}t be bigger than R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+M\+A\+X\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S. If more than one rule is applicable for given input buffer and given category, then rule with highest priority will be returned as a match. Note, that it is a caller\textquotesingle{}s responsibility to ensure that input parameters are valid and point to correct memory locations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to search with. \\
+\hline
+{\em data} & Array of pointers to input data buffers to perform search. Note that all fields in input data buffers supposed to be in network byte order (M\+S\+B). \\
+\hline
+{\em results} & Array of search results, {\itshape categories} results per each input data buffer. \\
+\hline
+{\em num} & Number of elements in the input data buffers array. \\
+\hline
+{\em categories} & Number of maximum possible matches for each input buffer, one possible match per category. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zero on successful completion. -\/\+E\+I\+N\+V\+A\+L for incorrect arguments. 
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a88da04a8f354cbc13dcadce04ecb6590}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+classify\+\_\+alg@{rte\+\_\+acl\+\_\+classify\+\_\+alg}}
+\index{rte\+\_\+acl\+\_\+classify\+\_\+alg@{rte\+\_\+acl\+\_\+classify\+\_\+alg}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+classify\+\_\+alg}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf rte\+\_\+acl\+\_\+classify\+\_\+alg} (
+\begin{DoxyParamCaption}
+\item[{const struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const uint8\+\_\+t $\ast$$\ast$}]{data, }
+\item[{uint32\+\_\+t $\ast$}]{results, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t}]{categories, }
+\item[{enum {\bf rte\+\_\+acl\+\_\+classify\+\_\+alg}}]{alg}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a88da04a8f354cbc13dcadce04ecb6590}
+Perform search using specified algorithm for a matching A\+C\+L rule for each input data buffer. Each input data buffer can have up to {\itshape categories} matches. That implies that results array should be big enough to hold (categories $\ast$ num) elements. Also categories parameter should be either one or multiple of R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+R\+E\+S\+U\+L\+T\+S\+\_\+\+M\+U\+L\+T\+I\+P\+L\+I\+E\+R and can\textquotesingle{}t be bigger than R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+M\+A\+X\+\_\+\+C\+A\+T\+E\+G\+O\+R\+I\+E\+S. If more than one rule is applicable for given input buffer and given category, then rule with highest priority will be returned as a match. Note, that it is a caller\textquotesingle{}s responsibility to ensure that input parameters are valid and point to correct memory locations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to search with. \\
+\hline
+{\em data} & Array of pointers to input data buffers to perform search. Note that all fields in input data buffers supposed to be in network byte order (M\+S\+B). \\
+\hline
+{\em results} & Array of search results, {\itshape categories} results per each input data buffer. \\
+\hline
+{\em num} & Number of elements in the input data buffers array. \\
+\hline
+{\em categories} & Number of maximum possible matches for each input buffer, one possible match per category. \\
+\hline
+{\em alg} & Algorithm to be used for the search. It is the caller responibility to ensure that the value refers to the existing algorithm, and that it could be run on the given C\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zero on successful completion. -\/\+E\+I\+N\+V\+A\+L for incorrect arguments. 
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_af230a8bd56f72b86af5e99375fb75313}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+create@{rte\+\_\+acl\+\_\+create}}
+\index{rte\+\_\+acl\+\_\+create@{rte\+\_\+acl\+\_\+create}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+acl\+\_\+ctx$\ast$ rte\+\_\+acl\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+acl\+\_\+param} $\ast$}]{param}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_af230a8bd56f72b86af5e99375fb75313}
+Create a new A\+C\+L context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Parameters used to create and initialise the A\+C\+L context. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to A\+C\+L context structure that is used in future A\+C\+L operations, or N\+U\+L\+L on error, with error code set in rte\+\_\+errno. Possible rte\+\_\+errno errors include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the A\+C\+L context list
+\item E\+I\+N\+V\+A\+L -\/ invalid parameter passed to function 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a33b5b259f43c5eb3c55e13e548b4998c}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+dump@{rte\+\_\+acl\+\_\+dump}}
+\index{rte\+\_\+acl\+\_\+dump@{rte\+\_\+acl\+\_\+dump}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+acl\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{const struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a33b5b259f43c5eb3c55e13e548b4998c}
+Dump an A\+C\+L context structure to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to dump. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__acl_8h_ad9869046e2c9ddb01b8d8ff0d0a39db3}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+find\+\_\+existing@{rte\+\_\+acl\+\_\+find\+\_\+existing}}
+\index{rte\+\_\+acl\+\_\+find\+\_\+existing@{rte\+\_\+acl\+\_\+find\+\_\+existing}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+find\+\_\+existing}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+acl\+\_\+ctx$\ast$ rte\+\_\+acl\+\_\+find\+\_\+existing (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_ad9869046e2c9ddb01b8d8ff0d0a39db3}
+Find an existing A\+C\+L context object and return a pointer to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the A\+C\+L context as passed to \hyperlink{rte__acl_8h_af230a8bd56f72b86af5e99375fb75313}{rte\+\_\+acl\+\_\+create()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to A\+C\+L context or N\+U\+L\+L if object not found with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ value not available for return 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a97b48b27ddc2bdbda007bb7411a9b217}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+free@{rte\+\_\+acl\+\_\+free}}
+\index{rte\+\_\+acl\+\_\+free@{rte\+\_\+acl\+\_\+free}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+acl\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a97b48b27ddc2bdbda007bb7411a9b217}
+De-\/allocate all memory used by A\+C\+L context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__acl_8h_aa6e272a5aec104c31050482f19f1acf7}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules}}
+\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+acl\+\_\+ipv4vlan\+\_\+add\+\_\+rules (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const struct {\bf rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule} $\ast$}]{rules, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_aa6e272a5aec104c31050482f19f1acf7}
+Add ipv4vlan rules to an existing A\+C\+L context. This function is not multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to add patterns to. \\
+\hline
+{\em rules} & Array of rules to add to the A\+C\+L context. Note that all fields in \hyperlink{structrte__acl__ipv4vlan__rule}{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+rule} structures are expected to be in host byte order. \\
+\hline
+{\em num} & Number of elements in the input array of rules. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+N\+O\+M\+E\+M if there is no space in the A\+C\+L context for these rules.
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item Zero if operation completed successfully. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a9c55f7fc7066f487bf133a95dde12c24}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build}}
+\index{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build@{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+acl\+\_\+ipv4vlan\+\_\+build (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx, }
+\item[{const uint32\+\_\+t}]{layout\mbox{[}\+R\+T\+E\+\_\+\+A\+C\+L\+\_\+\+I\+P\+V4\+V\+L\+A\+N\+\_\+\+N\+U\+M\mbox{]}, }
+\item[{uint32\+\_\+t}]{num\+\_\+categories}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a9c55f7fc7066f487bf133a95dde12c24}
+Analyze set of ipv4vlan rules and build required internal run-\/time structures. This function is not multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to build. \\
+\hline
+{\em layout} & Layout of input data to search through. \\
+\hline
+{\em num\+\_\+categories} & Maximum number of categories to use in that build. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item -\/\+E\+N\+O\+M\+E\+M if couldn\textquotesingle{}t allocate enough memory.
+\item -\/\+E\+I\+N\+V\+A\+L if the parameters are invalid.
+\item Negative error code if operation failed.
+\item Zero if operation completed successfully. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__acl_8h_a108a4af075d46a0cd626d6ba154be541}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+list\+\_\+dump@{rte\+\_\+acl\+\_\+list\+\_\+dump}}
+\index{rte\+\_\+acl\+\_\+list\+\_\+dump@{rte\+\_\+acl\+\_\+list\+\_\+dump}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+list\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+acl\+\_\+list\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a108a4af075d46a0cd626d6ba154be541}
+Dump all A\+C\+L context structures to the console. \hypertarget{rte__acl_8h_a5c5754c1340a2f9d08c7f656d6e2714c}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+reset@{rte\+\_\+acl\+\_\+reset}}
+\index{rte\+\_\+acl\+\_\+reset@{rte\+\_\+acl\+\_\+reset}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+acl\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a5c5754c1340a2f9d08c7f656d6e2714c}
+Delete all rules from the A\+C\+L context and destroy all internal run-\/time structures. This function is not multi-\/thread safe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to reset. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__acl_8h_a67100817506dc9ae1e1236f464dd034b}{}\index{rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}!rte\+\_\+acl\+\_\+reset\+\_\+rules@{rte\+\_\+acl\+\_\+reset\+\_\+rules}}
+\index{rte\+\_\+acl\+\_\+reset\+\_\+rules@{rte\+\_\+acl\+\_\+reset\+\_\+rules}!rte\+\_\+acl.\+h@{rte\+\_\+acl.\+h}}
+\subsubsection[{rte\+\_\+acl\+\_\+reset\+\_\+rules}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+acl\+\_\+reset\+\_\+rules (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+acl\+\_\+ctx $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}\label{rte__acl_8h_a67100817506dc9ae1e1236f464dd034b}
+Delete all rules from the A\+C\+L context. This function is not multi-\/thread safe. Note that internal run-\/time structures are not affected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\+C\+L context to delete rules from. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,192 @@
+\hypertarget{rte__spinlock_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+spinlock.h File Reference}
+\label{rte__spinlock_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+spinlock.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+spinlock.\+h}}
+{\ttfamily \#include $<$rte\+\_\+lcore.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t}
+\item 
+struct \hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__spinlock_8h_a75d7d6c9658a72e3cc5a90a279ed374a}{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}~\{ 0 \}
+\item 
+\#define \hyperlink{rte__spinlock_8h_af4d81680f3d14d2042ff1a54825dcb12}{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}~\{\hyperlink{rte__spinlock_8h_a75d7d6c9658a72e3cc5a90a279ed374a}{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}, -\/1, 0\}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{rte__spinlock_8h_af3ff11ac862ee94491533486fc0d959c}{rte\+\_\+spinlock\+\_\+init} (\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} $\ast$sl)
+\item 
+static void \hyperlink{rte__spinlock_8h_a9f1f7a431c1012f0276fa5f7d859f9f2}{rte\+\_\+spinlock\+\_\+lock} (\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} $\ast$sl)
+\item 
+static void \hyperlink{rte__spinlock_8h_a5fa3ccaf4263c07a99bea375384f21d8}{rte\+\_\+spinlock\+\_\+unlock} (\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} $\ast$sl)
+\item 
+static int \hyperlink{rte__spinlock_8h_a692f7d198c2c8df5b26aa2f542b38f10}{rte\+\_\+spinlock\+\_\+trylock} (\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} $\ast$sl)
+\item 
+static int \hyperlink{rte__spinlock_8h_ad8cf3ff652a4ad14b0eb4f4b3fb47be1}{rte\+\_\+spinlock\+\_\+is\+\_\+locked} (\hyperlink{structrte__spinlock__t}{rte\+\_\+spinlock\+\_\+t} $\ast$sl)
+\item 
+static void \hyperlink{rte__spinlock_8h_aa0f94cc574476fa49f93323678564898}{rte\+\_\+spinlock\+\_\+recursive\+\_\+init} (\hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$slr)
+\item 
+static void \hyperlink{rte__spinlock_8h_a2bb2025961529351cabd70fa814802fe}{rte\+\_\+spinlock\+\_\+recursive\+\_\+lock} (\hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$slr)
+\item 
+static void \hyperlink{rte__spinlock_8h_a7ec0e9f0b02b1101e7206aedbe584672}{rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock} (\hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$slr)
+\item 
+static int \hyperlink{rte__spinlock_8h_a24f3da575b0151810a0aa7ac59b09ec3}{rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock} (\hyperlink{structrte__spinlock__recursive__t}{rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$slr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Spinlocks
+
+This file defines an A\+P\+I for read-\/write locks, which are implemented in an architecture-\/specific way. This kind of lock simply waits in a loop repeatedly checking until the lock becomes available.
+
+All locks must be initialised before use, and only initialised once. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__spinlock_8h_a75d7d6c9658a72e3cc5a90a279ed374a}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}}
+\index{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R~\{ 0 \}}\label{rte__spinlock_8h_a75d7d6c9658a72e3cc5a90a279ed374a}
+A static spinlock initializer. \hypertarget{rte__spinlock_8h_af4d81680f3d14d2042ff1a54825dcb12}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}}
+\index{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+R\+E\+C\+U\+R\+S\+I\+V\+E\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R~\{{\bf R\+T\+E\+\_\+\+S\+P\+I\+N\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}, -\/1, 0\}}\label{rte__spinlock_8h_af4d81680f3d14d2042ff1a54825dcb12}
+A static recursive spinlock initializer. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__spinlock_8h_af3ff11ac862ee94491533486fc0d959c}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+init@{rte\+\_\+spinlock\+\_\+init}}
+\index{rte\+\_\+spinlock\+\_\+init@{rte\+\_\+spinlock\+\_\+init}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+t} $\ast$}]{sl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_af3ff11ac862ee94491533486fc0d959c}
+Initialize the spinlock to an unlocked state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sl} & A pointer to the spinlock. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__spinlock_8h_ad8cf3ff652a4ad14b0eb4f4b3fb47be1}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+is\+\_\+locked@{rte\+\_\+spinlock\+\_\+is\+\_\+locked}}
+\index{rte\+\_\+spinlock\+\_\+is\+\_\+locked@{rte\+\_\+spinlock\+\_\+is\+\_\+locked}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+is\+\_\+locked}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+spinlock\+\_\+is\+\_\+locked (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+t} $\ast$}]{sl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_ad8cf3ff652a4ad14b0eb4f4b3fb47be1}
+Test if the lock is taken.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sl} & A pointer to the spinlock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the lock is currently taken; 0 otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__spinlock_8h_a9f1f7a431c1012f0276fa5f7d859f9f2}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+lock@{rte\+\_\+spinlock\+\_\+lock}}
+\index{rte\+\_\+spinlock\+\_\+lock@{rte\+\_\+spinlock\+\_\+lock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+t} $\ast$}]{sl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a9f1f7a431c1012f0276fa5f7d859f9f2}
+Take the spinlock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sl} & A pointer to the spinlock. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__spinlock_8h_aa0f94cc574476fa49f93323678564898}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+recursive\+\_\+init@{rte\+\_\+spinlock\+\_\+recursive\+\_\+init}}
+\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+init@{rte\+\_\+spinlock\+\_\+recursive\+\_\+init}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+recursive\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+recursive\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$}]{slr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_aa0f94cc574476fa49f93323678564898}
+Initialize the recursive spinlock to an unlocked state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slr} & A pointer to the recursive spinlock. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__spinlock_8h_a2bb2025961529351cabd70fa814802fe}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+recursive\+\_\+lock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+lock}}
+\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+lock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+lock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+recursive\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+recursive\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$}]{slr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a2bb2025961529351cabd70fa814802fe}
+Take the recursive spinlock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slr} & A pointer to the recursive spinlock. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__spinlock_8h_a24f3da575b0151810a0aa7ac59b09ec3}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock}}
+\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+spinlock\+\_\+recursive\+\_\+trylock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$}]{slr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a24f3da575b0151810a0aa7ac59b09ec3}
+Try to take the recursive lock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slr} & A pointer to the recursive spinlock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the lock is successfully taken; 0 otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__spinlock_8h_a7ec0e9f0b02b1101e7206aedbe584672}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock}}
+\index{rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock@{rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+recursive\+\_\+unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+recursive\+\_\+t} $\ast$}]{slr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a7ec0e9f0b02b1101e7206aedbe584672}
+Release the recursive spinlock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slr} & A pointer to the recursive spinlock. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__spinlock_8h_a692f7d198c2c8df5b26aa2f542b38f10}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+trylock@{rte\+\_\+spinlock\+\_\+trylock}}
+\index{rte\+\_\+spinlock\+\_\+trylock@{rte\+\_\+spinlock\+\_\+trylock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+trylock}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+spinlock\+\_\+trylock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+t} $\ast$}]{sl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a692f7d198c2c8df5b26aa2f542b38f10}
+Try to take the lock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sl} & A pointer to the spinlock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the lock is successfully taken; 0 otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__spinlock_8h_a5fa3ccaf4263c07a99bea375384f21d8}{}\index{rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}!rte\+\_\+spinlock\+\_\+unlock@{rte\+\_\+spinlock\+\_\+unlock}}
+\index{rte\+\_\+spinlock\+\_\+unlock@{rte\+\_\+spinlock\+\_\+unlock}!rte\+\_\+spinlock.\+h@{rte\+\_\+spinlock.\+h}}
+\subsubsection[{rte\+\_\+spinlock\+\_\+unlock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+spinlock\+\_\+unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+spinlock\+\_\+t} $\ast$}]{sl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__spinlock_8h_a5fa3ccaf4263c07a99bea375384f21d8}
+Release the spinlock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sl} & A pointer to the spinlock. \\
+\hline
+\end{DoxyParams}

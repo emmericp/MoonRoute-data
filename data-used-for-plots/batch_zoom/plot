@@ -1,0 +1,67 @@
+#!/usr/bin/gnuplot
+
+#set terminal push
+#set terminal postscript eps enhanced color blacktext
+set terminal epslatex color blacktext
+set output "plot.tex"
+#set output "plot.tex"
+#set title "Effect of batching: Single core 3.0GHz, random traffic"
+set xlabel "Tx Batch Size [No. Packets]"
+set ylabel "Throughput [Mp/s]"
+set grid mxtics x
+set grid mytics y
+#set key top left
+set key above vertical maxrows 2
+#set key at 119,9.5
+#set logscale y
+set logscale x 2
+
+
+#set yrange [0.08:1]
+set xrange [2**0.5:2**9.5]
+set yrange [0:12]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+#data = 'result_fine'
+#data_no_random = 'data_no_random'
+#data_random = 'data_random'
+#data_28_addr = 'data_28_addr'
+#data_29_addr = 'data_29_addr'
+#
+#m = 1
+#t = 1
+#g(x) = m*x + t
+#fit [0:3.2] g(x) data using 1:2:3 via m, t
+#m2 = 1
+#t2 = 1
+#g2(x) = m2*x + t2
+#fit [0:3.2] g2(x) data_no_random using ($1/1000):2:3 via m2, t2
+#
+#bw = 0.04
+#bw2 = bw/2
+#set boxwidth bw
+#set style fill solid 0.1
+set xtics (1, 2, 4, 8, 16, 32, 64, 128, 256, 512)
+
+
+#set style fill   pattern 2 border
+
+plot\
+  'dataTX1'     using 1:($2/84/8):($3/84/8) with errorlines title    "RxB 1",\
+  'dataTX4'     using 1:($2/84/8):($3/84/8) with errorlines title    "RxB 4",\
+  'dataTX8'     using 1:($2/84/8):($3/84/8) with errorlines title    "RxB 8",\
+  'dataTX16'    using 1:($2/84/8):($3/84/8) with errorlines title    "RxB 16",\
+  'dataTX128'   using 1:($2/84/8):($3/84/8) with errorlines title    "RxB 128" lc 8,\
+  #'+' using 1:(g($1-bw2*3)):(g2($1+bw2*3)) with filledcurves closed notitle fs pattern lc rgb "#FFFFFFAA",\
+  #data_no_random using (($1/1000)-bw2*3):2:3 with boxerrorbars title "Single dst IP",\
+  #data_28_addr using (($1/1000)-bw2):2:3 with boxerrorbars title "20 bit random dst IPs",\
+  #data_29_addr using (($1/1000)+bw2):2:3 with boxerrorbars title "21 bit random dst IPs",\
+  #data using ($1+bw2*3):2:3 with boxerrorbars title "24 bit random dst IPs" ls 7,\
+  #g(x-bw2*3) title "Linear fit" ls 7,\
+  #g2(x+bw2*3) title "Linear fit" ls 2
+  ##data_random using (($1/1000)-0.05):2:3 with boxerrorbars title "Random dst IP",\
+
+#eich using ( $0/10 ):($1*10*3.6/80) title "front" with linespoints, eich using ($0/10):($2*10*3.6/80) title "rear" with linespoints, eich using ($0/10):($3*10*3.6/80) title "desired" with linespoints,eich using  ($0/10):(-($4-4000)/4000*10) title "engine power" with linespoints
+

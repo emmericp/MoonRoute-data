@@ -1,0 +1,75 @@
+\hypertarget{rte__alarm_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+alarm.h File Reference}
+\label{rte__alarm_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+alarm.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+alarm.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{rte__alarm_8h_a943f6090e702626e972f81dae522460b}{rte\+\_\+eal\+\_\+alarm\+\_\+callback}) (void $\ast$arg)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__alarm_8h_a2dcad28ea9331067662351b36d5877e5}{rte\+\_\+eal\+\_\+alarm\+\_\+set} (uint64\+\_\+t us, \hyperlink{rte__alarm_8h_a943f6090e702626e972f81dae522460b}{rte\+\_\+eal\+\_\+alarm\+\_\+callback} cb, void $\ast$cb\+\_\+arg)
+\item 
+int \hyperlink{rte__alarm_8h_aa94e16568efffc06444b9d1a9b66b42f}{rte\+\_\+eal\+\_\+alarm\+\_\+cancel} (\hyperlink{rte__alarm_8h_a943f6090e702626e972f81dae522460b}{rte\+\_\+eal\+\_\+alarm\+\_\+callback} cb\+\_\+fn, void $\ast$cb\+\_\+arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Alarm functions
+
+Simple alarm-\/clock functionality supplied by eal. Does not require hpet support. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__alarm_8h_a943f6090e702626e972f81dae522460b}{}\index{rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}!rte\+\_\+eal\+\_\+alarm\+\_\+callback@{rte\+\_\+eal\+\_\+alarm\+\_\+callback}}
+\index{rte\+\_\+eal\+\_\+alarm\+\_\+callback@{rte\+\_\+eal\+\_\+alarm\+\_\+callback}!rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+alarm\+\_\+callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ rte\+\_\+eal\+\_\+alarm\+\_\+callback) (void $\ast$arg)}\label{rte__alarm_8h_a943f6090e702626e972f81dae522460b}
+Signature of callback back function called when an alarm goes off. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__alarm_8h_aa94e16568efffc06444b9d1a9b66b42f}{}\index{rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}!rte\+\_\+eal\+\_\+alarm\+\_\+cancel@{rte\+\_\+eal\+\_\+alarm\+\_\+cancel}}
+\index{rte\+\_\+eal\+\_\+alarm\+\_\+cancel@{rte\+\_\+eal\+\_\+alarm\+\_\+cancel}!rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+alarm\+\_\+cancel}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+alarm\+\_\+cancel (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+eal\+\_\+alarm\+\_\+callback}}]{cb\+\_\+fn, }
+\item[{void $\ast$}]{cb\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__alarm_8h_aa94e16568efffc06444b9d1a9b66b42f}
+Function to cancel an alarm callback which has been registered before.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb\+\_\+fn} & alarm callback \\
+\hline
+{\em cb\+\_\+arg} & Pointer parameter to be passed to the callback function. To remove all copies of a given callback function, irrespective of parameter, (void $\ast$)-\/1 can be used here.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The number of callbacks removed 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__alarm_8h_a2dcad28ea9331067662351b36d5877e5}{}\index{rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}!rte\+\_\+eal\+\_\+alarm\+\_\+set@{rte\+\_\+eal\+\_\+alarm\+\_\+set}}
+\index{rte\+\_\+eal\+\_\+alarm\+\_\+set@{rte\+\_\+eal\+\_\+alarm\+\_\+set}!rte\+\_\+alarm.\+h@{rte\+\_\+alarm.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+alarm\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+alarm\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{us, }
+\item[{{\bf rte\+\_\+eal\+\_\+alarm\+\_\+callback}}]{cb, }
+\item[{void $\ast$}]{cb\+\_\+arg}
+\end{DoxyParamCaption}
+)}\label{rte__alarm_8h_a2dcad28ea9331067662351b36d5877e5}
+Function to set a callback to be triggered when us microseconds have expired. Accuracy of timing to the microsecond is not guaranteed. The alarm function will not be called {\itshape before} the requested time, but may be called a short period of time afterwards. The alarm handler will be called only once. There is no need to call \char`\"{}rte\+\_\+eal\+\_\+alarm\+\_\+cancel\char`\"{} from within the callback function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em us} & The time in microseconds before the callback is called \\
+\hline
+{\em cb} & The function to be called when the alarm expires \\
+\hline
+{\em cb\+\_\+arg} & Pointer parameter to be passed to the callback function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, zero. On failure, a negative error number 
+\end{DoxyReturn}

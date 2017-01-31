@@ -1,0 +1,158 @@
+\documentclass[]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tumcolors}
+
+\pgfplotsset{compat=newest}
+\pgfplotsset{grid style={dotted}}
+\tikzset{every mark/.append style={scale=0.75}}
+
+\begin{document}%
+\pgfplotstableread[col sep=space]{plots/batchcache/data2}{\tbl}%
+\begin{tikzpicture}
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=0.4\textwidth,
+height=6cm,
+xlabel=Rx batch size {[}packets{]},
+ymin=0,
+ymax=17,
+%xmin=1,
+%xmax=2048,
+xticklabels={$$, $$,  $2^0$, $2^1$, $2^2$, $2^3$, $2^4$, $2^5$, $2^6$, $2^7$, $2^8$, $2^9$, $2^{10}$},
+ytick={0,5,...,15},
+ylabel=Throughput {[}Mpps{]},
+every axis legend/.append style={nodes={right}},
+grid=major,
+legend entries={},
+%legend style={font=\small,at={(0.97,0.96)},anchor=north east},
+legend style={at={(.5,1.05)},anchor=south},
+%legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+legend columns= 3
+]
+
+\addplot[
+color=TUMDarkerBlue,
+every mark/.append style={solid,color=TUMGreen},mark=square,
+opacity=0.5,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1}
+]
+table [
+x expr = \thisrowno{0},
+y expr = \thisrowno{1}/(84*8),
+y error expr = \thisrowno{2} / (84 * 8)
+]
+{\tbl};
+\label{plot_one}
+
+\end{axis}
+
+\begin{axis}[
+xmode=log,
+log basis x=2,
+footnotesize,
+width=.4*\textwidth,
+height=6cm,
+ymin=0,
+ymax=11.3333333,
+xmin=0,
+%xmax=33554432,
+xticklabel=$$,
+ytick={0,3.333333,...,9.999999},
+yticklabels={$0$, $3.3$, $6.6$, $10.0$},
+ylabel={\footnotesize Miss rate {[}1/pkt{]}},
+every axis legend/.append style={nodes={right}},
+legend style={font=\footnotesize, at={(.5,1.05)}, anchor=south},
+legend entries={L2 misses},
+%legend pos = south west,
+tick label style={font=\footnotesize},
+every tick label/.append style={font=\footnotesize},
+axis y line*=right,
+ylabel near ticks,
+legend columns = 3
+]
+
+\addlegendimage{/pgfplots/refstyle=plot_one}
+\addlegendentry{Throughput}
+
+%l2 misses
+\addplot[
+color=TUMGreen,
+mark=,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = \thisrowno{0},
+y expr = (\thisrowno{3}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{3}+\thisrowno{4})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{3}-\thisrowno{4})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbl};
+\addlegendentry{Branch miss}
+
+\addplot[
+color=TUMMediumGray,
+mark=,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = \thisrowno{0},
+y expr = (\thisrowno{5}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{5}+\thisrowno{6})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{5}-\thisrowno{6})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbl};
+\addlegendentry{L1 misses}
+
+\addplot[
+color=TUMBeamerYellow,
+mark=,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = \thisrowno{0},
+y expr = (\thisrowno{7}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{7}+\thisrowno{8})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{7}-\thisrowno{8})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbl};
+\addlegendentry{L2 misses}
+
+\addplot[
+thick,
+densely dotted,
+color=TUMDarkerBlue,
+mark=,
+error bars/.cd, 
+y dir=both, 
+y explicit,
+error bar style={opacity=1},
+]
+table [
+x expr = \thisrowno{0},
+y expr = (\thisrowno{9}/\thisrowno{1}*84*8/1000000),
+y error expr = (((\thisrowno{9}+\thisrowno{10})/(\thisrowno{1}-\thisrowno{2}) - (\thisrowno{9}-\thisrowno{10})/(\thisrowno{1}+\thisrowno{2}))/2*84*8/1000000)
+]
+{\tbl};
+\addlegendentry{L3 misses}
+
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}

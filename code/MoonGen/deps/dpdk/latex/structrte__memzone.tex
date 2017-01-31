@@ -1,0 +1,60 @@
+\hypertarget{structrte__memzone}{}\section{rte\+\_\+memzone Struct Reference}
+\label{structrte__memzone}\index{rte\+\_\+memzone@{rte\+\_\+memzone}}
+
+
+{\ttfamily \#include $<$rte\+\_\+memzone.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structrte__memzone_a1a1c0270e433d8ce66b34d3bd7c713fd}{name} \mbox{[}\hyperlink{rte__memzone_8h_a5621a1253a3875b601cdc533b3180240}{R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{structrte__memzone_a3901f538726d14b9ad14e0bd7578c959}{phys\+\_\+addr}
+\item 
+size\+\_\+t \hyperlink{structrte__memzone_a7360b55975153b822efc5217b7734e6a}{len}
+\item 
+size\+\_\+t \hyperlink{structrte__memzone_a0e9113d25bb493add104f3b95844aaf5}{hugepage\+\_\+sz}
+\item 
+int32\+\_\+t \hyperlink{structrte__memzone_ac24d1064025151de66984ed53d5d9373}{socket\+\_\+id}
+\item 
+uint32\+\_\+t \hyperlink{structrte__memzone_a773b39d480759f67926cb18ae2219281}{flags}
+\item 
+void $\ast$ \hyperlink{structrte__memzone_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}{addr}
+\item 
+uint64\+\_\+t \hyperlink{structrte__memzone_a684abacaaf679b13b2ccec687a763b17}{addr\+\_\+64}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure describing a memzone, which is a contiguous portion of physical memory identified by a name. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__memzone_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!addr@{addr}}
+\index{addr@{addr}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ addr}\label{structrte__memzone_ae5bd6c22dbf0f6b5b0ae0233f8eb3704}
+Start virtual address. \hypertarget{structrte__memzone_a684abacaaf679b13b2ccec687a763b17}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!addr\+\_\+64@{addr\+\_\+64}}
+\index{addr\+\_\+64@{addr\+\_\+64}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{addr\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t addr\+\_\+64}\label{structrte__memzone_a684abacaaf679b13b2ccec687a763b17}
+Makes sure addr is always 64-\/bits \hypertarget{structrte__memzone_a773b39d480759f67926cb18ae2219281}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!flags@{flags}}
+\index{flags@{flags}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t flags}\label{structrte__memzone_a773b39d480759f67926cb18ae2219281}
+Characteristics of this memzone. \hypertarget{structrte__memzone_a0e9113d25bb493add104f3b95844aaf5}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!hugepage\+\_\+sz@{hugepage\+\_\+sz}}
+\index{hugepage\+\_\+sz@{hugepage\+\_\+sz}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{hugepage\+\_\+sz}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t hugepage\+\_\+sz}\label{structrte__memzone_a0e9113d25bb493add104f3b95844aaf5}
+The page size of underlying memory \hypertarget{structrte__memzone_a7360b55975153b822efc5217b7734e6a}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!len@{len}}
+\index{len@{len}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t len}\label{structrte__memzone_a7360b55975153b822efc5217b7734e6a}
+Length of the memzone. \hypertarget{structrte__memzone_a1a1c0270e433d8ce66b34d3bd7c713fd}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!name@{name}}
+\index{name@{name}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char name\mbox{[}{\bf R\+T\+E\+\_\+\+M\+E\+M\+Z\+O\+N\+E\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}}\label{structrte__memzone_a1a1c0270e433d8ce66b34d3bd7c713fd}
+Name of the memory zone. \hypertarget{structrte__memzone_a3901f538726d14b9ad14e0bd7578c959}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!phys\+\_\+addr@{phys\+\_\+addr}}
+\index{phys\+\_\+addr@{phys\+\_\+addr}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{phys\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} phys\+\_\+addr}\label{structrte__memzone_a3901f538726d14b9ad14e0bd7578c959}
+Start physical address. \hypertarget{structrte__memzone_ac24d1064025151de66984ed53d5d9373}{}\index{rte\+\_\+memzone@{rte\+\_\+memzone}!socket\+\_\+id@{socket\+\_\+id}}
+\index{socket\+\_\+id@{socket\+\_\+id}!rte\+\_\+memzone@{rte\+\_\+memzone}}
+\subsubsection[{socket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t socket\+\_\+id}\label{structrte__memzone_ac24d1064025151de66984ed53d5d9373}
+N\+U\+M\+A socket I\+D. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+eal/common/include/\hyperlink{rte__memzone_8h}{rte\+\_\+memzone.\+h}\end{DoxyCompactItemize}

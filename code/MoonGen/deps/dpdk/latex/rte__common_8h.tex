@@ -1,0 +1,366 @@
+\hypertarget{rte__common_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+common.h File Reference}
+\label{rte__common_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+common.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+common.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__common_8h_ae1a7c8799cb57669ae2ddf367b21533f}{\+\_\+\+\_\+rte\+\_\+unused}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+unused\+\_\+\+\_\+))
+\item 
+\#define \hyperlink{rte__common_8h_aaedd6d14e7370916fee58e0f69d8c37a}{R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D}(x)~(void)(x)
+\item 
+\#define \hyperlink{rte__common_8h_a96c6294ef6a307980f78899fe8a5813e}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}(ptr,  x)~((void$\ast$)((uintptr\+\_\+t)(ptr) + (x)))
+\item 
+\#define \hyperlink{rte__common_8h_a63f69d311b4c61179ec8c1316ace89d5}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B}(ptr,  x)~((void$\ast$)((uintptr\+\_\+t)ptr -\/ (x)))
+\item 
+\#define \hyperlink{rte__common_8h_a59dd2418e7278f66471590e1fc8aa3cf}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F}(ptr1,  ptr2)~((uintptr\+\_\+t)(ptr1) -\/ (uintptr\+\_\+t)(ptr2))
+\item 
+\#define \hyperlink{rte__common_8h_a393e7657bb4da2b40cf846fe4a1b20a2}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}(ptr,  align)~(typeof(ptr))\hyperlink{rte__common_8h_a1eb8738fba5182dce43ea6f2cc8e35ab}{rte\+\_\+align\+\_\+floor\+\_\+int}((uintptr\+\_\+t)ptr, align)
+\item 
+\#define \hyperlink{rte__common_8h_a678a75ecaff653f4479cf2da04c843da}{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}(val,  align)~(typeof(val))((val) \& ($\sim$((typeof(val))((align) -\/ 1))))
+\item 
+\#define \hyperlink{rte__common_8h_a9ccae4e55f515ebbc31eb3b8bd8df591}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(ptr,  align)~\hyperlink{rte__common_8h_a393e7657bb4da2b40cf846fe4a1b20a2}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}((typeof(ptr))\hyperlink{rte__common_8h_a96c6294ef6a307980f78899fe8a5813e}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}(ptr, (align) -\/ 1), align)
+\item 
+\#define \hyperlink{rte__common_8h_a856650153655096752b4c2a29690a15d}{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(val,  align)~\hyperlink{rte__common_8h_a678a75ecaff653f4479cf2da04c843da}{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}(((val) + ((typeof(val)) (align) -\/ 1)), align)
+\item 
+\#define \hyperlink{rte__common_8h_acecdcb06b22bb99e25a65b5b08a59dd6}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N}(ptr,  align)~\hyperlink{rte__common_8h_a9ccae4e55f515ebbc31eb3b8bd8df591}{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(ptr, align)
+\item 
+\#define \hyperlink{rte__common_8h_a97c59c7862f9ddcbd591e682652fb319}{R\+T\+E\+\_\+\+A\+L\+I\+G\+N}(val,  align)~\hyperlink{rte__common_8h_a856650153655096752b4c2a29690a15d}{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(val, align)
+\item 
+\#define \hyperlink{rte__common_8h_acf1d0e77b675fbb062c51c2b7ae737af}{R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N}(condition)~((void)sizeof(char\mbox{[}1 -\/ 2$\ast$!!(condition)\mbox{]}))
+\item 
+\#define \hyperlink{rte__common_8h_a4c7571cbcdbfe9b63431036af811bee9}{R\+T\+E\+\_\+\+M\+I\+N}(a,  b)
+\item 
+\#define \hyperlink{rte__common_8h_a8df8b303b8ea240cf6aebf937fd21eaf}{R\+T\+E\+\_\+\+M\+A\+X}(a,  b)
+\item 
+\#define \hyperlink{rte__common_8h_a276e8a32e0bbf024aadd9420b8f2d3b3}{offsetof}(T\+Y\+P\+E,  M\+E\+M\+B\+E\+R)~\+\_\+\+\_\+builtin\+\_\+offsetof (T\+Y\+P\+E, M\+E\+M\+B\+E\+R)
+\item 
+\#define \hyperlink{rte__common_8h_a5927969541336891eabfcc9b685fa50b}{R\+T\+E\+\_\+\+S\+T\+R}(x)~\+\_\+\+R\+T\+E\+\_\+\+S\+T\+R(x)
+\item 
+\#define \hyperlink{rte__common_8h_a6c2f7f5c2da4125eed01cf87beaa653a}{R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K}(ln,  tp)~((tp)((uint64\+\_\+t)-\/1 $>$$>$ (sizeof(uint64\+\_\+t) $\ast$ C\+H\+A\+R\+\_\+\+B\+I\+T -\/ (ln))))
+\item 
+\#define \hyperlink{rte__common_8h_ac963da91b35efa4700b73a1f4eb1d8a6}{R\+T\+E\+\_\+\+D\+I\+M}(a)~(sizeof (a) / sizeof ((a)\mbox{[}0\mbox{]}))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uintptr\+\_\+t \hyperlink{rte__common_8h_a1eb8738fba5182dce43ea6f2cc8e35ab}{rte\+\_\+align\+\_\+floor\+\_\+int} (uintptr\+\_\+t ptr, uintptr\+\_\+t align)
+\item 
+static int \hyperlink{rte__common_8h_a0c5df4b25558352bbf8778f8f56e8e23}{rte\+\_\+is\+\_\+aligned} (void $\ast$ptr, unsigned align)
+\item 
+static int \hyperlink{rte__common_8h_adf96e98b8f6bb0b22e8a8d3a0ac16e7d}{rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2} (uint32\+\_\+t n)
+\item 
+static uint32\+\_\+t \hyperlink{rte__common_8h_a5a85fd1038be9376de166494057e6aa1}{rte\+\_\+align32pow2} (uint32\+\_\+t x)
+\item 
+static uint64\+\_\+t \hyperlink{rte__common_8h_a6a385021875dbeddf95d72ffbd8fa8cc}{rte\+\_\+align64pow2} (uint64\+\_\+t v)
+\item 
+static uint32\+\_\+t \hyperlink{rte__common_8h_a74a8d4a8b33a320db7cec9608ee1c13d}{rte\+\_\+bsf32} (uint32\+\_\+t v)
+\item 
+static uint64\+\_\+t \hyperlink{rte__common_8h_af6cf087e51bfe26cdc3eeba4c30ee29f}{rte\+\_\+str\+\_\+to\+\_\+size} (const char $\ast$str)
+\item 
+void \hyperlink{rte__common_8h_ae2e5522e2b4921a751675e4a4d167fb4}{rte\+\_\+exit} (int exit\+\_\+code, const char $\ast$format,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic, commonly-\/used macro and inline function definitions for Intel D\+P\+D\+K. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__common_8h_ae1a7c8799cb57669ae2ddf367b21533f}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!\+\_\+\+\_\+rte\+\_\+unused@{\+\_\+\+\_\+rte\+\_\+unused}}
+\index{\+\_\+\+\_\+rte\+\_\+unused@{\+\_\+\+\_\+rte\+\_\+unused}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+unused}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+rte\+\_\+unused~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+unused\+\_\+\+\_\+))}\label{rte__common_8h_ae1a7c8799cb57669ae2ddf367b21533f}
+short definition to mark a function parameter unused \hypertarget{rte__common_8h_a276e8a32e0bbf024aadd9420b8f2d3b3}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!offsetof@{offsetof}}
+\index{offsetof@{offsetof}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{offsetof}]{\setlength{\rightskip}{0pt plus 5cm}\#define offsetof(
+\begin{DoxyParamCaption}
+\item[{}]{T\+Y\+P\+E, }
+\item[{}]{M\+E\+M\+B\+E\+R}
+\end{DoxyParamCaption}
+)~\+\_\+\+\_\+builtin\+\_\+offsetof (T\+Y\+P\+E, M\+E\+M\+B\+E\+R)}\label{rte__common_8h_a276e8a32e0bbf024aadd9420b8f2d3b3}
+Return the offset of a field in a structure. \hypertarget{rte__common_8h_a97c59c7862f9ddcbd591e682652fb319}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+A\+L\+I\+G\+N@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N}}
+\index{R\+T\+E\+\_\+\+A\+L\+I\+G\+N@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+L\+I\+G\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+L\+I\+G\+N(
+\begin{DoxyParamCaption}
+\item[{}]{val, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~{\bf R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(val, align)}\label{rte__common_8h_a97c59c7862f9ddcbd591e682652fb319}
+Macro to align a value to a given power-\/of-\/two. The resultant value will be of the same type as the first parameter, and will be no lower than the first parameter. Second parameter must be a power-\/of-\/two value. This function is the same as R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L \hypertarget{rte__common_8h_a856650153655096752b4c2a29690a15d}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}}
+\index{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L(
+\begin{DoxyParamCaption}
+\item[{}]{val, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~{\bf R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}(((val) + ((typeof(val)) (align) -\/ 1)), align)}\label{rte__common_8h_a856650153655096752b4c2a29690a15d}
+Macro to align a value to a given power-\/of-\/two. The resultant value will be of the same type as the first parameter, and will be no lower than the first parameter. Second parameter must be a power-\/of-\/two value. \hypertarget{rte__common_8h_a678a75ecaff653f4479cf2da04c843da}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}}
+\index{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R@{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{val, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~(typeof(val))((val) \& ($\sim$((typeof(val))((align) -\/ 1))))}\label{rte__common_8h_a678a75ecaff653f4479cf2da04c843da}
+Macro to align a value to a given power-\/of-\/two. The resultant value will be of the same type as the first parameter, and will be no bigger than the first parameter. Second parameter must be a power-\/of-\/two value. \hypertarget{rte__common_8h_acf1d0e77b675fbb062c51c2b7ae737af}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N@{R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N}}
+\index{R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N@{R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+B\+U\+G\+\_\+\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)~((void)sizeof(char\mbox{[}1 -\/ 2$\ast$!!(condition)\mbox{]}))}\label{rte__common_8h_acf1d0e77b675fbb062c51c2b7ae737af}
+Triggers an error at compilation time if the condition is true. \hypertarget{rte__common_8h_ac963da91b35efa4700b73a1f4eb1d8a6}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+D\+I\+M@{R\+T\+E\+\_\+\+D\+I\+M}}
+\index{R\+T\+E\+\_\+\+D\+I\+M@{R\+T\+E\+\_\+\+D\+I\+M}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+I\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+D\+I\+M(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(sizeof (a) / sizeof ((a)\mbox{[}0\mbox{]}))}\label{rte__common_8h_ac963da91b35efa4700b73a1f4eb1d8a6}
+Number of elements in the array. \hypertarget{rte__common_8h_a6c2f7f5c2da4125eed01cf87beaa653a}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K@{R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K}}
+\index{R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K@{R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+L\+E\+N2\+M\+A\+S\+K(
+\begin{DoxyParamCaption}
+\item[{}]{ln, }
+\item[{}]{tp}
+\end{DoxyParamCaption}
+)~((tp)((uint64\+\_\+t)-\/1 $>$$>$ (sizeof(uint64\+\_\+t) $\ast$ C\+H\+A\+R\+\_\+\+B\+I\+T -\/ (ln))))}\label{rte__common_8h_a6c2f7f5c2da4125eed01cf87beaa653a}
+Mask value of type $<$tp$>$ for the first $<$ln$>$ bit set. \hypertarget{rte__common_8h_a8df8b303b8ea240cf6aebf937fd21eaf}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+M\+A\+X}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+A\+X(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)}\label{rte__common_8h_a8df8b303b8ea240cf6aebf937fd21eaf}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\{ \(\backslash\)
+        typeof (a) \_a = (a); \(\backslash\)
+        typeof (b) \_b = (b); \(\backslash\)
+        \_a > \_b ? \_a : \_b; \(\backslash\)
+    \})
+\end{DoxyCode}
+Macro to return the maximum of two numbers \hypertarget{rte__common_8h_a4c7571cbcdbfe9b63431036af811bee9}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+M\+I\+N}}
+\index{R\+T\+E\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+M\+I\+N}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)}\label{rte__common_8h_a4c7571cbcdbfe9b63431036af811bee9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\{ \(\backslash\)
+        typeof (a) \_a = (a); \(\backslash\)
+        typeof (b) \_b = (b); \(\backslash\)
+        \_a < \_b ? \_a : \_b; \(\backslash\)
+    \})
+\end{DoxyCode}
+Macro to return the minimum of two numbers \hypertarget{rte__common_8h_a96c6294ef6a307980f78899fe8a5813e}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((void$\ast$)((uintptr\+\_\+t)(ptr) + (x)))}\label{rte__common_8h_a96c6294ef6a307980f78899fe8a5813e}
+add a byte-\/value offset from a pointer \hypertarget{rte__common_8h_acecdcb06b22bb99e25a65b5b08a59dd6}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~{\bf R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}(ptr, align)}\label{rte__common_8h_acecdcb06b22bb99e25a65b5b08a59dd6}
+Macro to align a pointer to a given power-\/of-\/two. The resultant pointer will be a pointer of the same type as the first parameter, and point to an address no lower than the first parameter. Second parameter must be a power-\/of-\/two value. This function is the same as R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L \hypertarget{rte__common_8h_a9ccae4e55f515ebbc31eb3b8bd8df591}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~{\bf R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}((typeof(ptr)){\bf R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+D\+D}(ptr, (align) -\/ 1), align)}\label{rte__common_8h_a9ccae4e55f515ebbc31eb3b8bd8df591}
+Macro to align a pointer to a given power-\/of-\/two. The resultant pointer will be a pointer of the same type as the first parameter, and point to an address no lower than the first parameter. Second parameter must be a power-\/of-\/two value. \hypertarget{rte__common_8h_a393e7657bb4da2b40cf846fe4a1b20a2}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{align}
+\end{DoxyParamCaption}
+)~(typeof(ptr)){\bf rte\+\_\+align\+\_\+floor\+\_\+int}((uintptr\+\_\+t)ptr, align)}\label{rte__common_8h_a393e7657bb4da2b40cf846fe4a1b20a2}
+Macro to align a pointer to a given power-\/of-\/two. The resultant pointer will be a pointer of the same type as the first parameter, and point to an address no higher than the first parameter. Second parameter must be a power-\/of-\/two value. \hypertarget{rte__common_8h_a59dd2418e7278f66471590e1fc8aa3cf}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+D\+I\+F\+F(
+\begin{DoxyParamCaption}
+\item[{}]{ptr1, }
+\item[{}]{ptr2}
+\end{DoxyParamCaption}
+)~((uintptr\+\_\+t)(ptr1) -\/ (uintptr\+\_\+t)(ptr2))}\label{rte__common_8h_a59dd2418e7278f66471590e1fc8aa3cf}
+get the difference between two pointer values, i.\+e. how far apart in bytes are the locations they point two. It is assumed that ptr1 is greater than ptr2. \hypertarget{rte__common_8h_a63f69d311b4c61179ec8c1316ace89d5}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B}}
+\index{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B@{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+S\+U\+B(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((void$\ast$)((uintptr\+\_\+t)ptr -\/ (x)))}\label{rte__common_8h_a63f69d311b4c61179ec8c1316ace89d5}
+subtract a byte-\/value offset from a pointer \hypertarget{rte__common_8h_aaedd6d14e7370916fee58e0f69d8c37a}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D@{R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D}}
+\index{R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D@{R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+E\+T\+\_\+\+U\+S\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(void)(x)}\label{rte__common_8h_aaedd6d14e7370916fee58e0f69d8c37a}
+definition to mark a variable or function parameter as used so as to avoid a compiler warning \hypertarget{rte__common_8h_a5927969541336891eabfcc9b685fa50b}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!R\+T\+E\+\_\+\+S\+T\+R@{R\+T\+E\+\_\+\+S\+T\+R}}
+\index{R\+T\+E\+\_\+\+S\+T\+R@{R\+T\+E\+\_\+\+S\+T\+R}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+S\+T\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+S\+T\+R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\+\_\+\+R\+T\+E\+\_\+\+S\+T\+R(x)}\label{rte__common_8h_a5927969541336891eabfcc9b685fa50b}
+Take a macro value and get a string version of it 
+
+\subsection{Function Documentation}
+\hypertarget{rte__common_8h_a5a85fd1038be9376de166494057e6aa1}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+align32pow2@{rte\+\_\+align32pow2}}
+\index{rte\+\_\+align32pow2@{rte\+\_\+align32pow2}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+align32pow2}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+align32pow2 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_a5a85fd1038be9376de166494057e6aa1}
+Aligns input parameter to the next power of 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The integer value to algin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Input parameter aligned to the next power of 2 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_a6a385021875dbeddf95d72ffbd8fa8cc}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+align64pow2@{rte\+\_\+align64pow2}}
+\index{rte\+\_\+align64pow2@{rte\+\_\+align64pow2}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+align64pow2}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+align64pow2 (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_a6a385021875dbeddf95d72ffbd8fa8cc}
+Aligns 64b input parameter to the next power of 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The 64b value to algin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Input parameter aligned to the next power of 2 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_a1eb8738fba5182dce43ea6f2cc8e35ab}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+align\+\_\+floor\+\_\+int@{rte\+\_\+align\+\_\+floor\+\_\+int}}
+\index{rte\+\_\+align\+\_\+floor\+\_\+int@{rte\+\_\+align\+\_\+floor\+\_\+int}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+align\+\_\+floor\+\_\+int}]{\setlength{\rightskip}{0pt plus 5cm}static uintptr\+\_\+t rte\+\_\+align\+\_\+floor\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{uintptr\+\_\+t}]{ptr, }
+\item[{uintptr\+\_\+t}]{align}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_a1eb8738fba5182dce43ea6f2cc8e35ab}
+Function which rounds an unsigned int down to a given power-\/of-\/two value. Takes uintptr\+\_\+t types as parameters, as this type of operation is most commonly done for pointer alignment. (See also R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R, R\+T\+E\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+I\+L, R\+T\+E\+\_\+\+A\+L\+I\+G\+N, R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+L\+O\+O\+R, R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N\+\_\+\+C\+E\+L, R\+T\+E\+\_\+\+P\+T\+R\+\_\+\+A\+L\+I\+G\+N macros) 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The value to be rounded down \\
+\hline
+{\em align} & The power-\/of-\/two of which the result must be a multiple. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Function returns a properly aligned value where align is a power-\/of-\/two. If align is not a power-\/of-\/two, result will be incorrect. 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_a74a8d4a8b33a320db7cec9608ee1c13d}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+bsf32@{rte\+\_\+bsf32}}
+\index{rte\+\_\+bsf32@{rte\+\_\+bsf32}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+bsf32}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+bsf32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_a74a8d4a8b33a320db7cec9608ee1c13d}
+Searches the input parameter for the least significant set bit (starting from zero). If a least significant 1 bit is found, its bit index is returned. If the content of the input parameter is zero, then the content of the return value is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em v} & input parameter, should not be zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+least significant set bit in the input parameter. 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_ae2e5522e2b4921a751675e4a4d167fb4}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+exit@{rte\+\_\+exit}}
+\index{rte\+\_\+exit@{rte\+\_\+exit}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{int}]{exit\+\_\+code, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{rte__common_8h_ae2e5522e2b4921a751675e4a4d167fb4}
+Function to terminate the application immediately, printing an error message and returning the exit\+\_\+code back to the shell.
+
+This function never returns
+
+
+\begin{DoxyParams}{Parameters}
+{\em exit\+\_\+code} & The exit code to be returned by the application \\
+\hline
+{\em format} & The format string to be used for printing the message. This can include printf format characters which will be expanded using any further parameters to the function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__common_8h_a0c5df4b25558352bbf8778f8f56e8e23}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+is\+\_\+aligned@{rte\+\_\+is\+\_\+aligned}}
+\index{rte\+\_\+is\+\_\+aligned@{rte\+\_\+is\+\_\+aligned}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+is\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+is\+\_\+aligned (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{unsigned}]{align}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_a0c5df4b25558352bbf8778f8f56e8e23}
+Checks if a pointer is aligned to a given power-\/of-\/two value
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer whose alignment is to be checked \\
+\hline
+{\em align} & The power-\/of-\/two value to which the ptr should be aligned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True(1) where the pointer is correctly aligned, false(0) otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_adf96e98b8f6bb0b22e8a8d3a0ac16e7d}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2@{rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2}}
+\index{rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2@{rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+is\+\_\+power\+\_\+of\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_adf96e98b8f6bb0b22e8a8d3a0ac16e7d}
+Returns true if n is a power of 2 
+\begin{DoxyParams}{Parameters}
+{\em n} & Number to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if true, 0 otherwise 
+\end{DoxyReturn}
+\hypertarget{rte__common_8h_af6cf087e51bfe26cdc3eeba4c30ee29f}{}\index{rte\+\_\+common.\+h@{rte\+\_\+common.\+h}!rte\+\_\+str\+\_\+to\+\_\+size@{rte\+\_\+str\+\_\+to\+\_\+size}}
+\index{rte\+\_\+str\+\_\+to\+\_\+size@{rte\+\_\+str\+\_\+to\+\_\+size}!rte\+\_\+common.\+h@{rte\+\_\+common.\+h}}
+\subsubsection[{rte\+\_\+str\+\_\+to\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}static uint64\+\_\+t rte\+\_\+str\+\_\+to\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__common_8h_af6cf087e51bfe26cdc3eeba4c30ee29f}
+Converts a numeric string to the equivalent uint64\+\_\+t value. As well as straight number conversion, also recognises the suffixes k, m and g for kilobytes, megabytes and gigabytes respectively.
+
+If a negative number is passed in i.\+e. a string with the first non-\/black character being \char`\"{}-\/\char`\"{}, zero is returned. Zero is also returned in the case of an error with the strtoull call in the function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String containing number to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number. 
+\end{DoxyReturn}

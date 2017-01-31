@@ -1,0 +1,105 @@
+\hypertarget{structrte__mempool}{}\section{rte\+\_\+mempool Struct Reference}
+\label{structrte__mempool}\index{rte\+\_\+mempool@{rte\+\_\+mempool}}
+
+
+{\ttfamily \#include $<$rte\+\_\+mempool.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structrte__mempool_aa9d929fcb7038a3fec6da7bae3853aab}{name} \mbox{[}\hyperlink{rte__mempool_8h_af6e5aa92b19f0f8d981b7016264456d7}{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}
+\item 
+struct \hyperlink{structrte__ring}{rte\+\_\+ring} $\ast$ \hyperlink{structrte__mempool_a1dfc25cca5a340eff30700b60fd41339}{ring}
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{structrte__mempool_a3901f538726d14b9ad14e0bd7578c959}{phys\+\_\+addr}
+\item 
+int \hyperlink{structrte__mempool_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_ab2c6b258f02add8fdf4cfc7c371dd772}{size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_ac0fc8e6a5ca95e81e5d94522c86cfc9c}{cache\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_a30ead2c1b80bd7489e6571713424b633}{cache\+\_\+flushthresh}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_ad61e210d2df01bf9c91230fee6a8cf21}{elt\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_a841923a20e6dda97c59351c8e97c9be6}{header\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_aa328aea47b0ee3552e4628a4ed5dadac}{trailer\+\_\+size}
+\item 
+unsigned \hyperlink{structrte__mempool_ae143f874098aaedbee52452a967722d0}{private\+\_\+data\+\_\+size}
+\item 
+uint32\+\_\+t pg\+\_\+num \hyperlink{structrte__mempool_a5b84b713710582f17581cdbf4278d7a5}{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}
+\item 
+uint32\+\_\+t \hyperlink{structrte__mempool_accb972310b9ffe52e66fb51b699eb2d6}{pg\+\_\+shift}
+\item 
+uintptr\+\_\+t \hyperlink{structrte__mempool_afae806f0ec59fb49b1578f20cd5aebbf}{pg\+\_\+mask}
+\item 
+uintptr\+\_\+t \hyperlink{structrte__mempool_a4e38c11736523a0fd4b508c0e5797735}{elt\+\_\+va\+\_\+start}
+\item 
+uintptr\+\_\+t \hyperlink{structrte__mempool_a7191a9fe4d62b69f2fa67c7713af39ac}{elt\+\_\+va\+\_\+end}
+\item 
+\hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{structrte__mempool_a1f424edf98249bd3d6816b65a3328dc4}{elt\+\_\+pa} \mbox{[}\hyperlink{rte__mempool_8h_a2f0648fad3d8d844ccf917cbebe9f741}{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The R\+T\+E mempool structure. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__mempool_a5b84b713710582f17581cdbf4278d7a5}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}}
+\index{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t pg\+\_\+num \+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}\label{structrte__mempool_a5b84b713710582f17581cdbf4278d7a5}
+Number of elements in the elt\+\_\+pa array. \hypertarget{structrte__mempool_a30ead2c1b80bd7489e6571713424b633}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!cache\+\_\+flushthresh@{cache\+\_\+flushthresh}}
+\index{cache\+\_\+flushthresh@{cache\+\_\+flushthresh}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{cache\+\_\+flushthresh}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t cache\+\_\+flushthresh}\label{structrte__mempool_a30ead2c1b80bd7489e6571713424b633}
+Threshold before we flush excess elements. \hypertarget{structrte__mempool_ac0fc8e6a5ca95e81e5d94522c86cfc9c}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!cache\+\_\+size@{cache\+\_\+size}}
+\index{cache\+\_\+size@{cache\+\_\+size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{cache\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t cache\+\_\+size}\label{structrte__mempool_ac0fc8e6a5ca95e81e5d94522c86cfc9c}
+Size of per-\/lcore local cache. \hypertarget{structrte__mempool_a1f424edf98249bd3d6816b65a3328dc4}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!elt\+\_\+pa@{elt\+\_\+pa}}
+\index{elt\+\_\+pa@{elt\+\_\+pa}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{elt\+\_\+pa}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} elt\+\_\+pa\mbox{[}{\bf M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}\mbox{]}}\label{structrte__mempool_a1f424edf98249bd3d6816b65a3328dc4}
+Array of physical pages addresses for the mempool objects buffer. \hypertarget{structrte__mempool_ad61e210d2df01bf9c91230fee6a8cf21}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!elt\+\_\+size@{elt\+\_\+size}}
+\index{elt\+\_\+size@{elt\+\_\+size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{elt\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t elt\+\_\+size}\label{structrte__mempool_ad61e210d2df01bf9c91230fee6a8cf21}
+Size of an element. \hypertarget{structrte__mempool_a7191a9fe4d62b69f2fa67c7713af39ac}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!elt\+\_\+va\+\_\+end@{elt\+\_\+va\+\_\+end}}
+\index{elt\+\_\+va\+\_\+end@{elt\+\_\+va\+\_\+end}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{elt\+\_\+va\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}uintptr\+\_\+t elt\+\_\+va\+\_\+end}\label{structrte__mempool_a7191a9fe4d62b69f2fa67c7713af39ac}
+Virtual address of the $<$size + 1$>$ mempool object. \hypertarget{structrte__mempool_a4e38c11736523a0fd4b508c0e5797735}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!elt\+\_\+va\+\_\+start@{elt\+\_\+va\+\_\+start}}
+\index{elt\+\_\+va\+\_\+start@{elt\+\_\+va\+\_\+start}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{elt\+\_\+va\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}uintptr\+\_\+t elt\+\_\+va\+\_\+start}\label{structrte__mempool_a4e38c11736523a0fd4b508c0e5797735}
+Virtual address of the first mempool object. \hypertarget{structrte__mempool_ac8bf36fe0577cba66bccda3a6f7e80a4}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!flags@{flags}}
+\index{flags@{flags}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int flags}\label{structrte__mempool_ac8bf36fe0577cba66bccda3a6f7e80a4}
+Flags of the mempool. \hypertarget{structrte__mempool_a841923a20e6dda97c59351c8e97c9be6}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!header\+\_\+size@{header\+\_\+size}}
+\index{header\+\_\+size@{header\+\_\+size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{header\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t header\+\_\+size}\label{structrte__mempool_a841923a20e6dda97c59351c8e97c9be6}
+Size of header (before elt). \hypertarget{structrte__mempool_aa9d929fcb7038a3fec6da7bae3853aab}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!name@{name}}
+\index{name@{name}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char name\mbox{[}{\bf R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}\mbox{]}}\label{structrte__mempool_aa9d929fcb7038a3fec6da7bae3853aab}
+Name of mempool. \hypertarget{structrte__mempool_afae806f0ec59fb49b1578f20cd5aebbf}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!pg\+\_\+mask@{pg\+\_\+mask}}
+\index{pg\+\_\+mask@{pg\+\_\+mask}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{pg\+\_\+mask}]{\setlength{\rightskip}{0pt plus 5cm}uintptr\+\_\+t pg\+\_\+mask}\label{structrte__mempool_afae806f0ec59fb49b1578f20cd5aebbf}
+physical page mask value. \hypertarget{structrte__mempool_accb972310b9ffe52e66fb51b699eb2d6}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!pg\+\_\+shift@{pg\+\_\+shift}}
+\index{pg\+\_\+shift@{pg\+\_\+shift}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{pg\+\_\+shift}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t pg\+\_\+shift}\label{structrte__mempool_accb972310b9ffe52e66fb51b699eb2d6}
+L\+O\+G2 of the physical pages. \hypertarget{structrte__mempool_a3901f538726d14b9ad14e0bd7578c959}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!phys\+\_\+addr@{phys\+\_\+addr}}
+\index{phys\+\_\+addr@{phys\+\_\+addr}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{phys\+\_\+addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf phys\+\_\+addr\+\_\+t} phys\+\_\+addr}\label{structrte__mempool_a3901f538726d14b9ad14e0bd7578c959}
+Phys. addr. of mempool struct. \hypertarget{structrte__mempool_ae143f874098aaedbee52452a967722d0}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!private\+\_\+data\+\_\+size@{private\+\_\+data\+\_\+size}}
+\index{private\+\_\+data\+\_\+size@{private\+\_\+data\+\_\+size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{private\+\_\+data\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned private\+\_\+data\+\_\+size}\label{structrte__mempool_ae143f874098aaedbee52452a967722d0}
+Size of private data. \hypertarget{structrte__mempool_a1dfc25cca5a340eff30700b60fd41339}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!ring@{ring}}
+\index{ring@{ring}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{ring}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+ring}$\ast$ ring}\label{structrte__mempool_a1dfc25cca5a340eff30700b60fd41339}
+Ring to store objects. \hypertarget{structrte__mempool_ab2c6b258f02add8fdf4cfc7c371dd772}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!size@{size}}
+\index{size@{size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t size}\label{structrte__mempool_ab2c6b258f02add8fdf4cfc7c371dd772}
+Size of the mempool. \hypertarget{structrte__mempool_aa328aea47b0ee3552e4628a4ed5dadac}{}\index{rte\+\_\+mempool@{rte\+\_\+mempool}!trailer\+\_\+size@{trailer\+\_\+size}}
+\index{trailer\+\_\+size@{trailer\+\_\+size}!rte\+\_\+mempool@{rte\+\_\+mempool}}
+\subsubsection[{trailer\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t trailer\+\_\+size}\label{structrte__mempool_aa328aea47b0ee3552e4628a4ed5dadac}
+Size of trailer (after elt). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+mempool/\hyperlink{rte__mempool_8h}{rte\+\_\+mempool.\+h}\end{DoxyCompactItemize}

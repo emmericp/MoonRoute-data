@@ -1,0 +1,90 @@
+\hypertarget{rte__errno_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+errno.h File Reference}
+\label{rte__errno_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+errno.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+errno.\+h}}
+{\ttfamily \#include $<$rte\+\_\+per\+\_\+lcore.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__errno_8h_a66171a00ea02084317df4dc9c2adaccb}{rte\+\_\+errno}~\hyperlink{rte__per__lcore_8h_a141e0f71c3187ebcc6cfdfdfeaa81842}{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}(\+\_\+rte\+\_\+errno)
+\item 
+\#define \hyperlink{rte__errno_8h_aaa878b38f69b33ab7db706145f240908}{\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R}~1000
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cad6401b8a01dbacedcaa69d74035bbd4b}{R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O} = \+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R, 
+\hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06caf2762c25026cb2e90649f7a283585368}{E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y}, 
+\hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca65dbd77da5fea71ff19380e37761725a}{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G}, 
+\hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cae75c11a72f72e743026664254945fd26}{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q}, 
+\\*
+\hyperlink{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca6d81df19cc11194a9f18ce1c41fe3700}{R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__errno_8h_a2abbbbb065d6c0b815bdce1e82ee95e7}{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E} (int, \+\_\+rte\+\_\+errno)
+\item 
+const char $\ast$ \hyperlink{rte__errno_8h_a129a7eb4cfa1f5bdac5783bf49137d06}{rte\+\_\+strerror} (int errnum)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+P\+I for error cause tracking 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__errno_8h_aaa878b38f69b33ab7db706145f240908}{}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R@{\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R}}
+\index{\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R@{\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}
+\subsubsection[{\+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+E\+L\+A\+S\+T\+E\+R\+R\+O\+R~1000}\label{rte__errno_8h_aaa878b38f69b33ab7db706145f240908}
+Check if we have a defined value for the max system-\/defined errno values. if no max defined, start from 1000 to prevent overlap with standard values \hypertarget{rte__errno_8h_a66171a00ea02084317df4dc9c2adaccb}{}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!rte\+\_\+errno@{rte\+\_\+errno}}
+\index{rte\+\_\+errno@{rte\+\_\+errno}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}
+\subsubsection[{rte\+\_\+errno}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+errno~{\bf R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}(\+\_\+rte\+\_\+errno)}\label{rte__errno_8h_a66171a00ea02084317df4dc9c2adaccb}
+Error number value, stored per-\/thread, which can be queried after calls to certain functions to determine why those functions failed.
+
+Uses standard values from errno.\+h wherever possible, with a small number of additional possible values for R\+T\+E-\/specific conditions. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06c}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06c}
+Error types \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O@{R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O@{R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O}}\item[{\em 
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cad6401b8a01dbacedcaa69d74035bbd4b}{}R\+T\+E\+\_\+\+M\+I\+N\+\_\+\+E\+R\+R\+N\+O\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cad6401b8a01dbacedcaa69d74035bbd4b}
+}]Start numbering above std errno vals \index{E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y@{E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y@{E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y}}\item[{\em 
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06caf2762c25026cb2e90649f7a283585368}{}E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06caf2762c25026cb2e90649f7a283585368}
+}]Operation not allowed in secondary processes \index{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G@{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G@{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G}}\item[{\em 
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca65dbd77da5fea71ff19380e37761725a}{}E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca65dbd77da5fea71ff19380e37761725a}
+}]Missing \hyperlink{structrte__config}{rte\+\_\+config} \index{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q@{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q@{E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q}}\item[{\em 
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cae75c11a72f72e743026664254945fd26}{}E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06cae75c11a72f72e743026664254945fd26}
+}]Uninitialised T\+A\+I\+L\+Q \index{R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O@{R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O@{R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O}}\item[{\em 
+\hypertarget{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca6d81df19cc11194a9f18ce1c41fe3700}{}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+R\+R\+N\+O\label{rte__errno_8h_adc29c2ff13d900c2f185ee95427fb06ca6d81df19cc11194a9f18ce1c41fe3700}
+}]Max R\+T\+E error number \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__errno_8h_a2abbbbb065d6c0b815bdce1e82ee95e7}{}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}}
+\index{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{\+\_\+rte\+\_\+errno}]{}
+\end{DoxyParamCaption}
+)}\label{rte__errno_8h_a2abbbbb065d6c0b815bdce1e82ee95e7}
+Per core error number. \hypertarget{rte__errno_8h_a129a7eb4cfa1f5bdac5783bf49137d06}{}\index{rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}!rte\+\_\+strerror@{rte\+\_\+strerror}}
+\index{rte\+\_\+strerror@{rte\+\_\+strerror}!rte\+\_\+errno.\+h@{rte\+\_\+errno.\+h}}
+\subsubsection[{rte\+\_\+strerror}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ rte\+\_\+strerror (
+\begin{DoxyParamCaption}
+\item[{int}]{errnum}
+\end{DoxyParamCaption}
+)}\label{rte__errno_8h_a129a7eb4cfa1f5bdac5783bf49137d06}
+Function which returns a printable string describing a particular error code. For non-\/\+R\+T\+E-\/specific error codes, this function returns the value from the libc strerror function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em errnum} & The error number to be looked up -\/ generally the value of rte\+\_\+errno \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a thread-\/local string containing the text describing the error. 
+\end{DoxyReturn}

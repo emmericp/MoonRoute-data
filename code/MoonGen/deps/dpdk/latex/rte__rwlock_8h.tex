@@ -1,0 +1,111 @@
+\hypertarget{rte__rwlock_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+rwlock.h File Reference}
+\label{rte__rwlock_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+rwlock.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+rwlock.\+h}}
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+atomic.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__rwlock_8h_a306c7ce868ebe17c69ab9577ea4f9c19}{R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}~\{ 0 \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{rte__rwlock_8h_ab459bc0a005a10c8bceaa52ca4a86a90}{rte\+\_\+rwlock\+\_\+init} (\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} $\ast$rwl)
+\item 
+static void \hyperlink{rte__rwlock_8h_aad233eec103ac892bc888a349743f22a}{rte\+\_\+rwlock\+\_\+read\+\_\+lock} (\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} $\ast$rwl)
+\item 
+static void \hyperlink{rte__rwlock_8h_af8c29a00330de7457c8fcc3fb6874bb0}{rte\+\_\+rwlock\+\_\+read\+\_\+unlock} (\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} $\ast$rwl)
+\item 
+static void \hyperlink{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{rte\+\_\+rwlock\+\_\+write\+\_\+lock} (\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} $\ast$rwl)
+\item 
+static void \hyperlink{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{rte\+\_\+rwlock\+\_\+write\+\_\+unlock} (\hyperlink{structrte__rwlock__t}{rte\+\_\+rwlock\+\_\+t} $\ast$rwl)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Read-\/\+Write Locks
+
+This file defines an A\+P\+I for read-\/write locks. The lock is used to protect data that allows multiple readers in parallel, but only one writer. All readers are blocked until the writer is finished writing. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__rwlock_8h_a306c7ce868ebe17c69ab9577ea4f9c19}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}}
+\index{R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R~\{ 0 \}}\label{rte__rwlock_8h_a306c7ce868ebe17c69ab9577ea4f9c19}
+A static rwlock initializer. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__rwlock_8h_ab459bc0a005a10c8bceaa52ca4a86a90}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!rte\+\_\+rwlock\+\_\+init@{rte\+\_\+rwlock\+\_\+init}}
+\index{rte\+\_\+rwlock\+\_\+init@{rte\+\_\+rwlock\+\_\+init}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{rte\+\_\+rwlock\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+rwlock\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+rwlock\+\_\+t} $\ast$}]{rwl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__rwlock_8h_ab459bc0a005a10c8bceaa52ca4a86a90}
+Initialize the rwlock to an unlocked state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwl} & A pointer to the rwlock structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__rwlock_8h_aad233eec103ac892bc888a349743f22a}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!rte\+\_\+rwlock\+\_\+read\+\_\+lock@{rte\+\_\+rwlock\+\_\+read\+\_\+lock}}
+\index{rte\+\_\+rwlock\+\_\+read\+\_\+lock@{rte\+\_\+rwlock\+\_\+read\+\_\+lock}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{rte\+\_\+rwlock\+\_\+read\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+rwlock\+\_\+read\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+rwlock\+\_\+t} $\ast$}]{rwl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__rwlock_8h_aad233eec103ac892bc888a349743f22a}
+Take a read lock. Loop until the lock is held.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwl} & A pointer to a rwlock structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__rwlock_8h_af8c29a00330de7457c8fcc3fb6874bb0}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!rte\+\_\+rwlock\+\_\+read\+\_\+unlock@{rte\+\_\+rwlock\+\_\+read\+\_\+unlock}}
+\index{rte\+\_\+rwlock\+\_\+read\+\_\+unlock@{rte\+\_\+rwlock\+\_\+read\+\_\+unlock}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{rte\+\_\+rwlock\+\_\+read\+\_\+unlock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+rwlock\+\_\+read\+\_\+unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+rwlock\+\_\+t} $\ast$}]{rwl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__rwlock_8h_af8c29a00330de7457c8fcc3fb6874bb0}
+Release a read lock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwl} & A pointer to the rwlock structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!rte\+\_\+rwlock\+\_\+write\+\_\+lock@{rte\+\_\+rwlock\+\_\+write\+\_\+lock}}
+\index{rte\+\_\+rwlock\+\_\+write\+\_\+lock@{rte\+\_\+rwlock\+\_\+write\+\_\+lock}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{rte\+\_\+rwlock\+\_\+write\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+rwlock\+\_\+write\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+rwlock\+\_\+t} $\ast$}]{rwl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__rwlock_8h_a99df43721069a7f7ad66e3f1f2b6eabf}
+Take a write lock. Loop until the lock is held.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwl} & A pointer to a rwlock structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}{}\index{rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}!rte\+\_\+rwlock\+\_\+write\+\_\+unlock@{rte\+\_\+rwlock\+\_\+write\+\_\+unlock}}
+\index{rte\+\_\+rwlock\+\_\+write\+\_\+unlock@{rte\+\_\+rwlock\+\_\+write\+\_\+unlock}!rte\+\_\+rwlock.\+h@{rte\+\_\+rwlock.\+h}}
+\subsubsection[{rte\+\_\+rwlock\+\_\+write\+\_\+unlock}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+rwlock\+\_\+write\+\_\+unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+rwlock\+\_\+t} $\ast$}]{rwl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__rwlock_8h_a4b190420b6853858844b4716a38507d9}
+Release a write lock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwl} & A pointer to a rwlock structure. \\
+\hline
+\end{DoxyParams}

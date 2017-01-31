@@ -1,0 +1,106 @@
+\hypertarget{structrte__eth__conf}{}\section{rte\+\_\+eth\+\_\+conf Struct Reference}
+\label{structrte__eth__conf}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__conf_a7d93770cafbfd72bb3bbd1aaec9894ab}{link\+\_\+speed}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__conf_a8a9a73e9e688ae4d72cf319872c0bdf1}{link\+\_\+duplex}
+\item 
+struct \hyperlink{structrte__eth__rxmode}{rte\+\_\+eth\+\_\+rxmode} \hyperlink{structrte__eth__conf_a346eef99c24f617b74c440c1aa565d01}{rxmode}
+\item 
+struct \hyperlink{structrte__eth__txmode}{rte\+\_\+eth\+\_\+txmode} \hyperlink{structrte__eth__conf_a1c33c9d2e5cdb14b62ed386bf3159e07}{txmode}
+\item 
+uint32\+\_\+t \hyperlink{structrte__eth__conf_a51fd0c5d4c2366abf95f7364accf3143}{lpbk\+\_\+mode}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \hyperlink{structrte__eth__rss__conf}{rte\_eth\_rss\_conf} \hyperlink{structrte__eth__conf_addc9c7bb19ed12f1171c543493553806}{rss\_conf}\\
+\>struct \hyperlink{structrte__eth__vmdq__dcb__conf}{rte\_eth\_vmdq\_dcb\_conf} \hyperlink{structrte__eth__conf_a3955257d0cf03d4f49c64e674f132359}{vmdq\_dcb\_conf}\\
+\>struct rte\_eth\_dcb\_rx\_conf \hyperlink{structrte__eth__conf_afa63f7644ae1693b8a809ef99cb70d77}{dcb\_rx\_conf}\\
+\>struct rte\_eth\_vmdq\_rx\_conf \hyperlink{structrte__eth__conf_a17845d02c4ddfdc09982bd899b6df06e}{vmdq\_rx\_conf}\\
+\} \hyperlink{structrte__eth__conf_a4b3455eec163a36fdeda31b65143428b}{rx\_adv\_conf}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct rte\_eth\_vmdq\_dcb\_tx\_conf \hyperlink{structrte__eth__conf_ab8442ca78157e2e4ab788ee7066c4022}{vmdq\_dcb\_tx\_conf}\\
+\>struct rte\_eth\_dcb\_tx\_conf \hyperlink{structrte__eth__conf_af9544423109c0c107ca74d73d483e703}{dcb\_tx\_conf}\\
+\>struct rte\_eth\_vmdq\_tx\_conf \hyperlink{structrte__eth__conf_afac8cacc119c6d4e8fcae2c982b72b97}{vmdq\_tx\_conf}\\
+\} \hyperlink{structrte__eth__conf_a55469f11d3c2e6c76488152651bcf464}{tx\_adv\_conf}\\
+
+\end{tabbing}\item 
+uint32\+\_\+t \hyperlink{structrte__eth__conf_a9ddd88820f8279124658f56f3bb16e1d}{dcb\+\_\+capability\+\_\+en}
+\item 
+struct \hyperlink{structrte__fdir__conf}{rte\+\_\+fdir\+\_\+conf} \hyperlink{structrte__eth__conf_a7b34faaa974b49846ba99f27f5c7ad5f}{fdir\+\_\+conf}
+\item 
+struct \hyperlink{structrte__intr__conf}{rte\+\_\+intr\+\_\+conf} \hyperlink{structrte__eth__conf_a9fad7bac275e3526e2a3708f70205b4c}{intr\+\_\+conf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure an Ethernet port. Depending upon the R\+X multi-\/queue mode, extra advanced configuration settings may be needed. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__conf_a9ddd88820f8279124658f56f3bb16e1d}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!dcb\+\_\+capability\+\_\+en@{dcb\+\_\+capability\+\_\+en}}
+\index{dcb\+\_\+capability\+\_\+en@{dcb\+\_\+capability\+\_\+en}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{dcb\+\_\+capability\+\_\+en}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dcb\+\_\+capability\+\_\+en}\label{structrte__eth__conf_a9ddd88820f8279124658f56f3bb16e1d}
+Currently,Priority Flow Control(\+P\+F\+C) are supported,if D\+C\+B with P\+F\+C is needed,and the variable must be set E\+T\+H\+\_\+\+D\+C\+B\+\_\+\+P\+F\+C\+\_\+\+S\+U\+P\+P\+O\+R\+T. \hypertarget{structrte__eth__conf_afa63f7644ae1693b8a809ef99cb70d77}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!dcb\+\_\+rx\+\_\+conf@{dcb\+\_\+rx\+\_\+conf}}
+\index{dcb\+\_\+rx\+\_\+conf@{dcb\+\_\+rx\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{dcb\+\_\+rx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+eth\+\_\+dcb\+\_\+rx\+\_\+conf dcb\+\_\+rx\+\_\+conf}\label{structrte__eth__conf_afa63f7644ae1693b8a809ef99cb70d77}
+Port dcb R\+X configuration. \hypertarget{structrte__eth__conf_af9544423109c0c107ca74d73d483e703}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!dcb\+\_\+tx\+\_\+conf@{dcb\+\_\+tx\+\_\+conf}}
+\index{dcb\+\_\+tx\+\_\+conf@{dcb\+\_\+tx\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{dcb\+\_\+tx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+eth\+\_\+dcb\+\_\+tx\+\_\+conf dcb\+\_\+tx\+\_\+conf}\label{structrte__eth__conf_af9544423109c0c107ca74d73d483e703}
+Port dcb T\+X configuration. \hypertarget{structrte__eth__conf_a7b34faaa974b49846ba99f27f5c7ad5f}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!fdir\+\_\+conf@{fdir\+\_\+conf}}
+\index{fdir\+\_\+conf@{fdir\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{fdir\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+fdir\+\_\+conf} fdir\+\_\+conf}\label{structrte__eth__conf_a7b34faaa974b49846ba99f27f5c7ad5f}
+F\+D\+I\+R configuration. \hypertarget{structrte__eth__conf_a9fad7bac275e3526e2a3708f70205b4c}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!intr\+\_\+conf@{intr\+\_\+conf}}
+\index{intr\+\_\+conf@{intr\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{intr\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+intr\+\_\+conf} intr\+\_\+conf}\label{structrte__eth__conf_a9fad7bac275e3526e2a3708f70205b4c}
+Interrupt mode configuration. \hypertarget{structrte__eth__conf_a8a9a73e9e688ae4d72cf319872c0bdf1}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!link\+\_\+duplex@{link\+\_\+duplex}}
+\index{link\+\_\+duplex@{link\+\_\+duplex}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{link\+\_\+duplex}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t link\+\_\+duplex}\label{structrte__eth__conf_a8a9a73e9e688ae4d72cf319872c0bdf1}
+E\+T\+H\+\_\+\+L\+I\+N\+K\+\_\+\mbox{[}H\+A\+L\+F\+\_\+\+D\+U\+P\+L\+E\+X$\vert$\+F\+U\+L\+L\+\_\+\+D\+U\+P\+L\+E\+X\mbox{]}, or 0 for autonegotation \hypertarget{structrte__eth__conf_a7d93770cafbfd72bb3bbd1aaec9894ab}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!link\+\_\+speed@{link\+\_\+speed}}
+\index{link\+\_\+speed@{link\+\_\+speed}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{link\+\_\+speed}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t link\+\_\+speed}\label{structrte__eth__conf_a7d93770cafbfd72bb3bbd1aaec9894ab}
+E\+T\+H\+\_\+\+L\+I\+N\+K\+\_\+\+S\+P\+E\+E\+D\+\_\+10\mbox{[}0$\vert$00$\vert$000\mbox{]}, or 0 for autonegotation \hypertarget{structrte__eth__conf_a51fd0c5d4c2366abf95f7364accf3143}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!lpbk\+\_\+mode@{lpbk\+\_\+mode}}
+\index{lpbk\+\_\+mode@{lpbk\+\_\+mode}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{lpbk\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t lpbk\+\_\+mode}\label{structrte__eth__conf_a51fd0c5d4c2366abf95f7364accf3143}
+Loopback operation mode. By default the value is 0, meaning the loopback mode is disabled. Read the datasheet of given ethernet controller for details. The possible values of this field are defined in implementation of each driver. \hypertarget{structrte__eth__conf_addc9c7bb19ed12f1171c543493553806}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!rss\+\_\+conf@{rss\+\_\+conf}}
+\index{rss\+\_\+conf@{rss\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{rss\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+eth\+\_\+rss\+\_\+conf} rss\+\_\+conf}\label{structrte__eth__conf_addc9c7bb19ed12f1171c543493553806}
+Port R\+S\+S configuration \hypertarget{structrte__eth__conf_a4b3455eec163a36fdeda31b65143428b}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!rx\+\_\+adv\+\_\+conf@{rx\+\_\+adv\+\_\+conf}}
+\index{rx\+\_\+adv\+\_\+conf@{rx\+\_\+adv\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{rx\+\_\+adv\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   rx\+\_\+adv\+\_\+conf}\label{structrte__eth__conf_a4b3455eec163a36fdeda31b65143428b}
+Port R\+X filtering configuration (union). \hypertarget{structrte__eth__conf_a346eef99c24f617b74c440c1aa565d01}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!rxmode@{rxmode}}
+\index{rxmode@{rxmode}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{rxmode}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+eth\+\_\+rxmode} rxmode}\label{structrte__eth__conf_a346eef99c24f617b74c440c1aa565d01}
+Port R\+X configuration. \hypertarget{structrte__eth__conf_a55469f11d3c2e6c76488152651bcf464}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!tx\+\_\+adv\+\_\+conf@{tx\+\_\+adv\+\_\+conf}}
+\index{tx\+\_\+adv\+\_\+conf@{tx\+\_\+adv\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{tx\+\_\+adv\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   tx\+\_\+adv\+\_\+conf}\label{structrte__eth__conf_a55469f11d3c2e6c76488152651bcf464}
+Port T\+X D\+C\+B configuration (union). \hypertarget{structrte__eth__conf_a1c33c9d2e5cdb14b62ed386bf3159e07}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!txmode@{txmode}}
+\index{txmode@{txmode}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{txmode}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+eth\+\_\+txmode} txmode}\label{structrte__eth__conf_a1c33c9d2e5cdb14b62ed386bf3159e07}
+Port T\+X configuration. \hypertarget{structrte__eth__conf_a3955257d0cf03d4f49c64e674f132359}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!vmdq\+\_\+dcb\+\_\+conf@{vmdq\+\_\+dcb\+\_\+conf}}
+\index{vmdq\+\_\+dcb\+\_\+conf@{vmdq\+\_\+dcb\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{vmdq\+\_\+dcb\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf} vmdq\+\_\+dcb\+\_\+conf}\label{structrte__eth__conf_a3955257d0cf03d4f49c64e674f132359}
+Port vmdq+dcb configuration. \hypertarget{structrte__eth__conf_ab8442ca78157e2e4ab788ee7066c4022}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!vmdq\+\_\+dcb\+\_\+tx\+\_\+conf@{vmdq\+\_\+dcb\+\_\+tx\+\_\+conf}}
+\index{vmdq\+\_\+dcb\+\_\+tx\+\_\+conf@{vmdq\+\_\+dcb\+\_\+tx\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{vmdq\+\_\+dcb\+\_\+tx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+tx\+\_\+conf vmdq\+\_\+dcb\+\_\+tx\+\_\+conf}\label{structrte__eth__conf_ab8442ca78157e2e4ab788ee7066c4022}
+Port vmdq+dcb T\+X configuration. \hypertarget{structrte__eth__conf_a17845d02c4ddfdc09982bd899b6df06e}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!vmdq\+\_\+rx\+\_\+conf@{vmdq\+\_\+rx\+\_\+conf}}
+\index{vmdq\+\_\+rx\+\_\+conf@{vmdq\+\_\+rx\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{vmdq\+\_\+rx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+eth\+\_\+vmdq\+\_\+rx\+\_\+conf vmdq\+\_\+rx\+\_\+conf}\label{structrte__eth__conf_a17845d02c4ddfdc09982bd899b6df06e}
+Port vmdq R\+X configuration. \hypertarget{structrte__eth__conf_afac8cacc119c6d4e8fcae2c982b72b97}{}\index{rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}!vmdq\+\_\+tx\+\_\+conf@{vmdq\+\_\+tx\+\_\+conf}}
+\index{vmdq\+\_\+tx\+\_\+conf@{vmdq\+\_\+tx\+\_\+conf}!rte\+\_\+eth\+\_\+conf@{rte\+\_\+eth\+\_\+conf}}
+\subsubsection[{vmdq\+\_\+tx\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+eth\+\_\+vmdq\+\_\+tx\+\_\+conf vmdq\+\_\+tx\+\_\+conf}\label{structrte__eth__conf_afac8cacc119c6d4e8fcae2c982b72b97}
+Port vmdq T\+X configuration. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{structrte__bitmap}{}\section{rte\+\_\+bitmap Struct Reference}
+\label{structrte__bitmap}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+
+
+{\ttfamily \#include $<$rte\+\_\+bitmap.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t $\ast$ \hyperlink{structrte__bitmap_a3de65aee8451256d1a07a943774a46e7}{array1}
+\item 
+uint64\+\_\+t $\ast$ \hyperlink{structrte__bitmap_a7025f580cb18e7066ae946128df40929}{array2}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_a280151fd5ef07a0ba67e352d340658a0}{array1\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_a0c8e04ff3e358b360017573acc3c8ba5}{array2\+\_\+size}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_a6db57dc734285937f76eb3b193d4e58e}{index1}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_ac9d23fc19363825ef8475d9bd1b1d35e}{offset1}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_a1448310cceb53513c1955213ed3918b3}{index2}
+\item 
+uint32\+\_\+t \hyperlink{structrte__bitmap_a6df8695cbbb48813a048f9616433416a}{go2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bitmap data structure 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__bitmap_a3de65aee8451256d1a07a943774a46e7}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!array1@{array1}}
+\index{array1@{array1}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{array1}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t$\ast$ array1}\label{structrte__bitmap_a3de65aee8451256d1a07a943774a46e7}
+Bitmap array1 \hypertarget{structrte__bitmap_a280151fd5ef07a0ba67e352d340658a0}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!array1\+\_\+size@{array1\+\_\+size}}
+\index{array1\+\_\+size@{array1\+\_\+size}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{array1\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t array1\+\_\+size}\label{structrte__bitmap_a280151fd5ef07a0ba67e352d340658a0}
+Number of 64-\/bit slabs in array1 that are actually used \hypertarget{structrte__bitmap_a7025f580cb18e7066ae946128df40929}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!array2@{array2}}
+\index{array2@{array2}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{array2}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t$\ast$ array2}\label{structrte__bitmap_a7025f580cb18e7066ae946128df40929}
+Bitmap array2 \hypertarget{structrte__bitmap_a0c8e04ff3e358b360017573acc3c8ba5}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!array2\+\_\+size@{array2\+\_\+size}}
+\index{array2\+\_\+size@{array2\+\_\+size}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{array2\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t array2\+\_\+size}\label{structrte__bitmap_a0c8e04ff3e358b360017573acc3c8ba5}
+Number of 64-\/bit slabs in array2 \hypertarget{structrte__bitmap_a6df8695cbbb48813a048f9616433416a}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!go2@{go2}}
+\index{go2@{go2}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{go2}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t go2}\label{structrte__bitmap_a6df8695cbbb48813a048f9616433416a}
+Bitmap scan\+: Go/stop condition for current array2 cache line \hypertarget{structrte__bitmap_a6db57dc734285937f76eb3b193d4e58e}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!index1@{index1}}
+\index{index1@{index1}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{index1}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t index1}\label{structrte__bitmap_a6db57dc734285937f76eb3b193d4e58e}
+Bitmap scan\+: Index of current array1 slab \hypertarget{structrte__bitmap_a1448310cceb53513c1955213ed3918b3}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!index2@{index2}}
+\index{index2@{index2}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{index2}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t index2}\label{structrte__bitmap_a1448310cceb53513c1955213ed3918b3}
+Bitmap scan\+: Index of current array2 slab \hypertarget{structrte__bitmap_ac9d23fc19363825ef8475d9bd1b1d35e}{}\index{rte\+\_\+bitmap@{rte\+\_\+bitmap}!offset1@{offset1}}
+\index{offset1@{offset1}!rte\+\_\+bitmap@{rte\+\_\+bitmap}}
+\subsubsection[{offset1}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t offset1}\label{structrte__bitmap_ac9d23fc19363825ef8475d9bd1b1d35e}
+Bitmap scan\+: Offset of current bit within current array1 slab 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+sched/\hyperlink{rte__bitmap_8h}{rte\+\_\+bitmap.\+h}\end{DoxyCompactItemize}

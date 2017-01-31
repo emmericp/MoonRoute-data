@@ -1,0 +1,238 @@
+\hypertarget{rte__distributor_8h}{}\section{lib/librte\+\_\+distributor/rte\+\_\+distributor.h File Reference}
+\label{rte__distributor_8h}\index{lib/librte\+\_\+distributor/rte\+\_\+distributor.\+h@{lib/librte\+\_\+distributor/rte\+\_\+distributor.\+h}}
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__distributor_8h_aeb41586bf793ba310d75f7b6191b7cdd}{R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+distributor $\ast$ \hyperlink{rte__distributor_8h_a1a8ea407535a79229380a1b9dcd61860}{rte\+\_\+distributor\+\_\+create} (const char $\ast$name, unsigned socket\+\_\+id, unsigned num\+\_\+workers)
+\item 
+int \hyperlink{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}{rte\+\_\+distributor\+\_\+process} (struct rte\+\_\+distributor $\ast$d, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$mbufs, unsigned num\+\_\+mbufs)
+\item 
+int \hyperlink{rte__distributor_8h_ad3d76219f2b8b7191ac211982ad306d0}{rte\+\_\+distributor\+\_\+returned\+\_\+pkts} (struct rte\+\_\+distributor $\ast$d, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$mbufs, unsigned max\+\_\+mbufs)
+\item 
+int \hyperlink{rte__distributor_8h_ae0118904b5623fb2b3829cb36aa7ab6c}{rte\+\_\+distributor\+\_\+flush} (struct rte\+\_\+distributor $\ast$d)
+\item 
+void \hyperlink{rte__distributor_8h_a6e918becea86b4e0e1e61660fe1e6ce9}{rte\+\_\+distributor\+\_\+clear\+\_\+returns} (struct rte\+\_\+distributor $\ast$d)
+\item 
+struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__distributor_8h_ad73757d92ea988c87f43ec3a4373f610}{rte\+\_\+distributor\+\_\+get\+\_\+pkt} (struct rte\+\_\+distributor $\ast$d, unsigned worker\+\_\+id, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$oldpkt)
+\item 
+int \hyperlink{rte__distributor_8h_a2a0c26a6e05a9ab19df6114e2325c5a6}{rte\+\_\+distributor\+\_\+return\+\_\+pkt} (struct rte\+\_\+distributor $\ast$d, unsigned worker\+\_\+id, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$mbuf)
+\item 
+void \hyperlink{rte__distributor_8h_a58e70d8d3d6743600d5ea561e20e8568}{rte\+\_\+distributor\+\_\+request\+\_\+pkt} (struct rte\+\_\+distributor $\ast$d, unsigned worker\+\_\+id, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$oldpkt)
+\item 
+struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$ \hyperlink{rte__distributor_8h_a6836bb7da749f00effe4e5a575837948}{rte\+\_\+distributor\+\_\+poll\+\_\+pkt} (struct rte\+\_\+distributor $\ast$d, unsigned worker\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E distributor
+
+The distributor is a component which is designed to pass packets one-\/at-\/a-\/time to workers, with dynamic load balancing. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__distributor_8h_aeb41586bf793ba310d75f7b6191b7cdd}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+D\+I\+S\+T\+R\+I\+B\+U\+T\+O\+R\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__distributor_8h_aeb41586bf793ba310d75f7b6191b7cdd}
+Length of name for instance 
+
+\subsection{Function Documentation}
+\hypertarget{rte__distributor_8h_a6e918becea86b4e0e1e61660fe1e6ce9}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+clear\+\_\+returns@{rte\+\_\+distributor\+\_\+clear\+\_\+returns}}
+\index{rte\+\_\+distributor\+\_\+clear\+\_\+returns@{rte\+\_\+distributor\+\_\+clear\+\_\+returns}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+clear\+\_\+returns}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+distributor\+\_\+clear\+\_\+returns (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a6e918becea86b4e0e1e61660fe1e6ce9}
+Clears the array of returned packets used as the source for the \hyperlink{rte__distributor_8h_ad3d76219f2b8b7191ac211982ad306d0}{rte\+\_\+distributor\+\_\+returned\+\_\+pkts()} A\+P\+I call.
+
+This should only be called on the same lcore as \hyperlink{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}{rte\+\_\+distributor\+\_\+process()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__distributor_8h_a1a8ea407535a79229380a1b9dcd61860}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+create@{rte\+\_\+distributor\+\_\+create}}
+\index{rte\+\_\+distributor\+\_\+create@{rte\+\_\+distributor\+\_\+create}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+distributor$\ast$ rte\+\_\+distributor\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{unsigned}]{socket\+\_\+id, }
+\item[{unsigned}]{num\+\_\+workers}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a1a8ea407535a79229380a1b9dcd61860}
+Function to create a new distributor instance
+
+Reserves the memory needed for the distributor operation and initializes the distributor to work with the configured number of workers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to be given to the distributor instance. \\
+\hline
+{\em socket\+\_\+id} & The N\+U\+M\+A node on which the memory is to be allocated \\
+\hline
+{\em num\+\_\+workers} & The maximum number of workers that will request packets from this distributor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created distributor instance 
+\end{DoxyReturn}
+\hypertarget{rte__distributor_8h_ae0118904b5623fb2b3829cb36aa7ab6c}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+flush@{rte\+\_\+distributor\+\_\+flush}}
+\index{rte\+\_\+distributor\+\_\+flush@{rte\+\_\+distributor\+\_\+flush}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+flush}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+distributor\+\_\+flush (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_ae0118904b5623fb2b3829cb36aa7ab6c}
+Flush the distributor component, so that there are no in-\/flight or backlogged packets awaiting processing
+
+This should only be called on the same lcore as \hyperlink{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}{rte\+\_\+distributor\+\_\+process()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of queued/in-\/flight packets that were completed by this call. 
+\end{DoxyReturn}
+\hypertarget{rte__distributor_8h_ad73757d92ea988c87f43ec3a4373f610}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+get\+\_\+pkt@{rte\+\_\+distributor\+\_\+get\+\_\+pkt}}
+\index{rte\+\_\+distributor\+\_\+get\+\_\+pkt@{rte\+\_\+distributor\+\_\+get\+\_\+pkt}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+get\+\_\+pkt}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+distributor\+\_\+get\+\_\+pkt (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{unsigned}]{worker\+\_\+id, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{oldpkt}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_ad73757d92ea988c87f43ec3a4373f610}
+A\+P\+I called by a worker to get a new packet to process. Any previous packet given to the worker is assumed to have completed processing, and may be optionally returned to the distributor via the oldpkt parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em worker\+\_\+id} & The worker instance number to use -\/ must be less that num\+\_\+workers passed at distributor creation time. \\
+\hline
+{\em oldpkt} & The previous packet, if any, being processed by the worker\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new packet to be processed by the worker thread. 
+\end{DoxyReturn}
+\hypertarget{rte__distributor_8h_a6836bb7da749f00effe4e5a575837948}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+poll\+\_\+pkt@{rte\+\_\+distributor\+\_\+poll\+\_\+pkt}}
+\index{rte\+\_\+distributor\+\_\+poll\+\_\+pkt@{rte\+\_\+distributor\+\_\+poll\+\_\+pkt}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+poll\+\_\+pkt}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mbuf}$\ast$ rte\+\_\+distributor\+\_\+poll\+\_\+pkt (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{unsigned}]{worker\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a6836bb7da749f00effe4e5a575837948}
+A\+P\+I called by a worker to check for a new packet that was previously requested by a call to \hyperlink{rte__distributor_8h_a58e70d8d3d6743600d5ea561e20e8568}{rte\+\_\+distributor\+\_\+request\+\_\+pkt()}. It does not wait for the new packet to be available, but returns N\+U\+L\+L if the request has not yet been fulfilled by the distributor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em worker\+\_\+id} & The worker instance number to use -\/ must be less that num\+\_\+workers passed at distributor creation time.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new packet to be processed by the worker thread, or N\+U\+L\+L if no packet is yet available. 
+\end{DoxyReturn}
+\hypertarget{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+process@{rte\+\_\+distributor\+\_\+process}}
+\index{rte\+\_\+distributor\+\_\+process@{rte\+\_\+distributor\+\_\+process}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+process}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+distributor\+\_\+process (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{mbufs, }
+\item[{unsigned}]{num\+\_\+mbufs}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}
+Process a set of packets by distributing them among workers that request packets. The distributor will ensure that no two packets that have the same flow id, or tag, in the mbuf will be procesed at the same time.
+
+This is not multi-\/thread safe and should only be called on a single lcore.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em mbufs} & The mbufs to be distributed \\
+\hline
+{\em num\+\_\+mbufs} & The number of mbufs in the mbufs array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of mbufs processed. 
+\end{DoxyReturn}
+\hypertarget{rte__distributor_8h_a58e70d8d3d6743600d5ea561e20e8568}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+request\+\_\+pkt@{rte\+\_\+distributor\+\_\+request\+\_\+pkt}}
+\index{rte\+\_\+distributor\+\_\+request\+\_\+pkt@{rte\+\_\+distributor\+\_\+request\+\_\+pkt}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+request\+\_\+pkt}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+distributor\+\_\+request\+\_\+pkt (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{unsigned}]{worker\+\_\+id, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{oldpkt}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a58e70d8d3d6743600d5ea561e20e8568}
+A\+P\+I called by a worker to request a new packet to process. Any previous packet given to the worker is assumed to have completed processing, and may be optionally returned to the distributor via the oldpkt parameter. Unlike \hyperlink{rte__distributor_8h_ad73757d92ea988c87f43ec3a4373f610}{rte\+\_\+distributor\+\_\+get\+\_\+pkt()}, this function does not wait for a new packet to be provided by the distributor.
+
+N\+O\+T\+E\+: after calling this function, \hyperlink{rte__distributor_8h_a6836bb7da749f00effe4e5a575837948}{rte\+\_\+distributor\+\_\+poll\+\_\+pkt()} should be used to poll for the packet requested. The \hyperlink{rte__distributor_8h_ad73757d92ea988c87f43ec3a4373f610}{rte\+\_\+distributor\+\_\+get\+\_\+pkt()} A\+P\+I should {\itshape not} be used to try and retrieve the new packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em worker\+\_\+id} & The worker instance number to use -\/ must be less that num\+\_\+workers passed at distributor creation time. \\
+\hline
+{\em oldpkt} & The previous packet, if any, being processed by the worker \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__distributor_8h_a2a0c26a6e05a9ab19df6114e2325c5a6}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+return\+\_\+pkt@{rte\+\_\+distributor\+\_\+return\+\_\+pkt}}
+\index{rte\+\_\+distributor\+\_\+return\+\_\+pkt@{rte\+\_\+distributor\+\_\+return\+\_\+pkt}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+return\+\_\+pkt}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+distributor\+\_\+return\+\_\+pkt (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{unsigned}]{worker\+\_\+id, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$}]{mbuf}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_a2a0c26a6e05a9ab19df6114e2325c5a6}
+A\+P\+I called by a worker to return a completed packet without requesting a new packet, for example, because a worker thread is shutting down
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em worker\+\_\+id} & The worker instance number to use -\/ must be less that num\+\_\+workers passed at distributor creation time. \\
+\hline
+{\em mbuf} & The previous packet being processed by the worker \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__distributor_8h_ad3d76219f2b8b7191ac211982ad306d0}{}\index{rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}!rte\+\_\+distributor\+\_\+returned\+\_\+pkts@{rte\+\_\+distributor\+\_\+returned\+\_\+pkts}}
+\index{rte\+\_\+distributor\+\_\+returned\+\_\+pkts@{rte\+\_\+distributor\+\_\+returned\+\_\+pkts}!rte\+\_\+distributor.\+h@{rte\+\_\+distributor.\+h}}
+\subsubsection[{rte\+\_\+distributor\+\_\+returned\+\_\+pkts}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+distributor\+\_\+returned\+\_\+pkts (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+distributor $\ast$}]{d, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{mbufs, }
+\item[{unsigned}]{max\+\_\+mbufs}
+\end{DoxyParamCaption}
+)}\label{rte__distributor_8h_ad3d76219f2b8b7191ac211982ad306d0}
+Get a set of mbufs that have been returned to the distributor by workers
+
+This should only be called on the same lcore as \hyperlink{rte__distributor_8h_a726b63de6dfc715569753847b1c44471}{rte\+\_\+distributor\+\_\+process()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distributor instance to be used \\
+\hline
+{\em mbufs} & The mbufs pointer array to be filled in \\
+\hline
+{\em max\+\_\+mbufs} & The size of the mbufs array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of mbufs returned in the mbufs array. 
+\end{DoxyReturn}

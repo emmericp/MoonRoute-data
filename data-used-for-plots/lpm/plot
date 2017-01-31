@@ -1,0 +1,57 @@
+#!/usr/bin/gnuplot
+
+#set terminal push
+#set terminal postscript eps enhanced color blacktext
+#set output "plot.eps"
+set terminal epslatex color blacktext
+set output "plot.tex"
+#set title "LPM performance"
+set xlabel "Number of /24 networks used"
+set ylabel "Throughput [Mp/s]"
+set grid mxtics x
+set grid mytics y
+#set key center right
+#set key at 119,9.5
+#set logscale y
+set logscale x 2
+
+set key at 2**18.3, 4
+
+#set yrange [0.08:1]
+set xrange [2**15:2**25]
+set yrange [0000:11000/84/8]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+data = 'data'
+
+#m = 1
+#t = 1
+#g(x) = m*x + t
+#fit [1:4] g(x) data using 1:2:3 via m, t
+
+set boxwidth 10000
+set style fill solid 0.1
+set xtics ("$2^{16}$" 2**16, "$2^{17}$" 2**17, "$2^{18}$" 2**18, "$2^{19}$" 2**19, "$2^{20}$" 2**20, "$2^{21}$" 2**21, "$2^{22}$" 2**22, "$2^{23}$" 2**23, "$2^{24}$" 2**24, )
+
+set label 'L3 Cache size' at 2**21.4,5 right
+set style arrow 7 nohead ls 2 lc 7 lw 2.2
+set style arrow 4 head filled size screen 0.01,30 ls 2 lc 7
+set arrow from 2**21.5,5 to 2**22, 5.7 as 4
+set arrow from 2**22,000 to 2**22,11000/84/8 nohead as 7
+
+set label '10 GbE' at 2**23.9,14.3 right
+set style arrow 7 nohead ls 2 lc 7 lw 2.2
+set style arrow 4 head filled size screen 0.01,30 ls 2 lc 7
+set arrow front from 2**24,14.3 to 2**24.5, 14.88 as 4
+set arrow from 2**15,14.88 to 2**25,14.88 nohead as 7 front
+
+plot 'data'     using (2**($1-8)):($2/84/8):($3/84/8) with errorlines title "2.2GHz",\
+'data2.6GHz'    using (2**($1-8)):($2/84/8):($3/84/8) with errorlines title "2.6GHz",\
+'data3.2GHz'    using (2**($1-8)):($2/84/8):($3/84/8) with errorlines title "3.2GHz",\
+'data2x1.6GHz'  using (2**($1-8)):($2/84/8):($3/84/8) with errorlines title "2x1.6GHz"
+
+
+#eich using ( $0/10 ):($1*10*3.6/80) title "front" with linespoints, eich using ($0/10):($2*10*3.6/80) title "rear" with linespoints, eich using ($0/10):($3*10*3.6/80) title "desired" with linespoints,eich using  ($0/10):(-($4-4000)/4000*10) title "engine power" with linespoints
+

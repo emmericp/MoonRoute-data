@@ -1,0 +1,923 @@
+\hypertarget{rte__mempool_8h}{}\section{lib/librte\+\_\+mempool/rte\+\_\+mempool.h File Reference}
+\label{rte__mempool_8h}\index{lib/librte\+\_\+mempool/rte\+\_\+mempool.\+h@{lib/librte\+\_\+mempool/rte\+\_\+mempool.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+log.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+debug.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+lcore.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+memory.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+ring.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__mempool_8h_ace39cb6a7415a12e81e534c084eaffae}{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1}~0xbadbadbadadd2e55\+U\+L\+L
+\item 
+\#define \hyperlink{rte__mempool_8h_a734531a6320af1bd65287929672b5dd7}{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2}~0xf2eef2eedadd2e55\+U\+L\+L
+\item 
+\#define \hyperlink{rte__mempool_8h_a6419c9ccd761d970b756c37e25d72dd7}{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E}~0xadd2e55badbadbad\+U\+L\+L
+\item 
+\#define \hyperlink{rte__mempool_8h_af6e5aa92b19f0f8d981b7016264456d7}{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}~32
+\item 
+\#define \hyperlink{rte__mempool_8h_a2f0648fad3d8d844ccf917cbebe9f741}{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}~1
+\item 
+\#define \hyperlink{rte__mempool_8h_a2274675362f7964be2bc499e55782eb5}{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D}~0x0001
+\item 
+\#define \hyperlink{rte__mempool_8h_a7f4b50b6c6c3a097d768c8337d146caa}{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N}~0x0002
+\item 
+\#define \hyperlink{rte__mempool_8h_aee48ca768ddf8494f6618ca54e2e84e9}{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T}~0x0004
+\item 
+\#define \hyperlink{rte__mempool_8h_ab08a019547fb3968e73aab0dafefc069}{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T}~0x0008
+\item 
+\#define \hyperlink{rte__mempool_8h_a3570153f46e8b03b81cb854f609d8fca}{M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}(mp,  pgn)
+\item 
+\#define \hyperlink{rte__mempool_8h_af35f443eaacec8c4f305eac54c5e01a2}{M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G}(mp)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{rte__mempool_8h_a88b9825126e1dbe5b8d51ad08bf76d5c}{rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t}) (void $\ast$, void $\ast$, void $\ast$, uint32\+\_\+t)
+\item 
+typedef void( \hyperlink{rte__mempool_8h_ae4620d8fd1c008e44f429188bac7b8c8}{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t}) (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$, void $\ast$, void $\ast$, unsigned)
+\item 
+typedef void( \hyperlink{rte__mempool_8h_a87cd14676c0857b4dd54868626d4c6ee}{rte\+\_\+mempool\+\_\+ctor\+\_\+t}) (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{rte__mempool_8h_a91c974c3b7721025e9c8052a940d190d}{rte\+\_\+mempool\+\_\+from\+\_\+obj} (void $\ast$obj)
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create} (const char $\ast$name, unsigned n, unsigned elt\+\_\+size, unsigned cache\+\_\+size, unsigned private\+\_\+data\+\_\+size, \hyperlink{rte__mempool_8h_a87cd14676c0857b4dd54868626d4c6ee}{rte\+\_\+mempool\+\_\+ctor\+\_\+t} $\ast$mp\+\_\+init, void $\ast$mp\+\_\+init\+\_\+arg, \hyperlink{rte__mempool_8h_ae4620d8fd1c008e44f429188bac7b8c8}{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t} $\ast$obj\+\_\+init, void $\ast$obj\+\_\+init\+\_\+arg, int socket\+\_\+id, unsigned flags)
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{rte__mempool_8h_a5c1921c0e704757b024cb79604db40f4}{rte\+\_\+mempool\+\_\+xmem\+\_\+create} (const char $\ast$name, unsigned n, unsigned elt\+\_\+size, unsigned cache\+\_\+size, unsigned private\+\_\+data\+\_\+size, \hyperlink{rte__mempool_8h_a87cd14676c0857b4dd54868626d4c6ee}{rte\+\_\+mempool\+\_\+ctor\+\_\+t} $\ast$mp\+\_\+init, void $\ast$mp\+\_\+init\+\_\+arg, \hyperlink{rte__mempool_8h_ae4620d8fd1c008e44f429188bac7b8c8}{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t} $\ast$obj\+\_\+init, void $\ast$obj\+\_\+init\+\_\+arg, int socket\+\_\+id, unsigned flags, void $\ast$vaddr, const \hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} paddr\mbox{[}$\,$\mbox{]}, uint32\+\_\+t pg\+\_\+num, uint32\+\_\+t pg\+\_\+shift)
+\item 
+void \hyperlink{rte__mempool_8h_a97cea3286380dbf5ee641efd8d6c442b}{rte\+\_\+mempool\+\_\+dump} (F\+I\+L\+E $\ast$f, const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static void \hyperlink{rte__mempool_8h_a305999d4289856a541855ca22dce91ea}{rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static void \hyperlink{rte__mempool_8h_a13e0ad89db728923a7f84e56633346e6}{rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static void \hyperlink{rte__mempool_8h_a46972d2b6e77edd375231453667ce46b}{rte\+\_\+mempool\+\_\+put\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$const $\ast$obj\+\_\+table, unsigned n)
+\item 
+static void \hyperlink{rte__mempool_8h_a13ad267e5cb87337aa1fa83b72ead46f}{rte\+\_\+mempool\+\_\+mp\+\_\+put} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$obj)
+\item 
+static void \hyperlink{rte__mempool_8h_a15870119eb7b2816112d44c0fd98b585}{rte\+\_\+mempool\+\_\+sp\+\_\+put} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$obj)
+\item 
+static void \hyperlink{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}{rte\+\_\+mempool\+\_\+put} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$obj)
+\item 
+static int \hyperlink{rte__mempool_8h_a05723e7135fedf8ba6756af8be71e1ca}{rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__mempool_8h_a4d6393ce89533dae2212de148aab30dd}{rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__mempool_8h_a51a6b5afb4ed66c57c375e7d794e7781}{rte\+\_\+mempool\+\_\+get\+\_\+bulk} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+table, unsigned n)
+\item 
+static int \hyperlink{rte__mempool_8h_a369fa1b1e5d9664c85e94ef58a463b82}{rte\+\_\+mempool\+\_\+mc\+\_\+get} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+p)
+\item 
+static int \hyperlink{rte__mempool_8h_a47538ab596fd4b69e151f8a8962da8a1}{rte\+\_\+mempool\+\_\+sc\+\_\+get} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+p)
+\item 
+static int \hyperlink{rte__mempool_8h_ad1bffea924acb47a9ec321abb21ea0c5}{rte\+\_\+mempool\+\_\+get} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, void $\ast$$\ast$obj\+\_\+p)
+\item 
+unsigned \hyperlink{rte__mempool_8h_a4e1c868324f15c80e1956ee87249704b}{rte\+\_\+mempool\+\_\+count} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static unsigned \hyperlink{rte__mempool_8h_a80976616504e426555f8eda95050b998}{rte\+\_\+mempool\+\_\+free\+\_\+count} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static int \hyperlink{rte__mempool_8h_a85a83e5cc7f9d57f154839b1c80992a3}{rte\+\_\+mempool\+\_\+full} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static int \hyperlink{rte__mempool_8h_ad6ad83873c9af9bc2012153cd4b4ed52}{rte\+\_\+mempool\+\_\+empty} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static \hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} \hyperlink{rte__mempool_8h_a8c8285cccb4078582d361b505891bd0a}{rte\+\_\+mempool\+\_\+virt2phy} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp, const void $\ast$elt)
+\item 
+void \hyperlink{rte__mempool_8h_a1b29b84fb7ca24d252abab5f830daa7b}{rte\+\_\+mempool\+\_\+audit} (const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+static void $\ast$ \hyperlink{rte__mempool_8h_a6b794c0cd2a78c74817b250becf981fc}{rte\+\_\+mempool\+\_\+get\+\_\+priv} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$mp)
+\item 
+void \hyperlink{rte__mempool_8h_acb1120319a35b0cf0b23827705b2229a}{rte\+\_\+mempool\+\_\+list\+\_\+dump} (F\+I\+L\+E $\ast$f)
+\item 
+struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$ \hyperlink{rte__mempool_8h_a3a5887135fc6329a35780b0053e769ad}{rte\+\_\+mempool\+\_\+lookup} (const char $\ast$name)
+\item 
+uint32\+\_\+t \hyperlink{rte__mempool_8h_a121d699436738109067ed80a1ecae38f}{rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size} (uint32\+\_\+t elt\+\_\+size, uint32\+\_\+t flags, struct rte\+\_\+mempool\+\_\+objsz $\ast$sz)
+\item 
+size\+\_\+t \hyperlink{rte__mempool_8h_a1f017f9b78ab1bc71abd21d0bf233e8f}{rte\+\_\+mempool\+\_\+xmem\+\_\+size} (uint32\+\_\+t elt\+\_\+num, size\+\_\+t elt\+\_\+sz, uint32\+\_\+t pg\+\_\+shift)
+\item 
+ssize\+\_\+t \hyperlink{rte__mempool_8h_a7bf5dd195fbbb5e0d3b35212bfef534c}{rte\+\_\+mempool\+\_\+xmem\+\_\+usage} (void $\ast$vaddr, uint32\+\_\+t elt\+\_\+num, size\+\_\+t elt\+\_\+sz, const \hyperlink{rte__memory_8h_aeed7e715f3dcfddef6f34dec94037646}{phys\+\_\+addr\+\_\+t} paddr\mbox{[}$\,$\mbox{]}, uint32\+\_\+t pg\+\_\+num, uint32\+\_\+t pg\+\_\+shift)
+\item 
+void \hyperlink{rte__mempool_8h_ac813bddbff225d65d111dda5a1974b3f}{rte\+\_\+mempool\+\_\+walk} (void($\ast$func)(const struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$, void $\ast$arg), void $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Mempool.
+
+A memory pool is an allocator of fixed-\/size object. It is identified by its name, and uses a ring to store free objects. It provides some other optional services, like a per-\/core object cache, and an alignment helper to ensure that objects are padded to spread them equally on all R\+A\+M channels, ranks, and so on.
+
+Objects owned by a mempool should never be added in another mempool. When an object is freed using \hyperlink{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}{rte\+\_\+mempool\+\_\+put()} or equivalent, the object data is not modified; the user can save some meta-\/data in the object data and retrieve them when allocating a new object.
+
+Note\+: the mempool implementation is not preemptable. A lcore must not be interrupted by another task that uses the same mempool (because it uses a ring which is not preemptable). Also, mempool functions must not be used outside the D\+P\+D\+K environment\+: for example, in linuxapp environment, a thread that is not created by the E\+A\+L must not use mempools. This is due to the per-\/lcore cache that won\textquotesingle{}t work as \hyperlink{rte__lcore_8h_adfb2b334e7e73f534f25e8888a8a775f}{rte\+\_\+lcore\+\_\+id()} will not return a correct value. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__mempool_8h_a7f4b50b6c6c3a097d768c8337d146caa}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N~0x0002}\label{rte__mempool_8h_a7f4b50b6c6c3a097d768c8337d146caa}
+Do not align objs on cache lines. \hypertarget{rte__mempool_8h_a2274675362f7964be2bc499e55782eb5}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D~0x0001}\label{rte__mempool_8h_a2274675362f7964be2bc499e55782eb5}
+Do not spread in memory. \hypertarget{rte__mempool_8h_ab08a019547fb3968e73aab0dafefc069}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T~0x0008}\label{rte__mempool_8h_ab08a019547fb3968e73aab0dafefc069}
+Default get is \char`\"{}single-\/consumer\char`\"{}. \hypertarget{rte__mempool_8h_aee48ca768ddf8494f6618ca54e2e84e9}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T~0x0004}\label{rte__mempool_8h_aee48ca768ddf8494f6618ca54e2e84e9}
+Default put is \char`\"{}single-\/producer\char`\"{}. \hypertarget{rte__mempool_8h_a3570153f46e8b03b81cb854f609d8fca}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E@{M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{mp, }
+\item[{}]{pgn}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a3570153f46e8b03b81cb854f609d8fca}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(\textcolor{keyword}{sizeof}(*(mp)) + \hyperlink{rte__common_8h_a856650153655096752b4c2a29690a15d}{\(\backslash\)}
+\hyperlink{rte__common_8h_a856650153655096752b4c2a29690a15d}{    RTE\_ALIGN\_CEIL}(((pgn) - \hyperlink{rte__common_8h_ac963da91b35efa4700b73a1f4eb1d8a6}{RTE\_DIM}((mp)->elt\_pa)) * \(\backslash\)
+    \textcolor{keyword}{sizeof} ((mp)->elt\_pa[0]), \hyperlink{rte__memory_8h_af89f60b07247176687889ade776c8e10}{CACHE\_LINE\_SIZE}))
+\end{DoxyCode}
+Calculates size of the mempool header. 
+\begin{DoxyParams}{Parameters}
+{\em mp} & Pointer to the memory pool. \\
+\hline
+{\em pgn} & Number of page used to store mempool objects. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_af35f443eaacec8c4f305eac54c5e01a2}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G@{M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G@{M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+I\+S\+\_\+\+C\+O\+N\+T\+I\+G(
+\begin{DoxyParamCaption}
+\item[{}]{mp}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_af35f443eaacec8c4f305eac54c5e01a2}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((mp)->pg\_num == \hyperlink{rte__mempool_8h_a2f0648fad3d8d844ccf917cbebe9f741}{MEMPOOL\_PG\_NUM\_DEFAULT} && \(\backslash\)
+    (mp)->phys\_addr == (mp)->elt\_pa[0])
+\end{DoxyCode}
+Returns T\+R\+U\+E if whole mempool is allocated in one contiguous block of memory. \hypertarget{rte__mempool_8h_a2f0648fad3d8d844ccf917cbebe9f741}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}}
+\index{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T@{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+E\+M\+P\+O\+O\+L\+\_\+\+P\+G\+\_\+\+N\+U\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T~1}\label{rte__mempool_8h_a2f0648fad3d8d844ccf917cbebe9f741}
+Mempool over one chunk of physically continuous memory \hypertarget{rte__mempool_8h_ace39cb6a7415a12e81e534c084eaffae}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E1~0xbadbadbadadd2e55\+U\+L\+L}\label{rte__mempool_8h_ace39cb6a7415a12e81e534c084eaffae}
+Header cookie. \hypertarget{rte__mempool_8h_a734531a6320af1bd65287929672b5dd7}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E2~0xf2eef2eedadd2e55\+U\+L\+L}\label{rte__mempool_8h_a734531a6320af1bd65287929672b5dd7}
+Header cookie. \hypertarget{rte__mempool_8h_af6e5aa92b19f0f8d981b7016264456d7}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+N\+A\+M\+E\+S\+I\+Z\+E~32}\label{rte__mempool_8h_af6e5aa92b19f0f8d981b7016264456d7}
+Maximum length of a memory pool. \hypertarget{rte__mempool_8h_a6419c9ccd761d970b756c37e25d72dd7}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E}}
+\index{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E@{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+T\+R\+A\+I\+L\+E\+R\+\_\+\+C\+O\+O\+K\+I\+E~0xadd2e55badbadbad\+U\+L\+L}\label{rte__mempool_8h_a6419c9ccd761d970b756c37e25d72dd7}
+Trailer cookie. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__mempool_8h_a87cd14676c0857b4dd54868626d4c6ee}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+ctor\+\_\+t@{rte\+\_\+mempool\+\_\+ctor\+\_\+t}}
+\index{rte\+\_\+mempool\+\_\+ctor\+\_\+t@{rte\+\_\+mempool\+\_\+ctor\+\_\+t}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+ctor\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( rte\+\_\+mempool\+\_\+ctor\+\_\+t) (struct {\bf rte\+\_\+mempool} $\ast$, void $\ast$)}\label{rte__mempool_8h_a87cd14676c0857b4dd54868626d4c6ee}
+A mempool constructor callback function.
+
+Arguments are the mempool and the opaque pointer given by the user in \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()}. \hypertarget{rte__mempool_8h_ae4620d8fd1c008e44f429188bac7b8c8}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t@{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t}}
+\index{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t@{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t) (struct {\bf rte\+\_\+mempool} $\ast$, void $\ast$, void $\ast$, unsigned)}\label{rte__mempool_8h_ae4620d8fd1c008e44f429188bac7b8c8}
+An object constructor callback function for mempool.
+
+Arguments are the mempool, the opaque pointer given by the user in \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()}, the pointer to the element and the index of the element in the pool. \hypertarget{rte__mempool_8h_a88b9825126e1dbe5b8d51ad08bf76d5c}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t@{rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t}}
+\index{rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t@{rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ rte\+\_\+mempool\+\_\+obj\+\_\+iter\+\_\+t) (void $\ast$, void $\ast$, void $\ast$, uint32\+\_\+t)}\label{rte__mempool_8h_a88b9825126e1dbe5b8d51ad08bf76d5c}
+An mempool\textquotesingle{}s object iterator callback function. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__mempool_8h_a1b29b84fb7ca24d252abab5f830daa7b}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+audit@{rte\+\_\+mempool\+\_\+audit}}
+\index{rte\+\_\+mempool\+\_\+audit@{rte\+\_\+mempool\+\_\+audit}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+audit}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+mempool\+\_\+audit (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a1b29b84fb7ca24d252abab5f830daa7b}
+Check the consistency of mempool objects.
+
+Verify the coherency of fields in the mempool structure. Also check that the cookies of mempool objects (even the ones that are not present in pool) have a correct value. If not, a panic will occur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a121d699436738109067ed80a1ecae38f}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size@{rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size}}
+\index{rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size@{rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rte\+\_\+mempool\+\_\+calc\+\_\+obj\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{elt\+\_\+size, }
+\item[{uint32\+\_\+t}]{flags, }
+\item[{struct rte\+\_\+mempool\+\_\+objsz $\ast$}]{sz}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a121d699436738109067ed80a1ecae38f}
+Given a desired size of the mempool element and mempool flags, caluclates header, trailer, body and total sizes of the mempool object. 
+\begin{DoxyParams}{Parameters}
+{\em elt\+\_\+size} & The size of each element. \\
+\hline
+{\em flags} & The flags used for the mempool creation. Consult \hyperlink{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{rte\+\_\+mempool\+\_\+create()} for more information about possible values. The size of each element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total size of the mempool object. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a4e1c868324f15c80e1956ee87249704b}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+count@{rte\+\_\+mempool\+\_\+count}}
+\index{rte\+\_\+mempool\+\_\+count@{rte\+\_\+mempool\+\_\+count}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+mempool\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a4e1c868324f15c80e1956ee87249704b}
+Return the number of entries in the mempool.
+
+When cache is enabled, this function has to browse the length of all lcores, so it should not be used in a data path, but only for debug purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of entries in the mempool. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+create@{rte\+\_\+mempool\+\_\+create}}
+\index{rte\+\_\+mempool\+\_\+create@{rte\+\_\+mempool\+\_\+create}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ rte\+\_\+mempool\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{unsigned}]{n, }
+\item[{unsigned}]{elt\+\_\+size, }
+\item[{unsigned}]{cache\+\_\+size, }
+\item[{unsigned}]{private\+\_\+data\+\_\+size, }
+\item[{{\bf rte\+\_\+mempool\+\_\+ctor\+\_\+t} $\ast$}]{mp\+\_\+init, }
+\item[{void $\ast$}]{mp\+\_\+init\+\_\+arg, }
+\item[{{\bf rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t} $\ast$}]{obj\+\_\+init, }
+\item[{void $\ast$}]{obj\+\_\+init\+\_\+arg, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a7dc1d01a45144e3203c36d1800cb8f17}
+Creates a new mempool named {\itshape name} in memory.
+
+This function uses {\ttfamily memzone\+\_\+reserve()} to allocate memory. The pool contains n elements of elt\+\_\+size. Its size is set to n. All elements of the mempool are allocated together with the mempool header, in one physically continuous chunk of memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the mempool. \\
+\hline
+{\em n} & The number of elements in the mempool. The optimum size (in terms of memory usage) for a mempool is when n is a power of two minus one\+: n = (2$^\wedge$q -\/ 1). \\
+\hline
+{\em elt\+\_\+size} & The size of each element. \\
+\hline
+{\em cache\+\_\+size} & If cache\+\_\+size is non-\/zero, the \hyperlink{structrte__mempool}{rte\+\_\+mempool} library will try to limit the accesses to the common lockless pool, by maintaining a per-\/lcore object cache. This argument must be lower or equal to C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E. It is advised to choose cache\+\_\+size to have \char`\"{}n modulo cache\+\_\+size == 0\char`\"{}\+: if this is not the case, some elements will always stay in the pool and will never be used. The access to the per-\/lcore table is of course faster than the multi-\/producer/consumer pool. The cache can be disabled if the cache\+\_\+size argument is set to 0; it can be useful to avoid losing objects in cache. Note that even if not used, the memory space for cache is always reserved in a mempool structure, except if C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E is set to 0. \\
+\hline
+{\em private\+\_\+data\+\_\+size} & The size of the private data appended after the mempool structure. This is useful for storing some private data after the mempool structure, as is done for rte\+\_\+mbuf\+\_\+pool for example. \\
+\hline
+{\em mp\+\_\+init} & A function pointer that is called for initialization of the pool, before object initialization. The user can initialize the private data in this function if needed. This parameter can be N\+U\+L\+L if not needed. \\
+\hline
+{\em mp\+\_\+init\+\_\+arg} & An opaque pointer to data that can be used in the mempool constructor function. \\
+\hline
+{\em obj\+\_\+init} & A function pointer that is called for each object at initialization of the pool. The user can set some meta data in objects if needed. This parameter can be N\+U\+L\+L if not needed. The obj\+\_\+init() function takes the mempool pointer, the init\+\_\+arg, the object pointer and the object number as parameters. \\
+\hline
+{\em obj\+\_\+init\+\_\+arg} & An opaque pointer to data that can be used as an argument for each call to the object constructor function. \\
+\hline
+{\em socket\+\_\+id} & The {\itshape socket\+\_\+id} argument is the socket identifier in the case of N\+U\+M\+A. The value can be {\itshape S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y} if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & The {\itshape flags} arguments is an O\+R of following flags\+:
+\begin{DoxyItemize}
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D\+: By default, objects addresses are spread between channels in R\+A\+M\+: the pool allocator will add padding between objects depending on the hardware configuration. See Memory alignment constraints for details. If this flag is set, the allocator will just align them to a cache line.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N\+: By default, the returned objects are cache-\/aligned. This flag removes this constraint, and no padding will be present between objects. This flag implies M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T\+: If this flag is set, the default behavior when using \hyperlink{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}{rte\+\_\+mempool\+\_\+put()} or \hyperlink{rte__mempool_8h_a46972d2b6e77edd375231453667ce46b}{rte\+\_\+mempool\+\_\+put\+\_\+bulk()} is \char`\"{}single-\/producer\char`\"{}. Otherwise, it is \char`\"{}multi-\/producers\char`\"{}.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T\+: If this flag is set, the default behavior when using \hyperlink{rte__mempool_8h_ad1bffea924acb47a9ec321abb21ea0c5}{rte\+\_\+mempool\+\_\+get()} or \hyperlink{rte__mempool_8h_a51a6b5afb4ed66c57c375e7d794e7781}{rte\+\_\+mempool\+\_\+get\+\_\+bulk()} is \char`\"{}single-\/consumer\char`\"{}. Otherwise, it is \char`\"{}multi-\/consumers\char`\"{}. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the new allocated mempool, on success. N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the ring or mempool list
+\item E\+I\+N\+V\+A\+L -\/ cache size provided is too large
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a97cea3286380dbf5ee641efd8d6c442b}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+dump@{rte\+\_\+mempool\+\_\+dump}}
+\index{rte\+\_\+mempool\+\_\+dump@{rte\+\_\+mempool\+\_\+dump}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+mempool\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f, }
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a97cea3286380dbf5ee641efd8d6c442b}
+Dump the status of the mempool to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_ad6ad83873c9af9bc2012153cd4b4ed52}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+empty@{rte\+\_\+mempool\+\_\+empty}}
+\index{rte\+\_\+mempool\+\_\+empty@{rte\+\_\+mempool\+\_\+empty}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+empty}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_ad6ad83873c9af9bc2012153cd4b4ed52}
+Test if the mempool is empty.
+
+When cache is enabled, this function has to browse the length of all lcores, so it should not be used in a data path, but only for debug purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1\+: The mempool is empty.
+\item 0\+: The mempool is not empty. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a80976616504e426555f8eda95050b998}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+free\+\_\+count@{rte\+\_\+mempool\+\_\+free\+\_\+count}}
+\index{rte\+\_\+mempool\+\_\+free\+\_\+count@{rte\+\_\+mempool\+\_\+free\+\_\+count}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+free\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned rte\+\_\+mempool\+\_\+free\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a80976616504e426555f8eda95050b998}
+Return the number of free entries in the mempool ring. i.\+e. how many entries can be freed back to the mempool.
+
+N\+O\+T\+E\+: This corresponds to the number of elements {\itshape allocated} from the memory pool, not the number of elements in the pool itself. To count the number elements currently available in the pool, use \char`\"{}rte\+\_\+mempool\+\_\+count\char`\"{}
+
+When cache is enabled, this function has to browse the length of all lcores, so it should not be used in a data path, but only for debug purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of free entries in the mempool. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a91c974c3b7721025e9c8052a940d190d}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+from\+\_\+obj@{rte\+\_\+mempool\+\_\+from\+\_\+obj}}
+\index{rte\+\_\+mempool\+\_\+from\+\_\+obj@{rte\+\_\+mempool\+\_\+from\+\_\+obj}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+from\+\_\+obj}]{\setlength{\rightskip}{0pt plus 5cm}static const struct {\bf rte\+\_\+mempool}$\ast$ rte\+\_\+mempool\+\_\+from\+\_\+obj (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{rte__mempool_8h_a91c974c3b7721025e9c8052a940d190d}
+Return a pointer to the mempool owning this object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & An object that is owned by a pool. If this is not the case, the behavior is undefined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the mempool structure. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a85a83e5cc7f9d57f154839b1c80992a3}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+full@{rte\+\_\+mempool\+\_\+full}}
+\index{rte\+\_\+mempool\+\_\+full@{rte\+\_\+mempool\+\_\+full}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+full}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+full (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a85a83e5cc7f9d57f154839b1c80992a3}
+Test if the mempool is full.
+
+When cache is enabled, this function has to browse the length of all lcores, so it should not be used in a data path, but only for debug purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1\+: The mempool is full.
+\item 0\+: The mempool is not full. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_ad1bffea924acb47a9ec321abb21ea0c5}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+get@{rte\+\_\+mempool\+\_\+get}}
+\index{rte\+\_\+mempool\+\_\+get@{rte\+\_\+mempool\+\_\+get}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_ad1bffea924acb47a9ec321abb21ea0c5}
+Get one object from the mempool.
+
+This function calls the multi-\/consumers or the single-\/consumer version, depending on the default behavior that was specified at mempool creation (see flags).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a51a6b5afb4ed66c57c375e7d794e7781}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+get\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+get\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+get\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+get\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a51a6b5afb4ed66c57c375e7d794e7781}
+Get several objects from the mempool.
+
+This function calls the multi-\/consumers or the single-\/consumer version, depending on the default behaviour that was specified at mempool creation time (see flags).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to get from the mempool to obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a6b794c0cd2a78c74817b250becf981fc}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+get\+\_\+priv@{rte\+\_\+mempool\+\_\+get\+\_\+priv}}
+\index{rte\+\_\+mempool\+\_\+get\+\_\+priv@{rte\+\_\+mempool\+\_\+get\+\_\+priv}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+get\+\_\+priv}]{\setlength{\rightskip}{0pt plus 5cm}static void$\ast$ rte\+\_\+mempool\+\_\+get\+\_\+priv (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a6b794c0cd2a78c74817b250becf981fc}
+Return a pointer to the private data in an mempool structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the private data. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_acb1120319a35b0cf0b23827705b2229a}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+list\+\_\+dump@{rte\+\_\+mempool\+\_\+list\+\_\+dump}}
+\index{rte\+\_\+mempool\+\_\+list\+\_\+dump@{rte\+\_\+mempool\+\_\+list\+\_\+dump}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+list\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+mempool\+\_\+list\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_acb1120319a35b0cf0b23827705b2229a}
+Dump the status of all mempools on the console
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a3a5887135fc6329a35780b0053e769ad}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+lookup@{rte\+\_\+mempool\+\_\+lookup}}
+\index{rte\+\_\+mempool\+\_\+lookup@{rte\+\_\+mempool\+\_\+lookup}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ rte\+\_\+mempool\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a3a5887135fc6329a35780b0053e769ad}
+Search a mempool from its name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the mempool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the mempool matching the name, or N\+U\+L\+L if not found. N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+N\+O\+E\+N\+T -\/ required entry not available to return. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a369fa1b1e5d9664c85e94ef58a463b82}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+mc\+\_\+get@{rte\+\_\+mempool\+\_\+mc\+\_\+get}}
+\index{rte\+\_\+mempool\+\_\+mc\+\_\+get@{rte\+\_\+mempool\+\_\+mc\+\_\+get}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+mc\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+mc\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a369fa1b1e5d9664c85e94ef58a463b82}
+Get one object from the mempool (multi-\/consumers safe).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a05723e7135fedf8ba6756af8be71e1ca}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+mc\+\_\+get\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a05723e7135fedf8ba6756af8be71e1ca}
+Get several objects from the mempool (multi-\/consumers safe).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to get from mempool to obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a13ad267e5cb87337aa1fa83b72ead46f}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+mp\+\_\+put@{rte\+\_\+mempool\+\_\+mp\+\_\+put}}
+\index{rte\+\_\+mempool\+\_\+mp\+\_\+put@{rte\+\_\+mempool\+\_\+mp\+\_\+put}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+mp\+\_\+put}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+mp\+\_\+put (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a13ad267e5cb87337aa1fa83b72ead46f}
+Put one object in the mempool (multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a305999d4289856a541855ca22dce91ea}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+mp\+\_\+put\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a305999d4289856a541855ca22dce91ea}
+Put several objects back in the mempool (multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the mempool from the obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+put@{rte\+\_\+mempool\+\_\+put}}
+\index{rte\+\_\+mempool\+\_\+put@{rte\+\_\+mempool\+\_\+put}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+put}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+put (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}
+Put one object back in the mempool.
+
+This function calls the multi-\/producer or the single-\/producer version depending on the default behavior that was specified at mempool creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a46972d2b6e77edd375231453667ce46b}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+put\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+put\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+put\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+put\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a46972d2b6e77edd375231453667ce46b}
+Put several objects back in the mempool.
+
+This function calls the multi-\/producer or the single-\/producer version depending on the default behavior that was specified at mempool creation time (see flags).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the mempool from obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a47538ab596fd4b69e151f8a8962da8a1}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+sc\+\_\+get@{rte\+\_\+mempool\+\_\+sc\+\_\+get}}
+\index{rte\+\_\+mempool\+\_\+sc\+\_\+get@{rte\+\_\+mempool\+\_\+sc\+\_\+get}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+sc\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+sc\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a47538ab596fd4b69e151f8a8962da8a1}
+Get one object from the mempool (N\+O\+T multi-\/consumers safe).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+p} & A pointer to a void $\ast$ pointer (object) that will be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a4d6393ce89533dae2212de148aab30dd}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk@{rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+mempool\+\_\+sc\+\_\+get\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$$\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a4d6393ce89533dae2212de148aab30dd}
+Get several objects from the mempool (N\+O\+T multi-\/consumers safe).
+
+If cache is enabled, objects will be retrieved first from cache, subsequently from the common pool. Note that it can return -\/\+E\+N\+O\+E\+N\+T when the local cache and common pool are empty, even if cache from other lcores are full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects) that will be filled. \\
+\hline
+{\em n} & The number of objects to get from the mempool to obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; objects taken.
+\item -\/\+E\+N\+O\+E\+N\+T\+: Not enough entries in the mempool; no object is retrieved. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a15870119eb7b2816112d44c0fd98b585}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+sp\+\_\+put@{rte\+\_\+mempool\+\_\+sp\+\_\+put}}
+\index{rte\+\_\+mempool\+\_\+sp\+\_\+put@{rte\+\_\+mempool\+\_\+sp\+\_\+put}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+sp\+\_\+put}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+sp\+\_\+put (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a15870119eb7b2816112d44c0fd98b585}
+Put one object back in the mempool (N\+O\+T multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj} & A pointer to the object to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a13e0ad89db728923a7f84e56633346e6}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk}}
+\index{rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk@{rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+mempool\+\_\+sp\+\_\+put\+\_\+bulk (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{void $\ast$const $\ast$}]{obj\+\_\+table, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a13e0ad89db728923a7f84e56633346e6}
+Put several objects back in the mempool (N\+O\+T multi-\/producers safe).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em obj\+\_\+table} & A pointer to a table of void $\ast$ pointers (objects). \\
+\hline
+{\em n} & The number of objects to add in the mempool from obj\+\_\+table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a8c8285cccb4078582d361b505891bd0a}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+virt2phy@{rte\+\_\+mempool\+\_\+virt2phy}}
+\index{rte\+\_\+mempool\+\_\+virt2phy@{rte\+\_\+mempool\+\_\+virt2phy}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+virt2phy}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf phys\+\_\+addr\+\_\+t} rte\+\_\+mempool\+\_\+virt2phy (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+mempool} $\ast$}]{mp, }
+\item[{const void $\ast$}]{elt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__mempool_8h_a8c8285cccb4078582d361b505891bd0a}
+Return the physical address of elt, which is an element of the pool mp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mp} & A pointer to the mempool structure. \\
+\hline
+{\em elt} & A pointer (virtual address) to the element of the pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The physical address of the elt element. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_ac813bddbff225d65d111dda5a1974b3f}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+walk@{rte\+\_\+mempool\+\_\+walk}}
+\index{rte\+\_\+mempool\+\_\+walk@{rte\+\_\+mempool\+\_\+walk}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+walk}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+mempool\+\_\+walk (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(const struct {\bf rte\+\_\+mempool} $\ast$, void $\ast$arg)}]{func, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_ac813bddbff225d65d111dda5a1974b3f}
+Walk list of all memory pools
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Iterator function \\
+\hline
+{\em arg} & Argument passed to iterator \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__mempool_8h_a5c1921c0e704757b024cb79604db40f4}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+xmem\+\_\+create@{rte\+\_\+mempool\+\_\+xmem\+\_\+create}}
+\index{rte\+\_\+mempool\+\_\+xmem\+\_\+create@{rte\+\_\+mempool\+\_\+xmem\+\_\+create}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+xmem\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+mempool}$\ast$ rte\+\_\+mempool\+\_\+xmem\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{unsigned}]{n, }
+\item[{unsigned}]{elt\+\_\+size, }
+\item[{unsigned}]{cache\+\_\+size, }
+\item[{unsigned}]{private\+\_\+data\+\_\+size, }
+\item[{{\bf rte\+\_\+mempool\+\_\+ctor\+\_\+t} $\ast$}]{mp\+\_\+init, }
+\item[{void $\ast$}]{mp\+\_\+init\+\_\+arg, }
+\item[{{\bf rte\+\_\+mempool\+\_\+obj\+\_\+ctor\+\_\+t} $\ast$}]{obj\+\_\+init, }
+\item[{void $\ast$}]{obj\+\_\+init\+\_\+arg, }
+\item[{int}]{socket\+\_\+id, }
+\item[{unsigned}]{flags, }
+\item[{void $\ast$}]{vaddr, }
+\item[{const {\bf phys\+\_\+addr\+\_\+t}}]{paddr\mbox{[}$\,$\mbox{]}, }
+\item[{uint32\+\_\+t}]{pg\+\_\+num, }
+\item[{uint32\+\_\+t}]{pg\+\_\+shift}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a5c1921c0e704757b024cb79604db40f4}
+Creates a new mempool named {\itshape name} in memory.
+
+This function uses {\ttfamily memzone\+\_\+reserve()} to allocate memory. The pool contains n elements of elt\+\_\+size. Its size is set to n. Depending on the input parameters, mempool elements can be either allocated together with the mempool header, or an externally provided memory buffer could be used to store mempool objects. In later case, that external memory buffer can consist of set of disjoint phyiscal pages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the mempool. \\
+\hline
+{\em n} & The number of elements in the mempool. The optimum size (in terms of memory usage) for a mempool is when n is a power of two minus one\+: n = (2$^\wedge$q -\/ 1). \\
+\hline
+{\em elt\+\_\+size} & The size of each element. \\
+\hline
+{\em cache\+\_\+size} & If cache\+\_\+size is non-\/zero, the \hyperlink{structrte__mempool}{rte\+\_\+mempool} library will try to limit the accesses to the common lockless pool, by maintaining a per-\/lcore object cache. This argument must be lower or equal to C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E. It is advised to choose cache\+\_\+size to have \char`\"{}n modulo cache\+\_\+size == 0\char`\"{}\+: if this is not the case, some elements will always stay in the pool and will never be used. The access to the per-\/lcore table is of course faster than the multi-\/producer/consumer pool. The cache can be disabled if the cache\+\_\+size argument is set to 0; it can be useful to avoid losing objects in cache. Note that even if not used, the memory space for cache is always reserved in a mempool structure, except if C\+O\+N\+F\+I\+G\+\_\+\+R\+T\+E\+\_\+\+M\+E\+M\+P\+O\+O\+L\+\_\+\+C\+A\+C\+H\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+Z\+E is set to 0. \\
+\hline
+{\em private\+\_\+data\+\_\+size} & The size of the private data appended after the mempool structure. This is useful for storing some private data after the mempool structure, as is done for rte\+\_\+mbuf\+\_\+pool for example. \\
+\hline
+{\em mp\+\_\+init} & A function pointer that is called for initialization of the pool, before object initialization. The user can initialize the private data in this function if needed. This parameter can be N\+U\+L\+L if not needed. \\
+\hline
+{\em mp\+\_\+init\+\_\+arg} & An opaque pointer to data that can be used in the mempool constructor function. \\
+\hline
+{\em obj\+\_\+init} & A function pointer that is called for each object at initialization of the pool. The user can set some meta data in objects if needed. This parameter can be N\+U\+L\+L if not needed. The obj\+\_\+init() function takes the mempool pointer, the init\+\_\+arg, the object pointer and the object number as parameters. \\
+\hline
+{\em obj\+\_\+init\+\_\+arg} & An opaque pointer to data that can be used as an argument for each call to the object constructor function. \\
+\hline
+{\em socket\+\_\+id} & The {\itshape socket\+\_\+id} argument is the socket identifier in the case of N\+U\+M\+A. The value can be {\itshape S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y} if there is no N\+U\+M\+A constraint for the reserved zone. \\
+\hline
+{\em flags} & The {\itshape flags} arguments is an O\+R of following flags\+:
+\begin{DoxyItemize}
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D\+: By default, objects addresses are spread between channels in R\+A\+M\+: the pool allocator will add padding between objects depending on the hardware configuration. See Memory alignment constraints for details. If this flag is set, the allocator will just align them to a cache line.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+C\+A\+C\+H\+E\+\_\+\+A\+L\+I\+G\+N\+: By default, the returned objects are cache-\/aligned. This flag removes this constraint, and no padding will be present between objects. This flag implies M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+N\+O\+\_\+\+S\+P\+R\+E\+A\+D.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+P\+\_\+\+P\+U\+T\+: If this flag is set, the default behavior when using \hyperlink{rte__mempool_8h_a3def6fc59b18be5c983c05de0df5f918}{rte\+\_\+mempool\+\_\+put()} or \hyperlink{rte__mempool_8h_a46972d2b6e77edd375231453667ce46b}{rte\+\_\+mempool\+\_\+put\+\_\+bulk()} is \char`\"{}single-\/producer\char`\"{}. Otherwise, it is \char`\"{}multi-\/producers\char`\"{}.
+\item M\+E\+M\+P\+O\+O\+L\+\_\+\+F\+\_\+\+S\+C\+\_\+\+G\+E\+T\+: If this flag is set, the default behavior when using \hyperlink{rte__mempool_8h_ad1bffea924acb47a9ec321abb21ea0c5}{rte\+\_\+mempool\+\_\+get()} or \hyperlink{rte__mempool_8h_a51a6b5afb4ed66c57c375e7d794e7781}{rte\+\_\+mempool\+\_\+get\+\_\+bulk()} is \char`\"{}single-\/consumer\char`\"{}. Otherwise, it is \char`\"{}multi-\/consumers\char`\"{}. 
+\end{DoxyItemize}\\
+\hline
+{\em vaddr} & Virtual address of the externally allocated memory buffer. Will be used to store mempool objects. \\
+\hline
+{\em paddr} & Array of phyiscall addresses of the pages that comprises given memory buffer. \\
+\hline
+{\em pg\+\_\+num} & Number of elements in the paddr array. \\
+\hline
+{\em pg\+\_\+shift} & L\+O\+G2 of the physical pages size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the new allocated mempool, on success. N\+U\+L\+L on error with rte\+\_\+errno set appropriately. Possible rte\+\_\+errno values include\+:
+\begin{DoxyItemize}
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+C\+O\+N\+F\+I\+G -\/ function could not get pointer to \hyperlink{structrte__config}{rte\+\_\+config} structure
+\item E\+\_\+\+R\+T\+E\+\_\+\+S\+E\+C\+O\+N\+D\+A\+R\+Y -\/ function was called from a secondary process instance
+\item E\+\_\+\+R\+T\+E\+\_\+\+N\+O\+\_\+\+T\+A\+I\+L\+Q -\/ no tailq list could be got for the ring or mempool list
+\item E\+I\+N\+V\+A\+L -\/ cache size provided is too large
+\item E\+N\+O\+S\+P\+C -\/ the maximum number of memzones has already been allocated
+\item E\+E\+X\+I\+S\+T -\/ a memzone with the same name already exists
+\item E\+N\+O\+M\+E\+M -\/ no appropriate memory area found in which to create memzone 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a1f017f9b78ab1bc71abd21d0bf233e8f}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+xmem\+\_\+size@{rte\+\_\+mempool\+\_\+xmem\+\_\+size}}
+\index{rte\+\_\+mempool\+\_\+xmem\+\_\+size@{rte\+\_\+mempool\+\_\+xmem\+\_\+size}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+xmem\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t rte\+\_\+mempool\+\_\+xmem\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{elt\+\_\+num, }
+\item[{size\+\_\+t}]{elt\+\_\+sz, }
+\item[{uint32\+\_\+t}]{pg\+\_\+shift}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a1f017f9b78ab1bc71abd21d0bf233e8f}
+Calculate maximum amount of memory required to store given number of objects. Assumes that the memory buffer will be aligned at page boundary. Note, that if object size is bigger then page size, then it assumes that we have a subsets of physically continuous pages big enough to store at least one object. 
+\begin{DoxyParams}{Parameters}
+{\em elt\+\_\+num} & Number of elements. \\
+\hline
+{\em elt\+\_\+sz} & The size of each element. \\
+\hline
+{\em pg\+\_\+shift} & L\+O\+G2 of the physical pages size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Required memory size aligned at page boundary. 
+\end{DoxyReturn}
+\hypertarget{rte__mempool_8h_a7bf5dd195fbbb5e0d3b35212bfef534c}{}\index{rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}!rte\+\_\+mempool\+\_\+xmem\+\_\+usage@{rte\+\_\+mempool\+\_\+xmem\+\_\+usage}}
+\index{rte\+\_\+mempool\+\_\+xmem\+\_\+usage@{rte\+\_\+mempool\+\_\+xmem\+\_\+usage}!rte\+\_\+mempool.\+h@{rte\+\_\+mempool.\+h}}
+\subsubsection[{rte\+\_\+mempool\+\_\+xmem\+\_\+usage}]{\setlength{\rightskip}{0pt plus 5cm}ssize\+\_\+t rte\+\_\+mempool\+\_\+xmem\+\_\+usage (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{vaddr, }
+\item[{uint32\+\_\+t}]{elt\+\_\+num, }
+\item[{size\+\_\+t}]{elt\+\_\+sz, }
+\item[{const {\bf phys\+\_\+addr\+\_\+t}}]{paddr\mbox{[}$\,$\mbox{]}, }
+\item[{uint32\+\_\+t}]{pg\+\_\+num, }
+\item[{uint32\+\_\+t}]{pg\+\_\+shift}
+\end{DoxyParamCaption}
+)}\label{rte__mempool_8h_a7bf5dd195fbbb5e0d3b35212bfef534c}
+Calculate how much memory would be actually required with the given memory footprint to store required number of objects. 
+\begin{DoxyParams}{Parameters}
+{\em vaddr} & Virtual address of the externally allocated memory buffer. Will be used to store mempool objects. \\
+\hline
+{\em elt\+\_\+num} & Number of elements. \\
+\hline
+{\em elt\+\_\+sz} & The size of each element. \\
+\hline
+{\em paddr} & Array of phyiscall addresses of the pages that comprises given memory buffer. \\
+\hline
+{\em pg\+\_\+num} & Number of elements in the paddr array. \\
+\hline
+{\em pg\+\_\+shift} & L\+O\+G2 of the physical pages size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes needed to store given number of objects, aligned to the given page size. If provided memory buffer is not big enough\+: (-\/1) $\ast$ actual number of elemnts that can be stored in that buffer. 
+\end{DoxyReturn}

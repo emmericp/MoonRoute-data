@@ -1,0 +1,115 @@
+\hypertarget{rte__table__hash_8h}{}\section{lib/librte\+\_\+table/rte\+\_\+table\+\_\+hash.h File Reference}
+\label{rte__table__hash_8h}\index{lib/librte\+\_\+table/rte\+\_\+table\+\_\+hash.\+h@{lib/librte\+\_\+table/rte\+\_\+table\+\_\+hash.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rte\+\_\+table.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__hash__ext__params}{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__lru__params}{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key8__lru__params}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key8__ext__params}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key16__lru__params}{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key16__ext__params}{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key32__lru__params}{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+params}
+\item 
+struct \hyperlink{structrte__table__hash__key32__ext__params}{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+params}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint64\+\_\+t($\ast$ \hyperlink{rte__table__hash_8h_a6633f20f58e850abc3d1650af5d900da}{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash}) (void $\ast$key, uint32\+\_\+t key\+\_\+size, uint64\+\_\+t seed)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_ad7d24416b687345b68e9820d65e7e5d2}{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_adcbd6003c5b6666ba1eed226eeaefd3f}{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_a34bd949f43231bf0ce977b90fc02a0c1}{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_a7812dfb5832420395fb16489cee12b3e}{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_abdc5b1949c158c2343327a228db0f0fd}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_af410aef6de02b248f1dd04c6310ed9d9}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_aeea4db38125897454fcfe2eb6100c329}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_ad0c1c0da2ab6107aeb9d7e865f3dff96}{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_a522d50bccff9cee7b2902268421b74bd}{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_ac269e0bcf50c9af8feffe44e57101a55}{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_a32f0eb02dbdab6fba2025d7ae8bede4d}{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} \hyperlink{rte__table__hash_8h_a9a634b2c3c679da495bf8bdcd03e0ed0}{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Table Hash
+
+These tables use the exact match criterion to uniquely associate data to lookup keys.
+
+Use-\/cases\+: Flow classification table, Address Resolution Protocol (A\+R\+P) table
+
+Hash table types\+:
+\begin{DoxyEnumerate}
+\item Entry add strategy on bucket full\+: a. Least Recently Used (L\+R\+U)\+: One of the existing keys in the bucket is deleted and the new key is added in its place. The number of keys in each bucket never grows bigger than 4. The logic to pick the key to be dropped from the bucket is L\+R\+U. The hash table lookup operation maintains the order in which the keys in the same bucket are hit, so every time a key is hit, it becomes the new Most Recently Used (M\+R\+U) key, i.\+e. the most unlikely candidate for drop. When a key is added to the bucket, it also becomes the new M\+R\+U key. When a key needs to be picked and dropped, the most likely candidate for drop, i.\+e. the current L\+R\+U key, is always picked. The L\+R\+U logic requires maintaining specific data structures per each bucket. b. Extendible bucket (ext)\+: The bucket is extended with space for 4 more keys. This is done by allocating additional memory at table init time, which is used to create a pool of free keys (the size of this pool is configurable and always a multiple of 4). On key add operation, the allocation of a group of 4 keys only happens successfully within the limit of free keys, otherwise the key add operation fails. On key delete operation, a group of 4 keys is freed back to the pool of free keys when the key to be deleted is the only key that was used within its group of 4 keys at that time. On key lookup operation, if the current bucket is in extended state and a match is not found in the first group of 4 keys, the search continues beyond the first group of 4 keys, potentially until all keys in this bucket are examined. The extendible bucket logic requires maintaining specific data structures per table and per each bucket.
+\item Key signature computation\+: a. Pre-\/computed key signature\+: The key lookup operation is split between two C\+P\+U cores. The first C\+P\+U core (typically the C\+P\+U core performing packet R\+X) extracts the key from the input packet, computes the key signature and saves both the key and the key signature in the packet buffer as packet meta-\/data. The second C\+P\+U core reads both the key and the key signature from the packet meta-\/data and performs the bucket search step of the key lookup operation. b. Key signature computed on lookup (do-\/sig)\+: The same C\+P\+U core reads the key from the packet meta-\/data, uses it to compute the key signature and also performs the bucket search step of the key lookup operation.
+\item Key size\+: a. Configurable key size b. Single key size (8-\/byte, 16-\/byte or 32-\/byte key size) 
+\end{DoxyEnumerate}
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__table__hash_8h_a6633f20f58e850abc3d1650af5d900da}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash@{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash@{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\+\_\+t($\ast$ rte\+\_\+table\+\_\+hash\+\_\+op\+\_\+hash) (void $\ast$key, uint32\+\_\+t key\+\_\+size, uint64\+\_\+t seed)}\label{rte__table__hash_8h_a6633f20f58e850abc3d1650af5d900da}
+Hash function 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__table__hash_8h_adcbd6003c5b6666ba1eed226eeaefd3f}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+dosig\+\_\+ops}\label{rte__table__hash_8h_adcbd6003c5b6666ba1eed226eeaefd3f}
+Extendible bucket hash table operations for key signature computed on lookup (\char`\"{}do-\/sig\char`\"{}) \hypertarget{rte__table__hash_8h_ad7d24416b687345b68e9820d65e7e5d2}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+ext\+\_\+ops}\label{rte__table__hash_8h_ad7d24416b687345b68e9820d65e7e5d2}
+Extendible bucket hash table operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_ac269e0bcf50c9af8feffe44e57101a55}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+ext\+\_\+ops}\label{rte__table__hash_8h_ac269e0bcf50c9af8feffe44e57101a55}
+Extendible bucket operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_a522d50bccff9cee7b2902268421b74bd}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key16\+\_\+lru\+\_\+ops}\label{rte__table__hash_8h_a522d50bccff9cee7b2902268421b74bd}
+L\+R\+U hash table operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_a9a634b2c3c679da495bf8bdcd03e0ed0}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+ext\+\_\+ops}\label{rte__table__hash_8h_a9a634b2c3c679da495bf8bdcd03e0ed0}
+Extendible bucket hash table operations \hypertarget{rte__table__hash_8h_a32f0eb02dbdab6fba2025d7ae8bede4d}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key32\+\_\+lru\+\_\+ops}\label{rte__table__hash_8h_a32f0eb02dbdab6fba2025d7ae8bede4d}
+L\+R\+U hash table operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_ad0c1c0da2ab6107aeb9d7e865f3dff96}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+dosig\+\_\+ops}\label{rte__table__hash_8h_ad0c1c0da2ab6107aeb9d7e865f3dff96}
+Extendible bucket hash table operations for key signature computed on lookup (\char`\"{}do-\/sig\char`\"{}) \hypertarget{rte__table__hash_8h_aeea4db38125897454fcfe2eb6100c329}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+ext\+\_\+ops}\label{rte__table__hash_8h_aeea4db38125897454fcfe2eb6100c329}
+Extendible bucket hash table operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_af410aef6de02b248f1dd04c6310ed9d9}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+dosig\+\_\+ops}\label{rte__table__hash_8h_af410aef6de02b248f1dd04c6310ed9d9}
+L\+R\+U hash table operations for key signature computed on lookup (\char`\"{}do-\/sig\char`\"{}) \hypertarget{rte__table__hash_8h_abdc5b1949c158c2343327a228db0f0fd}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+key8\+\_\+lru\+\_\+ops}\label{rte__table__hash_8h_abdc5b1949c158c2343327a228db0f0fd}
+L\+R\+U hash table operations for pre-\/computed key signature \hypertarget{rte__table__hash_8h_a7812dfb5832420395fb16489cee12b3e}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+dosig\+\_\+ops}\label{rte__table__hash_8h_a7812dfb5832420395fb16489cee12b3e}
+L\+R\+U hash table operations for key signature computed on lookup (\char`\"{}do-\/sig\char`\"{}) \hypertarget{rte__table__hash_8h_a34bd949f43231bf0ce977b90fc02a0c1}{}\index{rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}!rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops}}
+\index{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops@{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops}!rte\+\_\+table\+\_\+hash.\+h@{rte\+\_\+table\+\_\+hash.\+h}}
+\subsubsection[{rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops} rte\+\_\+table\+\_\+hash\+\_\+lru\+\_\+ops}\label{rte__table__hash_8h_a34bd949f43231bf0ce977b90fc02a0c1}
+L\+R\+U hash table operations for pre-\/computed key signature 

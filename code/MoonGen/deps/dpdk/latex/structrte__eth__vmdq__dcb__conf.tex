@@ -1,0 +1,66 @@
+\hypertarget{structrte__eth__vmdq__dcb__conf}{}\section{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf Struct Reference}
+\label{structrte__eth__vmdq__dcb__conf}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__ethdev_8h_a012a874434677984af1f026ad585dd0d}{rte\+\_\+eth\+\_\+nb\+\_\+pools} \hyperlink{structrte__eth__vmdq__dcb__conf_a1576f028debf3f0a3d4a09ee5285895c}{nb\+\_\+queue\+\_\+pools}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__vmdq__dcb__conf_ac97924c8c390cedbe8533423062ca347}{enable\+\_\+default\+\_\+pool}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__vmdq__dcb__conf_a6024467b1697aea1e1c8eb5fd93b0808}{default\+\_\+pool}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__vmdq__dcb__conf_aa1cd654aea0030ab5a6c0b4371467c67}{nb\+\_\+pool\+\_\+maps}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint16\_t \hyperlink{structrte__eth__vmdq__dcb__conf_ad9a532da576820f8630b96c16692aa5a}{vlan\_id}\\
+\>uint64\_t \hyperlink{structrte__eth__vmdq__dcb__conf_a541271d53b15080c2cb0aedb4364572c}{pools}\\
+\} \hyperlink{structrte__eth__vmdq__dcb__conf_adbf609ab360cbc6b7029843a233220f9}{pool\_map} \mbox{[}\hyperlink{rte__ethdev_8h_a606a6b69adcfa6dd6c3fa4a31688bd4c}{ETH\_VMDQ\_MAX\_VLAN\_FILTERS}\mbox{]}\\
+
+\end{tabbing}\item 
+uint8\+\_\+t \hyperlink{structrte__eth__vmdq__dcb__conf_a408b6ddd20adea68e86b4a90b4780264}{dcb\+\_\+queue} \mbox{[}\hyperlink{rte__ethdev_8h_a825a952bfb398214537ed14e60af758d}{E\+T\+H\+\_\+\+D\+C\+B\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+E\+S}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure the V\+M\+D\+Q+\+D\+C\+B feature of an Ethernet port.
+
+Using this feature, packets are routed to a pool of queues, based on the vlan id in the vlan tag, and then to a specific queue within that pool, using the user priority vlan tag field.
+
+A default pool may be used, if desired, to route all traffic which does not match the vlan filter rules. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__vmdq__dcb__conf_a408b6ddd20adea68e86b4a90b4780264}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!dcb\+\_\+queue@{dcb\+\_\+queue}}
+\index{dcb\+\_\+queue@{dcb\+\_\+queue}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{dcb\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t dcb\+\_\+queue\mbox{[}{\bf E\+T\+H\+\_\+\+D\+C\+B\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+P\+R\+I\+O\+R\+I\+T\+I\+E\+S}\mbox{]}}\label{structrte__eth__vmdq__dcb__conf_a408b6ddd20adea68e86b4a90b4780264}
+Selects a queue in a pool \hypertarget{structrte__eth__vmdq__dcb__conf_a6024467b1697aea1e1c8eb5fd93b0808}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!default\+\_\+pool@{default\+\_\+pool}}
+\index{default\+\_\+pool@{default\+\_\+pool}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{default\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t default\+\_\+pool}\label{structrte__eth__vmdq__dcb__conf_a6024467b1697aea1e1c8eb5fd93b0808}
+The default pool, if applicable \hypertarget{structrte__eth__vmdq__dcb__conf_ac97924c8c390cedbe8533423062ca347}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!enable\+\_\+default\+\_\+pool@{enable\+\_\+default\+\_\+pool}}
+\index{enable\+\_\+default\+\_\+pool@{enable\+\_\+default\+\_\+pool}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{enable\+\_\+default\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t enable\+\_\+default\+\_\+pool}\label{structrte__eth__vmdq__dcb__conf_ac97924c8c390cedbe8533423062ca347}
+If non-\/zero, use a default pool \hypertarget{structrte__eth__vmdq__dcb__conf_aa1cd654aea0030ab5a6c0b4371467c67}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!nb\+\_\+pool\+\_\+maps@{nb\+\_\+pool\+\_\+maps}}
+\index{nb\+\_\+pool\+\_\+maps@{nb\+\_\+pool\+\_\+maps}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{nb\+\_\+pool\+\_\+maps}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t nb\+\_\+pool\+\_\+maps}\label{structrte__eth__vmdq__dcb__conf_aa1cd654aea0030ab5a6c0b4371467c67}
+We can have up to 64 filters/mappings \hypertarget{structrte__eth__vmdq__dcb__conf_a1576f028debf3f0a3d4a09ee5285895c}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!nb\+\_\+queue\+\_\+pools@{nb\+\_\+queue\+\_\+pools}}
+\index{nb\+\_\+queue\+\_\+pools@{nb\+\_\+queue\+\_\+pools}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{nb\+\_\+queue\+\_\+pools}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+eth\+\_\+nb\+\_\+pools} nb\+\_\+queue\+\_\+pools}\label{structrte__eth__vmdq__dcb__conf_a1576f028debf3f0a3d4a09ee5285895c}
+With D\+C\+B, 16 or 32 pools \hypertarget{structrte__eth__vmdq__dcb__conf_adbf609ab360cbc6b7029843a233220f9}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!pool\+\_\+map@{pool\+\_\+map}}
+\index{pool\+\_\+map@{pool\+\_\+map}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{pool\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   pool\+\_\+map\mbox{[}{\bf E\+T\+H\+\_\+\+V\+M\+D\+Q\+\_\+\+M\+A\+X\+\_\+\+V\+L\+A\+N\+\_\+\+F\+I\+L\+T\+E\+R\+S}\mbox{]}}\label{structrte__eth__vmdq__dcb__conf_adbf609ab360cbc6b7029843a233220f9}
+V\+M\+Dq vlan pool maps. \hypertarget{structrte__eth__vmdq__dcb__conf_a541271d53b15080c2cb0aedb4364572c}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!pools@{pools}}
+\index{pools@{pools}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{pools}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t pools}\label{structrte__eth__vmdq__dcb__conf_a541271d53b15080c2cb0aedb4364572c}
+Bitmask of pools for packet rx \hypertarget{structrte__eth__vmdq__dcb__conf_ad9a532da576820f8630b96c16692aa5a}{}\index{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}!vlan\+\_\+id@{vlan\+\_\+id}}
+\index{vlan\+\_\+id@{vlan\+\_\+id}!rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf@{rte\+\_\+eth\+\_\+vmdq\+\_\+dcb\+\_\+conf}}
+\subsubsection[{vlan\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t vlan\+\_\+id}\label{structrte__eth__vmdq__dcb__conf_ad9a532da576820f8630b96c16692aa5a}
+The vlan id of the received frame 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

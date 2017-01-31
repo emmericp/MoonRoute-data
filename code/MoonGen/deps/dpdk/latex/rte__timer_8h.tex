@@ -1,0 +1,322 @@
+\hypertarget{rte__timer_8h}{}\section{lib/librte\+\_\+timer/rte\+\_\+timer.h File Reference}
+\label{rte__timer_8h}\index{lib/librte\+\_\+timer/rte\+\_\+timer.\+h@{lib/librte\+\_\+timer/rte\+\_\+timer.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionrte__timer__status}{rte\+\_\+timer\+\_\+status}
+\item 
+struct \hyperlink{structrte__timer}{rte\+\_\+timer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__timer_8h_a396b590f00383861a04cf3b59d604788}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P}~0
+\item 
+\#define \hyperlink{rte__timer_8h_abdd0e7f83be69292b2fcc335002162f0}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G}~1
+\item 
+\#define \hyperlink{rte__timer_8h_a1bab75fd20f0dade070198baaf338093}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G}~2
+\item 
+\#define \hyperlink{rte__timer_8h_ab81be0a8b461d613f432293dc01b032a}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G}~3
+\item 
+\#define \hyperlink{rte__timer_8h_af987ae48c84d4da33ec5936d3c6214a3}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R}~-\/1
+\item 
+\#define \hyperlink{rte__timer_8h_abe831655dc7ca10a2d58c18ee7e3de51}{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( \hyperlink{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}{rte\+\_\+timer\+\_\+cb\+\_\+t}) (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__timer_8h_a5a5cb38c85e7504eda9c02a5dcefd0a7}{rte\+\_\+timer\+\_\+type} 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rte__timer_8h_a8d518f0091fc8475df83aec716c2be02}{rte\+\_\+timer\+\_\+subsystem\+\_\+init} (void)
+\item 
+void \hyperlink{rte__timer_8h_a69340aa2987e22053aa8b88140fe18bb}{rte\+\_\+timer\+\_\+init} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim)
+\item 
+int \hyperlink{rte__timer_8h_a707296972ed4a11384b661653eb94187}{rte\+\_\+timer\+\_\+reset} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim, uint64\+\_\+t ticks, enum \hyperlink{rte__timer_8h_a5a5cb38c85e7504eda9c02a5dcefd0a7}{rte\+\_\+timer\+\_\+type} type, unsigned tim\+\_\+lcore, \hyperlink{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}{rte\+\_\+timer\+\_\+cb\+\_\+t} fct, void $\ast$arg)
+\item 
+void \hyperlink{rte__timer_8h_a62a030b92ab3b05f0c9b1bd0c2cc0bbf}{rte\+\_\+timer\+\_\+reset\+\_\+sync} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim, uint64\+\_\+t ticks, enum \hyperlink{rte__timer_8h_a5a5cb38c85e7504eda9c02a5dcefd0a7}{rte\+\_\+timer\+\_\+type} type, unsigned tim\+\_\+lcore, \hyperlink{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}{rte\+\_\+timer\+\_\+cb\+\_\+t} fct, void $\ast$arg)
+\item 
+int \hyperlink{rte__timer_8h_a6ab542d925bd43062013453bea656628}{rte\+\_\+timer\+\_\+stop} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim)
+\item 
+void \hyperlink{rte__timer_8h_a0f28bb6cfb080e85c96090218fe5836e}{rte\+\_\+timer\+\_\+stop\+\_\+sync} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim)
+\item 
+int \hyperlink{rte__timer_8h_a4f4b64d60de5510f1f84945bb30e720e}{rte\+\_\+timer\+\_\+pending} (struct \hyperlink{structrte__timer}{rte\+\_\+timer} $\ast$tim)
+\item 
+void \hyperlink{rte__timer_8h_a4c4db2fe15d7d04a511408e39cad9d50}{rte\+\_\+timer\+\_\+manage} (void)
+\item 
+void \hyperlink{rte__timer_8h_acdc50f344f5078a6191ee1c6ab010d35}{rte\+\_\+timer\+\_\+dump\+\_\+stats} (F\+I\+L\+E $\ast$f)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Timer
+
+This library provides a timer service to R\+T\+E Data Plane execution units that allows the execution of callback functions asynchronously.
+
+
+\begin{DoxyItemize}
+\item Timers can be periodic or single (one-\/shot).
+\item The timers can be loaded from one core and executed on another. This has to be specified in the call to \hyperlink{rte__timer_8h_a707296972ed4a11384b661653eb94187}{rte\+\_\+timer\+\_\+reset()}.
+\item High precision is possible. N\+O\+T\+E\+: this depends on the call frequency to \hyperlink{rte__timer_8h_a4c4db2fe15d7d04a511408e39cad9d50}{rte\+\_\+timer\+\_\+manage()} that check the timer expiration for the local core.
+\item If not used in an application, for improved performance, it can be disabled at compilation time by not calling the \hyperlink{rte__timer_8h_a4c4db2fe15d7d04a511408e39cad9d50}{rte\+\_\+timer\+\_\+manage()} to improve performance.
+\end{DoxyItemize}
+
+The timer library uses the rte\+\_\+get\+\_\+hpet\+\_\+cycles() function that uses the H\+P\+E\+T, when available, to provide a reliable time reference. \mbox{[}H\+P\+E\+T routines are provided by E\+A\+L, which falls back to using the chip T\+S\+C (time-\/ stamp counter) as fallback when H\+P\+E\+T is not available\mbox{]}
+
+This library provides an interface to add, delete and restart a timer. The A\+P\+I is based on the B\+S\+D callout(9) A\+P\+I with a few differences.
+
+See the R\+T\+E architecture documentation for more information about the design of this library. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__timer_8h_ab81be0a8b461d613f432293dc01b032a}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G~3}\label{rte__timer_8h_ab81be0a8b461d613f432293dc01b032a}
+State\+: timer is being configured. \hypertarget{rte__timer_8h_abe831655dc7ca10a2d58c18ee7e3de51}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R}\label{rte__timer_8h_abe831655dc7ca10a2d58c18ee7e3de51}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                      \(\backslash\)
+        .status = \{\{                         \(\backslash\)
+            .state = \hyperlink{rte__timer_8h_a396b590f00383861a04cf3b59d604788}{RTE\_TIMER\_STOP},     \(\backslash\)
+            .owner = \hyperlink{rte__timer_8h_af987ae48c84d4da33ec5936d3c6214a3}{RTE\_TIMER\_NO\_OWNER}, \(\backslash\)
+        \}\},                                  \(\backslash\)
+    \}
+\end{DoxyCode}
+A static initializer for a timer structure. \hypertarget{rte__timer_8h_af987ae48c84d4da33ec5936d3c6214a3}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+N\+O\+\_\+\+O\+W\+N\+E\+R~-\/1}\label{rte__timer_8h_af987ae48c84d4da33ec5936d3c6214a3}
+Timer has no owner. \hypertarget{rte__timer_8h_abdd0e7f83be69292b2fcc335002162f0}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+P\+E\+N\+D\+I\+N\+G~1}\label{rte__timer_8h_abdd0e7f83be69292b2fcc335002162f0}
+State\+: timer is scheduled. \hypertarget{rte__timer_8h_a1bab75fd20f0dade070198baaf338093}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+R\+U\+N\+N\+I\+N\+G~2}\label{rte__timer_8h_a1bab75fd20f0dade070198baaf338093}
+State\+: timer function is running. \hypertarget{rte__timer_8h_a396b590f00383861a04cf3b59d604788}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P}}
+\index{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P@{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+T\+O\+P~0}\label{rte__timer_8h_a396b590f00383861a04cf3b59d604788}
+State\+: timer is stopped. 
+
+\subsection{Typedef Documentation}
+\hypertarget{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+cb\+\_\+t@{rte\+\_\+timer\+\_\+cb\+\_\+t}}
+\index{rte\+\_\+timer\+\_\+cb\+\_\+t@{rte\+\_\+timer\+\_\+cb\+\_\+t}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+cb\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( rte\+\_\+timer\+\_\+cb\+\_\+t) (struct {\bf rte\+\_\+timer} $\ast$, void $\ast$)}\label{rte__timer_8h_a356e4838f67b60ffba867110c1ef0f7e}
+Callback function type for timer expiry. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__timer_8h_a5a5cb38c85e7504eda9c02a5dcefd0a7}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+type@{rte\+\_\+timer\+\_\+type}}
+\index{rte\+\_\+timer\+\_\+type@{rte\+\_\+timer\+\_\+type}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+timer\+\_\+type}}\label{rte__timer_8h_a5a5cb38c85e7504eda9c02a5dcefd0a7}
+Timer type\+: Periodic or single (one-\/shot). 
+
+\subsection{Function Documentation}
+\hypertarget{rte__timer_8h_acdc50f344f5078a6191ee1c6ab010d35}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+dump\+\_\+stats@{rte\+\_\+timer\+\_\+dump\+\_\+stats}}
+\index{rte\+\_\+timer\+\_\+dump\+\_\+stats@{rte\+\_\+timer\+\_\+dump\+\_\+stats}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+dump\+\_\+stats}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+dump\+\_\+stats (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_acdc50f344f5078a6191ee1c6ab010d35}
+Dump statistics about timers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__timer_8h_a69340aa2987e22053aa8b88140fe18bb}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+init@{rte\+\_\+timer\+\_\+init}}
+\index{rte\+\_\+timer\+\_\+init@{rte\+\_\+timer\+\_\+init}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a69340aa2987e22053aa8b88140fe18bb}
+Initialize a timer handle.
+
+The \hyperlink{rte__timer_8h_a69340aa2987e22053aa8b88140fe18bb}{rte\+\_\+timer\+\_\+init()} function initializes the timer handle {\itshape tim} for use. No operations can be performed on a timer before it is initialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer to initialize. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__timer_8h_a4c4db2fe15d7d04a511408e39cad9d50}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+manage@{rte\+\_\+timer\+\_\+manage}}
+\index{rte\+\_\+timer\+\_\+manage@{rte\+\_\+timer\+\_\+manage}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+manage}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+manage (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a4c4db2fe15d7d04a511408e39cad9d50}
+Manage the timer list and execute callback functions.
+
+This function must be called periodically from all cores main\+\_\+loop(). It browses the list of pending timers and runs all timers that are expired.
+
+The precision of the timer depends on the call frequency of this function. However, the more often the function is called, the more C\+P\+U resources it will use. \hypertarget{rte__timer_8h_a4f4b64d60de5510f1f84945bb30e720e}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+pending@{rte\+\_\+timer\+\_\+pending}}
+\index{rte\+\_\+timer\+\_\+pending@{rte\+\_\+timer\+\_\+pending}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+pending}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+timer\+\_\+pending (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a4f4b64d60de5510f1f84945bb30e720e}
+Test if a timer is pending.
+
+The \hyperlink{rte__timer_8h_a4f4b64d60de5510f1f84945bb30e720e}{rte\+\_\+timer\+\_\+pending()} function tests the P\+E\+N\+D\+I\+N\+G status of the timer handle {\itshape tim}. A P\+E\+N\+D\+I\+N\+G timer is one that has been scheduled and whose function has not yet been called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: The timer is not pending.
+\item 1\+: The timer is pending. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__timer_8h_a707296972ed4a11384b661653eb94187}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+reset@{rte\+\_\+timer\+\_\+reset}}
+\index{rte\+\_\+timer\+\_\+reset@{rte\+\_\+timer\+\_\+reset}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+reset}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+timer\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim, }
+\item[{uint64\+\_\+t}]{ticks, }
+\item[{enum {\bf rte\+\_\+timer\+\_\+type}}]{type, }
+\item[{unsigned}]{tim\+\_\+lcore, }
+\item[{{\bf rte\+\_\+timer\+\_\+cb\+\_\+t}}]{fct, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a707296972ed4a11384b661653eb94187}
+Reset and start the timer associated with the timer handle.
+
+The \hyperlink{rte__timer_8h_a707296972ed4a11384b661653eb94187}{rte\+\_\+timer\+\_\+reset()} function resets and starts the timer associated with the timer handle {\itshape tim}. When the timer expires after {\itshape ticks} H\+P\+E\+T cycles, the function specified by {\itshape fct} will be called with the argument {\itshape arg} on core {\itshape tim\+\_\+lcore}.
+
+If the timer associated with the timer handle is already running (in the R\+U\+N\+N\+I\+N\+G state), the function will fail. The user has to check the return value of the function to see if there is a chance that the timer is in the R\+U\+N\+N\+I\+N\+G state.
+
+If the timer is being configured on another core (the C\+O\+N\+F\+I\+G state), it will also fail.
+
+If the timer is pending or stopped, it will be rescheduled with the new parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer handle. \\
+\hline
+{\em ticks} & The number of cycles (see rte\+\_\+get\+\_\+hpet\+\_\+hz()) before the callback function is called. \\
+\hline
+{\em type} & The type can be either\+:
+\begin{DoxyItemize}
+\item P\+E\+R\+I\+O\+D\+I\+C\+A\+L\+: The timer is automatically reloaded after execution (returns to the P\+E\+N\+D\+I\+N\+G state)
+\item S\+I\+N\+G\+L\+E\+: The timer is one-\/shot, that is, the timer goes to a S\+T\+O\+P\+P\+E\+D state after execution. 
+\end{DoxyItemize}\\
+\hline
+{\em tim\+\_\+lcore} & The I\+D of the lcore where the timer callback function has to be executed. If tim\+\_\+lcore is L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y, the timer library will launch it on a different core for each call (round-\/robin). \\
+\hline
+{\em fct} & The callback function of the timer. \\
+\hline
+{\em arg} & The user argument of the callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; the timer is scheduled.
+\item (-\/1)\+: Timer is in the R\+U\+N\+N\+I\+N\+G or C\+O\+N\+F\+I\+G state. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__timer_8h_a62a030b92ab3b05f0c9b1bd0c2cc0bbf}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+reset\+\_\+sync@{rte\+\_\+timer\+\_\+reset\+\_\+sync}}
+\index{rte\+\_\+timer\+\_\+reset\+\_\+sync@{rte\+\_\+timer\+\_\+reset\+\_\+sync}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+reset\+\_\+sync}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+reset\+\_\+sync (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim, }
+\item[{uint64\+\_\+t}]{ticks, }
+\item[{enum {\bf rte\+\_\+timer\+\_\+type}}]{type, }
+\item[{unsigned}]{tim\+\_\+lcore, }
+\item[{{\bf rte\+\_\+timer\+\_\+cb\+\_\+t}}]{fct, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a62a030b92ab3b05f0c9b1bd0c2cc0bbf}
+Loop until \hyperlink{rte__timer_8h_a707296972ed4a11384b661653eb94187}{rte\+\_\+timer\+\_\+reset()} succeeds.
+
+Reset and start the timer associated with the timer handle. Always succeed. See \hyperlink{rte__timer_8h_a707296972ed4a11384b661653eb94187}{rte\+\_\+timer\+\_\+reset()} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer handle. \\
+\hline
+{\em ticks} & The number of cycles (see rte\+\_\+get\+\_\+hpet\+\_\+hz()) before the callback function is called. \\
+\hline
+{\em type} & The type can be either\+:
+\begin{DoxyItemize}
+\item P\+E\+R\+I\+O\+D\+I\+C\+A\+L\+: The timer is automatically reloaded after execution (returns to the P\+E\+N\+D\+I\+N\+G state)
+\item S\+I\+N\+G\+L\+E\+: The timer is one-\/shot, that is, the timer goes to a S\+T\+O\+P\+P\+E\+D state after execution. 
+\end{DoxyItemize}\\
+\hline
+{\em tim\+\_\+lcore} & The I\+D of the lcore where the timer callback function has to be executed. If tim\+\_\+lcore is L\+C\+O\+R\+E\+\_\+\+I\+D\+\_\+\+A\+N\+Y, the timer library will launch it on a different core for each call (round-\/robin). \\
+\hline
+{\em fct} & The callback function of the timer. \\
+\hline
+{\em arg} & The user argument of the callback function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__timer_8h_a6ab542d925bd43062013453bea656628}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+stop@{rte\+\_\+timer\+\_\+stop}}
+\index{rte\+\_\+timer\+\_\+stop@{rte\+\_\+timer\+\_\+stop}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+stop}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+timer\+\_\+stop (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a6ab542d925bd43062013453bea656628}
+Stop a timer.
+
+The \hyperlink{rte__timer_8h_a6ab542d925bd43062013453bea656628}{rte\+\_\+timer\+\_\+stop()} function stops the timer associated with the timer handle {\itshape tim}. It may fail if the timer is currently running or being configured.
+
+If the timer is pending or stopped (for instance, already expired), the function will succeed. The timer handle tim must have been initialized using \hyperlink{rte__timer_8h_a69340aa2987e22053aa8b88140fe18bb}{rte\+\_\+timer\+\_\+init()}, otherwise, undefined behavior will occur.
+
+This function can be called safely from a timer callback. If it succeeds, the timer is not referenced anymore by the timer library and the timer structure can be freed (even in the callback function).
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success; the timer is stopped.
+\item (-\/1)\+: The timer is in the R\+U\+N\+N\+I\+N\+G or C\+O\+N\+F\+I\+G state. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__timer_8h_a0f28bb6cfb080e85c96090218fe5836e}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+stop\+\_\+sync@{rte\+\_\+timer\+\_\+stop\+\_\+sync}}
+\index{rte\+\_\+timer\+\_\+stop\+\_\+sync@{rte\+\_\+timer\+\_\+stop\+\_\+sync}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+stop\+\_\+sync}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+stop\+\_\+sync (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+timer} $\ast$}]{tim}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a0f28bb6cfb080e85c96090218fe5836e}
+Loop until \hyperlink{rte__timer_8h_a6ab542d925bd43062013453bea656628}{rte\+\_\+timer\+\_\+stop()} succeeds.
+
+After a call to this function, the timer identified by {\itshape tim} is stopped. See \hyperlink{rte__timer_8h_a6ab542d925bd43062013453bea656628}{rte\+\_\+timer\+\_\+stop()} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tim} & The timer handle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__timer_8h_a8d518f0091fc8475df83aec716c2be02}{}\index{rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}!rte\+\_\+timer\+\_\+subsystem\+\_\+init@{rte\+\_\+timer\+\_\+subsystem\+\_\+init}}
+\index{rte\+\_\+timer\+\_\+subsystem\+\_\+init@{rte\+\_\+timer\+\_\+subsystem\+\_\+init}!rte\+\_\+timer.\+h@{rte\+\_\+timer.\+h}}
+\subsubsection[{rte\+\_\+timer\+\_\+subsystem\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+timer\+\_\+subsystem\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__timer_8h_a8d518f0091fc8475df83aec716c2be02}
+Initialize the timer library.
+
+Initializes internal variables (list, locks and so on) for the R\+T\+E timer library. 

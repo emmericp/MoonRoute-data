@@ -1,0 +1,75 @@
+\hypertarget{structrte__eth__rxmode}{}\section{rte\+\_\+eth\+\_\+rxmode Struct Reference}
+\label{structrte__eth__rxmode}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__ethdev_8h_a586b8e86131b4ec0ccaf464e847ccf3e}{rte\+\_\+eth\+\_\+rx\+\_\+mq\+\_\+mode} \hyperlink{structrte__eth__rxmode_aa0562513c4569f1aa53050f1beac6b5d}{mq\+\_\+mode}
+\item 
+uint32\+\_\+t \hyperlink{structrte__eth__rxmode_a84a5d32306b86a1df884144612c70726}{max\+\_\+rx\+\_\+pkt\+\_\+len}
+\item 
+uint16\+\_\+t \hyperlink{structrte__eth__rxmode_a7aa0d86e260af96607d007c7361ab21e}{split\+\_\+hdr\+\_\+size}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a151c3d1338430053f25c0ac18dae10fb}{header\+\_\+split}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a73042c1ac081c9f555cdc1a476485513}{hw\+\_\+ip\+\_\+checksum}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_ad00939767eb266e18b7f5d87a993e3e8}{hw\+\_\+vlan\+\_\+filter}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a36ec224fb64ff42116b7d211ded782d1}{hw\+\_\+vlan\+\_\+strip}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a9de1179e78c4c97f398bcf945ffef7d8}{hw\+\_\+vlan\+\_\+extend}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a372e758c4721d73336631cc1e592ca23}{jumbo\+\_\+frame}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_aea339586279530eadadaf36722346d93}{hw\+\_\+strip\+\_\+crc}\+: 1
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rxmode_a35db2420233aa9f3f454a35d0a4f7f18}{enable\+\_\+scatter}\+: 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure the R\+X features of an Ethernet port. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__rxmode_a35db2420233aa9f3f454a35d0a4f7f18}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!enable\+\_\+scatter@{enable\+\_\+scatter}}
+\index{enable\+\_\+scatter@{enable\+\_\+scatter}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{enable\+\_\+scatter}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t enable\+\_\+scatter}\label{structrte__eth__rxmode_a35db2420233aa9f3f454a35d0a4f7f18}
+Enable scatter packets rx handler \hypertarget{structrte__eth__rxmode_a151c3d1338430053f25c0ac18dae10fb}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!header\+\_\+split@{header\+\_\+split}}
+\index{header\+\_\+split@{header\+\_\+split}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{header\+\_\+split}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t header\+\_\+split}\label{structrte__eth__rxmode_a151c3d1338430053f25c0ac18dae10fb}
+Header Split enable. \hypertarget{structrte__eth__rxmode_a73042c1ac081c9f555cdc1a476485513}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!hw\+\_\+ip\+\_\+checksum@{hw\+\_\+ip\+\_\+checksum}}
+\index{hw\+\_\+ip\+\_\+checksum@{hw\+\_\+ip\+\_\+checksum}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{hw\+\_\+ip\+\_\+checksum}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hw\+\_\+ip\+\_\+checksum}\label{structrte__eth__rxmode_a73042c1ac081c9f555cdc1a476485513}
+I\+P/\+U\+D\+P/\+T\+C\+P checksum offload enable. \hypertarget{structrte__eth__rxmode_aea339586279530eadadaf36722346d93}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!hw\+\_\+strip\+\_\+crc@{hw\+\_\+strip\+\_\+crc}}
+\index{hw\+\_\+strip\+\_\+crc@{hw\+\_\+strip\+\_\+crc}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{hw\+\_\+strip\+\_\+crc}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hw\+\_\+strip\+\_\+crc}\label{structrte__eth__rxmode_aea339586279530eadadaf36722346d93}
+Enable C\+R\+C stripping by hardware. \hypertarget{structrte__eth__rxmode_a9de1179e78c4c97f398bcf945ffef7d8}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!hw\+\_\+vlan\+\_\+extend@{hw\+\_\+vlan\+\_\+extend}}
+\index{hw\+\_\+vlan\+\_\+extend@{hw\+\_\+vlan\+\_\+extend}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{hw\+\_\+vlan\+\_\+extend}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hw\+\_\+vlan\+\_\+extend}\label{structrte__eth__rxmode_a9de1179e78c4c97f398bcf945ffef7d8}
+Extended V\+L\+A\+N enable. \hypertarget{structrte__eth__rxmode_ad00939767eb266e18b7f5d87a993e3e8}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!hw\+\_\+vlan\+\_\+filter@{hw\+\_\+vlan\+\_\+filter}}
+\index{hw\+\_\+vlan\+\_\+filter@{hw\+\_\+vlan\+\_\+filter}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{hw\+\_\+vlan\+\_\+filter}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hw\+\_\+vlan\+\_\+filter}\label{structrte__eth__rxmode_ad00939767eb266e18b7f5d87a993e3e8}
+V\+L\+A\+N filter enable. \hypertarget{structrte__eth__rxmode_a36ec224fb64ff42116b7d211ded782d1}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!hw\+\_\+vlan\+\_\+strip@{hw\+\_\+vlan\+\_\+strip}}
+\index{hw\+\_\+vlan\+\_\+strip@{hw\+\_\+vlan\+\_\+strip}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{hw\+\_\+vlan\+\_\+strip}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t hw\+\_\+vlan\+\_\+strip}\label{structrte__eth__rxmode_a36ec224fb64ff42116b7d211ded782d1}
+V\+L\+A\+N strip enable. \hypertarget{structrte__eth__rxmode_a372e758c4721d73336631cc1e592ca23}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!jumbo\+\_\+frame@{jumbo\+\_\+frame}}
+\index{jumbo\+\_\+frame@{jumbo\+\_\+frame}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{jumbo\+\_\+frame}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t jumbo\+\_\+frame}\label{structrte__eth__rxmode_a372e758c4721d73336631cc1e592ca23}
+Jumbo Frame Receipt enable. \hypertarget{structrte__eth__rxmode_a84a5d32306b86a1df884144612c70726}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!max\+\_\+rx\+\_\+pkt\+\_\+len@{max\+\_\+rx\+\_\+pkt\+\_\+len}}
+\index{max\+\_\+rx\+\_\+pkt\+\_\+len@{max\+\_\+rx\+\_\+pkt\+\_\+len}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{max\+\_\+rx\+\_\+pkt\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t max\+\_\+rx\+\_\+pkt\+\_\+len}\label{structrte__eth__rxmode_a84a5d32306b86a1df884144612c70726}
+Only used if jumbo\+\_\+frame enabled. \hypertarget{structrte__eth__rxmode_aa0562513c4569f1aa53050f1beac6b5d}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!mq\+\_\+mode@{mq\+\_\+mode}}
+\index{mq\+\_\+mode@{mq\+\_\+mode}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{mq\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+eth\+\_\+rx\+\_\+mq\+\_\+mode} mq\+\_\+mode}\label{structrte__eth__rxmode_aa0562513c4569f1aa53050f1beac6b5d}
+The multi-\/queue packet distribution mode to be used, e.\+g. R\+S\+S. \hypertarget{structrte__eth__rxmode_a7aa0d86e260af96607d007c7361ab21e}{}\index{rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}!split\+\_\+hdr\+\_\+size@{split\+\_\+hdr\+\_\+size}}
+\index{split\+\_\+hdr\+\_\+size@{split\+\_\+hdr\+\_\+size}!rte\+\_\+eth\+\_\+rxmode@{rte\+\_\+eth\+\_\+rxmode}}
+\subsubsection[{split\+\_\+hdr\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t split\+\_\+hdr\+\_\+size}\label{structrte__eth__rxmode_a7aa0d86e260af96607d007c7361ab21e}
+hdr buf size (header\+\_\+split enabled). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

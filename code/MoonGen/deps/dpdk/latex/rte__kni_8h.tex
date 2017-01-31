@@ -1,0 +1,305 @@
+\hypertarget{rte__kni_8h}{}\section{lib/librte\+\_\+kni/rte\+\_\+kni.h File Reference}
+\label{rte__kni_8h}\index{lib/librte\+\_\+kni/rte\+\_\+kni.\+h@{lib/librte\+\_\+kni/rte\+\_\+kni.\+h}}
+{\ttfamily \#include $<$rte\+\_\+pci.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+mbuf.\+h$>$}\\*
+{\ttfamily \#include $<$exec-\/env/rte\+\_\+kni\+\_\+common.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__kni__ops}{rte\+\_\+kni\+\_\+ops}
+\item 
+struct \hyperlink{structrte__kni__conf}{rte\+\_\+kni\+\_\+conf}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+kni $\ast$ \hyperlink{rte__kni_8h_a6f0e3bfe35ac99edbf07dd709d294176}{rte\+\_\+kni\+\_\+alloc} (struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pktmbuf\+\_\+pool, const struct \hyperlink{structrte__kni__conf}{rte\+\_\+kni\+\_\+conf} $\ast$conf, struct \hyperlink{structrte__kni__ops}{rte\+\_\+kni\+\_\+ops} $\ast$ops)
+\item 
+struct rte\+\_\+kni $\ast$ \hyperlink{rte__kni_8h_a2ba8b676700e20d568aa20274c9bbb01}{rte\+\_\+kni\+\_\+create} (uint8\+\_\+t port\+\_\+id, unsigned mbuf\+\_\+size, struct \hyperlink{structrte__mempool}{rte\+\_\+mempool} $\ast$pktmbuf\+\_\+pool, struct \hyperlink{structrte__kni__ops}{rte\+\_\+kni\+\_\+ops} $\ast$ops)
+\item 
+int \hyperlink{rte__kni_8h_abbfabc840e0630bf581eb5583a7d88fe}{rte\+\_\+kni\+\_\+release} (struct rte\+\_\+kni $\ast$kni)
+\item 
+int \hyperlink{rte__kni_8h_acd52d6e1e302e3bb87de6d786b3c5cc1}{rte\+\_\+kni\+\_\+handle\+\_\+request} (struct rte\+\_\+kni $\ast$kni)
+\item 
+unsigned \hyperlink{rte__kni_8h_a0cdd727cdc227d005fef22c0189f3dfe}{rte\+\_\+kni\+\_\+rx\+\_\+burst} (struct rte\+\_\+kni $\ast$kni, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$mbufs, unsigned num)
+\item 
+unsigned \hyperlink{rte__kni_8h_ae470743959cbf73648b242d9f7270b02}{rte\+\_\+kni\+\_\+tx\+\_\+burst} (struct rte\+\_\+kni $\ast$kni, struct \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} $\ast$$\ast$mbufs, unsigned num)
+\item 
+uint8\+\_\+t \hyperlink{rte__kni_8h_ae9c37b574f6fe718cc2445a72d81c414}{rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id} (struct rte\+\_\+kni $\ast$kni)
+\item 
+struct rte\+\_\+kni $\ast$ \hyperlink{rte__kni_8h_ada87cc7b758d69b75c4fadce54b1b0e1}{rte\+\_\+kni\+\_\+get} (const char $\ast$name)
+\item 
+struct rte\+\_\+kni $\ast$ \hyperlink{rte__kni_8h_a021d5d1a2ac99fbb02035622a3925d1c}{rte\+\_\+kni\+\_\+info\+\_\+get} (uint8\+\_\+t port\+\_\+id)
+\item 
+int \hyperlink{rte__kni_8h_aebdf39ad15da70f8f024815d40b798bc}{rte\+\_\+kni\+\_\+register\+\_\+handlers} (struct rte\+\_\+kni $\ast$kni, struct \hyperlink{structrte__kni__ops}{rte\+\_\+kni\+\_\+ops} $\ast$ops)
+\item 
+int \hyperlink{rte__kni_8h_a4b283ead1a7e357e8b18f1014583e5c4}{rte\+\_\+kni\+\_\+unregister\+\_\+handlers} (struct rte\+\_\+kni $\ast$kni)
+\item 
+void \hyperlink{rte__kni_8h_a8edb3d07e6ae68b6631fe98e88fc27bc}{rte\+\_\+kni\+\_\+close} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E K\+N\+I
+
+The K\+N\+I library provides the ability to create and destroy kernel N\+I\+C interfaces that may be used by the R\+T\+E application to receive/transmit packets from/to Linux kernel net interfaces.
+
+This library provide two A\+P\+Is to burst receive packets from K\+N\+I interfaces, and burst transmit packets to K\+N\+I interfaces. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__kni_8h_a6f0e3bfe35ac99edbf07dd709d294176}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+alloc@{rte\+\_\+kni\+\_\+alloc}}
+\index{rte\+\_\+kni\+\_\+alloc@{rte\+\_\+kni\+\_\+alloc}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+kni$\ast$ rte\+\_\+kni\+\_\+alloc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pktmbuf\+\_\+pool, }
+\item[{const struct {\bf rte\+\_\+kni\+\_\+conf} $\ast$}]{conf, }
+\item[{struct {\bf rte\+\_\+kni\+\_\+ops} $\ast$}]{ops}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a6f0e3bfe35ac99edbf07dd709d294176}
+Allocate K\+N\+I interface according to the port id, mbuf size, mbuf pool, configurations and callbacks for kernel requests.\+The K\+N\+I interface created in the kernel space is the net interface the traditional Linux application talking to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pktmbuf\+\_\+pool} & The mempool for allocting mbufs for packets. \\
+\hline
+{\em conf} & The pointer to the configurations of the K\+N\+I device. \\
+\hline
+{\em ops} & The pointer to the callbacks for the K\+N\+I kernel requests.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The pointer to the context of a K\+N\+I interface.
+\item N\+U\+L\+L indicate error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_a8edb3d07e6ae68b6631fe98e88fc27bc}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+close@{rte\+\_\+kni\+\_\+close}}
+\index{rte\+\_\+kni\+\_\+close@{rte\+\_\+kni\+\_\+close}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+close}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+kni\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a8edb3d07e6ae68b6631fe98e88fc27bc}
+close K\+N\+I device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_a2ba8b676700e20d568aa20274c9bbb01}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+create@{rte\+\_\+kni\+\_\+create}}
+\index{rte\+\_\+kni\+\_\+create@{rte\+\_\+kni\+\_\+create}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+kni$\ast$ rte\+\_\+kni\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{port\+\_\+id, }
+\item[{unsigned}]{mbuf\+\_\+size, }
+\item[{struct {\bf rte\+\_\+mempool} $\ast$}]{pktmbuf\+\_\+pool, }
+\item[{struct {\bf rte\+\_\+kni\+\_\+ops} $\ast$}]{ops}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a2ba8b676700e20d568aa20274c9bbb01}
+It create a K\+N\+I device for specific port.
+
+Note\+: It is deprecated and just for backward compatibility.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+id} & Port I\+D. \\
+\hline
+{\em mbuf\+\_\+size} & mbuf size. \\
+\hline
+{\em pktmbuf\+\_\+pool} & The mempool for allocting mbufs for packets. \\
+\hline
+{\em ops} & The pointer to the callbacks for the K\+N\+I kernel requests.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The pointer to the context of a K\+N\+I interface.
+\item N\+U\+L\+L indicate error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_ada87cc7b758d69b75c4fadce54b1b0e1}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+get@{rte\+\_\+kni\+\_\+get}}
+\index{rte\+\_\+kni\+\_\+get@{rte\+\_\+kni\+\_\+get}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+kni$\ast$ rte\+\_\+kni\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_ada87cc7b758d69b75c4fadce54b1b0e1}
+Get the K\+N\+I context of its name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & pointer to the K\+N\+I device name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success\+: Pointer to K\+N\+I interface. On failure\+: N\+U\+L\+L. 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_ae9c37b574f6fe718cc2445a72d81c414}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id@{rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id}}
+\index{rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id@{rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t rte\+\_\+kni\+\_\+get\+\_\+port\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_ae9c37b574f6fe718cc2445a72d81c414}
+Get the port id from K\+N\+I interface.
+
+Note\+: It is deprecated and just for backward compatibility.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & The K\+N\+I interface context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success\+: The port id. On failure\+: $\sim$0x0 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_acd52d6e1e302e3bb87de6d786b3c5cc1}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+handle\+\_\+request@{rte\+\_\+kni\+\_\+handle\+\_\+request}}
+\index{rte\+\_\+kni\+\_\+handle\+\_\+request@{rte\+\_\+kni\+\_\+handle\+\_\+request}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+handle\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+kni\+\_\+handle\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_acd52d6e1e302e3bb87de6d786b3c5cc1}
+It is used to handle the request mbufs sent from kernel space. Then analyzes it and calls the specific actions for the specific requests. Finally constructs the response mbuf and puts it back to the resp\+\_\+q.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & The pointer to the context of an existent K\+N\+I interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0
+\item negative value indicates failure. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_a021d5d1a2ac99fbb02035622a3925d1c}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+info\+\_\+get@{rte\+\_\+kni\+\_\+info\+\_\+get}}
+\index{rte\+\_\+kni\+\_\+info\+\_\+get@{rte\+\_\+kni\+\_\+info\+\_\+get}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+info\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+kni$\ast$ rte\+\_\+kni\+\_\+info\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{port\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a021d5d1a2ac99fbb02035622a3925d1c}
+Get the K\+N\+I context of the specific port.
+
+Note\+: It is deprecated and just for backward compatibility.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+id} & the port id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success\+: Pointer to K\+N\+I interface. On failure\+: N\+U\+L\+L 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_aebdf39ad15da70f8f024815d40b798bc}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+register\+\_\+handlers@{rte\+\_\+kni\+\_\+register\+\_\+handlers}}
+\index{rte\+\_\+kni\+\_\+register\+\_\+handlers@{rte\+\_\+kni\+\_\+register\+\_\+handlers}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+register\+\_\+handlers}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+kni\+\_\+register\+\_\+handlers (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni, }
+\item[{struct {\bf rte\+\_\+kni\+\_\+ops} $\ast$}]{ops}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_aebdf39ad15da70f8f024815d40b798bc}
+Register K\+N\+I request handling for a specified port,and it can be called by master process or slave process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & pointer to struct rte\+\_\+kni. \\
+\hline
+{\em ops} & ponter to struct \hyperlink{structrte__kni__ops}{rte\+\_\+kni\+\_\+ops}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success\+: 0 On failure\+: -\/1 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_abbfabc840e0630bf581eb5583a7d88fe}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+release@{rte\+\_\+kni\+\_\+release}}
+\index{rte\+\_\+kni\+\_\+release@{rte\+\_\+kni\+\_\+release}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+kni\+\_\+release (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_abbfabc840e0630bf581eb5583a7d88fe}
+Release K\+N\+I interface according to the context. It will also release the paired K\+N\+I interface in kernel space. All processing on the specific K\+N\+I context need to be stopped before calling this interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & The pointer to the context of an existent K\+N\+I interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 indicates success.
+\item negative value indicates failure. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_a0cdd727cdc227d005fef22c0189f3dfe}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+rx\+\_\+burst@{rte\+\_\+kni\+\_\+rx\+\_\+burst}}
+\index{rte\+\_\+kni\+\_\+rx\+\_\+burst@{rte\+\_\+kni\+\_\+rx\+\_\+burst}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+rx\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+kni\+\_\+rx\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{mbufs, }
+\item[{unsigned}]{num}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a0cdd727cdc227d005fef22c0189f3dfe}
+Retrieve a burst of packets from a K\+N\+I interface. The retrieved packets are stored in \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} structures whose pointers are supplied in the array of mbufs, and the maximum number is indicated by num. It handles the freeing of the mbufs in the free queue of K\+N\+I interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & The K\+N\+I interface context. \\
+\hline
+{\em mbufs} & The array to store the pointers of mbufs. \\
+\hline
+{\em num} & The maximum number per burst.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual number of packets retrieved. 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_ae470743959cbf73648b242d9f7270b02}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+tx\+\_\+burst@{rte\+\_\+kni\+\_\+tx\+\_\+burst}}
+\index{rte\+\_\+kni\+\_\+tx\+\_\+burst@{rte\+\_\+kni\+\_\+tx\+\_\+burst}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+tx\+\_\+burst}]{\setlength{\rightskip}{0pt plus 5cm}unsigned rte\+\_\+kni\+\_\+tx\+\_\+burst (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni, }
+\item[{struct {\bf rte\+\_\+mbuf} $\ast$$\ast$}]{mbufs, }
+\item[{unsigned}]{num}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_ae470743959cbf73648b242d9f7270b02}
+Send a burst of packets to a K\+N\+I interface. The packets to be sent out are stored in \hyperlink{structrte__mbuf}{rte\+\_\+mbuf} structures whose pointers are supplied in the array of mbufs, and the maximum number is indicated by num. It handles allocating the mbufs for K\+N\+I interface alloc queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & The K\+N\+I interface context. \\
+\hline
+{\em mbufs} & The array to store the pointers of mbufs. \\
+\hline
+{\em num} & The maximum number per burst.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual number of packets sent. 
+\end{DoxyReturn}
+\hypertarget{rte__kni_8h_a4b283ead1a7e357e8b18f1014583e5c4}{}\index{rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}!rte\+\_\+kni\+\_\+unregister\+\_\+handlers@{rte\+\_\+kni\+\_\+unregister\+\_\+handlers}}
+\index{rte\+\_\+kni\+\_\+unregister\+\_\+handlers@{rte\+\_\+kni\+\_\+unregister\+\_\+handlers}!rte\+\_\+kni.\+h@{rte\+\_\+kni.\+h}}
+\subsubsection[{rte\+\_\+kni\+\_\+unregister\+\_\+handlers}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+kni\+\_\+unregister\+\_\+handlers (
+\begin{DoxyParamCaption}
+\item[{struct rte\+\_\+kni $\ast$}]{kni}
+\end{DoxyParamCaption}
+)}\label{rte__kni_8h_a4b283ead1a7e357e8b18f1014583e5c4}
+Unregister K\+N\+I request handling for a specified port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kni} & pointer to struct rte\+\_\+kni.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success\+: 0 On failure\+: -\/1 
+\end{DoxyReturn}

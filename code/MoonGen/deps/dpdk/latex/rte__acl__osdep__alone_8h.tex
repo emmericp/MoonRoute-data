@@ -1,0 +1,55 @@
+\hypertarget{rte__acl__osdep__alone_8h}{}\section{lib/librte\+\_\+acl/rte\+\_\+acl\+\_\+osdep\+\_\+alone.h File Reference}
+\label{rte__acl__osdep__alone_8h}\index{lib/librte\+\_\+acl/rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{lib/librte\+\_\+acl/rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+{\ttfamily \#include $<$x86intrin.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__acl__osdep__alone_8h_a0307f4470d3f391102b0f489fc7d91b5}{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}~-\/1
+\item 
+\#define \hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}~64
+\item 
+\#define \hyperlink{rte__acl__osdep__alone_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}~(\hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}-\/1)
+\item 
+\#define \hyperlink{rte__acl__osdep__alone_8h_ad3bd1614287ba060060de8cf80e6813d}{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+aligned\+\_\+\+\_\+(\hyperlink{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E})))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{rte__acl__osdep__alone_8h_a74a8d4a8b33a320db7cec9608ee1c13d}{rte\+\_\+bsf32} (uint32\+\_\+t v)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E A\+C\+L O\+S dependent file. An example how to build/use A\+C\+L library standalone (without rest of D\+P\+D\+K). Don\textquotesingle{}t include that file on it\textquotesingle{}s own, use $<$\hyperlink{rte__acl__osdep_8h}{rte\+\_\+acl\+\_\+osdep.\+h}$>$. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__acl__osdep__alone_8h_ad3bd1614287ba060060de8cf80e6813d}{}\index{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}!\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}}
+\index{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned@{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}!rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+rte\+\_\+cache\+\_\+aligned~\+\_\+\+\_\+attribute\+\_\+\+\_\+((\+\_\+\+\_\+aligned\+\_\+\+\_\+({\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E})))}\label{rte__acl__osdep__alone_8h_ad3bd1614287ba060060de8cf80e6813d}
+Force alignment to cache line. \hypertarget{rte__acl__osdep__alone_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}{}\index{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}!C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}}
+\index{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}!rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+\subsubsection[{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+M\+A\+S\+K~({\bf C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}-\/1)}\label{rte__acl__osdep__alone_8h_ad137bfdd5c0588c9daa6a2693e96c4bc}
+Cache line mask. \hypertarget{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}{}\index{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}!C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}}
+\index{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}!rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+\subsubsection[{C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+C\+H\+E\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E~64}\label{rte__acl__osdep__alone_8h_af89f60b07247176687889ade776c8e10}
+Cache line size. \hypertarget{rte__acl__osdep__alone_8h_a0307f4470d3f391102b0f489fc7d91b5}{}\index{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}!S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}}
+\index{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y@{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}!rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+\subsubsection[{S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+O\+C\+K\+E\+T\+\_\+\+I\+D\+\_\+\+A\+N\+Y~-\/1}\label{rte__acl__osdep__alone_8h_a0307f4470d3f391102b0f489fc7d91b5}
+Any N\+U\+M\+A socket. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__acl__osdep__alone_8h_a74a8d4a8b33a320db7cec9608ee1c13d}{}\index{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}!rte\+\_\+bsf32@{rte\+\_\+bsf32}}
+\index{rte\+\_\+bsf32@{rte\+\_\+bsf32}!rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h@{rte\+\_\+acl\+\_\+osdep\+\_\+alone.\+h}}
+\subsubsection[{rte\+\_\+bsf32}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+bsf32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__acl__osdep__alone_8h_a74a8d4a8b33a320db7cec9608ee1c13d}
+Searches the input parameter for the least significant set bit (starting from zero). If a least significant 1 bit is found, its bit index is returned. If the content of the input paramer is zero, then the content of the return value is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em v} & input parameter, should not be zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+least significant set bit in the input parameter. 
+\end{DoxyReturn}

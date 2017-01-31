@@ -1,0 +1,949 @@
+\hypertarget{rte__atomic_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+atomic.h File Reference}
+\label{rte__atomic_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+atomic.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+atomic.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$emmintrin.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}arch/rte\+\_\+atomic.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t}
+\item 
+struct \hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t}
+\item 
+struct \hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__atomic_8h_a3ae3cd3ec7fcbab618d1deb02858d956}{M\+P\+L\+O\+C\+K\+E\+D}~\char`\"{}lock ; \char`\"{}
+\item 
+\#define \hyperlink{rte__atomic_8h_aa4e3f230c69029afd43176ebfef13d52}{rte\+\_\+mb}()~\+\_\+mm\+\_\+mfence()
+\item 
+\#define \hyperlink{rte__atomic_8h_a7deb134fde4d7d99fa6d5dc0aee73c4c}{rte\+\_\+wmb}()~\+\_\+mm\+\_\+sfence()
+\item 
+\#define \hyperlink{rte__atomic_8h_a3ecc4d0686c6639f574d1af4c38bb5a5}{rte\+\_\+rmb}()~\+\_\+mm\+\_\+lfence()
+\item 
+\#define \hyperlink{rte__atomic_8h_abad8d9be1c14d7bc543cc8fac35ada27}{rte\+\_\+compiler\+\_\+barrier}()
+\item 
+\#define \hyperlink{rte__atomic_8h_ab7245756edb5d555e04760c42ee5663c}{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T}(val)~\{ (val) \}
+\item 
+\#define \hyperlink{rte__atomic_8h_ad314fd28492e349e70ddf9b270234a63}{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T}(val)~\{ (val) \}
+\item 
+\#define \hyperlink{rte__atomic_8h_a6027a5e33800f515039847c5c5bb4419}{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T}(val)~\{ (val) \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{rte__atomic_8h_a139f8a9c5fdbc2a41b752268d93ff772}{rte\+\_\+atomic16\+\_\+cmpset} (volatile uint16\+\_\+t $\ast$dst, uint16\+\_\+t exp, uint16\+\_\+t src)
+\item 
+static void \hyperlink{rte__atomic_8h_a9272b225480a0776cb68088227fe0aff}{rte\+\_\+atomic16\+\_\+init} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static int16\+\_\+t \hyperlink{rte__atomic_8h_abf8058eb8021112818597b328c58abbc}{rte\+\_\+atomic16\+\_\+read} (const \hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a5705c61f4f064c620634cd9bbd4f6fb5}{rte\+\_\+atomic16\+\_\+set} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v, int16\+\_\+t new\+\_\+value)
+\item 
+static void \hyperlink{rte__atomic_8h_a613a105b708831fdc06adebe4e188527}{rte\+\_\+atomic16\+\_\+add} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v, int16\+\_\+t inc)
+\item 
+static void \hyperlink{rte__atomic_8h_a7b15f6aa7ebb71f4a607f1b2061d179d}{rte\+\_\+atomic16\+\_\+sub} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v, int16\+\_\+t dec)
+\item 
+static void \hyperlink{rte__atomic_8h_af291028467bd82dad7b9230d4c92d938}{rte\+\_\+atomic16\+\_\+inc} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a06e6b3359b823def75c3e7c9618baee7}{rte\+\_\+atomic16\+\_\+dec} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static int16\+\_\+t \hyperlink{rte__atomic_8h_ae5ba0c606c22f8ab7852cb8993ef776a}{rte\+\_\+atomic16\+\_\+add\+\_\+return} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v, int16\+\_\+t inc)
+\item 
+static int16\+\_\+t \hyperlink{rte__atomic_8h_a4cc3eb89285090ff08b6a2897e3d8200}{rte\+\_\+atomic16\+\_\+sub\+\_\+return} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v, int16\+\_\+t dec)
+\item 
+static int \hyperlink{rte__atomic_8h_afa7adc358a7674fb3fbc9349d5235348}{rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a06017f074c94828910e01413fd06ad09}{rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_aac272d019db176feebe240dc14f1efe4}{rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a5d33fae7b226a73f5e3506b4f1f99d3c}{rte\+\_\+atomic16\+\_\+clear} (\hyperlink{structrte__atomic16__t}{rte\+\_\+atomic16\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a092485d3d43a2cd7ee61a1c2d2178d31}{rte\+\_\+atomic32\+\_\+cmpset} (volatile uint32\+\_\+t $\ast$dst, uint32\+\_\+t exp, uint32\+\_\+t src)
+\item 
+static void \hyperlink{rte__atomic_8h_af1c6fcf31eb7be548fa26f5e0b6a8bd6}{rte\+\_\+atomic32\+\_\+init} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static int32\+\_\+t \hyperlink{rte__atomic_8h_ab3041cc6a6a379e14e76dfcb61bec152}{rte\+\_\+atomic32\+\_\+read} (const \hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_ab5effcd668a54a52d7fa931de3052706}{rte\+\_\+atomic32\+\_\+set} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v, int32\+\_\+t new\+\_\+value)
+\item 
+static void \hyperlink{rte__atomic_8h_ab5e5cdf183c6c49cace5e53afa62753a}{rte\+\_\+atomic32\+\_\+add} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v, int32\+\_\+t inc)
+\item 
+static void \hyperlink{rte__atomic_8h_ab98fe6890deb29704d1a3d97546d0351}{rte\+\_\+atomic32\+\_\+sub} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v, int32\+\_\+t dec)
+\item 
+static void \hyperlink{rte__atomic_8h_a76fa947d23bc1aac76f70641cad255a7}{rte\+\_\+atomic32\+\_\+inc} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a85650cc56e09751647d2a33fae4be4a3}{rte\+\_\+atomic32\+\_\+dec} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static int32\+\_\+t \hyperlink{rte__atomic_8h_afb4a3ce6c7a780aeca42d8f7e173c4f3}{rte\+\_\+atomic32\+\_\+add\+\_\+return} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v, int32\+\_\+t inc)
+\item 
+static int32\+\_\+t \hyperlink{rte__atomic_8h_a9203c68b3034dfb8f3999a6a9d743a87}{rte\+\_\+atomic32\+\_\+sub\+\_\+return} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v, int32\+\_\+t dec)
+\item 
+static int \hyperlink{rte__atomic_8h_a3e9152e9d2b59ab404993d3148e5678d}{rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_af7bcb9a09171531ea65644c33eb0f91e}{rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a82ef4eba412a27299860ac88d273a60b}{rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a2ff781f07d3d9d6912de11efb2472c47}{rte\+\_\+atomic32\+\_\+clear} (\hyperlink{structrte__atomic32__t}{rte\+\_\+atomic32\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a1173c2e13f6f73140735268c9a84368f}{rte\+\_\+atomic64\+\_\+cmpset} (volatile uint64\+\_\+t $\ast$dst, uint64\+\_\+t exp, uint64\+\_\+t src)
+\item 
+static void \hyperlink{rte__atomic_8h_ad9de295b330d870b6acae34c9968bc0c}{rte\+\_\+atomic64\+\_\+init} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static int64\+\_\+t \hyperlink{rte__atomic_8h_af5dc5024c16f1569cca1c2b758e9b5cd}{rte\+\_\+atomic64\+\_\+read} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_ab708e84e61d19fc13ed9f7047b42da37}{rte\+\_\+atomic64\+\_\+set} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v, int64\+\_\+t new\+\_\+value)
+\item 
+static void \hyperlink{rte__atomic_8h_a12d91660e8a43da8882ae9d848d4327c}{rte\+\_\+atomic64\+\_\+add} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v, int64\+\_\+t inc)
+\item 
+static void \hyperlink{rte__atomic_8h_aa0759be96bf4a99105b1aa38370634b3}{rte\+\_\+atomic64\+\_\+sub} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v, int64\+\_\+t dec)
+\item 
+static void \hyperlink{rte__atomic_8h_abf3427ef2605fddcc1bc1bce1071e8ec}{rte\+\_\+atomic64\+\_\+inc} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a91c96dbfc9cce5d26b29557acc71006c}{rte\+\_\+atomic64\+\_\+dec} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static int64\+\_\+t \hyperlink{rte__atomic_8h_ac135fc97e57e780494d9408d70fe7302}{rte\+\_\+atomic64\+\_\+add\+\_\+return} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v, int64\+\_\+t inc)
+\item 
+static int64\+\_\+t \hyperlink{rte__atomic_8h_a3102a75a4112ceb21d444cf9f0fbec08}{rte\+\_\+atomic64\+\_\+sub\+\_\+return} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v, int64\+\_\+t dec)
+\item 
+static int \hyperlink{rte__atomic_8h_af6ff925a8d20a62044bde392a50a52a3}{rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a4318d88eec55556ae54e8ab96253ffa0}{rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static int \hyperlink{rte__atomic_8h_a239af52999d93e2d5f294ba2c0dd83c5}{rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\item 
+static void \hyperlink{rte__atomic_8h_a43ca610e928ae783cc43b6e8a62adb7b}{rte\+\_\+atomic64\+\_\+clear} (\hyperlink{structrte__atomic64__t}{rte\+\_\+atomic64\+\_\+t} $\ast$v)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Atomic Operations
+
+This file defines a generic A\+P\+I for atomic operations. The implementation is architecture-\/specific.
+
+See lib/librte\+\_\+eal/common/include/i686/arch/rte\+\_\+atomic.\+h See lib/librte\+\_\+eal/common/include/x86\+\_\+64/arch/rte\+\_\+atomic.\+h
+
+Atomic Operations on x86\+\_\+64 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__atomic_8h_a3ae3cd3ec7fcbab618d1deb02858d956}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!M\+P\+L\+O\+C\+K\+E\+D@{M\+P\+L\+O\+C\+K\+E\+D}}
+\index{M\+P\+L\+O\+C\+K\+E\+D@{M\+P\+L\+O\+C\+K\+E\+D}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{M\+P\+L\+O\+C\+K\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+P\+L\+O\+C\+K\+E\+D~\char`\"{}lock ; \char`\"{}}\label{rte__atomic_8h_a3ae3cd3ec7fcbab618d1deb02858d956}
+Insert M\+P lock prefix. \hypertarget{rte__atomic_8h_ab7245756edb5d555e04760c42ee5663c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T}}
+\index{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C16\+\_\+\+I\+N\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~\{ (val) \}}\label{rte__atomic_8h_ab7245756edb5d555e04760c42ee5663c}
+Static initializer for an atomic counter. \hypertarget{rte__atomic_8h_ad314fd28492e349e70ddf9b270234a63}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T}}
+\index{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C32\+\_\+\+I\+N\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~\{ (val) \}}\label{rte__atomic_8h_ad314fd28492e349e70ddf9b270234a63}
+Static initializer for an atomic counter. \hypertarget{rte__atomic_8h_a6027a5e33800f515039847c5c5bb4419}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T}}
+\index{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T@{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+A\+T\+O\+M\+I\+C64\+\_\+\+I\+N\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~\{ (val) \}}\label{rte__atomic_8h_a6027a5e33800f515039847c5c5bb4419}
+Static initializer for an atomic counter. \hypertarget{rte__atomic_8h_abad8d9be1c14d7bc543cc8fac35ada27}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+compiler\+\_\+barrier@{rte\+\_\+compiler\+\_\+barrier}}
+\index{rte\+\_\+compiler\+\_\+barrier@{rte\+\_\+compiler\+\_\+barrier}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+compiler\+\_\+barrier}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+compiler\+\_\+barrier(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rte__atomic_8h_abad8d9be1c14d7bc543cc8fac35ada27}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{        \(\backslash\)
+    asm \textcolor{keyword}{volatile} (\textcolor{stringliteral}{""} : : : \textcolor{stringliteral}{"memory"});   \(\backslash\)
+\} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+Compiler barrier.
+
+Guarantees that operation reordering does not occur at compile time for operations directly before and after the barrier. \hypertarget{rte__atomic_8h_aa4e3f230c69029afd43176ebfef13d52}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+mb@{rte\+\_\+mb}}
+\index{rte\+\_\+mb@{rte\+\_\+mb}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+mb}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+mb(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+mm\+\_\+mfence()}\label{rte__atomic_8h_aa4e3f230c69029afd43176ebfef13d52}
+General memory barrier.
+
+Guarantees that the L\+O\+A\+D and S\+T\+O\+R\+E operations generated before the barrier occur before the L\+O\+A\+D and S\+T\+O\+R\+E operations generated after. \hypertarget{rte__atomic_8h_a3ecc4d0686c6639f574d1af4c38bb5a5}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+rmb@{rte\+\_\+rmb}}
+\index{rte\+\_\+rmb@{rte\+\_\+rmb}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+rmb}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+rmb(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+mm\+\_\+lfence()}\label{rte__atomic_8h_a3ecc4d0686c6639f574d1af4c38bb5a5}
+Read memory barrier.
+
+Guarantees that the L\+O\+A\+D operations generated before the barrier occur before the L\+O\+A\+D operations generated after. \hypertarget{rte__atomic_8h_a7deb134fde4d7d99fa6d5dc0aee73c4c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+wmb@{rte\+\_\+wmb}}
+\index{rte\+\_\+wmb@{rte\+\_\+wmb}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+wmb}]{\setlength{\rightskip}{0pt plus 5cm}\#define rte\+\_\+wmb(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\+\_\+mm\+\_\+sfence()}\label{rte__atomic_8h_a7deb134fde4d7d99fa6d5dc0aee73c4c}
+Write memory barrier.
+
+Guarantees that the S\+T\+O\+R\+E operations generated before the barrier occur before the S\+T\+O\+R\+E operations generated after. 
+
+\subsection{Function Documentation}
+\hypertarget{rte__atomic_8h_a613a105b708831fdc06adebe4e188527}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+add@{rte\+\_\+atomic16\+\_\+add}}
+\index{rte\+\_\+atomic16\+\_\+add@{rte\+\_\+atomic16\+\_\+add}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v, }
+\item[{int16\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a613a105b708831fdc06adebe4e188527}
+Atomically add a 16-\/bit value to an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_ae5ba0c606c22f8ab7852cb8993ef776a}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+add\+\_\+return@{rte\+\_\+atomic16\+\_\+add\+\_\+return}}
+\index{rte\+\_\+atomic16\+\_\+add\+\_\+return@{rte\+\_\+atomic16\+\_\+add\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+add\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int16\+\_\+t rte\+\_\+atomic16\+\_\+add\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v, }
+\item[{int16\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ae5ba0c606c22f8ab7852cb8993ef776a}
+Atomically add a 16-\/bit value to a counter and return the result.
+
+Atomically adds the 16-\/bits value (inc) to the atomic counter (v) and returns the value of v after addition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the addition. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a5d33fae7b226a73f5e3506b4f1f99d3c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+clear@{rte\+\_\+atomic16\+\_\+clear}}
+\index{rte\+\_\+atomic16\+\_\+clear@{rte\+\_\+atomic16\+\_\+clear}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a5d33fae7b226a73f5e3506b4f1f99d3c}
+Atomically set a 16-\/bit counter to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a139f8a9c5fdbc2a41b752268d93ff772}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+cmpset@{rte\+\_\+atomic16\+\_\+cmpset}}
+\index{rte\+\_\+atomic16\+\_\+cmpset@{rte\+\_\+atomic16\+\_\+cmpset}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+cmpset}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic16\+\_\+cmpset (
+\begin{DoxyParamCaption}
+\item[{volatile uint16\+\_\+t $\ast$}]{dst, }
+\item[{uint16\+\_\+t}]{exp, }
+\item[{uint16\+\_\+t}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a139f8a9c5fdbc2a41b752268d93ff772}
+Atomic compare and set.
+
+(atomic) equivalent to\+: if ($\ast$dst == exp) $\ast$dst = src (all 16-\/bit words)
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination location into which the value will be written. \\
+\hline
+{\em exp} & The expected value. \\
+\hline
+{\em src} & The new value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero on success; 0 on failure. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a06e6b3359b823def75c3e7c9618baee7}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+dec@{rte\+\_\+atomic16\+\_\+dec}}
+\index{rte\+\_\+atomic16\+\_\+dec@{rte\+\_\+atomic16\+\_\+dec}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+dec}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+dec (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a06e6b3359b823def75c3e7c9618baee7}
+Atomically decrement a counter by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a06017f074c94828910e01413fd06ad09}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic16\+\_\+dec\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a06017f074c94828910e01413fd06ad09}
+Atomically decrement a 16-\/bit counter by one and test.
+
+Atomically decrements the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after the decrement operation is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_af291028467bd82dad7b9230d4c92d938}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+inc@{rte\+\_\+atomic16\+\_\+inc}}
+\index{rte\+\_\+atomic16\+\_\+inc@{rte\+\_\+atomic16\+\_\+inc}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+inc}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+inc (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_af291028467bd82dad7b9230d4c92d938}
+Atomically increment a counter by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_afa7adc358a7674fb3fbc9349d5235348}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic16\+\_\+inc\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_afa7adc358a7674fb3fbc9349d5235348}
+Atomically increment a 16-\/bit counter by one and test.
+
+Atomically increments the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after the increment operation is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a9272b225480a0776cb68088227fe0aff}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+init@{rte\+\_\+atomic16\+\_\+init}}
+\index{rte\+\_\+atomic16\+\_\+init@{rte\+\_\+atomic16\+\_\+init}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a9272b225480a0776cb68088227fe0aff}
+Initialize an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_abf8058eb8021112818597b328c58abbc}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+read@{rte\+\_\+atomic16\+\_\+read}}
+\index{rte\+\_\+atomic16\+\_\+read@{rte\+\_\+atomic16\+\_\+read}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}static int16\+\_\+t rte\+\_\+atomic16\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{const {\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_abf8058eb8021112818597b328c58abbc}
+Atomically read a 16-\/bit value from a counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the counter. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a5705c61f4f064c620634cd9bbd4f6fb5}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+set@{rte\+\_\+atomic16\+\_\+set}}
+\index{rte\+\_\+atomic16\+\_\+set@{rte\+\_\+atomic16\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v, }
+\item[{int16\+\_\+t}]{new\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a5705c61f4f064c620634cd9bbd4f6fb5}
+Atomically set a counter to a 16-\/bit value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em new\+\_\+value} & The new value for the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a7b15f6aa7ebb71f4a607f1b2061d179d}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+sub@{rte\+\_\+atomic16\+\_\+sub}}
+\index{rte\+\_\+atomic16\+\_\+sub@{rte\+\_\+atomic16\+\_\+sub}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+sub}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic16\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v, }
+\item[{int16\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a7b15f6aa7ebb71f4a607f1b2061d179d}
+Atomically subtract a 16-\/bit value from an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a4cc3eb89285090ff08b6a2897e3d8200}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+sub\+\_\+return@{rte\+\_\+atomic16\+\_\+sub\+\_\+return}}
+\index{rte\+\_\+atomic16\+\_\+sub\+\_\+return@{rte\+\_\+atomic16\+\_\+sub\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+sub\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int16\+\_\+t rte\+\_\+atomic16\+\_\+sub\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v, }
+\item[{int16\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a4cc3eb89285090ff08b6a2897e3d8200}
+Atomically subtract a 16-\/bit value from a counter and return the result.
+
+Atomically subtracts the 16-\/bit value (inc) from the atomic counter (v) and returns the value of v after the subtraction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the subtraction. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_aac272d019db176feebe240dc14f1efe4}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set}}
+\index{rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic16\+\_\+test\+\_\+and\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic16\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_aac272d019db176feebe240dc14f1efe4}
+Atomically test and set a 16-\/bit atomic counter.
+
+If the counter value is already set, return 0 (failed). Otherwise, set the counter value to 1 and return 1 (success).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failed; else 1, success. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_ab5e5cdf183c6c49cace5e53afa62753a}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+add@{rte\+\_\+atomic32\+\_\+add}}
+\index{rte\+\_\+atomic32\+\_\+add@{rte\+\_\+atomic32\+\_\+add}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v, }
+\item[{int32\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ab5e5cdf183c6c49cace5e53afa62753a}
+Atomically add a 32-\/bit value to an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_afb4a3ce6c7a780aeca42d8f7e173c4f3}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+add\+\_\+return@{rte\+\_\+atomic32\+\_\+add\+\_\+return}}
+\index{rte\+\_\+atomic32\+\_\+add\+\_\+return@{rte\+\_\+atomic32\+\_\+add\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+add\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int32\+\_\+t rte\+\_\+atomic32\+\_\+add\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v, }
+\item[{int32\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_afb4a3ce6c7a780aeca42d8f7e173c4f3}
+Atomically add a 32-\/bit value to a counter and return the result.
+
+Atomically adds the 32-\/bits value (inc) to the atomic counter (v) and returns the value of v after addition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the addition. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a2ff781f07d3d9d6912de11efb2472c47}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+clear@{rte\+\_\+atomic32\+\_\+clear}}
+\index{rte\+\_\+atomic32\+\_\+clear@{rte\+\_\+atomic32\+\_\+clear}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a2ff781f07d3d9d6912de11efb2472c47}
+Atomically set a 32-\/bit counter to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a092485d3d43a2cd7ee61a1c2d2178d31}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+cmpset@{rte\+\_\+atomic32\+\_\+cmpset}}
+\index{rte\+\_\+atomic32\+\_\+cmpset@{rte\+\_\+atomic32\+\_\+cmpset}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+cmpset}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic32\+\_\+cmpset (
+\begin{DoxyParamCaption}
+\item[{volatile uint32\+\_\+t $\ast$}]{dst, }
+\item[{uint32\+\_\+t}]{exp, }
+\item[{uint32\+\_\+t}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a092485d3d43a2cd7ee61a1c2d2178d31}
+Atomic compare and set.
+
+(atomic) equivalent to\+: if ($\ast$dst == exp) $\ast$dst = src (all 32-\/bit words)
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination location into which the value will be written. \\
+\hline
+{\em exp} & The expected value. \\
+\hline
+{\em src} & The new value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero on success; 0 on failure. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a85650cc56e09751647d2a33fae4be4a3}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+dec@{rte\+\_\+atomic32\+\_\+dec}}
+\index{rte\+\_\+atomic32\+\_\+dec@{rte\+\_\+atomic32\+\_\+dec}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+dec}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+dec (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a85650cc56e09751647d2a33fae4be4a3}
+Atomically decrement a counter by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_af7bcb9a09171531ea65644c33eb0f91e}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic32\+\_\+dec\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_af7bcb9a09171531ea65644c33eb0f91e}
+Atomically decrement a 32-\/bit counter by one and test.
+
+Atomically decrements the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after the decrement operation is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a76fa947d23bc1aac76f70641cad255a7}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+inc@{rte\+\_\+atomic32\+\_\+inc}}
+\index{rte\+\_\+atomic32\+\_\+inc@{rte\+\_\+atomic32\+\_\+inc}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+inc}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+inc (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a76fa947d23bc1aac76f70641cad255a7}
+Atomically increment a counter by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a3e9152e9d2b59ab404993d3148e5678d}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic32\+\_\+inc\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a3e9152e9d2b59ab404993d3148e5678d}
+Atomically increment a 32-\/bit counter by one and test.
+
+Atomically increments the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after the increment operation is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_af1c6fcf31eb7be548fa26f5e0b6a8bd6}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+init@{rte\+\_\+atomic32\+\_\+init}}
+\index{rte\+\_\+atomic32\+\_\+init@{rte\+\_\+atomic32\+\_\+init}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_af1c6fcf31eb7be548fa26f5e0b6a8bd6}
+Initialize an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_ab3041cc6a6a379e14e76dfcb61bec152}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+read@{rte\+\_\+atomic32\+\_\+read}}
+\index{rte\+\_\+atomic32\+\_\+read@{rte\+\_\+atomic32\+\_\+read}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}static int32\+\_\+t rte\+\_\+atomic32\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{const {\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ab3041cc6a6a379e14e76dfcb61bec152}
+Atomically read a 32-\/bit value from a counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the counter. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_ab5effcd668a54a52d7fa931de3052706}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+set@{rte\+\_\+atomic32\+\_\+set}}
+\index{rte\+\_\+atomic32\+\_\+set@{rte\+\_\+atomic32\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v, }
+\item[{int32\+\_\+t}]{new\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ab5effcd668a54a52d7fa931de3052706}
+Atomically set a counter to a 32-\/bit value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em new\+\_\+value} & The new value for the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_ab98fe6890deb29704d1a3d97546d0351}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+sub@{rte\+\_\+atomic32\+\_\+sub}}
+\index{rte\+\_\+atomic32\+\_\+sub@{rte\+\_\+atomic32\+\_\+sub}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+sub}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic32\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v, }
+\item[{int32\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ab98fe6890deb29704d1a3d97546d0351}
+Atomically subtract a 32-\/bit value from an atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a9203c68b3034dfb8f3999a6a9d743a87}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+sub\+\_\+return@{rte\+\_\+atomic32\+\_\+sub\+\_\+return}}
+\index{rte\+\_\+atomic32\+\_\+sub\+\_\+return@{rte\+\_\+atomic32\+\_\+sub\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+sub\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int32\+\_\+t rte\+\_\+atomic32\+\_\+sub\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v, }
+\item[{int32\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a9203c68b3034dfb8f3999a6a9d743a87}
+Atomically subtract a 32-\/bit value from a counter and return the result.
+
+Atomically subtracts the 32-\/bit value (inc) from the atomic counter (v) and returns the value of v after the subtraction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the subtraction. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a82ef4eba412a27299860ac88d273a60b}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set}}
+\index{rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic32\+\_\+test\+\_\+and\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic32\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a82ef4eba412a27299860ac88d273a60b}
+Atomically test and set a 32-\/bit atomic counter.
+
+If the counter value is already set, return 0 (failed). Otherwise, set the counter value to 1 and return 1 (success).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failed; else 1, success. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a12d91660e8a43da8882ae9d848d4327c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+add@{rte\+\_\+atomic64\+\_\+add}}
+\index{rte\+\_\+atomic64\+\_\+add@{rte\+\_\+atomic64\+\_\+add}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v, }
+\item[{int64\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a12d91660e8a43da8882ae9d848d4327c}
+Atomically add a 64-\/bit value to a counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_ac135fc97e57e780494d9408d70fe7302}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+add\+\_\+return@{rte\+\_\+atomic64\+\_\+add\+\_\+return}}
+\index{rte\+\_\+atomic64\+\_\+add\+\_\+return@{rte\+\_\+atomic64\+\_\+add\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+add\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int64\+\_\+t rte\+\_\+atomic64\+\_\+add\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v, }
+\item[{int64\+\_\+t}]{inc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ac135fc97e57e780494d9408d70fe7302}
+Add a 64-\/bit value to an atomic counter and return the result.
+
+Atomically adds the 64-\/bit value (inc) to the atomic counter (v) and returns the value of v after the addition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em inc} & The value to be added to the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the addition. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a43ca610e928ae783cc43b6e8a62adb7b}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+clear@{rte\+\_\+atomic64\+\_\+clear}}
+\index{rte\+\_\+atomic64\+\_\+clear@{rte\+\_\+atomic64\+\_\+clear}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a43ca610e928ae783cc43b6e8a62adb7b}
+Atomically set a 64-\/bit counter to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a1173c2e13f6f73140735268c9a84368f}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+cmpset@{rte\+\_\+atomic64\+\_\+cmpset}}
+\index{rte\+\_\+atomic64\+\_\+cmpset@{rte\+\_\+atomic64\+\_\+cmpset}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+cmpset}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic64\+\_\+cmpset (
+\begin{DoxyParamCaption}
+\item[{volatile uint64\+\_\+t $\ast$}]{dst, }
+\item[{uint64\+\_\+t}]{exp, }
+\item[{uint64\+\_\+t}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a1173c2e13f6f73140735268c9a84368f}
+An atomic compare and set function used by the mutex functions. (atomic) equivalent to\+: if ($\ast$dst == exp) $\ast$dst = src (all 64-\/bit words)
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination into which the value will be written. \\
+\hline
+{\em exp} & The expected value. \\
+\hline
+{\em src} & The new value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero on success; 0 on failure. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a91c96dbfc9cce5d26b29557acc71006c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+dec@{rte\+\_\+atomic64\+\_\+dec}}
+\index{rte\+\_\+atomic64\+\_\+dec@{rte\+\_\+atomic64\+\_\+dec}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+dec}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+dec (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a91c96dbfc9cce5d26b29557acc71006c}
+Atomically decrement a 64-\/bit counter by one and test.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a4318d88eec55556ae54e8ab96253ffa0}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test@{rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic64\+\_\+dec\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a4318d88eec55556ae54e8ab96253ffa0}
+Atomically decrement a 64-\/bit counter by one and test.
+
+Atomically decrements the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after subtraction is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_abf3427ef2605fddcc1bc1bce1071e8ec}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+inc@{rte\+\_\+atomic64\+\_\+inc}}
+\index{rte\+\_\+atomic64\+\_\+inc@{rte\+\_\+atomic64\+\_\+inc}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+inc}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+inc (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_abf3427ef2605fddcc1bc1bce1071e8ec}
+Atomically increment a 64-\/bit counter by one and test.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_af6ff925a8d20a62044bde392a50a52a3}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test}}
+\index{rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test@{rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic64\+\_\+inc\+\_\+and\+\_\+test (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_af6ff925a8d20a62044bde392a50a52a3}
+Atomically increment a 64-\/bit counter by one and test.
+
+Atomically increments the atomic counter (v) by one and returns true if the result is 0, or false in all other cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the result after the addition is 0; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_ad9de295b330d870b6acae34c9968bc0c}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+init@{rte\+\_\+atomic64\+\_\+init}}
+\index{rte\+\_\+atomic64\+\_\+init@{rte\+\_\+atomic64\+\_\+init}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ad9de295b330d870b6acae34c9968bc0c}
+Initialize the atomic counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_af5dc5024c16f1569cca1c2b758e9b5cd}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+read@{rte\+\_\+atomic64\+\_\+read}}
+\index{rte\+\_\+atomic64\+\_\+read@{rte\+\_\+atomic64\+\_\+read}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}static int64\+\_\+t rte\+\_\+atomic64\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_af5dc5024c16f1569cca1c2b758e9b5cd}
+Atomically read a 64-\/bit counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the counter. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_ab708e84e61d19fc13ed9f7047b42da37}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+set@{rte\+\_\+atomic64\+\_\+set}}
+\index{rte\+\_\+atomic64\+\_\+set@{rte\+\_\+atomic64\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v, }
+\item[{int64\+\_\+t}]{new\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_ab708e84e61d19fc13ed9f7047b42da37}
+Atomically set a 64-\/bit counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em new\+\_\+value} & The new value of the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_aa0759be96bf4a99105b1aa38370634b3}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+sub@{rte\+\_\+atomic64\+\_\+sub}}
+\index{rte\+\_\+atomic64\+\_\+sub@{rte\+\_\+atomic64\+\_\+sub}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+sub}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+atomic64\+\_\+sub (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v, }
+\item[{int64\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_aa0759be96bf4a99105b1aa38370634b3}
+Atomically subtract a 64-\/bit value from a counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__atomic_8h_a3102a75a4112ceb21d444cf9f0fbec08}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+sub\+\_\+return@{rte\+\_\+atomic64\+\_\+sub\+\_\+return}}
+\index{rte\+\_\+atomic64\+\_\+sub\+\_\+return@{rte\+\_\+atomic64\+\_\+sub\+\_\+return}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+sub\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}static int64\+\_\+t rte\+\_\+atomic64\+\_\+sub\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v, }
+\item[{int64\+\_\+t}]{dec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a3102a75a4112ceb21d444cf9f0fbec08}
+Subtract a 64-\/bit value from an atomic counter and return the result.
+
+Atomically subtracts the 64-\/bit value (dec) from the atomic counter (v) and returns the value of v after the subtraction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+{\em dec} & The value to be subtracted from the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of v after the subtraction. 
+\end{DoxyReturn}
+\hypertarget{rte__atomic_8h_a239af52999d93e2d5f294ba2c0dd83c5}{}\index{rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}!rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set}}
+\index{rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set@{rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set}!rte\+\_\+atomic.\+h@{rte\+\_\+atomic.\+h}}
+\subsubsection[{rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+atomic64\+\_\+test\+\_\+and\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf rte\+\_\+atomic64\+\_\+t} $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__atomic_8h_a239af52999d93e2d5f294ba2c0dd83c5}
+Atomically test and set a 64-\/bit atomic counter.
+
+If the counter value is already set, return 0 (failed). Otherwise, set the counter value to 1 and return 1 (success).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & A pointer to the atomic counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failed; else 1, success. 
+\end{DoxyReturn}

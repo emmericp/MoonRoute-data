@@ -1,0 +1,55 @@
+#!/usr/bin/gnuplot
+
+set terminal push
+set terminal postscript eps enhanced color blacktext
+set output "plot.eps"
+set title "LPM performance at 2.9GHz"
+set xlabel "Number of /24 networks used"
+set ylabel "Throughput [Mbit/s]"
+set grid mxtics x
+set grid mytics y
+#set key center right
+#set key at 119,9.5
+#set logscale y
+set logscale x 2
+
+
+#set yrange [0.08:1]
+set xrange [2**15:2**25]
+set yrange [0000:11000]
+#set xrange [115.5:119]
+#set yrange [-10:15]
+#set samples 1000
+
+
+#set y2range [0:30000]
+set y2label "Miss rate [1/Mbit]"
+set ytics nomirror
+set y2tics
+
+data = 'data'
+data = '< cat datacaches | sed "s/^[0-9]* //g" | paste data -'
+
+#m = 1
+#t = 1
+#g(x) = m*x + t
+#fit [1:4] g(x) data using 1:2:3 via m, t
+
+set boxwidth 10000
+set style fill solid 0.1
+set xtics ("2^{16}" 2**16, "2^{17}" 2**17, "2^{18}" 2**18, "2^{19}" 2**19, "2^{20}" 2**20, "2^{21}" 2**21, "2^{22}" 2**22, "2^{23}" 2**23, "2^{24}" 2**24, )
+
+set label 'L3 Cache size' at 2**22.6,4700 left
+set style arrow 7 nohead ls 2
+set style arrow 4 head filled size screen 0.01,30 ls 2
+set arrow from 2**22.5,4700 to 2**22, 5100 as 4
+set arrow from 2**22,3000 to 2**22,11000 nohead as 7
+
+plot\
+  data using (2**($1-8)):2:3 with errorlines title "Throughput",\
+  data using (2**($1-8)):($4/$2/5):((($4+$5)/($2-$3) - ($4-$5)/($2+$3) )/2 /5) axes x1y2 with errorlines title  "Branch misses/5",\
+  data using (2**($1-8)):($6/$2/5):((($6+$7)/($2-$3) - ($6-$7)/($2+$3))/2 /5) axes x1y2 with errorlines title  "L1 misses/5",\
+  data using (2**($1-8)):($8/$2):((($8+$9)/($2-$3) - ($8-$9)/($2+$3))/2) axes x1y2 with errorlines title  "L2 misses",\
+  data using (2**($1-8)):($10/$2):((($10+$11)/($2-$3) - ($10-$11)/($2+$3))/2) axes x1y2 with errorlines title  "L3 misses",\
+
+

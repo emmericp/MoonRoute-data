@@ -1,0 +1,47 @@
+\hypertarget{rte__per__lcore_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+per\+\_\+lcore.h File Reference}
+\label{rte__per__lcore_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+per\+\_\+lcore.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+per\+\_\+lcore.\+h}}
+{\ttfamily \#include $<$exec-\/env/rte\+\_\+per\+\_\+lcore.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__per__lcore_8h_a27c3960b94fa50a6468c900dd0a01fe5}{R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}(type,  name)
+\item 
+\#define \hyperlink{rte__per__lcore_8h_a558c3198d7c2d729f61f4ec1d98aceea}{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}(type,  name)
+\item 
+\#define \hyperlink{rte__per__lcore_8h_a141e0f71c3187ebcc6cfdfdfeaa81842}{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}(name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Per-\/lcore variables in R\+T\+E
+
+This file defines an A\+P\+I for instantiating per-\/lcore \char`\"{}global
+variables\char`\"{} that are environment-\/specific. Note that in all environments, a \char`\"{}shared variable\char`\"{} is the default when you use a global variable.
+
+Parts of this are execution environment specific. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__per__lcore_8h_a558c3198d7c2d729f61f4ec1d98aceea}{}\index{rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}}
+\index{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}!rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E(
+\begin{DoxyParamCaption}
+\item[{}]{type, }
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__per__lcore_8h_a558c3198d7c2d729f61f4ec1d98aceea}
+Macro to declare an extern per lcore variable \char`\"{}var\char`\"{} of type \char`\"{}type\char`\"{} \hypertarget{rte__per__lcore_8h_a27c3960b94fa50a6468c900dd0a01fe5}{}\index{rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}}
+\index{R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}!rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E(
+\begin{DoxyParamCaption}
+\item[{}]{type, }
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__per__lcore_8h_a27c3960b94fa50a6468c900dd0a01fe5}
+Macro to define a per lcore variable \char`\"{}var\char`\"{} of type \char`\"{}type\char`\"{}, don\textquotesingle{}t use keywords like \char`\"{}static\char`\"{} or \char`\"{}volatile\char`\"{} in type, just prefix the whole macro. \hypertarget{rte__per__lcore_8h_a141e0f71c3187ebcc6cfdfdfeaa81842}{}\index{rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}!R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}}
+\index{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E@{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}!rte\+\_\+per\+\_\+lcore.\+h@{rte\+\_\+per\+\_\+lcore.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+P\+E\+R\+\_\+\+L\+C\+O\+R\+E(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__per__lcore_8h_a141e0f71c3187ebcc6cfdfdfeaa81842}
+Read/write the per-\/lcore variable value 

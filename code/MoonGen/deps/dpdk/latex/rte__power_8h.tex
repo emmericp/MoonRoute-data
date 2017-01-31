@@ -1,0 +1,228 @@
+\hypertarget{rte__power_8h}{}\section{lib/librte\+\_\+power/rte\+\_\+power.h File Reference}
+\label{rte__power_8h}\index{lib/librte\+\_\+power/rte\+\_\+power.\+h@{lib/librte\+\_\+power/rte\+\_\+power.\+h}}
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+byteorder.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+log.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+string\+\_\+fns.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__power_8h_a8d1e1e0ad36c8fece2c4c4c06ebe307b}{rte\+\_\+power\+\_\+init} (unsigned lcore\+\_\+id)
+\item 
+int \hyperlink{rte__power_8h_a490d4829c85c7fa3a401901c093a758b}{rte\+\_\+power\+\_\+exit} (unsigned lcore\+\_\+id)
+\item 
+uint32\+\_\+t \hyperlink{rte__power_8h_a558597d34d36d015d0c9cfecc9276361}{rte\+\_\+power\+\_\+freqs} (unsigned lcore\+\_\+id, uint32\+\_\+t $\ast$freqs, uint32\+\_\+t num)
+\item 
+uint32\+\_\+t \hyperlink{rte__power_8h_aeb26e0d9ef454f0dbdec9abb6ee76288}{rte\+\_\+power\+\_\+get\+\_\+freq} (unsigned lcore\+\_\+id)
+\item 
+int \hyperlink{rte__power_8h_aab80c06a12c257cf05c3d8811f96bb23}{rte\+\_\+power\+\_\+set\+\_\+freq} (unsigned lcore\+\_\+id, uint32\+\_\+t index)
+\item 
+int \hyperlink{rte__power_8h_a08e55e75f523904aeb1834692c2fabeb}{rte\+\_\+power\+\_\+freq\+\_\+up} (unsigned lcore\+\_\+id)
+\item 
+int \hyperlink{rte__power_8h_ac0950e47fe28b59e6fea8149815bf1e9}{rte\+\_\+power\+\_\+freq\+\_\+down} (unsigned lcore\+\_\+id)
+\item 
+int \hyperlink{rte__power_8h_a09567f91e0cc7601820a134fc5d8de85}{rte\+\_\+power\+\_\+freq\+\_\+max} (unsigned lcore\+\_\+id)
+\item 
+int \hyperlink{rte__power_8h_a4a6fcaa3c6bb35a149742c89282eb0a1}{rte\+\_\+power\+\_\+freq\+\_\+min} (unsigned lcore\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Power Management 
+
+\subsection{Function Documentation}
+\hypertarget{rte__power_8h_a490d4829c85c7fa3a401901c093a758b}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+exit@{rte\+\_\+power\+\_\+exit}}
+\index{rte\+\_\+power\+\_\+exit@{rte\+\_\+power\+\_\+exit}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a490d4829c85c7fa3a401901c093a758b}
+Exit power management on a specific lcore. It will set the governor to which is before initialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_ac0950e47fe28b59e6fea8149815bf1e9}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+freq\+\_\+down@{rte\+\_\+power\+\_\+freq\+\_\+down}}
+\index{rte\+\_\+power\+\_\+freq\+\_\+down@{rte\+\_\+power\+\_\+freq\+\_\+down}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+freq\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+freq\+\_\+down (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_ac0950e47fe28b59e6fea8149815bf1e9}
+Scale down the frequency of a specific lcore according to the available frequencies. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1 on success with frequency changed.
+\item 0 on success without frequency chnaged.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_a09567f91e0cc7601820a134fc5d8de85}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+freq\+\_\+max@{rte\+\_\+power\+\_\+freq\+\_\+max}}
+\index{rte\+\_\+power\+\_\+freq\+\_\+max@{rte\+\_\+power\+\_\+freq\+\_\+max}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+freq\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+freq\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a09567f91e0cc7601820a134fc5d8de85}
+Scale up the frequency of a specific lcore to the highest according to the available frequencies. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1 on success with frequency changed.
+\item 0 on success without frequency chnaged.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_a4a6fcaa3c6bb35a149742c89282eb0a1}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+freq\+\_\+min@{rte\+\_\+power\+\_\+freq\+\_\+min}}
+\index{rte\+\_\+power\+\_\+freq\+\_\+min@{rte\+\_\+power\+\_\+freq\+\_\+min}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+freq\+\_\+min}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+freq\+\_\+min (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a4a6fcaa3c6bb35a149742c89282eb0a1}
+Scale down the frequency of a specific lcore to the lowest according to the available frequencies. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1 on success with frequency changed.
+\item 0 on success without frequency chnaged.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_a08e55e75f523904aeb1834692c2fabeb}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+freq\+\_\+up@{rte\+\_\+power\+\_\+freq\+\_\+up}}
+\index{rte\+\_\+power\+\_\+freq\+\_\+up@{rte\+\_\+power\+\_\+freq\+\_\+up}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+freq\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+freq\+\_\+up (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a08e55e75f523904aeb1834692c2fabeb}
+Scale up the frequency of a specific lcore according to the available frequencies. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1 on success with frequency changed.
+\item 0 on success without frequency chnaged.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_a558597d34d36d015d0c9cfecc9276361}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+freqs@{rte\+\_\+power\+\_\+freqs}}
+\index{rte\+\_\+power\+\_\+freqs@{rte\+\_\+power\+\_\+freqs}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+freqs}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rte\+\_\+power\+\_\+freqs (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id, }
+\item[{uint32\+\_\+t $\ast$}]{freqs, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a558597d34d36d015d0c9cfecc9276361}
+Get the available frequencies of a specific lcore. The return value will be the minimal one of the total number of available frequencies and the number of buffer. The index of available frequencies used in other interfaces should be in the range of 0 to this return value. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id. \\
+\hline
+{\em freqs} & The buffer array to save the frequencies. \\
+\hline
+{\em num} & The number of frequencies to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of available frequencies. 
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_aeb26e0d9ef454f0dbdec9abb6ee76288}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+get\+\_\+freq@{rte\+\_\+power\+\_\+get\+\_\+freq}}
+\index{rte\+\_\+power\+\_\+get\+\_\+freq@{rte\+\_\+power\+\_\+get\+\_\+freq}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+get\+\_\+freq}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rte\+\_\+power\+\_\+get\+\_\+freq (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_aeb26e0d9ef454f0dbdec9abb6ee76288}
+Return the current index of available frequencies of a specific lcore. It will return \textquotesingle{}R\+T\+E\+\_\+\+P\+O\+W\+E\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+R\+E\+Q\+\_\+\+I\+N\+D\+E\+X = ($\sim$0)\textquotesingle{} if error. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current index of available frequencies. 
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_a8d1e1e0ad36c8fece2c4c4c06ebe307b}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+init@{rte\+\_\+power\+\_\+init}}
+\index{rte\+\_\+power\+\_\+init@{rte\+\_\+power\+\_\+init}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_a8d1e1e0ad36c8fece2c4c4c06ebe307b}
+Initialize power management for a specific lcore. It will check and set the governor to userspace for the lcore, get the available frequencies, and prepare to set new lcore frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__power_8h_aab80c06a12c257cf05c3d8811f96bb23}{}\index{rte\+\_\+power.\+h@{rte\+\_\+power.\+h}!rte\+\_\+power\+\_\+set\+\_\+freq@{rte\+\_\+power\+\_\+set\+\_\+freq}}
+\index{rte\+\_\+power\+\_\+set\+\_\+freq@{rte\+\_\+power\+\_\+set\+\_\+freq}!rte\+\_\+power.\+h@{rte\+\_\+power.\+h}}
+\subsubsection[{rte\+\_\+power\+\_\+set\+\_\+freq}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+power\+\_\+set\+\_\+freq (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{lcore\+\_\+id, }
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{rte__power_8h_aab80c06a12c257cf05c3d8811f96bb23}
+Set the new frequency for a specific lcore by indicating the index of available frequencies. It should be protected outside of this function for threadsafe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcore\+\_\+id} & lcore id. \\
+\hline
+{\em index} & The index of available frequencies.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 1 on success with frequency changed.
+\item 0 on success without frequency chnaged.
+\item Negative on error. 
+\end{DoxyItemize}
+\end{DoxyReturn}

@@ -1,0 +1,50 @@
+\hypertarget{structrte__pipeline__table__params}{}\section{rte\+\_\+pipeline\+\_\+table\+\_\+params Struct Reference}
+\label{structrte__pipeline__table__params}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+
+
+{\ttfamily \#include $<$rte\+\_\+pipeline.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__table__ops}{rte\+\_\+table\+\_\+ops} $\ast$ \hyperlink{structrte__pipeline__table__params_ad1966fbeee5c7e1923a4e567b5bcd77d}{ops}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__table__params_ab34a217f23d1f5a27ae00e3fbbba445c}{arg\+\_\+create}
+\item 
+\hyperlink{rte__pipeline_8h_a9289c02fd9164dc323fc1a614cd7ef3d}{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit} \hyperlink{structrte__pipeline__table__params_ab2a1d1ad3795cb39f148a392343dce07}{f\+\_\+action\+\_\+hit}
+\item 
+\hyperlink{rte__pipeline_8h_a19b2c0ec82ebd96c52e15d9c3ca6cdff}{rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss} \hyperlink{structrte__pipeline__table__params_aaa5e9294a7d2b1c271683726263fcb46}{f\+\_\+action\+\_\+miss}
+\item 
+void $\ast$ \hyperlink{structrte__pipeline__table__params_adfcedab79c75f0129bd5382cf3d48b13}{arg\+\_\+ah}
+\item 
+uint32\+\_\+t \hyperlink{structrte__pipeline__table__params_a2e23c737ba77e1f57ba715520171f00a}{action\+\_\+data\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters for pipeline table creation. Action handlers have to be either both enabled or both disabled (they can be disabled by setting them to N\+U\+L\+L). 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__pipeline__table__params_a2e23c737ba77e1f57ba715520171f00a}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!action\+\_\+data\+\_\+size@{action\+\_\+data\+\_\+size}}
+\index{action\+\_\+data\+\_\+size@{action\+\_\+data\+\_\+size}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{action\+\_\+data\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t action\+\_\+data\+\_\+size}\label{structrte__pipeline__table__params_a2e23c737ba77e1f57ba715520171f00a}
+Memory size to be reserved per table entry for storing the user actions and their meta-\/data \hypertarget{structrte__pipeline__table__params_adfcedab79c75f0129bd5382cf3d48b13}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!arg\+\_\+ah@{arg\+\_\+ah}}
+\index{arg\+\_\+ah@{arg\+\_\+ah}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{arg\+\_\+ah}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+ah}\label{structrte__pipeline__table__params_adfcedab79c75f0129bd5382cf3d48b13}
+Opaque parameter to be passed to lookup hit and/or lookup miss action handlers when invoked \hypertarget{structrte__pipeline__table__params_ab34a217f23d1f5a27ae00e3fbbba445c}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!arg\+\_\+create@{arg\+\_\+create}}
+\index{arg\+\_\+create@{arg\+\_\+create}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{arg\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ arg\+\_\+create}\label{structrte__pipeline__table__params_ab34a217f23d1f5a27ae00e3fbbba445c}
+Opaque param to be passed to the table create operation when invoked \hypertarget{structrte__pipeline__table__params_ab2a1d1ad3795cb39f148a392343dce07}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!f\+\_\+action\+\_\+hit@{f\+\_\+action\+\_\+hit}}
+\index{f\+\_\+action\+\_\+hit@{f\+\_\+action\+\_\+hit}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{f\+\_\+action\+\_\+hit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+hit} f\+\_\+action\+\_\+hit}\label{structrte__pipeline__table__params_ab2a1d1ad3795cb39f148a392343dce07}
+Callback function to execute the user actions on input packets in case of lookup hit \hypertarget{structrte__pipeline__table__params_aaa5e9294a7d2b1c271683726263fcb46}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!f\+\_\+action\+\_\+miss@{f\+\_\+action\+\_\+miss}}
+\index{f\+\_\+action\+\_\+miss@{f\+\_\+action\+\_\+miss}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{f\+\_\+action\+\_\+miss}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rte\+\_\+pipeline\+\_\+table\+\_\+action\+\_\+handler\+\_\+miss} f\+\_\+action\+\_\+miss}\label{structrte__pipeline__table__params_aaa5e9294a7d2b1c271683726263fcb46}
+Callback function to execute the user actions on input packets in case of lookup miss \hypertarget{structrte__pipeline__table__params_ad1966fbeee5c7e1923a4e567b5bcd77d}{}\index{rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}!ops@{ops}}
+\index{ops@{ops}!rte\+\_\+pipeline\+\_\+table\+\_\+params@{rte\+\_\+pipeline\+\_\+table\+\_\+params}}
+\subsubsection[{ops}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+table\+\_\+ops}$\ast$ ops}\label{structrte__pipeline__table__params_ad1966fbeee5c7e1923a4e567b5bcd77d}
+Table operations (specific to each table type) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pipeline/\hyperlink{rte__pipeline_8h}{rte\+\_\+pipeline.\+h}\end{DoxyCompactItemize}

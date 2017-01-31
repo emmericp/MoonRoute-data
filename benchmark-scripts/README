@@ -1,0 +1,19 @@
+This folder contains benchmarking and analysis scripts, which were executed
+on testbed servers.
+They are thought to be a starting point for similar benchmarks.
+
+These scripts rely on an internal communication framework through commands
+starting with "testbed-". The only part of the framework we use here is
+a sync feature to time starting the packet generator and MoonRoute.
+testbed-sync effectively takes an ID and waits until both servers execute it
+before continuing. This needs to be replaced by something that does the same
+(can be as simple as ssh'ing to the other server)
+
+NOTE: the scripts are not neccessarily in the state, as they were executed
+for performing the benchmarks, as seen in the paper or master thesis.
+This is because the scripts include configuration variables, e.g. the tested ranges
+that might need to be adapted.
+
+To rerun any test, carefully read the description and the script and
+adjust the configuration to match the description.
+

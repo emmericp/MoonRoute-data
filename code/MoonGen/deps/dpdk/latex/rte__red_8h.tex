@@ -1,0 +1,404 @@
+\hypertarget{rte__red_8h}{}\section{lib/librte\+\_\+sched/rte\+\_\+red.h File Reference}
+\label{rte__red_8h}\index{lib/librte\+\_\+sched/rte\+\_\+red.\+h@{lib/librte\+\_\+sched/rte\+\_\+red.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+common.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+debug.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+cycles.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+branch\+\_\+prediction.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__red__params}{rte\+\_\+red\+\_\+params}
+\item 
+struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config}
+\item 
+struct \hyperlink{structrte__red}{rte\+\_\+red}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__red_8h_ac7f40ab4c0f8f5f4c2c5fc616e34b3da}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G}~10
+\item 
+\#define \hyperlink{rte__red_8h_a8ac9784c83db698f346e22064fe83729}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S}~(1 $<$$<$ 22)
+\item 
+\#define \hyperlink{rte__red_8h_a3afa79600af4b97c54da9072130ae8e3}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X}~1023
+\item 
+\#define \hyperlink{rte__red_8h_a512728b7ee03916ce90c1af8fe032129}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N}~1
+\item 
+\#define \hyperlink{rte__red_8h_a30e1ecf796f99498b7979a195d8837c4}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X}~12
+\item 
+\#define \hyperlink{rte__red_8h_adb5b8e21957f928b888b90a227cbaf37}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N}~1
+\item 
+\#define \hyperlink{rte__red_8h_ad96cf7939dccd33568380b7594da0906}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X}~255
+\item 
+\#define \hyperlink{rte__red_8h_a8a67843db41df1b5930ad7573e4be1e2}{R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16}~(1$<$$<$16)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__red_8h_afcd792387df42bfdf6f73eb13eca9e4a}{rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init} (struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red)
+\begin{DoxyCompactList}\small\item\em Initialises run-\/time data. \end{DoxyCompactList}\item 
+int \hyperlink{rte__red_8h_a5aa43ae4a1f78b9d0673df511ed0d9fa}{rte\+\_\+red\+\_\+config\+\_\+init} (struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config} $\ast$red\+\_\+cfg, const uint16\+\_\+t wq\+\_\+log2, const uint16\+\_\+t min\+\_\+th, const uint16\+\_\+t max\+\_\+th, const uint16\+\_\+t maxp\+\_\+inv)
+\begin{DoxyCompactList}\small\item\em Configures a single R\+E\+D configuration parameter structure. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{rte__red_8h_a6e62e4278e63bbd9ca0bf07eb07f8979}{rte\+\_\+fast\+\_\+rand} (void)
+\begin{DoxyCompactList}\small\item\em Generate random number for R\+E\+D. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \hyperlink{rte__red_8h_a068f9175155eaa2fdb31c8073b530c26}{\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor} (uint8\+\_\+t wq\+\_\+log2, uint16\+\_\+t m)
+\begin{DoxyCompactList}\small\item\em calculate factor to scale average queue size when queue becomes empty \end{DoxyCompactList}\item 
+static int \hyperlink{rte__red_8h_a634ddc87ef2123f8966e17b83543a6c5}{rte\+\_\+red\+\_\+enqueue\+\_\+empty} (const struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config} $\ast$red\+\_\+cfg, struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red, const uint64\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Updates queue average in condition when queue is empty. \end{DoxyCompactList}\item 
+static int \hyperlink{rte__red_8h_aefd904d7e538ba6fdc54bed3167094f1}{\+\_\+\+\_\+rte\+\_\+red\+\_\+drop} (const struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config} $\ast$red\+\_\+cfg, struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red)
+\begin{DoxyCompactList}\small\item\em make a decision to drop or enqueue a packet based on mark probability criteria \end{DoxyCompactList}\item 
+static int \hyperlink{rte__red_8h_a5ee559dca02450c40e42fbc6701af465}{rte\+\_\+red\+\_\+enqueue\+\_\+nonempty} (const struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config} $\ast$red\+\_\+cfg, struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red, const unsigned q)
+\begin{DoxyCompactList}\small\item\em Decides if new packet should be enqeued or dropped in queue non-\/empty case. \end{DoxyCompactList}\item 
+static int \hyperlink{rte__red_8h_abbb99f5911d3bfe64f413563dacafea8}{rte\+\_\+red\+\_\+enqueue} (const struct \hyperlink{structrte__red__config}{rte\+\_\+red\+\_\+config} $\ast$red\+\_\+cfg, struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red, const unsigned q, const uint64\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Decides if new packet should be enqeued or dropped Updates run time data based on new queue size value. Based on new queue average and R\+E\+D configuration parameters gives verdict whether to enqueue or drop the packet. \end{DoxyCompactList}\item 
+static void \hyperlink{rte__red_8h_afa8f3c8188a9863194fab31001225dd6}{rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty} (struct \hyperlink{structrte__red}{rte\+\_\+red} $\ast$red, const uint64\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Callback to records time that queue became empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{rte__red_8h_ae490ddaf8bbddcff7f39643aee34d40e}{rte\+\_\+red\+\_\+rand\+\_\+val}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E Random Early Detection (R\+E\+D) 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__red_8h_a8a67843db41df1b5930ad7573e4be1e2}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+2\+P\+O\+W16~(1$<$$<$16)}\label{rte__red_8h_a8a67843db41df1b5930ad7573e4be1e2}
+2 power 16 \hypertarget{rte__red_8h_a3afa79600af4b97c54da9072130ae8e3}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+\_\+\+T\+H\+\_\+\+M\+A\+X~1023}\label{rte__red_8h_a3afa79600af4b97c54da9072130ae8e3}
+Max threshold limit in fixed point format \hypertarget{rte__red_8h_ad96cf7939dccd33568380b7594da0906}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+A\+X~255}\label{rte__red_8h_ad96cf7939dccd33568380b7594da0906}
+Max inverse mark probability value \hypertarget{rte__red_8h_adb5b8e21957f928b888b90a227cbaf37}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+M\+A\+X\+P\+\_\+\+I\+N\+V\+\_\+\+M\+I\+N~1}\label{rte__red_8h_adb5b8e21957f928b888b90a227cbaf37}
+Min inverse mark probability value \hypertarget{rte__red_8h_a8ac9784c83db698f346e22064fe83729}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S~(1 $<$$<$ 22)}\label{rte__red_8h_a8ac9784c83db698f346e22064fe83729}
+Packet size multiplied by number of leaf queues \hypertarget{rte__red_8h_ac7f40ab4c0f8f5f4c2c5fc616e34b3da}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+S\+C\+A\+L\+I\+N\+G~10}\label{rte__red_8h_ac7f40ab4c0f8f5f4c2c5fc616e34b3da}
+Fraction size for fixed-\/point \hypertarget{rte__red_8h_a30e1ecf796f99498b7979a195d8837c4}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X~12}\label{rte__red_8h_a30e1ecf796f99498b7979a195d8837c4}
+Max inverse filter weight value \hypertarget{rte__red_8h_a512728b7ee03916ce90c1af8fe032129}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N}}
+\index{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N@{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N~1}\label{rte__red_8h_a512728b7ee03916ce90c1af8fe032129}
+Min inverse filter weight value 
+
+\subsection{Function Documentation}
+\hypertarget{rte__red_8h_a068f9175155eaa2fdb31c8073b530c26}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor@{\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor}}
+\index{\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor@{\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\+\_\+t \+\_\+\+\_\+rte\+\_\+red\+\_\+calc\+\_\+qempty\+\_\+factor (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{wq\+\_\+log2, }
+\item[{uint16\+\_\+t}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_a068f9175155eaa2fdb31c8073b530c26}
+
+
+calculate factor to scale average queue size when queue becomes empty 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em wq\+\_\+log2,where} & E\+W\+M\+A filter weight wq = 1/(2 $^\wedge$ wq\+\_\+log2) \\
+\hline
+\mbox{\tt in}  & {\em m} & exponent in the computed value (1 -\/ wq) $^\wedge$ m\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+computed value 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em ((1} & -\/ wq) $^\wedge$ m) scaled in fixed-\/point format \\
+\hline
+\end{DoxyRetVals}
+Basic math tells us that\+: a$^\wedge$b = 2$^\wedge$(b $\ast$ log2(a) )
+
+in our case\+: a = (1-\/\+Wq) b = m Wq = 1/ (2$^\wedge$log2n)
+
+So we are computing this equation\+: factor = 2 $^\wedge$ ( m $\ast$ log2(1-\/\+Wq))
+
+First we are computing\+: n = m $\ast$ log2(1-\/\+Wq)
+
+To avoid dealing with signed numbers log2 values are positive but they should be negative because (1-\/\+Wq) is always $<$ 1. Contents of log2 table values are also scaled for precision.
+
+The tricky part is computing 2$^\wedge$n, for this I split n into integer part and fraction part. f -\/ is fraction part of n n -\/ is integer part of original n
+
+Now using basic math we compute 2$^\wedge$n\+: 2$^\wedge$(f+n) = 2$^\wedge$f $\ast$ 2$^\wedge$n 2$^\wedge$f -\/ we use lookup table 2$^\wedge$n -\/ can be replaced with bit shift right oeprations\hypertarget{rte__red_8h_aefd904d7e538ba6fdc54bed3167094f1}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!\+\_\+\+\_\+rte\+\_\+red\+\_\+drop@{\+\_\+\+\_\+rte\+\_\+red\+\_\+drop}}
+\index{\+\_\+\+\_\+rte\+\_\+red\+\_\+drop@{\+\_\+\+\_\+rte\+\_\+red\+\_\+drop}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{\+\_\+\+\_\+rte\+\_\+red\+\_\+drop}]{\setlength{\rightskip}{0pt plus 5cm}static int \+\_\+\+\_\+rte\+\_\+red\+\_\+drop (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+red\+\_\+config} $\ast$}]{red\+\_\+cfg, }
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_aefd904d7e538ba6fdc54bed3167094f1}
+
+
+make a decision to drop or enqueue a packet based on mark probability criteria 
+
+Drop probability (Sally Floyd and Van Jacobson)\+:
+
+pb = (1 / maxp\+\_\+inv) $\ast$ (avg -\/ min\+\_\+th) / (max\+\_\+th -\/ min\+\_\+th) pa = pb / (2 -\/ count $\ast$ pb)
+
+\begin{DoxyVerb}           (1 / maxp_inv) * (avg - min_th)
+          ---------------------------------
+                   max_th - min_th
+\end{DoxyVerb}
+ pa = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------ count $\ast$ (1 / maxp\+\_\+inv) $\ast$ (avg -\/ min\+\_\+th) 2 -\/ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------ max\+\_\+th -\/ min\+\_\+th
+
+\begin{DoxyVerb}                            avg - min_th
+\end{DoxyVerb}
+ pa = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------ 2 $\ast$ (max\+\_\+th -\/ min\+\_\+th) $\ast$ maxp\+\_\+inv -\/ count $\ast$ (avg -\/ min\+\_\+th)
+
+We define pa\+\_\+const as\+: pa\+\_\+const = 2 $\ast$ (max\+\_\+th -\/ min\+\_\+th) $\ast$ maxp\+\_\+inv. Then\+:
+
+\begin{DoxyVerb}               avg - min_th
+\end{DoxyVerb}
+ pa = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------ pa\+\_\+const -\/ count $\ast$ (avg -\/ min\+\_\+th) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & pointer to structure defining R\+E\+D parameters \\
+\hline
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & enqueue the packet \\
+\hline
+{\em 1} & drop the packet \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{rte__red_8h_a6e62e4278e63bbd9ca0bf07eb07f8979}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+fast\+\_\+rand@{rte\+\_\+fast\+\_\+rand}}
+\index{rte\+\_\+fast\+\_\+rand@{rte\+\_\+fast\+\_\+rand}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+fast\+\_\+rand}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t rte\+\_\+fast\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_a6e62e4278e63bbd9ca0bf07eb07f8979}
+
+
+Generate random number for R\+E\+D. 
+
+Implemenetation based on\+: \href{http://software.intel.com/en-us/articles/fast-random-number-generator-on-the-intel-pentiumr-4-processor/}{\tt http\+://software.\+intel.\+com/en-\/us/articles/fast-\/random-\/number-\/generator-\/on-\/the-\/intel-\/pentiumr-\/4-\/processor/}
+
+10 bit shift has been found through empirical tests (was 16).
+
+\begin{DoxyReturn}{Returns}
+Random number between 0 and (2$^\wedge$22 -\/ 1) 
+\end{DoxyReturn}
+\hypertarget{rte__red_8h_a5aa43ae4a1f78b9d0673df511ed0d9fa}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+config\+\_\+init@{rte\+\_\+red\+\_\+config\+\_\+init}}
+\index{rte\+\_\+red\+\_\+config\+\_\+init@{rte\+\_\+red\+\_\+config\+\_\+init}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+config\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+red\+\_\+config\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+red\+\_\+config} $\ast$}]{red\+\_\+cfg, }
+\item[{const uint16\+\_\+t}]{wq\+\_\+log2, }
+\item[{const uint16\+\_\+t}]{min\+\_\+th, }
+\item[{const uint16\+\_\+t}]{max\+\_\+th, }
+\item[{const uint16\+\_\+t}]{maxp\+\_\+inv}
+\end{DoxyParamCaption}
+)}\label{rte__red_8h_a5aa43ae4a1f78b9d0673df511ed0d9fa}
+
+
+Configures a single R\+E\+D configuration parameter structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em config} & pointer to a R\+E\+D configuration parameter structure \\
+\hline
+\mbox{\tt in}  & {\em wq\+\_\+log2} & log2 of the filter weight, valid range is\+: R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+I\+N $<$= wq\+\_\+log2 $<$= R\+T\+E\+\_\+\+R\+E\+D\+\_\+\+W\+Q\+\_\+\+L\+O\+G2\+\_\+\+M\+A\+X \\
+\hline
+\mbox{\tt in}  & {\em min\+\_\+th} & queue minimum threshold in number of packets \\
+\hline
+\mbox{\tt in}  & {\em max\+\_\+th} & queue maximum threshold in number of packets \\
+\hline
+\mbox{\tt in}  & {\em maxp\+\_\+inv} & inverse maximum mark probability\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & success \\
+\hline
+{\em !0} & error \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{rte__red_8h_abbb99f5911d3bfe64f413563dacafea8}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+enqueue@{rte\+\_\+red\+\_\+enqueue}}
+\index{rte\+\_\+red\+\_\+enqueue@{rte\+\_\+red\+\_\+enqueue}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+enqueue}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+red\+\_\+enqueue (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+red\+\_\+config} $\ast$}]{red\+\_\+cfg, }
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red, }
+\item[{const unsigned}]{q, }
+\item[{const uint64\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_abbb99f5911d3bfe64f413563dacafea8}
+
+
+Decides if new packet should be enqeued or dropped Updates run time data based on new queue size value. Based on new queue average and R\+E\+D configuration parameters gives verdict whether to enqueue or drop the packet. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & pointer to a R\+E\+D configuration parameter structure \\
+\hline
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data \\
+\hline
+\mbox{\tt in}  & {\em q} & updated queue size in packets \\
+\hline
+\mbox{\tt in}  & {\em time} & current time stamp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & enqueue the packet \\
+\hline
+{\em 1} & drop the packet based on max threshold criteria \\
+\hline
+{\em 2} & drop the packet based on mark probability criteria \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{rte__red_8h_a634ddc87ef2123f8966e17b83543a6c5}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+enqueue\+\_\+empty@{rte\+\_\+red\+\_\+enqueue\+\_\+empty}}
+\index{rte\+\_\+red\+\_\+enqueue\+\_\+empty@{rte\+\_\+red\+\_\+enqueue\+\_\+empty}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+enqueue\+\_\+empty}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+red\+\_\+enqueue\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+red\+\_\+config} $\ast$}]{red\+\_\+cfg, }
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red, }
+\item[{const uint64\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_a634ddc87ef2123f8966e17b83543a6c5}
+
+
+Updates queue average in condition when queue is empty. 
+
+Note\+: packet is never dropped in this particular case.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & pointer to a R\+E\+D configuration parameter structure \\
+\hline
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data \\
+\hline
+\mbox{\tt in}  & {\em time} & current time stamp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & enqueue the packet \\
+\hline
+{\em 1} & drop the packet based on max threshold criterion \\
+\hline
+{\em 2} & drop the packet based on mark probability criterion \\
+\hline
+\end{DoxyRetVals}
+We compute avg but we don\textquotesingle{}t compare avg against min\+\_\+th or max\+\_\+th, nor calculate drop probability
+
+m is the number of packets that might have arrived while the queue was empty. In this case we have time stamps provided by scheduler in byte units (bytes transmitted on network port). Such time stamp translates into time units as port speed is fixed but such approach simplifies the code.
+
+Check that m will fit into 16-\/bit unsigned integer\hypertarget{rte__red_8h_a5ee559dca02450c40e42fbc6701af465}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+enqueue\+\_\+nonempty@{rte\+\_\+red\+\_\+enqueue\+\_\+nonempty}}
+\index{rte\+\_\+red\+\_\+enqueue\+\_\+nonempty@{rte\+\_\+red\+\_\+enqueue\+\_\+nonempty}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+enqueue\+\_\+nonempty}]{\setlength{\rightskip}{0pt plus 5cm}static int rte\+\_\+red\+\_\+enqueue\+\_\+nonempty (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf rte\+\_\+red\+\_\+config} $\ast$}]{red\+\_\+cfg, }
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red, }
+\item[{const unsigned}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_a5ee559dca02450c40e42fbc6701af465}
+
+
+Decides if new packet should be enqeued or dropped in queue non-\/empty case. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & pointer to a R\+E\+D configuration parameter structure \\
+\hline
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data \\
+\hline
+\mbox{\tt in}  & {\em q} & current queue size (measured in packets)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & enqueue the packet \\
+\hline
+{\em 1} & drop the packet based on max threshold criterion \\
+\hline
+{\em 2} & drop the packet based on mark probability criterion \\
+\hline
+\end{DoxyRetVals}
+E\+W\+M\+A filter (Sally Floyd and Van Jacobson)\+: avg = (1 -\/ wq) $\ast$ avg + wq $\ast$ q avg = avg + q $\ast$ wq -\/ avg $\ast$ wq
+
+We select\+: wq = 2$^\wedge$(-\/n). Let scaled version of avg be\+: avg\+\_\+s = avg $\ast$ 2$^\wedge$(N+n). We get\+: avg\+\_\+s = avg\+\_\+s + q $\ast$ 2$^\wedge$\+N -\/ avg\+\_\+s $\ast$ 2$^\wedge$(-\/n)
+
+By using shift left/right operations, we get\+: avg\+\_\+s = avg\+\_\+s + (q $<$$<$ N) -\/ (avg\+\_\+s $>$$>$ n) avg\+\_\+s += (q $<$$<$ N) -\/ (avg\+\_\+s $>$$>$ n)\hypertarget{rte__red_8h_afa8f3c8188a9863194fab31001225dd6}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty@{rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty}}
+\index{rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty@{rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty}]{\setlength{\rightskip}{0pt plus 5cm}static void rte\+\_\+red\+\_\+mark\+\_\+queue\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red, }
+\item[{const uint64\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{rte__red_8h_afa8f3c8188a9863194fab31001225dd6}
+
+
+Callback to records time that queue became empty. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data \\
+\hline
+\mbox{\tt in}  & {\em time} & current time stamp \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__red_8h_afcd792387df42bfdf6f73eb13eca9e4a}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init@{rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init}}
+\index{rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init@{rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+red\+\_\+rt\+\_\+data\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf rte\+\_\+red} $\ast$}]{red}
+\end{DoxyParamCaption}
+)}\label{rte__red_8h_afcd792387df42bfdf6f73eb13eca9e4a}
+
+
+Initialises run-\/time data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em data} & pointer to R\+E\+D runtime data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & success \\
+\hline
+{\em !0} & error \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Variable Documentation}
+\hypertarget{rte__red_8h_ae490ddaf8bbddcff7f39643aee34d40e}{}\index{rte\+\_\+red.\+h@{rte\+\_\+red.\+h}!rte\+\_\+red\+\_\+rand\+\_\+val@{rte\+\_\+red\+\_\+rand\+\_\+val}}
+\index{rte\+\_\+red\+\_\+rand\+\_\+val@{rte\+\_\+red\+\_\+rand\+\_\+val}!rte\+\_\+red.\+h@{rte\+\_\+red.\+h}}
+\subsubsection[{rte\+\_\+red\+\_\+rand\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t rte\+\_\+red\+\_\+rand\+\_\+val}\label{rte__red_8h_ae490ddaf8bbddcff7f39643aee34d40e}
+Externs 

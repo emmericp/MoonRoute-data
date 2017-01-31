@@ -1,0 +1,119 @@
+\hypertarget{rte__devargs_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+devargs.h File Reference}
+\label{rte__devargs_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+devargs.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+devargs.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$rte\+\_\+pci.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__devargs}{rte\+\_\+devargs}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}{rte\+\_\+devtype} 
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__devargs_8h_af5711fa0f32c54464ce00ead090aa842}{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D} (rte\+\_\+devargs\+\_\+list, \hyperlink{structrte__devargs}{rte\+\_\+devargs})
+\item 
+int \hyperlink{rte__devargs_8h_ab6a32885cdf3895573d1212875fd8015}{rte\+\_\+eal\+\_\+devargs\+\_\+add} (enum \hyperlink{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}{rte\+\_\+devtype} devtype, const char $\ast$devargs\+\_\+str)
+\item 
+unsigned int \hyperlink{rte__devargs_8h_aca9e8af91035be6a392f5fa5c67b8a49}{rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count} (enum \hyperlink{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}{rte\+\_\+devtype} devtype)
+\item 
+void \hyperlink{rte__devargs_8h_a818eb2b9fb6a71cac33119ca1cf7bc57}{rte\+\_\+eal\+\_\+devargs\+\_\+dump} (F\+I\+L\+E $\ast$f)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct rte\+\_\+devargs\+\_\+list \hyperlink{rte__devargs_8h_a24a24928e4df6e537e12c3c6f0de8876}{devargs\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+T\+E devargs\+: list of devices and their user arguments
+
+This file stores a list of devices and their arguments given by the user when a D\+P\+D\+K application is started. These devices can be P\+C\+I devices or virtual devices. These devices are stored at startup in a list of \hyperlink{structrte__devargs}{rte\+\_\+devargs} structures. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!rte\+\_\+devtype@{rte\+\_\+devtype}}
+\index{rte\+\_\+devtype@{rte\+\_\+devtype}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{rte\+\_\+devtype}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rte\+\_\+devtype}}\label{rte__devargs_8h_a8852886cdc234b20769fdd443d24dd46}
+Type of generic device 
+
+\subsection{Function Documentation}
+\hypertarget{rte__devargs_8h_ab6a32885cdf3895573d1212875fd8015}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!rte\+\_\+eal\+\_\+devargs\+\_\+add@{rte\+\_\+eal\+\_\+devargs\+\_\+add}}
+\index{rte\+\_\+eal\+\_\+devargs\+\_\+add@{rte\+\_\+eal\+\_\+devargs\+\_\+add}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+devargs\+\_\+add}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+eal\+\_\+devargs\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{enum {\bf rte\+\_\+devtype}}]{devtype, }
+\item[{const char $\ast$}]{devargs\+\_\+str}
+\end{DoxyParamCaption}
+)}\label{rte__devargs_8h_ab6a32885cdf3895573d1212875fd8015}
+Add a device to the user device list
+
+For P\+C\+I devices, the format of arguments string is \char`\"{}\+P\+C\+I\+\_\+\+A\+D\+D\+R\char`\"{} or \char`\"{}\+P\+C\+I\+\_\+\+A\+D\+D\+R,key=val,key2=val2,...\char`\"{}. Examples\+: \char`\"{}08\+:00.\+1\char`\"{}, \char`\"{}0000\+:5\+:00.\+0\char`\"{}, \char`\"{}04\+:00.\+0,arg=val\char`\"{}.
+
+For virtual devices, the format of arguments string is \char`\"{}\+D\+R\+I\+V\+E\+R\+\_\+\+N\+A\+M\+E$\ast$\char`\"{} or \char`\"{}\+D\+R\+I\+V\+E\+R\+\_\+\+N\+A\+M\+E$\ast$,key=val,key2=val2,...\char`\"{}. Examples\+: \char`\"{}eth\+\_\+ring\char`\"{}, \char`\"{}eth\+\_\+ring0\char`\"{}, \char`\"{}eth\+\_\+pmd\+Anything,arg=0\+:arg2=1\char`\"{}. The validity of the driver name is not checked by this function, it is done when probing the drivers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em devtype} & The type of the device. \\
+\hline
+{\em devargs\+\_\+list} & The arguments as given by the user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 on success
+\item A negative value on error 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{rte__devargs_8h_a818eb2b9fb6a71cac33119ca1cf7bc57}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!rte\+\_\+eal\+\_\+devargs\+\_\+dump@{rte\+\_\+eal\+\_\+devargs\+\_\+dump}}
+\index{rte\+\_\+eal\+\_\+devargs\+\_\+dump@{rte\+\_\+eal\+\_\+devargs\+\_\+dump}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+devargs\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+eal\+\_\+devargs\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__devargs_8h_a818eb2b9fb6a71cac33119ca1cf7bc57}
+This function dumps the list of user device and their arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__devargs_8h_aca9e8af91035be6a392f5fa5c67b8a49}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count@{rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count}}
+\index{rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count@{rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int rte\+\_\+eal\+\_\+devargs\+\_\+type\+\_\+count (
+\begin{DoxyParamCaption}
+\item[{enum {\bf rte\+\_\+devtype}}]{devtype}
+\end{DoxyParamCaption}
+)}\label{rte__devargs_8h_aca9e8af91035be6a392f5fa5c67b8a49}
+Count the number of user devices of a specified type
+
+
+\begin{DoxyParams}{Parameters}
+{\em devtype} & The type of the devices to counted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of devices. 
+\end{DoxyReturn}
+\hypertarget{rte__devargs_8h_af5711fa0f32c54464ce00ead090aa842}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}}
+\index{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D (
+\begin{DoxyParamCaption}
+\item[{rte\+\_\+devargs\+\_\+list}]{, }
+\item[{{\bf rte\+\_\+devargs}}]{}
+\end{DoxyParamCaption}
+)}\label{rte__devargs_8h_af5711fa0f32c54464ce00ead090aa842}
+user device double-\/linked queue type definition 
+
+\subsection{Variable Documentation}
+\hypertarget{rte__devargs_8h_a24a24928e4df6e537e12c3c6f0de8876}{}\index{rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}!devargs\+\_\+list@{devargs\+\_\+list}}
+\index{devargs\+\_\+list@{devargs\+\_\+list}!rte\+\_\+devargs.\+h@{rte\+\_\+devargs.\+h}}
+\subsubsection[{devargs\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}struct rte\+\_\+devargs\+\_\+list devargs\+\_\+list}\label{rte__devargs_8h_a24a24928e4df6e537e12c3c6f0de8876}
+Global list of user devices 

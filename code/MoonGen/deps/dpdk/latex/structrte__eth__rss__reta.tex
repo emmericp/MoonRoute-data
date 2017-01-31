@@ -1,0 +1,35 @@
+\hypertarget{structrte__eth__rss__reta}{}\section{rte\+\_\+eth\+\_\+rss\+\_\+reta Struct Reference}
+\label{structrte__eth__rss__reta}\index{rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__rss__reta_a58e9ef082eae235a9368b0b9cf930b02}{mask\+\_\+lo}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__rss__reta_a7570fc931ca6325f1d8fea0a1779a53b}{mask\+\_\+hi}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rss__reta_a2bd3f48a0cc83dacf87909d96866e01d}{reta} \mbox{[}E\+T\+H\+\_\+\+R\+S\+S\+\_\+\+R\+E\+T\+A\+\_\+\+N\+U\+M\+\_\+\+E\+N\+T\+R\+I\+E\+S\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure Redirection Table of the Receive Side Scaling (R\+S\+S) feature of an Ethernet port. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__rss__reta_a7570fc931ca6325f1d8fea0a1779a53b}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}!mask\+\_\+hi@{mask\+\_\+hi}}
+\index{mask\+\_\+hi@{mask\+\_\+hi}!rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}}
+\subsubsection[{mask\+\_\+hi}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t mask\+\_\+hi}\label{structrte__eth__rss__reta_a7570fc931ca6325f1d8fea0a1779a53b}
+Second 64 mask bits indicate which entry(s) need to updated/queried. \hypertarget{structrte__eth__rss__reta_a58e9ef082eae235a9368b0b9cf930b02}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}!mask\+\_\+lo@{mask\+\_\+lo}}
+\index{mask\+\_\+lo@{mask\+\_\+lo}!rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}}
+\subsubsection[{mask\+\_\+lo}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t mask\+\_\+lo}\label{structrte__eth__rss__reta_a58e9ef082eae235a9368b0b9cf930b02}
+First 64 mask bits indicate which entry(s) need to updated/queried. \hypertarget{structrte__eth__rss__reta_a2bd3f48a0cc83dacf87909d96866e01d}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}!reta@{reta}}
+\index{reta@{reta}!rte\+\_\+eth\+\_\+rss\+\_\+reta@{rte\+\_\+eth\+\_\+rss\+\_\+reta}}
+\subsubsection[{reta}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t reta\mbox{[}E\+T\+H\+\_\+\+R\+S\+S\+\_\+\+R\+E\+T\+A\+\_\+\+N\+U\+M\+\_\+\+E\+N\+T\+R\+I\+E\+S\mbox{]}}\label{structrte__eth__rss__reta_a2bd3f48a0cc83dacf87909d96866e01d}
+128 R\+E\+T\+A entries 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

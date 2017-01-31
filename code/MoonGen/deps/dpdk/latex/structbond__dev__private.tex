@@ -1,0 +1,95 @@
+\hypertarget{structbond__dev__private}{}\section{bond\+\_\+dev\+\_\+private Struct Reference}
+\label{structbond__dev__private}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+
+
+{\ttfamily \#include $<$rte\+\_\+eth\+\_\+bond\+\_\+private.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a37e90f5e3bd99fac2021fb3a326607d4}{mode}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_ae340e5cdcbe69229f5806f0cabcb07d0}{primary\+\_\+port}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_ad3dfc83b886db5b43a715eb7e50bd32e}{current\+\_\+primary\+\_\+port}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a70188fdb8ba685a9505871dd8622d7fe}{user\+\_\+defined\+\_\+primary\+\_\+port}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a39595da5d563085994b8584c3220571b}{balance\+\_\+xmit\+\_\+policy}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a1eb4891c38992140bd42386262d54e1b}{user\+\_\+defined\+\_\+mac}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a1116c885f822943f992ed455f278671e}{promiscuous\+\_\+en}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a8d6d530ad1e5e5d4a8f725e6fa44e751}{link\+\_\+props\+\_\+set}
+\item 
+uint16\+\_\+t \hyperlink{structbond__dev__private_ae6fa0630eafe59d603f1ed9123dcc7fe}{nb\+\_\+rx\+\_\+queues}
+\item 
+uint16\+\_\+t \hyperlink{structbond__dev__private_a3dc35933233d56e550e5914aad387408}{nb\+\_\+tx\+\_\+queues}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_ae245bc94feb81da053cc77f63abc07e2}{slave\+\_\+count}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_a4a2bb0c7965b8ede372d218d270465e0}{active\+\_\+slave\+\_\+count}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_ac51b4f1d7833da4106f7c90dc623fe37}{active\+\_\+slaves} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structbond__dev__private_aabe27a69cb59cc9e6a45c0f59a941cf9}{slaves} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}
+\item 
+struct \hyperlink{structslave__conf}{slave\+\_\+conf} \hyperlink{structbond__dev__private_aa082a5fca72edb6b65579350f9ee6cec}{presisted\+\_\+slaves\+\_\+conf} \mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Link Bonding P\+M\+D device private configuration Structure 
+
+\subsection{Field Documentation}
+\hypertarget{structbond__dev__private_a4a2bb0c7965b8ede372d218d270465e0}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!active\+\_\+slave\+\_\+count@{active\+\_\+slave\+\_\+count}}
+\index{active\+\_\+slave\+\_\+count@{active\+\_\+slave\+\_\+count}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{active\+\_\+slave\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t active\+\_\+slave\+\_\+count}\label{structbond__dev__private_a4a2bb0c7965b8ede372d218d270465e0}
+Number of slaves \hypertarget{structbond__dev__private_ac51b4f1d7833da4106f7c90dc623fe37}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!active\+\_\+slaves@{active\+\_\+slaves}}
+\index{active\+\_\+slaves@{active\+\_\+slaves}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{active\+\_\+slaves}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t active\+\_\+slaves\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}}\label{structbond__dev__private_ac51b4f1d7833da4106f7c90dc623fe37}
+Active slave list \hypertarget{structbond__dev__private_a39595da5d563085994b8584c3220571b}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!balance\+\_\+xmit\+\_\+policy@{balance\+\_\+xmit\+\_\+policy}}
+\index{balance\+\_\+xmit\+\_\+policy@{balance\+\_\+xmit\+\_\+policy}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{balance\+\_\+xmit\+\_\+policy}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t balance\+\_\+xmit\+\_\+policy}\label{structbond__dev__private_a39595da5d563085994b8584c3220571b}
+Transmit policy -\/ l2 / l23 / l34 for operation in balance mode \hypertarget{structbond__dev__private_ad3dfc83b886db5b43a715eb7e50bd32e}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!current\+\_\+primary\+\_\+port@{current\+\_\+primary\+\_\+port}}
+\index{current\+\_\+primary\+\_\+port@{current\+\_\+primary\+\_\+port}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{current\+\_\+primary\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t current\+\_\+primary\+\_\+port}\label{structbond__dev__private_ad3dfc83b886db5b43a715eb7e50bd32e}
+Primary Slave Port \hypertarget{structbond__dev__private_a8d6d530ad1e5e5d4a8f725e6fa44e751}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!link\+\_\+props\+\_\+set@{link\+\_\+props\+\_\+set}}
+\index{link\+\_\+props\+\_\+set@{link\+\_\+props\+\_\+set}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{link\+\_\+props\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t link\+\_\+props\+\_\+set}\label{structbond__dev__private_a8d6d530ad1e5e5d4a8f725e6fa44e751}
+Bonded eth\+\_\+dev link properties set \hypertarget{structbond__dev__private_a37e90f5e3bd99fac2021fb3a326607d4}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!mode@{mode}}
+\index{mode@{mode}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t mode}\label{structbond__dev__private_a37e90f5e3bd99fac2021fb3a326607d4}
+Link Bonding Mode \hypertarget{structbond__dev__private_ae6fa0630eafe59d603f1ed9123dcc7fe}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!nb\+\_\+rx\+\_\+queues@{nb\+\_\+rx\+\_\+queues}}
+\index{nb\+\_\+rx\+\_\+queues@{nb\+\_\+rx\+\_\+queues}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{nb\+\_\+rx\+\_\+queues}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t nb\+\_\+rx\+\_\+queues}\label{structbond__dev__private_ae6fa0630eafe59d603f1ed9123dcc7fe}
+Total number of rx queues \hypertarget{structbond__dev__private_a3dc35933233d56e550e5914aad387408}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!nb\+\_\+tx\+\_\+queues@{nb\+\_\+tx\+\_\+queues}}
+\index{nb\+\_\+tx\+\_\+queues@{nb\+\_\+tx\+\_\+queues}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{nb\+\_\+tx\+\_\+queues}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t nb\+\_\+tx\+\_\+queues}\label{structbond__dev__private_a3dc35933233d56e550e5914aad387408}
+Total number of tx queues \hypertarget{structbond__dev__private_aa082a5fca72edb6b65579350f9ee6cec}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!presisted\+\_\+slaves\+\_\+conf@{presisted\+\_\+slaves\+\_\+conf}}
+\index{presisted\+\_\+slaves\+\_\+conf@{presisted\+\_\+slaves\+\_\+conf}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{presisted\+\_\+slaves\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf slave\+\_\+conf} presisted\+\_\+slaves\+\_\+conf\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}}\label{structbond__dev__private_aa082a5fca72edb6b65579350f9ee6cec}
+Persisted configuration of slaves \hypertarget{structbond__dev__private_ae340e5cdcbe69229f5806f0cabcb07d0}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!primary\+\_\+port@{primary\+\_\+port}}
+\index{primary\+\_\+port@{primary\+\_\+port}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{primary\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t primary\+\_\+port}\label{structbond__dev__private_ae340e5cdcbe69229f5806f0cabcb07d0}
+Primary Slave Port \hypertarget{structbond__dev__private_a1116c885f822943f992ed455f278671e}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!promiscuous\+\_\+en@{promiscuous\+\_\+en}}
+\index{promiscuous\+\_\+en@{promiscuous\+\_\+en}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{promiscuous\+\_\+en}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t promiscuous\+\_\+en}\label{structbond__dev__private_a1116c885f822943f992ed455f278671e}
+Enabled/disable promiscuous mode on slave devices \hypertarget{structbond__dev__private_ae245bc94feb81da053cc77f63abc07e2}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!slave\+\_\+count@{slave\+\_\+count}}
+\index{slave\+\_\+count@{slave\+\_\+count}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{slave\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t slave\+\_\+count}\label{structbond__dev__private_ae245bc94feb81da053cc77f63abc07e2}
+Number of active slaves \hypertarget{structbond__dev__private_aabe27a69cb59cc9e6a45c0f59a941cf9}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!slaves@{slaves}}
+\index{slaves@{slaves}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{slaves}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t slaves\mbox{[}R\+T\+E\+\_\+\+M\+A\+X\+\_\+\+E\+T\+H\+P\+O\+R\+T\+S\mbox{]}}\label{structbond__dev__private_aabe27a69cb59cc9e6a45c0f59a941cf9}
+Slave list \hypertarget{structbond__dev__private_a1eb4891c38992140bd42386262d54e1b}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!user\+\_\+defined\+\_\+mac@{user\+\_\+defined\+\_\+mac}}
+\index{user\+\_\+defined\+\_\+mac@{user\+\_\+defined\+\_\+mac}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{user\+\_\+defined\+\_\+mac}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t user\+\_\+defined\+\_\+mac}\label{structbond__dev__private_a1eb4891c38992140bd42386262d54e1b}
+Flag for whether M\+A\+C address is user defined or not \hypertarget{structbond__dev__private_a70188fdb8ba685a9505871dd8622d7fe}{}\index{bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}!user\+\_\+defined\+\_\+primary\+\_\+port@{user\+\_\+defined\+\_\+primary\+\_\+port}}
+\index{user\+\_\+defined\+\_\+primary\+\_\+port@{user\+\_\+defined\+\_\+primary\+\_\+port}!bond\+\_\+dev\+\_\+private@{bond\+\_\+dev\+\_\+private}}
+\subsubsection[{user\+\_\+defined\+\_\+primary\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t user\+\_\+defined\+\_\+primary\+\_\+port}\label{structbond__dev__private_a70188fdb8ba685a9505871dd8622d7fe}
+Flag for whether primary port is user defined or not 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+pmd\+\_\+bond/rte\+\_\+eth\+\_\+bond\+\_\+private.\+h\end{DoxyCompactItemize}

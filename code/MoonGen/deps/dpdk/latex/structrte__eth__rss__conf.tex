@@ -1,0 +1,39 @@
+\hypertarget{structrte__eth__rss__conf}{}\section{rte\+\_\+eth\+\_\+rss\+\_\+conf Struct Reference}
+\label{structrte__eth__rss__conf}\index{rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}}
+
+
+{\ttfamily \#include $<$rte\+\_\+ethdev.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{structrte__eth__rss__conf_a931e368ed1b5a8211a963bc05c503739}{rss\+\_\+key}
+\item 
+uint8\+\_\+t \hyperlink{structrte__eth__rss__conf_ab8f32e03af342f65e890c42b24511866}{rss\+\_\+key\+\_\+len}
+\item 
+uint64\+\_\+t \hyperlink{structrte__eth__rss__conf_ad70f17882a835e5d4e38c64a9f872fdc}{rss\+\_\+hf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure used to configure the Receive Side Scaling (R\+S\+S) feature of an Ethernet port. If not N\+U\+L\+L, the {\itshape rss\+\_\+key} pointer of the {\itshape rss\+\_\+conf} structure points to an array holding the R\+S\+S key to use for hashing specific header fields of received packets. The length of this array should be indicated by {\itshape rss\+\_\+key\+\_\+len} below. Otherwise, a default random hash key is used by the device driver.
+
+The {\itshape rss\+\_\+key\+\_\+len} field of the {\itshape rss\+\_\+conf} structure indicates the length in bytes of the array pointed by {\itshape rss\+\_\+key}. To be compatible, this length will be checked in i40e only. Others assume 40 bytes to be used as before.
+
+The {\itshape rss\+\_\+hf} field of the {\itshape rss\+\_\+conf} structure indicates the different types of I\+Pv4/\+I\+Pv6 packets to which the R\+S\+S hashing must be applied. Supplying an {\itshape rss\+\_\+hf} equal to zero disables the R\+S\+S feature. 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__eth__rss__conf_ad70f17882a835e5d4e38c64a9f872fdc}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}!rss\+\_\+hf@{rss\+\_\+hf}}
+\index{rss\+\_\+hf@{rss\+\_\+hf}!rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}}
+\subsubsection[{rss\+\_\+hf}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t rss\+\_\+hf}\label{structrte__eth__rss__conf_ad70f17882a835e5d4e38c64a9f872fdc}
+Hash functions to apply -\/ see below. \hypertarget{structrte__eth__rss__conf_a931e368ed1b5a8211a963bc05c503739}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}!rss\+\_\+key@{rss\+\_\+key}}
+\index{rss\+\_\+key@{rss\+\_\+key}!rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}}
+\subsubsection[{rss\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ rss\+\_\+key}\label{structrte__eth__rss__conf_a931e368ed1b5a8211a963bc05c503739}
+If not N\+U\+L\+L, 40-\/byte hash key. \hypertarget{structrte__eth__rss__conf_ab8f32e03af342f65e890c42b24511866}{}\index{rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}!rss\+\_\+key\+\_\+len@{rss\+\_\+key\+\_\+len}}
+\index{rss\+\_\+key\+\_\+len@{rss\+\_\+key\+\_\+len}!rte\+\_\+eth\+\_\+rss\+\_\+conf@{rte\+\_\+eth\+\_\+rss\+\_\+conf}}
+\subsubsection[{rss\+\_\+key\+\_\+len}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t rss\+\_\+key\+\_\+len}\label{structrte__eth__rss__conf_ab8f32e03af342f65e890c42b24511866}
+hash key length in bytes. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+ether/\hyperlink{rte__ethdev_8h}{rte\+\_\+ethdev.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\hypertarget{rte__string__fns_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+string\+\_\+fns.h File Reference}
+\label{rte__string__fns_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+string\+\_\+fns.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+string\+\_\+fns.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rte__string__fns_8h_a465a8c10abe0dcc8cd4bffd70a990903}{rte\+\_\+snprintf} (char $\ast$buffer, int buflen, const char $\ast$format,...)
+\item 
+int \hyperlink{rte__string__fns_8h_af3ffc4e2ca821bc44f7fd08afbfe3638}{rte\+\_\+strsplit} (char $\ast$string, int stringlen, char $\ast$$\ast$tokens, int maxtokens, char delim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+String-\/related functions as replacement for libc equivalents 
+
+\subsection{Function Documentation}
+\hypertarget{rte__string__fns_8h_a465a8c10abe0dcc8cd4bffd70a990903}{}\index{rte\+\_\+string\+\_\+fns.\+h@{rte\+\_\+string\+\_\+fns.\+h}!rte\+\_\+snprintf@{rte\+\_\+snprintf}}
+\index{rte\+\_\+snprintf@{rte\+\_\+snprintf}!rte\+\_\+string\+\_\+fns.\+h@{rte\+\_\+string\+\_\+fns.\+h}}
+\subsubsection[{rte\+\_\+snprintf}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+snprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{int}]{buflen, }
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{rte__string__fns_8h_a465a8c10abe0dcc8cd4bffd70a990903}
+This functio is deprecated and just for backward compatibility. It is just an alternate version of snprintf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer into which the output is to be written\\
+\hline
+{\em buflen} & The size of the output buffer\\
+\hline
+{\em format} & The format string to be printed to the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters written to the buffer, or if the string has been truncated, the number of characters which would have been written had the buffer been sufficiently big. 
+\end{DoxyReturn}
+\hypertarget{rte__string__fns_8h_af3ffc4e2ca821bc44f7fd08afbfe3638}{}\index{rte\+\_\+string\+\_\+fns.\+h@{rte\+\_\+string\+\_\+fns.\+h}!rte\+\_\+strsplit@{rte\+\_\+strsplit}}
+\index{rte\+\_\+strsplit@{rte\+\_\+strsplit}!rte\+\_\+string\+\_\+fns.\+h@{rte\+\_\+string\+\_\+fns.\+h}}
+\subsubsection[{rte\+\_\+strsplit}]{\setlength{\rightskip}{0pt plus 5cm}int rte\+\_\+strsplit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{int}]{stringlen, }
+\item[{char $\ast$$\ast$}]{tokens, }
+\item[{int}]{maxtokens, }
+\item[{char}]{delim}
+\end{DoxyParamCaption}
+)}\label{rte__string__fns_8h_af3ffc4e2ca821bc44f7fd08afbfe3638}
+Takes string \char`\"{}string\char`\"{} parameter and splits it at character \char`\"{}delim\char`\"{} up to maxtokens-\/1 times -\/ to give \char`\"{}maxtokens\char`\"{} resulting tokens. Like strtok or strsep functions, this modifies its input string, by replacing instances of \char`\"{}delim\char`\"{} with \textquotesingle{}\textbackslash{}0\textquotesingle{}. All resultant tokens are returned in the \char`\"{}tokens\char`\"{} array which must have enough entries to hold \char`\"{}maxtokens\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The input string to be split into tokens\\
+\hline
+{\em stringlen} & The max length of the input buffer\\
+\hline
+{\em tokens} & The array to hold the pointers to the tokens in the string\\
+\hline
+{\em maxtokens} & The number of elements in the tokens array. At most, maxtokens-\/1 splits of the string will be done.\\
+\hline
+{\em delim} & The character on which the split of the data will be done\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of tokens in the tokens array. 
+\end{DoxyReturn}

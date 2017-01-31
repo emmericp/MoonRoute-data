@@ -1,0 +1,224 @@
+\hypertarget{rte__tailq_8h}{}\section{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq.h File Reference}
+\label{rte__tailq_8h}\index{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq.\+h@{lib/librte\+\_\+eal/common/include/rte\+\_\+tailq.\+h}}
+{\ttfamily \#include $<$sys/queue.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrte__tailq__entry}{rte\+\_\+tailq\+\_\+entry}
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rte__tailq_8h_af75244d432e8d441aafe2279a93f8374}{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E}(name,  struct\+\_\+name)~(struct struct\+\_\+name $\ast$)(\&\hyperlink{rte__tailq_8h_a252269aa5cda115381de3527fd47920a}{rte\+\_\+eal\+\_\+tailq\+\_\+reserve}(name)-\/$>$tailq\+\_\+head)
+\item 
+\#define \hyperlink{rte__tailq_8h_ac502479c55459dfc0a9135dd85c713f6}{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X}(idx,  struct\+\_\+name)~(struct struct\+\_\+name $\ast$)(\&\hyperlink{rte__tailq_8h_ad8a455c0b2e709b3968f95f9fab20964}{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx}(idx)-\/$>$tailq\+\_\+head)
+\item 
+\#define \hyperlink{rte__tailq_8h_ae15f561077634a852028241e2539dba6}{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P}(name,  struct\+\_\+name)~(struct struct\+\_\+name $\ast$)(\&\hyperlink{rte__tailq_8h_abf465018bceb8dc216d0d467b0b2ef92}{rte\+\_\+eal\+\_\+tailq\+\_\+lookup}(name)-\/$>$tailq\+\_\+head)
+\item 
+\#define \hyperlink{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X}(idx,  struct\+\_\+name)~(struct struct\+\_\+name $\ast$)(\&\hyperlink{rte__tailq_8h_a88bf42bb83ab6c6129267ecd1e59a452}{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx}(idx)-\/$>$tailq\+\_\+head)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rte__tailq_8h_ac692db325d1618ac9cabf255a81a0543}{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D} (rte\+\_\+tailq\+\_\+entry\+\_\+head, \hyperlink{structrte__tailq__entry}{rte\+\_\+tailq\+\_\+entry})
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} $\ast$ \hyperlink{rte__tailq_8h_a252269aa5cda115381de3527fd47920a}{rte\+\_\+eal\+\_\+tailq\+\_\+reserve} (const char $\ast$name)
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} $\ast$ \hyperlink{rte__tailq_8h_ad8a455c0b2e709b3968f95f9fab20964}{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx} (const unsigned idx)
+\item 
+void \hyperlink{rte__tailq_8h_a0162db58d3c19abb8c14e62f7e1e77ee}{rte\+\_\+dump\+\_\+tailq} (F\+I\+L\+E $\ast$f)
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} $\ast$ \hyperlink{rte__tailq_8h_abf465018bceb8dc216d0d467b0b2ef92}{rte\+\_\+eal\+\_\+tailq\+\_\+lookup} (const char $\ast$name)
+\item 
+struct \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} $\ast$ \hyperlink{rte__tailq_8h_a88bf42bb83ab6c6129267ecd1e59a452}{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx} (const unsigned idx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Here defines rte\+\_\+tailq A\+P\+Is for only internal use 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rte__tailq_8h_ae15f561077634a852028241e2539dba6}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P}}
+\index{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{struct\+\_\+name}
+\end{DoxyParamCaption}
+)~(struct struct\+\_\+name $\ast$)(\&{\bf rte\+\_\+eal\+\_\+tailq\+\_\+lookup}(name)-\/$>$tailq\+\_\+head)}\label{rte__tailq_8h_ae15f561077634a852028241e2539dba6}
+Utility macro to make looking up a tailqueue for a particular struct easier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of tailq\\
+\hline
+{\em struct\+\_\+name} & The name of the list type we are using. (Generally this is the same as the first parameter passed to T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D macro)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value from rte\+\_\+eal\+\_\+tailq\+\_\+lookup, typecast to the appropriate structure pointer type. N\+U\+L\+L on error, since the tailq\+\_\+head is the first element in the \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} structure. 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X}}
+\index{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+L\+O\+O\+K\+U\+P\+\_\+\+B\+Y\+\_\+\+I\+D\+X(
+\begin{DoxyParamCaption}
+\item[{}]{idx, }
+\item[{}]{struct\+\_\+name}
+\end{DoxyParamCaption}
+)~(struct struct\+\_\+name $\ast$)(\&{\bf rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx}(idx)-\/$>$tailq\+\_\+head)}\label{rte__tailq_8h_a695d7bf1c64e8f7f302b8281ea4a422a}
+Utility macro to make looking up a tailqueue for a particular struct easier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The tailq idx defined in rte\+\_\+tail\+\_\+t to be given to the tail queue.\\
+\hline
+{\em struct\+\_\+name} & The name of the list type we are using. (Generally this is the same as the first parameter passed to T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D macro)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value from rte\+\_\+eal\+\_\+tailq\+\_\+lookup, typecast to the appropriate structure pointer type. N\+U\+L\+L on error, since the tailq\+\_\+head is the first element in the \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} structure. 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_af75244d432e8d441aafe2279a93f8374}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E}}
+\index{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{struct\+\_\+name}
+\end{DoxyParamCaption}
+)~(struct struct\+\_\+name $\ast$)(\&{\bf rte\+\_\+eal\+\_\+tailq\+\_\+reserve}(name)-\/$>$tailq\+\_\+head)}\label{rte__tailq_8h_af75244d432e8d441aafe2279a93f8374}
+Utility macro to make reserving a tailqueue for a particular struct easier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to be given to the tailq -\/ used by lookup to find it later\\
+\hline
+{\em struct\+\_\+name} & The name of the list type we are using. (Generally this is the same as the first parameter passed to T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D macro)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value from rte\+\_\+eal\+\_\+tailq\+\_\+reserve, typecast to the appropriate structure pointer type. N\+U\+L\+L on error, since the tailq\+\_\+head is the first element in the \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} structure. 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_ac502479c55459dfc0a9135dd85c713f6}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X}}
+\index{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X@{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+E\+\_\+\+T\+A\+I\+L\+Q\+\_\+\+R\+E\+S\+E\+R\+V\+E\+\_\+\+B\+Y\+\_\+\+I\+D\+X(
+\begin{DoxyParamCaption}
+\item[{}]{idx, }
+\item[{}]{struct\+\_\+name}
+\end{DoxyParamCaption}
+)~(struct struct\+\_\+name $\ast$)(\&{\bf rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx}(idx)-\/$>$tailq\+\_\+head)}\label{rte__tailq_8h_ac502479c55459dfc0a9135dd85c713f6}
+Utility macro to make reserving a tailqueue for a particular struct easier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The tailq idx defined in rte\+\_\+tail\+\_\+t to be given to the tail queue.
+\begin{DoxyItemize}
+\item used by lookup to find it later
+\end{DoxyItemize}\\
+\hline
+{\em struct\+\_\+name} & The name of the list type we are using. (Generally this is the same as the first parameter passed to T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D macro)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value from rte\+\_\+eal\+\_\+tailq\+\_\+reserve, typecast to the appropriate structure pointer type. N\+U\+L\+L on error, since the tailq\+\_\+head is the first element in the \hyperlink{structrte__tailq__head}{rte\+\_\+tailq\+\_\+head} structure. 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{rte__tailq_8h_a0162db58d3c19abb8c14e62f7e1e77ee}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!rte\+\_\+dump\+\_\+tailq@{rte\+\_\+dump\+\_\+tailq}}
+\index{rte\+\_\+dump\+\_\+tailq@{rte\+\_\+dump\+\_\+tailq}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{rte\+\_\+dump\+\_\+tailq}]{\setlength{\rightskip}{0pt plus 5cm}void rte\+\_\+dump\+\_\+tailq (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_a0162db58d3c19abb8c14e62f7e1e77ee}
+Dump tail queues to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A pointer to a file for output \\
+\hline
+\end{DoxyParams}
+\hypertarget{rte__tailq_8h_abf465018bceb8dc216d0d467b0b2ef92}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!rte\+\_\+eal\+\_\+tailq\+\_\+lookup@{rte\+\_\+eal\+\_\+tailq\+\_\+lookup}}
+\index{rte\+\_\+eal\+\_\+tailq\+\_\+lookup@{rte\+\_\+eal\+\_\+tailq\+\_\+lookup}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+tailq\+\_\+lookup}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+tailq\+\_\+head}$\ast$ rte\+\_\+eal\+\_\+tailq\+\_\+lookup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_abf465018bceb8dc216d0d467b0b2ef92}
+Lookup for a tail queue.
+
+Get a pointer to a tail queue header of an already reserved tail queue identified by the name given as an argument. Note\+: this function, along with rte\+\_\+tailq\+\_\+reserve, is not multi-\/thread safe, and both these functions should only be called from a single thread at a time
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the tail queue head structure. 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_a88bf42bb83ab6c6129267ecd1e59a452}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx@{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx}}
+\index{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx@{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+tailq\+\_\+head}$\ast$ rte\+\_\+eal\+\_\+tailq\+\_\+lookup\+\_\+by\+\_\+idx (
+\begin{DoxyParamCaption}
+\item[{const unsigned}]{idx}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_a88bf42bb83ab6c6129267ecd1e59a452}
+Lookup for a tail queue.
+
+Get a pointer to a tail queue header of an already reserved tail queue identified by the name given as an argument. Note\+: this function, along with rte\+\_\+tailq\+\_\+reserve, is not multi-\/thread safe, and both these functions should only be called from a single thread at a time
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The tailq idx defined in rte\+\_\+tail\+\_\+t to be given to the tail queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the tail queue head structure. 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_a252269aa5cda115381de3527fd47920a}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!rte\+\_\+eal\+\_\+tailq\+\_\+reserve@{rte\+\_\+eal\+\_\+tailq\+\_\+reserve}}
+\index{rte\+\_\+eal\+\_\+tailq\+\_\+reserve@{rte\+\_\+eal\+\_\+tailq\+\_\+reserve}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+tailq\+\_\+reserve}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+tailq\+\_\+head}$\ast$ rte\+\_\+eal\+\_\+tailq\+\_\+reserve (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_a252269aa5cda115381de3527fd47920a}
+Reserve a slot in the tailq list for a particular tailq header Note\+: this function, along with rte\+\_\+tailq\+\_\+lookup, is not multi-\/thread safe, and both these functions should only be called from a single thread at a time
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to be given to the tail queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly reserved tailq entry 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_ad8a455c0b2e709b3968f95f9fab20964}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx@{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx}}
+\index{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx@{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf rte\+\_\+tailq\+\_\+head}$\ast$ rte\+\_\+eal\+\_\+tailq\+\_\+reserve\+\_\+by\+\_\+idx (
+\begin{DoxyParamCaption}
+\item[{const unsigned}]{idx}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_ad8a455c0b2e709b3968f95f9fab20964}
+Reserve a slot in the tailq list for a particular tailq header Note\+: this function, along with rte\+\_\+tailq\+\_\+lookup, is not multi-\/thread safe, and both these functions should only be called from a single thread at a time
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The tailq idx defined in rte\+\_\+tail\+\_\+t to be given to the tail queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly reserved tailq entry 
+\end{DoxyReturn}
+\hypertarget{rte__tailq_8h_ac692db325d1618ac9cabf255a81a0543}{}\index{rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}!T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}}
+\index{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D@{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}!rte\+\_\+tailq.\+h@{rte\+\_\+tailq.\+h}}
+\subsubsection[{T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}T\+A\+I\+L\+Q\+\_\+\+H\+E\+A\+D (
+\begin{DoxyParamCaption}
+\item[{rte\+\_\+tailq\+\_\+entry\+\_\+head}]{, }
+\item[{{\bf rte\+\_\+tailq\+\_\+entry}}]{}
+\end{DoxyParamCaption}
+)}\label{rte__tailq_8h_ac692db325d1618ac9cabf255a81a0543}
+dummy 

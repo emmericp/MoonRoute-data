@@ -1,0 +1,30 @@
+\hypertarget{structrte__table__lpm__ipv6__key}{}\section{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key Struct Reference}
+\label{structrte__table__lpm__ipv6__key}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key}}
+
+
+{\ttfamily \#include $<$rte\+\_\+table\+\_\+lpm\+\_\+ipv6.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structrte__table__lpm__ipv6__key_aa53c1fe193ed5311bd6c16153b939a10}{ip} \mbox{[}R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+I\+P\+V6\+\_\+\+A\+D\+D\+R\+\_\+\+S\+I\+Z\+E\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structrte__table__lpm__ipv6__key_ab6f276082172be43a6041212071e377b}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+L\+P\+M table rule (i.\+e. route), specified as I\+P prefix. While the key used by the lookup operation is the destination I\+P address (read from the input packet meta-\/data), the entry add and entry delete operations work with L\+P\+M rules, with each rule covering for a multitude of lookup keys (destination I\+P addresses) that share the same data (next hop). 
+
+\subsection{Field Documentation}
+\hypertarget{structrte__table__lpm__ipv6__key_ab6f276082172be43a6041212071e377b}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key}!depth@{depth}}
+\index{depth@{depth}!rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t depth}\label{structrte__table__lpm__ipv6__key_ab6f276082172be43a6041212071e377b}
+I\+P address depth. The most significant \char`\"{}depth\char`\"{} bits of the I\+P address specify the network part of the I\+P address, while the rest of the bits specify the host part of the address and are ignored for the purpose of route specification. \hypertarget{structrte__table__lpm__ipv6__key_aa53c1fe193ed5311bd6c16153b939a10}{}\index{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key}!ip@{ip}}
+\index{ip@{ip}!rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key@{rte\+\_\+table\+\_\+lpm\+\_\+ipv6\+\_\+key}}
+\subsubsection[{ip}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t ip\mbox{[}R\+T\+E\+\_\+\+L\+P\+M\+\_\+\+I\+P\+V6\+\_\+\+A\+D\+D\+R\+\_\+\+S\+I\+Z\+E\mbox{]}}\label{structrte__table__lpm__ipv6__key_aa53c1fe193ed5311bd6c16153b939a10}
+I\+P address 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/librte\+\_\+table/\hyperlink{rte__table__lpm__ipv6_8h}{rte\+\_\+table\+\_\+lpm\+\_\+ipv6.\+h}\end{DoxyCompactItemize}
